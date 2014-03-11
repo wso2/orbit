@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.abc.com/validation"
+        xmlns="http://www.abc.com/validation"
+        xmlns:xsns="http://www.abc.com/validation"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+        elementFormDefault="qualified">
+    <xs:annotation>
+        <xs:appinfo source="anything">
+            <jaxb:schemaBindings>
+                <jaxb:package  name="com.abc.validation"/>
+            </jaxb:schemaBindings>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <simpleType name="emptyAppinfo">
+        <restriction base="string">
+            <length value="1"/>
+        </restriction>
+    </simpleType>
+
+</xs:schema>

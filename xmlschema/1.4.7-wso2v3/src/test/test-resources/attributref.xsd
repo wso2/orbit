@@ -1,0 +1,16 @@
+<xs:schema elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://tempuri.org/attribute"
+           targetNamespace="http://tempuri.org/attribute">
+
+    <xs:element name="TestAttributeReferenceElement" type="tns:TestAttributeReferenceType"/>
+    <xs:attribute name="TestAttribute1" type="xs:string"/>
+    <xs:complexType name="TestAttributeReferenceType">
+        <xs:sequence>
+            <xs:element name="param1" type="xs:string"/>
+            <xs:element name="param2" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute ref="tns:TestAttribute1"/>
+    </xs:complexType>
+
+</xs:schema>

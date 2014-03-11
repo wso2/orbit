@@ -1,0 +1,45 @@
+
+Release Notes - WS-Commons - Version XmlSchema 1.4.7
+
+Changes since 1.4.6:
+
+** Bug
+    * [WSCOMMONS-484] - Performance enhancement for build from DOM
+    * (WSCOMMONS-361) breaks Xerces DOM
+       Node's Java serializability
+    * [WSCOMMONS-537] - Cached NodeNamespaceContext  causes problems when a new namespace is added
+    * [WSCOMMONS-539] - Infinite loop in XmlSchemaSerializer. setupNamespaces
+
+** Improvement
+    * [WSCOMMONS-520] - Add a setEntityResolver() to be used in XmlSchemaCollection.read
+
+
+Bugs fixed since XmlSchema 1.4.5:
+
+WSCOMMONS-533	
+NullPointerException processing schema		
+
+WSCOMMONS-482
+Runtime dependency on xmlunit in utility program ReadSchemaFromURL		
+
+WSCOMMONS-531
+SchemaBuilder does not parse all the 'key' and 'keyref' definitions when it uses namespace prefix		
+
+Bugs fixed since XmlSchema 1.4.4:
+
+WSCOMMONS-460 
+targetNamespace in schema without a prefixed namespace also defined can cause empty namespace to be overwritten.
+
+WSCOMMONS-447 
+Serializer requires a namespace context.
+
+WSCOMMONS-426 
+Serialization gets NPE with no namespace context.
+
+WSCOMMONS-283 
+Package XmlSchema as on OSGi bundle.
+
+Thanks for your interest in XMLSchema!
+
+- The XMLSchema Development Team (commons-dev@ws.apache.org)
+

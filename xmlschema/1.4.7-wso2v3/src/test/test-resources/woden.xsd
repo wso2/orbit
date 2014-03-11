@@ -1,0 +1,4 @@
+<xsd:schema targetNamespace="http://example.org/getBalance/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="woden-2.xsd" />
+</xsd:schema>

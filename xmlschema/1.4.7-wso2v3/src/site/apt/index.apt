@@ -1,0 +1,21 @@
+Overview
+  
+   XMLSchema is a lightweight Java object model that can be used to manipulate and
+   generate XML schema representations. You can use it to read XML Schema (xsd) files
+   into memory and analyze or modify them, or to create entirely new schemata from
+   scratch.
+
+   For information on how to use the XmlSchema API, please
+   see the {{{apidocs/index.html}javadocs}} or the {{{schematutorial.html}tutorial}}.
+
+   The Web Services Commons project eagerly welcomes suggestions, documentation,
+   and most of all code. Please join our dev list, submit JIRA entries, and
+   attach patches.
+
+
+Downloads
+
+  The latest release is 1.4.7 and can be found
+  {{{http:download.html}here}}.
+  
+  -The XMLSchema Development Team (commons-dev at ws.apache.org)

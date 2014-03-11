@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+  ~ Licensed to the Apache Software Foundation (ASF) under one
+  ~ or more contributor license agreements. See the NOTICE file
+  ~ distributed with this work for additional information
+  ~ regarding copyright ownership. The ASF licenses this file
+  ~ to you under the Apache License, Version 2.0 (the
+  ~ "License"); you may not use this file except in compliance
+  ~ with the License. You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied. See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+
+<document>
+    <properties>
+        <title>:: Apache XmlSchema Extension Tutorial ::</title>
+    </properties>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+        <meta content="text/html; charset=iso-8859-1"/>
+    </head>
+
+    <body>
+        <section name="Contents">
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#example">Example Extension</a></li>
+                <li><a href="#iclasses">Important classes</a></li>
+                <li><a href="#deser">Code for a Deserializer</a></li>
+                <li><a href="#ser">Code for a Serializer</a></li>
+                <li><a href="#reg">Registering types and using a custom extension registry</a></li>
+                <!--<li><a href="#default">Default Behavior</a></li>-->
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </section>
+
+
+        <a name="intro"></a>
+        <section name="Introduction">
+            <p>Usually when parsing a schema document, developers will prefer to make custom
+                objects for attribute and element extensions. XMLSchema supports this through
+                an extension registry mechanism. This document explains how this extension mechanism works by going through
+                two complete examples. These two examples are included as test cases with the source release.</p>
+        </section>
+
+
+        <a name="example"></a>
+        <section name="Example Extension">
+            <p>Following are two example schema documents that contain external attributes/elements</p>
+            <p>This schema demonstrates the use of an extension attribute
+            <pre>
+                     &lt;schema
+                        xmlns="http://www.w3.org/2001/XMLSchema"
+                        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                        xmlns:tns="http://soapinterop.org/types"
+                        xmlns:ext="http://customattrib.org"
+                        targetNamespace="http://soapinterop.org/types"&gt;
+
+                    &lt;complexType name="Struct" ext:customAttrib="toplevel:type"&gt;
+                        &lt;sequence&gt;
+                            &lt;element name="varString" type="xsd:string" ext:customAttrib="inner:element"/&gt;
+                            &lt;element name="varInt" type="xsd:int" ext:customAttrib="inner:element"/&gt;
+                            &lt;element name="varFloat" type="xsd:float" ext:customAttrib="inner:element"/&gt;
+                            &lt;element name="varStruct" type="tns:Struct" ext:customAttrib="inner:element"/&gt;
+                        &lt;/sequence&gt;
+                    &lt;/complexType&gt;
+
+                    &lt;element name="attrTest" type="tns:Struct" ext:customAttrib="toplevel:element"/&gt;
+
+                &lt;/schema&gt;
+
+            </pre>
+             </p>
+
+            <p>This schema demonstrates the use of an extension element
+            <pre>
+                           &lt;schema
+                    xmlns="http://www.w3.org/2001/XMLSchema"
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns:tns="http://soapinterop.org/types"
+                    xmlns:ext="http://customattrib.org"
+                    targetNamespace="http://soapinterop.org/types"&gt;
+
+                &lt;complexType name="Struct"&gt;
+                    &lt;ext:customElt prefix="ext" suffix="type"/&gt;
+                    &lt;sequence&gt;
+                        &lt;element name="varString" type="xsd:string"/&gt;
+                        &lt;element name="varInt" type="xsd:int" /&gt;
+                        &lt;element name="varFloat" type="xsd:float" /&gt;
+                        &lt;element name="varStruct" type="tns:Struct" /&gt;
+                    &lt;/sequence&gt;
+                &lt;/complexType&gt;
+
+                &lt;element name="attrTest" type="tns:Struct" &gt;
+                    &lt;ext:customElt prefix="ext" suffix="elt"/&gt;
+                &lt;/element&gt;
+
+            &lt;/schema&gt;
+            </pre>
+            </p>
+
+        <p>A developer would like the parser to make custom objects when it encounters customAttrib
+        or customElt. This can be achieved by writing a custom extension deserializer and serializer and
+        registering them with the extension registry. The next section briefly explains the important classes
+        involved in this process.</p>
+        </section>
+
+        <a name="iclasses"></a>
+        <section name="Important classes">
+           <p>Following are the important classes in writing an extension</p>
+           <ul>
+               <li><code>org.apache.ws.commons.schema.extensions.ExtensionRegistry</code></li>
+               <li><code>org.apache.ws.commons.schema.extensions.ExtensionDeserializer</code></li>
+               <li><code>org.apache.ws.commons.schema.extensions.ExtensionSerializer</code></li>
+           </ul>
+           <p>Last two classes are interfaces that should be implemented by the respective
+           implementations.</p>
+
+         </section>
+
+        <a name="deser"></a>
+        <section name="Code for a Deserializer">
+           <p>The deserializer needs to implement the
+               <code>org.apache.ws.commons.schema.extensions.ExtensionDeserializer</code> interface.
+           Following is a code fragment of the Extension deserializer that deserializes the extension
+           attribute into a custom object. Note that once the custom object is made it is attached
+           to the meta info map of the relevant XMLSchema object with the QName as the key</p>
+
+          <p>
+             <pre>
+                 <code>
+                 public void deserialize(XmlSchemaObject schemaObject, QName name, Node domNode) {
+                 if (CustomAttribute.CUSTOM_ATTRIBUTE_QNAME.equals(name)){
+                     Attr attrib = (Attr)domNode;
+                     String value = attrib.getValue();
+                     //break the attrib into
+                     CustomAttribute customAttrib = new CustomAttribute();
+                     String[] strings = value.split(":");
+                     customAttrib.setPrefix(strings[0]);
+                     customAttrib.setSuffix(strings[1]);
+
+                     //put this in the schema object meta info map
+                     schemaObject.addMetaInfo(CustomAttribute.CUSTOM_ATTRIBUTE_QNAME,customAttrib);
+                  }
+                 }
+                 </code>
+             </pre>
+          </p>
+          <p>Note that prior knowledge is required about the format of the string of the attribute value.
+          The complete custom attribute deserializer is available in
+          <code>tests.customext.attrib.CustomAttributeDeserializer</code></p>
+
+          <p> Following is a code fragment of the Extension deserializer that deserializes the extension
+           element into a custom object. This is similar to the attribute case but now the node
+           passed is the actual extension element itself.</p>
+
+          <p>
+             <pre>
+                 <code>
+                  public void deserialize(XmlSchemaObject schemaObject, QName name, Node domNode) {
+                     if (CustomElement.CUSTOM_ELT_QNAME.equals(name)){
+                         Element elt = (Element)domNode;
+
+                         CustomElement customElement = new CustomElement();
+                         customElement.setPrefix(elt.getAttribute("prefix"));
+                         customElement.setSuffix(elt.getAttribute("suffix"));
+
+                         //put this in the schema object meta info map
+                         schemaObject.addMetaInfo(CustomElement.CUSTOM_ELT_QNAME,customElement);
+                     }
+    }
+                 </code>
+             </pre>
+          </p>
+          <p>The complete custom attribute deserializer is available in
+          <code>tests.customext.elt.CustomElementDeserializer</code></p>
+         </section>
+
+           <a name="ser"></a>
+        <section name="Code for a Serializer">
+           <p>The serializer needs to implement the
+           <code>org.apache.ws.commons.schema.extensions.ExtensionSerializer</code> interface.
+           Following is a code fragment of the Extension serializer that serializes a given custom
+           object into an  attributeObject. Note that XMLSchema serialization mechanism is to create
+           a DOM tree and serialize it. Hence the custom serializers needs to create the
+           appropriate DOM node and attach it.</p>
+
+          <p>
+             <pre>
+                 <code>
+                 public void serialize(XmlSchemaObject schemaObject, Class classOfType, Node domNode) {
+                        Map metaInfoMap = schemaObject.getMetaInfoMap();
+                        CustomAttribute att = (CustomAttribute)metaInfoMap.get(CustomAttribute.CUSTOM_ATTRIBUTE_QNAME);
+
+                        Element elt = (Element)domNode;
+                        Attr att1 = elt.getOwnerDocument().createAttributeNS(CustomAttribute.CUSTOM_ATTRIBUTE_QNAME.getNamespaceURI(),
+                                                                             CustomAttribute.CUSTOM_ATTRIBUTE_QNAME.getLocalPart());
+                        att1.setValue(att.getPrefix() + ":" + att.getSuffix());
+                        elt.setAttributeNodeNS(att1);
+                    }
+                 </code>
+             </pre>
+          </p>
+          <p>Note that prior knowledge is required about the format of the string of the attribute value. DomNode
+             passed in would be the parent node of the serialized DOM tree.The complete custom attribute serializer is available in
+          <code>tests.customext.attrib.CustomAttributeSerializer</code></p>
+
+          <p> Following is a code fragment of the Extension serializer that serializes the custom object into
+              an extension element. This is similar to the attribute case.</p>
+
+          <p>
+             <pre>
+                 <code>
+                   public void serialize(XmlSchemaObject schemaObject, Class classOfType, Node domNode) {
+                       Map metaInfoMap = schemaObject.getMetaInfoMap();
+                       CustomElement customElt = (CustomElement)metaInfoMap.get(CustomElement.CUSTOM_ELT_QNAME);
+
+                        Element elt = (Element)domNode;
+                        Element extElt = elt.getOwnerDocument().createElementNS(CustomElement.CUSTOM_ELT_QNAME.getNamespaceURI(),
+                                                                             CustomElement.CUSTOM_ELT_QNAME.getLocalPart());
+                        extElt.setAttribute("prefix",customElt.getPrefix());
+                        extElt.setAttribute("suffix",customElt.getSuffix());
+
+                        elt.appendChild(extElt);
+
+                    }
+                 </code>
+             </pre>
+          </p>
+          <p>The complete custom element serializer is available in
+          <code>tests.customext.elt.CustomElementSerializer</code></p>
+         </section>
+
+        <a name="reg"></a>
+        <section name="Registering Types and Using a Custom Extension Registry">
+         <p>Once the serilizers are made they need to be registered with the registry.
+         This can be done by the following way.</p>
+         <p>
+            <pre>
+                <code>
+                   //register our custom type
+                    registerDeserializer(CustomElement.CUSTOM_ELT_QNAME,new CustomElementDeserializer());
+                    registerSerializer(CustomElement.class,new CustomElementSerializer());
+                </code>
+            </pre>
+         </p>
+          <p>It can be a more convenient if the extension types are registered inside a subclass
+          of the <code>org.apache.ws.commons.schema.extensions.ExtensionRegistry</code> to
+          avoid any confusions.</p>
+          <p>If the system property<code>"org.apache.ws.commons.extensions.ExtensionRegistry"</code> is present
+          the extension registry will be instantiated with the class specified. Following is an example of
+          how this can be done</p>
+           <p>
+               <pre>
+                   <code>
+                       System.setProperty(Constants.SystemConstants.EXTENSION_REGISTRY_KEY,
+                                    CustomExtensionRegistry.class.getName());
+                   </code>
+               </pre>
+           </p>
+            <p>This behavior is quite useful when the XMlSchema object models are used internally with
+            no direct access to the extension registry.</p>
+        </section>
+
+         <a name="conclusion"></a>
+        <section name="Conclusion">
+             The extension mechanism of the XMLSchema object model allows the users to add their custom
+             objects to the standard XMLSchema objects.
+         </section>
+    </body>
+
+</document>

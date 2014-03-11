@@ -1,0 +1,7 @@
+<xs:schema targetNamespace="http://foo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>
+      <ns01:bar xmlns:ns01="http://anyuri"/>
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema> 

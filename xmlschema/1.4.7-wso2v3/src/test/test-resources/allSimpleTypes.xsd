@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Licensed to the Apache Software Foundation (ASF) under one
+  ~ or more contributor license agreements. See the NOTICE file
+  ~ distributed with this work for additional information
+  ~ regarding copyright ownership. The ASF licenses this file
+  ~ to you under the Apache License, Version 2.0 (the
+  ~ "License"); you may not use this file except in compliance
+  ~ with the License. You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied. See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!--
+         3.2.1 string
+        3.2.2 boolean
+        3.2.3 decimal
+        3.2.4 float
+        3.2.5 double
+        3.2.6 duration
+        3.2.7 dateTime
+        3.2.8 time
+        3.2.9 date
+        3.2.10 gYearMonth
+        3.2.11 gYear
+        3.2.12 gMonthDay
+        3.2.13 gDay
+        3.2.14 gMonth
+        3.2.15 hexBinary
+        3.2.16 base64Binary
+        3.2.17 anyURI
+        3.2.18 QName
+        3.2.19 NOTATION
+
+     -->
+	<xs:element name="PrimitiveString" type="xs:string"/>
+	<xs:element name="PrimitiveBoolean" type="xs:boolean"/>
+	<xs:element name="PrimitiveDecimal" type="xs:decimal"/>
+	<xs:element name="PrimitiveFloat" type="xs:float"/>
+	<xs:element name="PrimitiveDouble" type="xs:double"/>
+	<xs:element name="PrimitiveDate" type="xs:date"/>
+	<xs:element name="PrimitiveDateTime" type="xs:dateTime"/>
+	<xs:element name="PrimitiveDuration" type="xs:duration"/>
+	<xs:element name="PrimitiveDay" type="xs:gDay"/>
+	<xs:element name="PrimitiveMonth" type="xs:gMonth"/>
+	<xs:element name="PrimitiveMonthDay" type="xs:gMonthDay"/>
+	<xs:element name="PrimitiveYear" type="xs:gYear"/>
+	<xs:element name="PrimitiveBase64Bin" type="xs:base64Binary"/>
+	<xs:element name="PrimitiveHexBin" type="xs:hexBinary"/>
+	<xs:element name="PrimitiveQName" type="xs:QName"/>
+	<xs:element name="PrimitiveNotation" type="xs:NOTATION"/>
+	<xs:element name="PrimitiveAnyURI" type="xs:anyURI"/>
+	<xs:element name="PrimitiveYearMonth" type="xs:gYearMonth"/>
+	<xs:element name="PrimitiveTime" type="xs:time"/>
+	<!--3.3.1 normalizedString
+        3.3.2 token
+        3.3.3 language
+        3.3.4 NMTOKEN
+        3.3.5 NMTOKENS
+        3.3.6 Name
+        3.3.7 NCName
+        3.3.8 ID
+        3.3.9 IDREF
+        3.3.10 IDREFS
+        3.3.11 ENTITY
+        3.3.12 ENTITIES
+        3.3.13 integer
+        3.3.14 nonPositiveInteger
+        3.3.15 negativeInteger
+        3.3.16 long
+        3.3.17 int
+        3.3.18 short
+        3.3.19 byte
+        3.3.20 nonNegativeInteger
+        3.3.21 unsignedLong
+        3.3.22 unsignedInt
+        3.3.23 unsignedShort
+        3.3.24 unsignedByte
+        3.3.25 positiveInteger
+
+-->
+	<xs:element name="DerivedPositiveInteger" type="xs:positiveInteger"/>
+	<xs:element name="DerivedNegativeInteger" type="xs:negativeInteger"/>
+	<xs:element name="DerivedNonNegativeInteger" type="xs:nonNegativeInteger"/>
+	<xs:element name="DerivedNonpositiveInteger" type="xs:nonPositiveInteger"/>
+	<xs:element name="DerivedUnsignedShort" type="xs:unsignedShort"/>
+	<xs:element name="DerivedUnsignedLong" type="xs:unsignedLong"/>
+	<xs:element name="DerivedUnsignedInt" type="xs:unsignedInt"/>
+	<xs:element name="DerivedUnsignedByte" type="xs:unsignedByte"/>
+	<xs:element name="DerivedLong" type="xs:long"/>
+	<xs:element name="DerivedShort" type="xs:short"/>
+	<xs:element name="DerivedInt" type="xs:int"/>
+	<xs:element name="DerivedByte" type="xs:byte"/>
+	<xs:element name="DerivedToken" type="xs:token"/>
+	<xs:element name="DerivedLanguage" type="xs:language"/>
+	<xs:element name="DerivedNMTOKEN" type="xs:NMTOKEN"/>
+	<xs:element name="DerivedNMTOKENS" type="xs:NMTOKENS"/>
+	<xs:element name="DerivedID" type="xs:ID"/>
+	<xs:element name="DerivedIDRef" type="xs:IDREF"/>
+	<xs:element name="DerivedEntity" type="xs:ENTITY"/>
+	<xs:element name="DerivedEntities" type="xs:ENTITIES"/>
+	<xs:element name="DerivedName" type="xs:Name"/>
+	<xs:element name="DerivedNameToken" type="xs:NMTOKEN"/>
+	<xs:element name="DerivedNCName" type="xs:NCName"/>
+	<xs:element name="DerivedNormalizedString" type="xs:normalizedString"/>
+	<xs:element name="DerivedInteger" type="xs:integer"/>
+</xs:schema>
