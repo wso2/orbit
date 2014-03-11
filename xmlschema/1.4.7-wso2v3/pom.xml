@@ -144,8 +144,8 @@
           <extensions>true</extensions>
           <configuration>
               <instructions>
-                  <Import-Package>org.apache.ws.commons.schema*;version=${pom.version},*</Import-Package>
-                  <Export-Package>org.apache.ws.commons.schema*;version="${pom.version}"</Export-Package>
+                  <Import-Package>org.apache.ws.commons.schema*;version=${project.version},*</Import-Package>
+                  <Export-Package>org.apache.ws.commons.schema*;version="${project.version}"</Export-Package>
               </instructions>
           </configuration>
       </plugin>
