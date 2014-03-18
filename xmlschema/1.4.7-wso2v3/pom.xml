@@ -495,7 +495,7 @@
       <url>scpexe://people.apache.org/www/ws.apache.org/commons/XmlSchema</url>
     </site>
   </distributionManagement>-->
-    <distributionManagement>
+    <!--distributionManagement>
         <repository>
             <id>wso2-maven2-repository</id>
             <name>WSO2 Maven2 Repository</name>
@@ -506,7 +506,21 @@
             <name>WSO2 Maven2 Snapshot Repository</name>
             <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/snapshots/maven2/</url>
         </snapshotRepository>
+    </distributionManagement-->
+     <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
     </distributionManagement>
+
     <pluginRepositories>
         <pluginRepository>
             <id>repository.dev.java.net-maven2</id>

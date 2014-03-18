@@ -50,12 +50,26 @@
                 <artifactId>tomcat-embed-jasper</artifactId>
                 <version>7.0.52</version>
             </dependency>
-<dependency>
-	<groupId>org.apache.tomcat</groupId>
-	<artifactId>tomcat-websocket-api</artifactId>
-	<version>7.0.52</version>
-</dependency>
+            <dependency>
+	        <groupId>org.apache.tomcat</groupId>
+		<artifactId>tomcat-websocket-api</artifactId>
+		<version>7.0.52</version>
+	    </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <plugins>
