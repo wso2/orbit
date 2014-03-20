@@ -49,6 +49,11 @@
             <version>${version.tomcat}</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-websocket</artifactId>
+            <version>${version.tomcat}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jasper</artifactId>
             <version>${version.tomcat}</version>
@@ -106,6 +111,11 @@
 			    *;resolution:=optional
                         </Import-Package>
 			<DynamicImport-Package>*</DynamicImport-Package>
+                        <Include-Resource>
+                            @tomcat-embed-websocket-${version.tomcat}.jar!/META-INF/*,
+                            src/main/resources
+                        </Include-Resource>
+
                     </instructions>
                 </configuration>
             </plugin>
