@@ -91,6 +91,16 @@
             <artifactId>drools-compiler</artifactId>
             <version>${drool.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-api</artifactId>
+            <version>${drool.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mvel</groupId>
+            <artifactId>mvel2</artifactId>
+            <version>2.1.9.Final</version>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -109,14 +119,14 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.drools.*;version="6.0.1";-split-package:=merge-first,
+                            org.drools.*;org.kie.*;org.mvel.*;version="6.0.1";-split-package:=merge-first,
                         </Export-Package>
                         <Import-Package>
                             !org.drools.*,
                             *;resolution:=optional
                         </Import-Package>
                         <Embed-Dependency>
-                            drools-jsr94;drools-api;drools-core;drools-compiler;scope=compile|runtime;inline=true;
+                            drools-jsr94;knowledge-api;drools-core;drools-compiler;kie-api;mvel2;scope=compile|runtime;inline=true;
                         </Embed-Dependency>
                         <Include-Resource>
                             META-INF/drools.default.packagebuilder.conf=META-INF/drools.default.packagebuilder.conf
