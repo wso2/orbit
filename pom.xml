@@ -45,6 +45,7 @@
         <module>spring-framework/3.1.0.wso2v2</module>
         <module>jdbc-pool/7.0.34.wso2v2</module>
 	<module>tomcat/7.0.52.wso2v1/</module>
+	<module>waffle/1.6.wso2v1</module>
     </modules>
 
    <build>
