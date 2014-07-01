@@ -47,6 +47,7 @@
 	<module>tomcat/7.0.52.wso2v1/</module>
 	<module>waffle/1.6.wso2v1</module>
 	<module>disruptor/2.10.4-wso2v2</module>
+	<module>cassandra-driver/1.0.5.wso2v1</module>
     </modules>
 
    <build>
