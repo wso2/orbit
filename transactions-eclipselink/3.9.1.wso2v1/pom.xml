@@ -44,19 +44,7 @@
        </repository>
     </repositories>
 
-   <!--distributionManagement>
-       <repository>
-           <id>wso2-maven2-repository</id>
-           <name>WSO2 Maven2 Repository</name>
-           <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/maven2/</url>
-       </repository>
-       <snapshotRepository>
-           <id>wso2-maven2-snapshot-repository</id>
-           <name>WSO2 Maven2 Snapshot Repository</name>
-           <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/snapshots/maven2/</url>
-       </snapshotRepository>
-   </distributionManagement-->
-
+   
      <distributionManagement>
         <repository>
             <id>wso2.releases</id>
@@ -75,7 +63,7 @@
         <dependency>
 		<groupId>com.atomikos</groupId>
 		<artifactId>transactions-eclipselink</artifactId>
-		<version>3.9.1</version>
+		<version>${transaction.version}</version>
 	</dependency>
 
        
@@ -84,7 +72,7 @@
     </dependencies>
 
     <properties>
-        
+      <transaction.version>3.9.1</transaction.version>  
     </properties>
 
     <build>
