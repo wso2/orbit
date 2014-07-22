@@ -50,6 +50,7 @@
 	<module>cassandra-driver/1.0.5.wso2v1</module>
 	<module>rabbit-mq/3.3.4.wso2v1</module>
 	<module>transactions-eclipselink/3.9.1.wso2v1</module>
+        <module>bcprov/1.32.wso2v1</module>
     </modules>
 
    <build>
