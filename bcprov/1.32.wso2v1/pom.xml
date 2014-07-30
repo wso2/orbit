@@ -69,9 +69,9 @@
                         <DynamicImport-Package>*</DynamicImport-Package>
 
                         <!--Add BCKEY.DSA , BCKEY.SF files to the META-INF-->
-                        <Include-Resource>
-                            @bcprov-jdk15-132.jar!/META-INF/BC*
-                        </Include-Resource>
+                        <!--<Include-Resource>-->
+                            <!--@bcprov-jdk15-132.jar!/META-INF/BC*-->
+                        <!--</Include-Resource>-->
                     </instructions>
                 </configuration>
             </plugin>
