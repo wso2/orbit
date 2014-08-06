@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.activiti.wso2</groupId>
+    <artifactId>activiti-rest</artifactId>
+    <version>5.16-wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Activiti REST API</name>
+    <description>
+        This bundle will represent Activiti REST API. Used for supporting BPMN.
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-rest</artifactId>
+            <version>${version.activiti}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            org.activiti.rest.*,
+			    org.restlet.ext.servlet.*
+                        </Export-Package>
+                        <Private-Package>
+                            org.activiti.rest.*,
+                        </Private-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                        <Import-Package>
+                            *;resolution:=optional
+                        </Import-Package>
+                        <Embed-Dependency>*;scope=compile|runtime;inline=false;artifactId=!activiti-engine</Embed-Dependency>
+                        <Embed-Transitive>true</Embed-Transitive>                        
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>Alfresco Maven Repository</id>
+            <url>https://maven.alfresco.com/nexus/content/groups/public/</url>
+        </repository>
+	<repository>
+      		<id>activiti-third-party</id>
+      		<name>Activiti third party</name>
+      		<url>https://maven.alfresco.com/nexus/content/repositories/thirdparty/</url>
+    	</repository>
+	<repository>  
+	   <id>maven-restlet</id>  
+	   <name>Public online Restlet repository</name>  
+	   <url>http://maven.restlet.org</url>  
+	</repository> 
+    </repositories>
+
+    <properties>
+        <version.activiti>5.16</version.activiti>
+    </properties>
+
+</project>
