@@ -17,6 +17,7 @@
         <tomee.version>1.6.0.1</tomee.version>
         <org.apache.openwebbeans.version>1.2.1</org.apache.openwebbeans.version>
     </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -43,8 +44,8 @@
                             javax.ws.rs.*;version="1.1";-split-package:=merge-first,
                             javax.inject.*;version="1.0";-split-package:=merge-first,
                             javax.interceptor.*;version="1.1";-split-package:=merge-first,
-                            org.apache.bval.*;version="1.0.0";-split-package:=merge-first,
-                            javax.decorator.*;version="1.0.0";-split-package:=merge-first,
+                            org.apache.bval.*;version="1.0";-split-package:=merge-first,
+                            javax.decorator.*;version="1.0";-split-package:=merge-first,
                             javax.management.j2ee.*;version="1.0.0";-split-package:=merge-first,
                             org.apache.myfaces.*;version="2.1.13";-split-package:=merge-first,
                             javax.faces.*;version="2.0";-split-package:=merge-first,
@@ -70,7 +71,6 @@
                         <Embed-Dependency>
                             sxc-runtime;scope=compile|runtime;inline=false;,
                             sxc-jaxb-core;scope=compile|runtime;inline=false;,
-                            commons-beanutils;scope=compile|runtime;inline=false;
                         </Embed-Dependency>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
@@ -114,11 +114,6 @@
             <groupId>org.apache.bval</groupId>
             <artifactId>bval-jsr303</artifactId>
             <version>0.5</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>1.8.3</version>
         </dependency>
     </dependencies>
 
