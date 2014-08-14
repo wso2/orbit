@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.wso2.tomee</groupId>
+    <artifactId>tomee</artifactId>
+    <version>1.6.0.1.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 TomEE</name>
+    <url>http://wso2.org</url>
+
+    <properties>
+        <openejb.version>4.6.0.1</openejb.version>
+        <myfaces.version>2.1.13</myfaces.version>
+        <tomee.version>1.6.0.1</tomee.version>
+        <org.apache.openwebbeans.version>1.2.1</org.apache.openwebbeans.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Import-Package>*;resolution:=optional</Import-Package>
+                        <Export-Package>
+                            org.apache.tomee.*;version="1.6.0.1",
+                            org.apache.openejb.*;version="4.6.0.1";-split-package:=merge-first,
+                            org.apache.xbean.*;version="3.15";-split-package:=merge-first,
+                            javax.ejb.*;version="3.1";-split-package:=merge-first,
+                            javax.enterprise.*;version="1.0";-split-package:=merge-first,
+                            javax.validation.*;version="1.0";-split-package:=merge-first,
+                            javax.resource.*;version="1.6";-split-package:=merge-first,
+                            org.apache.webbeans.*;version="1.2.1",
+                            org.apache.geronimo.transaction.*;version="3.1.1";-split-package:=merge-first,
+                            javax.persistence.*;version="2.0";-split-package:=merge-first,
+                            javax.security.jacc.*;version="1.4";-split-package:=merge-first,
+                            javax.ws.rs.*;version="1.1";-split-package:=merge-first,
+                            javax.inject.*;version="1.0";-split-package:=merge-first,
+                            javax.interceptor.*;version="1.1";-split-package:=merge-first,
+                            org.apache.bval.*;version="1.0";-split-package:=merge-first,
+                            javax.decorator.*;version="1.0";-split-package:=merge-first,
+                            javax.management.j2ee.*;version="1.0.0";-split-package:=merge-first,
+                            org.apache.myfaces.*;version="2.1.13";-split-package:=merge-first,
+                            javax.faces.*;version="2.0";-split-package:=merge-first,
+                            org.apache.openjpa.*;version="2.3.0";-split-package:=merge-first,
+                            org.hsqldb.*;version="1.0.0";-split-package:=merge-first
+                        </Export-Package>
+
+                        <Private-Package>
+                        </Private-Package>
+
+                        <Include-Resource>
+                            {maven-resources},
+                            @openejb-core-${openejb.version}.jar!/**,
+                            @tomee-webapp-${tomee.version}.jar!/**,
+                            @bval-jsr303-0.5.jar!/META-INF/**,
+                            @openwebbeans-impl-1.2.1.jar!/META-INF/**,
+                            @openwebbeans-impl-1.2.1.jar!/openwebbeans/**,
+                            @myfaces-impl-2.1.13.jar!/META-INF/**,
+                            @myfaces-api-2.1.13.jar!/META-INF/**,
+                            @tomee-myfaces-1.6.0.1.jar!/META-INF/**,
+                            @openjpa-2.3.0-nonfinal-1540826.jar!/META-INF/** 
+                        </Include-Resource>
+                        <Embed-Dependency>
+                            sxc-runtime;scope=compile|runtime;inline=false;,
+                            sxc-jaxb-core;scope=compile|runtime;inline=false;,
+                        </Embed-Dependency>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.openejb</groupId>
+            <artifactId>tomee-webapp</artifactId>
+            <version>${tomee.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.openejb</groupId>
+            <artifactId>tomee-catalina</artifactId>
+            <version>${tomee.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.openejb.patch</groupId>
+            <artifactId>openjpa</artifactId>
+            <version>2.3.0-nonfinal-1540826</version>
+        </dependency>
+        <dependency>
+            <groupId>org.metatype.sxc</groupId>
+            <artifactId>sxc-runtime</artifactId>
+            <version>0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.metatype.sxc</groupId>
+            <artifactId>sxc-jaxb-core</artifactId>
+            <version>0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.bval</groupId>
+            <artifactId>bval-core</artifactId>
+            <version>0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.bval</groupId>
+            <artifactId>bval-jsr303</artifactId>
+            <version>0.5</version>
+        </dependency>
+    </dependencies>
+
+</project>
