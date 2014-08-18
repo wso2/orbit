@@ -73,6 +73,8 @@
                             sxc-jaxb-core;scope=compile|runtime;inline=false;,
                         </Embed-Dependency>
                         <DynamicImport-Package>*</DynamicImport-Package>
+                        <Bundle-Classpath>patch.jar,.</Bundle-Classpath>
+
                     </instructions>
                 </configuration>
             </plugin>
