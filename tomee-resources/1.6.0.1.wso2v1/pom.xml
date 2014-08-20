@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.wso2.tomee</groupId>
+    <artifactId>tomee-resources</artifactId>
+    <version>${tomee.version}.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 TomEE Resources Fragment</name>
+    <url>http://wso2.org</url>
+
+    <properties>
+        <openejb.version>4.6.0.1</openejb.version>
+        <myfaces.version>2.1.13</myfaces.version>
+        <tomee.version>1.6.0.1</tomee.version>
+        <org.apache.openwebbeans.version>1.2.1</org.apache.openwebbeans.version>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Import-Package>*;resolution:=optional</Import-Package>
+                        <Export-Package>
+                        </Export-Package>
+                        <Include-Resource>
+                            {maven-resources},
+                            @openejb-core-${openejb.version}.jar!/**,
+                            @tomee-myfaces-${tomee.version}.jar!/META-INF/services/*
+                        </Include-Resource>
+                        <Embed-Dependency>
+                        </Embed-Dependency>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                        <Fragment-Host>tomcat</Fragment-Host>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.openejb</groupId>
+            <artifactId>openejb-core</artifactId>
+            <version>${openejb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.openejb</groupId>
+            <artifactId>tomee-myfaces</artifactId>
+            <version>${tomee.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
