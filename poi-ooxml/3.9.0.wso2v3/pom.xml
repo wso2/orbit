@@ -44,32 +44,34 @@
        </repository>
     </repositories>
 
-   <distributionManagement>
-       <repository>
-           <id>wso2-maven2-repository</id>
-           <name>WSO2 Maven2 Repository</name>
-           <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/maven2/</url>
-       </repository>
-       <snapshotRepository>
-           <id>wso2-maven2-snapshot-repository</id>
-           <name>WSO2 Maven2 Snapshot Repository</name>
-           <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/snapshots/maven2/</url>
-       </snapshotRepository>
-   </distributionManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>wso2.releases</id>
+			<name>WSO2 internal Repository</name>
+			<url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>wso2.snapshots</id>
+			<name>Apache Snapshot Repository</name>
+			<url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 
     <dependencies>
-	<dependency>
-		<groupId>org.apache.poi</groupId>
-		<artifactId>poi-ooxml</artifactId>
-		<version>3.9</version>
-	</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+		</dependency>
         <dependency>
-		<groupId>org.apache.poi</groupId>
-		<artifactId>poi-ooxml-schemas</artifactId>
-		<version>3.9</version>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.9</version>
         </dependency>                       
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -84,7 +86,7 @@
                         <Fragment-Host>poi</Fragment-Host>                       
                         <Export-Package> 
                             !org.apache.commons.codec.*,                           
-			    org.apache.poi.*,
+			    			org.apache.poi.*,
                             org.openxmlformats.schemas.*,
                             schemaorg_apache_xmlbeans.*,
                             schemasMicrosoftComOfficeExcel.*,
