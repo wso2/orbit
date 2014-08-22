@@ -15,7 +15,6 @@
         <openejb.version>4.6.0.1</openejb.version>
         <myfaces.version>2.1.13</myfaces.version>
         <tomee.version>1.6.0.1</tomee.version>
-        <org.apache.openwebbeans.version>1.2.1</org.apache.openwebbeans.version>
     </properties>
     <build>
         <plugins>
@@ -32,7 +31,11 @@
                         </Export-Package>
                         <Include-Resource>
                             {maven-resources},
-                            @openejb-core-${openejb.version}.jar!/**,
+                            @openejb-core-${openejb.version}.jar!/META-INF/**, 
+                            @openejb-core-${openejb.version}.jar!/schema/**, 
+                            @openejb-core-${openejb.version}.jar!/*.properties, 
+                            @openejb-core-${openejb.version}.jar!/*.conf*, 
+                            @openejb-core-${openejb.version}.jar!/*.exclusions, 
                             @tomee-myfaces-${tomee.version}.jar!/META-INF/services/*
                         </Include-Resource>
                         <Embed-Dependency>
