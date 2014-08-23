@@ -6,16 +6,20 @@
 
     <groupId>org.wso2.tomee</groupId>
     <artifactId>tomee</artifactId>
-    <version>1.6.0.1.wso2v1</version>
+    <version>${tomee.version}.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 TomEE</name>
     <url>http://wso2.org</url>
 
     <properties>
         <openejb.version>4.6.0.1</openejb.version>
-        <myfaces.version>2.1.13</myfaces.version>
         <tomee.version>1.6.0.1</tomee.version>
-        <org.apache.openwebbeans.version>1.2.1</org.apache.openwebbeans.version>
+        <myfaces.version>2.1.13</myfaces.version>
+        <openwebbeans.version>1.2.1</openwebbeans.version>
+        <openjpa.version>2.3.0-nonfinal-1540826</openjpa.version>
+        <bval.version>0.5</bval.version>
+        <sxc.version>0.8</sxc.version>
+        <xbean.version>3.15</xbean.version>
 
         <!-- START CXF specific version properties -->
         <cxf.version>2.7.12</cxf.version>
@@ -40,39 +44,44 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Import-Package>*;resolution:=optional</Import-Package>
+                        <Import-Package>
+                            !org.apache.cxf.*,
+                            *;resolution:=optional
+                        </Import-Package>
                         <Export-Package>
-                            org.apache.tomee.*;version="1.6.0.1",
-                            org.apache.openejb.*;version="4.6.0.1";-split-package:=merge-first,
+                            org.apache.tomee.*;version="${tomee.version}",
+                            org.apache.openejb.*;version="${openejb.version}";-split-package:=merge-first,
                             org.apache.xbean.*;version="3.15";-split-package:=merge-first,
+                            org.apache.webbeans.*;version="${openwebbeans.version}",
+                            org.apache.geronimo.transaction.*;version="3.1.1";-split-package:=merge-first,
+                            org.apache.bval.*;version="1.0";-split-package:=merge-first,
+                            org.apache.myfaces.*;version="${myfaces.version}";-split-package:=merge-first,
+                            org.apache.openjpa.*;version="2.3.0";-split-package:=merge-first,
+                            org.hsqldb.*;version="1.0.0";-split-package:=merge-first,
+
+                            org.apache.openejb.server.cxf.transport.*;version="${tomee.version}";-split-package:=merge-first,
+                            org.apache.openejb.server.cxf.rs.*;version="${tomee.version}";-split-package:=merge-first,
+                            org.apache.openejb.server.cxf.*;version="${tomee.version}";-split-package:=merge-first,
+                            org.apache.openejb.server.rest.*;version="${tomee.version}";-split-package:=merge-first,
+                            org.apache.openejb.server.webservices.*;version="${tomee.version}";-split-package:=merge-first,
+                            org.apache.openejb.core.webservices.*;version="${tomee.version}";-split-package:=merge-first,
+                            org.apache.tomee.webservices;version="${tomee.version}";-split-package:=merge-first,
+
                             javax.ejb.*;version="3.1";-split-package:=merge-first,
                             javax.enterprise.*;version="1.0";-split-package:=merge-first,
                             javax.validation.*;version="1.0";-split-package:=merge-first,
                             javax.resource.*;version="1.6";-split-package:=merge-first,
-                            org.apache.webbeans.*;version="1.2.1",
-                            org.apache.geronimo.transaction.*;version="3.1.1";-split-package:=merge-first,
                             javax.persistence.*;version="2.0";-split-package:=merge-first,
                             javax.security.jacc.*;version="1.4";-split-package:=merge-first,
                             javax.ws.rs.*;version="1.1";-split-package:=first,
                             javax.inject.*;version="1.0";-split-package:=merge-first,
                             javax.interceptor.*;version="1.1";-split-package:=merge-first,
-                            org.apache.bval.*;version="1.0";-split-package:=merge-first,
                             javax.decorator.*;version="1.0";-split-package:=merge-first,
                             javax.management.j2ee.*;version="1.0.0";-split-package:=merge-first,
-                            org.apache.myfaces.*;version="2.1.13";-split-package:=merge-first,
                             javax.faces.*;version="2.0";-split-package:=merge-first,
-                            org.apache.openjpa.*;version="2.3.0";-split-package:=merge-first,
-                            org.hsqldb.*;version="1.0.0";-split-package:=merge-first,
 
-                            org.apache.openejb.server.cxf.transport.*;version="1.6.0.1";-split-package:=merge-first,
-                            org.apache.openejb.server.cxf.rs.*;version="1.6.0.1";-split-package:=merge-first,
-                            org.apache.openejb.server.cxf.*;version="1.6.0.1";-split-package:=merge-first,
-                            org.apache.openejb.server.rest.*;version="1.6.0.1";-split-package:=merge-first,
-                            org.apache.openejb.server.webservices.*;version="1.6.0.1";-split-package:=merge-first,
-                            org.apache.openejb.core.webservices.*;version="1.6.0.1";-split-package:=merge-first,
-                            org.apache.tomee.webservices;version="1.6.0.1";-split-package:=merge-first,
-                            <!-- TODO: don't include javax.* packages specified below in this bundle. 
-                            Have separate bundles for each spec. -->
+                            <!-- include javax.* packages specified below in a separate bundle? 
+                            How about separate bundle for each spec. -KasunG -->
                             javax.xml.rpc.*;version="1.1";-split-package:=merge-first,
                             javax.xml.ws.handler,
                             javax.xml.ws.soap,
@@ -87,13 +96,13 @@
                             {maven-resources},
                             @openejb-core-${openejb.version}.jar!/**,
                             @tomee-webapp-${tomee.version}.jar!/**,
-                            @bval-jsr303-0.5.jar!/META-INF/**,
-                            @openwebbeans-impl-1.2.1.jar!/META-INF/**,
-                            @openwebbeans-impl-1.2.1.jar!/openwebbeans/**,
-                            @myfaces-impl-2.1.13.jar!/META-INF/**,
-                            @myfaces-api-2.1.13.jar!/META-INF/**,
-                            @tomee-myfaces-1.6.0.1.jar!/META-INF/**,
-                            @openjpa-2.3.0-nonfinal-1540826.jar!/META-INF/**,
+                            @bval-jsr303-${bval.version}.jar!/META-INF/**,
+                            @openwebbeans-impl-${openwebbeans.version}.jar!/META-INF/**,
+                            @openwebbeans-impl-${openwebbeans.version}.jar!/openwebbeans/**,
+                            @myfaces-impl-${myfaces.version}.jar!/META-INF/**,
+                            @myfaces-api-${myfaces.version}.jar!/META-INF/**,
+                            @tomee-myfaces-${tomee.version}.jar!/META-INF/**,
+                            @openjpa-${openjpa.version}.jar!/META-INF/**,
                             @openejb-cxf-${openejb.version}.jar!/META-INF/**,
                             @openejb-cxf-rs-${openejb.version}.jar!/META-INF/**
                         </Include-Resource>
@@ -128,7 +137,6 @@
                            <!-- END CXF specific dependencies -->
 
                         </Embed-Dependency>
-                            <!-- jaxb-xjc;scope=compile|runtime;inline=false; -->
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Bundle-Classpath>patch.jar,.</Bundle-Classpath>
 
@@ -157,27 +165,65 @@
         <dependency>
             <groupId>org.apache.openejb.patch</groupId>
             <artifactId>openjpa</artifactId>
-            <version>2.3.0-nonfinal-1540826</version>
+            <version>${openjpa.version}</version>
         </dependency>
         <dependency>
             <groupId>org.metatype.sxc</groupId>
             <artifactId>sxc-runtime</artifactId>
-            <version>0.8</version>
+            <version>${sxc.version}</version>
         </dependency>
         <dependency>
             <groupId>org.metatype.sxc</groupId>
             <artifactId>sxc-jaxb-core</artifactId>
-            <version>0.8</version>
+            <version>${sxc.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.openwebbeans</groupId>
+            <artifactId>openwebbeans-impl</artifactId>
+            <version>${openwebbeans.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.openwebbeans</groupId>
+            <artifactId>openwebbeans-spi</artifactId>
+            <version>${openwebbeans.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.xbean</groupId>
+            <artifactId>xbean-asm4-shaded</artifactId>
+            <version>${xbean.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xbean</groupId>
+            <artifactId>xbean-bundleutils</artifactId>
+            <version>${xbean.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xbean</groupId>
+            <artifactId>xbean-finder-shaded</artifactId>
+            <version>${xbean.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xbean</groupId>
+            <artifactId>xbean-naming</artifactId>
+            <version>${xbean.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xbean</groupId>
+            <artifactId>xbean-reflect</artifactId>
+            <version>${xbean.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.bval</groupId>
             <artifactId>bval-core</artifactId>
-            <version>0.5</version>
+            <version>${bval.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.bval</groupId>
             <artifactId>bval-jsr303</artifactId>
-            <version>0.5</version>
+            <version>${bval.version}</version>
         </dependency>
 
         <dependency>
