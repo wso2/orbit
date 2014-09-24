@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.log4j.wso2</groupId>
     <artifactId>log4j</artifactId>
-    <version>1.2.17.wso2v1</version>
+    <version>${orbit.version.log4j}</version>
     <packaging>bundle</packaging>
     <name>Apache log4j</name>
     <description>Apache log4j</description>
@@ -31,7 +31,7 @@
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <version>${version.log4j}</version>
         </dependency>
     </dependencies>
 
@@ -50,14 +50,15 @@
 
     <distributionManagement>
         <repository>
-            <id>wso2-maven2-repository</id>
-            <name>WSO2 Maven2 Repository</name>
-            <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/maven2/</url>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
+
         <snapshotRepository>
-            <id>wso2-maven2-snapshot-repository</id>
-            <name>WSO2 Maven2 Snapshot Repository</name>
-            <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/snapshots/maven2/</url>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -71,19 +72,23 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Name>${pom.artifactId}</Bundle-Name>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Import-Package>
                             !org.apache.log4j.*,
                             *;resolution:=optional
                         </Import-Package>
                         <Export-Package>
-                            org.apache.log4j.*;version="1.2.17"
+                            org.apache.log4j.*;version="${version.log4j}"
                         </Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+    <properties>
+        <version.log4j>1.2.17</version.log4j>
+        <orbit.version.log4j>${version.log4j}.wso2v1</orbit.version.log4j>
+    </properties>
 </project>
 
