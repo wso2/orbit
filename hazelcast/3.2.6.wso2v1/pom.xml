@@ -50,7 +50,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            com.hazelcast.*
+                            com.hazelcast.*;version="${version.hazelcast}"
                         </Export-Package>
                         <Import-Package>
             			    !sun.misc,
