@@ -31,43 +31,33 @@
     </description>
     <url>http://wso2.org</url>
 
-    <repositories>
-       <repository>
-           <id>wso2-nexus</id>
-           <name>WSO2 internal Repository</name>
-           <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-           <releases>
-               <enabled>true</enabled>
-               <updatePolicy>daily</updatePolicy>
-               <checksumPolicy>ignore</checksumPolicy>
-           </releases>
-       </repository>
-    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
 
-   <distributionManagement>
-       <repository>
-           <id>wso2-maven2-repository</id>
-           <name>WSO2 Maven2 Repository</name>
-           <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/maven2/</url>
-       </repository>
-       <snapshotRepository>
-           <id>wso2-maven2-snapshot-repository</id>
-           <name>WSO2 Maven2 Snapshot Repository</name>
-           <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/snapshots/maven2/</url>
-       </snapshotRepository>
-   </distributionManagement>
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <dependencies>
-	<dependency>
-		<groupId>org.apache.poi</groupId>
-		<artifactId>poi-ooxml</artifactId>
-		<version>3.9</version>
-	</dependency>
         <dependency>
-		<groupId>org.apache.poi</groupId>
-		<artifactId>poi-ooxml-schemas</artifactId>
-		<version>3.9</version>
-        </dependency>                       
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.9</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml-schemas</artifactId>
+            <version>3.9</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -80,9 +70,9 @@
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
-                        <Fragment-Host>poi</Fragment-Host>                       
-                        <Export-Package> 
-                            !org.apache.commons.codec.*,                           
+                        <Fragment-Host>poi</Fragment-Host>
+                        <Export-Package>
+                            !org.apache.commons.codec.*,
                             org.apache.poi.*,
                             org.openxmlformats.schemas.*,
                             schemaorg_apache_xmlbeans.*,
