@@ -57,7 +57,6 @@
        </snapshotRepository>
    </distributionManagement>
 
-
     <dependencies>
 	<dependency>
 		<groupId>org.apache.poi</groupId>
@@ -92,11 +91,26 @@
                             schemasMicrosoftComVml.*
                         </Export-Package>
                         <Import-Package>
+                            !javax.crypto.*,
+                            !javax.imageio.*,
+                            !javax.swing.*,
+                            !javax.xml.*,
+                            !junit.*,
+                            !org.apache.commons.*,
                             !org.apache.poi.*,
+                            !org.apache.xmlbeans.*,
+                            !org.dom4j.*,
                             !org.openxmlformats.schemas.*,
-                            !org.apache.commons.codec.*,
+                            !org.w3c.dom.*,
+                            !org.xml.sax.*,
+                            !schemaorg_apache_xmlbeans.*,
+                            !schemasMicrosoftComOfficeExcel.*,
+                            !schemasMicrosoftComOfficeOffice.*,
+                            !schemasMicrosoftComOfficePowerpoint.*,
+                            !schemasMicrosoftComOfficeWord.*,
+                            !schemasMicrosoftComVml.*,
                         </Import-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
+                        <!--<DynamicImport-Package>*</DynamicImport-Package>-->
                     </instructions>
                 </configuration>
             </plugin>
