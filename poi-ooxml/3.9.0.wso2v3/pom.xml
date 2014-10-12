@@ -59,7 +59,7 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
-    
+
     <build>
         <plugins>
             <plugin>
@@ -101,7 +101,6 @@
                             !schemasMicrosoftComOfficeWord.*,
                             !schemasMicrosoftComVml.*,
                         </Import-Package>
-                        <!--<DynamicImport-Package>*</DynamicImport-Package>-->
                     </instructions>
                 </configuration>
             </plugin>
