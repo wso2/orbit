@@ -1,4 +1,3 @@
-
 <!--
  ~ Copyright (c) 2005-2014, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
@@ -74,7 +73,7 @@
                         <Fragment-Host>poi</Fragment-Host>
                         <Export-Package>
                             !org.apache.commons.codec.*,
-                            org.apache.poi.*,
+                            org.apache.poi.*;-split-package:=merge-last,
                             org.openxmlformats.schemas.*,
                             schemaorg_apache_xmlbeans.*,
                             schemasMicrosoftComOfficeExcel.*,
