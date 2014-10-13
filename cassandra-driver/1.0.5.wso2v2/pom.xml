@@ -34,8 +34,7 @@
         <dependency>
             <groupId>com.datastax.cassandra</groupId>
             <artifactId>cassandra-driver-core</artifactId>
-            <version>1.0.5</version>
-            <optional>true</optional>
+            <version>${cql.driver.version}</version>
         </dependency>
 
         <dependency>
@@ -172,13 +171,12 @@
         <guava.osgi.version.range>[14.0.1,14.1.0)</guava.osgi.version.range>
         <thrift.osgi.version.range>[0.7.wso2v1,0.8.wso2v1)</thrift.osgi.version.range>
         <antlr.osgi.version>3.2.0.wso2v1</antlr.osgi.version>
-        <cql.driver.osgi.version>1.0.5.wso2v2</cql.driver.osgi.version>
         <cassandra.osgi.version>1.2.13.wso2v3</cassandra.osgi.version>
         <netty.version>3.9.0.Final</netty.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cassandra.version>1.2.13</cassandra.version>
         <cql.driver.version>1.0.5</cql.driver.version>
-        <cql.osgi.version>1.0.5.wso2v2</cql.osgi.version>
+        <cql.driver.osgi.version>1.0.5.wso2v2</cql.driver.osgi.version>
         <cassandra.version.range>[1.2.13,2.0)</cassandra.version.range>
         <netty.version.range>[3.7,4)</netty.version.range>
         <jackson.version>1.9.2</jackson.version>
