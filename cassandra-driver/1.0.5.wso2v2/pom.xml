@@ -132,6 +132,7 @@
                         <Export-Package>
                             com.datastax.driver.core;version="${cql.driver.osgi.version}",
                             com.datastax.driver.core.policies;version="${cql.driver.osgi.version}",
+                            com.datastax.driver.core.exceptions;version="${cql.driver.osgi.version}",
                             com.datastax.driver.core.querybuilder;version="${cql.driver.osgi.version}",
                             com.datastax.driver.core.utils;version="${cql.driver.osgi.version}"
                         </Export-Package>
@@ -171,7 +172,7 @@
         <guava.osgi.version.range>[14.0.1,14.1.0)</guava.osgi.version.range>
         <thrift.osgi.version.range>[0.7.wso2v1,0.8.wso2v1)</thrift.osgi.version.range>
         <antlr.osgi.version>3.2.0.wso2v1</antlr.osgi.version>
-        <cassandra.osgi.version>1.2.13.wso2v3</cassandra.osgi.version>
+        <cassandra.osgi.version>1.2.13.wso2v4</cassandra.osgi.version>
         <netty.version>3.9.0.Final</netty.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cassandra.version>1.2.13</cassandra.version>
