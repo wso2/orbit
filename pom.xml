@@ -48,7 +48,7 @@
 	<module>tomcat/7.0.52.wso2v1/</module>
 	<module>waffle/1.6.wso2v1</module>
 	<module>disruptor/2.10.4-wso2v2</module>
-	<module>cassandra-driver/1.0.5.wso2v1</module>
+	<module>cassandra-driver/1.0.8.wso2v1</module>
 	<module>rabbit-mq/3.3.4.wso2v1</module>
 	<module>transactions-eclipselink/3.9.1.wso2v1</module>
         <module>bcprov/1.32.wso2v1</module>
