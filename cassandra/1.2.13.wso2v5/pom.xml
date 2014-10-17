@@ -64,8 +64,7 @@
 			    org.antlr.*;version="${antlr.osgi.version}",
 			    org.apache.thrift.*;version="${thrift.osgi.version.range}",
 			    org.jboss.netty.logging.*;version="${netty.version}",
-                            !org.apache.cassandra.*,
-                            *;resolution:=optional
+                            !org.apache.cassandra.*
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
