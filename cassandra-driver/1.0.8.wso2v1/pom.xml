@@ -1,0 +1,250 @@
+<!--
+    ~ Copyright (c) 2005-2011, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+    ~
+    ~ WSO2 Inc. licenses this file to you under the Apache License,
+    ~ Version 2.0 (the "License"); you may not use this file except
+    ~ in compliance with the License.
+    ~ You may obtain a copy of the License at
+    ~
+    ~    http://www.apache.org/licenses/LICENSE-2.0
+    ~
+    ~ Unless required by applicable law or agreed to in writing,
+    ~ software distributed under the License is distributed on an
+    ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    ~ KIND, either express or implied.  See the License for the
+    ~ specific language governing permissions and limitations
+    ~ under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.datastax.cassandra.wso2</groupId>
+    <artifactId>cql-driver</artifactId>
+    <version>1.0.8.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>DataStax Java Driver for Apache Cassandra</name>
+    <description>A driver for Apache Cassandra 1.2+ that works exclusively with the Cassandra Query
+        Language version 3 (CQL3) and Cassandra's binary protocol.
+    </description>
+    <url>https://github.com/datastax/java-driver</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.datastax.cassandra</groupId>
+            <artifactId>cassandra-driver-core</artifactId>
+            <version>${cql.driver.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cassandra.wso2</groupId>
+            <artifactId>apache-cassandra</artifactId>
+            <version>${cassandra.osgi.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty</artifactId>
+            <version>${netty.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cassandra</groupId>
+            <artifactId>cassandra-thrift</artifactId>
+            <version>${cassandra.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.thrift</groupId>
+            <artifactId>libthrift</artifactId>
+            <!-- Leave at 0.7.0 for Cassandra compatibility -->
+            <version>${thrift.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <!-- Leave at 1.9.2 for Cassandra compatibility -->
+            <version>${jackson.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.yammer.metrics</groupId>
+            <artifactId>metrics-core</artifactId>
+            <version>${yammer.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>${jackson.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>snappy-java.wso2</groupId>
+            <artifactId>snappy-java</artifactId>
+            <version>${snappy.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>snaptree.wso2</groupId>
+            <artifactId>snaptree</artifactId>
+            <version>${snaptree.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Private-Package>com.datastax.driver.core.*</Private-Package>
+                        <Export-Package>
+                            com.datastax.driver.core;version="${cql.driver.osgi.version}",
+                            com.datastax.driver.core.policies;version="${cql.driver.osgi.version}",
+                            com.datastax.driver.core.exceptions;version="${cql.driver.osgi.version}",
+                            com.datastax.driver.core.querybuilder;version="${cql.driver.osgi.version}",
+                            com.datastax.driver.core.utils;version="${cql.driver.osgi.version}"
+                        </Export-Package>
+                        <Import-Package>
+                            com.google.common.base;version="${guava.osgi.version.range}",
+                            com.google.common.collect;version="${guava.osgi.version.range}",
+                            com.google.common.util.concurrent;version="${guava.osgi.version.range}",
+                            com.yammer.metrics.core;version="${yammer.version.range}",
+                            com.yammer.metrics.reporting;version="${yammer.version.range}",
+                            javax.net.ssl,
+                            org.apache.cassandra.cql3;version="${cassandra.version.range}",
+                            org.apache.cassandra.db;version="${cassandra.version.range}",
+                            org.apache.cassandra.db.marshal;version="${cassandra.version.range}",
+                            org.apache.cassandra.exceptions;version="${cassandra.version.range}",
+                            org.apache.cassandra.service;version="${cassandra.version.range}",
+                            org.apache.cassandra.transport;version="${cassandra.version.range}",
+                            org.apache.cassandra.transport.messages;version="${cassandra.version.range}",
+                            org.apache.cassandra.utils;version="${cassandra.version.range}",
+                            org.codehaus.jackson;version="${jackson.version.range}",
+                            org.codehaus.jackson.map;version="${jackson.version.range}",
+                            org.jboss.netty.bootstrap;version="${netty.version.range}",
+                            org.jboss.netty.channel;version="${netty.version.range}",
+                            org.jboss.netty.channel.group;version="${netty.version.range}",
+                            org.jboss.netty.channel.socket.nio;version="${netty.version.range}",
+                            org.jboss.netty.handler.ssl;version="${netty.version.range}",
+                            org.jboss.netty.util;version="${netty.version.range}",
+                            org.slf4j;version="${slf4j.version.range}"
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <properties>
+        <guava.version>16.0.1</guava.version>
+        <guava.osgi.version.range>[16.0.1,16.1.0)</guava.osgi.version.range>
+        <thrift.osgi.version.range>[0.7.wso2v1,0.8.wso2v1)</thrift.osgi.version.range>
+        <antlr.osgi.version>3.2.0.wso2v1</antlr.osgi.version>
+        <cassandra.osgi.version>1.2.13.wso2v5</cassandra.osgi.version>
+        <netty.version>3.9.0.Final</netty.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <cassandra.version>1.2.13</cassandra.version>
+        <cql.driver.version>1.0.8</cql.driver.version>
+        <cql.driver.osgi.version>1.0.8.wso2v1</cql.driver.osgi.version>
+        <cassandra.version.range>[1.2.13,2.0)</cassandra.version.range>
+        <netty.version.range>[3.7,4)</netty.version.range>
+        <jackson.version>1.9.2</jackson.version>
+        <jackson.version.range>[1.9,2)</jackson.version.range>
+        <slf4j.version>1.7.2</slf4j.version>
+        <slf4j.version.range>[1.7,2)</slf4j.version.range>
+        <yammer.version>2.2.0</yammer.version>
+        <yammer.version.range>[2.0.0,2.2.0)</yammer.version.range>
+        <snappy.version>1.0.4.1.wso2v1</snappy.version>
+        <snaptree.version>0.1.wso2v1</snaptree.version>
+        <thrift.version>0.7.0</thrift.version>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>Apache License Version 2.0</comments>
+        </license>
+    </licenses>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <developers>
+        <developer>
+            <name>Various</name>
+            <organization>DataStax</organization>
+        </developer>
+    </developers>
+</project>
