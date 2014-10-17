@@ -41,24 +41,28 @@
             <groupId>org.apache.cassandra.wso2</groupId>
             <artifactId>apache-cassandra</artifactId>
             <version>${cassandra.osgi.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty</artifactId>
             <version>${netty.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.apache.cassandra</groupId>
             <artifactId>cassandra-thrift</artifactId>
             <version>${cassandra.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -72,6 +76,7 @@
                     <artifactId>slf4j-api</artifactId>
                 </exclusion>
             </exclusions>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -79,42 +84,49 @@
             <artifactId>jackson-core-asl</artifactId>
             <!-- Leave at 1.9.2 for Cassandra compatibility -->
             <version>${jackson.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>com.yammer.metrics</groupId>
             <artifactId>metrics-core</artifactId>
             <version>${yammer.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
             <version>${jackson.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>snappy-java.wso2</groupId>
             <artifactId>snappy-java</artifactId>
             <version>${snappy.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>snaptree.wso2</groupId>
             <artifactId>snaptree</artifactId>
             <version>${snaptree.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -140,9 +152,10 @@
                             com.google.common.base;version="${guava.osgi.version.range}",
                             com.google.common.collect;version="${guava.osgi.version.range}",
                             com.google.common.util.concurrent;version="${guava.osgi.version.range}",
-                            com.yammer.metrics.core,com.yammer.metrics.reporting,
+                            com.yammer.metrics.core;version="${yammer.version.range}",
+                            com.yammer.metrics.reporting;version="${yammer.version.range}",
                             javax.net.ssl,
-                            org.apache.cassandra.cql3,
+                            org.apache.cassandra.cql3;version="${cassandra.version.range}",
                             org.apache.cassandra.db;version="${cassandra.version.range}",
                             org.apache.cassandra.db.marshal;version="${cassandra.version.range}",
                             org.apache.cassandra.exceptions;version="${cassandra.version.range}",
@@ -172,7 +185,7 @@
         <guava.osgi.version.range>[16.0.1,16.1.0)</guava.osgi.version.range>
         <thrift.osgi.version.range>[0.7.wso2v1,0.8.wso2v1)</thrift.osgi.version.range>
         <antlr.osgi.version>3.2.0.wso2v1</antlr.osgi.version>
-        <cassandra.osgi.version>1.2.13.wso2v4</cassandra.osgi.version>
+        <cassandra.osgi.version>1.2.13.wso2v5</cassandra.osgi.version>
         <netty.version>3.9.0.Final</netty.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cassandra.version>1.2.13</cassandra.version>
@@ -185,6 +198,7 @@
         <slf4j.version>1.7.2</slf4j.version>
         <slf4j.version.range>[1.7,2)</slf4j.version.range>
         <yammer.version>2.2.0</yammer.version>
+        <yammer.version.range>[2.0.0,2.2.0)</yammer.version.range>
         <snappy.version>1.0.4.1.wso2v1</snappy.version>
         <snaptree.version>0.1.wso2v1</snaptree.version>
         <thrift.version>0.7.0</thrift.version>
