@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.apache.solr.wso2</groupId>
+	<artifactId>solr</artifactId>
+	<version>${orbit.version.solr}</version>
+	<name>Apache Solr</name>
+	<packaging>bundle</packaging>
+	<url>http://wso2.org</url>
+	<properties>
+		<version.solr>4.7.2</version.solr>
+		<orbit.version.solr>${version.solr}.wso2v1</orbit.version.solr>
+		<version.httpmime>4.3.5</version.httpmime>
+		<version.noggit>0.5</version.noggit>
+		<version.commons.io>2.3</version.commons.io>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.solr</groupId>
+			<artifactId>solr-solrj</artifactId>
+			<version>${version.solr}</version>
+		</dependency>
+   		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>${version.httpmime}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.noggit</groupId>
+			<artifactId>noggit</artifactId>
+			<version>${version.noggit}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.3.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Name>${project.artifactId}</Bundle-Name>
+						<Export-Package>
+							org.apache.solr.*;version="${version.solr}",
+							org.apache.http.*,
+ 							org.apache.commons.io.*,
+							org.noggit
+						</Export-Package>
+						<Import-Package>
+							*;resolution:=optional
+						</Import-Package>
+						<DynamicImport-Package>*</DynamicImport-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
