@@ -37,6 +37,7 @@
             <groupId>net.minidev</groupId>
             <artifactId>json-smart</artifactId>
             <version>1.1.1</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -69,7 +70,7 @@
 			    net.minidev.*; version="1.1.1",
                         </Export-Package>
                         <Import-Package>
-                            *;resolution:=optional
+                           !net.minidev.*; version="1.1.1", 
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
@@ -77,5 +78,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
