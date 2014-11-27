@@ -1,4 +1,3 @@
-
 <!--
  ~ Copyright (c) 2005-2010, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
@@ -22,11 +21,11 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>net.minidev.wso2</groupId>
-    <artifactId>json-smart</artifactId>
+    <groupId>com.nimbusds.wso2</groupId>
+    <artifactId>nimbus-jose-jwt</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Nimbus JWT Library</name>
-    <version>1.1.1.wso2v1</version>
+    <version>2.26.1.wso2v1</version>
     <description>
         This bundle will export packages from nimbus-jose-jwt-2.26.1.jar
     </description>
@@ -34,10 +33,16 @@
 
     <dependencies>
 	<dependency>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+            <version>2.26.1</version>
+	    <optional>true</optional>
+        </dependency>
+	<dependency>
             <groupId>net.minidev</groupId>
             <artifactId>json-smart</artifactId>
             <version>1.1.1</version>
-            <optional>true</optional>
+	    <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -67,10 +72,12 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
+			    com.nimbusds.*; version="2.26.1",
 			    net.minidev.*; version="1.1.1",
                         </Export-Package>
                         <Import-Package>
-                           !net.minidev.*; version="1.1.1", 
+			    !com.nimbusds.*; version="2.26.1",
+			    !net.minidev.*; version="1.1.1",
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
@@ -78,4 +85,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
