@@ -77,7 +77,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.http.*;version=4.3.3.wso2v1,
+                            org.apache.http.*;version="${orbit.patch.version.httpcore}",
                         </Export-Package>
                         <Import-Package>
                             !org.apache.http.*,
