@@ -52,27 +52,20 @@
        </repository>
     </repositories>
 
-   <distributionManagement>
-       <repository>
-           <id>wso2-maven2-repository</id>
-           <name>WSO2 Maven2 Repository</name>
-           <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/maven2/</url>
-       </repository>
-       <snapshotRepository>
-           <id>wso2-maven2-snapshot-repository</id>
-           <name>WSO2 Maven2 Snapshot Repository</name>
-           <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/snapshots/maven2/</url>
-       </snapshotRepository>
-   </distributionManagement>
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
    <build>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh</artifactId>
-                <version>2.1</version>
-            </extension>
-        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
