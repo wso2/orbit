@@ -77,14 +77,9 @@
 				org.apache.ibatis.annotations.*; version=${project.version},
 				org.apache.ibatis.session.*; version=${project.version},
                         </Export-Package>
-                        <Private-Package>
-                            org.activiti.*,
-                        </Private-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Import-Package>
-                            !org.activiti.*,
-			    org.wso2.carbon.bpmn.core.mgt.*; version=${project.version},
-                            *;resolution:=optional
+                            !org.activiti.*,*;resolution:=optional
                         </Import-Package>
                         <Embed-Dependency>*;scope=compile|runtime;inline=false;</Embed-Dependency>
                         <Embed-Transitive>true</Embed-Transitive>

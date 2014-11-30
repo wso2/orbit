@@ -76,9 +76,6 @@
                             org.activiti.rest.*,
 			    org.restlet.ext.servlet.*
                         </Export-Package>
-                        <Private-Package>
-                            org.activiti.rest.*,
-                        </Private-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Import-Package>
                             *;resolution:=optional
