@@ -25,7 +25,7 @@
     <artifactId>nimbus-jose-jwt</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Nimbus JWT Library</name>
-    <version>2.26.1.wso2v1</version>
+    <version>2.26.1.wso2v2</version>
     <description>
         This bundle will export packages from nimbus-jose-jwt-2.26.1.jar
     </description>
