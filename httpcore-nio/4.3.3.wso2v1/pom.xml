@@ -34,7 +34,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore-nio</artifactId>
-            <version>4.3.3</version>
+            <version>${httpcore.nio.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -77,11 +77,11 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.http.nio.*;version="${orbit.patch.version.httpcore.nio}",
-                            org.apache.http.impl.nio.*;version="${orbit.patch.version.httpcore.nio}",
+                            org.apache.http.nio.*;version="${orbit.version.httpcore.nio}",
+                            org.apache.http.impl.nio.*;version="${orbit.version.httpcore.nio}",
                         </Export-Package>
                         <Import-Package>
-                            org.apache.http.*;version="${orbit.patch.version.httpcore}",
+                            org.apache.http.*;version="${orbit.version.httpcore}",
                             *;resolution:=optional
                         </Import-Package>
                     </instructions>
@@ -92,9 +92,9 @@
     </build>
 
     <properties>
-        <orbit.patch.version.httpcore>4.3.3.wso2v1</orbit.patch.version.httpcore>
-        <orbit.patch.version.httpcore.nio>4.3.3.wso2v1</orbit.patch.version.httpcore.nio>
-        <httpcore.patch.version>4.3.3</httpcore.patch.version>
+        <orbit.version.httpcore>4.3.3.wso2v1</orbit.version.httpcore>
+        <orbit.version.httpcore.nio>4.3.3.wso2v1</orbit.version.httpcore.nio>
+        <httpcore.nio.version>4.3.3</httpcore.nio.version>
     </properties>
 
 </project>
