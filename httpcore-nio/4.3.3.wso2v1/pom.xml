@@ -92,7 +92,7 @@
     </build>
 
     <properties>
-        <orbit.version.httpcore>[4.3.3.wso2v1, 4.4.0]</orbit.version.httpcore>
+        <orbit.version.httpcore>[4.3.3.wso2v1, 4.4.0)</orbit.version.httpcore>
         <orbit.version.httpcore.nio>4.3.3.wso2v1</orbit.version.httpcore.nio>
         <httpcore.nio.version>4.3.3</httpcore.nio.version>
     </properties>
