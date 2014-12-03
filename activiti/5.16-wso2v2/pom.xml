@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.activiti.wso2</groupId>
     <artifactId>activiti-engine</artifactId>
-    <version>5.16-wso2v2</version>
+    <version>5.16.wso2v2</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Activiti</name>
     <description>
