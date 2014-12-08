@@ -73,33 +73,32 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.activiti.bpmn.*; version=${activiti.pkg.exp.version},
-                            org.activiti.db.*; version=${activiti.pkg.exp.version},
-                            org.activiti.engine.*; version=${activiti.pkg.exp.version},
-                            org.activiti.icons; version=${activiti.pkg.exp.version},
-                            org.activiti.image.*; version=${activiti.pkg.exp.version},
-                            org.activiti.impl.bpmn.parser; version=${activiti.pkg.exp.version},
-                            org.activiti.validation.*; version=${activiti.pkg.exp.version},
-                            org.apache.ibatis.annotations; version=${activiti.pkg.exp.version},
-                            org.apache.ibatis.session; version=${activiti.pkg.exp.version},
-                            org.apache.ibatis.session.defaults; version=${activiti.pkg.exp.version}
+                            org.activiti.bpmn.*; version="${activiti.pkg.exp.version}",
+                            org.activiti.db.*; version="${activiti.pkg.exp.version}",
+                            org.activiti.engine.*; version="${activiti.pkg.exp.version}",
+                            org.activiti.icons; version="${activiti.pkg.exp.version}",
+                            org.activiti.image.*; version="${activiti.pkg.exp.version}",
+                            org.activiti.impl.bpmn.parser; version="${activiti.pkg.exp.version}",
+                            org.activiti.validation.*; version="${activiti.pkg.exp.version}",
+                            org.apache.ibatis.annotations; version="${activiti.pkg.exp.version}",
+                            org.apache.ibatis.session; version="${activiti.pkg.exp.version}",
+                            org.apache.ibatis.session.defaults; version="${activiti.pkg.exp.version}"
                         </Export-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Import-Package>
                             !org.activiti.*,
-                            org.springframework.asm.util; version=${imp.pkg.version.springframework.asm.util},
-                            org.slf4j.spi; version=${imp.pkg.version.slf4j},
-                            org.slf4j; version=${imp.pkg.version.slf4j},
-                            org.apache.log4j.xml; version=${imp.pkg.version.apache.log4j},
-                            org.apache.log4j; version=${imp.pkg.version.apache.log4j},
-                            net.sf.cglib.proxy; version=${imp.pkg.version.sf.cglib.proxy},
-                            javax.xml.stream.events; version=${imp.pkg.version.javax.xml.stream},
-                            javax.xml.stream; version=${imp.pkg.version.javax.xml.stream},
-                            javax.servlet; version=${imp.pkg.version.javax.servlet},
-                            javax.persistence; version=${imp.pkg.version.javax.persistence},
-                            javax.el; version=${imp.pkg.version.javax.el},
-                            org.eclipse.core.runtime; version=${imp.pkg.version.eclipse.core.runtime},
-                            org.wso2.carbon.bpmn.core.internal.mapper; version=${imp.pkg.version.wso2.carbon.bpmn.core},
+                            org.springframework.asm.util; version="${imp.pkg.version.springframework.asm.util}",
+                            org.slf4j.spi; version="${imp.pkg.version.slf4j}",
+                            org.slf4j; version="${imp.pkg.version.slf4j}",
+                            org.apache.log4j.xml; version="${imp.pkg.version.apache.log4j}",
+                            org.apache.log4j; version="${imp.pkg.version.apache.log4j}",
+                            net.sf.cglib.proxy; version="${imp.pkg.version.sf.cglib.proxy}",
+                            javax.xml.stream.events; version="${imp.pkg.version.javax.xml.stream}",
+                            javax.xml.stream; version="${imp.pkg.version.javax.xml.stream}",
+                            javax.servlet; version="${imp.pkg.version.javax.servlet}",
+                            javax.persistence; version="${imp.pkg.version.javax.persistence}",
+                            javax.el; version="${imp.pkg.version.javax.el}",
+                            org.eclipse.core.runtime; version="${imp.pkg.version.eclipse.core.runtime}",
                             org.xml.sax.helpers,
                             org.xml.sax.ext,
                             org.xml.sax,
@@ -159,7 +158,6 @@
         <imp.pkg.version.javax.persistence>[2.0.0, 2.1.0)</imp.pkg.version.javax.persistence>
         <imp.pkg.version.javax.el>[2.2.0, 2.3.0)</imp.pkg.version.javax.el>
         <imp.pkg.version.eclipse.core.runtime>[3.4.0, 3.5.0)</imp.pkg.version.eclipse.core.runtime>
-        <imp.pkg.version.wso2.carbon.bpmn.core>[4.3.0, 4.4.0)</imp.pkg.version.wso2.carbon.bpmn.core>
     </properties>
     
 </project>
