@@ -73,7 +73,6 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-
                             org.activiti.rest.common.*; version=${activiti.pkg.exp.version},
                             org.activiti.rest.form; version=${activiti.pkg.exp.version},
                             org.activiti.rest.service.*; version=${activiti.pkg.exp.version},
@@ -81,31 +80,31 @@
                         </Export-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Import-Package>
-                            org.activiti.engine.task; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.runtime; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.repository; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.query; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.management; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.impl.util; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.impl.pvm; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.impl.persistence.entity; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.impl.form; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.impl.bpmn.deployer; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.impl; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.identity; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.history; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine.form; version="[5.16.0.wso2v2, 5.17.0)",
-                            org.activiti.engine; version="[5.16.0.wso2v2, 5.17.0)",
-                            net.sf.cglib.proxy; version="[2.2.0.wso2v1, 2.3.0)",
-                            org.springframework.asm.util; version="[3.2.9.wso2v1, 3.3.0)",
-                            org.slf4j.spi; version="[1.6.1, 1.7.0)",
-                            org.slf4j.helpers; version="[1.6.1, 1.7.0)",
-                            org.slf4j; version="[1.6.1, 1.7.0)",
-                            org.relaxng.datatype; version="[2.2.5.wso2v1, 2.3.0)",
-                            org.osgi.framework; version="[1.7.0, 1.8.0)",
-                            javax.servlet.http; version="[2.6.0, 2.7.0)",
-                            javax.servlet; version="[2.6.0, 2.7.0)",
-                            javax.el; version="[2.2.0, 2.3.0)",
+                            org.activiti.engine.task; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.runtime; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.repository; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.query; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.management; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.impl.util; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.impl.pvm; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.impl.persistence.entity; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.impl.form; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.impl.bpmn.deployer; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.impl; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.identity; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.history; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine.form; version=${imp.pkg.version.activiti.engine},
+                            org.activiti.engine; version=${imp.pkg.version.activiti.engine},
+                            net.sf.cglib.proxy; version=${imp.pkg.version.sf.cglib.proxy},
+                            org.springframework.asm.util; version=${imp.pkg.version.springframework.asm.util},
+                            org.slf4j.spi; version=${imp.pkg.version.slf4j},
+                            org.slf4j.helpers; version=${imp.pkg.version.slf4j},
+                            org.slf4j; version=${imp.pkg.version.slf4j},
+                            org.relaxng.datatype; version=${imp.pkg.version.relaxng.datatype},
+                            org.osgi.framework; version=${imp.pkg.version.osgi.framework},
+                            javax.servlet.http; version=${imp.pkg.version.javax.servlet},
+                            javax.servlet; version=${imp.pkg.version.javax.servlet},
+                            javax.el; version=${imp.pkg.version.javax.el},
                             org.xml.sax.helpers,
                             org.xml.sax.ext,
                             org.xml.sax,
@@ -172,6 +171,14 @@
     <properties>
         <version.activiti>5.16</version.activiti>
         <activiti.pkg.exp.version>5.16.0.wso2v2</activiti.pkg.exp.version>
+        <imp.pkg.version.org.activiti.engine>[5.16.0.wso2v2, 5.17.0)</imp.pkg.version.org.activiti.engine>
+        <imp.pkg.version.sf.cglib.proxy>[2.2.0.wso2v1, 2.3.0)</imp.pkg.version.sf.cglib.proxy>
+        <imp.pkg.version.springframework.asm.util>[3.2.9.wso2v1, 3.3.0)</imp.pkg.version.springframework.asm.util>
+        <imp.pkg.version.slf4j>[1.6.1, 1.7.0)</imp.pkg.version.slf4j>
+        <imp.pkg.version.relaxng.datatype>[2.2.5.wso2v1, 2.3.0)</imp.pkg.version.relaxng.datatype>
+        <imp.pkg.version.osgi.framework>[1.7.0, 1.8.0)</imp.pkg.version.osgi.framework>
+        <imp.pkg.version.javax.servlet>[2.6.0, 2.7.0)</imp.pkg.version.javax.servlet>
+        <imp.pkg.version.javax.el>[2.2.0, 2.3.0)</imp.pkg.version.javax.el>
     </properties>
 
 </project>
