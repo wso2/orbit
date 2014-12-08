@@ -73,13 +73,64 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.activiti.*; version=${project.version},
-				org.apache.ibatis.annotations.*; version=${project.version},
-				org.apache.ibatis.session.*; version=${project.version},
+                            org.activiti.bpmn.*; version=${activiti.pkg.exp.version},
+                            org.activiti.db.*; version=${activiti.pkg.exp.version},
+                            org.activiti.engine.*; version=${activiti.pkg.exp.version},
+                            org.activiti.icons; version=${activiti.pkg.exp.version},
+                            org.activiti.image.*; version=${activiti.pkg.exp.version},
+                            org.activiti.impl.bpmn.parser; version=${activiti.pkg.exp.version},
+                            org.activiti.validation.*; version=${activiti.pkg.exp.version},
+                            org.apache.ibatis.annotations; version=${activiti.pkg.exp.version},
+                            org.apache.ibatis.session; version=${activiti.pkg.exp.version},
+                            org.apache.ibatis.session.defaults; version=${activiti.pkg.exp.version}
                         </Export-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Import-Package>
-                            !org.activiti.*,*;resolution:=optional
+                            !org.activiti.*,
+                            org.springframework.asm.util; version="[3.2.9.wso2v1, 3.3.0)",
+                            org.slf4j.spi; version="[1.6.1, 1.7)",
+                            org.slf4j; version="[1.6.1, 1.7)",
+                            org.apache.log4j.xml; version="[1.2.17, 1.3.0)",
+                            org.apache.log4j; version="[1.2.17, 1.3.0)",
+                            net.sf.cglib.proxy; version="[2.2.0.wso2v1, 2.3.0)",
+                            javax.xml.stream.events; version="[1.0.1, 1.1.0)",
+                            javax.xml.stream; version="[1.0.1, 1.1.0)",
+                            javax.servlet; version="[2.6.0, 2.7.0)",
+                            javax.persistence; version="[2.0.0, 2.1.0)",
+                            javax.el; version="[2.2.0, 2.3.0)",
+                            org.eclipse.core.runtime; version="[3.4.0, 3.5.0)",
+                            org.wso2.carbon.bpmn.core.internal.mapper; version="[4.3.0.SNAPSHOT, 4.4.0)",
+                            org.xml.sax.helpers,
+                            org.xml.sax.ext,
+                            org.xml.sax,
+                            org.w3c.dom.ls,
+                            org.w3c.dom.bootstrap,
+                            org.w3c.dom,
+                            org.apache.tools.ant.types,
+                            org.apache.tools.ant,
+                            javax.xml.xpath,
+                            javax.xml.validation,
+                            javax.xml.transform.stream,
+                            javax.xml.transform.sax,
+                            javax.xml.transform,
+                            javax.xml.parsers,
+                            javax.xml.namespace,
+                            javax.xml.datatype,
+                            javax.transaction,
+                            javax.sql,
+                            javax.security.sasl,
+                            javax.security.auth.callback,
+                            javax.script,
+                            javax.net.ssl,
+                            javax.net,
+                            javax.naming,
+                            javax.imageio,
+                            org.apache.xerces.jaxp; resolution:=optional,
+                            org.apache.xerces.parsers; resolution:=optional,
+                            org.apache.xerces.impl.dv.dtd; resolution:=optional,
+                            org.apache.xerces.impl.dv.xs; resolution:=optional,
+                            org.apache.xpath.jaxp; resolution:=optional,
+                            org.apache.xml.dtm.ref; resolution:=optional
                         </Import-Package>
                         <Embed-Dependency>*;scope=compile|runtime;inline=false;</Embed-Dependency>
                         <Embed-Transitive>true</Embed-Transitive>
@@ -98,6 +149,7 @@
 
     <properties>
         <version.activiti>5.16</version.activiti>
+        <activiti.pkg.exp.version>5.16.0.wso2v2</activiti.pkg.exp.version>
     </properties>
     
 </project>

@@ -73,12 +73,76 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.activiti.rest.*,
-			    org.restlet.ext.servlet.*
+
+                            org.activiti.rest.common.*; version=${activiti.pkg.exp.version},
+                            org.activiti.rest.form; version=${activiti.pkg.exp.version},
+                            org.activiti.rest.service.*; version=${activiti.pkg.exp.version},
+                            org.restlet.ext.servlet.*;  version=${activiti.pkg.exp.version}
                         </Export-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Import-Package>
-                            *;resolution:=optional
+                            org.activiti.engine.task; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.runtime; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.repository; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.query; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.management; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.impl.util; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.impl.pvm; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.impl.persistence.entity; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.impl.form; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.impl.bpmn.deployer; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.impl; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.identity; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.history; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine.form; version="[5.16.0.wso2v2, 5.17.0)",
+                            org.activiti.engine; version="[5.16.0.wso2v2, 5.17.0)",
+                            net.sf.cglib.proxy; version="[2.2.0.wso2v1, 2.3.0)",
+                            org.springframework.asm.util; version="[3.2.9.wso2v1, 3.3.0)",
+                            org.slf4j.spi; version="[1.6.1, 1.7.0)",
+                            org.slf4j.helpers; version="[1.6.1, 1.7.0)",
+                            org.slf4j; version="[1.6.1, 1.7.0)",
+                            org.relaxng.datatype; version="[2.2.5.wso2v1, 2.3.0)",
+                            org.osgi.framework; version="[1.7.0, 1.8.0)",
+                            javax.servlet.http; version="[2.6.0, 2.7.0)",
+                            javax.servlet; version="[2.6.0, 2.7.0)",
+                            javax.el; version="[2.2.0, 2.3.0)",
+                            org.xml.sax.helpers,
+                            org.xml.sax.ext,
+                            org.xml.sax,
+                            org.w3c.dom.ls,
+                            org.w3c.dom.bootstrap,
+                            org.w3c.dom,
+                            org.apache.tools.ant.types,
+                            org.apache.tools.ant,
+                            javax.xml.xpath,
+                            javax.xml.validation,
+                            javax.xml.transform.stream,
+                            javax.xml.transform.sax,
+                            javax.xml.transform.dom,
+                            javax.xml.transform,
+                            javax.xml.parsers,
+                            javax.xml.namespace,
+                            javax.xml.datatype,
+                            javax.xml.bind.annotation,
+                            javax.xml.bind,
+                            javax.swing.tree,
+                            javax.swing.text.html,
+                            javax.swing.text,
+                            javax.swing.table,
+                            javax.swing.plaf,
+                            javax.swing.event,
+                            javax.swing.border,
+                            javax.swing,
+                            javax.sql,
+                            javax.security.sasl,
+                            javax.security.auth.x500,
+                            javax.security.auth.callback,
+                            javax.net.ssl,
+                            javax.net,
+                            javax.naming,
+                            javax.management,
+                            javax.jms,
+                            javax.imageio
                         </Import-Package>
                         <Embed-Dependency>*;scope=compile|runtime;inline=false;artifactId=!activiti-engine</Embed-Dependency>
                         <Embed-Transitive>true</Embed-Transitive>                        
@@ -107,6 +171,7 @@
 
     <properties>
         <version.activiti>5.16</version.activiti>
+        <activiti.pkg.exp.version>5.16.0.wso2v2</activiti.pkg.exp.version>
     </properties>
 
 </project>
