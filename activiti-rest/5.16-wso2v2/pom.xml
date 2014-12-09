@@ -44,6 +44,22 @@
                     <groupId>org.slf4j</groupId>
                     <artifactId>jcl-over-slf4j</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.activation</groupId>
+                    <artifactId>activation</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
     </dependencies>
@@ -143,7 +159,44 @@
                             javax.jms,
                             javax.imageio
                         </Import-Package>
-                        <Embed-Dependency>*;scope=compile|runtime;inline=false;artifactId=!activiti-engine</Embed-Dependency>
+                        <Embed-Dependency>
+                            woodstox-core-asl; scope=compile|runtime;inline=false,
+                            stax-api; scope=compile|runtime;inline=false,
+                            stax2-api; scope=compile|runtime;inline=false,
+                            spring-core; scope=compile|runtime;inline=false,
+                            spring-beans; scope=compile|runtime;inline=false,
+                            snakeyaml; scope=compile|runtime;inline=false,
+                            org.restlet; scope=compile|runtime;inline=false,
+                            org.restlet.ext.servlet; scope=compile|runtime;inline=false,
+                            org.restlet.ext.jackson; scope=compile|runtime;inline=false,
+                            org.restlet.ext.fileupload; scope=compile|runtime;inline=false,
+                            mybatis; scope=compile|runtime;inline=false,
+                            mail; scope=compile|runtime;inline=false,
+                            joda-time; scope=compile|runtime;inline=false,
+                            jgraphx; scope=compile|runtime;inline=false,
+                            javaGeom; scope=compile|runtime;inline=false,
+                            jackson-module-jaxb-annotations; scope=compile|runtime;inline=false,
+                            jackson-dataformat-yaml; scope=compile|runtime;inline=false,
+                            jackson-dataformat-xml; scope=compile|runtime;inline=false,
+                            jackson-dataformat-smile; scope=compile|runtime;inline=false,
+                            jackson-dataformat-csv; scope=compile|runtime;inline=false,
+                            jackson-databind; scope=compile|runtime;inline=false,
+                            jackson-core; scope=compile|runtime;inline=false,
+                            jackson-annotations; scope=compile|runtime;inline=false,
+                            commons-lang3; scope=compile|runtime;inline=false,
+                            commons-io; scope=compile|runtime;inline=false,
+                            commons-fileupload; scope=compile|runtime;inline=false,
+                            commons-email; scope=compile|runtime;inline=false,
+                            activiti-simple-workflow; scope=compile|runtime;inline=false,
+                            activiti-rest; scope=compile|runtime;inline=false,
+                            activiti-process-validation; scope=compile|runtime;inline=false,
+                            activiti-json-converter; scope=compile|runtime;inline=false,
+                            activiti-image-generator; scope=compile|runtime;inline=false,
+                            activiti-common-rest; scope=compile|runtime;inline=false,
+                            activiti-bpmn-model; scope=compile|runtime;inline=false,
+                            activiti-bpmn-layout; scope=compile|runtime;inline=false,
+                            activiti-bpmn-converter; scope=compile|runtime;inline=false,
+                        </Embed-Dependency>
                         <Embed-Transitive>true</Embed-Transitive>                        
                     </instructions>
                 </configuration>
