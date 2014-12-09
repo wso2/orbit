@@ -44,8 +44,16 @@
                     <groupId>org.slf4j</groupId>
                     <artifactId>jcl-over-slf4j</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.activation</groupId>
+                    <artifactId>activation</artifactId>
+                </exclusion>
             </exclusions>
-        </dependency>	
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -73,13 +81,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.activiti.bpmn.*; version="${activiti.pkg.exp.version}",
-                            org.activiti.db.*; version="${activiti.pkg.exp.version}",
-                            org.activiti.engine.*; version="${activiti.pkg.exp.version}",
-                            org.activiti.icons; version="${activiti.pkg.exp.version}",
-                            org.activiti.image.*; version="${activiti.pkg.exp.version}",
-                            org.activiti.impl.bpmn.parser; version="${activiti.pkg.exp.version}",
-                            org.activiti.validation.*; version="${activiti.pkg.exp.version}",
+                            org.activiti.*; version="${activiti.pkg.exp.version}",
                             org.apache.ibatis.annotations; version="${activiti.pkg.exp.version}",
                             org.apache.ibatis.session; version="${activiti.pkg.exp.version}",
                             org.apache.ibatis.session.defaults; version="${activiti.pkg.exp.version}"
@@ -131,7 +133,23 @@
                             org.apache.xpath.jaxp; resolution:=optional,
                             org.apache.xml.dtm.ref; resolution:=optional
                         </Import-Package>
-                        <Embed-Dependency>*;scope=compile|runtime;inline=false;</Embed-Dependency>
+                        <Embed-Dependency>
+                            spring-core; scope=compile|runtime;inline=false,
+                            spring-beans; scope=compile|runtime;inline=false,
+                            mybatis; scope=compile|runtime;inline=false,
+                            mail; scope=compile|runtime;inline=false,
+                            joda-time; scope=compile|runtime;inline=false,
+                            jackson-databind; scope=compile|runtime;inline=false,
+                            jackson-core; scope=compile|runtime;inline=false,
+                            jackson-annotations; scope=compile|runtime;inline=false,
+                            commons-lang3; scope=compile|runtime;inline=false,
+                            commons-email; scope=compile|runtime;inline=false,
+                            activiti-process-validation; scope=compile|runtime;inline=false,
+                            activiti-image-generator; scope=compile|runtime;inline=false,
+                            activiti-engine; scope=compile|runtime;inline=false,
+                            activiti-bpmn-model; scope=compile|runtime;inline=false,
+                            activiti-bpmn-converter; scope=compile|runtime;inline=false
+                        </Embed-Dependency>
                         <Embed-Transitive>true</Embed-Transitive>
                     </instructions>
                 </configuration>
@@ -159,5 +177,4 @@
         <imp.pkg.version.javax.el>[2.2.0, 2.3.0)</imp.pkg.version.javax.el>
         <imp.pkg.version.eclipse.core.runtime>[3.4.0, 3.5.0)</imp.pkg.version.eclipse.core.runtime>
     </properties>
-    
 </project>
