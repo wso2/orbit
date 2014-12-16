@@ -68,11 +68,6 @@
             <version>${spark.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>${scala.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
             <version>${hadoop.client.version}</version>
@@ -86,6 +81,81 @@
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>${netty-all.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.java.dev.jets3t</groupId>
+            <artifactId>jets3t</artifactId>
+            <version>${jets3t.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-jackson_2.10</artifactId>
+            <version>${json4s.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>${asm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>colt</groupId>
+            <artifactId>colt</artifactId>
+            <version>${colt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>chill-java</artifactId>
+            <version>${chill.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>chill_2.10</artifactId>
+            <version>${chill.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalanlp</groupId>
+            <artifactId>breeze_2.10</artifactId>
+            <version>${scalanlp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jblas</groupId>
+            <artifactId>jblas</artifactId>
+            <version>${jblas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.f2j</groupId>
+            <artifactId>arpack_combined_all</artifactId>
+            <version>${arpack_combined_all.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.spire-math</groupId>
+            <artifactId>spire_2.10</artifactId>
+            <version>${org.spire.math.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.clearspring.analytics</groupId>
+            <artifactId>stream</artifactId>
+            <version>${clearspring.stream.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.jpountz.lz4</groupId>
+            <artifactId>lz4</artifactId>
+            <version>${lz4.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.mesos</groupId>
+            <artifactId>mesos</artifactId>
+            <version>${mesos.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fommil.netlib</groupId>
+            <artifactId>core</artifactId>
+            <version>${com.github.fommil.netlib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -106,11 +176,6 @@
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-util</artifactId>
             <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>net.java.dev.jets3t</groupId>
-            <artifactId>jets3t</artifactId>
-            <version>${jets3t.version}</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
@@ -153,40 +218,9 @@
             <version>${jackson.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.json4s</groupId>
-            <artifactId>json4s-jackson_2.10</artifactId>
-            <version>${json4s.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>asm</groupId>
-            <artifactId>asm</artifactId>
-            <version>${asm.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>colt</groupId>
-            <artifactId>colt</artifactId>
-            <version>${colt.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.twitter</groupId>
-            <artifactId>chill-java</artifactId>
-            <version>${chill.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.twitter</groupId>
-            <artifactId>chill_2.10</artifactId>
-            <version>${chill.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.scalanlp</groupId>
-            <artifactId>breeze_2.10</artifactId>
-            <version>${scalanlp.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.fommil.netlib</groupId>
-            <artifactId>all</artifactId>
-            <version>${com.github.fommil.netlib.version}</version>
-            <type>pom</type>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson-annotations.version}</version>
         </dependency>
         <dependency>
             <groupId>org.xerial.snappy</groupId>
@@ -194,34 +228,9 @@
             <version>${snappy.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.jblas</groupId>
-            <artifactId>jblas</artifactId>
-            <version>${jblas.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>net.sourceforge.f2j</groupId>
-            <artifactId>arpack_combined_all</artifactId>
-            <version>${arpack_combined_all.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.spire-math</groupId>
-            <artifactId>spire_2.10</artifactId>
-            <version>${org.spire.math.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.clearspring.analytics</groupId>
-            <artifactId>stream</artifactId>
-            <version>${clearspring.stream.version}</version>
-        </dependency>
-        <dependency>
             <groupId>commons-net</groupId>
             <artifactId>commons-net</artifactId>
             <version>${commons-net.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>net.jpountz.lz4</groupId>
-            <artifactId>lz4</artifactId>
-            <version>${lz4.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -243,11 +252,6 @@
             <artifactId>derby</artifactId>
             <version>${derby.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.mesos</groupId>
-            <artifactId>mesos</artifactId>
-            <version>${mesos.version}</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -263,22 +267,14 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.spark.*,<!--; version="${exp.pkg.version.spark}",-->
-                            scala.*;-split-package:=merge-first,
+                            org.apache.spark.*,
                         </Export-Package>
-                        <Private-Package>
+                        <Private-Package>          <!-- TODO Export org.apache.hadoop.mapred | mapreduce ? -->
                             org.apache.hadoop.*;-split-package:=merge-first,
-                            org.apache.commons.lang3.*;-split-package:=merge-first,
                             com.typesafe.config.*,
                             akka.*,
                             com.google.*,
-                            io.netty.*,
-                            org.eclipse.jetty.*,
                             org.jets3t.*,
-                            org.jboss.netty.*;-split-package:=merge-first,
-                            com.ning.compress.*,
-                            com.codahale.metrics.*,
-                            com.fasterxml.jackson.*,
                             org.json4s.*;-split-package:=merge-first,
                             org.objectweb.asm.*;-split-package:=merge-first,
                             com.twitter.chill.*;-split-package:=merge-first,
@@ -287,16 +283,32 @@
                             org.netlib.*,
                             org.jblas.*,
                             breeze.*,
-                            org.xerial.snappy.*,
                             spire.math.*,
-                            com.github.fommil.*;-split-package:=merge-first,
                             org.apache.commons.*;-split-package:=merge-first,
                             net.jpountz.*,
+                            org.apache.mesos.*;-split-package:=merge-first,
+                            com.github.fommil.*,
+                            io.netty.*,
+                        </Private-Package>
+                        <Import-Package>                           <!-- TODO Change import versions to version ranges -->
+                            org.jboss.netty.*;version="${org.jboss.netty.version}",
+                            !scala.tools.*,
+                            !scala.reflect.api.*,
+                            scala.reflect.macros.internal.*,
+                            !scala.reflect.macros.*,
+                            !scala.quasiquotes.*,
+                            scala.*,
+                            org.eclipse.jetty.plus.*,
+                            org.eclipse.jetty.server.*,
+                            org.eclipse.jetty.util.*,
+                            org.eclipse.jetty.security.*,
+                            com.ning.compress.*,
+                            com.codahale.metrics.*,
+                            com.fasterxml.jackson.*,
                             org.apache.curator.*,
                             org.apache.derby.*,
-                            org.apache.mesos.*;-split-package:=merge-first,
-                        </Private-Package>
-                        <Import-Package>
+                            org.apache.commons.lang3.*,
+                            org.xerial.snappy.*,
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
@@ -316,37 +328,39 @@
     <properties>
         <exp.pkg.version.spark>1.1.0.wso2v1</exp.pkg.version.spark>
         <spark.version>1.1.0</spark.version>
-        <scala.version>2.10.4</scala.version>
         <hadoop.client.version>1.0.4</hadoop.client.version>
+        <arpack_combined_all.version>0.1</arpack_combined_all.version>
+        <scalanlp.version>0.9</scalanlp.version>
+        <org.spire.math.version>0.7.4</org.spire.math.version>
         <asm.version>3.3.1</asm.version>
         <colt.version>1.2.0</colt.version>
         <clearspring.stream.version>2.7.0</clearspring.stream.version>
-        <codahale.metrics.version>3.0.0</codahale.metrics.version>
         <jsr305.version>1.3.9</jsr305.version>
         <guava.version>14.0.1</guava.version>
-        <compress.lzf.version>1.0.0</compress.lzf.version>
         <chill.version>0.3.6</chill.version>
-        <commons-net.version>2.2</commons-net.version>
-        <netty-all.version>4.0.23.Final</netty-all.version>
         <jets3t.version>0.7.1</jets3t.version>
         <lz4.version>1.2.0</lz4.version>
-        <commons-lang3.version>3.3.2</commons-lang3.version>
-        <commons-math3.version>3.3</commons-math3.version>
-        <curator.version>2.4.0</curator.version>
-        <derby.version>10.4.2.0</derby.version>
         <mesos.version>0.18.1</mesos.version>
-        <jetty.version>8.1.14.v20131031</jetty.version>
         <json4s.version>3.2.10</json4s.version>
         <pyrolite.version>2.0.1</pyrolite.version>
         <akka.version>2.2.3-shaded-protobuf</akka.version>
-        <snappy.version>1.0.5.3</snappy.version>
         <jblas.version>1.2.3</jblas.version>
+
+        <scala.version>2.10.4</scala.version>
+        <compress.lzf.version>1.0.0</compress.lzf.version>
+        <codahale.metrics.version>3.0.0</codahale.metrics.version>
         <jackson.version>2.3.1</jackson.version>
+        <snappy.version>1.0.5.3</snappy.version>
+        <commons-math3.version>3.3</commons-math3.version>
+        <commons-lang3.version>3.3.2</commons-lang3.version>
+        <curator.version>2.4.0</curator.version>
+        <derby.version>10.4.2.0</derby.version>
+        <commons-net.version>2.2</commons-net.version>
+        <netty-all.version>4.0.23.Final</netty-all.version>
+        <jetty.version>8.1.14.v20131031</jetty.version>
         <org.jboss.netty.version>3.6.6.Final</org.jboss.netty.version>
-        <scalanlp.version>0.9</scalanlp.version>
         <com.github.fommil.netlib.version>1.1.2</com.github.fommil.netlib.version>
-        <arpack_combined_all.version>0.1</arpack_combined_all.version>
-        <org.spire.math.version>0.7.4</org.spire.math.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jackson-annotations.version>2.3.0</jackson-annotations.version>
     </properties>
 </project>
