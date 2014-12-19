@@ -48,25 +48,25 @@
 			        <artifactId>commons-httpclient</artifactId>
 			    </exclusion>
 			    <exclusion>
-                    <groupId>commons-codec</groupId>
-                    <artifactId>commons-codec</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>commons-io</groupId>
-                    <artifactId>commons-io</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>commons-fileupload</groupId>
-                    <artifactId>commons-fileupload</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.apache.geronimo.specs</groupId>
-                    <artifactId>geronimo-stax-api_1.0_spec</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>woodstox</groupId>
-                    <artifactId>wstx-asl</artifactId>
-                </exclusion>
+			        <groupId>commons-codec</groupId>
+			        <artifactId>commons-codec</artifactId>
+			    </exclusion>
+			    <exclusion>
+			        <groupId>commons-io</groupId>
+			        <artifactId>commons-io</artifactId>
+			    </exclusion>
+			    <exclusion>
+			        <groupId>commons-fileupload</groupId>
+			        <artifactId>commons-fileupload</artifactId>
+			    </exclusion>
+			    <exclusion>
+			        <groupId>org.apache.geronimo.specs</groupId>
+			        <artifactId>geronimo-stax-api_1.0_spec</artifactId>
+			    </exclusion>
+			    <exclusion>
+			        <groupId>woodstox</groupId>
+			        <artifactId>wstx-asl</artifactId>
+			    </exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
@@ -75,35 +75,35 @@
 			<version>${solr.version}</version>
 			<optional>true</optional>
 			<exclusions>
-                <exclusion>
-                    <groupId>commons-httpclient</groupId>
-                    <artifactId>commons-httpclient</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>commons-codec</groupId>
-                    <artifactId>commons-codec</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>commons-io</groupId>
-                    <artifactId>commons-io</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.codehaus.woodstox</groupId>
-                    <artifactId>wstx-asl</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>commons-fileupload</groupId>
-                    <artifactId>commons-fileupload</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.apache.geronimo.specs</groupId>
-                    <artifactId>geronimo-stax-api_1.0_spec</artifactId>
-                </exclusion>
-            </exclusions>
+			    <exclusion>
+			        <groupId>commons-httpclient</groupId>
+			        <artifactId>commons-httpclient</artifactId>
+			    </exclusion>
+			    <exclusion>
+			        <groupId>commons-codec</groupId>
+			        <artifactId>commons-codec</artifactId>
+			    </exclusion>
+			    <exclusion>
+			        <groupId>commons-io</groupId>
+			        <artifactId>commons-io</artifactId>
+			    </exclusion>
+			    <exclusion>
+			        <groupId>org.codehaus.woodstox</groupId>
+			        <artifactId>wstx-asl</artifactId>
+			    </exclusion>
+			    <exclusion>
+			        <groupId>org.slf4j</groupId>
+			        <artifactId>slf4j-api</artifactId>
+			    </exclusion>
+			    <exclusion>
+			        <groupId>commons-fileupload</groupId>
+			        <artifactId>commons-fileupload</artifactId>
+			    </exclusion>
+			    <exclusion>
+			        <groupId>org.apache.geronimo.specs</groupId>
+			        <artifactId>geronimo-stax-api_1.0_spec</artifactId>
+			    </exclusion>
+			</exclusions>
 		</dependency>
 		
 		<dependency>
@@ -295,11 +295,11 @@
 							org.apache.solr.*;version="${solr.version}",
 							org.apache.http.*;version="${version.httpcore}",
 							org.tartarus.*
-                        </Export-Package>
+						</Export-Package>
 						<Import-Package>
 							!org.apache.solr.*,
 							*;resolution:=optional
-                        </Import-Package>
+						</Import-Package>
 						<DynamicImport-Package>*</DynamicImport-Package>
 					</instructions>
 				</configuration>
