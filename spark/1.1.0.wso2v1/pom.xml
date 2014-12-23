@@ -356,7 +356,7 @@
         <curator.version>2.4.0</curator.version>
         <derby.version>10.4.2.0</derby.version>
         <commons-net.version>2.2</commons-net.version>
-        <netty-all.version>4.0.8.wso2v1</netty-all.version>
+        <netty-all.version>4.0.23.wso2v1</netty-all.version>
         <jetty.version>8.1.14.v20131031</jetty.version>
         <org.jboss.netty.version>3.6.6.Final</org.jboss.netty.version>
         <com.github.fommil.netlib.version>1.1.2</com.github.fommil.netlib.version>
