@@ -19,12 +19,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
+    <parent>
+        <groupId>org.wso2.carbon</groupId>
+        <artifactId>orbit-parent</artifactId>
+        <version>4.3.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.bsf.wso2</groupId>
     <artifactId>bsf-all</artifactId>
     <packaging>bundle</packaging>
     <name>bsf.wso2</name>
-    <version>3.0.0.wso2v3</version>
+    <version>3.0.0.wso2v4</version>
     <description>
         org.wso2.carbon.bsf. This bundle will export packages from bsf-all.jar
     </description>
