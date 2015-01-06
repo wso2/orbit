@@ -25,7 +25,7 @@
     <artifactId>nimbus-jose-jwt</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Nimbus JWT Library</name>
-    <version>3.4.wso2v1</version>
+    <version>3.4.0.wso2v1</version>
     <description>
         This bundle will export packages from nimbus-jose-jwt library.
     </description>
@@ -66,7 +66,7 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-                            com.nimbusds.*; version="3.4",
+                            com.nimbusds.*; version="3.4.0",
                         </Export-Package>
                         <Import-Package>
                             !com.nimbusds.*,
