@@ -30,7 +30,7 @@
     <groupId>org.apache.bsf.wso2</groupId>
     <artifactId>bsf-all</artifactId>
     <packaging>bundle</packaging>
-    <name>bsf.wso2</name>
+    <!--name>bsf.wso2</name-->
     <version>3.0.0.wso2v4</version>
     <description>
         org.wso2.carbon.bsf. This bundle will export packages from bsf-all.jar
@@ -63,13 +63,6 @@
             <groupId>org.apache.bsf</groupId>
             <artifactId>bsf-all</artifactId>
             <version>${bsf.version}</version>
-            <optional>true</optional>
-        </dependency>
-	<dependency>
-            <groupId>org.mozilla</groupId>
-            <artifactId>rhino</artifactId>
-            <version>1.7R4</version>
-            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -78,24 +71,22 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.5.3</version> 
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
+			<Private-Package></Private-Package>
                         <Export-Package>
-                            org.apache.bsf.*,
-			    org.mozilla.*; version="1.6.0",
-                            org.pnuts.scriptapi.*,
-                            com.sun.script.*,
-                            com.sun.phobos.script.*,
-                            bsh.engine.*,
+                            org.apache.bsf.*;${bsf.version},
+                            org.pnuts.scriptapi.*;${bsf.version},
+                            com.sun.script.*;${bsf.version},
+                            com.sun.phobos.script.*;${bsf.version},
+                            bsh.engine.*;${bsf.version},
                         </Export-Package>
-                        <Import-Package>
-			   *;resolution:=optional                    
-                        </Import-Package>
-			<DynamicImport-Package>*</DynamicImport-Package>
-			<Embed-Dependency>rhino;scope=compile|runtime;inline=false;</Embed-Dependency>
+                        <Import-Package></Import-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
