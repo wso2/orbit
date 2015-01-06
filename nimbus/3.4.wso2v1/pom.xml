@@ -27,7 +27,7 @@
     <name>WSO2 Carbon Orbit - Nimbus JWT Library</name>
     <version>3.4.wso2v1</version>
     <description>
-        This bundle will export packages from nimbus-jose-jwt-2.26.1.jar
+        This bundle will export packages from nimbus-jose-jwt library.
     </description>
     <url>http://wso2.org</url>
 
@@ -70,6 +70,10 @@
                         </Export-Package>
                         <Import-Package>
                             !com.nimbusds.*,
+                            <!-- In carbon 4.2.0 bouncycastle library is packed with the wss4j library, and the export
+                            version of this package is set 132.0.0 mistakenly. Due to that to support old products we
+                            cannot add a import package range for bouncycastle. So leaving the import package range
+                            open. -->
                             org.bouncycastle.*,
                             *;resolution:=optional
                         </Import-Package>
