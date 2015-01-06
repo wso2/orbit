@@ -66,10 +66,10 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-                            !net.minidev.json.*,
                             com.jayway.jsonpath.*; version="1.2.0",
                         </Export-Package>
                         <Import-Package>
+                            !com.jayway.jsonpath.*,
                             com.fasterxml.jackson.core;version="[2.3,3)",
                             com.fasterxml.jackson.databind.*;version="[2.3,3)",
                             com.google.gson.*;version="[2.1,3)",
