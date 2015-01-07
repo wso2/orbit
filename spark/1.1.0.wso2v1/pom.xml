@@ -272,6 +272,7 @@
                         <Private-Package>          <!-- TODO Export org.apache.hadoop.mapred | mapreduce ? -->
                             org.apache.hadoop.*;-split-package:=merge-first,
                             com.typesafe.config.*,
+                            org.j_paine.*;-split-package:=merge-first,
                             akka.*,
                             com.google.*,
                             org.jets3t.*,
@@ -303,6 +304,7 @@
                             org.eclipse.jetty.util.*,
                             org.eclipse.jetty.security.*,
                             com.ning.compress.*,
+                            org.j_paine.*,
                             com.codahale.metrics.*,
                             com.fasterxml.jackson.*,
                             org.apache.curator.*,
