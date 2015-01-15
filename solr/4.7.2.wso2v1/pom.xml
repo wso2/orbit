@@ -28,8 +28,6 @@
 		<solr.version>4.7.2</solr.version>
 		<lucene.version>4.7.2</lucene.version>
 		<version.httpmime>4.3.1</version.httpmime>
-		<version.httpcore>4.3</version.httpcore>
-		<version.httpclient>4.3.1</version.httpclient>
 		<version.noggit>0.5</version.noggit>
 		<version.commons.io>2.1</version.commons.io>
 		<version.zookeeper>3.4.5</version.zookeeper>
@@ -201,16 +199,6 @@
 			<version>${version.httpmime}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpcore</artifactId>
-			<version>${version.httpcore}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>${version.httpclient}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.noggit</groupId>
 			<artifactId>noggit</artifactId>
 			<version>${version.noggit}</version>
@@ -284,8 +272,6 @@
 							lucene-suggest;scope=compile|runtime,
 							lucene-analyzers-phonetic;scope=compile|runtime,
 							commons-io;scope=compile|runtime,
-							httpclient;scope=compile|runtime,
-							httpcore;scope=compile|runtime,
 							httpmime;scope=compile|runtime,
 							zookeeper;scope=compile|runtime,
 							noggit;scope=compile|runtime,
@@ -293,11 +279,11 @@
 						</Embed-Dependency>
 						<Export-Package>
 							org.apache.solr.*;version="${solr.version}",
-							org.apache.http.*;version="${version.httpcore}",
 							org.tartarus.*
 						</Export-Package>
 						<Import-Package>
 							!org.apache.solr.*,
+							org.apache.http.*,
 							*;resolution:=optional
 						</Import-Package>
 						<DynamicImport-Package>*</DynamicImport-Package>
