@@ -62,7 +62,7 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Description>OSGI version of ${project.name}</Bundle-Description>
-                        <Export-Package>org.objectweb.asm.*</Export-Package>
+                        <Export-Package>org.objectweb.asm.*;version="4.0",</Export-Package>
                     </instructions>
                 </configuration>
                 <extensions>true</extensions>
