@@ -32,6 +32,7 @@
 		<version.commons.io>2.1</version.commons.io>
 		<version.zookeeper>3.4.5</version.zookeeper>
 		<version.spatial4j>0.4.1</version.spatial4j>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	
 	<dependencies>
@@ -215,28 +216,19 @@
 		</dependency>
 	</dependencies>
 
-	<pluginRepositories>
-		<pluginRepository>
-			<id>apache.snapshots</id>
-			<name>snapshot plugins</name>
-			<url>http://people.apache.org/repo/m2-snapshot-repository</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>apache.maven2.repo</id>
-			<name>maven2 repo</name>
-			<url>http://repo1.maven.org/maven2</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
+	<distributionManagement>
+		<repository>
+			<id>wso2.releases</id>
+			<name>WSO2 internal Repository</name>
+			<url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>wso2.snapshots</id>
+			<name>Apache Snapshot Repository</name>
+			<url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -283,8 +275,48 @@
 						</Export-Package>
 						<Import-Package>
 							!org.apache.solr.*,
+							!org.tartarus.*,
+							org.xml.sax.*,
+							org.w3c.dom,
+							org.slf4j.*,
+							org.joda.time.format,
+							org.joda.time,
+							org.apache.log4j.*,
+							org.apache.commons.lang,
+							org.apache.commons.fileupload.servlet,
+ 							org.apache.commons.fileupload.disk,
+							org.apache.commons.fileupload,
+							org.apache.commons.cli,
+							org.antlr.runtime.tree,
+							org.antlr.runtime,
+							javax.xml.xpath,
+							javax.xml.transform.stream,
+							javax.xml.transform.sax,
+							javax.xml.transform.dom,
+							javax.xml.transform,
+							javax.xml.stream,
+							javax.xml.parsers,
+							javax.xml.namespace,
+							javax.servlet.http,
+							javax.servlet,
+							javax.security.*,
+							javax.script,
+							javax.naming,
+							javax.management.*,
 							org.apache.http.*,
-							*;resolution:=optional
+							com.carrotsearch.hppc.*; resolution:=optional,
+							com.google.common.*; resolution:=optional,
+							com.googlecode.concurrentlinkedhashmap; resolution:=optional,
+							com.sun.management; resolution:=optional,
+							com.vividsolutions.jts.*; resolution:=optional,
+							jline; resolution:=optional,
+							org.apache.commons.codec.*;resolution:=optional,
+							org.apache.hadoop.*; resolution:=optional,
+							org.apache.lucene.sandbox.queries; resolution:=optional,
+							org.eclipse.jetty.*; resolution:=optional,
+							org.jboss.netty.*; resolution:=optional,
+							org.objectweb.asm.*; resolution:=optional,
+							org.restlet.*; resolution:=optional,
 						</Import-Package>
 						<DynamicImport-Package>*</DynamicImport-Package>
 					</instructions>
