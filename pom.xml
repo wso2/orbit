@@ -57,6 +57,7 @@
         <module>disruptor/3.2.1.wso2v1</module>
         <module>cassandra-thrift/1.2.13.wso2v4</module>
         <module>bsf/3.0.0.wso2v4</module>
+        <module>asm4/4.0.0.wso2v1</module>
     </modules>
 
    <build>
