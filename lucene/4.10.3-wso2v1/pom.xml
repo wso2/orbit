@@ -30,22 +30,32 @@
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-core</artifactId>
-            <version>${lucene.version}</version>
+            <version>4.10.3</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-analyzers-common</artifactId>
-            <version>${lucene.version}</version>
+            <version>4.10.3</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queryparser</artifactId>
-            <version>${lucene.version}</version>
+            <version>4.10.3</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queries</artifactId>
-            <version>${lucene.version}</version>
+            <version>4.10.3</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-regex</artifactId>
+            <version>3.0.3</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -86,15 +96,13 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Export-Package>org.apache.lucene.*;-split-package:=merge-last;version="${project.version}"</Export-Package>
+                        <Export-Package>org.apache.lucene.*;-split-package:=merge-last;version="4.10.3"</Export-Package>
+                        <Import-Package>!org.apache.lucene.*,javax.xml.parsers.*,javax.xml.transform.*,*;resolution:=optional</Import-Package>
+                        <Private-Package>org.apache.regexp.*;-split-package:=merge-last,org.tartarus.snowball</Private-Package>
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
-    <properties>
-        <lucene.version>4.10.3</lucene.version>
-    </properties>
 
 </project>
