@@ -31,31 +31,26 @@
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-core</artifactId>
             <version>4.10.3</version>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-analyzers-common</artifactId>
             <version>4.10.3</version>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queryparser</artifactId>
             <version>4.10.3</version>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queries</artifactId>
             <version>4.10.3</version>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-regex</artifactId>
             <version>3.0.3</version>
-            <optional>true</optional>
         </dependency>
     </dependencies>
 
