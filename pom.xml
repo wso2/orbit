@@ -58,6 +58,8 @@
         <module>cassandra-thrift/1.2.13.wso2v4</module>
         <module>bsf/3.0.0.wso2v4</module>
         <module>lucene/4.10.3-wso2v1</module>
+        <module>jcifs/1.3.17.wso2v1</module>
+        <module>jsch/0.1.51.wso2v1</module>
     </modules>
 
    <build>
