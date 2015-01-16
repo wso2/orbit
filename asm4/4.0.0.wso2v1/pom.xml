@@ -21,7 +21,7 @@
 
     <groupId>org.asm4.wso2</groupId>
     <artifactId>asm4-all</artifactId>
-    <version>4.0.0.wso2v1</version>
+    <version>${orbit.version.asm4}</version>
     <packaging>bundle</packaging>
     
     <description>
@@ -62,7 +62,7 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Description>OSGI version of ${project.name}</Bundle-Description>
-                        <Export-Package>org.objectweb.asm.*;version="4.0",</Export-Package>
+                        <Export-Package>org.objectweb.asm.*;version="${version.asm4}",</Export-Package>
                     </instructions>
                 </configuration>
                 <extensions>true</extensions>
@@ -77,5 +77,10 @@
             <version>4.0</version>
         </dependency>
     </dependencies>
+    
+     <properties>
+        <version.asm4>4.0.0</version.asm4>
+        <orbit.version.asm4>${version.asm4}.wso2v1</orbit.version.asm4>
+    </properties>
 
 </project>
