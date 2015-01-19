@@ -31,26 +31,31 @@
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-core</artifactId>
             <version>4.10.3</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-analyzers-common</artifactId>
             <version>4.10.3</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queryparser</artifactId>
             <version>4.10.3</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queries</artifactId>
             <version>4.10.3</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-regex</artifactId>
             <version>3.0.3</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -91,9 +96,10 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Export-Package>org.apache.lucene.*;-split-package:=merge-last;version="4.10.3"</Export-Package>
+                        <Export-Package>org.apache.lucene.*;version="4.10.3"</Export-Package>
                         <Import-Package>!org.apache.lucene.*,javax.xml.parsers.*,javax.xml.transform.*,*;resolution:=optional</Import-Package>
-                        <Private-Package>org.apache.regexp.*;-split-package:=merge-last,org.tartarus.snowball</Private-Package>
+                        <Private-Package>org.apache.regexp.*,org.tartarus.snowball</Private-Package>
+                        <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
