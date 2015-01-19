@@ -96,10 +96,9 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Export-Package>org.apache.lucene.*;version="4.10.3"</Export-Package>
+                        <_exportcontents>org.apache.lucene.*;version="4.10.3"</_exportcontents>
                         <Import-Package>!org.apache.lucene.*,javax.xml.parsers.*,javax.xml.transform.*,*;resolution:=optional</Import-Package>
-                        <Private-Package>org.apache.regexp.*,org.tartarus.snowball</Private-Package>
-                        <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
+                        <Embed-Dependency>*;scope=compile|runtime;inline=false</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
