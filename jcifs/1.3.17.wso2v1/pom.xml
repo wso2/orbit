@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>jcifs.wso2</groupId>
     <artifactId>jcifs</artifactId>
-    <version>${orbit.version.jcifs}</version>
+    <version>1.3.17.wso2v1</version>
     <packaging>bundle</packaging>
     <name>JCIFS library</name>
     <description>
@@ -79,6 +79,5 @@
 
     <properties>
         <version.jcifs>1.3.17</version.jcifs>
-        <orbit.version.jcifs>${version.jcifs}.wso2v1</orbit.version.jcifs>
     </properties>
 </project>

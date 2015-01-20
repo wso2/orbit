@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jcraft</groupId>
     <artifactId>jsch</artifactId>
-    <version>${orbit.version.jsch}</version>
+    <version>0.1.51.wso2v1</version>
     <packaging>bundle</packaging>
     <name>JSch</name>
     <description>
@@ -82,7 +82,6 @@
 
     <properties>
         <version.jsch>0.1.51</version.jsch>
-        <orbit.version.jsch>${version.jsch}.wso2v1</orbit.version.jsch>
     </properties>
 
 </project>
