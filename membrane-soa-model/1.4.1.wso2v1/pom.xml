@@ -20,7 +20,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.predic8.wso2</groupId>
-    <artifactId>soa-model-core</artifactId>
+    <artifactId>soa.model.core</artifactId>
     <version>1.4.1.wso2v1</version>
     <packaging>bundle</packaging>
     <description>
