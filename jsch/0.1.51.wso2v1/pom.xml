@@ -67,6 +67,7 @@
                             com.jcraft.jsch.*;version="${version.jsch}"
                         </Export-Package>
                         <Import-Package>
+                            !com.jcraft.jsch.*,
                             com.jcraft.jzlib;resolution:=optional,
                             javax.crypto;resolution:=optional,
                             javax.crypto.interfaces;resolution:=optional,

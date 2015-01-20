@@ -67,6 +67,7 @@
                             jcifs.*;version="${version.jcifs}"
                         </Export-Package>
                         <Import-Package>
+                            !jcifs.*,
                             javax.servlet;resolution:=optional,
                             javax.servlet.http;resolution:=optional
                         </Import-Package>
