@@ -80,10 +80,9 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            io.netty.*
+                            io.netty.*;version="${export.pkg.version.netty}"
                         </Export-Package>
                         <Private-Package>
-                            io.netty.*
                         </Private-Package>
                         <Import-Package>
                             !io.netty.*,

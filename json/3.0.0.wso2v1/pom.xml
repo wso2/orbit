@@ -80,10 +80,9 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.json.*;version="${json.version}"
+                            org.json.*;version="${export.pkg.version.json}"
                         </Export-Package>
                         <Private-Package>
-                            org.json.*
                         </Private-Package>
                         <Import-Package>
                             !org.json.*,
