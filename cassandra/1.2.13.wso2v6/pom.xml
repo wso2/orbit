@@ -56,7 +56,7 @@
                         <Private-Package>org.apache.cassandra.cql.jdbc.*</Private-Package>
                         <Export-Package>
                             !org.apache.cassandra.cql.jdbc.*,
-                            org.apache.cassandra.*;-split-package:=merge-first
+                            org.apache.cassandra.*;version="${cassandra.wso2.version}";-split-package:=merge-first
                         </Export-Package>
                         <Import-Package>
                             com.google.common.base.*; version="${guava.osgi.version.range}",
@@ -75,8 +75,9 @@
     <properties>
         <guava.osgi.version.range>[14.0.1,14.1.10]</guava.osgi.version.range>
         <thrift.osgi.version.range>[0.7.wso2v1,0.8.wso2v1)</thrift.osgi.version.range>
-        <antlr.osgi.version>3.2.0.wso2v1</antlr.osgi.version>
-        <netty.version>3.9.0.Final</netty.version>
+        <antlr.osgi.version>[3.2.0.wso2v1,3.2.1)</antlr.osgi.version>
+        <netty.version>[3.9.0.Final,3.9.1.Final)</netty.version>
+        <cassandra.wso2.version>1.2.13-wso2v3</cassandra.wso2.version>
     </properties>
 
     <distributionManagement>
