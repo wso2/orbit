@@ -53,17 +53,17 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-			<Private-Package>org.apache.cassandra.cql.jdbc.*</Private-Package>
+                        <Private-Package>org.apache.cassandra.cql.jdbc.*</Private-Package>
                         <Export-Package>
-			    !org.apache.cassandra.cql.jdbc.*,
+                            !org.apache.cassandra.cql.jdbc.*,
                             org.apache.cassandra.*;-split-package:=merge-first
                         </Export-Package>
                         <Import-Package>
                             com.google.common.base.*; version="${guava.osgi.version.range}",
                             com.google.common.collect.*; version="${guava.osgi.version.range}",
-			    org.antlr.*;version="${antlr.osgi.version}",
-			    org.apache.thrift.*;version="${thrift.osgi.version.range}",
-			    org.jboss.netty.logging.*;version="${netty.version}",
+                            org.antlr.*;version="${antlr.osgi.version}",
+                            org.apache.thrift.*;version="${thrift.osgi.version.range}",
+                            org.jboss.netty.logging.*;version="${netty.version}",
                             !org.apache.cassandra.*
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
@@ -76,7 +76,7 @@
         <guava.osgi.version.range>[14.0.1,14.1.10]</guava.osgi.version.range>
         <thrift.osgi.version.range>[0.7.wso2v1,0.8.wso2v1)</thrift.osgi.version.range>
         <antlr.osgi.version>3.2.0.wso2v1</antlr.osgi.version>
-	<netty.version>3.9.0.Final</netty.version>
+        <netty.version>3.9.0.Final</netty.version>
     </properties>
 
     <distributionManagement>
@@ -94,16 +94,16 @@
     </distributionManagement>
 
     <repositories>
-       <repository>
-           <id>wso2-nexus</id>
-           <name>WSO2 internal Repository</name>
-           <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-           <releases>
-               <enabled>true</enabled>
-               <updatePolicy>daily</updatePolicy>
-               <checksumPolicy>ignore</checksumPolicy>
-           </releases>
-       </repository>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+        </repository>
     </repositories>
 
 </project>
