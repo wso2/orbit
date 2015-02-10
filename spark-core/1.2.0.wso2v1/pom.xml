@@ -362,6 +362,7 @@
                             org.objectweb.asm.*;-split-package:=merge-first,
                             net.jpountz.*,
                             com.twitter.*;-split-package:=merge-first,
+                            com.esotericsoftware.*;-split-package:=merge-first,
                             org.apache.hadoop.*;-split-package:=merge-first,
                             org.apache.spark.network.*;-split-package:=merge-first,
                             net.razorvine.*, <!--pyrolite -->
