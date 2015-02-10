@@ -231,6 +231,12 @@
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
             <version>2.2.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-java</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -266,10 +272,16 @@
             <version>2.3.4-spark</version>
         </dependency>
 
+        <!--<dependency>-->
+            <!--<groupId>org.spark-project.spark</groupId>-->
+            <!--<artifactId>unused</artifactId>-->
+            <!--<version>1.0.0</version>-->
+        <!--</dependency>-->
+
         <dependency>
-            <groupId>org.spark-project.spark</groupId>
-            <artifactId>unused</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.spark-project.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>2.5.0-spark</version>
         </dependency>
 
         <dependency>
@@ -298,6 +310,12 @@
             <groupId>org.json4s</groupId>
             <artifactId>json4s-jackson_2.10</artifactId>
             <version>${json4s.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty</artifactId>
+            <version>${org.jboss.netty.version}</version>
         </dependency>
 
         <!--wso2 orbit bundles-->
@@ -358,7 +376,7 @@
                             org.xerial.snappy.*;version="${snappy.import.version}",
                             org.apache.commons.lang3.*;version="${commons-lang3.import.version}",
                             org.apache.commons.math3.*;version="${commons-math3.import.version}",
-                            <!--groovy.*;version="${groovy.import.version}",-->
+                            groovy.*;version="${groovy.import.version}",
                             !scala.tools.*,
                             !scala.quasiquotes.*,
                             !scala.reflect.macros.*,
@@ -370,6 +388,8 @@
                             <!--akka.*;version="${akka.import.version}",-->
                             com.fasterxml.jackson.*;version="${jackson.import.version}",
                             javax.transaction.*; version="${javax.transaction.import.version}",
+                            org.spark-project.protobuf.*;version ="${protobuf.import.version}",
+                            org.jboss.netty.*; version="${org.jboss.netty.import.version}",
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
@@ -398,6 +418,7 @@
         <roaringbitmap.import.version>[0.4.5, 0.4.6)</roaringbitmap.import.version>
         <javax.transaction.import.version>[1.1.0,1.2.0)</javax.transaction.import.version>
         <json4s.version>3.2.10</json4s.version>
+        <protobuf.import.version>[2.5.0,3.0.0)</protobuf.import.version>
 
         <scala.version>2.10.4</scala.version>
         <scala.import.version>[2.10.4, 2.11.0)</scala.import.version>
@@ -421,8 +442,8 @@
         <netty-all.import.version>[4.0.23.wso2v1, 4.0.24.Final)</netty-all.import.version>
         <jetty.version>8.1.14.v20131031</jetty.version>
         <jetty.import.version>[8.1.14, 8.1.15)</jetty.import.version>
-        <org.jboss.netty.version>3.6.6.Final</org.jboss.netty.version>
-        <org.jboss.netty.import.version>[3.6.6.Final, 3.6.7.Final)</org.jboss.netty.import.version>
+        <org.jboss.netty.version>3.8.0.Final</org.jboss.netty.version>
+        <org.jboss.netty.import.version>[3.8.0,4.0.0)</org.jboss.netty.import.version>
         <com.github.fommil.netlib.version>1.1.2</com.github.fommil.netlib.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jackson-annotations.version>2.3.0</jackson-annotations.version>

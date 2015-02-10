@@ -118,7 +118,8 @@
                         </Private-Package>
                         <Import-Package>                           <!-- TODO Change import versions to version ranges -->
                             org.apache.spark.*;version="${spark.import.version}";-split-package:=merge-first,
-                            <!--groovy.*;version="${groovy.import.version}",-->
+                            org.codehaus.groovy.*;version="${groovy.import.version}",
+                            groovy.*;version="${groovy.import.version}",
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
