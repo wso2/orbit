@@ -125,15 +125,15 @@
                             org.apache.spark.sql.*;version="${spark.version}";-split-package:=merge-first
                         </Export-Package>
                         <Private-Package>          <!-- TODO Export org.apache.hadoop.mapred | mapreduce ? -->
-                            org.apache.spark.sql.catalyst.*;version= "${catalyst.version}",
-                            parquet.*;version="${parquet.version}";-split-package:=merge-first,
-                            org.json4s.*;-split-package:=merge-first
+                            <!--org.apache.spark.sql.catalyst.*;version= "${catalyst.version}",-->
+                            <!--parquet.*;version="${parquet.version}";-split-package:=merge-first,-->
+                            <!--org.json4s.*;-split-package:=merge-first-->
                         </Private-Package>
                         <Import-Package>                           <!-- TODO Change import versions to version ranges -->
-                            org.apache.spark.*;version="${spark.import.version}";-split-package:=merge-first,
-                            org.codehaus.groovy.*;version="${groovy.import.version}",
-                            groovy.*;version="${groovy.import.version}",
-                            scala.reflect.*;version="${scala.import.version}",
+                            <!--org.apache.spark.*;version="${spark.import.version}";-split-package:=merge-first,-->
+                            <!--org.codehaus.groovy.*;version="${groovy.import.version}",-->
+                            <!--groovy.*;version="${groovy.import.version}",-->
+                            <!--scala.reflect.*;version="${scala.import.version}",-->
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>

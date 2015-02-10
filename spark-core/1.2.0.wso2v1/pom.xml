@@ -353,44 +353,43 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            <!--org.apache.spark.unused.*;version="${spark.version}";-split-package:=merge-first,-->
-                            <!--org.apache.spark.network.*;version="${spark.version}";-split-package:=merge-first,-->
                             org.apache.spark.*;version="${spark.version}";-split-package:=merge-first,
-                            <!--org.codehaus.groovy.*;version=2.3.7-->
                         </Export-Package>
                         <Private-Package>
-                            org.objectweb.asm.*;-split-package:=merge-first,
-                            net.jpountz.*,
-                            com.twitter.*;-split-package:=merge-first,
-                            com.esotericsoftware.*;-split-package:=merge-first,
-                            org.apache.hadoop.*;-split-package:=merge-first,
-                            org.apache.spark.network.*;-split-package:=merge-first,
-                            net.razorvine.*, <!--pyrolite -->
-                            org.apache.spark.unused.*;-split-package:=merge-first,
-                            com.typesafe.config.*,
-                            akka.*,
-                            org.json4s.*;-split-package:=merge-first
+                            <!--org.objectweb.asm.*;-split-package:=merge-first,-->
+                            <!--net.jpountz.*,-->
+                            <!--com.twitter.*;-split-package:=merge-first,-->
+                            <!--com.esotericsoftware.*;-split-package:=merge-first,-->
+                            <!--!org.apache.hadoop.hdfs.*,-->
+                            <!--!org.apache.hadoop.yarn.*,-->
+                            <!--org.apache.hadoop.*;-split-package:=merge-first,-->
+                            <!--org.apache.spark.network.*;-split-package:=merge-first,-->
+                            <!--net.razorvine.*, &lt;!&ndash;pyrolite &ndash;&gt;-->
+                            <!--org.apache.spark.unused.*;-split-package:=merge-first,-->
+                            <!--com.typesafe.config.*,-->
+                            <!--akka.*,-->
+                            <!--org.json4s.*;-split-package:=merge-first-->
                         </Private-Package>
                         <Import-Package>                           <!-- TODO Change import versions to version ranges -->
-                            com.ning.compress.*;version="${compress.lzf.import.version}",
-                            com.codahale.metrics.*;version="${codahale.metrics.import.version}",
-                            org.xerial.snappy.*;version="${snappy.import.version}",
-                            org.apache.commons.lang3.*;version="${commons-lang3.import.version}",
-                            org.apache.commons.math3.*;version="${commons-math3.import.version}",
-                            groovy.*;version="${groovy.import.version}",
-                            !scala.tools.*,
-                            !scala.quasiquotes.*,
-                            !scala.reflect.macros.*,
-                            scala.*;version="${scala.import.version}",
-                            io.netty.*;version="${netty-all.import.version}",
-                            org.apache.commons.net.*;version="${commons-net.import.version}",
-                            org.eclipse.jetty.*;version="${jetty.import.version}",
-                            org.roaringbitmap.*; version="${roaringbitmap.import.version}",
-                            <!--akka.*;version="${akka.import.version}",-->
-                            com.fasterxml.jackson.*;version="${jackson.import.version}",
-                            javax.transaction.*; version="${javax.transaction.import.version}",
-                            org.spark-project.protobuf.*;version ="${protobuf.import.version}",
-                            org.jboss.netty.*; version="${org.jboss.netty.import.version}",
+                            <!--com.ning.compress.*;version="${compress.lzf.import.version}",-->
+                            <!--com.codahale.metrics.*;version="${codahale.metrics.import.version}",-->
+                            <!--org.xerial.snappy.*;version="${snappy.import.version}",-->
+                            <!--org.apache.commons.lang3.*;version="${commons-lang3.import.version}",-->
+                            <!--org.apache.commons.math3.*;version="${commons-math3.import.version}",-->
+                            <!--groovy.*;version="${groovy.import.version}",-->
+                            <!--!scala.tools.*,-->
+                            <!--!scala.quasiquotes.*,-->
+                            <!--!scala.reflect.macros.*,-->
+                            <!--scala.*;version="${scala.import.version}",-->
+                            <!--io.netty.*;version="${netty-all.import.version}",-->
+                            <!--org.apache.commons.net.*;version="${commons-net.import.version}",-->
+                            <!--org.eclipse.jetty.*;version="${jetty.import.version}",-->
+                            <!--org.roaringbitmap.*; version="${roaringbitmap.import.version}",-->
+                            <!--&lt;!&ndash;akka.*;version="${akka.import.version}",&ndash;&gt;-->
+                            <!--com.fasterxml.jackson.*;version="${jackson.import.version}",-->
+                            <!--javax.transaction.*; version="${javax.transaction.import.version}",-->
+                            <!--org.spark-project.protobuf;version ="${protobuf.import.version}",-->
+                            <!--org.jboss.netty.*; version="${org.jboss.netty.import.version}",-->
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
