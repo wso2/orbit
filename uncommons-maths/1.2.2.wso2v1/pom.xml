@@ -22,60 +22,40 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.hadoop.wso2</groupId>
-    <artifactId>hadoop-client</artifactId>
-    <version>2.2.0.wso2v1</version>
+    <groupId>org.uncommons.maths.wso2</groupId>
+    <artifactId>uncommons-maths</artifactId>
+    <version>1.2.2.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>WSO2 Carbon Orbit - Apache Hadoop client</name>
+    <name>WSO2 Carbon Orbit - Uncommons Math</name>
     <description>
-        This bundle will export packages from Apache Hadoop client
+        This bundle will export packages from Uncommons Math
     </description>
     <url>http://wso2.org</url>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-client</artifactId>
-            <version>${hadoop.version}</version>
-            <optional>true</optional>
+            <groupId>org.uncommons.maths</groupId>
+            <artifactId>uncommons-maths</artifactId>
+            <version>${uncommons.math.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-common</artifactId>
-            <version>${hadoop.version}</version>
-            <optional>true</optional>
+            <groupId>jfree</groupId>
+            <artifactId>jcommon</artifactId>
+            <version>${jcommon.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-hdfs</artifactId>
-            <version>${hadoop.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-annotations</artifactId>
-            <version>${hadoop.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-core</artifactId>
-            <version>${hadoop.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-app</artifactId>
-            <version>${hadoop.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
-            <version>${hadoop.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-yarn-api</artifactId>
-            <version>${hadoop.version}</version>
+            <groupId>jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>${jfreechart.version}</version>
         </dependency>
     </dependencies>
+
+    <properties>
+        <uncommons.math.version>1.2.2</uncommons.math.version>
+        <jcommon.version>1.0.12</jcommon.version>
+        <jfreechart.version>1.0.8a</jfreechart.version>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -89,10 +69,10 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Private-Package></Private-Package>
                         <Export-Package>
-                            org.apache.hadoop.*;version="${hadoop.version}";-split-package:=merge-last
+                            org.uncommons.maths.*;version="${uncommons.math.version}";-split-package:=merge-last
                         </Export-Package>
                         <Import-Package>
-                            !org.apache.hadoop.*,
+                            !org.uncommons.maths.*,
                             *;resolution:=optional
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
@@ -101,9 +81,5 @@
             </plugin>
         </plugins>
     </build>
-    <properties>
-        <hadoop.version>2.2.0</hadoop.version>
-    </properties>
-
 
 </project>

@@ -22,60 +22,48 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.hadoop.wso2</groupId>
-    <artifactId>hadoop-client</artifactId>
-    <version>2.2.0.wso2v1</version>
+
+    <groupId>org.json4s.wso2</groupId>
+    <artifactId>json4s-jackson_2.10</artifactId>
+    <version>3.2.10.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>WSO2 Carbon Orbit - Apache Hadoop client</name>
+    <name>WSO2 Carbon Orbit - Json4s Jackson</name>
     <description>
-        This bundle will export packages from Apache Hadoop client
+        This bundle will export packages from Json4s Jackson
     </description>
     <url>http://wso2.org</url>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-client</artifactId>
-            <version>${hadoop.version}</version>
-            <optional>true</optional>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-jackson_2.10</artifactId>
+            <version>${json4s.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-common</artifactId>
-            <version>${hadoop.version}</version>
-            <optional>true</optional>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-core_2.10</artifactId>
+            <version>${json4s.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-hdfs</artifactId>
-            <version>${hadoop.version}</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${databind.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-annotations</artifactId>
-            <version>${hadoop.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-core</artifactId>
-            <version>${hadoop.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-app</artifactId>
-            <version>${hadoop.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
-            <version>${hadoop.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-yarn-api</artifactId>
-            <version>${hadoop.version}</version>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
         </dependency>
     </dependencies>
+
+    <properties>
+        <json4s.version>3.2.10</json4s.version>
+        <databind.version>2.3.1</databind.version>
+        <jackson.import.version>[2.3.1, 2.3.2)</jackson.import.version>
+        <scala.version>2.10.0</scala.version>
+        <scala.import.version>[2.10.0, 2.11.0)</scala.import.version>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -89,10 +77,13 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Private-Package></Private-Package>
                         <Export-Package>
-                            org.apache.hadoop.*;version="${hadoop.version}";-split-package:=merge-last
+                            org.json4s.*;version="${json4s.version}";-split-package:=merge-last
                         </Export-Package>
                         <Import-Package>
-                            !org.apache.hadoop.*,
+                            !org.json4s.*,
+                            !scala.tools.scalap.*,
+                            scala.*; version="${scala.import.version}",
+                            com.fasterxml.jackson.*;version="${jackson.import.version}",
                             *;resolution:=optional
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
@@ -101,9 +92,5 @@
             </plugin>
         </plugins>
     </build>
-    <properties>
-        <hadoop.version>2.2.0</hadoop.version>
-    </properties>
-
 
 </project>

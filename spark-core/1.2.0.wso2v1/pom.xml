@@ -76,212 +76,66 @@
             <version>${spark.version}</version>
         </dependency>
 
-        <!--spark dependencies -->
-        <dependency>
-            <groupId>com.codahale.metrics</groupId>
-            <artifactId>metrics-core</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.codahale.metrics</groupId>
-            <artifactId>metrics-graphite</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.codahale.metrics</groupId>
-            <artifactId>metrics-json</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.codahale.metrics</groupId>
-            <artifactId>metrics-jvm</artifactId>
-            <version>3.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>asm</groupId>
-            <artifactId>asm</artifactId>
-            <version>3.3.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ning</groupId>
-            <artifactId>compress-lzf</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.xerial.snappy</groupId>
-            <artifactId>snappy-java</artifactId>
-            <version>1.1.1.6</version>
-        </dependency>
-
+        <!--3rd party osgi bundles -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.3.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>net.jpountz.lz4</groupId>
-            <artifactId>lz4</artifactId>
-            <version>1.2.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-            <version>2.3.7</version>
-        </dependency>
-
-        <!--todo: orbit bundle scala -->
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>2.10.4</version>
+            <version>${commons-lang3.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-math3</artifactId>
-            <version>3.1.1</version>
+            <version>${commons-math3.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>com.twitter</groupId>
-            <artifactId>chill_2.10</artifactId>
-            <version>0.5.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.twitter</groupId>
-            <artifactId>chill-java</artifactId>
-            <version>0.5.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>commons-net</groupId>
-            <artifactId>commons-net</artifactId>
-            <version>2.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-server</artifactId>
-            <version>8.1.14.v20131031</version>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-plus</artifactId>
-            <version>8.1.14.v20131031</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-security</artifactId>
-            <version>8.1.14.v20131031</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-util</artifactId>
-            <version>8.1.14.v20131031</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-http</artifactId>
-            <version>8.1.14.v20131031</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-io</artifactId>
-            <version>8.1.14.v20131031</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-continuation</artifactId>
-            <version>8.1.14.v20131031</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-jndi</artifactId>
-            <version>8.1.14.v20131031</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-servlet</artifactId>
-            <version>8.1.14.v20131031</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-webapp</artifactId>
-            <version>8.1.14.v20131031</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-xml</artifactId>
-            <version>8.1.14.v20131031</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty.orbit</groupId>
-            <artifactId>javax.transaction</artifactId>
-            <version>1.1.1.v201105210645</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-client</artifactId>
-            <version>2.2.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.google.protobuf</groupId>
-                    <artifactId>protobuf-java</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.roaringbitmap</groupId>
-            <artifactId>RoaringBitmap</artifactId>
-            <version>0.4.5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.spark-project</groupId>
-            <artifactId>pyrolite</artifactId>
-            <version>2.0.1</version>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-reflect</artifactId>
+            <version>${scala.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.spark-project.akka</groupId>
             <artifactId>akka-remote_2.10</artifactId>
-            <version>2.3.4-spark</version>
+            <version>${akka.version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.spark-project.akka</groupId>-->
-            <!--<artifactId>akka-slf4j_2.10</artifactId>-->
-            <!--<version>2.3.4-spark</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.spark-project.akka</groupId>-->
-            <!--<artifactId>akka-testkit_2.10</artifactId>-->
-            <!--<version>2.3.4-spark</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.spark-project.akka</groupId>
             <artifactId>akka-actor_2.10</artifactId>
-            <version>2.3.4-spark</version>
+            <version>${akka.version}</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.spark-project.spark</groupId>-->
-            <!--<artifactId>unused</artifactId>-->
-            <!--<version>1.0.0</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>${typesafe.version}</version>
+        </dependency>
 
         <dependency>
-            <groupId>org.spark-project.protobuf</groupId>
-            <artifactId>protobuf-java</artifactId>
-            <version>2.5.0-spark</version>
+            <groupId>com.codahale.metrics</groupId>
+            <artifactId>metrics-core</artifactId>
+            <version>${codahale.metrics.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codahale.metrics</groupId>
+            <artifactId>metrics-graphite</artifactId>
+            <version>${codahale.metrics.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codahale.metrics</groupId>
+            <artifactId>metrics-json</artifactId>
+            <version>${codahale.metrics.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codahale.metrics</groupId>
+            <artifactId>metrics-jvm</artifactId>
+            <version>${codahale.metrics.version}</version>
         </dependency>
 
         <dependency>
@@ -297,45 +151,83 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>${jackson-annotations.version}</version>
+            <version>${jackson.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>javax.transaction</groupId>
-            <artifactId>jta</artifactId>
-            <version>1.1</version>
+            <groupId>com.esotericsoftware.kryo</groupId>
+            <artifactId>kryo</artifactId>
+            <version>${kryo.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.json4s</groupId>
-            <artifactId>json4s-jackson_2.10</artifactId>
-            <version>${json4s.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty</artifactId>
-            <version>${org.jboss.netty.version}</version>
-        </dependency>
-
-        <!--wso2 orbit bundles-->
-        <!--<dependency>-->
-        <!--<groupId>asm.wso2</groupId>-->
-        <!--<artifactId>asm</artifactId>-->
-        <!--<version>3.1.wso2v1</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--<groupId>snappy-java.wso2</groupId>-->
-        <!--<artifactId>snappy-java</artifactId>-->
-        <!--<version>1.0.4.1.wso2v1</version>-->
-        <!--</dependency>-->
-
+        <!--wso2 orbit bundles -->
         <dependency>
             <groupId>io.netty.wso2</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.0.23.wso2v1</version>
+            <version>${netty-all.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop.wso2</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>${hadoop.client.orbit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json4s.wso2</groupId>
+            <artifactId>json4s-jackson_2.10</artifactId>
+            <version>${json4s.orbit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.xerial.snappy</groupId>
+            <artifactId>snappy-java</artifactId>
+            <version>${snappy.version}</version>
+        </dependency>
+
+
+        <!--other deps -->
+        <!--<dependency>-->
+            <!--<groupId>asm</groupId>-->
+            <!--<artifactId>asm</artifactId>-->
+            <!--<version>3.3.1</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>com.ning</groupId>-->
+            <!--<artifactId>compress-lzf</artifactId>-->
+            <!--<version>1.0.0</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>net.jpountz.lz4</groupId>-->
+            <!--<artifactId>lz4</artifactId>-->
+            <!--<version>1.2.0</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>com.twitter</groupId>-->
+            <!--<artifactId>chill_2.10</artifactId>-->
+            <!--<version>0.5.0</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>com.twitter</groupId>-->
+            <!--<artifactId>chill-java</artifactId>-->
+            <!--<version>0.5.0</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>commons-net</groupId>-->
+            <!--<artifactId>commons-net</artifactId>-->
+            <!--<version>2.2</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>org.spark-project.spark</groupId>-->
+        <!--<artifactId>unused</artifactId>-->
+        <!--<version>1.0.0</version>-->
+        <!--</dependency>-->
 
 
     </dependencies>
@@ -356,40 +248,25 @@
                             org.apache.spark.*;version="${spark.version}";-split-package:=merge-first,
                         </Export-Package>
                         <Private-Package>
-                            <!--org.objectweb.asm.*;-split-package:=merge-first,-->
-                            <!--net.jpountz.*,-->
-                            <!--com.twitter.*;-split-package:=merge-first,-->
-                            <!--com.esotericsoftware.*;-split-package:=merge-first,-->
-                            <!--!org.apache.hadoop.hdfs.*,-->
-                            <!--!org.apache.hadoop.yarn.*,-->
-                            <!--org.apache.hadoop.*;-split-package:=merge-first,-->
-                            <!--org.apache.spark.network.*;-split-package:=merge-first,-->
-                            <!--net.razorvine.*, &lt;!&ndash;pyrolite &ndash;&gt;-->
-                            <!--org.apache.spark.unused.*;-split-package:=merge-first,-->
-                            <!--com.typesafe.config.*,-->
-                            <!--akka.*,-->
-                            <!--org.json4s.*;-split-package:=merge-first-->
+                            com.typesafe.config.*,
+                            akka.*
                         </Private-Package>
                         <Import-Package>                           <!-- TODO Change import versions to version ranges -->
-                            <!--com.ning.compress.*;version="${compress.lzf.import.version}",-->
-                            <!--com.codahale.metrics.*;version="${codahale.metrics.import.version}",-->
-                            <!--org.xerial.snappy.*;version="${snappy.import.version}",-->
-                            <!--org.apache.commons.lang3.*;version="${commons-lang3.import.version}",-->
-                            <!--org.apache.commons.math3.*;version="${commons-math3.import.version}",-->
-                            <!--groovy.*;version="${groovy.import.version}",-->
-                            <!--!scala.tools.*,-->
-                            <!--!scala.quasiquotes.*,-->
-                            <!--!scala.reflect.macros.*,-->
-                            <!--scala.*;version="${scala.import.version}",-->
-                            <!--io.netty.*;version="${netty-all.import.version}",-->
-                            <!--org.apache.commons.net.*;version="${commons-net.import.version}",-->
-                            <!--org.eclipse.jetty.*;version="${jetty.import.version}",-->
-                            <!--org.roaringbitmap.*; version="${roaringbitmap.import.version}",-->
-                            <!--&lt;!&ndash;akka.*;version="${akka.import.version}",&ndash;&gt;-->
-                            <!--com.fasterxml.jackson.*;version="${jackson.import.version}",-->
-                            <!--javax.transaction.*; version="${javax.transaction.import.version}",-->
-                            <!--org.spark-project.protobuf;version ="${protobuf.import.version}",-->
-                            <!--org.jboss.netty.*; version="${org.jboss.netty.import.version}",-->
+                            !scala.tools.*,
+                            scala.*;version="${scala.import.version}",
+                            org.apache.commons.lang3.*;version="${commons-lang3.import.version}",
+                            org.apache.commons.math3.*;version="${commons-math3.import.version}",
+                            io.netty.*;version="${netty-all.import.version}",
+                            org.apache.hadoop.*;version=$"{hadoop.client.import.version}",
+                            <!--these were made private beacuse of reference.conf file missing for com.typesafe.config bundle-->
+                            <!--com.typesafe.config.*;version=$"{typesafe.import.version}",-->
+                            <!--akka.*; version=$"{akka.import.version}",-->
+                            com.codahale.metrics.*;version="${codahale.metrics.import.version}",
+                            com.fasterxml.jackson.*;version="${jackson.import.version}",
+                            org.json4s.*;version = "${json4s.import.version}",
+                            com.esotericsoftware.*; version = "${kryo.import.version}",
+                            org.xerial.snappy.*;version="${snappy.import.version}",
+                            com.ning.compress.*;version="${compress.lzf.import.version}",
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
@@ -410,43 +287,33 @@
     <properties>
         <exp.pkg.version.spark>1.2.0.wso2v1</exp.pkg.version.spark>
         <spark.version>1.2.0</spark.version>
-
-        <groovy.import.version>[2.3.7, 2.3.8)</groovy.import.version>
-        <commons-math3.import.version>[3.1.1, 3.1.2)</commons-math3.import.version>
-        <commons-net.import.version>[2.2, 2.3)</commons-net.import.version>
+        <hadoop.client.orbit.version>2.2.0.wso2v1</hadoop.client.orbit.version>
+        <hadoop.client.import.version>[2.2.0, 2.3.0)</hadoop.client.import.version>
+        <typesafe.version>1.2.0</typesafe.version>
+        <typesafe.import.version>[1.2.0, 2.0.0)</typesafe.import.version>
+        <akka.version>2.3.4-spark</akka.version>
         <akka.import.version>[2.3.4-spark, 2.3.5)</akka.import.version>
-        <roaringbitmap.import.version>[0.4.5, 0.4.6)</roaringbitmap.import.version>
-        <javax.transaction.import.version>[1.1.0,1.2.0)</javax.transaction.import.version>
-        <json4s.version>3.2.10</json4s.version>
-        <protobuf.import.version>[2.5.0,3.0.0)</protobuf.import.version>
-
-        <scala.version>2.10.4</scala.version>
-        <scala.import.version>[2.10.4, 2.11.0)</scala.import.version>
-        <compress.lzf.version>1.0.0</compress.lzf.version>
-        <compress.lzf.import.version>[1.0.0, 1.0.1)</compress.lzf.import.version>
         <codahale.metrics.version>3.0.0</codahale.metrics.version>
         <codahale.metrics.import.version>[3.0.0, 3.0.1)</codahale.metrics.import.version>
         <jackson.version>2.3.1</jackson.version>
         <jackson.import.version>[2.3.1, 2.3.2)</jackson.import.version>
-        <snappy.version>1.0.5.3</snappy.version>
-        <snappy.import.version>[1.0.5.3, 1.0.5.4)</snappy.import.version>
-        <commons-math3.version>3.3</commons-math3.version>
-        <commons-lang3.version>3.3.2</commons-lang3.version>
-        <commons-lang3.import.version>[3.3.2, 3.3.3)</commons-lang3.import.version>
-        <curator.version>2.4.0</curator.version>
-        <curator.import.version>[2.4.0, 2.4.1)</curator.import.version>
-        <derby.version>10.4.2.0</derby.version>
-        <derby.import.version>[10.4.2.0, 10.5.1.1)</derby.import.version>
-        <commons-net.version>2.2</commons-net.version>
+        <json4s.orbit.version>3.2.10.wso2v1</json4s.orbit.version>
+        <json4s.import.version>[3.2.10, 3.2.11)</json4s.import.version>
+        <kryo.version>2.21</kryo.version>
+        <kryo.import.version>[2.21,3.0)</kryo.import.version>
+        <snappy.version>1.1.1.6</snappy.version>
+        <snappy.import.version>[1.1.1.6, 1.1.1.7)</snappy.import.version>
         <netty-all.version>4.0.23.wso2v1</netty-all.version>
         <netty-all.import.version>[4.0.23.wso2v1, 4.0.24.Final)</netty-all.import.version>
-        <jetty.version>8.1.14.v20131031</jetty.version>
-        <jetty.import.version>[8.1.14, 8.1.15)</jetty.import.version>
-        <org.jboss.netty.version>3.8.0.Final</org.jboss.netty.version>
-        <org.jboss.netty.import.version>[3.8.0,4.0.0)</org.jboss.netty.import.version>
-        <com.github.fommil.netlib.version>1.1.2</com.github.fommil.netlib.version>
+        <scala.version>2.10.4</scala.version>
+        <scala.import.version>[2.10.4, 2.11.0)</scala.import.version>
+        <commons-math3.version>3.1.1</commons-math3.version>
+        <commons-math3.import.version>[3.1.1, 3.1.2)</commons-math3.import.version>
+        <commons-lang3.version>3.3.2</commons-lang3.version>
+        <commons-lang3.import.version>[3.3.2, 3.3.3)</commons-lang3.import.version>
+        <compress.lzf.version>1.0.0</compress.lzf.version>
+        <compress.lzf.import.version>[1.0.0, 1.0.1)</compress.lzf.import.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jackson-annotations.version>2.3.0</jackson-annotations.version>
     </properties>
 
 </project>
