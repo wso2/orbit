@@ -23,7 +23,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.spark.wso2</groupId>
-    <artifactId>spark-sql</artifactId>
+    <artifactId>spark-sql_2.10</artifactId>
     <version>1.2.0.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Apache Spark SQL</name>
@@ -61,7 +61,7 @@
         <!--spark orbit bundle-->
         <dependency>
             <groupId>org.apache.spark.wso2</groupId>
-            <artifactId>spark-core</artifactId>
+            <artifactId>spark-core_2.10</artifactId>
             <version>1.2.0.wso2v1</version>
         </dependency>
 
@@ -77,34 +77,34 @@
             <version>1.2.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.twitter</groupId>
-            <artifactId>parquet-column</artifactId>
-            <version>1.6.0rc3</version>
-        </dependency>
-        <dependency>
-            <groupId>com.twitter</groupId>
-            <artifactId>parquet-hadoop</artifactId>
-            <version>1.6.0rc3</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.twitter</groupId>-->
+            <!--<artifactId>parquet-column</artifactId>-->
+            <!--<version>1.6.0rc3</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.twitter</groupId>-->
+            <!--<artifactId>parquet-hadoop</artifactId>-->
+            <!--<version>1.6.0rc3</version>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-            <version>2.3.7</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.codehaus.groovy</groupId>-->
+            <!--<artifactId>groovy-all</artifactId>-->
+            <!--<version>2.3.7</version>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>org.json4s</groupId>
-            <artifactId>json4s-jackson_2.10</artifactId>
-            <version>${json4s.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.json4s</groupId>-->
+            <!--<artifactId>json4s-jackson_2.10</artifactId>-->
+            <!--<version>${json4s.version}</version>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-reflect</artifactId>
-            <version>${scala.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.scala-lang</groupId>-->
+            <!--<artifactId>scala-reflect</artifactId>-->
+            <!--<version>${scala.version}</version>-->
+        <!--</dependency>-->
 
 
     </dependencies>
@@ -124,16 +124,11 @@
                         <Export-Package>
                             org.apache.spark.sql.*;version="${spark.version}";-split-package:=merge-first
                         </Export-Package>
-                        <Private-Package>          <!-- TODO Export org.apache.hadoop.mapred | mapreduce ? -->
-                            <!--org.apache.spark.sql.catalyst.*;version= "${catalyst.version}",-->
-                            <!--parquet.*;version="${parquet.version}";-split-package:=merge-first,-->
-                            <!--org.json4s.*;-split-package:=merge-first-->
+                        <Private-Package>
                         </Private-Package>
-                        <Import-Package>                           <!-- TODO Change import versions to version ranges -->
-                            <!--org.apache.spark.*;version="${spark.import.version}";-split-package:=merge-first,-->
-                            <!--org.codehaus.groovy.*;version="${groovy.import.version}",-->
-                            <!--groovy.*;version="${groovy.import.version}",-->
-                            <!--scala.reflect.*;version="${scala.import.version}",-->
+                        <Import-Package>
+                            !org.apache.spark.sql.*,
+                            org.apache.spark.*;version="${spark.import.version}",
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>

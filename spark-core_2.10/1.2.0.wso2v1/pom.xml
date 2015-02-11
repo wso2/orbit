@@ -23,7 +23,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.spark.wso2</groupId>
-    <artifactId>spark-core</artifactId>
+    <artifactId>spark-core_2.10</artifactId>
     <version>1.2.0.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Apache Spark Core</name>
@@ -185,18 +185,17 @@
             <version>${snappy.version}</version>
         </dependency>
 
+        <dependency>
+        <groupId>com.ning</groupId>
+        <artifactId>compress-lzf</artifactId>
+        <version>${compress.lzf.version}</version>
+        </dependency>
 
         <!--other deps -->
         <!--<dependency>-->
             <!--<groupId>asm</groupId>-->
             <!--<artifactId>asm</artifactId>-->
             <!--<version>3.3.1</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>com.ning</groupId>-->
-            <!--<artifactId>compress-lzf</artifactId>-->
-            <!--<version>1.0.0</version>-->
         <!--</dependency>-->
 
         <!--<dependency>-->
@@ -251,14 +250,15 @@
                             com.typesafe.config.*,
                             akka.*
                         </Private-Package>
-                        <Import-Package>                           <!-- TODO Change import versions to version ranges -->
+                        <Import-Package>
+                            !org.apache.spark.*,
                             !scala.tools.*,
                             scala.*;version="${scala.import.version}",
                             org.apache.commons.lang3.*;version="${commons-lang3.import.version}",
                             org.apache.commons.math3.*;version="${commons-math3.import.version}",
                             io.netty.*;version="${netty-all.import.version}",
                             org.apache.hadoop.*;version=$"{hadoop.client.import.version}",
-                            <!--these were made private beacuse of reference.conf file missing for com.typesafe.config bundle-->
+                            <!-- todo: these were made private beacuse of reference.conf file missing for com.typesafe.config bundle-->
                             <!--com.typesafe.config.*;version=$"{typesafe.import.version}",-->
                             <!--akka.*; version=$"{akka.import.version}",-->
                             com.codahale.metrics.*;version="${codahale.metrics.import.version}",
