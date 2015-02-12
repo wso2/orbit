@@ -160,6 +160,18 @@
             <version>${kryo.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.xerial.snappy</groupId>
+            <artifactId>snappy-java</artifactId>
+            <version>${snappy.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ning</groupId>
+            <artifactId>compress-lzf</artifactId>
+            <version>${compress.lzf.version}</version>
+        </dependency>
+
         <!--wso2 orbit bundles -->
         <dependency>
             <groupId>io.netty.wso2</groupId>
@@ -177,18 +189,6 @@
             <groupId>org.json4s.wso2</groupId>
             <artifactId>json4s-jackson_2.10</artifactId>
             <version>${json4s.orbit.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.xerial.snappy</groupId>
-            <artifactId>snappy-java</artifactId>
-            <version>${snappy.version}</version>
-        </dependency>
-
-        <dependency>
-        <groupId>com.ning</groupId>
-        <artifactId>compress-lzf</artifactId>
-        <version>${compress.lzf.version}</version>
         </dependency>
 
         <!--other deps -->
