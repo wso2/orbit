@@ -172,6 +172,24 @@
             <version>${compress.lzf.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
         <!--wso2 orbit bundles -->
         <dependency>
             <groupId>io.netty.wso2</groupId>
@@ -267,6 +285,14 @@
                             com.esotericsoftware.*; version = "${kryo.import.version}",
                             org.xerial.snappy.*;version="${snappy.import.version}",
                             com.ning.compress.*;version="${compress.lzf.import.version}",
+                            com.google.common.base.*;version="${guava.import.version}",
+                            com.google.common.cache.*;version="${guava.import.version}",
+                            com.google.common.collect.*;version="${guava.import.version}",
+                            com.google.common.hash.*;version="${guava.import.version}",
+                            com.google.common.io.*;version="${guava.import.version}",
+                            com.google.common.util.concurrent.*;version="${guava.import.version}",
+                            org.slf4j.*;version="${slf4j.import.version}",
+                            org.slf4j.impl.*;version="${slf4j.import.version}",
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
@@ -313,6 +339,10 @@
         <compress.lzf.version>1.0.0</compress.lzf.version>
         <compress.lzf.import.version>[1.0.0, 1.0.1)</compress.lzf.import.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <guava.version>14.0.1</guava.version>
+        <guava.import.version>[14.0.0,15.0.0)</guava.import.version>
+        <slf4j.version>1.7.5</slf4j.version>
+        <slf4j.import.version>[1.7.0, 2.0.0)</slf4j.import.version>
     </properties>
 
 </project>
