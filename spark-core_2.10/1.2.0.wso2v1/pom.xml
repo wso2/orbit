@@ -277,7 +277,6 @@
                             @spark-core_2.10-${spark.version}.jar!/*.xml,
                             @spark-core_2.10-${spark.version}.jar!/*.ini,
                         </Include-Resource>
-                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
