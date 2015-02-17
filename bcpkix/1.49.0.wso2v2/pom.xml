@@ -82,16 +82,16 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Import-Package>
-                            org.bouncycastle.x509.*;version="[1.49.0.wso2v2, 1.50.0.wso2v1)",
-                            org.bouncycastle.util.*;version="[1.49.0.wso2v2, 1.50.0.wso2v1)",
-                            org.bouncycastle.pqc.*;version="[1.49.0.wso2v2, 1.50.0.wso2v1)",
-                            org.bouncycastle.ocsp.*;version="[1.49.0.wso2v2, 1.50.0.wso2v1)",
-                            org.bouncycastle.math.*;version="[1.49.0.wso2v2, 1.50.0.wso2v1)",
-                            org.bouncycastle.jce.*;version="[1.49.0.wso2v2, 1.50.0.wso2v1)",
-                            org.bouncycastle.jcajce.*;version="[1.49.0.wso2v2, 1.50.0.wso2v1)",
-                            org.bouncycastle.i18n.*;version="[1.49.0.wso2v2, 1.50.0.wso2v1)",
-                            org.bouncycastle.crypto.*;version="[1.49.0.wso2v2, 1.50.0.wso2v1)",
-                            org.bouncycastle.asn1.*;version="[1.49.0.wso2v2, 1.50.0.wso2v1)"
+                            org.bouncycastle.x509.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.util.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.pqc.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.ocsp.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.math.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.jce.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.jcajce.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.i18n.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.crypto.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.asn1.*;version="${imp.pkg.version.range.bcprov}"
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Embed-Dependency>bcpkix-jdk15on;scope=compile|runtime;inline=false
@@ -146,6 +146,7 @@
 
     <properties>
         <exp.pkg.version.bcpkix>1.49.0.wso2v2</exp.pkg.version.bcpkix>
+        <imp.pkg.version.range.bcprov>[1.49.0.wso2v2, 1.50.0.wso2v1)</imp.pkg.version.range.bcprov>
     </properties>
 
 </project>
