@@ -84,16 +84,13 @@
                         <Import-Package>
                             org.bouncycastle.x509.*;version="${imp.pkg.version.range.bcprov}",
                             org.bouncycastle.util.*;version="${imp.pkg.version.range.bcprov}",
-                            org.bouncycastle.pqc.*;version="${imp.pkg.version.range.bcprov}",
-                            org.bouncycastle.ocsp.*;version="${imp.pkg.version.range.bcprov}",
                             org.bouncycastle.math.*;version="${imp.pkg.version.range.bcprov}",
                             org.bouncycastle.jce.*;version="${imp.pkg.version.range.bcprov}",
                             org.bouncycastle.jcajce.*;version="${imp.pkg.version.range.bcprov}",
-                            org.bouncycastle.i18n.*;version="${imp.pkg.version.range.bcprov}",
                             org.bouncycastle.crypto.*;version="${imp.pkg.version.range.bcprov}",
-                            org.bouncycastle.asn1.*;version="${imp.pkg.version.range.bcprov}"
+                            org.bouncycastle.asn1.*;version="${imp.pkg.version.range.bcprov}",
+                            *;resolution:=optional
                         </Import-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
                         <Embed-Dependency>bcpkix-jdk15on;scope=compile|runtime;inline=false
                         </Embed-Dependency>
                         <_exportcontents>
