@@ -156,86 +156,101 @@
             <groupId>javax.ws.rs</groupId>
             <artifactId>javax.ws.rs-api</artifactId>
             <version>${javax.ws.rs.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.openejb</groupId>
             <artifactId>tomee-webapp</artifactId>
             <version>${tomee.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.openejb</groupId>
             <artifactId>tomee-catalina</artifactId>
             <version>${tomee.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.openejb.patch</groupId>
             <artifactId>openjpa</artifactId>
             <version>${openjpa.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.metatype.sxc</groupId>
             <artifactId>sxc-runtime</artifactId>
             <version>${sxc.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.metatype.sxc</groupId>
             <artifactId>sxc-jaxb-core</artifactId>
             <version>${sxc.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.apache.openwebbeans</groupId>
             <artifactId>openwebbeans-impl</artifactId>
             <version>${openwebbeans.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.openwebbeans</groupId>
             <artifactId>openwebbeans-spi</artifactId>
             <version>${openwebbeans.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.apache.xbean</groupId>
             <artifactId>xbean-asm4-shaded</artifactId>
             <version>${xbean.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.xbean</groupId>
             <artifactId>xbean-bundleutils</artifactId>
             <version>${xbean.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.xbean</groupId>
             <artifactId>xbean-finder-shaded</artifactId>
             <version>${xbean.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.xbean</groupId>
             <artifactId>xbean-naming</artifactId>
             <version>${xbean.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.xbean</groupId>
             <artifactId>xbean-reflect</artifactId>
             <version>${xbean.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.apache.bval</groupId>
             <artifactId>bval-core</artifactId>
             <version>${bval.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.bval</groupId>
             <artifactId>bval-jsr303</artifactId>
             <version>${bval.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.apache.openejb</groupId>
             <artifactId>openejb-cxf-rs</artifactId>
             <version>${openejb.version}</version>
-            <scope>runtime</scope>
+            <optional>true</optional>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.openejb</groupId>
@@ -247,7 +262,7 @@
             <groupId>org.apache.openejb</groupId>
             <artifactId>openejb-cxf-transport</artifactId>
             <version>${openejb.version}</version>
-            <scope>runtime</scope>
+            <optional>true</optional>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.openejb</groupId>
@@ -259,7 +274,7 @@
             <groupId>org.apache.openejb</groupId>
             <artifactId>openejb-cxf</artifactId>
             <version>${openejb.version}</version>
-            <scope>runtime</scope>
+            <optional>true</optional>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.openejb</groupId>
@@ -271,7 +286,7 @@
             <groupId>org.apache.openejb</groupId>
             <artifactId>openejb-rest</artifactId>
             <version>${openejb.version}</version>
-            <scope>runtime</scope>
+            <optional>true</optional>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.openejb</groupId>
@@ -283,19 +298,19 @@
             <groupId>org.apache.openejb</groupId>
             <artifactId>openejb-webservices</artifactId>
             <version>${openejb.version}</version>
+            <optional>true</optional>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.openejb</groupId>
                     <artifactId>javaee-api</artifactId>
                 </exclusion>
             </exclusions>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.openejb</groupId>
             <artifactId>tomee-webservices</artifactId>
             <version>${tomee.version}</version>
-            <scope>runtime</scope>
+            <optional>true</optional>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.openejb</groupId>
@@ -307,7 +322,7 @@
             <groupId>org.apache.openejb</groupId>
             <artifactId>openejb-core</artifactId>
             <version>${openejb.version}</version>
-            <scope>runtime</scope>
+            <optional>true</optional>
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.openejb</groupId>
@@ -321,31 +336,37 @@
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-api</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-bindings-soap</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-bindings-xml</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-core</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-databinding-jaxb</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
             <exclusions>
                 <exclusion>
                     <groupId>javax.ws.rs</groupId>
@@ -357,92 +378,110 @@
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-simple</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-extension-providers</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-extension-search</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-security-cors</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-rs-security-oauth2</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-addr</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-policy</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-security</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.apache.neethi</groupId>
             <artifactId>neethi</artifactId>
             <version>${neethi.cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.ws.xmlschema</groupId>
             <artifactId>xmlschema-core</artifactId>
             <version>${xmlschema.cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.santuario</groupId>
             <artifactId>xmlsec</artifactId>
             <version>${xmlsec.cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache-core</artifactId>
             <version>${ehcache.cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>xml-resolver</groupId>
             <artifactId>xml-resolver</artifactId>
             <version>${xml.resolver.cxf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
             <version>${jaxb.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-xjc</artifactId>
             <version>${jaxb.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.ws.security</groupId>
             <artifactId>wss4j</artifactId>
             <version>${cxf.version.wss4j}</version>
+            <optional>true</optional>
         </dependency>
         <!-- END CXF deps -->
 
