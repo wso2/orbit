@@ -91,6 +91,10 @@
                             javax.xml.rpc.*;version="1.1";-split-package:=merge-first,
                         </Export-Package>
 
+                        <_exportcontents>
+                            org.apache.cxf.jaxws.spi;version="${cxf.version}"
+                        </_exportcontents>
+
                         <Private-Package>
                         </Private-Package>
 
