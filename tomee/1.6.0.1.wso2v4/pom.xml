@@ -79,7 +79,6 @@
                             javax.resource.*;version="1.6";-split-package:=merge-first,
                             javax.persistence.*;version="2.0";-split-package:=merge-first,
                             javax.security.jacc.*;version="1.4";-split-package:=merge-first,
-                            javax.ws.rs.*;version="1.1";-split-package:=first,
                             javax.inject.*;version="1.0";-split-package:=merge-first,
                             javax.interceptor.*;version="1.1";-split-package:=merge-first,
                             javax.decorator.*;version="1.0";-split-package:=merge-first,
