@@ -6,7 +6,7 @@
 
     <groupId>org.wso2.tomee</groupId>
     <artifactId>tomee</artifactId>
-    <version>${tomee.version}.wso2v3</version>
+    <version>1.6.0.1.wso2v4</version>
     <packaging>bundle</packaging>
     <name>WSO2 TomEE</name>
     <url>http://wso2.org</url>
@@ -46,9 +46,15 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Import-Package>
                             !org.apache.cxf.*,
+                            javax.xml.ws,
+                            javax.xml.ws.handler,
+                            javax.xml.ws.soap,
+                            javax.xml.ws.spi,
+                            javax.xml.ws.wsaddressing,
                             *;resolution:=optional
                         </Import-Package>
                         <Export-Package>
+                            !javax.xml.ws.*,
                             org.apache.tomee.*;version="${tomee.version}",
                             org.apache.openejb.*;version="${openejb.version}";-split-package:=merge-first,
                             org.apache.xbean.*;version="3.15";-split-package:=merge-first,
