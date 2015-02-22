@@ -113,6 +113,7 @@
                             com.fasterxml.jackson.*;version="${jackson.import.version}",
                             *;resolution:=optional
                         </Import-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
