@@ -128,7 +128,6 @@
                         </Private-Package>
                         <Import-Package>
                             !org.apache.spark.sql.*,
-                            org.apache.spark.*;version="${spark.import.version}",
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
@@ -139,6 +138,7 @@
                             @spark-core_2.10-${spark.version}.jar!/*.xml,
                             @spark-core_2.10-${spark.version}.jar!/*.ini,
                         </Include-Resource>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
