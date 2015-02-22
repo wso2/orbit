@@ -59,7 +59,6 @@
     </distributionManagement>
 
     <dependencies>
-        <!--spark -->
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.10</artifactId>
@@ -82,30 +81,6 @@
             <version>${spark.version}</version>
         </dependency>
 
-        <!--3rd party osgi bundles -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-math3</artifactId>
-            <version>${commons-math3.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>${scala.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-reflect</artifactId>
-            <version>${scala.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.spark-project.akka</groupId>
             <artifactId>akka-remote_2.10</artifactId>
@@ -122,149 +97,6 @@
             <artifactId>config</artifactId>
             <version>${typesafe.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.codahale.metrics</groupId>
-            <artifactId>metrics-core</artifactId>
-            <version>${codahale.metrics.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.codahale.metrics</groupId>
-            <artifactId>metrics-graphite</artifactId>
-            <version>${codahale.metrics.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.codahale.metrics</groupId>
-            <artifactId>metrics-json</artifactId>
-            <version>${codahale.metrics.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.codahale.metrics</groupId>
-            <artifactId>metrics-jvm</artifactId>
-            <version>${codahale.metrics.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.esotericsoftware.kryo</groupId>
-            <artifactId>kryo</artifactId>
-            <version>${kryo.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.xerial.snappy</groupId>
-            <artifactId>snappy-java</artifactId>
-            <version>${snappy.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.ning</groupId>
-            <artifactId>compress-lzf</artifactId>
-            <version>${compress.lzf.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
-
-        <!--<dependency>-->
-        <!--<groupId>javax.servlet</groupId>-->
-        <!--<artifactId>javax.servlet-api</artifactId>-->
-        <!--<version>${servlet-api.version}</version>-->
-        <!--</dependency>-->
-
-        <dependency>
-            <groupId>org.apache.tomcat.wso2</groupId>
-            <artifactId>tomcat-servlet-api</artifactId>
-            <version>7.0.54.wso2v1</version>
-        </dependency>
-
-        <!--wso2 orbit bundles -->
-        <dependency>
-            <groupId>io.netty.wso2</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>${netty-all.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.hadoop.wso2</groupId>
-            <artifactId>hadoop-client</artifactId>
-            <version>${hadoop.client.orbit.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.json4s.wso2</groupId>
-            <artifactId>json4s-jackson_2.10</artifactId>
-            <version>${json4s.orbit.version}</version>
-        </dependency>
-
-        <!--other deps -->
-        <!--<dependency>-->
-        <!--<groupId>asm</groupId>-->
-        <!--<artifactId>asm</artifactId>-->
-        <!--<version>3.3.1</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--<groupId>net.jpountz.lz4</groupId>-->
-        <!--<artifactId>lz4</artifactId>-->
-        <!--<version>1.2.0</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--<groupId>com.twitter</groupId>-->
-        <!--<artifactId>chill_2.10</artifactId>-->
-        <!--<version>0.5.0</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--<groupId>com.twitter</groupId>-->
-        <!--<artifactId>chill-java</artifactId>-->
-        <!--<version>0.5.0</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--<groupId>commons-net</groupId>-->
-        <!--<artifactId>commons-net</artifactId>-->
-        <!--<version>2.2</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--<groupId>org.spark-project.spark</groupId>-->
-        <!--<artifactId>unused</artifactId>-->
-        <!--<version>1.0.0</version>-->
-        <!--</dependency>-->
-
-
     </dependencies>
 
     <build>
@@ -288,47 +120,10 @@
                         </Private-Package>
                         <Import-Package>
                             !scala.tools.*,
-                            <!--spark sql imports-->
-                            <!--org.apache.spark.sql;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.parquet;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.api.java;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.test;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.json;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.execution;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.execution.debug;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.execution.joins;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.sources;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.types.util;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.planning;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.errors;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.analysis;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.plans.logical;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.plans;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.plans.physical;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.trees;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.dsl;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.optimizer;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.rules;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.annotation;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.types;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.types.decimal;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.expressions;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.expressions.codegen;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.catalyst.util;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.columnar;version="${spark.import.version}",-->
-                            <!--org.apache.spark.sql.columnar.compression;version="${spark.import.version}",-->
-
-                            <!--org.wso2.carbon.analytics.spark.core,-->
-                            <!--org.wso2.carbon.analytics.spark.core.internal,-->
-                            <!--org.wso2.carbon.analytics.datasource.core,-->
-
                             scala.*;version="${scala.import.version}",
                             org.apache.commons.lang3.*;version="${commons-lang3.import.version}",
                             org.apache.commons.math3.*;version="${commons-math3.import.version}",
                             io.netty.*;version="${netty-all.import.version}",
-                            <!--!javax.servlet.*;version ="2.6",-->
-
                             org.apache.hadoop.*;version=$"{hadoop.client.import.version}",
                             javax.servlet.*;version ="${servlet-api.import.version}",
                             <!-- todo: these were made private beacuse of reference.conf file missing for com.typesafe.config bundle-->
@@ -347,8 +142,8 @@
                             com.google.common.io.*;version="${guava.import.version}",
                             com.google.common.util.concurrent.*;version="${guava.import.version}",
                             org.slf4j.*;version="${slf4j.import.version}",
+                            com.twitter.chill.*;version="${chill.import.version}",
                             <!--org.slf4j.impl.*;version="${slf4j.import.version}",-->
-
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
@@ -404,6 +199,7 @@
         <servlet-api.version>3.0.1</servlet-api.version>
         <!--<servlet-api.import.version>[3.0.0, 4.0.0)</servlet-api.import.version>-->
         <servlet-api.import.version>[2.5, 3.0)</servlet-api.import.version>
+        <chill.import.version>[0.5.0, 0.6.0)</chill.import.version>
     </properties>
 
 </project>
