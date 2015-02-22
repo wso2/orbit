@@ -46,11 +46,11 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Import-Package>
                             !org.apache.cxf.*,
-                            javax.xml.ws,
-                            javax.xml.ws.handler,
-                            javax.xml.ws.soap,
-                            javax.xml.ws.spi,
-                            javax.xml.ws.wsaddressing,
+                            javax.xml.ws;resolution:=optional,
+                            javax.xml.ws.handler;resolution:=optional,
+                            javax.xml.ws.soap;resolution:=optional,
+                            javax.xml.ws.spi;resolution:=optional,
+                            javax.xml.ws.wsaddressing;resolution:=optional,
                             *;resolution:=optional
                         </Import-Package>
                         <Export-Package>
