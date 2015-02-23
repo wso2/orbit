@@ -91,7 +91,6 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Private-Package></Private-Package>
                         <Export-Package>
                             com.twitter.chill.*;version="${chill.version}";-split-package:=merge-last
                         </Export-Package>
@@ -101,6 +100,7 @@
                             com.esotericsoftware.kryo.*;version="${kryo.import.version}",
                             *;resolution:=optional
                         </Import-Package>
+                        <!--Dynamic imports enabled here because twitter chill uses scala reflection-->
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>

@@ -71,16 +71,6 @@
             <artifactId>json4s-core_2.10</artifactId>
             <version>${json4s.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${databind.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>${scala.version}</version>
-        </dependency>
     </dependencies>
 
     <properties>
@@ -109,10 +99,11 @@
                         <Import-Package>
                             !org.json4s.*,
                             !scala.tools.scalap.*,
-                            scala.*; version="${scala.import.version}",
+                            scala.*;version="${scala.import.version}",
                             com.fasterxml.jackson.*;version="${jackson.import.version}",
                             *;resolution:=optional
                         </Import-Package>
+                        <!--Dynamic imports enabled here because json4s jackson uses scala reflection-->
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>

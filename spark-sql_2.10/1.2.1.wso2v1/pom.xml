@@ -24,11 +24,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.spark.wso2</groupId>
     <artifactId>spark-sql_2.10</artifactId>
-    <version>1.2.0.wso2v1</version>
+    <version>1.2.1.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Apache Spark SQL</name>
     <description>
-        This bundle will export packages from Apache Spark SQL
+        This bundle will export packages from Apache Spark SQL V1.2.1
     </description>
     <url>http://wso2.org</url>
     <repositories>
@@ -60,35 +60,16 @@
     <dependencies>
         <!--spark orbit bundle-->
         <dependency>
-            <groupId>org.apache.spark.wso2</groupId>
-            <artifactId>spark-core_2.10</artifactId>
-            <version>1.2.0.wso2v1</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_2.10</artifactId>
-            <version>1.2.0</version>
+            <version>${spark.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-catalyst_2.10</artifactId>
-            <version>1.2.0</version>
+            <version>${spark.version}</version>
         </dependency>
     </dependencies>
-
-    <!-- ### DEPS
-    JSON Lib		com.fasterxml.jackson.core » jackson-databind	2.3.0
-    com.twitter » parquet-column	1.6.0rc3
-    com.twitter » parquet-hadoop	1.6.0rc3
-    Testing		junit » junit	4.10
-    org.apache.spark » spark-catalyst_2.10	1.2.0
-    org.apache.spark » spark-catalyst_2.10	1.2.0
-    Distributed Computing		org.apache.spark » spark-core_2.10	1.2.0
-    Lang Runtime		org.codehaus.groovy » groovy-all	2.3.7
-    Testing		org.scalacheck » scalacheck_2.10	1.11.3
-    Testing		org.scalatest » scalatest_2.10	2.2.1-->
-
 
     <build>
         <plugins>
@@ -120,6 +101,7 @@
                             @spark-core_2.10-${spark.version}.jar!/*.xml,
                             @spark-core_2.10-${spark.version}.jar!/*.ini,
                         </Include-Resource>
+                        <!--Dynamic imports enabled here because spark sql uses scala reflection-->
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
@@ -128,11 +110,24 @@
     </build>
 
     <properties>
-        <exp.pkg.version.spark>1.2.0.wso2v1</exp.pkg.version.spark>
-        <spark.version>1.2.0</spark.version>
-        <spark.import.version>[1.2.0, 1.3.0)</spark.import.version>
+        <exp.pkg.version.spark>1.2.1.wso2v1</exp.pkg.version.spark>
+        <spark.version>1.2.1</spark.version>
+        <spark.import.version>[1.2.1, 1.3.0)</spark.import.version>
         <scala.version>2.10.4</scala.version>
         <scala.import.version>[2.10.4, 2.11.0)</scala.import.version>
     </properties>
+
+
+    <!-- ### DEPS
+    JSON Lib		com.fasterxml.jackson.core » jackson-databind	2.3.0
+    com.twitter » parquet-column	1.6.0rc3
+    com.twitter » parquet-hadoop	1.6.0rc3
+    Testing		junit » junit	4.10
+    org.apache.spark » spark-catalyst_2.10	1.2.0
+    org.apache.spark » spark-catalyst_2.10	1.2.0
+    Distributed Computing		org.apache.spark » spark-core_2.10	1.2.0
+    Lang Runtime		org.codehaus.groovy » groovy-all	2.3.7
+    Testing		org.scalacheck » scalacheck_2.10	1.11.3
+    Testing		org.scalatest » scalatest_2.10	2.2.1-->
 
 </project>
