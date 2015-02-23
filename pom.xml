@@ -58,6 +58,13 @@
         <module>cassandra-thrift/1.2.13.wso2v4</module>
         <module>bsf/3.0.0.wso2v4</module>
         <module>lucene/4.10.3-wso2v1</module>
+        <module>hadoop-client/2.2.0.wso2v1</module>
+        <module>uncommons-maths/1.2.2.wso2v1</module>
+        <module>json4s-jackson_2.10/3.2.10.wso2v1</module>
+        <module>chill/0.5.0.wso2v1</module>
+        <module>stream/2.2.0.wso2v1</module>
+        <module>spark-core_2.10/1.2.1.wso2v1</module>
+        <module>spark-sql_2.10/1.2.1.wso2v1</module>
     </modules>
 
    <build>
