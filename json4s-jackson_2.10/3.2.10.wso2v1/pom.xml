@@ -92,7 +92,8 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Private-Package></Private-Package>
+                        <Private-Package>
+                        </Private-Package>
                         <Export-Package>
                             org.json4s.*;version="${json4s.version}";-split-package:=merge-last
                         </Export-Package>

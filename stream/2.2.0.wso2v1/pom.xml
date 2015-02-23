@@ -79,6 +79,8 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Private-Package>
+                        </Private-Package>
                         <Export-Package>
                             com.clearspring.analytics.*;version="${stream.version}";-split-package:=merge-last
                         </Export-Package>

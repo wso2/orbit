@@ -94,7 +94,8 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Private-Package></Private-Package>
+                        <Private-Package>
+                        </Private-Package>
                         <Export-Package>
                             org.uncommons.maths.*;version="${uncommons.math.version}";-split-package:=merge-last
                         </Export-Package>
