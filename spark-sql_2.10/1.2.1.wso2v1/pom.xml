@@ -96,12 +96,7 @@
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
-                            {maven-resources},
-                            @spark-core_2.10-${spark.version}.jar!/META-INF/**,
-                            @spark-core_2.10-${spark.version}.jar!/*.conf,
-                            @spark-core_2.10-${spark.version}.jar!/*.yaml*,
-                            @spark-core_2.10-${spark.version}.jar!/*.xml,
-                            @spark-core_2.10-${spark.version}.jar!/*.ini,
+                            {maven-resources}
                         </Include-Resource>
                         <!--Dynamic imports enabled here because spark sql uses scala reflection-->
                         <DynamicImport-Package>*</DynamicImport-Package>
@@ -118,18 +113,5 @@
         <scala.version>2.10.4</scala.version>
         <scala.import.version>[2.10.4, 2.11.0)</scala.import.version>
     </properties>
-
-
-    <!-- ### DEPS
-    JSON Lib		com.fasterxml.jackson.core » jackson-databind	2.3.0
-    com.twitter » parquet-column	1.6.0rc3
-    com.twitter » parquet-hadoop	1.6.0rc3
-    Testing		junit » junit	4.10
-    org.apache.spark » spark-catalyst_2.10	1.2.0
-    org.apache.spark » spark-catalyst_2.10	1.2.0
-    Distributed Computing		org.apache.spark » spark-core_2.10	1.2.0
-    Lang Runtime		org.codehaus.groovy » groovy-all	2.3.7
-    Testing		org.scalacheck » scalacheck_2.10	1.11.3
-    Testing		org.scalatest » scalatest_2.10	2.2.1-->
 
 </project>
