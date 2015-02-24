@@ -22,7 +22,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.uncommons.maths.wso2</groupId>
+    <groupId>org.wso2.uncommons.maths</groupId>
     <artifactId>uncommons-maths</artifactId>
     <version>1.2.2.wso2v1</version>
     <packaging>bundle</packaging>
@@ -64,23 +64,26 @@
             <groupId>org.uncommons.maths</groupId>
             <artifactId>uncommons-maths</artifactId>
             <version>${uncommons.math.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>jfree</groupId>
             <artifactId>jcommon</artifactId>
             <version>${jcommon.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>jfree</groupId>
             <artifactId>jfreechart</artifactId>
             <version>${jfreechart.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
     <properties>
         <uncommons.math.version>1.2.2</uncommons.math.version>
         <jcommon.version>1.0.12</jcommon.version>
-        <jfreechart.version>1.0.9</jfreechart.version>
+        <jfreechart.version>1.0.13</jfreechart.version>
     </properties>
 
     <build>

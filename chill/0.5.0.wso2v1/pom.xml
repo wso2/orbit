@@ -23,7 +23,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.twitter.wso2</groupId>
+    <groupId>org.wso2.twitter</groupId>
     <artifactId>chill_2.10</artifactId>
     <version>0.5.0.wso2v1</version>
 
@@ -66,11 +66,13 @@
             <groupId>com.twitter</groupId>
             <artifactId>chill-java</artifactId>
             <version>${chill.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.twitter</groupId>
             <artifactId>chill_2.10</artifactId>
             <version>${chill.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

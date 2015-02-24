@@ -23,7 +23,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.json4s.wso2</groupId>
+    <groupId>org.wso2.json4s</groupId>
     <artifactId>json4s-jackson_2.10</artifactId>
     <version>3.2.10.wso2v1</version>
     <packaging>bundle</packaging>
@@ -65,11 +65,13 @@
             <groupId>org.json4s</groupId>
             <artifactId>json4s-jackson_2.10</artifactId>
             <version>${json4s.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.json4s</groupId>
             <artifactId>json4s-core_2.10</artifactId>
             <version>${json4s.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

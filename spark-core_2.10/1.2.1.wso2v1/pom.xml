@@ -22,7 +22,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.spark.wso2</groupId>
+    <groupId>org.wso2.apache.spark</groupId>
     <artifactId>spark-core_2.10</artifactId>
     <version>1.2.1.wso2v1</version>
     <packaging>bundle</packaging>
@@ -69,15 +69,18 @@
                     <artifactId>servlet-api</artifactId>
                 </exclusion>
             </exclusions>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-network-common_2.10</artifactId>
             <version>${spark.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-network-shuffle_2.10</artifactId>
+            <optional>true</optional>
             <version>${spark.version}</version>
         </dependency>
 
@@ -86,23 +89,25 @@
             <groupId>org.spark-project.akka</groupId>
             <artifactId>akka-remote_2.10</artifactId>
             <version>${akka.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.spark-project.akka</groupId>
             <artifactId>akka-actor_2.10</artifactId>
             <version>${akka.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>com.typesafe</groupId>
             <artifactId>config</artifactId>
             <version>${typesafe.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!--TODO Fix the private references warnings -->
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
@@ -116,6 +121,7 @@
                             org.apache.spark.*;version="${spark.version}";-split-package:=merge-first,
                         </Export-Package>
                         <Private-Package>
+                            <!-- these were made private beacuse of reference.conf file missing for com.typesafe.config bundle -->
                             com.typesafe.config.*,
                             akka.*
                         </Private-Package>
@@ -127,7 +133,6 @@
                             io.netty.*;version="${netty-all.import.version}",
                             org.apache.hadoop.*;version=$"{hadoop.client.import.version}",
                             javax.servlet.*;version ="${servlet-api.import.version}",
-                            <!-- todo: these were made private beacuse of reference.conf file missing for com.typesafe.config bundle -->
                             com.typesafe.config.*;version=$"{typesafe.import.version}",
                             akka.*; version=$"{akka.import.version}",
                             com.codahale.metrics.*;version="${codahale.metrics.import.version}",
@@ -149,12 +154,7 @@
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
-                            {maven-resources},
-                            @spark-core_2.10-${spark.version}.jar!/META-INF/**,
-                            @spark-core_2.10-${spark.version}.jar!/*.conf,
-                            @spark-core_2.10-${spark.version}.jar!/*.yaml*,
-                            @spark-core_2.10-${spark.version}.jar!/*.xml,
-                            @spark-core_2.10-${spark.version}.jar!/*.ini,
+                            {maven-resources}
                         </Include-Resource>
                         <!--Dynamic imports enabled here because spark core uses scala reflection-->
                         <DynamicImport-Package>*</DynamicImport-Package>
