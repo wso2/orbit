@@ -20,7 +20,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.tomcat.wso2</groupId>
+    <groupId>org.wso2.tomcat</groupId>
     <artifactId>tomcat-servlet-api</artifactId>
     <version>7.0.59.wso2v1</version>
     <packaging>bundle</packaging>
