@@ -149,7 +149,7 @@
         <orbit.version.solr>${version.solr}.wso2v1</orbit.version.solr>
         <version.noggit>0.6</version.noggit>
         <version.commons.io>2.4.0</version.commons.io>
-        <version.zookeeper>3.4.6</version.zookeeper>
+        <version.zookeeper>3.3.4</version.zookeeper>
         <version.spatial4j>0.4.1</version.spatial4j>
         <version.restlet>2.1.1</version.restlet>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
