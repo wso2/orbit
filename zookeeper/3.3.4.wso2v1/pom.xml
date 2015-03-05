@@ -24,7 +24,7 @@
     <artifactId>apache-zookeeper</artifactId>
     <packaging>bundle</packaging>
     <name>zookeeper.wso2</name>
-    <version>3.4.6.wso2v1</version>
+    <version>${orbit.version.zookeeper}</version>
     <description>
         This bundle will represent org.apache.zookeeper
     </description>
@@ -34,7 +34,7 @@
         <dependency>
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
-            <version>3.4.6</version>
+            <version>${version.zookeeper}</version>
             <exclusions>
                 <exclusion>
                     <groupId>log4j</groupId>
@@ -43,6 +43,19 @@
             </exclusions> 
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <plugins>
@@ -58,7 +71,7 @@
                         <Private-Package>org.apache.jute.*</Private-Package>
                         <Import-Package />
                         <Export-Package>
-                            org.apache.zookeeper.*;-split-package:=merge-first
+                            org.apache.zookeeper.*;version="${version.zookeeper}"; -split-package:=merge-first
                         </Export-Package>
                     </instructions>
                 </configuration>
@@ -66,4 +79,8 @@
         </plugins>
     </build>
 
+    <properties>
+        <version.zookeeper>3.4.6</version.zookeeper>
+        <orbit.version.zookeeper>${version.zookeeper}.wso2v1</orbit.version.zookeeper>
+    </properties>
 </project>
