@@ -149,6 +149,7 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <!-- Added Embedded dependency because all these lib have the same resource files with different content. If we added them in include-resource file get override -->
                         <Embed-Dependency>
                             lucene-codecs;scope=compile|runtime,
                             lucene-analyzers-phonetic;scope=compile|runtime,
