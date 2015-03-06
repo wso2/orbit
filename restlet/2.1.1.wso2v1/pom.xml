@@ -35,6 +35,7 @@
             <groupId>org.restlet.jee</groupId>
             <artifactId>org.restlet</artifactId>
             <version>${version.restlet}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

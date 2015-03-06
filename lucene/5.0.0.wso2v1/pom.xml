@@ -115,11 +115,13 @@
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-analyzers-kuromoji</artifactId>
             <version>${version.lucene}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-analyzers-phonetic</artifactId>
             <version>${version.lucene}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -156,15 +158,15 @@
                         </Embed-Dependency>
                         <Export-Package>
                             org.apache.lucene.*;version="${version.lucene}"; -split-package:=merge-first,
-                            org.tartarus.snowball.*
+                            org.tartarus.snowball.*;version="${version.lucene}"
                         </Export-Package>
                         <Import-Package>
                             !org.apache.lucene.*,
                             com.spatial4j.*;version="${version.spatial4j}",
                             org.xml.sax.helpers; version="0.0.0",
                             org.xml.sax; version="0.0.0",
-                            org.antlr.runtime.tree; version="3.2.0",
-                            org.antlr.runtime; version="3.2.0",
+                            org.antlr.runtime.tree; version="[3.2.0,3.3.0)",
+                            org.antlr.runtime; version="[3.2.0,3.3.0)",
                             javax.xml.transform.stream; version="0.0.0",
                             javax.xml.transform.dom; version="0.0.0",
                             javax.xml.transform; version="0.0.0",
@@ -190,6 +192,6 @@
     <properties>
         <version.lucene>5.0.0</version.lucene>
         <orbit.version.lucene>${version.lucene}.wso2v1</orbit.version.lucene>
-        <version.spatial4j>0.4.1</version.spatial4j>
+        <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
     </properties>
 </project>

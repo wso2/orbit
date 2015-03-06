@@ -35,6 +35,7 @@
             <groupId>com.spatial4j</groupId>
             <artifactId>spatial4j</artifactId>
             <version>${version.spatial4j}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

@@ -35,6 +35,7 @@
             <groupId>org.noggit</groupId>
             <artifactId>noggit</artifactId>
             <version>${version.noggit}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
