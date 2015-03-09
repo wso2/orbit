@@ -31,12 +31,11 @@
     <url>http://wso2.org</url>
 
     <dependencies>
-        
-  <dependency>
-    <groupId>org.eclipse.paho</groupId>
-    <artifactId>mqtt-client</artifactId>
-    <version>${version.mqtt.paho}</version>
-  </dependency>
+        <dependency>
+            <groupId>org.eclipse.paho</groupId>
+            <artifactId>mqtt-client</artifactId>
+            <version>${version.mqtt.paho}</version>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -65,7 +64,7 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-			    org.eclipse.paho.*; version="0.4.0",
+                            org.eclipse.paho.*; version="0.4.0",
                         </Export-Package>
                         <Import-Package>
                             *;resolution:=optional
@@ -77,15 +76,15 @@
     </build>
 
     <repositories>
-  <repository>
-    <id>paho-mqtt-client</id>
-    <name>Paho MQTT Client</name>
-    <url>https://repo.eclipse.org/content/repositories/paho-releases/</url>
-  </repository>
-</repositories>
+        <repository>
+            <id>paho-mqtt-client</id>
+            <name>Paho MQTT Client</name>
+            <url>https://repo.eclipse.org/content/repositories/paho-releases/</url>
+        </repository>
+    </repositories>
 
     <properties>
         <version.mqtt.paho>0.4.0</version.mqtt.paho>
     </properties>
-    
+
 </project>
