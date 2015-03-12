@@ -22,7 +22,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.wso2.apache.spark</groupId>
+	<groupId>org.wso2.orbit.apache.spark</groupId>
 	<artifactId>spark-streaming_2.10</artifactId>
 	<version>1.2.1.wso2v1</version>
 	<packaging>bundle</packaging>
