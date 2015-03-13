@@ -3,7 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 
-
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.carbon</groupId>
     <artifactId>orbit-parent</artifactId>
@@ -12,7 +11,7 @@
     <name>WSO2 Carbon Orbit - Parent Maven Project</name>
     <description>orbit-parent</description>
     <url>http://wso2.org</url>
- 
+
     <repositories>
         <repository>
             <id>wso2-nexus</id>
@@ -24,7 +23,7 @@
                 <checksumPolicy>ignore</checksumPolicy>
             </releases>
         </repository>
-     </repositories>
+    </repositories>
 
     <distributionManagement>
         <repository>
@@ -58,11 +57,10 @@
         <module>cassandra-thrift/1.2.13.wso2v4</module>
         <module>bsf/3.0.0.wso2v4</module>
         <module>lucene/4.10.3-wso2v1</module>
-   	<module>rabbit-mq/3.4.4.wso2v1</module>
-        <module>mesos/0.18.1.wso2v1/mesos-0.18.1</module>
+        <module>rabbit-mq/3.4.4.wso2v1</module>
     </modules>
 
-   <build>
+    <build>
         <extensions>
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
@@ -70,25 +68,25 @@
                 <version>2.1</version>
             </extension>
         </extensions>
-	<pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.7</version> 
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>1.7</version> 
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version> 
-            </plugin>
-        </plugins>
-	</pluginManagement>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>2.3.7</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>1.7</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
     <properties>
