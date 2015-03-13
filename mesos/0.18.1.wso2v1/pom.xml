@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.mesos</groupId>
     <artifactId>mesos</artifactId>
-    <version>0.18.0.wso2v1</version>
+    <version>0.18.1.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Apache Mesos</name>
     <description>
