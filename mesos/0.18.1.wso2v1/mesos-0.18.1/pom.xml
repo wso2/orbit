@@ -85,7 +85,6 @@
                         <Import-Package>
                             !org.apache.mesos.*,
                             com.google.protobuf.*;version ="${protobuf.import.version}",
-                            *;resolution:=optional
                         </Import-Package>
                     </instructions>
                 </configuration>
