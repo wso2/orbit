@@ -10,3 +10,15 @@ http\://www.springframework.org/schema/task=org.springframework.scheduling.confi
 http\://www.springframework.org/schema/cache=org.springframework.cache.config.CacheNamespaceHandler
 # spring-aop
 http\://www.springframework.org/schema/aop=org.springframework.aop.config.AopNamespaceHandler
+# apache cxf
+http\://cxf.apache.org/core=org.apache.cxf.bus.spring.NamespaceHandler
+http\://cxf.apache.org/bindings/soap=org.apache.cxf.binding.soap.spring.NamespaceHandler
+http\://cxf.apache.org/simple=org.apache.cxf.frontend.spring.NamespaceHandler
+http\://cxf.apache.org/transports/http/configuration=org.apache.cxf.transport.http.spring.NamespaceHandler
+http\://cxf.apache.org/transports/http-jetty/configuration=org.apache.cxf.transport.http_jetty.spring.NamespaceHandler
+http\://cxf.apache.org/ws/addressing=org.apache.cxf.ws.addressing.spring.NamespaceHandler
+http\://cxf.apache.org/policy=org.apache.cxf.ws.policy.spring.NamespaceHandler
+http\://www.w3.org/ns/ws-policy=org.apache.cxf.ws.policy.spring.PolicyNamespaceHandler
+http\://www.w3.org/2006/07/ws-policy=org.apache.cxf.ws.policy.spring.PolicyNamespaceHandler
+http\://schemas.xmlsoap.org/ws/2004/09/policy=org.apache.cxf.ws.policy.spring.PolicyNamespaceHandler
+http\://cxf.apache.org/ws/rm/manager=org.apache.cxf.ws.rm.spring.NamespaceHandler
