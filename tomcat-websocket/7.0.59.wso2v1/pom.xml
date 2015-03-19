@@ -24,8 +24,8 @@
     <artifactId>tomcat-websocket</artifactId>
     <version>7.0.59.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>tomcat orbit bundle</name>
-    <description>Apache Tomcat</description>
+    <name>tomcat websocket orbit bundle</name>
+    <description>Apache Tomcat Websocket</description>
 
     <dependencies>
         <dependency>
