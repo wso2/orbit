@@ -68,7 +68,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-			    org.apache.catalina.websocket.*,version="1.7.0",
+			    org.apache.catalina.websocket.*;version="1.7.0",
                             org.apache.tomcat.websocket.*;version="1.7.0";-split-package:=merge-first,
                             javax.websocket.*;version="1.7.0";-split-package:=merge-first,
                         </Export-Package>
