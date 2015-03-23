@@ -145,7 +145,6 @@
                         <Import-Package>
                             !org.apache.hadoop.hbase.*,
                             org.apache.hadoop.*,
-                            org.apache.commons.configuration.*,
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
