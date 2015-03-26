@@ -113,11 +113,6 @@
             <artifactId>htrace-core</artifactId>
             <version>${htrace.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>${zookeeper.version}</version>
-        </dependency>
 
     </dependencies>
     <build>
@@ -143,7 +138,6 @@
                             org.slf4j.*;version="${slf4j.import.version}",
                             com.google.protobuf.*;version="${protobuf.import.version}",
                             org.apache.htrace.*;version="${htrace.import.version}",
-                            org.apache.zookeeper.*;version="${zookeeper.import.version}",
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
@@ -160,14 +154,12 @@
     <properties>
         <hadoop.version>2.6.0</hadoop.version>
         <htrace.version>3.1.0-incubating</htrace.version>
-        <zookeeper.version>3.4.5</zookeeper.version>
         <htrace.import.version>[3.1.0-incubating, 3.2.0)</htrace.import.version>
         <servlet-api.import.version>[2.5, 3.0)</servlet-api.import.version>
         <servlet-jsp.import.version>[2.2.1, 2.3.0)</servlet-jsp.import.version>
         <jackson.import.version>[1.9.0, 2.0.0)</jackson.import.version>
         <slf4j.import.version>[1.6.0, 1.8.0)</slf4j.import.version>
         <protobuf.import.version>[2.5.0, 2.6.0)</protobuf.import.version>
-        <zookeeper.import.version>[3.4.5, 3.5.0)</zookeeper.import.version>
     </properties>
 
 </project>

@@ -174,7 +174,13 @@
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>${zookeeper.version}</version>
+        </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -194,6 +200,7 @@
                         <Import-Package>
                             !org.apache.hadoop.hbase.*,
                             org.apache.hadoop.*;version ="${hadoop.import.version}",
+                            org.apache.zookeeper.*;version="${zookeeper.import.version}",
                             com.google.common.*;version ="${guava.import.version}",
                             *;resolution:=optional
                         </Import-Package>
@@ -211,8 +218,10 @@
         <hadoop.version>2.6.0</hadoop.version>
         <guava.version>14.0.1</guava.version>
         <xml.apis.version>1.4.01</xml.apis.version>
+        <zookeeper.version>3.4.5</zookeeper.version>
         <hadoop.import.version>[2.6.0, 2.7.0)</hadoop.import.version>
         <guava.import.version>[14.0.1, 16.0.1)</guava.import.version>
+        <zookeeper.import.version>[3.4.5, 3.5.0)</zookeeper.import.version>
     </properties>
 
 </project>
