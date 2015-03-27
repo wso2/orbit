@@ -112,6 +112,7 @@
             <groupId>org.apache.htrace</groupId>
             <artifactId>htrace-core</artifactId>
             <version>${htrace.version}</version>
+            <optional>true</optional>
         </dependency>
 
     </dependencies>
