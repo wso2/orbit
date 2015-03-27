@@ -70,10 +70,6 @@
                     <groupId>org.apache.hadoop</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
-                <exclusion>
-                    <groupId>com.google.protobuf</groupId>
-                    <artifactId>protobuf-java</artifactId>
-                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -86,10 +82,6 @@
                     <groupId>org.apache.hadoop</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
-                <exclusion>
-                    <groupId>com.google.protobuf</groupId>
-                    <artifactId>protobuf-java</artifactId>
-                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -97,77 +89,36 @@
             <artifactId>hbase-annotations</artifactId>
             <version>${hbase.version}</version>
             <optional>true</optional>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.google.protobuf</groupId>
-                    <artifactId>protobuf-java</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase-protocol</artifactId>
             <version>${hbase.version}</version>
             <optional>true</optional>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.google.protobuf</groupId>
-                    <artifactId>protobuf-java</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
             <version>${hadoop.version}</version>
             <optional>true</optional>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.google.protobuf</groupId>
-                    <artifactId>protobuf-java</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-annotations</artifactId>
             <version>${hadoop.version}</version>
             <optional>true</optional>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.google.protobuf</groupId>
-                    <artifactId>protobuf-java</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-core</artifactId>
             <version>${hadoop.version}</version>
             <optional>true</optional>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.google.protobuf</groupId>
-                    <artifactId>protobuf-java</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-yarn-api</artifactId>
             <version>${hadoop.version}</version>
             <optional>true</optional>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.google.protobuf</groupId>
-                    <artifactId>protobuf-java</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>xml-apis</groupId>
-            <artifactId>xml-apis</artifactId>
-            <version>${xml.apis.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -178,6 +129,16 @@
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
             <version>${zookeeper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons.codec.version}</version>
         </dependency>
     </dependencies>
 
@@ -199,9 +160,23 @@
                         </Private-Package>
                         <Import-Package>
                             !org.apache.hadoop.hbase.*,
-                            org.apache.hadoop.*;version ="${hadoop.import.version}",
+                            org.apache.hadoop.security;version ="${hadoop.import.version}",
+                            org.apache.hadoop.security.authentication.util;version ="${hadoop.import.version}",
+                            org.apache.hadoop.security.token;version ="${hadoop.import.version}",
+                            org.apache.hadoop.net;version ="${hadoop.import.version}",
+                            org.apache.hadoop.mapreduce;version ="${hadoop.import.version}",
+                            org.apache.hadoop.io.compress.zlib;version ="${hadoop.import.version}",
+                            org.apache.hadoop.io;version ="${hadoop.import.version}",
+                            org.apache.hadoop.conf;version ="${hadoop.import.version}",
+                            org.apache.hadoop.fs;version ="${hadoop.import.version}",
+                            org.apache.hadoop.ipc;version ="${hadoop.import.version}",
+                            org.apache.hadoop.mapred;version ="${hadoop.import.version}",
+                            org.apache.hadoop.util;version ="${hadoop.import.version}",
+                            org.apache.commons.codec.binary;version ="${commons.codec.import.version}",
                             org.apache.zookeeper.*;version="${zookeeper.import.version}",
                             com.google.common.*;version ="${guava.import.version}",
+                            com.google.protobuf;version ="${protobuf.import.version}",
+                            org.apache.htrace.*;version="${htrace.import.version}",
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
@@ -216,10 +191,14 @@
     <properties>
         <hbase.version>1.0.0</hbase.version>
         <hadoop.version>2.6.0</hadoop.version>
+        <commons.codec.version>1.4</commons.codec.version>
         <guava.version>14.0.1</guava.version>
-        <xml.apis.version>1.4.01</xml.apis.version>
+        <protobuf.version>2.5.0</protobuf.version>
         <zookeeper.version>3.4.5</zookeeper.version>
         <hadoop.import.version>[2.6.0, 2.7.0)</hadoop.import.version>
+        <commons.codec.import.version>[1.4, 1.5)</commons.codec.import.version>
+        <htrace.import.version>[3.1.0-incubating, 3.2.0)</htrace.import.version>
+        <protobuf.import.version>[2.5.0, 2.6.0)</protobuf.import.version>
         <guava.import.version>[14.0.1, 16.0.1)</guava.import.version>
         <zookeeper.import.version>[3.4.5, 3.5.0)</zookeeper.import.version>
     </properties>

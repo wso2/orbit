@@ -64,9 +64,10 @@
             <groupId>org.apache.htrace</groupId>
             <artifactId>htrace-core</artifactId>
             <version>${htrace.version}</version>
+            <optional>true</optional>
         </dependency>
-
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -92,6 +93,7 @@
             </plugin>
         </plugins>
     </build>
+
     <properties>
         <htrace.version>3.1.0-incubating</htrace.version>
     </properties>
