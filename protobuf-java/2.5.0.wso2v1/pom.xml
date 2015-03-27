@@ -23,7 +23,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.com.google.protobuf.fragment</groupId>
-    <artifactId>protobuf-java</artifactId>
+    <artifactId>protobuf-java-fragment</artifactId>
     <version>${protobuf.version}.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Google Protobuf Fragment Bundle</name>

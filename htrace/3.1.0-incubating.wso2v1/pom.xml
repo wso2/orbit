@@ -23,7 +23,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.htrace</groupId>
-    <artifactId>htrace-core</artifactId>
+    <artifactId>htrace-core-apache</artifactId>
     <version>3.1.0-incubating.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - HTrace Bundle</name>
