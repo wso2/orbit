@@ -86,6 +86,8 @@
                         </Private-Package>
                         <Import-Package>
                             !org.apache.htrace.*,
+                            javax.servlet.*;version ="${servlet-api.import.version}",
+                            org.apache.log4j.*;version ="${log4j.import.version}",
                             *;resolution:=optional
                         </Import-Package>
                     </instructions>
@@ -96,6 +98,8 @@
 
     <properties>
         <htrace.version>3.1.0-incubating</htrace.version>
+        <servlet-api.import.version>[2.5, 3.0)</servlet-api.import.version>
+        <log4j.import.version>[1.2.15, 1.2.20)</log4j.import.version>
     </properties>
 
 </project>
