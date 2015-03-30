@@ -81,6 +81,8 @@
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
+                        	org.j_paine.formatter*;version="${arpack.combined.version}",
+                           org.netlib.*;version="${arpack.combined.version}",
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
@@ -94,5 +96,6 @@
 
     <properties>
         <fommil.netlib.version>1.1.2</fommil.netlib.version>
+        <arpack.combined.version>0.1</arpack.combined.version>
     </properties>
 </project>

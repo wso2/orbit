@@ -76,7 +76,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                           org.j_paine.formatter*;version="${arpack.combined.version}",
+                           org.j_paine.formatter*;version="${arpack.combined.version}";-split-package:=merge-first,
                            org.netlib.*;version="${arpack.combined.version}"
                         </Export-Package>
                         <Private-Package>
