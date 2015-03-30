@@ -118,7 +118,14 @@
                             org.objectweb.asm.commons; version="[4.0.0,4.1.0)";resolution:=optional,
                             *;resolution:=optional
                         </Import-Package>
-                        <Embed-Dependency>*;scope=compile|runtime;inline=false</Embed-Dependency>
+                        <Embed-Dependency>
+                            lucene-core,
+                            lucene-analyzers-common,
+                            lucene-queryparser,
+                            lucene-queries,
+                            lucene-regex,
+                            lucene-facet,
+                            lucene-expressions;scope=compile|runtime;inline=false</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
