@@ -20,7 +20,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.wso2.orbit.sourceforge.f2j</groupId>
 	<artifactId>arpack_combined</artifactId>
@@ -28,72 +28,72 @@
 	<packaging>bundle</packaging>
 	<name>WSO2 Carbon Orbit - Fortan to Java ARPACK</name>
 	<description>This bundle will export packages from SourceForge F2J ARPACK Combined v0.1</description>
-	
+
 	<repositories>
-        <repository>
-            <id>wso2-nexus</id>
-            <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </releases>
-        </repository>
-    </repositories>
+		<repository>
+			<id>wso2-nexus</id>
+			<name>WSO2 internal Repository</name>
+			<url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</releases>
+		</repository>
+	</repositories>
 
-    <distributionManagement>
-        <repository>
-            <id>wso2.releases</id>
-            <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>wso2.snapshots</id>
-            <name>Apache Snapshot Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+	<distributionManagement>
+		<repository>
+			<id>wso2.releases</id>
+			<name>WSO2 internal Repository</name>
+			<url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>wso2.snapshots</id>
+			<name>Apache Snapshot Repository</name>
+			<url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
-    <dependencies>
-        <dependency>
-            <groupId>net.sourceforge.f2j</groupId>
-            <artifactId>arpack_combined_all</artifactId>
-            <version>${arpack.combined.version}</version>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>net.sourceforge.f2j</groupId>
+			<artifactId>arpack_combined_all</artifactId>
+			<version>${arpack.combined.version}</version>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.4.0</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Export-Package>
-                           org.j_paine.formatter*;version="${arpack.combined.version}";-split-package:=merge-first,
-                           org.netlib.*;version="${arpack.combined.version}"
-                        </Export-Package>
-                        <Private-Package>
-                        </Private-Package>
-                        <Import-Package>
-                            *;resolution:=optional
-                        </Import-Package>
-                        <Include-Resource>
-                            {maven-resources}
-                        </Include-Resource>
-                    </instructions>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.4.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Name>${project.artifactId}</Bundle-Name>
+						<Export-Package>
+							org.j_paine.formatter*;version="${arpack.combined.version}";-split-package:=merge-first,
+							org.netlib.*;version="${arpack.combined.version}"
+						</Export-Package>
+						<Private-Package>
+						</Private-Package>
+						<Import-Package>
+							*;resolution:=optional
+						</Import-Package>
+						<Include-Resource>
+							{maven-resources}
+						</Include-Resource>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-    <properties>
-        <arpack.combined.version>0.1</arpack.combined.version>
-    </properties>
+	<properties>
+		<arpack.combined.version>0.1</arpack.combined.version>
+	</properties>
 </project>
