@@ -24,8 +24,8 @@
     <artifactId>tomcat-websocket</artifactId>
     <version>7.0.59.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>tomcat orbit bundle</name>
-    <description>Apache Tomcat</description>
+    <name>tomcat websocket orbit bundle</name>
+    <description>Apache Tomcat Websocket</description>
 
     <dependencies>
         <dependency>
@@ -68,7 +68,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-			    org.apache.catalina.websocket.*,version="1.7.0",
+			    org.apache.catalina.websocket.*;version="1.7.0",
                             org.apache.tomcat.websocket.*;version="1.7.0";-split-package:=merge-first,
                             javax.websocket.*;version="1.7.0";-split-package:=merge-first,
                         </Export-Package>
