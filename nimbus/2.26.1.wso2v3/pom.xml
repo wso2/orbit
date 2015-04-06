@@ -21,7 +21,7 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.nimbusds.wso2</groupId>
+    <groupId>org.wso2.nimbusds</groupId>
     <artifactId>nimbus-jose-jwt</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Nimbus JWT Library</name>
