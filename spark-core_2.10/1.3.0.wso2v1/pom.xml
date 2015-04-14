@@ -103,7 +103,9 @@
                             <!-- these were made private beacuse of reference.conf file missing for com.typesafe.config bundle -->
                             com.typesafe.config.*,
                             akka.*,
+                            <!--this package is originally from google guava, but have been shaded using the maven shade plugin-->
                             org.spark-project.guava.*,
+                            <!--this package is originally from eclipse jetty, but have been shaded using the maven shade plugin-->
                             org.spark-project.jetty.*
                         </Private-Package>
                         <Import-Package>
