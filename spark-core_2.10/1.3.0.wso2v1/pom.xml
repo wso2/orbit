@@ -84,79 +84,6 @@
             <version>${spark.version}</version>
         </dependency>
 
-        <!--private packages-->
-        <!--<dependency>-->
-        <!--<groupId>org.spark-project.akka</groupId>-->
-        <!--<artifactId>akka-remote_2.10</artifactId>-->
-        <!--<version>${akka.version}</version>-->
-        <!--<optional>true</optional>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>org.spark-project.akka</groupId>-->
-        <!--<artifactId>akka-actor_2.10</artifactId>-->
-        <!--<version>${akka.version}</version>-->
-        <!--<optional>true</optional>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-        <!--<groupId>com.typesafe</groupId>-->
-        <!--<artifactId>config</artifactId>-->
-        <!--<version>${typesafe.version}</version>-->
-        <!--<optional>true</optional>-->
-        <!--</dependency>-->
-
-        <!--jetty & guava dependencies-->
-        <!--
-                <dependency>
-                    <groupId>org.eclipse.jetty</groupId>
-                    <artifactId>jetty-http</artifactId>
-                    <version>${jetty.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.eclipse.jetty</groupId>
-                    <artifactId>jetty-continuation</artifactId>
-                    <version>${jetty.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.eclipse.jetty</groupId>
-                    <artifactId>jetty-servlet</artifactId>
-                    <version>${jetty.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.eclipse.jetty</groupId>
-                    <artifactId>jetty-util</artifactId>
-                    <version>${jetty.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.eclipse.jetty</groupId>
-                    <artifactId>jetty-security</artifactId>
-                    <version>${jetty.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.eclipse.jetty</groupId>
-                    <artifactId>jetty-plus</artifactId>
-                    <version>${jetty.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.eclipse.jetty</groupId>
-                    <artifactId>jetty-server</artifactId>
-                    <version>${jetty.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-
-                <dependency>
-                    <groupId>com.google.guava</groupId>
-                    <artifactId>guava</artifactId>
-                    <version>14.0.1</version>
-                    <scope>provided</scope>
-                </dependency>-->
-
     </dependencies>
     <build>
         <plugins>
@@ -189,8 +116,6 @@
                             com.google.common.base.*;version="${guava.import.version}",
                             com.ning.compress.*;version="${compress.lzf.import.version}",
                             com.twitter.chill.*;version="${chill.import.version}",
-                            <!--akka.*; version="${akka.import.version}",-->
-                            <!--com.typesafe.config.*;version=$"{typesafe.import.version}",-->
                             io.netty.*;version="${netty-all.import.version}",
                             javax.servlet.*;version ="${servlet-api.import.version}",
                             org.apache.commons.lang3.*;version="${commons-lang3.import.version}",
@@ -210,6 +135,8 @@
                             sun.reflect;resolution:=optional,
                             sun.security.action;resolution:=optional,
                             *
+                            <!--akka.*; version="${akka.import.version}",-->
+                            <!--com.typesafe.config.*;version=$"{typesafe.import.version}",-->
                         </Import-Package>
                         <Include-Resource>
                             {maven-resources}
