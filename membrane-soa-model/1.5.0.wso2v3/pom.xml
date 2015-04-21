@@ -87,7 +87,6 @@
             <version>1.5.0</version>
             <optional>true</optional>
         </dependency>
-
     </dependencies>
 
 </project>
