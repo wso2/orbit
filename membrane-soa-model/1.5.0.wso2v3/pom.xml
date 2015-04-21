@@ -54,10 +54,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Description>OSGI version of ${project.name}</Bundle-Description>
                         <Export-Package>
-                            com.predic8.*;version="1.5.0",
-                            groovy.xml.*;version="2.3.9",
-                            groovy.util.*;version="2.3.9",
-                            groovy.lang.*;version="2.3.9"
+                            com.predic8.*;version="1.5.0"
                         </Export-Package>
                         <Import-Package>
                             org.objectweb.asm;version="[4.0.0, 4.1.0)",
@@ -71,13 +68,11 @@
                             com.thoughtworks.xstream.*;resolution:=optional,
                             org.fusesource.jansi.*;resolution:=optional,
                             org.w3c.dom.*;resolution:=optional,
-                            org.xml.sax.*;resolution:=optional
+                            org.xml.sax.*;resolution:=optional,
+                            groovy.*;resolution:=optional,
+                            org.codehaus.groovy.*;resolution:=optional
                         </Import-Package>
                         <Include-Resource>@soa-model-core-1.5.0.jar!/*</Include-Resource>
-                        <Embed-Dependency>
-                            groovy;scope=compile|runtime;inline=false,
-                            groovy-xml;scope=compile|runtime;inline=false
-                        </Embed-Dependency>
                     </instructions>
                 </configuration>
                 <extensions>true</extensions>
