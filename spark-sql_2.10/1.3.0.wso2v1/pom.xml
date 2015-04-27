@@ -93,7 +93,7 @@
                         <Import-Package>
                             !org.apache.spark.sql.*,
                             org.apache.spark.*;version="${spark.import.version}",
-                            *
+                            *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
                             {maven-resources}
