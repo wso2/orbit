@@ -20,7 +20,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.fasterxml.jackson.dataformat.wso2</groupId>
+    <groupId>org.wso2.orbit.com.fasterxml.jackson.dataformat</groupId>
     <artifactId>jackson-dataformat</artifactId>
     <version>2.2.3.wso2v1</version>
     <packaging>bundle</packaging>
@@ -35,22 +35,26 @@
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-csv</artifactId>
             <version>2.2.3</version>
-        </dependency>	
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
             <version>2.2.3</version>
+            <optional>true</optional>
         </dependency>
-	<dependency>	
+        <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-yaml</artifactId>
             <version>2.2.3</version>
-        </dependency>	
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-smile</artifactId>
             <version>2.2.3</version>
-        </dependency>	
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -83,9 +87,56 @@
                         <Private-Package>
                             com.fasterxml.jackson.dataformat.*,
                         </Private-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
+                        <!--<DynamicImport-Package>*</DynamicImport-Package>-->
                         <Import-Package>
-                            *;resolution:=optional
+                            com.fasterxml.jackson.annotation;version="[2.2,3)",
+                            com.fasterxml.jackson.core;version="[2.2,3)",
+                            com.fasterxml.jackson.core.base;version="[2.2,3)",
+                            com.fasterxml.jackson.core.format;version="[2.2,3)",
+                            com.fasterxml.jackson.core.io;version="[2.2,3)",
+                            com.fasterxml.jackson.core.json;version="[2.2,3)",
+                            com.fasterxml.jackson.core.sym;version="[2.2,3)",
+                            com.fasterxml.jackson.core.type;version="[2.2,3)",
+                            com.fasterxml.jackson.core.util;version="[2.2,3)",
+                            com.fasterxml.jackson.databind;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.cfg;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.deser;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.deser.std;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.introspect;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.jsontype;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.jsontype.impl;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.module;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.ser;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.ser.impl;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.ser.std;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.type;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.util;version="[2.2,3)",
+                            com.fasterxml.jackson.module.jaxb;version="[2.2,3)",
+                            javax.xml.bind.annotation,
+                            javax.xml.namespace,
+                            javax.xml.stream;version="[1.0,2)",
+                            javax.xml.transform,
+                            org.codehaus.stax2;version="[3.1,4)",
+                            org.codehaus.stax2.io;version="[3.1,4)",
+                            org.codehaus.stax2.ri;version="[3.1,4)",
+                            org.yaml.snakeyaml;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.composer;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.constructor;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.emitter;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.error;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.events;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.extensions.compactnotation;version="[1.13,1.14)",
+                            <!--org.yaml.snakeyaml.external.biz.base64Coder;version="[1.13,1.14)",-->
+                            <!--org.yaml.snakeyaml.external.com.google.gdata.util.common.base;version="[1.13,1.14)",-->
+                            org.yaml.snakeyaml.introspector;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.nodes;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.parser;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.reader;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.representer;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.resolver;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.scanner;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.serializer;version="[1.13,1.14)",
+                            org.yaml.snakeyaml.tokens;version="[1.13,1.14)"
                         </Import-Package>
                     </instructions>
                 </configuration>
@@ -99,5 +150,5 @@
             <url>https://maven.alfresco.com/nexus/content/groups/public/</url>
         </repository>
     </repositories>
-    
+
 </project>
