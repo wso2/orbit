@@ -97,7 +97,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.spark.*;version="${spark.version}";-split-package:=merge-first,
+                            org.apache.spark.*;version="${spark.version}";-split-package:=merge-first
                         </Export-Package>
                         <Private-Package>
                             <!-- these were made private beacuse of reference.conf file missing for com.typesafe.config bundle -->
@@ -136,7 +136,6 @@
                             sun.nio.ch;resolution:=optional,
                             sun.reflect;resolution:=optional,
                             sun.security.action;resolution:=optional,
-                            *;resolution:=optional
                             <!--akka.*; version="${akka.import.version}",-->
                             <!--com.typesafe.config.*;version=$"{typesafe.import.version}",-->
                         </Import-Package>
