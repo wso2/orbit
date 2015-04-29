@@ -1,0 +1,361 @@
+<!--
+ ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.activiti</groupId>
+    <artifactId>activiti-all</artifactId>
+    <version>5.16.3.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Activiti All</name>
+    <description>
+        This bundle contains all Activiti jars required for supporting BPMN in WSO2 BPS.
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-engine</artifactId>
+            <version>${version.activiti}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-bpmn-converter</artifactId>
+            <version>${version.activiti}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-process-validation</artifactId>
+            <version>${version.activiti}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-image-generator</artifactId>
+            <version>${version.activiti}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-bpmn-model</artifactId>
+            <version>${version.activiti}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-rest</artifactId>
+            <version>${version.activiti}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-common-rest</artifactId>
+            <version>${version.activiti}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-json-converter</artifactId>
+            <version>${version.activiti}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-simple-workflow</artifactId>
+            <version>${version.activiti}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-bpmn-layout</artifactId>
+            <version>${version.activiti}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            org.activiti.*; version=${project.version},
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <!-- Dynamic imports are needed for BPMN Java service tasks, which loads java classes at run-time -->
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                        <Import-Package>
+                            com.fasterxml.jackson.annotation;version="[2.2,3)",
+                            com.fasterxml.jackson.core;version="[2.2,3)",
+                            com.fasterxml.jackson.databind;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.annotation;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.node;version="[2.2,3)",
+                            com.fasterxml.jackson.databind.util;version="[2.2,3)",
+                            com.mxgraph.layout;version="[1.10,2)",
+                            com.mxgraph.layout.hierarchical;version="[1.10,2)",
+                            com.mxgraph.model;version="[1.10,2)",
+                            com.mxgraph.util;version="[1.10,2)",
+                            com.mxgraph.view;version="[1.10,2)",
+                            javax.imageio,
+                            javax.naming,
+                            javax.persistence;version="[2.0.0,2.0.1)",
+                            javax.script,
+                            javax.servlet;version="[2.6.0,2.6.1)",
+                            javax.sql,
+                            javax.transaction,
+                            javax.xml.datatype,
+                            javax.xml.namespace,
+                            javax.xml.parsers,
+                            javax.xml.stream;version="[1.0,2)",
+                            javax.xml.transform,
+                            javax.xml.transform.stream,
+                            javax.xml.validation,
+                            javax.xml.xpath,
+                            org.apache.commons.fileupload;version="[1.2,2)",
+                            org.apache.commons.fileupload.disk;version="[1.2,2)",
+                            org.apache.commons.io;version="[2.0,3)",
+                            org.apache.commons.lang3;version="[3.3,4)",
+                            org.apache.commons.lang3.time;version="[3.3,4)",
+                            org.apache.commons.mail;version="[1.2,2)",
+                            org.apache.ibatis.builder.xml;version="[3.2,4)",
+                            org.apache.ibatis.datasource.pooled;version="[3.2,4)",
+                            org.apache.ibatis.mapping;version="[3.2,4)",
+                            org.apache.ibatis.session;version="[3.2,4)",
+                            org.apache.ibatis.session.defaults;version="[3.2,4)",
+                            org.apache.ibatis.transaction;version="[3.2,4)",
+                            org.apache.ibatis.transaction.jdbc;version="[3.2,4)",
+                            org.apache.ibatis.transaction.managed;version="[3.2,4)",
+                            org.apache.ibatis.type;version="[3.2,4)",
+                            org.drools;resolution:=optional,
+                            org.drools.builder;resolution:=optional,
+                            org.drools.definition.rule;resolution:=optional,
+                            org.drools.io;resolution:=optional,
+                            org.drools.runtime;resolution:=optional,
+                            org.drools.runtime.rule;resolution:=optional,
+                            org.joda.time;version="[2.1,3)",
+                            org.joda.time.format;version="[2.1,3)",
+                            org.restlet;version="[2.2.1,2.2.2)",
+                            org.restlet.data;version="[2.2.1,2.2.2)",
+                            org.restlet.ext.fileupload;version="[2.2.1,2.2.2)",
+                            org.restlet.ext.jackson;version="[2.2.1,2.2.2)",
+                            org.restlet.representation;version="[2.2.1,2.2.2)",
+                            org.restlet.resource;version="[2.2.1,2.2.2)",
+                            org.restlet.routing;version="[2.2.1,2.2.2)",
+                            org.restlet.security;version="[2.2.1,2.2.2)",
+                            org.restlet.service;version="[2.2.1,2.2.2)",
+                            org.slf4j;version="[1.6.1 ,1.7.0)",
+                            org.springframework.beans.factory;version="[3.2.9,4.0.7)",
+                            org.springframework.beans.factory.support;version="[3.2.9,4.0.7)",
+                            org.springframework.beans.factory.xml;version="[3.2.9,4.0.7)",
+                            org.springframework.core.io;version="[3.2.9,4.0.7)",
+                            org.w3c.dom
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>Alfresco Maven Repository</id>
+            <url>https://maven.alfresco.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <properties>
+        <version.activiti>5.16.3</version.activiti>
+    </properties>
+
+</project>
