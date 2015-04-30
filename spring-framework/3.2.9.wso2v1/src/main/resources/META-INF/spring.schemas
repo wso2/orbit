@@ -76,3 +76,4 @@ http\://www.w3.org/TR/xmldsig-core/xmldsig-core-schema.xsd=schemas/xmldsig-core-
 http\://cxf.apache.org/schemas/configuration/wsrm-manager-types.xsd=schemas/configuration/wsrm-manager-types.xsd
 http\://cxf.apache.org/schemas/configuration/wsrm-manager.xsd=schemas/configuration/wsrm-manager.xsd
 http\://schemas.xmlsoap.org/ws/2005/02/rm/wsrm-policy.xsd=schemas/configuration/wsrm-policy.xsd
+http\://cxf.apache.org/schemas/jaxws.xsd=schemas/jaxws.xsd

@@ -22,3 +22,4 @@ http\://www.w3.org/ns/ws-policy=org.apache.cxf.ws.policy.spring.PolicyNamespaceH
 http\://www.w3.org/2006/07/ws-policy=org.apache.cxf.ws.policy.spring.PolicyNamespaceHandler
 http\://schemas.xmlsoap.org/ws/2004/09/policy=org.apache.cxf.ws.policy.spring.PolicyNamespaceHandler
 http\://cxf.apache.org/ws/rm/manager=org.apache.cxf.ws.rm.spring.NamespaceHandler
+http\://cxf.apache.org/jaxws=org.apache.cxf.jaxws.spring.NamespaceHandler
