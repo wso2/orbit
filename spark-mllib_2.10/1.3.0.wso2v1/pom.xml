@@ -88,7 +88,7 @@
 						<Private-Package>
 						</Private-Package>
 						<Import-Package>
-							org.apache.spark.*;version="${spark.import.version}",
+							org.apache.spark;version="${spark.import.version}",
 							scala.*;version="${scala.import.version}",
 							org.apache.commons.math3.*;version="${commons-math3.import.version}",
 							org.apache.hadoop.*;version="${hadoop.client.import.version}",
@@ -109,7 +109,7 @@
 	<properties>
 		<spark.version>1.3.0</spark.version>
 		<spark.exp.version>1.3.0.wso2v1</spark.exp.version>
-		<spark.import.version>1.3.0.wso2v1</spark.import.version>
+		<spark.import.version>[1.3.0,1.4.0)</spark.import.version>
 		<scala.import.version>[2.10.4, 2.11.0)</scala.import.version>
 		<breeze.import.version>0.11.1.wso2v1</breeze.import.version>
 		<jblas.import.version>1.2.3</jblas.import.version>
