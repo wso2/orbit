@@ -105,10 +105,10 @@
 	<properties>
 		<spark.version>1.3.0</spark.version>
 		<spark.exp.version>1.3.0.wso2v1</spark.exp.version>
-		<spark.import.version>[1.3.0,1.4.0)</spark.import.version>
+		<spark.import.version>[1.3.0, 1.4.0)</spark.import.version>
 		<scala.import.version>[2.10.4, 2.11.0)</scala.import.version>
-		<breeze.import.version>0.11.1.wso2v1</breeze.import.version>
-		<jblas.import.version>1.2.3</jblas.import.version>
+		<breeze.import.version>[0.11.1, 0.12.0)</breeze.import.version>
+		<jblas.import.version>[1.2.3, 1.2.4)</jblas.import.version>
 		<hadoop.client.import.version>[2.2.0, 2.3.0)</hadoop.client.import.version>
 		<commons-math3.import.version>[3.1.1, 3.1.2)</commons-math3.import.version>
 		<slf4j.import.version>[1.7.0, 1.8.0)</slf4j.import.version>
