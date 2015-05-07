@@ -94,12 +94,8 @@
 							scala.*;version="${scala.import.version}",
 							org.apache.commons.math3.*;version="${commons-math3.import.version}",
 							org.slf4j.*;version="${slf4j.import.version}",
-							com.github.fommil.netlib.*;version="${netlib.import.version}",
-							*;resolution:=optional
+							com.github.fommil.netlib.*;version="${netlib.import.version}"
 						</Import-Package>
-						<Include-Resource>
-							{maven-resources}
-						</Include-Resource>
 					</instructions>
 				</configuration>
 			</plugin>
