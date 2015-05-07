@@ -81,7 +81,7 @@
 						<Private-Package>
 						</Private-Package>
 						<Import-Package>
-							org.apache.spark;version="${spark.import.version}",
+							org.apache.spark.*;version="${spark.import.version}",
 							scala.*;version="${scala.import.version}",
 							org.apache.hadoop.*;version="${hadoop.import.version}",
 							akka.*;version="${akka.import.version}",
