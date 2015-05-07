@@ -84,7 +84,7 @@
 						<Export-Package>
 							breeze.macros;version="${breeze.macro.version}",
 							!breeze.macros,
-							breeze.*;version="${breeze.version}";-split-package:=merge-first
+							breeze.*;version="${breeze.exp.version}";-split-package:=merge-first
 						</Export-Package>
 						<Private-Package>
 						</Private-Package>
