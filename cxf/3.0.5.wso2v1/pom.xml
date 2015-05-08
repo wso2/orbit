@@ -23,7 +23,7 @@
     <artifactId>cxf-bundle</artifactId>
     <packaging>bundle</packaging>
     <name>Apache CXF Bundle Jar</name>
-    <version>3.0.2.wso2v1</version>
+    <version>3.0.5.wso2v1</version>
     <description>
         This bundle will export packages from CXF
     </description>
@@ -137,6 +137,12 @@
             <version>3.0.3</version>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.ws.wso2</groupId>
+            <artifactId>spring.framework</artifactId>
+            <version>3.2.9.wso2v1</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -173,34 +179,74 @@
                             !org.apache.cxf.*;version="${exp.pkg.version.cxf}",
                             !META-INF.cxf;version="${exp.pkg.version.cxf}",
                             !META-INF.cxf.osgi;version="${exp.pkg.version.cxf}",
+                            bsh;resolution:=optional,
+                            com.caucho.*;resolution:=optional,
+                            com.fasterxml.jackson.*;resolution:=optional,
+                            com.jamonapi;resolution:=optional,
                             com.sun.msv.*;resolution:=optional,
+                            com.sun.net.httpserver;resolution:=optional,
+                            com.sun.syndication.feed;resolution:=optional,
+                            com.sun.syndication.feed.atom;resolution:=optional,
+                            com.sun.syndication.feed.rss;resolution:=optional,
+                            com.sun.syndication.io;resolution:=optional,
                             com.sun.tools.xjc.reader.internalizer;resolution:=optional,
-                            com.sun.xml.bind.marshaller;resolution:=optional,
+                            com.sun.xml.bind.marshaller;resolution:=optional;version="[2.2,3)",
                             com.sun.xml.fastinfoset.stax;resolution:=optional;version="[1.2,2)",
+                            edu.emory.mathcs.backport.java.util.concurrent;resolution:=optional,
+                            groovy.lang;resolution:=optional,
                             javax.activation;resolution:=optional,
                             javax.annotation;resolution:=optional,
                             javax.crypto;resolution:=optional,
                             javax.crypto.spec;resolution:=optional,
+                            javax.ejb;resolution:=optional,
+                            javax.el;resolution:=optional,
+                            javax.faces.application;resolution:=optional,
+                            javax.faces.component;resolution:=optional,
+                            javax.faces.context;resolution:=optional,
+                            javax.faces.el;resolution:=optional,
+                            javax.faces.event;resolution:=optional,
                             javax.imageio;resolution:=optional,
+                            javax.imageio.metadata;resolution:=optional,
                             javax.imageio.stream;resolution:=optional,
+                            javax.inject;resolution:=optional,
+                            javax.interceptor;resolution:=optional,
+                            javax.jms;resolution:=optional,
                             javax.jws;resolution:=optional,
                             javax.jws.soap;resolution:=optional,
-                            javax.management.*;resolution:=optional,
+                            javax.management;resolution:=optional,
+                            javax.management.modelmbean;resolution:=optional,
+                            javax.management.openmbean;resolution:=optional,
+                            javax.management.remote;resolution:=optional,
                             javax.naming;resolution:=optional,
+                            javax.naming.directory;resolution:=optional,
+                            javax.naming.ldap;resolution:=optional,
                             javax.net.ssl;resolution:=optional,
+                            javax.persistence.spi;resolution:=optional,
+                            javax.portlet;resolution:=optional,
+                            javax.rmi;resolution:=optional,
                             javax.security.auth;resolution:=optional,
-                            javax.security.auth.callback;resolution:=optional,
-                            javax.security.auth.kerberos;resolution:=optional,
-                            javax.security.auth.login;resolution:=optional,
-                            javax.security.auth.x500;resolution:=optional,
+                            javax.security.auth.*;resolution:=optional,
                             javax.servlet;resolution:=optional;version="[2.6,3)",
+                            javax.servlet.annotation;resolution:=optional;version="[2.6,3)",
                             javax.servlet.http;resolution:=optional;version="[2.6,3)",
+                            javax.servlet.jsp;resolution:=optional,
+                            javax.servlet.jsp.el;resolution:=optional,
+                            javax.servlet.jsp.tagext;resolution:=optional,
                             javax.sql;resolution:=optional,
                             javax.tools;resolution:=optional,
                             javax.validation;resolution:=optional,
                             javax.validation.bootstrap;resolution:=optional,
                             javax.validation.executable;resolution:=optional,
-                            javax.wsdl.*;resolution:=optional,
+                            javax.validation.metadata;resolution:=optional,
+                            javax.wsdl;resolution:=optional,
+                            javax.wsdl.extensions;resolution:=optional,
+                            javax.wsdl.extensions.http;resolution:=optional,
+                            javax.wsdl.extensions.mime;resolution:=optional,
+                            javax.wsdl.extensions.schema;resolution:=optional,
+                            javax.wsdl.extensions.soap;resolution:=optional,
+                            javax.wsdl.extensions.soap12;resolution:=optional,
+                            javax.wsdl.factory;resolution:=optional,
+                            javax.wsdl.xml;resolution:=optional,
                             javax.xml.bind;resolution:=optional,
                             javax.xml.bind.annotation;resolution:=optional,
                             javax.xml.bind.annotation.adapters;resolution:=optional,
@@ -209,6 +255,9 @@
                             javax.xml.datatype;resolution:=optional,
                             javax.xml.namespace;resolution:=optional,
                             javax.xml.parsers;resolution:=optional,
+                            javax.xml.rpc;resolution:=optional,
+                            javax.xml.rpc.server;resolution:=optional,
+                            javax.xml.rpc.soap;resolution:=optional,
                             javax.xml.soap;resolution:=optional,
                             javax.xml.stream;resolution:=optional,
                             javax.xml.stream.events;resolution:=optional,
@@ -228,14 +277,34 @@
                             javax.xml.ws.spi.http;resolution:=optional,
                             javax.xml.ws.wsaddressing;resolution:=optional,
                             javax.xml.xpath;resolution:=optional,
+                            joptsimple;resolution:=optional,
                             net.sf.cglib.proxy;resolution:=optional,
                             net.sf.ehcache;resolution:=optional;version="[2.8,3)",
                             net.sf.ehcache.config;resolution:=optional;version="[2.8,3)",
-                            org.apache.aries.blueprint.*;resolution:=optional,
+                            org.aopalliance.aop;resolution:=optional,
+                            org.aopalliance.intercept;resolution:=optional,
+                            org.apache.aries.blueprint;resolution:=optional,
+                            org.apache.aries.blueprint.mutable;resolution:=optional,
+                            org.apache.aries.blueprint.reflect;resolution:=optional,
+                            org.apache.aries.blueprint.services;resolution:=optional,
                             org.apache.axiom.om;resolution:=optional,
-                            org.apache.commons.codec.binary;resolution:=optional;version="[1.9,2)",
+                            org.apache.commons.codec.binary;resolution:=optional;version="[1.10,2)",
+                            org.apache.commons.fileupload;resolution:=optional,
+                            org.apache.commons.fileupload.disk;resolution:=optional,
+                            org.apache.commons.fileupload.servlet;resolution:=optional,
+                            org.apache.commons.httpclient;resolution:=optional,
+                            org.apache.commons.httpclient.methods;resolution:=optional,
+                            org.apache.commons.httpclient.params;resolution:=optional,
+                            org.apache.commons.logging;resolution:=optional,
+                            org.apache.commons.pool;resolution:=optional,
+                            org.apache.commons.pool.impl;resolution:=optional,
+                            org.apache.http;resolution:=optional,
+                            org.apache.http.*;resolution:=optional,
                             org.apache.log4j;resolution:=optional,
                             org.apache.log4j.spi;resolution:=optional,
+                            org.apache.log4j.xml;resolution:=optional,
+                            org.apache.tools.ant;resolution:=optional,
+                            org.apache.tools.ant.types;resolution:=optional,
                             org.apache.wss4j.*;resolution:=optional;version="[2.0,3)",
                             org.apache.xerces.dom;resolution:=optional,
                             org.apache.xerces.xs;resolution:=optional,
@@ -243,11 +312,29 @@
                             org.apache.xml.resolver.helpers;resolution:=optional,
                             org.apache.xml.resolver.tools;resolution:=optional,
                             org.apache.xml.security.*;resolution:=optional;version="[2.0,3)",
+                            org.aspectj.*;resolution:=optional,
+                            org.codehaus.groovy.control;resolution:=optional,
+                            org.codehaus.jackson;resolution:=optional,
+                            org.codehaus.jackson.map;resolution:=optional,
+                            org.codehaus.jackson.map.type;resolution:=optional,
+                            org.codehaus.jackson.type;resolution:=optional,
+                            org.codehaus.stax2;resolution:=optional;version="[3.1,4)",
                             org.codehaus.stax2.*;resolution:=optional;version="[3.1,4)",
                             org.eclipse.jetty.*;resolution:=optional;version="[8.1,9)",
+                            org.hibernate.validator;resolution:=optional,
+                            org.hibernate.validator.messageinterpolation;resolution:=optional,
+                            org.hibernate.validator.method;resolution:=optional,
+                            org.hibernate.validator.resourceloading;resolution:=optional,
                             org.ietf.jgss;resolution:=optional,
+                            org.jaxen;resolution:=optional,
+                            org.jaxen.dom;resolution:=optional,
                             org.joda.time;resolution:=optional;version="[2.2,3)",
+                            org.joda.time.format;resolution:=optional;version="[2.2,3)",
+                            org.jruby;resolution:=optional,
+                            org.jruby.*;resolution:=optional,
                             org.objectweb.asm;resolution:=optional,
+                            org.omg.CORBA;resolution:=optional,
+                            org.opensaml;resolution:=optional,
                             org.opensaml.*;resolution:=optional,
                             org.osgi.framework;resolution:=optional,
                             org.osgi.service.blueprint.container;resolution:=optional,
@@ -257,15 +344,20 @@
                             org.relaxng.datatype;resolution:=optional,
                             org.slf4j;resolution:=optional;version="[1.7,2)",
                             org.slf4j.spi;resolution:=optional;version="[1.7,2)",
-                            org.springframework.*;resolution:=optional,
+                            org.springframework.asm.tree;resolution:=optional,
+                            org.springframework.instrument;resolution:=optional,
+                            org.springframework.oxm;resolution:=optional,
+                            org.springframework.web.servlet;resolution:=optional,
+                            org.springframework.web.servlet.handler;resolution:=optional,
+                            org.springframework.web.servlet.mvc;resolution:=optional,
                             org.w3c.dom;resolution:=optional,
                             org.w3c.dom.ls;resolution:=optional,
                             org.xml.sax;resolution:=optional,
                             org.xml.sax.ext;resolution:=optional,
-                            org.xml.sax.helpers;resolution:=optional
+                            org.xml.sax.helpers;resolution:=optionalTool:Bnd-1.50.0
                         </Import-Package>
                         <Bundle-Activator>org.apache.cxf.bus.osgi.CXFActivator</Bundle-Activator>
-                        <Embed-Dependency>neethi|woodstox-core-asl|xmlschema-core;scope=compile|runtime;inline=false</Embed-Dependency>
+                        <Embed-Dependency>neethi|woodstox-core-asl|xmlschema-core|spring.framework;scope=compile|runtime;inline=false</Embed-Dependency>
                         <Private-Package>
                         </Private-Package>
                         <_failok>true</_failok>
@@ -369,7 +461,7 @@
     </build>
 
     <properties>
-        <version.cxf>3.0.2</version.cxf>
-        <exp.pkg.version.cxf>3.0.2.wso2v1</exp.pkg.version.cxf>
+        <version.cxf>3.0.5</version.cxf>
+        <exp.pkg.version.cxf>3.0.5.wso2v1</exp.pkg.version.cxf>
     </properties>
 </project>

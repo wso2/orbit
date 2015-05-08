@@ -23,7 +23,7 @@
     <artifactId>jetty-bundle</artifactId>
     <packaging>bundle</packaging>
     <name>Jetty Bundle Jar</name>
-    <version>8.1.15.v20140411.wso2v1</version>
+    <version>8.1.17.v20150415.wso2v1</version>
     <description>
         This bundle will export packages from Jetty
     </description>
@@ -124,7 +124,7 @@
     </build>
 
     <properties>
-        <exp.pkg.version.jetty>8.1.15.v20140411.wso2v1</exp.pkg.version.jetty>
-        <version.jetty>8.1.15.v20140411</version.jetty>
+        <exp.pkg.version.jetty>8.1.17.v20150415.wso2v1</exp.pkg.version.jetty>
+        <version.jetty>8.1.17.v20150415</version.jetty>
     </properties>
 </project>
