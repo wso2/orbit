@@ -81,9 +81,15 @@
                   <instructions>
                     <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                     <Bundle-Name>${project.artifactId}</Bundle-Name>
-                    <Export-Package>com.esotericsoftware.kryo.*;version="2.24.0",com.esotericsoftware.reflectasm.*;version="2.24.0"</Export-Package>
-                    <Private-Package>org.objenesis.*,com.esotericsoftware.minlog.*</Private-Package>
+                    <Export-Package>
+                        com.esotericsoftware.kryo.*;version="2.24.0",
+                        com.esotericsoftware.reflectasm.*;version="2.24.0"
+                    </Export-Package>
+                    <Private-Package>
+                        com.esotericsoftware.minlog.*
+                    </Private-Package>
                     <Import-Package>
+                       org.objenesis.*;version="[2.1, 2.2)",
                        sun.reflect;resolution:=optional,
                        sun.misc;resolution:=optional,
                        sun.nio.ch;resolution:=optional
