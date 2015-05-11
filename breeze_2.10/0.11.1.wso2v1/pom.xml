@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.wso2.orbit.org.scalanlp</groupId>
+	<artifactId>breeze_2.10</artifactId>
+	<version>0.11.1.wso2v1</version>
+	<packaging>bundle</packaging>
+	<name>WSO2 Carbon Orbit - ScalaNLP Breeze</name>
+	<description>This bundle will export packages from Apache ScalaNLP breeze v0.11.1</description>
+
+	<repositories>
+		<repository>
+			<id>wso2-nexus</id>
+			<name>WSO2 internal Repository</name>
+			<url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</releases>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>wso2.releases</id>
+			<name>WSO2 internal Repository</name>
+			<url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>wso2.snapshots</id>
+			<name>Apache Snapshot Repository</name>
+			<url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.scalanlp</groupId>
+			<artifactId>breeze_2.10</artifactId>
+			<version>${breeze.version}</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.scalanlp</groupId>
+			<artifactId>breeze-macros_2.10</artifactId>
+			<version>${breeze.macro.version}</version>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.4.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Name>${project.artifactId}</Bundle-Name>
+						<Export-Package>
+							breeze.macros;version="${breeze.macro.version}",
+							!breeze.macros,
+							breeze.*;version="${breeze.exp.version}";-split-package:=merge-first
+						</Export-Package>
+						<Private-Package>
+						</Private-Package>
+						<Import-Package>
+							spire.*;version="${spire.import.version}",
+							!scala.quasiquotes.*,
+							scala.*;version="${scala.import.version}",
+							org.apache.commons.math3.*;version="${commons-math3.import.version}",
+							org.slf4j.*;version="${slf4j.import.version}",
+							com.github.fommil.netlib.*;version="${netlib.import.version}"
+						</Import-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<properties>
+		<breeze.version>0.11.1</breeze.version>
+		<breeze.exp.version>0.11.1.wso2v1</breeze.exp.version>
+		<breeze.macro.version>0.3.1</breeze.macro.version>
+		<spire.import.version>[0.7.4, 0.7.5)</spire.import.version>
+		<scala.import.version>[2.10.4, 2.11.0)</scala.import.version>
+		<commons-math3.import.version>[3.1.1, 3.1.2)</commons-math3.import.version>
+		<slf4j.import.version>[1.7.0, 1.8.0)</slf4j.import.version>
+		<netlib.import.version>[1.1.2, 1.1.3)</netlib.import.version>
+	</properties>
+</project>
