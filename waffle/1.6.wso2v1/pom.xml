@@ -79,7 +79,7 @@
                         <Bundle-Description>${project.description}</Bundle-Description>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Export-Package>
-                            waffle.*;version="${project.version}"
+                            waffle.*;version="${project.version}",com.sun.jna*;version="${project.version}
                         </Export-Package>
                         <Import-Package>
                             !waffle.*
