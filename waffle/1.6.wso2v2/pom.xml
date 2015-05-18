@@ -42,21 +42,6 @@
             <artifactId>waffle-tomcat7</artifactId>
             <version>1.6</version>
         </dependency>
-        <dependency>
-            <groupId>net.java.dev.jna</groupId>
-            <artifactId>jna</artifactId>
-            <version>4.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>net.java.dev.jna</groupId>
-            <artifactId>jna-platform</artifactId>
-            <version>4.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>14.0.1</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -79,9 +64,9 @@
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            com.google.common.base;resolution:=optional;version="[14.0,15)",
+                            com.google.common.base;resolution:=optional;version="[12.0.0.wso2v1,13.0.0.wso2v1)",
                             com.google.common.cache;resolution:=optional;version="[12.0.0.wso2v1,13.0.0.wso2v1)",
-                            com.google.common.io;resolution:=optional;version="[14.0,15)",
+                            com.google.common.io;resolution:=optional;version="[12.0.0.wso2v1,13.0.0.wso2v1)",
                             javax.security.auth;resolution:=optional,javax.security.auth.callback;resolution:=optional,
                             javax.security.auth.login;resolution:=optional,javax.security.auth.spi;resolution:=optional,
                             javax.servlet;resolution:=optional,
