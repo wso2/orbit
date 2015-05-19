@@ -20,7 +20,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.hazelcast.wso2</groupId>
+    <groupId>org.wso2.orbit.com.hazelcast</groupId>
     <artifactId>hazelcast</artifactId>
     <packaging>bundle</packaging>
     <name>hazelcast.wso2</name>
