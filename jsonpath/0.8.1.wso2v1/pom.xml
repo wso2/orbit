@@ -1,5 +1,5 @@
 <!--
- ~ Copyright (c) 2005-2011, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2005-2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ WSO2 Inc. licenses this file to you under the Apache License,
  ~ Version 2.0 (the "License"); you may not use this file except
@@ -19,7 +19,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.jayway.jsonpath</groupId>
+    <groupId>org.wso2.orbit.jayway.jsonpath</groupId>
     <artifactId>com.jayway.jsonpath</artifactId>
     <packaging>bundle</packaging>
     <name>json-path.wso2</name>
@@ -42,16 +42,12 @@
     		<scope>test</scope>
 		<optional>true</optional>
 	</dependency>
-	
-
 	<dependency>
 		<groupId>commons-lang</groupId>
 		<artifactId>commons-lang</artifactId>
 		<version>2.6</version>
 		<optional>true</optional>
 	</dependency>
-            
-            
  </dependencies>
 	
    <repositories>
@@ -91,13 +87,12 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-			 com.jayway.jsonpath.spi.impl;uses:="com.jayway.jsonpath,org.codehaus.jackson.map.type,net.minidev.json,net.minidev.json.parser,
-			 org.codehaus.jackson.type,org.apache.commons.lang,org.codehaus.jackson.map,com.jayway.jsonpath.spi,org.codehaus.jackson",
-			 com.jayway.jsonpath.internal.filter;uses:="com.jayway.jsonpath.spi,com.jayway.jsonpath,com.jayway.jsonpath.internal.filter.eval",
-			 com.jayway.jsonpath.internal;uses:="com.jayway.jsonpath.internal.filter,com.jayway.jsonpath.spi,com.jayway.jsonpath",
-			 com.jayway.jsonpath.spi;uses:="com.jayway.jsonpath.spi.impl,com.jayway.jsonpath",
-			 com.jayway.jsonpath;uses:="com.jayway.jsonpath.internal.filter,com.jayway.jsonpath.internal,com.jayway.jsonpath.spi,
-			 org.apache.commons.lang",!com.jayway.jsonpath.internal.*
+			 com.jayway.jsonpath.spi.impl;version="[0.8.0,0.9.0)";uses:="com.jayway.jsonpath,org.codehaus.jackson.map.type,net.minidev.json,net.minidev.json.parser,org.codehaus.jackson.type,org.apache.commons.lang,org.codehaus.jackson.map,com.jayway.jsonpath.spi,org.codehaus.jackson",
+			 com.jayway.jsonpath.internal.filter;version="[0.8.0,0.9.0)";uses:="com.jayway.jsonpath.spi,com.jayway.jsonpath,com.jayway.jsonpath.internal.filter.eval",
+			 com.jayway.jsonpath.internal;version="[0.8.0,0.9.0)";uses:="com.jayway.jsonpath.internal.filter,com.jayway.jsonpath.spi,com.jayway.jsonpath",
+			 com.jayway.jsonpath.spi;version="[0.8.0,0.9.0)";uses:="com.jayway.jsonpath.spi.impl,com.jayway.jsonpath",
+			 com.jayway.jsonpath;version="[0.8.0,0.9.0)";uses:="com.jayway.jsonpath.internal.filter,com.jayway.jsonpath.internal,com.jayway.jsonpath.spi,org.apache.commons.lang",
+			!com.jayway.jsonpath.internal.*
 			</Export-Package>
 			<Private-Package>
            			com.jayway.jsonpath.internal.*
