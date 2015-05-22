@@ -87,11 +87,11 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-			 com.jayway.jsonpath.spi.impl;version="${jayway.jsonpath.version}";uses:="com.jayway.jsonpath,org.codehaus.jackson.map.type,net.minidev.json,net.minidev.json.parser,org.codehaus.jackson.type,org.apache.commons.lang,org.codehaus.jackson.map,com.jayway.jsonpath.spi,org.codehaus.jackson",
-			 com.jayway.jsonpath.internal.filter;version="${jayway.jsonpath.version}";uses:="com.jayway.jsonpath.spi,com.jayway.jsonpath,com.jayway.jsonpath.internal.filter.eval",
-			 com.jayway.jsonpath.internal;version="${jayway.jsonpath.version}";uses:="com.jayway.jsonpath.internal.filter,com.jayway.jsonpath.spi,com.jayway.jsonpath",
-			 com.jayway.jsonpath.spi;version="${jayway.jsonpath.version}";uses:="com.jayway.jsonpath.spi.impl,com.jayway.jsonpath",
-			 com.jayway.jsonpath;version="${jayway.jsonpath.version}";uses:="com.jayway.jsonpath.internal.filter,com.jayway.jsonpath.internal,com.jayway.jsonpath.spi,org.apache.commons.lang",
+			 com.jayway.jsonpath.spi.impl;version="${jayway.jsonpath.version}",
+			 com.jayway.jsonpath.internal.filter;version="${jayway.jsonpath.version}",
+			 com.jayway.jsonpath.internal;version="${jayway.jsonpath.version}",
+			 com.jayway.jsonpath.spi;version="${jayway.jsonpath.version}",
+			 com.jayway.jsonpath;version="${jayway.jsonpath.version}",
 			!com.jayway.jsonpath.internal.*
 			</Export-Package>
 			<Private-Package>
