@@ -68,13 +68,21 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            com.jayway.jsonpath.*, !net.minidev.*
-                        </Export-Package>
+			 com.jayway.jsonpath.spi.impl;uses:="com.jayway.jsonpath,org.codehaus.jackson.map.type,net.minidev.json,net.minidev.json.parser,
+			 org.codehaus.jackson.type,org.apache.commons.lang,org.codehaus.jackson.map,com.jayway.jsonpath.spi,org.codehaus.jackson",
+			 com.jayway.jsonpath.internal.filter;uses:="com.jayway.jsonpath.spi,com.jayway.jsonpath,com.jayway.jsonpath.internal.filter.eval",
+			 com.jayway.jsonpath.internal;uses:="com.jayway.jsonpath.internal.filter,com.jayway.jsonpath.spi,com.jayway.jsonpath",
+			 com.jayway.jsonpath.spi;uses:="com.jayway.jsonpath.spi.impl,com.jayway.jsonpath",
+			 com.jayway.jsonpath;uses:="com.jayway.jsonpath.internal.filter,com.jayway.jsonpath.internal,com.jayway.jsonpath.spi,
+			 org.apache.commons.lang",com.jayway.jsonpath.internal.filter.eval
+			</Export-Package>
                         <Import-Package>
-                            !com.jayway.jsonpath.*,
-                            *;resolution:=optional
+                            !com.jayway.jsonpath.*,net.minidev.json;resolution:=optional,net.minidev.json.parser;resolution:=optional,
+			    org.apache.commons.lang;resolution:=optional;version="2.6",org.codehaus.jackson;resolution:=optional,
+			    org.codehaus.jackson.map;resolution:=optional,org.codehaus.jackson.map.type;resolution:=optional,
+			    org.codehaus.jackson.type;resolution:=optional
                         </Import-Package>                      
-                        <DynamicImport-Package>*</DynamicImport-Package>
+                        
                     </instructions>
                 </configuration>
             </plugin>
