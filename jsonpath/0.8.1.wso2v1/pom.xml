@@ -40,17 +40,16 @@
     		<artifactId>json-path-assert</artifactId>
     		<version>0.8.1</version>
     		<scope>test</scope>
+		<optional>true</optional>
 	</dependency>
-	<!--dependency>
-	<groupId>net.minidev</groupId>
-	<artifactId>json-smart</artifactId>
-	<version>1.1.1</version>
-</dependency-->
-<dependency>
-	<groupId>commons-lang</groupId>
-	<artifactId>commons-lang</artifactId>
-	<version>2.6</version>
-</dependency>
+	
+
+	<dependency>
+		<groupId>commons-lang</groupId>
+		<artifactId>commons-lang</artifactId>
+		<version>2.6</version>
+		<optional>true</optional>
+	</dependency>
             
             
  </dependencies>
@@ -74,8 +73,12 @@
 			 com.jayway.jsonpath.internal;uses:="com.jayway.jsonpath.internal.filter,com.jayway.jsonpath.spi,com.jayway.jsonpath",
 			 com.jayway.jsonpath.spi;uses:="com.jayway.jsonpath.spi.impl,com.jayway.jsonpath",
 			 com.jayway.jsonpath;uses:="com.jayway.jsonpath.internal.filter,com.jayway.jsonpath.internal,com.jayway.jsonpath.spi,
-			 org.apache.commons.lang",com.jayway.jsonpath.internal.filter.eval
+			 org.apache.commons.lang",!com.jayway.jsonpath.internal.*
 			</Export-Package>
+			<Private-Package>
+           			com.jayway.jsonpath.internal.*
+	               	</Private-Package>
+
                         <Import-Package>
                             !com.jayway.jsonpath.*,net.minidev.json;resolution:=optional,net.minidev.json.parser;resolution:=optional,
 			    org.apache.commons.lang;resolution:=optional;version="2.6",org.codehaus.jackson;resolution:=optional,
