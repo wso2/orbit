@@ -73,7 +73,7 @@
                         </Export-Package>
                         <Import-Package>
                             org.apache.thrift.*;version="${thrift.osgi.version.range}",
-                            !sun.misc
+                            !sun.misc.*
                         </Import-Package>
                     </instructions>
                 </configuration>
