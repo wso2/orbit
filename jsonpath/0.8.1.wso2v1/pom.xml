@@ -29,26 +29,26 @@
     </description>
     <url>http://wso2.org</url>
 
-  <dependencies>
+    <dependencies>
 	<dependency>
     		<groupId>com.jayway.jsonpath</groupId>
     		<artifactId>json-path</artifactId>
-    		<version>0.8.1</version>
+    		<version>${jayway.jsonpath.version}</version>
 	</dependency>
 	<dependency>
     		<groupId>com.jayway.jsonpath</groupId>
     		<artifactId>json-path-assert</artifactId>
-    		<version>0.8.1</version>
+    		<version>${jayway.jsonpath.version}</version>
     		<scope>test</scope>
 		<optional>true</optional>
 	</dependency>
 	<dependency>
 		<groupId>commons-lang</groupId>
 		<artifactId>commons-lang</artifactId>
-		<version>2.6</version>
+		<version>${commons.lang.version}</version>
 		<optional>true</optional>
 	</dependency>
- </dependencies>
+   </dependencies>
 	
    <repositories>
         <repository>
@@ -113,5 +113,6 @@
 
     <properties>
 	<jayway.jsonpath.version>0.8.1</jayway.jsonpath.version>
+	<commons.lang.version>2.6</commons.lang.version>
     </properties>
 </project>
