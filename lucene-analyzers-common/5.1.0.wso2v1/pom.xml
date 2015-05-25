@@ -65,11 +65,9 @@
                         </Export-Package>
                         <Import-Package>
                             !org.apache.lucene.*,
-                            org.xml.sax.helpers; version="0.0.0"
+                            org.xml.sax.helpers; version="0.0.0",
                             org.xml.sax; version="0.0.0",
                             javax.xml.parsers; version="0.0.0",
-                            org.tartarus.snowball; version="0.0.0"; resolution:=optional,
-                            org.tartarus.snowball.ext; version="0.0.0"; resolution:=optional,
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
