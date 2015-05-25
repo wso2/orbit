@@ -29,6 +29,7 @@
          <groupId>com.jayway.jsonpath</groupId>
          <artifactId>json-path</artifactId>
          <version>${jayway.jsonpath.version}</version>
+         <optional>true</optional>
       </dependency>
       <dependency>
          <groupId>com.jayway.jsonpath</groupId>
@@ -79,21 +80,26 @@
                <instructions>
                   <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                   <Bundle-Name>${project.artifactId}</Bundle-Name>
-                  <Export-Package>com.jayway.jsonpath.spi.impl;version="${jayway.jsonpath.version}",
-			com.jayway.jsonpath.internal.filter;version="${jayway.jsonpath.version}",
-			com.jayway.jsonpath.internal;version="${jayway.jsonpath.version}",
-			com.jayway.jsonpath.spi;version="${jayway.jsonpath.version}",
-			com.jayway.jsonpath;version="${jayway.jsonpath.version}",
-			!com.jayway.jsonpath.internal.*</Export-Package>
-                  <Private-Package>com.jayway.jsonpath.internal.*</Private-Package>
-                  <Import-Package>!com.jayway.jsonpath.*,
-                        net.minidev.json;resolution:=optional,
-                        net.minidev.json.parser;resolution:=optional,
-			org.apache.commons.lang;resolution:=optional;version="[2.6,2.7)",
-			org.codehaus.jackson;resolution:=optional,
-			org.codehaus.jackson.map;resolution:=optional,
-			org.codehaus.jackson.map.type;resolution:=optional,
-			org.codehaus.jackson.type;resolution:=optional</Import-Package>
+                  <Export-Package>
+                  	com.jayway.jsonpath.spi.impl.*;version="${jayway.jsonpath.version}",
+			com.jayway.jsonpath.internal.filter.*;version="${jayway.jsonpath.version}",
+			com.jayway.jsonpath.internal.*;version="${jayway.jsonpath.version}",
+			com.jayway.jsonpath.spi.*;version="${jayway.jsonpath.version}",
+			com.jayway.jsonpath.*;version="${jayway.jsonpath.version}",
+			!com.jayway.jsonpath.internal.*
+		  </Export-Package>
+                  <Private-Package>
+                  	com.jayway.jsonpath.internal.*
+                  </Private-Package>
+                  <Import-Package>
+                  	!com.jayway.jsonpath.*,
+                        net.minidev.json.*;resolution:=optional,
+                        net.minidev.json.parser.*;resolution:=optional,
+			org.apache.commons.lang.*;resolution:=optional;version="[2.6,2.7)",
+			org.codehaus.jackson.*;resolution:=optional,
+			org.codehaus.jackson.map.*;resolution:=optional,
+			org.codehaus.jackson.map.type.*;resolution:=optional,
+			org.codehaus.jackson.type.*;resolution:=optional</Import-Package>
                </instructions>
             </configuration>
          </plugin>
