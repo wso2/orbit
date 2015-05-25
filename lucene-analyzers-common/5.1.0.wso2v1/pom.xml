@@ -16,22 +16,20 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.lucene</groupId>
-    <artifactId>lucene-core</artifactId>
+    <artifactId>lucene-analyzers-common</artifactId>
     <packaging>bundle</packaging>
-    <name>Lucene 5.1.0 Core Library</name>
+    <name>Lucene 5.1.0 Analyzers-common Library</name>
     <version>${orbit.version.lucene}</version>
-    <description>This exports packages from the Lucene core library</description>
+    <description>This exports packages from the Lucene indexing library</description>
     <url>http://wso2.org</url>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-core</artifactId>
+            <artifactId>lucene-analyzers-common</artifactId>
             <version>${version.lucene}</version>
             <optional>true</optional>
         </dependency>
@@ -61,15 +59,21 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Export-Package>
-                            org.apache.lucene.*;version="${version.lucene}"
+                       <Export-Package>
+                           org.apache.lucene.*;version="${version.lucene}",
+                           org.tartarus.snowball.*; version="${version.lucene}"
                         </Export-Package>
                         <Import-Package>
                             !org.apache.lucene.*,
+                            org.xml.sax.helpers; version="0.0.0"
+                            org.xml.sax; version="0.0.0",
+                            javax.xml.parsers; version="0.0.0",
+                            org.tartarus.snowball; version="0.0.0"; resolution:=optional,
+                            org.tartarus.snowball.ext; version="0.0.0"; resolution:=optional,
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
-                            @lucene-core-5.0.0.jar!/META-INF/services/*
+                            @lucene-analyzers-common-5.1.0.jar!/META-INF/services/*
                         </Include-Resource>
                     </instructions>
                 </configuration>
