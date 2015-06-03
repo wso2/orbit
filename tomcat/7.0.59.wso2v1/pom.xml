@@ -107,9 +107,6 @@
                             javax.websocket.*;version="1.7.0";-split-package:=merge-first,
                         </Export-Package>
                         <Private-Package>
-                            javax.annotation.*,
-                            javax.ejb.*,
-                            javax.persistence.*,
                             org.apache.juli.*
                         </Private-Package>
                         <Import-Package>
