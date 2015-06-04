@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.wso2.tomee</groupId>
+    <groupId>org.wso2.orbit.org.apache.openejb</groupId>
     <artifactId>tomee-resources</artifactId>
     <version>${tomee.version}.wso2v1</version>
     <packaging>bundle</packaging>
@@ -12,9 +12,10 @@
     <url>http://wso2.org</url>
 
     <properties>
-        <openejb.version>4.6.0.1</openejb.version>
-        <myfaces.version>2.1.13</myfaces.version>
-        <tomee.version>1.6.0.1</tomee.version>
+        <openejb.version>4.7.2</openejb.version>
+        <myfaces.version>2.1.17</myfaces.version>
+        <tomee.version>1.7.2</tomee.version>
+        <openwebbeans.version>1.2.7</openwebbeans.version>
     </properties>
     <build>
         <plugins>
@@ -31,6 +32,7 @@
                         </Export-Package>
                         <Include-Resource>
                             {maven-resources},
+                            @openwebbeans-impl-${openwebbeans.version}.jar!/META-INF/openwebbeans/*.properties, 
                             @openejb-core-${openejb.version}.jar!/META-INF/**, 
                             @openejb-core-${openejb.version}.jar!/schema/**, 
                             @openejb-core-${openejb.version}.jar!/*.properties, 
@@ -58,6 +60,11 @@
             <groupId>org.apache.openejb</groupId>
             <artifactId>tomee-myfaces</artifactId>
             <version>${tomee.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.openwebbeans</groupId>
+            <artifactId>openwebbeans-impl</artifactId>
+            <version>${openwebbeans.version}</version>
         </dependency>
     </dependencies>
 
