@@ -4,27 +4,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.wso2.tomee</groupId>
+    <groupId>org.wso2.orbit.org.apache.openejb</groupId>
     <artifactId>tomee</artifactId>
-    <version>1.6.0.1.wso2v4</version>
+    <version>${tomee.version}.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 TomEE</name>
     <url>http://wso2.org</url>
 
     <properties>
-        <openejb.version>4.6.0.1</openejb.version>
-        <tomee.version>1.6.0.1</tomee.version>
-        <myfaces.version>2.1.13</myfaces.version>
-        <openwebbeans.version>1.2.1</openwebbeans.version>
-        <openjpa.version>2.3.0-nonfinal-1540826</openjpa.version>
+        <openejb.version>4.7.2</openejb.version>
+        <tomee.version>1.7.2</tomee.version>
+        <myfaces.version>2.1.17</myfaces.version>
+        <openwebbeans.version>1.2.7</openwebbeans.version>
+        <openjpa.version>2.4.0</openjpa.version>
         <bval.version>0.5</bval.version>
         <sxc.version>0.8</sxc.version>
-        <xbean.version>3.15</xbean.version>
+        <xbean.version>4.2</xbean.version>
 
         <!-- START CXF specific version properties -->
         <cxf.version>2.7.8</cxf.version>
         <cxf.version.wss4j>1.6.6</cxf.version.wss4j>
-        <jaxb.version>2.2.5</jaxb.version>
+        <jaxb.version>2.2.7</jaxb.version>
         <neethi.cxf.version>3.0.3</neethi.cxf.version>
         <xmlsec.cxf.version>1.5.6</xmlsec.cxf.version>
         <ehcache.cxf.version>2.5.1</ehcache.cxf.version>
@@ -40,6 +40,7 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
+                <version>2.4.0</version>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
@@ -171,7 +172,7 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.apache.openejb.patch</groupId>
+            <groupId>org.apache.openjpa</groupId>
             <artifactId>openjpa</artifactId>
             <version>${openjpa.version}</version>
             <optional>true</optional>
@@ -204,7 +205,7 @@
 
         <dependency>
             <groupId>org.apache.xbean</groupId>
-            <artifactId>xbean-asm4-shaded</artifactId>
+            <artifactId>xbean-asm5-shaded</artifactId>
             <version>${xbean.version}</version>
             <optional>true</optional>
         </dependency>
@@ -485,6 +486,16 @@
         </dependency>
         <!-- END CXF deps -->
 
+        <dependency>
+            <groupId>org.apache.myfaces.core</groupId>
+            <artifactId>myfaces-api</artifactId>
+            <version>${myfaces.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.myfaces.core</groupId>
+            <artifactId>myfaces-impl</artifactId>
+            <version>${myfaces.version}</version>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
