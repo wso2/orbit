@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.wso2.orbit.org.apache.openejb</groupId>
+    <artifactId>tomee-resources</artifactId>
+    <version>1.7.2.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 TomEE Resources Fragment</name>
+    <url>http://wso2.org</url>
+
+    <properties>
+        <openejb.version>4.7.2</openejb.version>
+        <myfaces.version>2.1.17</myfaces.version>
+        <tomee.version>1.7.2</tomee.version>
+        <openwebbeans.version>1.2.7</openwebbeans.version>
+        <cxf.version>2.7.8</cxf.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Import-Package>*;resolution:=optional</Import-Package>
+                        <Export-Package>
+                        </Export-Package>
+                        <Include-Resource>
+                            {maven-resources},
+                            @openwebbeans-impl-${openwebbeans.version}.jar!/META-INF/openwebbeans/*.properties,
+                            @openejb-core-${openejb.version}.jar!/META-INF/**, 
+                            @openejb-core-${openejb.version}.jar!/schema/**, 
+                            @openejb-core-${openejb.version}.jar!/*.properties, 
+                            @openejb-core-${openejb.version}.jar!/*.conf*, 
+                            @openejb-core-${openejb.version}.jar!/*.exclusions, 
+                            @tomee-myfaces-${tomee.version}.jar!/META-INF/services/*,
+                            @cxf-rt-frontend-jaxrs-${cxf.version}.jar!/META-INF/services/*
+                        </Include-Resource>
+                        <Embed-Dependency>
+                        </Embed-Dependency>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                        <Fragment-Host>tomcat</Fragment-Host>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.openejb</groupId>
+            <artifactId>openejb-core</artifactId>
+            <version>${openejb.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.openejb</groupId>
+            <artifactId>tomee-myfaces</artifactId>
+            <version>${tomee.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.openwebbeans</groupId>
+            <artifactId>openwebbeans-impl</artifactId>
+            <version>${openwebbeans.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+            <version>${cxf.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
