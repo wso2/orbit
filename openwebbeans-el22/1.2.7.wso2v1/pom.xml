@@ -29,7 +29,9 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Import-Package>*;resolution:=optional</Import-Package>
+                        <Bundle-Vendor>WSO2 Inc</Bundle-Vendor>
+                        <Import-Package>
+                        </Import-Package>
                         <Export-Package>
                             !org.apache.webbeans.el22.internal.*,
                             org.apache.webbeans.el22.*;version="${openwebbeans.version}"
@@ -54,6 +56,7 @@
             <groupId>org.apache.openwebbeans</groupId>
             <artifactId>openwebbeans-el22</artifactId>
             <version>${openwebbeans.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
