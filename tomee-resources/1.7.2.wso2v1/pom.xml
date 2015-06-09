@@ -41,7 +41,9 @@
                             @openejb-core-${openejb.version}.jar!/*.conf*, 
                             @openejb-core-${openejb.version}.jar!/*.exclusions, 
                             @tomee-myfaces-${tomee.version}.jar!/META-INF/services/*,
-                            @cxf-rt-frontend-jaxrs-${cxf.version}.jar!/META-INF/services/*
+                            @cxf-rt-frontend-jaxrs-${cxf.version}.jar!/META-INF/services/*,
+                            @myfaces-impl-${myfaces.version}.jar!/META-INF/services/*,
+                            src/main/resources
                         </Include-Resource>
                         <Embed-Dependency>
                         </Embed-Dependency>
@@ -76,6 +78,12 @@
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
             <version>${cxf.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.myfaces.core</groupId>
+            <artifactId>myfaces-impl</artifactId>
+            <version>${myfaces.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
