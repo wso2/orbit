@@ -31,6 +31,9 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Bundle-Vendor>WSO2 Inc</Bundle-Vendor>
                         <Import-Package>
+                            javax.el;version="2.2.0",
+                            javax.enterprise.*;version="1.0.0",
+                            org.apache.webbeans.*;version="1.2.7",
                         </Import-Package>
                         <Export-Package>
                             !org.apache.webbeans.el22.internal.*,
