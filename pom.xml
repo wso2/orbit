@@ -63,7 +63,6 @@
         <module>jackson-core/2.5.0.wso2v1</module>
         <module>jackson-annotations/2.5.0.wso2v1</module>
         <module>jackson-json-provider/2.5.0.wso2v1</module>
-        <module>gson/2.2.4.wso2v1</module>
     </modules>
 
     <build>
