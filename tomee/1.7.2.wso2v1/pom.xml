@@ -56,6 +56,8 @@
                         </Import-Package>
                         <Export-Package>
                             !javax.xml.ws.*,
+                            !org.apache.webbeans.el22.*,
+                            !org.apache.webbeans.jsf.*,
                             org.apache.tomee.*;version="${tomee.version}",
                             org.apache.openejb.*;version="${openejb.version}";-split-package:=merge-first,
                             org.apache.xbean.*;version="3.15";-split-package:=merge-first,
