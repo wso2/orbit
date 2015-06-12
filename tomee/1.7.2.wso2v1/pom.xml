@@ -102,8 +102,13 @@
 
                         <Include-Resource>
                             {maven-resources},
-                            @openejb-core-${openejb.version}.jar!/**,
-                            @tomee-webapp-${tomee.version}.jar!/**,
+                            @openejb-core-${openejb.version}.jar!/META-INF/**,
+                            @openejb-core-${openejb.version}.jar!/schema/**,
+                            @openejb-core-${openejb.version}.jar!/*.properties,
+                            @openejb-core-${openejb.version}.jar!/*.conf*,
+                            @openejb-core-${openejb.version}.jar!/*.exclusions,
+                            @tomee-webapp-${tomee.version}.jar!/META-INF/**,
+                            @tomee-webapp-${tomee.version}.jar!/*.properties,
                             @bval-jsr303-${bval.version}.jar!/META-INF/**,
                             @openwebbeans-impl-${openwebbeans.version}.jar!/META-INF/**,
                             @openwebbeans-impl-${openwebbeans.version}.jar!/openwebbeans/**,
