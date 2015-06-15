@@ -42,7 +42,6 @@
                             @openejb-core-${openejb.version}.jar!/*.exclusions, 
                             @tomee-myfaces-${tomee.version}.jar!/META-INF/services/*,
                             @cxf-rt-frontend-jaxrs-${cxf.version}.jar!/META-INF/services/*,
-                            @myfaces-impl-${myfaces.version}.jar!/META-INF/services/*,
                             src/main/resources
                         </Include-Resource>
                         <Embed-Dependency>
