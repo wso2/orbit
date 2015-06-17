@@ -58,6 +58,7 @@
         <module>bsf/3.0.0.wso2v4</module>
         <module>lucene/4.10.3-wso2v1</module>
         <module>rabbit-mq/3.4.4.wso2v1</module>
+        <module>commons-net/3.3.wso2v1</module>
     </modules>
 
     <build>
