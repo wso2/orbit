@@ -50,9 +50,6 @@
                         <Bundle-Vendor>WSO2 Inc</Bundle-Vendor>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>   
-                        <Bundle-Activator>
-                            org.wso2.carbon.clustering.internal.CarbonClusterBundleActivator
-                        </Bundle-Activator>
                         <Export-Package>
                             org.apache.commons.net.*; version="3.3",
                         </Export-Package>
