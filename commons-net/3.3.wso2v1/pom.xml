@@ -21,7 +21,7 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>commons-net.wso2</groupId>
+    <groupId>org.wso2.orbit.commons-net</groupId>
     <artifactId>commons-net</artifactId>
     <packaging>bundle</packaging>
     <name>commons.net.wso2</name>
@@ -29,8 +29,7 @@
     <description>
         This bundle will export packages from commons-net.jar
     </description>
-    <url>http://wso2.org</url>
-
+    <url>https://commons.apache.org/proper/commons-net</url>
     <dependencies>
         <dependency>
                 <groupId>commons-net</groupId>
@@ -39,7 +38,6 @@
                 <optional>true</optional>
             </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -49,20 +47,24 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Bundle-Vendor>WSO2 Inc</Bundle-Vendor>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Name>${pom.artifactId}</Bundle-Name>
+                        <Bundle-Name>${pom.artifactId}</Bundle-Name>   
+                        <Bundle-Activator>
+                            org.wso2.carbon.clustering.internal.CarbonClusterBundleActivator
+                        </Bundle-Activator>
                         <Export-Package>
                             org.apache.commons.net.*; version="3.3",
                         </Export-Package>
                         <Import-Package>
-                            !org.apache.commons.net.*,
-                            *;resolution:=optional
+                            javax.crypto, 
+                            javax.crypto.spec,
+                            javax.net,
+                            javax.net.ssl
                         </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
-
 </project>
