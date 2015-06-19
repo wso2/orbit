@@ -57,9 +57,10 @@
                         </Export-Package>
                         <Import-Package>
                             !org.tigris.subversion.svnclientadapter.*; version=1.10.9,
+			    org.apache.subversion.javahl.*;resolution:=optional,
+			    org.tmatesoft.svn.core.*;resolution:=optional,
                             *;resolution:=optional
                         </Import-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
