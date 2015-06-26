@@ -96,6 +96,26 @@
             <version>${spark.version}</version>
         </dependency>
 
+        <!--private packages-->
+        <dependency>
+            <groupId>org.spark-project.akka</groupId>
+            <artifactId>akka-remote_2.10</artifactId>
+            <version>${akka.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.spark-project.akka</groupId>
+            <artifactId>akka-actor_2.10</artifactId>
+            <version>${akka.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>${typesafe.version}</version>
+            <optional>true</optional>
+        </dependency>
 
     </dependencies>
     <build>
@@ -180,7 +200,7 @@
         <jackson.import.version>[2.4.4, 2.5.0)</jackson.import.version>
         <json4s.import.version>[3.2.10, 3.2.11)</json4s.import.version>
         <kryo.import.version>[2.21,3.0)</kryo.import.version>
-        <snappy.import.version>[1.1.1.6, 1.1.1.7)</snappy.import.version>
+        <snappy.import.version>[1.1.1.7, 1.1.2.0)</snappy.import.version>
         <netty-all.import.version>[4.0.23, 4.0.24.Final)</netty-all.import.version>
         <scala.import.version>[2.10.4, 2.11.0)</scala.import.version>
         <commons-math3.import.version>[3.4.1, 3.5.0)</commons-math3.import.version>
