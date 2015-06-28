@@ -21,17 +21,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.lucene</groupId>
-    <artifactId>lucene-queries</artifactId>
+    <artifactId>lucene-facet</artifactId>
     <packaging>bundle</packaging>
-    <name>Lucene 5.1.0 Query Queries Library</name>
+    <name>Lucene 5.2.1 Facet Library</name>
     <version>${orbit.version.lucene}</version>
-    <description>This exports packages from the Lucene Queries library</description>
+    <description>This exports packages from the Lucene Facet library</description>
     <url>http://wso2.org</url>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-queries</artifactId>
+            <artifactId>lucene-facet</artifactId>
             <version>${version.lucene}</version>
             <optional>true</optional>
         </dependency>
@@ -62,17 +62,19 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.lucene.queries.*; version="${version.lucene}"
+                            org.apache.lucene.facet.*;version="${version.lucene}"
                         </Export-Package>
                         <Import-Package>
                             org.apache.lucene.util; version="${version.lucene.imp.package}",
+                            org.apache.lucene.store; version="${version.lucene.imp.package}",
                             org.apache.lucene.search; version="${version.lucene.imp.package}",
                             org.apache.lucene.index; version="${version.lucene.imp.package}",
                             org.apache.lucene.document; version="${version.lucene.imp.package}",
                             org.apache.lucene.analysis; version="${version.lucene.imp.package}",
                             org.apache.lucene.analysis.tokenattributes; version="${version.lucene.imp.package}",
-                            org.apache.lucene.search.similarities; version="${version.lucene.imp.package}",
-                            org.apache.lucene.util.mutable; version="${version.lucene.imp.package}",
+                            org.apache.lucene.queries.function; version="${version.lucene.imp.package}",
+                            org.apache.lucene.queries.function.docvalues; version="${version.lucene.imp.package}",
+                            org.apache.lucene.queries.function.valuesource; version="${version.lucene.imp.package}",
                             *;resolution:=optional
                         </Import-Package>
                     </instructions>
@@ -82,8 +84,8 @@
     </build>
 
     <properties>
-        <version.lucene>5.1.0</version.lucene>
-        <version.lucene.imp.package>[5.1.0, 5.2.0)</version.lucene.imp.package>
+        <version.lucene>5.2.1</version.lucene>
+        <version.lucene.imp.package>[5.2.1, 5.3.0)</version.lucene.imp.package>
         <orbit.version.lucene>${version.lucene}.wso2v1</orbit.version.lucene>
         <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
     </properties>

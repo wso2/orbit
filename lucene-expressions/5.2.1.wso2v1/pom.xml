@@ -21,17 +21,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.lucene</groupId>
-    <artifactId>lucene-core</artifactId>
+    <artifactId>lucene-expressions</artifactId>
     <packaging>bundle</packaging>
-    <name>Lucene 5.1.0 Core Library</name>
+    <name>Lucene 5.2.1 Expressions Library</name>
     <version>${orbit.version.lucene}</version>
-    <description>This exports packages from the Lucene core library</description>
+    <description>This exports packages from the Lucene Expressions library</description>
     <url>http://wso2.org</url>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-core</artifactId>
+            <artifactId>lucene-expressions</artifactId>
             <version>${version.lucene}</version>
             <optional>true</optional>
         </dependency>
@@ -62,15 +62,22 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.lucene.*;version="${version.lucene}"
+                            org.apache.lucene.expressions.*;version="${version.lucene}"
                         </Export-Package>
                         <Import-Package>
-                            !org.apache.lucene.*,
+                            org.antlr.runtime; version="${version.antlr.runtime}",
+                            org.antlr.runtime.tree; version="${version.antlr.runtime}",
+                            org.antlr.runtime; version="${version.antlr.runtime}",
+                            org.objectweb.asm; version="${version.objectweb.asm}",
+                            org.objectweb.asm.commons; version="${version.objectweb.asm}",
+                            org.apache.lucene.util; version="${version.lucene.imp.package}",
+                            org.apache.lucene.search; version="${version.lucene.imp.package}",
+                            org.apache.lucene.index; version="${version.lucene.imp.package}",
+                            org.apache.lucene.queries.function; version="${version.lucene.imp.package}",
+                            org.apache.lucene.queries.function.docvalues; version="${version.lucene.imp.package}",
+                            org.apache.lucene.queries.function.valuesource; version="${version.lucene.imp.package}",
                             *;resolution:=optional
                         </Import-Package>
-                        <Include-Resource>
-                            @lucene-core-5.0.0.jar!/META-INF/services/*
-                        </Include-Resource>
                     </instructions>
                 </configuration>
             </plugin>
@@ -78,8 +85,11 @@
     </build>
 
     <properties>
-        <version.lucene>5.1.0</version.lucene>
+        <version.lucene>5.2.1</version.lucene>
+        <version.lucene.imp.package>[5.2.1, 5.3.0)</version.lucene.imp.package>
         <orbit.version.lucene>${version.lucene}.wso2v1</orbit.version.lucene>
-        <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
+        <version.spatial4j>[0.4.1, 0.5)</version.spatial4j>
+        <version.antlr.runtime>[3.2.0, 3.3.0)</version.antlr.runtime>
+        <version.objectweb.asm>[4.1.0,5.0.0)</version.objectweb.asm>
     </properties>
 </project>

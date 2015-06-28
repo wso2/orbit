@@ -16,22 +16,20 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.lucene</groupId>
-    <artifactId>lucene-expressions</artifactId>
+    <artifactId>lucene-analyzers-common</artifactId>
     <packaging>bundle</packaging>
-    <name>Lucene 5.1.0 Expressions Library</name>
+    <name>Lucene 5.2.1 Analyzers-common Library</name>
     <version>${orbit.version.lucene}</version>
-    <description>This exports packages from the Lucene Expressions library</description>
+    <description>This exports packages from the Lucene indexing library</description>
     <url>http://wso2.org</url>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-expressions</artifactId>
+            <artifactId>lucene-analyzers-common</artifactId>
             <version>${version.lucene}</version>
             <optional>true</optional>
         </dependency>
@@ -61,22 +59,20 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Export-Package>
-                            org.apache.lucene.expressions.*;version="${version.lucene}"
+                       <Export-Package>
+                           org.apache.lucene.*;version="${version.lucene}",
+                           org.tartarus.snowball.*; version="${version.lucene}"
                         </Export-Package>
                         <Import-Package>
-                            org.apache.lucene.util; version="${version.lucene.imp.package}",
-                            org.apache.lucene.search; version="${version.lucene.imp.package}",
-                            org.apache.lucene.index; version="${version.lucene.imp.package}",
-                            org.antlr.runtime; version="${version.antlr.runtime}",
-                            org.antlr.runtime.tree; version="${version.antlr.runtime}",
-                            org.apache.lucene.queries.function; version="${version.lucene.imp.package}",
-                            org.apache.lucene.queries.function.docvalues; version="${version.lucene.imp.package}",
-                            org.apache.lucene.queries.function.valuesource; version="${version.lucene.imp.package}",
-                            org.objectweb.asm; version="${version.objectweb.asm}",
-                            org.objectweb.asm.commons; version="${version.objectweb.asm}",
+                            !org.apache.lucene.*,
+                            org.xml.sax.helpers; version="0.0.0",
+                            org.xml.sax; version="0.0.0",
+                            javax.xml.parsers; version="0.0.0",
                             *;resolution:=optional
                         </Import-Package>
+                        <Include-Resource>
+                            @lucene-analyzers-common-5.2.1.jar!/META-INF/services/*
+                        </Include-Resource>
                     </instructions>
                 </configuration>
             </plugin>
@@ -84,11 +80,8 @@
     </build>
 
     <properties>
-        <version.lucene>5.1.0</version.lucene>
-        <version.lucene.imp.package>[5.1.0, 5.2.0)</version.lucene.imp.package>
+        <version.lucene>5.2.1</version.lucene>
         <orbit.version.lucene>${version.lucene}.wso2v1</orbit.version.lucene>
-        <version.spatial4j>[0.4.1, 0.5)</version.spatial4j>
-        <version.antlr.runtime>[3.2.0, 3.3.0)</version.antlr.runtime>
-        <version.objectweb.asm>[4.1.0,5.0.0)</version.objectweb.asm>
+        <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
     </properties>
 </project>
