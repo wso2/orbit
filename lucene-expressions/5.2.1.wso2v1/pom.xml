@@ -27,7 +27,6 @@
     <version>${orbit.version.lucene}</version>
     <description>This exports packages from the Lucene Expressions library</description>
     <url>http://wso2.org</url>
-
     <dependencies>
         <dependency>
             <groupId>org.apache.lucene</groupId>
@@ -36,7 +35,6 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
-
     <distributionManagement>
         <repository>
             <id>wso2.releases</id>
@@ -49,7 +47,6 @@
             <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-
     <build>
         <plugins>
             <plugin>
@@ -83,7 +80,6 @@
             </plugin>
         </plugins>
     </build>
-
     <properties>
         <version.lucene>5.2.1</version.lucene>
         <version.lucene.imp.package>[5.2.1, 5.3.0)</version.lucene.imp.package>
