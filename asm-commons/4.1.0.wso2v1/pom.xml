@@ -20,18 +20,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.orbit.org.apache.lucene</groupId>
-    <artifactId>lucene-core</artifactId>
+    <groupId>org.wso2.orbit.org.ow2.asm</groupId>
+    <artifactId>asm-commons</artifactId>
     <packaging>bundle</packaging>
-    <name>Lucene 5.2.1 Core Library</name>
-    <version>${orbit.version.lucene}</version>
-    <description>This exports packages from the Lucene core library</description>
+    <name>asm 4.1.0 commons Library</name>
+    <version>${orbit.version.asm}</version>
+    <description>This exports packages from the asm commons library</description>
     <url>http://wso2.org</url>
     <dependencies>
         <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-core</artifactId>
-            <version>${version.lucene}</version>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-commons</artifactId>
+            <version>${version.asm}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -59,22 +59,23 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.lucene.*;version="${version.lucene}"
+                            org.objectweb.asm.commons;version="${version.asm}"
                         </Export-Package>
                         <Import-Package>
-                            !org.apache.lucene.*,
+                            org.objectweb.asm.signature; version="${version.import.asm}",
+                            org.objectweb.asm; version="${version.import.asm}",
+                            org.objectweb.asm.tree; version="${version.import.asm}",
                             *;resolution:=optional
                         </Import-Package>
-                        <Include-Resource>
-                            @lucene-core-5.2.1.jar!/META-INF/services/*
-                        </Include-Resource>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
     <properties>
-        <version.lucene>5.2.1</version.lucene>
-        <orbit.version.lucene>${version.lucene}.wso2v1</orbit.version.lucene>
+        <version.asm>4.1</version.asm>
+        <orbit.version.asm>4.1.0.wso2v1</orbit.version.asm>
+        <version.import.asm>[4.1.0, 5.0.0)</version.import.asm>
     </properties>
 </project>

@@ -83,6 +83,5 @@
         <version.lucene>5.2.1</version.lucene>
         <version.lucene.imp.package>[5.2.1, 5.3.0)</version.lucene.imp.package>
         <orbit.version.lucene>${version.lucene}.wso2v1</orbit.version.lucene>
-        <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
     </properties>
 </project>
