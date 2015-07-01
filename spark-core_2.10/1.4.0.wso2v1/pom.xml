@@ -53,7 +53,7 @@
         <commons-lang3.import.version>[3.3.2, 3.3.3)</commons-lang3.import.version>
         <compress.lzf.import.version>[1.0.3, 1.1.0)</compress.lzf.import.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <guava.import.version>[14.0.0,16.0.0)</guava.import.version>
+        <guava.import.version>[15.0.0,16.0.0)</guava.import.version>
         <slf4j.import.version>[1.7.0, 1.8.0)</slf4j.import.version>
         <servlet-api.import.version>[2.5, 3.0)</servlet-api.import.version>
         <chill.import.version>[0.5.0, 0.6.0)</chill.import.version>
@@ -61,7 +61,6 @@
 
         <!--jersey bundles havent specified an export version-->
         <jersey.import.version>0.0.0</jersey.import.version>
-        <javax.ws.rs.import.version>[1.1.1, 1.2.0)</javax.ws.rs.import.version>
 
         <jetty.version>8.1.14.v20131031</jetty.version>
     </properties>
@@ -193,7 +192,6 @@
                             org.json4s.*;version = "${json4s.import.version}",
                             org.slf4j.*;version="${slf4j.import.version}",
                             org.xerial.snappy.*;version="${snappy.import.version}",
-                            <!--javax.ws.rs.*;version="${javax.ws.rs.import.version}",-->
                             com.sun.jersey.*;version="${jersey.import.version}",
                             javax.tools;resolution:=optional,
                             org.spark-project.jetty.jmx;resolution:=optional,
