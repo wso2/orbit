@@ -59,7 +59,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.objectweb.asm.*;version="${orbit.version.asm}",
+                            org.objectweb.asm.*; version="${orbit.version.asm}",
                         </Export-Package>
                         <Import-Package>
                             !org.objectweb.asm.*,
@@ -69,7 +69,7 @@
                             javax.xml.transform.stream; version="0.0.0",
                             javax.xml.transform.sax; version="0.0.0",
                             javax.xml.transform; version="0.0.0",
-                            *;resolution:=optional
+                            *; resolution:=optional
                         </Import-Package>
                     </instructions>
                 </configuration>
