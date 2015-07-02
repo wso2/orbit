@@ -211,7 +211,6 @@
                         </Include-Resource>
                         <!--Dynamic imports enabled here because spark core uses scala reflection-->
                         <DynamicImport-Package>*</DynamicImport-Package>
-                        <Bundle-Classpath>patch.jar,.</Bundle-Classpath>
                     </instructions>
                 </configuration>
             </plugin>
