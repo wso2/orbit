@@ -85,7 +85,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.spark.sql.*;version="${spark.version}";-split-package:=merge-first
+                            org.apache.spark.sql.*;version="${exp.pkg.version.spark}";-split-package:=merge-first
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>

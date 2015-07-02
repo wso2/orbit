@@ -163,7 +163,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.spark.*;version="${spark.version}";-split-package:=merge-first
+                            org.apache.spark.*;version="${exp.pkg.version.spark}";-split-package:=merge-first
                         </Export-Package>
                         <Private-Package>
                             <!-- these were made private beacuse of reference.conf file missing for com.typesafe.config bundle -->
