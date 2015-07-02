@@ -70,6 +70,7 @@
 
     <properties>
         <paranamer.version>2.6</paranamer.version>
+        <exp.paranamer.version>2.6.wso2v1</exp.paranamer.version>
     </properties>
 
     <build>
@@ -86,7 +87,7 @@
                         <Private-Package>
                         </Private-Package>
                         <Export-Package>
-                            com.thoughtworks.paranamer.*;version="${paranamer.version}";-split-package:=merge-last
+                            com.thoughtworks.paranamer.*;version="${exp.paranamer.version}";-split-package:=merge-last
                         </Export-Package>
                         <Import-Package>
                             !com.thoughtworks.paranamer.*
