@@ -53,7 +53,7 @@
                             net.minidev.*; version="1.1.1",
                         </Export-Package>
                         <Import-Package>
-                            !net.minidev.json.*;version="[1.1.1, 2.1.0)",
+                            !net.minidev.json.*;version="[1.1.1, 2.1.0]",
                         </Import-Package>
                     </instructions>
                 </configuration>
