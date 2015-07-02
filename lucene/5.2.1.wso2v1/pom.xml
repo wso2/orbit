@@ -156,8 +156,8 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.lucene.*;version="${orbit.version.lucene}"; -split-package:=merge-first,
-                            org.tartarus.snowball.*;version="${orbit.version.lucene}"
+                            org.apache.lucene.*; version="${orbit.version.lucene}"; -split-package:=merge-first,
+                            org.tartarus.snowball.*; version="${orbit.version.lucene}"
                         </Export-Package>
                         <Import-Package>
                             !org.apache.lucene.*,
@@ -168,21 +168,21 @@
                             javax.xml.transform.dom; version="0.0.0",
                             javax.xml.transform; version="0.0.0",
                             javax.xml.parsers; version="0.0.0",
-                            com.spatial4j.core.context; version="[0.4.0,1.0.0)";resolution:=optional,
-                            com.spatial4j.core.distance; version="[0.4.0,1.0.0)";resolution:=optional,
-                            com.spatial4j.core.exception; version="[0.4.0,1.0.0)";resolution:=optional,
-                            com.spatial4j.core.io; version="[0.4.0,1.0.0)";resolution:=optional,
-                            com.spatial4j.core.shape; version="[0.4.0,1.0.0)";resolution:=optional,
-                            com.spatial4j.core.shape.impl; version="[0.4.0,1.0.0)";resolution:=optional,
-                            org.antlr.runtime; version="0.0.0";resolution:=optional,
-                            org.antlr.runtime.tree; version="0.0.0";resolution:=optional,
-                            org.apache.commons.codec; version="[1.10.0,2.0.0)";resolution:=optional,
-                            org.apache.commons.codec.language; version="[1.10.0,2.0.0)";resolution:=optional,
-                            org.apache.commons.codec.language.bm; version="[1.10.0,2.0.0)";resolution:=optional,
-                            org.apache.regexp; version="0.0.0";resolution:=optional,
-                            org.objectweb.asm; version="[4.1.0,5.0.0)";resolution:=optional,
-                            org.objectweb.asm.commons; version="[4.1.0,5.0.0)";resolution:=optional,
-                            *;resolution:=optional
+                            com.spatial4j.core.context; version="[0.4.0,1.0.0)"; resolution:=optional,
+                            com.spatial4j.core.distance; version="[0.4.0,1.0.0)"; resolution:=optional,
+                            com.spatial4j.core.exception; version="[0.4.0,1.0.0)"; resolution:=optional,
+                            com.spatial4j.core.io; version="[0.4.0,1.0.0)"; resolution:=optional,
+                            com.spatial4j.core.shape; version="[0.4.0,1.0.0)"; resolution:=optional,
+                            com.spatial4j.core.shape.impl; version="[0.4.0,1.0.0)"; resolution:=optional,
+                            org.antlr.runtime; version="0.0.0"; resolution:=optional,
+                            org.antlr.runtime.tree; version="0.0.0"; resolution:=optional,
+                            org.apache.commons.codec; version="[1.10.0,2.0.0)"; resolution:=optional,
+                            org.apache.commons.codec.language; version="[1.10.0,2.0.0)"; resolution:=optional,
+                            org.apache.commons.codec.language.bm; version="[1.10.0,2.0.0)"; resolution:=optional,
+                            org.apache.regexp; version="0.0.0"; resolution:=optional,
+                            org.objectweb.asm; version="[4.1.0,5.0.0)"; resolution:=optional,
+                            org.objectweb.asm.commons; version="[4.1.0,5.0.0)"; resolution:=optional,
+                            *; resolution:=optional
                         </Import-Package>
                     </instructions>
                 </configuration>
