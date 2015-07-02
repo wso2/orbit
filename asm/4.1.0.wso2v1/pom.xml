@@ -25,7 +25,7 @@
     <packaging>bundle</packaging>
     <name>asm 4.1.0 Core Library</name>
     <version>${orbit.version.asm}</version>
-    <description>This exports packages from the asm-all library</description>
+    <description>This bundle exports packages from the asm-all library</description>
     <url>http://wso2.org</url>
     <dependencies>
         <dependency>
