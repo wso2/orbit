@@ -21,7 +21,7 @@
     <groupId>org.wso2.orbit.org.apache.lucene</groupId>
     <artifactId>lucene</artifactId>
     <packaging>bundle</packaging>
-    <name>lucene.wso2</name>
+    <name>Lucene 5.2.1.wso2v1 Orbit Bundle</name>
     <version>${orbit.version.lucene}</version>
     <description>This exports packages from the Lucene indexing library</description>
     <url>http://wso2.org</url>
@@ -35,7 +35,49 @@
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-join</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-misc</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-codecs</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-memory</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queries</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-spatial</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-suggest</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-grouping</artifactId>
             <version>${version.lucene}</version>
             <optional>true</optional>
         </dependency>
@@ -47,13 +89,37 @@
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-highlighter</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queryparser</artifactId>
             <version>${version.lucene}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-backward-codecs</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-analyzers-common</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-kuromoji</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-phonetic</artifactId>
             <version>${version.lucene}</version>
             <optional>true</optional>
         </dependency>
@@ -90,8 +156,8 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.lucene.*;version="${version.lucene}"; -split-package:=merge-first,
-                            org.tartarus.snowball.*;version="${version.lucene}"
+                            org.apache.lucene.*;version="${orbit.version.lucene}"; -split-package:=merge-first,
+                            org.tartarus.snowball.*;version="${orbit.version.lucene}"
                         </Export-Package>
                         <Import-Package>
                             !org.apache.lucene.*,
@@ -102,19 +168,50 @@
                             javax.xml.transform.dom; version="0.0.0",
                             javax.xml.transform; version="0.0.0",
                             javax.xml.parsers; version="0.0.0",
-                            org.antlr.runtime.tree; version="[3.2.0,3.3.0)";resolution:=optional,
-                            org.antlr.runtime; version="[3.2.0,3.3.0)";resolution:=optional,
+                            com.spatial4j.core.context; version="[0.4.0,1.0.0)";resolution:=optional,
+                            com.spatial4j.core.distance; version="[0.4.0,1.0.0)";resolution:=optional,
+                            com.spatial4j.core.exception; version="[0.4.0,1.0.0)";resolution:=optional,
+                            com.spatial4j.core.io; version="[0.4.0,1.0.0)";resolution:=optional,
+                            com.spatial4j.core.shape; version="[0.4.0,1.0.0)";resolution:=optional,
+                            com.spatial4j.core.shape.impl; version="[0.4.0,1.0.0)";resolution:=optional,
+                            org.antlr.runtime; version="0.0.0";resolution:=optional,
+                            org.antlr.runtime.tree; version="0.0.0";resolution:=optional,
+                            org.apache.commons.codec; version="[1.10.0,2.0.0)";resolution:=optional,
+                            org.apache.commons.codec.language; version="[1.10.0,2.0.0)";resolution:=optional,
+                            org.apache.commons.codec.language.bm; version="[1.10.0,2.0.0)";resolution:=optional,
                             org.apache.regexp; version="0.0.0";resolution:=optional,
                             org.objectweb.asm; version="[4.1.0,5.0.0)";resolution:=optional,
                             org.objectweb.asm.commons; version="[4.1.0,5.0.0)";resolution:=optional,
                             *;resolution:=optional
                         </Import-Package>
-                        <Include-Resource>
-                            @lucene-analyzers-common-5.2.1.jar!/META-INF/services/*,
-                            @lucene-core-5.2.1.jar!/META-INF/services/*
-                        </Include-Resource>
                     </instructions>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <shadedGroupFilter>org.apache.lucene</shadedGroupFilter>
+                            <createSourcesJar>false</createSourcesJar>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <promoteTransitiveDependencies>false</promoteTransitiveDependencies>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheNoticeResourceTransformer">
+                                    <projectName>Apache Lucene</projectName>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
@@ -122,5 +219,6 @@
     <properties>
         <version.lucene>5.2.1</version.lucene>
         <orbit.version.lucene>${version.lucene}.wso2v1</orbit.version.lucene>
+        <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
     </properties>
 </project>

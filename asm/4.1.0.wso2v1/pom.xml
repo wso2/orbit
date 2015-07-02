@@ -21,16 +21,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.ow2.asm</groupId>
-    <artifactId>asm</artifactId>
+    <artifactId>asm-all</artifactId>
     <packaging>bundle</packaging>
     <name>asm 4.1.0 Core Library</name>
     <version>${orbit.version.asm}</version>
-    <description>This exports packages from the asm core library</description>
+    <description>This exports packages from the asm-all library</description>
     <url>http://wso2.org</url>
     <dependencies>
         <dependency>
             <groupId>org.ow2.asm</groupId>
-            <artifactId>asm</artifactId>
+            <artifactId>asm-all</artifactId>
             <version>${version.asm}</version>
             <optional>true</optional>
         </dependency>
@@ -59,11 +59,16 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.objectweb.asm;version="${version.asm}",
-                            org.objectweb.asm.signature;version="${version.asm}"
+                            org.objectweb.asm.*;version="${orbit.version.asm}",
                         </Export-Package>
                         <Import-Package>
                             !org.objectweb.asm.*,
+                            org.xml.sax.helpers; version="0.0.0",
+                            org.xml.sax.ext; version="0.0.0",
+                            org.xml.sax; version="0.0.0",
+                            javax.xml.transform.stream; version="0.0.0",
+                            javax.xml.transform.sax; version="0.0.0",
+                            javax.xml.transform; version="0.0.0",
                             *;resolution:=optional
                         </Import-Package>
                     </instructions>
