@@ -22,7 +22,7 @@
     <artifactId>lucene</artifactId>
     <packaging>bundle</packaging>
     <name>Lucene 5.2.1.wso2v1 Orbit Bundle</name>
-    <version>${orbit.version.lucene}</version>
+    <version>5.2.1.wso2v1</version>
     <description>This bundle exports packages from the Lucene indexing library</description>
     <url>http://wso2.org</url>
 
