@@ -22,13 +22,13 @@
         <xbean.version>4.2</xbean.version>
 
         <!-- START CXF specific version properties -->
-        <cxf.version>2.7.8</cxf.version>
-        <cxf.version.wss4j>1.6.6</cxf.version.wss4j>
+        <cxf.version>2.6.14</cxf.version>
+        <cxf.version.wss4j>1.6.15</cxf.version.wss4j>
         <jaxb.version>2.2.7</jaxb.version>
         <neethi.cxf.version>3.0.3</neethi.cxf.version>
         <xmlsec.cxf.version>1.5.6</xmlsec.cxf.version>
         <ehcache.cxf.version>2.5.1</ehcache.cxf.version>
-        <xmlschema.cxf.version>2.1.0</xmlschema.cxf.version>
+        <xmlschema.cxf.version>2.0.3</xmlschema.cxf.version>
         <xml.resolver.cxf.version>1.2</xml.resolver.cxf.version>
         <javax.ws.rs.version>2.0-m10</javax.ws.rs.version>
         <!-- END CXF specific version properties -->
@@ -56,6 +56,8 @@
                         </Import-Package>
                         <Export-Package>
                             !javax.xml.ws.*,
+                            !org.apache.webbeans.el22.*,
+                            !org.apache.webbeans.jsf.*,
                             org.apache.tomee.*;version="${tomee.version}",
                             org.apache.openejb.*;version="${openejb.version}";-split-package:=merge-first,
                             org.apache.xbean.*;version="3.15";-split-package:=merge-first,
@@ -100,8 +102,13 @@
 
                         <Include-Resource>
                             {maven-resources},
-                            @openejb-core-${openejb.version}.jar!/**,
-                            @tomee-webapp-${tomee.version}.jar!/**,
+                            @openejb-core-${openejb.version}.jar!/META-INF/**,
+                            @openejb-core-${openejb.version}.jar!/schema/**,
+                            @openejb-core-${openejb.version}.jar!/*.properties,
+                            @openejb-core-${openejb.version}.jar!/*.conf*,
+                            @openejb-core-${openejb.version}.jar!/*.exclusions,
+                            @tomee-webapp-${tomee.version}.jar!/META-INF/**,
+                            @tomee-webapp-${tomee.version}.jar!/*.properties,
                             @bval-jsr303-${bval.version}.jar!/META-INF/**,
                             @openwebbeans-impl-${openwebbeans.version}.jar!/META-INF/**,
                             @openwebbeans-impl-${openwebbeans.version}.jar!/openwebbeans/**,
