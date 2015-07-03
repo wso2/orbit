@@ -23,7 +23,7 @@
     <groupId>org.wso2.orbit.org.ow2.asm</groupId>
     <artifactId>asm-all</artifactId>
     <packaging>bundle</packaging>
-    <name>asm 4.1.0 Core Library</name>
+    <name>asm-all 4.1.0 Library</name>
     <version>${orbit.version.asm}</version>
     <description>This bundle exports packages from the asm-all library</description>
     <url>http://wso2.org</url>
