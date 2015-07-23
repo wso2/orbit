@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- ~ Copyright (c) WSO2 Inc. (http://wso2.com) All Rights Reserved.
+ ~ Copyright (c) 2015, WSO2 Inc. (http://wso2.com) All Rights Reserved.
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@
     <artifactId>hazelcast</artifactId>
     <packaging>bundle</packaging>
     <name>hazelcast.wso2</name>
-    <version>3.5.wso2v1</version>
-	<description>
+    <version>3.5.0.wso2v1</version>
+    <description>
         This bundle will export packages from hazelcast
     </description>
     <url>http://wso2.org</url>
@@ -49,7 +49,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            com.hazelcast.*;version="${version.hazelcast}"
+                            com.hazelcast.*;version="${project.version}"
                         </Export-Package>
                         <Import-Package>
             		    !sun.misc,
