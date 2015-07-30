@@ -117,7 +117,8 @@
                             @tomee-myfaces-${tomee.version}.jar!/META-INF/**,
                             @openjpa-${openjpa.version}.jar!/META-INF/**,
                             @openejb-cxf-${openejb.version}.jar!/META-INF/**,
-                            @openejb-cxf-rs-${openejb.version}.jar!/META-INF/**
+                            @openejb-cxf-rs-${openejb.version}.jar!/META-INF/**,
+			                @jaxb-impl-${jaxb.version}.jar!/META-INF/**
                         </Include-Resource>
                         <Embed-Dependency>
                             sxc-runtime;scope=compile|runtime;inline=false;,
@@ -143,7 +144,7 @@
                             neethi;scope=compile|runtime;inline=false;,
                             xmlschema-core;scope=compile|runtime;inline=false;,
                             xml-resolver;scope=compile|runtime;inline=false;
-                            <!-- jaxb-impl;scope=compile|runtime;inline=false; -->
+                            jaxb-impl;scope=compile|runtime;inline=false;
                             wss4j;scope=compile|runtime;inline=false;
                             xmlsec;scope=compile|runtime;inline=false;
                             ehcache-core;scope=compile|runtime;inline=false;
