@@ -6,7 +6,7 @@
 
     <groupId>org.wso2.orbit.org.apache.openejb</groupId>
     <artifactId>tomee</artifactId>
-    <version>${tomee.version}.wso2v1</version>
+    <version>1.7.2.wso2v2</version>
     <packaging>bundle</packaging>
     <name>WSO2 TomEE</name>
     <url>http://wso2.org</url>
