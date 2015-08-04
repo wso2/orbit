@@ -101,7 +101,6 @@
                         </Private-Package>
 
                         <Include-Resource>
-                            {maven-resources},
                             @openejb-core-${openejb.version}.jar!/META-INF/**,
                             @openejb-core-${openejb.version}.jar!/schema/**,
                             @openejb-core-${openejb.version}.jar!/*.properties,
@@ -118,7 +117,8 @@
                             @openjpa-${openjpa.version}.jar!/META-INF/**,
                             @openejb-cxf-${openejb.version}.jar!/META-INF/**,
                             @openejb-cxf-rs-${openejb.version}.jar!/META-INF/**,
-			    @jaxb-impl-${jaxb.version}.jar!/META-INF/**
+			    @jaxb-impl-${jaxb.version}.jar!/META-INF/**,
+                            {maven-resources}
                         </Include-Resource>
                         <Embed-Dependency>
                             sxc-runtime;scope=compile|runtime;inline=false;,

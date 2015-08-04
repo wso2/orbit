@@ -28,9 +28,13 @@
    <uri>http://java.sun.com/jsf/core</uri>
    
    
+<!--
+TomEE already skips this listener. This fixes WSAS-1975.
+Need to maintain this for each myfaces-impl version upgrade. - KasunG
 <listener>
   <listener-class>org.apache.myfaces.webapp.StartupServletContextListener</listener-class>
 </listener>
+-->
 
     <!-- Component Tags -->
    <tag>
