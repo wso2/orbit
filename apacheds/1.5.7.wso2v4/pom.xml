@@ -437,15 +437,16 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.directory.shared.ldap.constants.*,
-                            org.apache.directory.shared.ldap.entry.*,
-                            org.apache.directory.shared.ldap.exception.*,
-                            org.apache.directory.shared.ldap.message.*,
-                            org.apache.directory.shared.ldap.schema.*,
-                            org.apache.directory.shared.ldap.util.*,
-                            org.apache.directory.shared.ldap.name.*,
+                            org.apache.directory.shared.ldap.constants.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.shared.ldap.entry.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.shared.ldap.exception.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.shared.ldap.message.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.shared.ldap.schema.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.shared.ldap.util.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.shared.ldap.name.*; version=${exp.pkg.version.apacheds},
 
-                            org.apache.directory.server.protocol.shared.transport.*,
+                            org.apache.directory.server.protocol.shared.transport.*;
+                            version=${exp.pkg.version.apacheds},
 
                             !org.apache.directory.server.core.replication.*,
                             !org.apache.directory.server.core.journal.*,
@@ -468,12 +469,12 @@
                             !org.apache.directory.server.core.interceptor.context.*,
                             !org.apache.directory.server.core.authn.*,
 
-                            org.apache.directory.server.kerberos.*,
-                            org.apache.directory.server.i18n.*,
-                            org.apache.directory.server.core.*,
-                            org.apache.directory.server.ldap.handlers.bind.*,
-                            org.apache.directory.server.ldap.*,
-                            org.apache.directory.server.constants,
+                            org.apache.directory.server.kerberos.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.server.i18n.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.server.core.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.server.ldap.handlers.bind.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.server.ldap.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.server.constants; version=${exp.pkg.version.apacheds},
                         </Export-Package>
                         <Import-Package>
                             antlr.*,
@@ -519,5 +520,6 @@
         <commons.lang.osgi.version>2.6</commons.lang.osgi.version>
         <org.apache.mina.version>2.0.0-RC1</org.apache.mina.version>
         <bouncycastle.version>138</bouncycastle.version>
+        <exp.pkg.version.apacheds>1.5.7.wso2v4</exp.pkg.version.apacheds>
     </properties>
 </project>
