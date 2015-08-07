@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.apache.storm</groupId>
+    <artifactId>storm-core</artifactId>
+    <version>0.9.5.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Apache Storm Core</name>
+    <description>
+        This bundle will export packages from Apache Storm Core
+    </description>
+    <url>http://wso2.org</url>
+
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-core</artifactId>
+            <version>${storm.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>1.4.3</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            backtype.storm.*;version="${project.version}",
+                            storm.*;version="${project.version}",
+                            org.apache.thrift7.*;version="${project.version}",
+                            org.apache.storm.*;version="${project.version}"
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Import-Package>
+                            !sun.misc,
+                            carbonite;resolution:=optional,
+                            ch.qos.logback.*;resolution:=optional;version="${logback-classic.version}",
+                            clojure.lang;resolution:=optional,
+                            clojure.tools.logging.impl;resolution:=optional,
+                            com.esotericsoftware.kryo.*;resolution:=optional;version="${kryo.version}",
+                            com.google.protobuf;resolution:=optional,
+                            com.lmax.disruptor;resolution:=optional;version="${disruptor.version}",
+                            javax.annotation;resolution:=optional,
+                            javax.crypto;resolution:=optional,
+                            javax.crypto.spec;resolution:=optional,
+                            javax.management;resolution:=optional,
+                            javax.net;resolution:=optional,
+                            javax.net.ssl;resolution:=optional,
+                            javax.security.auth.*;resolution:=optional,
+                            javax.security.sasl;resolution:=optional,
+                            javax.servlet.*;resolution:=optional,
+                            jline;resolution:=optional;version="${jline.version}",
+                            org.apache.commons.codec.*;resolution:=optional;version="${commons.codec.version}",
+                            org.apache.commons.exec;resolution:=optional;version="${commons.codec.version}",
+                            org.apache.commons.io;resolution:=optional;version="${commons.io.version}",
+                            org.apache.commons.lang.*;resolution:=optional;version="${commons.lang.version}",
+                            org.apache.commons.logging;resolution:=optional;version="${commons.logging.version}",
+                            org.apache.jute;resolution:=optional,
+                            org.apache.log4j.*;resolution:=optional;version="${apache.log4j.version}",
+                            org.ietf.jgss;resolution:=optional,
+                            org.jboss.logging;resolution:=optional,
+                            org.jboss.marshalling;resolution:=optional,
+                            org.jgrapht;resolution:=optional,
+                            org.jgrapht.alg;resolution:=optional,
+                            org.jgrapht.graph;resolution:=optional,
+                            org.jgrapht.traverse;resolution:=optional,
+                            org.json.simple;resolution:=optional,
+                            org.osgi.framework;resolution:=optional,
+                            org.osgi.service.log;resolution:=optional,
+                            org.osgi.util.tracker;resolution:=optional,
+                            org.slf4j;resolution:=optional;version="${org.slf4j.version}",
+                            org.yaml.snakeyaml;resolution:=optional,
+                            org.yaml.snakeyaml.constructor;resolution:=optional
+                        </Import-Package>
+                        <Include-Resource>
+                            {maven-resources},
+                            @storm-core-${storm.version}.jar!/META-INF/**,
+                            @storm-core-${storm.version}.jar!/*.conf,
+                            @storm-core-${storm.version}.jar!/*.yaml*,
+                            @storm-core-${storm.version}.jar!/*.xml,
+                            @storm-core-${storm.version}.jar!/*.ini
+                        </Include-Resource>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <storm.version>0.9.5</storm.version>
+        <snakeyaml.version>1.11</snakeyaml.version>
+        <curator.version>2.5.0</curator.version>
+        <logback-classic.version>[1.0,2)</logback-classic.version>
+        <kryo.version>[2.21,3)</kryo.version>
+        <jline.version>[2.11,3)</jline.version>
+        <disruptor.version>[2.10,4)</disruptor.version>
+        <commons.codec.version>[1.6,2)</commons.codec.version>
+        <commons.exec.version>[1.1,2)</commons.exec.version>
+        <commons.io.version>[1.4,2)</commons.io.version>
+        <commons.lang.version>[2.5,3)</commons.lang.version>
+        <commons.logging.version>[1.1,2)</commons.logging.version>
+        <apache.log4j.version>[1.2,2)</apache.log4j.version>
+        <org.slf4j.version>[1.7,2)</org.slf4j.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+</project>
