@@ -107,7 +107,6 @@
                         <Include-Resource>
                             {maven-resources}
                         </Include-Resource>
-                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
