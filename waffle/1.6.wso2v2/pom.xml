@@ -108,7 +108,7 @@
                             org.apache.catalina.deploy;resolution:=optional,
                             org.apache.catalina.realm;resolution:=optional,
                             org.w3c.dom;resolution:=optional,
-                            org.slf4j.*;version="[1.6.1,1.7)"
+                            org.slf4j.*;version="[1.6.1,1.8)"
                         </Import-Package>
                     </instructions>
                 </configuration>
