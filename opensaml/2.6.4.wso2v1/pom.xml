@@ -69,7 +69,7 @@
                             org.opensaml.*; version="2.6.4"
                         </Export-Package>
                         <Import-Package>
-                            !org.opensaml.*;version="0.0.0",
+                            !org.opensaml.*,
                             javax.crypto.*;version="0.0.0",
                             javax.net.*;version="0.0.0",
                             javax.security.*;version="0.0.0",
