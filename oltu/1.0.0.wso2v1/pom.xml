@@ -35,19 +35,19 @@
         <dependency>
             <groupId>org.apache.oltu.oauth2</groupId>
             <artifactId>org.apache.oltu.oauth2.common</artifactId>
-            <version>1.0.0</version>
+            <version>${oltu.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.oltu.oauth2</groupId>
             <artifactId>org.apache.oltu.oauth2.authzserver</artifactId>
-            <version>1.0.0</version>
+            <version>${oltu.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.oltu.oauth2</groupId>
             <artifactId>org.apache.oltu.oauth2.client</artifactId>
-            <version>1.0.0</version>
+            <version>${oltu.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -78,19 +78,28 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.oltu.*; version="1.0.0"
+                            org.apache.oltu.*; version="${oltu.export.version}"
                         </Export-Package>
                         <Import-Package>
                             !org.apache.oltu.*,
-                            javax.servlet.*;version="[2.6.0,2.7.0)",
-                            org.apache.commons.codec.*;version="[1.4,1.5)";resolution:=optional,
-                            org.json.*;version="[1.4,1.5)";resolution:=optional,
-                            org.slf4j.*;version="[3.0.0,3.1.0)"
+                            javax.servlet.*;version="${javax.servlet.version.range}",
+                            org.apache.commons.codec.*;version="${org.apache.commons.codec.version.range}";resolution:=optional,
+                            org.json.*;version="${org.json.version.range}",
+                            org.slf4j.*;version="${org.slf4j.version.range}"
                         </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <properties>
+        <oltu.version>1.0.0</oltu.version>
+        <oltu.export.version>1.0.0</oltu.export.version>
+        <javax.servlet.version.range>[2.6.0,2.7.0)</javax.servlet.version.range>
+        <org.apache.commons.codec.version.range>[1.4,1.5)</org.apache.commons.codec.version.range>
+        <org.json.version.range>[2.0.0.wso2v1, 2.0.1)</org.json.version.range>
+        <org.slf4j.version.range>[1.6.1,1.7.0)</org.slf4j.version.range>
+    </properties>
 
 </project>
