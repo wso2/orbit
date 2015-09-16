@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.activiti.wso2</groupId>
     <artifactId>activiti-rest</artifactId>
-    <version>5.16-wso2v2</version>
+    <version>5.16.wso2v2</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Activiti REST API</name>
     <description>
@@ -43,6 +43,22 @@
                 <exclusion>
                     <groupId>org.slf4j</groupId>
                     <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.activation</groupId>
+                    <artifactId>activation</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -73,17 +89,114 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.activiti.rest.*,
-			    org.restlet.ext.servlet.*
+                            org.activiti.rest.common.*; version="${activiti.pkg.exp.version}",
+                            org.activiti.rest.form; version="${activiti.pkg.exp.version}",
+                            org.activiti.rest.service.*; version="${activiti.pkg.exp.version}",
+                            org.restlet.ext.servlet.*;  version="${activiti.pkg.exp.version}"
                         </Export-Package>
-                        <Private-Package>
-                            org.activiti.rest.*,
-                        </Private-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Import-Package>
-                            *;resolution:=optional
+                            org.activiti.engine.task; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.runtime; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.repository; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.query; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.management; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.impl.util; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.impl.pvm; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.impl.persistence.entity; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.impl.form; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.impl.bpmn.deployer; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.impl; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.identity; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.history; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine.form; version="${imp.pkg.version.activiti.engine}",
+                            org.activiti.engine; version="${imp.pkg.version.activiti.engine}",
+                            net.sf.cglib.proxy; version="${imp.pkg.version.sf.cglib.proxy}",
+                            org.springframework.asm.util; version="${imp.pkg.version.springframework.asm.util}",
+                            org.slf4j.spi; version="${imp.pkg.version.slf4j}",
+                            org.slf4j.helpers; version="${imp.pkg.version.slf4j}",
+                            org.slf4j; version="${imp.pkg.version.slf4j}",
+                            org.relaxng.datatype; version="${imp.pkg.version.relaxng.datatype}",
+                            org.osgi.framework; version="${imp.pkg.version.osgi.framework}",
+                            javax.servlet.http; version="${imp.pkg.version.javax.servlet}",
+                            javax.servlet; version="${imp.pkg.version.javax.servlet}",
+                            javax.el; version="${imp.pkg.version.javax.el}",
+                            org.xml.sax.helpers,
+                            org.xml.sax.ext,
+                            org.xml.sax,
+                            org.w3c.dom.ls,
+                            org.w3c.dom.bootstrap,
+                            org.w3c.dom,
+                            org.apache.tools.ant.types,
+                            org.apache.tools.ant,
+                            javax.xml.xpath,
+                            javax.xml.validation,
+                            javax.xml.transform.stream,
+                            javax.xml.transform.sax,
+                            javax.xml.transform.dom,
+                            javax.xml.transform,
+                            javax.xml.parsers,
+                            javax.xml.namespace,
+                            javax.xml.datatype,
+                            javax.xml.bind.annotation,
+                            javax.xml.bind,
+                            javax.swing.tree,
+                            javax.swing.text.html,
+                            javax.swing.text,
+                            javax.swing.table,
+                            javax.swing.plaf,
+                            javax.swing.event,
+                            javax.swing.border,
+                            javax.swing,
+                            javax.sql,
+                            javax.security.sasl,
+                            javax.security.auth.x500,
+                            javax.security.auth.callback,
+                            javax.net.ssl,
+                            javax.net,
+                            javax.naming,
+                            javax.management,
+                            javax.jms,
+                            javax.imageio
                         </Import-Package>
-                        <Embed-Dependency>*;scope=compile|runtime;inline=false;artifactId=!activiti-engine</Embed-Dependency>
+                        <Embed-Dependency>
+                            woodstox-core-asl; scope=compile|runtime;inline=false,
+                            stax-api; scope=compile|runtime;inline=false,
+                            stax2-api; scope=compile|runtime;inline=false,
+                            spring-core; scope=compile|runtime;inline=false,
+                            spring-beans; scope=compile|runtime;inline=false,
+                            snakeyaml; scope=compile|runtime;inline=false,
+                            org.restlet; scope=compile|runtime;inline=false,
+                            org.restlet.ext.servlet; scope=compile|runtime;inline=false,
+                            org.restlet.ext.jackson; scope=compile|runtime;inline=false,
+                            org.restlet.ext.fileupload; scope=compile|runtime;inline=false,
+                            mybatis; scope=compile|runtime;inline=false,
+                            mail; scope=compile|runtime;inline=false,
+                            joda-time; scope=compile|runtime;inline=false,
+                            jgraphx; scope=compile|runtime;inline=false,
+                            javaGeom; scope=compile|runtime;inline=false,
+                            jackson-module-jaxb-annotations; scope=compile|runtime;inline=false,
+                            jackson-dataformat-yaml; scope=compile|runtime;inline=false,
+                            jackson-dataformat-xml; scope=compile|runtime;inline=false,
+                            jackson-dataformat-smile; scope=compile|runtime;inline=false,
+                            jackson-dataformat-csv; scope=compile|runtime;inline=false,
+                            jackson-databind; scope=compile|runtime;inline=false,
+                            jackson-core; scope=compile|runtime;inline=false,
+                            jackson-annotations; scope=compile|runtime;inline=false,
+                            commons-lang3; scope=compile|runtime;inline=false,
+                            commons-io; scope=compile|runtime;inline=false,
+                            commons-fileupload; scope=compile|runtime;inline=false,
+                            commons-email; scope=compile|runtime;inline=false,
+                            activiti-simple-workflow; scope=compile|runtime;inline=false,
+                            activiti-rest; scope=compile|runtime;inline=false,
+                            activiti-process-validation; scope=compile|runtime;inline=false,
+                            activiti-json-converter; scope=compile|runtime;inline=false,
+                            activiti-image-generator; scope=compile|runtime;inline=false,
+                            activiti-common-rest; scope=compile|runtime;inline=false,
+                            activiti-bpmn-model; scope=compile|runtime;inline=false,
+                            activiti-bpmn-layout; scope=compile|runtime;inline=false,
+                            activiti-bpmn-converter; scope=compile|runtime;inline=false,
+                        </Embed-Dependency>
                         <Embed-Transitive>true</Embed-Transitive>                        
                     </instructions>
                 </configuration>
@@ -110,6 +223,15 @@
 
     <properties>
         <version.activiti>5.16</version.activiti>
+        <activiti.pkg.exp.version>5.16.0.wso2v2</activiti.pkg.exp.version>
+        <imp.pkg.version.activiti.engine>[5.16.0.wso2v2, 5.17.0)</imp.pkg.version.activiti.engine>
+        <imp.pkg.version.sf.cglib.proxy>[2.2.0.wso2v1, 2.3.0)</imp.pkg.version.sf.cglib.proxy>
+        <imp.pkg.version.springframework.asm.util>[3.2.9.wso2v1, 3.3.0)</imp.pkg.version.springframework.asm.util>
+        <imp.pkg.version.slf4j>[1.6.1, 1.7.0)</imp.pkg.version.slf4j>
+        <imp.pkg.version.relaxng.datatype>[2.2.5.wso2v1, 2.3.0)</imp.pkg.version.relaxng.datatype>
+        <imp.pkg.version.osgi.framework>[1.7.0, 1.8.0)</imp.pkg.version.osgi.framework>
+        <imp.pkg.version.javax.servlet>[2.6.0, 2.7.0)</imp.pkg.version.javax.servlet>
+        <imp.pkg.version.javax.el>[2.2.0, 2.3.0)</imp.pkg.version.javax.el>
     </properties>
 
 </project>
