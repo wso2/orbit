@@ -35,8 +35,13 @@
         <dependency>
             <groupId>org.openid4java</groupId>
             <artifactId>openid4java</artifactId>
-            <version>1.0.0</version>
+            <version>${openid4java.version}</version>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.nekohtml</groupId>
+            <artifactId>nekohtml</artifactId>
+            <version>${net.sourceforge.nekohtml.version}</version>
         </dependency>
     </dependencies>
 
@@ -66,45 +71,51 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.openid4java.*; version="1.0.0"
+                            org.openid4java.*; version="${openid4java.export.version}"
                         </Export-Package>
                         <Import-Package>
                             !org.openid4java.*,
-                            com.google.inject;resolution:=optional,
-                            javax.crypto.*;version="0.0.0",
-                            javax.servlet.*;version="[2.6.0,2.7.0)",
+                            com.google.inject;version="${code.google.inject.version}",
+                            javax.crypto.*;version="${javax.crypto.version}",
+                            javax.net.*;version="${javax.net.version}",
+                            javax.servlet.*;version="${javax.servelet.version}",
                             javax.xml.*;version="0.0.0",
-                            net.sf.ehcache;version="[2.8,2.9);resolution:=optional",
-                            org.apache.commons.codec.*;version="[1.4,1.5)";resolution:=optional,
-                            org.apache.commons.logging; version="[1.2.0,1.3.0)",
-                            org.apache.html.*;resolution:=optional",
-                            org.apache.http.*,
+                            net.sf.ehcache;version="${net.sf.ehcache.version}",
+                            org.apache.commons.codec.*;version="${org.apache.commons.codec.version}",
+                            org.apache.commons.logging; version="${org.apache.commons.logging.version}",
+                            org.apache.html.*;resolution:=optional,
+                            org.apache.http.conn.*; version="${org.apache.http.client.version}",
+                            org.apache.http.auth; version="${org.apache.http.client.version}",
+                            org.apache.http.client.*; version="${org.apache.http.client.version}",
+                            org.apache.http.impl.conn.*; version="${org.apache.http.client.version}",
+                            org.apache.http.impl.client; version="${org.apache.http.client.version}",
+                            org.apache.http.*; version="${org.apache.http.version}",
                             org.apache.xerces.*;resolution:=optional,
-                            org.cyberneko.*;resolution:=optional,
-                            org.springframework;resolution:=optional,
-                            org.w3c.*;version="0.0.0";resolution:=optional,
-                            org.xml.sax.*;version="0.0.0";resolution:=optional
-                            <!--
-                            javax.net.*;version="0.0.0",
-                            javax.security.*;version="0.0.0",
-                            javax.servlet.*;version="[2.6.0,2.7.0)",
-                            javax.xml.*;version="0.0.0",
-                            net.jcip.annotations.*;version="1.0";resolution:=optional,
-                            org.apache.commons.httpclient.*;resolution:=optional,
-                            org.apache.commons.ssl.*;resolution:=optional,
-                            org.apache.velocity.*;resolution:=optional,
-                            org.apache.xml.security.*;version="[2.0,3.0)";resolution:=optional,
-                            org.bouncycastle.*;version="[1.49.0,1.50.0)";resolution:=optional,
-                            org.joda.time.*;version="[2.2,2.3)";resolution:=optional,
-                            org.owasp.esapi;resolution:=optional,
-                            org.slf4j.*;version="[1.7.0,1.8.0)",
-                            org.w3c.*;version="0.0.0";resolution:=optional,
-                            org.xml.sax.*;version="0.0.0";resolution:=optional-->
+                            org.springframework.*;resolution:=optional,
+                            org.w3c.*;version="${org.w3c.version}",
+                            org.xml.sax.*;version="${org.xml.sax.version}",
                         </Import-Package>
+                        <Embed-Dependency>nekohtml;scope=compile|runtime;inline=true;</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+    <properties>
+        <openid4java.version>1.0.0</openid4java.version>
+        <openid4java.export.version>1.0.0</openid4java.export.version>
+        <net.sourceforge.nekohtml.version>1.9.13</net.sourceforge.nekohtml.version>
+        <code.google.inject.version>[1.3.0,1.3.1)</code.google.inject.version>
+        <javax.crypto.version>0.0.0</javax.crypto.version>
+        <javax.net.version>0.0.0</javax.net.version>
+        <javax.servelet.version>[2.6.0,2.7.0)</javax.servelet.version>
+        <net.sf.ehcache.version>[1.5,1.6)</net.sf.ehcache.version>
+        <org.apache.commons.codec.version>[1.4,1.5)</org.apache.commons.codec.version>
+        <org.apache.commons.logging.version>[1.2.0,1.3.0)</org.apache.commons.logging.version>
+        <org.apache.http.client.version>[4.3.1, 4.3.2)</org.apache.http.client.version>
+        <org.apache.http.version>[4.3.3, 4.3.4)</org.apache.http.version>
+        <org.w3c.version>0.0.0</org.w3c.version>
+        <org.xml.sax.version>0.0.0</org.xml.sax.version>
+    </properties>
 
 </project>
