@@ -38,11 +38,6 @@
             <version>${openid4java.version}</version>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>net.sourceforge.nekohtml</groupId>
-            <artifactId>nekohtml</artifactId>
-            <version>${net.sourceforge.nekohtml.version}</version>
-        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -94,8 +89,8 @@
                             org.springframework.*;resolution:=optional,
                             org.w3c.*;version="${org.w3c.version}",
                             org.xml.sax.*;version="${org.xml.sax.version}",
+                            org.cyberneko.html.*; resolution:=optional,
                         </Import-Package>
-                        <Embed-Dependency>nekohtml;scope=compile|runtime;inline=true;</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
