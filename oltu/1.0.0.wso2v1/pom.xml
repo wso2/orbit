@@ -98,7 +98,7 @@
         <oltu.export.version>1.0.0</oltu.export.version>
         <javax.servlet.version.range>[2.6.0,2.7.0)</javax.servlet.version.range>
         <org.apache.commons.codec.version.range>[1.4,1.5)</org.apache.commons.codec.version.range>
-        <org.json.version.range>[2.0.0.wso2v1, 2.0.1)</org.json.version.range>
+        <org.json.version.range>[2.0.0, 2.0.1)</org.json.version.range>
         <org.slf4j.version.range>[1.6.1,1.7.0)</org.slf4j.version.range>
     </properties>
 
