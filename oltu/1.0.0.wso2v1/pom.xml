@@ -21,7 +21,7 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.orbit</groupId>
+    <groupId>org.wso2.orbit.org.apache.oltu.oauth2</groupId>
     <artifactId>oltu</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Apache OLTU Library</name>
