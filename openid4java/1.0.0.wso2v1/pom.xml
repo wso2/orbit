@@ -21,7 +21,7 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.openid4java.wso2</groupId>
+    <groupId>org.wso2.orbit</groupId>
     <artifactId>openid4java</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - OpenID4Java Library</name>
@@ -63,6 +63,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Bundle-Vendor>WSO2 Inc</Bundle-Vendor>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
