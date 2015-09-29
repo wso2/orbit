@@ -318,7 +318,7 @@
         <org.apache.xml.security.version>[1.4.2,1.5.0)</org.apache.xml.security.version>
         <org.bouncycastle.version>[1.49.0,1.50.0)</org.bouncycastle.version>
         <org.joda.convert.version>[2.2,2.3)</org.joda.convert.version>
-        <org.slf4j.version>[1.6.1,1.7.0)</org.slf4j.version>
+        <org.slf4j.version>[1.6.0,1.8.0)</org.slf4j.version>
         <org.w3c.version>0.0.0</org.w3c.version>
         <org.xml.sax.version>0.0.0</org.xml.sax.version>
     </properties>
