@@ -134,7 +134,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            !org.apache.hadoop.application-classloader.*,org.apache.hadoop.*;version="${hadoop.version}";-split-package:=merge-first
+                            !org.apache.hadoop.application-classloader.*,org.apache.hadoop.*;version="${project.version}";-split-package:=merge-first
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
