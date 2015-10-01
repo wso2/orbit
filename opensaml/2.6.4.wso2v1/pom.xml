@@ -25,7 +25,7 @@
     <artifactId>opensaml</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - OpenSAML J Library</name>
-    <version>2.6.4.wso2v1</version>
+    <version>${opensaml.orbit.version}</version>
     <description>
         This bundle will export packages from OpenSAML J library.
     </description>
@@ -176,6 +176,7 @@
             <groupId>org.owasp.esapi</groupId>
             <artifactId>esapi</artifactId>
             <version>${esapi.version}</version>
+            <optional>true</optional>
             <exclusions>
                 <exclusion>
                     <groupId>commons-configuration</groupId>
@@ -244,8 +245,8 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.opensaml.*; version="${opensaml.export.version}",
-                            org.joda.* ; version="${joda.export.version}",
+                            org.opensaml.*; version="${opensaml.orbit.version}",
+                            org.joda.* ; version="${opensaml.orbit.version}",
                         </Export-Package>
                         <Import-Package>
                             !org.opensaml.*,
@@ -304,8 +305,7 @@
         <xmltooling.version>1.4.4</xmltooling.version>
         <openws.version>1.5.4</openws.version>
         <esapi.version>2.0.1</esapi.version>
-        <opensaml.export.version>2.6.4.wso2v1</opensaml.export.version>
-        <joda.export.version>2.6.4.wso2v1</joda.export.version>
+        <opensaml.orbit.version>2.6.4.wso2v1</opensaml.orbit.version>
         <javax.crypto.version>0.0.0</javax.crypto.version>
         <javax.net.version>0.0.0</javax.net.version>
         <javax.security.version>0.0.0</javax.security.version>
