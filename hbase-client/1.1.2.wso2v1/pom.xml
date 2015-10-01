@@ -187,8 +187,6 @@
                             {maven-resources},
                             @hbase-common-${hbase.version}.jar!/hbase-default.xml,
                         </Include-Resource>
-                        <!-- Dynamic imports is required here because hbase-client consumes services from Hadoop SPIs -->
-                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
