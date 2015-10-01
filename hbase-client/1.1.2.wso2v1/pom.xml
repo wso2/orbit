@@ -158,7 +158,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.hadoop.hbase.*;version="${hbase.version}";-split-package:=merge-first,
+                            org.apache.hadoop.hbase.*;version="${project.version}";-split-package:=merge-first,
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
