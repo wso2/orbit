@@ -58,8 +58,8 @@
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
-                            @jasperreports-4.5.0.jar!/default.jasperreports.properties,
-                            @jasperreports-4.5.0.jar!/jasperreports_extension.properties
+                            @jasperreports-6.1.1.jar!/default.jasperreports.properties,
+                            @jasperreports-6.1.1.jar!/jasperreports_extension.properties
                         </Include-Resource>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
