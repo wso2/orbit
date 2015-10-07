@@ -1,0 +1,123 @@
+<!--
+ ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.com.github.dblock.waffle</groupId>
+    <artifactId>waffle-jna</artifactId>
+    <packaging>bundle</packaging>
+    <name>waffle.wso2</name>
+    <version>1.6.wso2v3</version>
+    <description>
+        This bundle will represent waffle-jna 1.6
+    </description>
+    <url>http://wso2.org</url>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.dblock.waffle</groupId>
+            <artifactId>waffle-jna</artifactId>
+            <version>${waffle.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.github.dblock.waffle</groupId>
+            <artifactId>waffle-tomcat7</artifactId>
+            <version>${waffle.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Bundle-Vendor>WSO2 Inc</Bundle-Vendor>
+                        <Bundle-Description>${project.description}</Bundle-Description>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Export-Package>
+                            waffle.*;version="${project.version}",
+                            com.sun.jna.*;version="${project.version}"
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Import-Package>
+                            com.google.common.base;resolution:=optional;version="${com.google.common.version}",
+                            com.google.common.cache;resolution:=optional;version="${com.google.common.version}",
+                            com.google.common.io;resolution:=optional;version="${com.google.common.version}",
+                            javax.security.auth;version="${javax.security.version}",
+                            javax.security.auth.callback;version="${javax.security.version}",
+                            javax.security.auth.login;version="${javax.security.version}",
+                            javax.security.auth.spi;version="${javax.security.version}",
+                            javax.servlet;version="${javax.servlet.version}",
+                            javax.servlet.http;version="${javax.servlet.version}",
+                            javax.swing;version="${javax.swing.version}",
+                            javax.swing.text;version="${javax.swing.version}",
+                            javax.xml.parsers;version="${javax.xml.version}",
+                            javax.xml.transform;version="${javax.xml.version}",
+                            javax.xml.transform.dom;version="${javax.xml.version}",
+                            javax.xml.transform.stream;version="${javax.xml.version}",
+                            org.apache.catalina;resolution:=optional,
+                            org.apache.catalina.authenticator;resolution:=optional,
+                            org.apache.catalina.connector;resolution:=optional,
+                            org.apache.catalina.deploy;resolution:=optional,
+                            org.apache.catalina.realm;resolution:=optional,
+                            org.w3c.dom;version="${org.w3c.version}",
+                            org.slf4j.*;version="${org.slf4j.version}"
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <waffle.version>1.6</waffle.version>
+        <org.slf4j.version>[1.6.0,2.0.0)</org.slf4j.version>
+        <com.google.common.version>[12.0.0,13.0.0)</com.google.common.version>
+        <javax.servlet.version>[2.6.0,3.0.0)</javax.servlet.version>
+        <org.w3c.version>0.0.0</org.w3c.version>
+        <javax.swing.version>0.0.0</javax.swing.version>
+        <javax.xml.version>0.0.0</javax.xml.version>
+        <javax.security.version>0.0.0</javax.security.version>
+    </properties>
+
+
+</project>
