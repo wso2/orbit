@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>org.wso2.carbon</groupId>
+        <artifactId>orbit-parent</artifactId>
+        <version>4.0.0</version>
+        <relativePath>../../pom.xml</relativePath>
+     </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>jasperreports.wso2</groupId>
+    <artifactId>jasperreports</artifactId>
+    <packaging>bundle</packaging>
+    <name>jasperreports.wso2</name>
+    <version>6.1.1.wso2v1</version>
+    <description>
+        This bundle will represent jasperreports.
+    </description>
+    <url>http://wso2.org</url>
+
+    <repositories>
+        <repository>
+            <id>jasperreports</id>
+            <url>http://mvnrepository.com/artifact</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.1.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            net.sf.jasperreports.*,
+                            org.w3c.tools.codec.*,
+                        </Export-Package>
+                        <Import-Package>
+                            !antlr,
+                            !antlr.*,
+                            !net.sf.jasperreports.*,
+                            !org.w3c.tools.codec.*,
+                            *;resolution:=optional
+                        </Import-Package>
+                        <Include-Resource>
+                            @jasperreports-4.5.0.jar!/default.jasperreports.properties,
+                            @jasperreports-4.5.0.jar!/jasperreports_extension.properties
+                        </Include-Resource>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
