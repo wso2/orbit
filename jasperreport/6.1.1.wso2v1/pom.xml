@@ -2,9 +2,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-    
-
-    <modelVersion>4.0.0</modelVersion>
+<modelVersion>4.0.0</modelVersion>
     <groupId>jasperreports.wso2</groupId>
     <artifactId>jasperreports</artifactId>
     <packaging>bundle</packaging>
@@ -14,13 +12,6 @@
         This bundle will represent jasperreports.
     </description>
     <url>http://wso2.org</url>
-
-    <repositories>
-        <repository>
-            <id>jasperreports</id>
-            <url>http://mvnrepository.com/artifact</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <dependency>
@@ -35,10 +26,11 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                
+                <version>2.3.7</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+			<Embed-Dependency>jasperreports;scope=compile|runtime</Embed-Dependency>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
