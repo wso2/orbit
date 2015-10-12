@@ -74,7 +74,6 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>1.4.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -83,11 +82,11 @@
                         <Export-Package>
                             org.joda.time.*;version="${project.version}",
                         </Export-Package>
+                        <Private-Package></Private-Package>
                         <Import-Package>
                             org.joda.convert;resolution:=optional
                         </Import-Package>
                         <Embed-Dependency>joda-time;scope=compile|runtime;inline=true;</Embed-Dependency>
-                        <DynamicImport-Package>*</DynamicImport-Package>                     
                     </instructions>
                 </configuration>
             </plugin>
