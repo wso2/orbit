@@ -60,10 +60,10 @@
 
     <dependencies>
         <dependency>
-        <groupId>jsr94</groupId>
-        <artifactId>jsr94</artifactId>
-        <version>${version.jsr94}</version>
-        <optional>true</optional>
+            <groupId>jsr94</groupId>
+            <artifactId>jsr94</artifactId>
+            <version>${version.jsr94}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
