@@ -26,6 +26,7 @@
     <name>WSO2 Carbon Orbit - Janino</name>
     <version>2.5.15.wso2v1</version>
     <description>
+        This bundle will represent janino jars
     </description>
     <url>http://wso2.org</url>
 
