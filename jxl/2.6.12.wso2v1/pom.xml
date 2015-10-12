@@ -86,12 +86,12 @@
                         </Export-Package>
                         <Private-Package></Private-Package>
                         <Include-Resource>
-                            @jxl-2.6.12.jar!/functions.properties,
-                            @jxl-2.6.12.jar!/functions_da.properties,
-                            @jxl-2.6.12.jar!/functions_de.properties,
-                            @jxl-2.6.12.jar!/functions_en.properties,
-                            @jxl-2.6.12.jar!/functions_es.properties,
-                            @jxl-2.6.12.jar!/functions_fr.properties,
+                            @jxl-${version.jxl}.jar!/functions.properties,
+                            @jxl-${version.jxl}.jar!/functions_da.properties,
+                            @jxl-${version.jxl}.jar!/functions_de.properties,
+                            @jxl-${version.jxl}.jar!/functions_en.properties,
+                            @jxl-${version.jxl}.jar!/functions_es.properties,
+                            @jxl-${version.jxl}.jar!/functions_fr.properties,
                         </Include-Resource>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
