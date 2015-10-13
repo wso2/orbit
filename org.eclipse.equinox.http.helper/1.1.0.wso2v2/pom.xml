@@ -73,8 +73,6 @@
             <groupId>org.eclipse.equinox</groupId>
             <artifactId>javax.servlet</artifactId>
             <version>3.1.0.v20140303-1611</version>
-            <scope>system</scope>
-            <systemPath>/home/thusitha/Downloads/localrepo/javax.servlet_3.1.0.v20140303-1611.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.eclipse.osgi</groupId>
