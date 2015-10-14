@@ -82,10 +82,7 @@
                         </Export-Package>
                         <Private-Package></Private-Package>
                         <Import-Package>
-                            !org.codehaus.janino.*,
-                            org.apache.tools.ant.types,
-                            org.apache.tools.ant.taskdefs,
-                            org.apache.tools.ant.taskdefs.compilers
+                            !org.codehaus.janino.*
                         </Import-Package>                        
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>

@@ -116,8 +116,8 @@
                         </Export-Package>
                         <Private-Package></Private-Package>
                         <Import-Package>
-                            !org.drools.*;version="[6.3.0,6.4.0)",
-                            !org.kie.*;version="[6.3.0,6.4.0)"
+                            !org.drools.*,
+                            !org.kie.*
                         </Import-Package>
                         <Embed-Dependency>
                             drools-jsr94;knowledge-api;drools-core;drools-compiler;kie-api;kie-internal;scope=compile|runtime;inline=true;
