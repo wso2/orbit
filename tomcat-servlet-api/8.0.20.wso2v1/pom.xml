@@ -65,6 +65,7 @@
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>

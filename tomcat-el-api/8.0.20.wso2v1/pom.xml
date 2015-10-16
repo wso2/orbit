@@ -63,6 +63,7 @@
                         <Export-Package>
                             javax.el;version="3.0.0"
                         </Export-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>

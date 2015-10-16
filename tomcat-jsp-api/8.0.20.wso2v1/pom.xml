@@ -68,6 +68,7 @@
                             javax.servlet;version="[2.6.0, 3.2.0)",
                             javax.servlet.http;version="[2.6.0, 3.2.0)",
                         </Import-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
