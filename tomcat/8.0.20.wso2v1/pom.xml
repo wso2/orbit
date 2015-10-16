@@ -125,6 +125,7 @@
                             {maven-resources},
                             src/main/resources
                         </Include-Resource>
+			<DynamicImport-Package>*</DynamicImport-Package>
                         <Bundle-Classpath>patch.jar,.</Bundle-Classpath>
                     </instructions>
                 </configuration>
