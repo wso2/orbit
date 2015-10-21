@@ -30,7 +30,6 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-			<Embed-Dependency>jasperreports;scope=compile|runtime</Embed-Dependency>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
