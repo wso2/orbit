@@ -2,7 +2,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
+<<<<<<< HEAD
     <modelVersion>4.0.0</modelVersion>
+=======
+<modelVersion>4.0.0</modelVersion>
+>>>>>>> 0415354d1147730048b9851e85201b52ca1e22a0
     <groupId>jasperreports.wso2</groupId>
     <artifactId>jasperreports</artifactId>
     <packaging>bundle</packaging>
@@ -30,7 +34,11 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+<<<<<<< HEAD
 			            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+=======
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+>>>>>>> 0415354d1147730048b9851e85201b52ca1e22a0
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
                             net.sf.jasperreports.*,
@@ -40,6 +48,7 @@
                             !antlr,
                             !antlr.*,
                             !net.sf.jasperreports.*,
+<<<<<<< HEAD
                             !org.w3c.tools.codec.*,	
                             org.xml.sax; version="[0.0.0,1.0.0)",
                             org.w3c.dom.traversal; version="[0.0.0,1.0.0)",
@@ -86,6 +95,10 @@
                             groovyjarjarasm.asm; version="[2.3.0,3.0.0)",
                             groovy.lang; version="[2.3.0,3.0.0)",
                             com.lowagie.text.*; version="[2.1.0,3.0.0)"
+=======
+                            !org.w3c.tools.codec.*,
+                            *;resolution:=optional
+>>>>>>> 0415354d1147730048b9851e85201b52ca1e22a0
                         </Import-Package>
                         <Include-Resource>
                             @jasperreports-6.1.1.jar!/default.jasperreports.properties,

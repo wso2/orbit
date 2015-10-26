@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.apache.olingo</groupId>
+    <artifactId>odata-server</artifactId>
+    <version>4.0.0.wso2v2</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Olingo server library</name>
+    <description>
+        This bundle exports packages from the Olingo server library
+    </description>
+    <url>http://wso2.org</url>
+
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <olingo.server.version>4.0.0-beta-03</olingo.server.version>
+        <olingo.server.export.version>4.0.0.wso2v2</olingo.server.export.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.olingo</groupId>
+            <artifactId>odata-server-core</artifactId>
+            <version>${olingo.server.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.olingo</groupId>
+            <artifactId>odata-server-core-ext</artifactId>
+            <version>${olingo.server.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.olingo</groupId>
+            <artifactId>odata-server-api</artifactId>
+            <version>${olingo.server.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.olingo</groupId>
+            <artifactId>odata-commons-api</artifactId>
+            <version>${olingo.server.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.olingo</groupId>
+            <artifactId>odata-commons-core</artifactId>
+            <version>${olingo.server.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            org.apache.olingo.server.core.*; version="${olingo.server.export.version}",
+                            org.apache.olingo.commons.api.*; version="${olingo.server.export.version}",
+                            org.apache.olingo.server.api.*; version="${olingo.server.export.version}",
+                            org.apache.olingo.commons.core.*; version="${olingo.server.export.version}"
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Import-Package>
+                            com.fasterxml.aalto.stax;resolution:=optional,
+                            com.fasterxml.jackson.core;version="[2.4,3)",
+                            com.fasterxml.jackson.core.util;version="[2.4,3)",
+                            com.fasterxml.jackson.databind;version="[2.4,3)",
+                            com.fasterxml.jackson.databind.node;version="[2.4,3)",
+                            javax.servlet,
+                            javax.servlet.http,
+                            javax.xml.namespace,
+                            javax.xml.stream,
+                            javax.xml.stream.events,
+                            org.antlr.v4.runtime;resolution:=optional,
+                            org.antlr.v4.runtime.atn;resolution:=optional,
+                            org.antlr.v4.runtime.dfa;resolution:=optional,
+                            org.antlr.v4.runtime.misc;resolution:=optional,
+                            org.antlr.v4.runtime.tree;resolution:=optional,
+                            org.apache.commons.codec.binary;version="[1.4,1.5)",
+                            org.apache.commons.io;version="[2.4,2.5)",
+                            org.apache.commons.lang3;version="[3.3,4)",
+                            org.apache.commons.lang3.builder;version="[3.3,4)",
+                            org.slf4j;version="[1.6,2)"
+                        </Import-Package>
+                        <Include-Resource>
+                            {maven-resources}
+                        </Include-Resource>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
