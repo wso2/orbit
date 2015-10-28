@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>jasperreports.wso2</groupId>
+    <groupId>org.wso2.orbit.net.sf.jasperreports</groupId>
     <artifactId>jasperreports</artifactId>
     <packaging>bundle</packaging>
     <name>jasperreports.wso2</name>
@@ -30,17 +30,15 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-			<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            net.sf.jasperreports.*,
-                            org.w3c.tools.codec.*,
+                            net.sf.jasperreports.*; version="6.1.1.wso2v1",
+                            org.w3c.tools.codec.*; version="6.1.1.wso2v1"
                         </Export-Package>
                         <Import-Package>
-                            !antlr,
-                            !antlr.*,
-                            !net.sf.jasperreports.*,
-                            !org.w3c.tools.codec.*,
+                            !net.sf.jasperreports.*; version="[6.1.0.wso2v1,7.0.0)",
+                            !org.w3c.tools.codec.*; version="[6.1.0.wso2v1,7.0.0)",
                             org.xml.sax; version="[0.0.0,1.0.0)",
                             org.w3c.dom.traversal; version="[0.0.0,1.0.0)",
                             org.w3c.dom; version="[0.0.0,1.0.0)",
