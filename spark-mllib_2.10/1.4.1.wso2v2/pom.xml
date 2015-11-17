@@ -85,7 +85,7 @@
 							org.apache.spark.ml.*;version="${spark.exp.version}";-split-package:=merge-first,
 							org.apache.spark.mllib.*;version="${spark.exp.version}";-split-package:=merge-first,
 							org.dmg.pmml.*;version="${spark.exp.version}";-split-package:=merge-first,
-                                                        org.jpmml.model.*;version="${spark.exp.version}";-split-package:=merge-first
+                                                      	org.jpmml.model.*;version="${spark.exp.version}";-split-package:=merge-first
 						</Export-Package>
 						<Private-Package>
 						</Private-Package>
