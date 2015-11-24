@@ -65,25 +65,7 @@
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            org.yaml.snakeyaml;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.composer;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.constructor;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.emitter;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.error;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.events;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.external.biz.base64Coder;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.external.com.google.gdata.util.common.base;resolution:=optional;
-                            version="[1.16,2)",
-                            org.yaml.snakeyaml.introspector;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.nodes;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.parser;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.reader;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.representer;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.resolver;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.scanner;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.serializer;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.tokens;resolution:=optional;version="[1.16,2)",
-                            org.yaml.snakeyaml.util;resolution:=optional;version="[1.16,2)"
+                            !org.yaml.snakeyaml.*;resolution:=optional;version="[1.16,2)"
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
