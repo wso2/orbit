@@ -23,7 +23,7 @@
     <artifactId>h2o</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon - Orbit - H2O</name>
-    <version>3.2.0.9.wso2v1</version>
+    <version>3.2.0.wso2v1</version>
     <description>This bundle exports packages from h2o jar files</description>
     <url>http://wso2.org</url>
 
@@ -58,6 +58,12 @@
             <version>${h2o.version}</version>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>ai.h2o</groupId>
+            <artifactId>google-analytics-java</artifactId>
+            <version>1.1.2-H2O-CUSTOM</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>
@@ -72,21 +78,29 @@
                         <Bundle-Vendor>WSO2 Inc</Bundle-Vendor>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <!--<Export-Package>-->
-                            <!--ai.h2o.h2o.*;version="${h2o.version}";-split-package:=merge-first-->
-                        <!--</Export-Package>-->
-                        <_importcontents>
-                            org.apache.log4j.LogManager;resolution:=optional,
-                            ai.h2o.h2o-core;resolution:=optional,
-                            ai.h2o.h2o-genmodel;resolution:=optional,
-                            ai.h2o.h2o-algos;resolution:=optional,
-                            ai.h2o.h2o-web;resolution:=optional,
-                            ai.h2o.h2o-app;resolution:=optional,
-
+                        <Export-Package>
+                            water.*;version="${orbit.version.h2o}";-split-package:=merge-first,
+                            hex.*;version="${orbit.version.h2o}";-split-package:=merge-first,
+                            www.*;version="${orbit.version.h2o}";-split-package:=merge-first,
+                            jsr166y.*;version="${orbit.version.h2o}";-split-package:=merge-first,
+                            gaid.*;version="${orbit.version.h2o}";-split-package:=merge-first,
+                            com.google.*;version="${orbit.version.h2o}";-split-package:=merge-first,
+                            com.brsanthu.googleanalytics.*;version="${orbit.version.h2o}";-split-package:=merge-first
+                            <!--javax.*;version="${orbit.version.h2o}";-split-package:=merge-first,-->
+                            <!--javassist.*;version="${orbit.version.h2o}";-split-package:=merge-first,-->
+                            <!--Jama.*;version="${orbit.version.h2o}";-split-package:=merge-first,-->
+                            <!--edu.*;version="${orbit.version.h2o}";-split-package:=merge-first-->
+                        </Export-Package>
+                        <Private-Package>
+                            org.*;version="${orbit.version.h2o}";-split-package:=merge-first,
+                            javax.*;version="${orbit.version.h2o}";-split-package:=merge-first,
+                            javassist.*;version="${orbit.version.h2o}";-split-package:=merge-first
+                        </Private-Package>
+                        <Import-Package>
                             !Jama;resolution:=optional,
                             !com.google.gson;resolution:=optional,
-                            !jsr166y;resolution:=optional,
-                            !org.joda.time.format;resolution:=optional,
+                            <!--!jsr166y;resolution:=optional,-->
+                            <!--!org.joda.time.format;resolution:=optional,-->
                             !sun.misc;resolution:=optional,
                             !com.brsanthu.googleanalytics;resolution:=optional,
                             !com.google.*;resolution:=optional,
@@ -94,36 +108,36 @@
                             !javassist;resolution:=optional,
                             !javax.*;resolution:=optional,
                             !org.apache.commons.*;resolution:=optional,
-                            !org.apache.log4j.spi;resolution:=optional,
+                            <!--!org.apache.log4j;resolution:=optional,-->
                             !org.eclipse.*;resolution:=optional,
-                            !org.joda.time;resolution:=optional,
-                            !org.reflections.*;resolution:=optional,
-                            !hex.genmodel;resolution:=optional,
+                            <!--!org.joda.time;resolution:=optional,-->
+                            <!--!org.reflections.*;resolution:=optional,-->
+                            <!--!hex.genmodel;resolution:=optional,-->
                             !sun.misc;resolution:=optional,
-                            !org.joda.time.format;resolution:=optional
+                            <!--!org.joda.time.format;resolution:=optional-->
 
-                            <!--!com.sun.*;resolution:=optional,-->
-                            <!--!javax.*;resolution:=optional,-->
-                            <!--!org.apache.avalon.framework.logger;resolution:=optional,-->
-                            <!--!org.apache.axis.*;resolution:=optional,-->
+                            !com.sun.*;resolution:=optional,
+                            !javax.*;resolution:=optional,
+                            !org.apache.avalon.framework.logger;resolution:=optional,
+                            !org.apache.axis.*;resolution:=optional,
                             <!--!org.apache.commons.vfs2;resolution:=optional,-->
-                            <!--!org.apache.log;resolution:=optional,-->
-                            <!--!org.bouncycastle.jce.provider;resolution:=optional,-->
-                            <!--!org.dom4j.*;resolution:=optional,-->
+                            !org.apache.log;resolution:=optional,
+                            !org.bouncycastle.jce.provider;resolution:=optional,
+                            !org.dom4j.*;resolution:=optional,
                             <!--!org.eclipse.jetty.jmx;resolution:=optional,-->
-                            <!--!org.ietf.jgss;resolution:=optional,-->
-                            <!--!org.joda.convert;resolution:=optional,-->
-                            <!--!org.mortbay.*;resolution:=optional,-->
-                            <!--!org.slf4j.*;resolution:=optional,-->
-                            <!--!org.w3c.dom;resolution:=optional,-->
-                            <!--!org.xml.sax.*;resolution:=optional,-->
-                            <!--!sun.*;resolution:=optional-->
-                        </_importcontents>
-                        <Include-Resource>
-                            {maven-resources}
-                        </Include-Resource>
-                        <DynamicImport-Package>*</DynamicImport-Package>
-                        <Embed-Dependency>*;scope=runtime;inline=true</Embed-Dependency>
+                            !org.ietf.jgss;resolution:=optional,
+                            !org.joda.convert;resolution:=optional,
+                            !org.mortbay.*;resolution:=optional,
+                            !org.slf4j.*;resolution:=optional,
+                            !org.w3c.dom;resolution:=optional,
+                            !org.xml.sax.*;resolution:=optional,
+                            !javassist.bytecode.*;resolution:=optional,
+                            !javassist.expr;resolution:=optional,
+                            !sun.plugin.protocol;resolution:=optional,
+                            <!--!org.apache.log4j;resolution:=optional,-->
+                            <!--!org.joda.time.*;resolution:=optional-->
+                            !sun.plugin.protocol;resolution:=optional
+                        </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
@@ -132,8 +146,9 @@
 
     <properties>
         <h2o.version>3.2.0.9</h2o.version>
-        <orbit.version.h2o>${h2o.version}.wso2v1</orbit.version.h2o>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <google-analytics-java.version>1.1.2-H2O-CUSTOM</google-analytics-java.version>
+        <orbit.version.h2o>3.2.0.wso2v1</orbit.version.h2o>
+        <h2o.import.version>[3.2.0.9, 3.6.0.3)</h2o.import.version>
     </properties>
 
     <repositories>
