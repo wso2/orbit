@@ -27,6 +27,32 @@
     <description>This bundle exports packages from h2o-app jar files</description>
     <url>http://wso2.org</url>
 
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>ai.h2o</groupId>
@@ -48,15 +74,17 @@
                         <Bundle-Vendor>WSO2 Inc</Bundle-Vendor>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <_exportcontents>
-                            ai.h2o.h2o-app.*;version="${h2o.version}";-split-package:=merge-first
-                        </_exportcontents>
+                        <Export-Pacakage>
+                            water.*;version="${orbit.version.h2o}";-split-package:=merge-first
+                        </Export-Pacakage>
                         <Import-Package>
-                            ai.h2o.h2o-core,
-                            ai.h2o.h2o-genmodel,
-                            ai.h2o.h2o-algos,
-                            ai.h2o.h2o-web
+                            ai.h2o.*;version="${h2o.import.version}"
+                            <!--ai.h2o.h2o-core;version="${h2o.import.version}",-->
+                            <!--ai.h2o.h2o-genmodel;version="${h2o.import.version}",-->
+                            <!--ai.h2o.h2o-algos;version="${h2o.import.version}",-->
+                            <!--ai.h2o.h2o-web;version="${h2o.import.version}",-->
                         </Import-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                         <Embed-Dependency>*;scope=compile|runtime;inline=true</Embed-Dependency>
                     </instructions>
                 </configuration>
@@ -66,35 +94,9 @@
 
     <properties>
         <h2o.version>3.2.0.9</h2o.version>
-        <orbit.version.h2o>${h2o.version}.wso2v1</orbit.version.h2o>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <orbit.version.h2o>3.2.0.9.wso2v1</orbit.version.h2o>
+        <h2o.import.version>[3.2.0.9, 3.6.0.3)</h2o.import.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>wso2-nexus</id>
-            <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </releases>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>wso2.releases</id>
-            <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
-        </repository>
-
-        <snapshotRepository>
-            <id>wso2.snapshots</id>
-            <name>Apache Snapshot Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 
 </project>

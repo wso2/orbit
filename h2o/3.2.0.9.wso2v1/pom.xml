@@ -72,13 +72,58 @@
                         <Bundle-Vendor>WSO2 Inc</Bundle-Vendor>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Export-Package>
-                            *;-split-package:=merge-first
-                        </Export-Package>
-                        <Import-Package>
-                            *;resolution:=optional
-                        </Import-Package>
-                        <Embed-Dependency>*;scope=compile|runtime;inline=true</Embed-Dependency>
+                        <!--<Export-Package>-->
+                            <!--ai.h2o.h2o.*;version="${h2o.version}";-split-package:=merge-first-->
+                        <!--</Export-Package>-->
+                        <_importcontents>
+                            org.apache.log4j.LogManager;resolution:=optional,
+                            ai.h2o.h2o-core;resolution:=optional,
+                            ai.h2o.h2o-genmodel;resolution:=optional,
+                            ai.h2o.h2o-algos;resolution:=optional,
+                            ai.h2o.h2o-web;resolution:=optional,
+                            ai.h2o.h2o-app;resolution:=optional,
+
+                            !Jama;resolution:=optional,
+                            !com.google.gson;resolution:=optional,
+                            !jsr166y;resolution:=optional,
+                            !org.joda.time.format;resolution:=optional,
+                            !sun.misc;resolution:=optional,
+                            !com.brsanthu.googleanalytics;resolution:=optional,
+                            !com.google.*;resolution:=optional,
+                            !edu.emory.mathcs.*;resolution:=optional,
+                            !javassist;resolution:=optional,
+                            !javax.*;resolution:=optional,
+                            !org.apache.commons.*;resolution:=optional,
+                            !org.apache.log4j.spi;resolution:=optional,
+                            !org.eclipse.*;resolution:=optional,
+                            !org.joda.time;resolution:=optional,
+                            !org.reflections.*;resolution:=optional,
+                            !hex.genmodel;resolution:=optional,
+                            !sun.misc;resolution:=optional,
+                            !org.joda.time.format;resolution:=optional
+
+                            <!--!com.sun.*;resolution:=optional,-->
+                            <!--!javax.*;resolution:=optional,-->
+                            <!--!org.apache.avalon.framework.logger;resolution:=optional,-->
+                            <!--!org.apache.axis.*;resolution:=optional,-->
+                            <!--!org.apache.commons.vfs2;resolution:=optional,-->
+                            <!--!org.apache.log;resolution:=optional,-->
+                            <!--!org.bouncycastle.jce.provider;resolution:=optional,-->
+                            <!--!org.dom4j.*;resolution:=optional,-->
+                            <!--!org.eclipse.jetty.jmx;resolution:=optional,-->
+                            <!--!org.ietf.jgss;resolution:=optional,-->
+                            <!--!org.joda.convert;resolution:=optional,-->
+                            <!--!org.mortbay.*;resolution:=optional,-->
+                            <!--!org.slf4j.*;resolution:=optional,-->
+                            <!--!org.w3c.dom;resolution:=optional,-->
+                            <!--!org.xml.sax.*;resolution:=optional,-->
+                            <!--!sun.*;resolution:=optional-->
+                        </_importcontents>
+                        <Include-Resource>
+                            {maven-resources}
+                        </Include-Resource>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                        <Embed-Dependency>*;scope=runtime;inline=true</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
