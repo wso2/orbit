@@ -84,47 +84,33 @@
                             www.*;version="${orbit.version.h2o}";-split-package:=merge-first,
                             jsr166y.*;version="${orbit.version.h2o}";-split-package:=merge-first,
                             gaid.*;version="${orbit.version.h2o}";-split-package:=merge-first,
-                            com.google.*;version="${orbit.version.h2o}";-split-package:=merge-first,
-                            com.brsanthu.googleanalytics.*;version="${orbit.version.h2o}";-split-package:=merge-first
-                            <!--javax.*;version="${orbit.version.h2o}";-split-package:=merge-first,-->
-                            <!--javassist.*;version="${orbit.version.h2o}";-split-package:=merge-first,-->
-                            <!--Jama.*;version="${orbit.version.h2o}";-split-package:=merge-first,-->
-                            <!--edu.*;version="${orbit.version.h2o}";-split-package:=merge-first-->
+                            com.brsanthu.googleanalytics.*;version="${orbit.version.h2o}";-split-package:=merge-first,
+                            javassist.*;version="${orbit.version.h2o}";-split-package:=merge-first
                         </Export-Package>
                         <Private-Package>
                             org.*;version="${orbit.version.h2o}";-split-package:=merge-first,
-                            javax.*;version="${orbit.version.h2o}";-split-package:=merge-first,
-                            javassist.*;version="${orbit.version.h2o}";-split-package:=merge-first
+                            com.google.common.*;version="${orbit.version.h2o}";-split-package:=merge-first,
+                            com.google.code.*;version="${orbit.version.h2o}";-split-package:=merge-first,
+                            javax.servlet.*;version="${orbit.version.h2o}";-split-package:=merge-first
                         </Private-Package>
                         <Import-Package>
                             !Jama;resolution:=optional,
                             !com.google.gson;resolution:=optional,
-                            <!--!jsr166y;resolution:=optional,-->
-                            <!--!org.joda.time.format;resolution:=optional,-->
                             !sun.misc;resolution:=optional,
-                            !com.brsanthu.googleanalytics;resolution:=optional,
                             !com.google.*;resolution:=optional,
                             !edu.emory.mathcs.*;resolution:=optional,
                             !javassist;resolution:=optional,
                             !javax.*;resolution:=optional,
                             !org.apache.commons.*;resolution:=optional,
-                            <!--!org.apache.log4j;resolution:=optional,-->
                             !org.eclipse.*;resolution:=optional,
-                            <!--!org.joda.time;resolution:=optional,-->
-                            <!--!org.reflections.*;resolution:=optional,-->
-                            <!--!hex.genmodel;resolution:=optional,-->
                             !sun.misc;resolution:=optional,
-                            <!--!org.joda.time.format;resolution:=optional-->
-
                             !com.sun.*;resolution:=optional,
                             !javax.*;resolution:=optional,
                             !org.apache.avalon.framework.logger;resolution:=optional,
                             !org.apache.axis.*;resolution:=optional,
-                            <!--!org.apache.commons.vfs2;resolution:=optional,-->
                             !org.apache.log;resolution:=optional,
                             !org.bouncycastle.jce.provider;resolution:=optional,
                             !org.dom4j.*;resolution:=optional,
-                            <!--!org.eclipse.jetty.jmx;resolution:=optional,-->
                             !org.ietf.jgss;resolution:=optional,
                             !org.joda.convert;resolution:=optional,
                             !org.mortbay.*;resolution:=optional,
@@ -134,8 +120,6 @@
                             !javassist.bytecode.*;resolution:=optional,
                             !javassist.expr;resolution:=optional,
                             !sun.plugin.protocol;resolution:=optional,
-                            <!--!org.apache.log4j;resolution:=optional,-->
-                            <!--!org.joda.time.*;resolution:=optional-->
                             !sun.plugin.protocol;resolution:=optional
                         </Import-Package>
                     </instructions>
