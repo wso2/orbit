@@ -316,10 +316,7 @@
                             @groovy-all-2.3.9.jar!/META-INF/dgminfo,
                             @asm4-all-4.0.0.wso2v1.jar!/org/objectweb/*
                     </Include-Resource>
-                      <!--  <Include-Resource>
-                            @hazelcast-all-${version.hazelcast}.jar!/META-INF/*,
-                            @hazelcast-all-${version.hazelcast}.jar!/hazelcast-runtime.properties
-                        </Include-Resource>-->
+              
                     </instructions>
                 </configuration>
             </plugin>
