@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- ~ Copyright (c) WSO2 Inc. (http://wso2.com) All Rights Reserved.
+ ~ Copyright (c) 2015, WSO2 Inc. (http://wso2.com) All Rights Reserved.
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.scannotation</groupId>
+    <groupId>org.wso2.orbit.org.scannotation</groupId>
     <artifactId>scannotation</artifactId>
     <version>1.0.3.wso2v1</version>
     <packaging>bundle</packaging>
@@ -32,11 +32,13 @@
             <groupId>org.scannotation</groupId>
             <artifactId>scannotation</artifactId>
             <version>${org.scannotation.version}</version>
+	    <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>javassist</groupId>
             <artifactId>javassist</artifactId>
             <version>${javassist.version}</version>
+	    <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -70,10 +72,13 @@
                             !javassist.*
                         </Export-Package>
                         <Import-Package>
-                            javassist.*
+                            com.sun.jdi;resolution:=optional,
+                            com.sun.jdi.connect;resolution:=optional,
+                            com.sun.jdi.event;resolution:=optional,
+                            com.sun.jdi.request;resolution:=optional,
+                            javax.servlet;resolution:=optional
                         </Import-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
-                        <Include-Resource>
+			<Include-Resource>
                         </Include-Resource>
                         <Embed-Dependency>javassist;inline=false</Embed-Dependency>
                     </instructions>
