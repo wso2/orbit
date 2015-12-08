@@ -54,7 +54,9 @@
                         </Export-Package>
                         <Import-Package>
                             !org.apache.pdfbox.*,
-            	              *;resolution:=optional
+                             com.ibm.icu.text;resolution:=optional,
+                             org.apache.jempbox.xmp;resolution:=optional,
+                             org.bouncycastle.cms;resolution:=optional
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
