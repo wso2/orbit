@@ -53,8 +53,7 @@
                             org.apache.fontbox.*;version="${project.version}"
                         </Export-Package>
                         <Import-Package>
-                            !org.apache.fontbox.*,
-            	              *;resolution:=optional
+                            !org.apache.fontbox.*;
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
