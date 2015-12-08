@@ -1,0 +1,190 @@
+<!--
+ ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.net.sf.jasperreports</groupId>
+    <artifactId>jasperreports</artifactId>
+    <packaging>bundle</packaging>
+    <name>jasperreports.wso2</name>
+    <version>6.1.1.wso2v1</version>
+    <description>
+        This bundle will represent jasperreports.
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.1.1</version>
+	    <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.3.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            net.sf.jasperreports.*; version="6.1.1.wso2v1",
+                            org.w3c.tools.codec.*; version="6.1.1.wso2v1"
+                        </Export-Package>
+                        <Import-Package>
+                            !net.sf.jasperreports.*; version="[6.1.0.wso2v1,7.0.0)",
+                            !org.w3c.tools.codec.*; version="[6.1.0.wso2v1,7.0.0)",
+                            com.lowagie.text.*; version="[2.1.0,3.0.0)",
+                            com.keypoint; version="[1.0.0,2.0.0)",
+                            groovyjarjarasm.asm; version="[2.3.0,3.0.0)",
+                            groovy.lang; version="[2.3.0,3.0.0)",
+                            jxl.*; version="[0.0.0,1.0.0)",
+                            javax.xml.xpath; version="[0.0.0,1.0.0)",
+                            javax.xml.transform.*; version="[0.0.0,1.0.0)",
+                            javax.xml.soap; version="[1.0.0,2.0.0)",
+                            javax.xml.parsers; version="[0.0.0,1.0.0)",
+                            javax.xml.namespace; version="[0.0.0,1.0.0)",
+                            javax.swing.*; version="[0.0.0,1.0.0)",
+                            javax.sql.*; version="[0.0.0,1.0.0)",
+                            javax.servlet.*; version="[2.6.0,3.0.0)",
+                            javax.print.*; version="[0.0.0,1.0.0)",
+                            javax.persistence; version="[2.0.0,3.0.0)",
+                            javax.naming; version="[0.0.0,1.0.0)",
+                            javax.imageio; version="[0.0.0,1.0.0)",
+                            org.xml.sax; version="[0.0.0,1.0.0)",
+                            org.w3c.dom.traversal; version="[0.0.0,1.0.0)",
+                            org.w3c.dom; version="[0.0.0,1.0.0)",
+                            org.springframework.core.io; version="[3.2.0.wso2v1,4.0.0)",
+                            org.springframework.beans.factory.*; version="[3.2.0.wso2v1,4.0.0)",
+                            org.mozilla.javascript.*; version="[1.7.0,2.0.0)",
+                            org.jfree.util; version="[1.0.0,2.0.0)",
+                            org.jfree.ui; version="[1.0.0,2.0.0)",
+                            org.jfree.date; version="[1.0.0,2.0.0)",
+                            org.jfree.data.*; version="[0.0.0,1.0.0)",
+                            org.jfree.chart.*; version="[0.0.0,1.0.0)",
+                            org.jaxen.*; version="[1.1.0,2.0.0)",
+                            org.eclipse.jdt.*; version="[0.0.0,1.0.0)",
+                            org.codehaus.groovy.*; version="[2.3.0,3.0.0)",
+                            org.apache.xpath.*; version="[0.0.0,1.0.0)",
+                            org.apache.velocity.*; version="[2.4.0.wso2v1,3.0.0)",
+                            org.apache.tools.ant.*; version="[0.0.0,1.0.0)",
+                            org.apache.poi.*; version="[0.0.0,1.0.0)",
+                            org.apache.lucene.*; version="[5.2.0.wso2v1,6.0.0)",
+                            org.apache.http.util; version="[4.3.0.wso2v1,5.0.0)",
+                            org.apache.http.message; version="[4.3.0.wso2v1,5.0.0)",
+                            org.apache.http.impl.*; version="[4.3.0.wso2v2,5.0.0)",
+                            org.apache.http.conn; version="[4.3.0.wso2v2,5.0.0)",
+                            org.apache.http.client.*; version="[4.3.0.wso2v2,5.0.0)",
+                            org.apache.http.auth; version="[4.3.0.wso2v2,5.0.0)",
+                            org.apache.http; version="[4.3.0.wso2v1,5.0.0)",
+                            org.apache.commons.logging; version="[1.2.0,2.0.0)",
+                            org.apache.commons.lang; version="[2.6.0,3.0.0)",
+                            org.apache.commons.collections.*; version="[3.2.0,4.0.0)",
+                            antlr; version="[3.2.0.wso2v1,4.0.0)"; resolution:=optional,
+                            antlr.collections.impl; version="[3.2.0.wso2v1,4.0.0)"; resolution:=optional,
+                            bsh; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            com.fasterxml.jackson.annotation; version="[2.1.0,3.0.0)"; resolution:=optional,
+                            com.fasterxml.jackson.core; version="[2.1.0,3.0.0)"; resolution:=optional,
+                            com.fasterxml.jackson.core.io; version="[2.1.0,3.0.0)"; resolution:=optional,
+                            com.fasterxml.jackson.databind; version="[2.1.0,3.0.0)"; resolution:=optional,
+                            com.fasterxml.jackson.databind.jsontype; version="[2.1.0,3.0.0)"; resolution:=optional,
+                            com.fasterxml.jackson.databind.node; version="[2.1.0,3.0.0)"; resolution:=optional,
+                            com.fasterxml.jackson.databind.type; version="[2.1.0,3.0.0)"; resolution:=optional,
+                            com.google.zxing; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            com.google.zxing.common; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            com.google.zxing.qrcode; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            com.google.zxing.qrcode.decoder; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            com.google.zxing.qrcode.encoder; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            com.sun.image.codec.jpeg; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            mondrian.olap; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            mondrian.spi; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            net.sourceforge.barbecue; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            net.sourceforge.barbecue.linear.code39; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            net.sourceforge.barbecue.linear.ean; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            net.sourceforge.barbecue.output; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.apache.batik.bridge; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.apache.batik.dom; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.apache.batik.dom.svg; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.apache.batik.ext.awt.image; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.apache.batik.gvt; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.apache.batik.svggen; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.apache.commons.beanutils; version="[1.8.0,2.0.0)"; resolution:=optional,
+                            org.apache.commons.beanutils.locale; version="[1.8.0,2.0.0)"; resolution:=optional,
+                            org.apache.commons.beanutils.locale.converters; version="[1.8.0,2.0.0)"; resolution:=optional,
+                            org.apache.commons.digester; version="[1.8.0,2.0.0)"; resolution:=optional,
+                            org.apache.commons.javaflow; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.exolab.castor.mapping; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.exolab.castor.xml; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.hibernate; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.hibernate.cfg; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.hibernate.connection; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.hibernate.metadata; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.hibernate.type; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.hibernate.util; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.impl; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.impl.codabar; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.impl.code128; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.impl.code39; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.impl.datamatrix; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.impl.fourstate; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.impl.int2of5; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.impl.pdf417; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.impl.postnet; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.impl.upcean; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.output; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.output.bitmap; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.output.svg; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.krysalis.barcode4j.tools; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.olap4j; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.olap4j.layout; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.olap4j.metadata; version="[0.0.0,1.0.0)"; resolution:=optional,
+                            org.w3c.dom.svg; version="[0.0.0,1.0.0)"; resolution:=optional
+                        </Import-Package>
+                        <Include-Resource>
+                            @jasperreports-6.1.1.jar!/default.jasperreports.properties,
+                            @jasperreports-6.1.1.jar!/jasperreports_extension.properties
+                        </Include-Resource>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+

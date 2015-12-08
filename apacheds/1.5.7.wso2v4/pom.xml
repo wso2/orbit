@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~  WSO2 Inc. licenses this file to you under the Apache License,
+  ~  Version 2.0 (the "License"); you may not use this file except
+  ~  in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing,
+  ~  software distributed under the License is distributed on an
+  ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~  KIND, either express or implied.  See the License for the
+  ~  specific language governing permissions and limitations
+  ~  under the License.
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.apache.directory</groupId>
+    <artifactId>apacheds</artifactId>
+    <packaging>bundle</packaging>
+    <name>ApacheDirectory</name>
+    <version>1.5.7.wso2v4</version>
+    <description>A custom wso2 products or solution which wraps Apache DS</description>
+    <url>http://www.wso2.com</url>
+
+    <dependencies>
+
+        <!-- ApacheDS third party dependencies -->
+        <dependency>
+            <groupId>slf4j.wso2</groupId>
+            <artifactId>slf4j</artifactId>
+            <version>${slf4j.wso2.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>bouncycastle</groupId>
+            <artifactId>bcprov-jdk14</artifactId>
+            <version>${bouncycastle.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>antlr.wso2</groupId>
+            <artifactId>antlr</artifactId>
+            <version>${antlr.wso2.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-core</artifactId>
+            <version>${org.apache.mina.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io.wso2</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.io.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-collections.wso2</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>${commons.collection.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang.wso2</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons.lang.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <!-- ApacheDS third party dependencies - End -->
+
+        <!-- ApacheDS shared dependencies -->
+        <dependency>
+            <artifactId>shared-asn1</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-asn1-codec</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-cursor</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-dsml-parser</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>dom4j</groupId>
+                    <artifactId>dom4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>xpp3</groupId>
+                    <artifactId>xpp3</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-ldap</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-ldif</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-ldap-constants</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-ldap-converter</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-ldap-jndi</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-ldap-schema</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-ldap-schema-dao</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-ldap-schema-loader</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-ldap-schema-manager</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>shared-i18n</artifactId>
+            <groupId>${apacheds.shared.group.id}</groupId>
+            <version>${apacheds.shared.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <!-- ApacheDS shared dependencies - End -->
+
+        <!-- ApacheDS server dependencies -->
+        <dependency>
+            <artifactId>apacheds-avl-partition</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-core</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-core-annotations</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-core-api</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-core-avl</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-core-constants</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-core-entry</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-core-jndi</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-interceptor-kerberos</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-jdbm</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-jdbm-partition</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-jdbm-store</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-kerberos-shared</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-ldif-partition</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-protocol-changepw</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-protocol-dhcp</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-protocol-dns</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-protocol-kerberos</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-protocol-ldap</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-protocol-ntp</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-protocol-shared</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-server-annotations</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-server-jndi</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-server-replication</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-utils</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-xdbm-base</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-xdbm-search</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-xdbm-tools</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <artifactId>apacheds-i18n</artifactId>
+            <groupId>${apacheds.group.id}</groupId>
+            <version>${apacheds.core.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- ApacheDS server dependencies - End -->
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            org.apache.directory.shared.ldap.constants.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.shared.ldap.entry.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.shared.ldap.exception.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.shared.ldap.message.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.shared.ldap.schema.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.shared.ldap.util.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.shared.ldap.name.*; version=${exp.pkg.version.apacheds},
+
+                            org.apache.directory.server.protocol.shared.transport.*;
+                            version=${exp.pkg.version.apacheds},
+
+                            !org.apache.directory.server.core.replication.*,
+                            !org.apache.directory.server.core.journal.*,
+                            !org.apache.directory.server.core.event.*,
+                            !org.apache.directory.server.core.authz.*,
+                            !org.apache.directory.server.core.avltree.*,
+                            !org.apache.directory.server.core.collective.*,
+                            !org.apache.directory.server.core.entry.*,
+                            !org.apache.directory.server.core.filtering.*,
+                            !org.apache.directory.server.core.invocation.*,
+                            !org.apache.directory.server.core.normalization.*,
+                            !org.apache.directory.server.core.operational.*,
+                            !org.apache.directory.server.core.prefs.*,
+                            !org.apache.directory.server.core.referral.*,
+                            !org.apache.directory.server.core.security.*,
+                            !org.apache.directory.server.core.sp.*,
+                            !org.apache.directory.server.core.subtree.*,
+                            !org.apache.directory.server.core.trigger.*,
+                            !org.apache.directory.server.core.annotations.*,
+                            !org.apache.directory.server.core.interceptor.context.*,
+                            !org.apache.directory.server.core.authn.*,
+
+                            org.apache.directory.server.kerberos.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.server.i18n.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.server.core.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.server.ldap.handlers.bind.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.server.ldap.*; version=${exp.pkg.version.apacheds},
+                            org.apache.directory.server.constants; version=${exp.pkg.version.apacheds},
+                        </Export-Package>
+                        <Import-Package>
+                            antlr.*,
+			                org.slf4j.*;version="${slf4j.osgi.version}",
+                            org.apache.commons.lang.*;version="${commons.lang.osgi.version}",
+                            org.apache.commons.io.*;version="${commons.io.osgi.version}",
+                            org.apache.commons.collections.*;version="${commons.collections.osgi.version}",
+                            *;resolution:=optional
+                        </Import-Package>
+                        <Embed-Dependency>
+                            bcprov-jdk14|mina-core|
+                            shared-asn1|shared-asn1-codec|shared-cursor|shared-dsml-parser|shared-ldap|shared-ldif|
+                            shared-ldap-constants|shared-ldap-converter|shared-ldap-jndi|shared-ldap-schema|shared-ldap-schema-dao|
+                            shared-ldap-schema-loader|shared-ldap-schema-manager|shared-i18n|
+                            apacheds-avl-partition|apacheds-core|apacheds-core-annotations|apacheds-core-api|apacheds-core-avl|
+                            apacheds-core-constants|apacheds-core-entry|apacheds-core-jndi|apacheds-interceptor-kerberos|
+                            apacheds-jdbm|apacheds-jdbm-partition|apacheds-jdbm-store|apacheds-kerberos-shared|
+                            apacheds-ldif-partition|apacheds-protocol-changepw|apacheds-protocol-dhcp|apacheds-protocol-dns|
+                            apacheds-protocol-kerberos|apacheds-protocol-ldap|apacheds-protocol-ntp|apacheds-protocol-shared|
+                            apacheds-server-annotations|apacheds-server-jndi|apacheds-server-replication|apacheds-utils|
+                            apacheds-xdbm-base|apacheds-xdbm-search|apacheds-xdbm-tools|apacheds-i18n
+                            ;scope=compile|runtime;inline=false
+                        </Embed-Dependency>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <slf4j.wso2.version>1.5.10.wso2v1</slf4j.wso2.version>
+        <slf4j.osgi.version>1.5.10.wso2v1</slf4j.osgi.version>
+        <antlr.wso2.version>3.2.0.wso2v1</antlr.wso2.version>
+        <apacheds.core.version>1.5.7</apacheds.core.version>
+        <apacheds.group.id>org.apache.directory.server</apacheds.group.id>
+        <apacheds.shared.version>0.9.19</apacheds.shared.version>
+        <apacheds.shared.group.id>org.apache.directory.shared</apacheds.shared.group.id>
+        <commons.collection.version>3.2.0.wso2v1</commons.collection.version>
+        <commons.collections.osgi.version>3.2</commons.collections.osgi.version>
+        <commons.io.version>2.4.0.wso2v1</commons.io.version>
+        <commons.io.osgi.version>[2.4.0, 2.5.0]</commons.io.osgi.version>
+        <commons.lang.version>2.6.0.wso2v1</commons.lang.version>
+        <commons.lang.osgi.version>2.6</commons.lang.osgi.version>
+        <org.apache.mina.version>2.0.0-RC1</org.apache.mina.version>
+        <bouncycastle.version>138</bouncycastle.version>
+        <exp.pkg.version.apacheds>1.5.7.wso2v4</exp.pkg.version.apacheds>
+    </properties>
+</project>
