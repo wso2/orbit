@@ -61,6 +61,9 @@
         <module>lucene/4.10.3-wso2v1</module>
         <module>rabbit-mq/3.4.4.wso2v1</module>
         <module>scannotation/1.0.3.wso2v1</module>
+        <module>compass/4.3.0.wso2v1</module>
+        <module>poi/4.3.0.wso2v1</module>
+        <module>poi-scratchpad/4.3.0.wso2v1</module>
     </modules>
 
     <build>
