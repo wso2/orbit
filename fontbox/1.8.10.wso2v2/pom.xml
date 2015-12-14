@@ -54,7 +54,7 @@
                         </Export-Package>
                         <Import-Package>
                             !org.apache.fontbox.*;
-			    org.apache.commons.logging;version="${org.apache.commons.logging.version}"
+                            org.apache.commons.logging;version="${org.apache.commons.logging.version}"
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
