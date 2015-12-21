@@ -66,11 +66,13 @@
             <groupId>com.leansoft</groupId>
             <artifactId>bigqueue</artifactId>
             <version>${bigqueue.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
