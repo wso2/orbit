@@ -94,7 +94,7 @@
                         </Private-Package>
                         <Import-Package>
                             !com.leansoft.bigqueue.*,
-                            org.apache.log4j.*,
+                            org.apache.log4j.*;version="${log4j.import.pkg.version}",
                             *;resolution:=optional
                         </Import-Package>
                     </instructions>
@@ -105,6 +105,7 @@
     <properties>
         <bigqueue.version>0.7.0</bigqueue.version>
         <log4j.version>1.2.16</log4j.version>
+        <log4j.import.pkg.version>[1.2.0, 2.0.0)</log4j.import.pkg.version>
     </properties>
 
 </project>
