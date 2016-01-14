@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.wso2.orbit.org.eclipse.paho</groupId>
+	<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+	<version>${eclipse.paho.orbit.version}</version>
+	<packaging>bundle</packaging>
+	<name>WSO2 Carbon Orbit - Eclipse Paho MQTT</name>
+	<description>This bundle represents the WSO2 Orbit for Eclipse Paho MQTT library.</description>
+	<url>http://wso2.org</url>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.paho</groupId>
+			<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+			<version>${eclipse.paho.version}</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>Eclipse Paho Repo</id>
+			<name>Paho MQTT Client</name>
+			<url>https://repo.eclipse.org/content/repositories/paho-releases/</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>wso2.releases</id>
+			<name>WSO2 internal Repository</name>
+			<url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+		</repository>
+
+		<snapshotRepository>
+			<id>wso2.snapshots</id>
+			<name>Apache Snapshot Repository</name>
+			<url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.4.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Name>${project.artifactId}</Bundle-Name>
+						<Export-Package>
+							org.eclipse.paho.*;version="${project.version}",
+						</Export-Package>
+						<Import-Package>
+							org.eclipse.paho.client.mqttv3;resolution:=optional;version="${eclipse.paho.version}",
+							org.eclipse.paho.client.mqttv3.internal;resolution:=optional;version="${eclipse.paho.version}",
+							org.eclipse.paho.client.mqttv3.internal.nls;resolution:=optional;version="${eclipse.paho.version}",
+							org.eclipse.paho.client.mqttv3.internal.security;resolution:=optional;version="${eclipse.paho.version}",
+							org.eclipse.paho.client.mqttv3.internal.wire;resolution:=optional;version="${eclipse.paho.version}",
+							org.eclipse.paho.client.mqttv3.logging;resolution:=optional;version="${eclipse.paho.version}",
+							org.eclipse.paho.client.mqttv3.persist;resolution:=optional;version="${eclipse.paho.version}",
+							org.eclipse.paho.client.mqttv3.util;resolution:=optional;version="${eclipse.paho.version}",
+							com.ibm.mqttdirect.modules.local.bindings;resolution:=optional,
+							javax.net;resolution:=optional,
+							javax.net.ssl;resolution:=optional
+						</Import-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<properties>
+		<eclipse.paho.version>1.0.2</eclipse.paho.version>
+		<eclipse.paho.orbit.version>1.0.2.wso2v1</eclipse.paho.orbit.version>
+	</properties>
+
+</project>
