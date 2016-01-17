@@ -169,6 +169,12 @@
             <version>3.2.9.wso2v1</version>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-saaj</artifactId>
+            <version>1.6.1-wso2v15</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>
@@ -370,7 +376,7 @@
                             org.xml.sax.helpers;resolution:=optionalTool:Bnd-1.50.0
                         </Import-Package>
                         <Bundle-Activator>org.apache.cxf.bus.osgi.CXFActivator</Bundle-Activator>
-                        <Embed-Dependency>neethi|woodstox-core-asl|xmlschema-core|spring.framework;scope=compile|runtime;inline=false</Embed-Dependency>
+                        <Embed-Dependency>neethi|axis-saaj|woodstox-core-asl|xmlschema-core|spring.framework;scope=compile|runtime;inline=false</Embed-Dependency>
                         <Private-Package>
                         </Private-Package>
                         <_failok>true</_failok>
