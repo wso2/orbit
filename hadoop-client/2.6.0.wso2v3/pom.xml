@@ -143,7 +143,7 @@
                             javax.servlet.jsp.*;version ="${servlet-jsp.import.version}",
                             javax.servlet.*;version ="${servlet-api.import.version}",
                             org.slf4j.*;version="${slf4j.import.version}",
-			    com.google.common.*;version="${guava.version.range}",
+                            com.google.common.*;version="${guava.version.range}",
                             com.google.protobuf.*;version="${protobuf.import.version}",
                             org.htrace.*;version="${htrace.import.version}",
                             org.apache.commons.io.*;version="${commons-io.import.version}",
@@ -171,7 +171,7 @@
         <slf4j.import.version>[1.6.0, 1.8.0)</slf4j.import.version>
         <protobuf.import.version>[2.5.0, 2.6.0)</protobuf.import.version>
         <commons-io.import.version>[2.4.0, 2.5.0)</commons-io.import.version>
-	<guava.version.range>[15.0.0, 16.0.0)</guava.version.range>
+        <guava.version.range>[15.0.0, 16.0.0)</guava.version.range>
     </properties>
 
 </project>

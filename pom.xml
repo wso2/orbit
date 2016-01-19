@@ -61,7 +61,6 @@
         <module>lucene/4.10.3-wso2v1</module>
         <module>rabbit-mq/3.4.4.wso2v1</module>
         <module>scannotation/1.0.3.wso2v1</module>
-	<module>hadoop-client/2.6.0.wso2v3</module>
     </modules>
 
     <build>
