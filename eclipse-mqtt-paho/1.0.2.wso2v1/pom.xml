@@ -37,7 +37,6 @@
 			<optional>true</optional>
 		</dependency>
 	</dependencies>
-
 	<repositories>
 		<repository>
 			<id>Eclipse Paho Repo</id>
@@ -45,7 +44,6 @@
 			<url>https://repo.eclipse.org/content/repositories/paho-releases/</url>
 		</repository>
 	</repositories>
-
 	<distributionManagement>
 		<repository>
 			<id>wso2.releases</id>
