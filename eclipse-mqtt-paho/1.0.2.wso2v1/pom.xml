@@ -37,6 +37,7 @@
 			<optional>true</optional>
 		</dependency>
 	</dependencies>
+	
 	<repositories>
 		<repository>
 			<id>Eclipse Paho Repo</id>
