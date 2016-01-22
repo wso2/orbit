@@ -73,14 +73,14 @@
                             org.eclipse.paho.*;version="${project.version}",
                         </Export-Package>
                         <Import-Package>
-                            org.eclipse.paho.client.mqttv3;resolution:=optional;version="${eclipse.paho.version}",
-                            org.eclipse.paho.client.mqttv3.internal;resolution:=optional;version="${eclipse.paho.version}",
-                            org.eclipse.paho.client.mqttv3.internal.nls;resolution:=optional;version="${eclipse.paho.version}",
-                            org.eclipse.paho.client.mqttv3.internal.security;resolution:=optional;version="${eclipse.paho.version}",
-                            org.eclipse.paho.client.mqttv3.internal.wire;resolution:=optional;version="${eclipse.paho.version}",
-                            org.eclipse.paho.client.mqttv3.logging;resolution:=optional;version="${eclipse.paho.version}",
-                            org.eclipse.paho.client.mqttv3.persist;resolution:=optional;version="${eclipse.paho.version}",
-                            org.eclipse.paho.client.mqttv3.util;resolution:=optional;version="${eclipse.paho.version}",
+                            org.eclipse.paho.client.mqttv3;resolution:=optional;version="${eclipse.paho.version.range}",
+                            org.eclipse.paho.client.mqttv3.internal;resolution:=optional;version="${eclipse.paho.version.range}",
+                            org.eclipse.paho.client.mqttv3.internal.nls;resolution:=optional;version="${eclipse.paho.version.range}",
+                            org.eclipse.paho.client.mqttv3.internal.security;resolution:=optional;version="${eclipse.paho.version.range}",
+                            org.eclipse.paho.client.mqttv3.internal.wire;resolution:=optional;version="${eclipse.paho.version.range}",
+                            org.eclipse.paho.client.mqttv3.logging;resolution:=optional;version="${eclipse.paho.version.range}",
+                            org.eclipse.paho.client.mqttv3.persist;resolution:=optional;version="${eclipse.paho.version.range}",
+                            org.eclipse.paho.client.mqttv3.util;resolution:=optional;version="${eclipse.paho.version.range}",
                             com.ibm.mqttdirect.modules.local.bindings;resolution:=optional,
                             javax.net;resolution:=optional,
                             javax.net.ssl;resolution:=optional
@@ -92,6 +92,7 @@
     </build>
 
     <properties>
+        <eclipse.paho.version.range>[1.0.2, 2.0.0)</eclipse.paho.version.range>
         <eclipse.paho.version>1.0.2</eclipse.paho.version>
         <eclipse.paho.orbit.version>1.0.2.wso2v1</eclipse.paho.orbit.version>
     </properties>
