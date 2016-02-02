@@ -151,7 +151,6 @@
                         <Import-Package>
                             *;resolution:=optional
                         </Import-Package>
-                      <DynamicImport-Package>*</DynamicImport-Package>                  
                       <Include-Resource>
                             META-INF=META-INF,
                             smooks-regex.properties=smooks-regex.properties
