@@ -40,11 +40,13 @@
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-core-asl</artifactId>
             <version>${jackson.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
             <version>${jackson.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -79,11 +81,9 @@
                         </Export-Package>
                         <Private-Package/>
                         <Import-Package>
+                            org.codehaus.jackson.*; version="${jackson.version}"
                         </Import-Package>
-                        <Embed-Dependency>
-                            jackson-core-asl;scope=compile|runtime,
-                            jackson-mapper-asl;scope=compile|runtime,
-                        </Embed-Dependency>
+                        <Embed-Dependency/>
                     </instructions>
                 </configuration>
             </plugin>
