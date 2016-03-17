@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- ~ Copyright (c) 2015, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+ ~ Copyright (c) 2016, WSO2 Inc. (http://wso2.com) All Rights Reserved.
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.jknack</groupId>
+    <groupId>org.wso2.orbit.com.github.jknack</groupId>
     <artifactId>handlebars</artifactId>
     <packaging>bundle</packaging>
     <name>com.github.jknack.handlebars.wso2</name>
@@ -43,6 +43,7 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${org.apache.commons.commons-lang3.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <!-- ANTLRv4 -->
@@ -56,6 +57,7 @@
                     <artifactId>org.abego.treelayout.core</artifactId>
                 </exclusion>
             </exclusions>
+            <optional>true</optional>
         </dependency>
 
         <!-- Rhino -->
@@ -63,6 +65,7 @@
             <groupId>org.mozilla</groupId>
             <artifactId>rhino</artifactId>
             <version>${org.mozilla.rhino.version}</version>
+            <optional>true</optional>
         </dependency>
 
         <!-- Logging System -->
@@ -70,6 +73,7 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${org.slf4j.slf4j-api.verison}</version>
+            <optional>true</optional>
         </dependency>
 
     </dependencies>
