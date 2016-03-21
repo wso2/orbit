@@ -79,7 +79,6 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            Java.*;version="${export.pkg.version.swagger-codegen}",
                             TypeScript-node.*;version="${export.pkg.version.swagger-codegen}",
                             TypeScript-Angular.*;version="${export.pkg.version.swagger-codegen}",
                             tizen.*;version="${export.pkg.version.swagger-codegen}",
@@ -116,6 +115,7 @@
                             asyncscala.*;version="${export.pkg.version.swagger-codegen}",
                             android.*;version="${export.pkg.version.swagger-codegen}",
                             akka-scala.*;version="${export.pkg.version.swagger-codegen}",
+                            Java.*;version="${export.pkg.version.swagger-codegen}",
                             io.swagger.*;version="${export.pkg.version.swagger-codegen}",
                         </Export-Package>
                         <Import-Package>
