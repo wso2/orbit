@@ -78,8 +78,7 @@
                             org.apache.commons.io.comparator;version="1.4",
                             org.apache.commons.io.filefilter;version="1.4",
                             org.apache.commons.io.input;version="1.4",
-                            org.apache.commons.io.output;version="1.4",
-                            *;resolution:=optional
+                            org.apache.commons.io.output;version="1.4"
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
