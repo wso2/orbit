@@ -1,38 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!DOCTYPE project [
-        <!ELEMENT project (modelVersion|groupId|artifactId|version|packaging|name|description|url|dependencies|build|properties)*>
-        <!ATTLIST project
-                xmlns CDATA #REQUIRED
-                xmlns:xsi CDATA #REQUIRED
-                xsi:schemaLocation CDATA #REQUIRED>
-        <!ELEMENT modelVersion (#PCDATA)>
-        <!ELEMENT groupId (#PCDATA)>
-        <!ELEMENT artifactId (#PCDATA)>
-        <!ELEMENT version (#PCDATA)>
-        <!ELEMENT packaging (#PCDATA)>
-        <!ELEMENT name (#PCDATA)>
-        <!ELEMENT description (#PCDATA)>
-        <!ELEMENT url (#PCDATA)>
-        <!ELEMENT dependencies (dependency)*>
-        <!ELEMENT dependency (groupId|artifactId|version)*>
-        <!ELEMENT build (plugins)*>
-        <!ELEMENT plugins (plugin)*>
-        <!ELEMENT plugin (groupId|artifactId|version|extensions|configuration)*>
-        <!ELEMENT extensions (#PCDATA)>
-        <!ELEMENT configuration (instructions)*>
-        <!ELEMENT instructions (Bundle-SymbolicName|Bundle-Name|Export-Package|Private-Package|Import-Package|Include-Resource)*>
-        <!ELEMENT Bundle-SymbolicName (#PCDATA)>
-        <!ELEMENT Bundle-Name (#PCDATA)>
-        <!ELEMENT Export-Package (#PCDATA)>
-        <!ELEMENT Private-Package (#PCDATA)>
-        <!ELEMENT Import-Package (#PCDATA)>
-        <!ELEMENT Include-Resource (#PCDATA)>
-        <!ELEMENT properties (json.version|export.pkg.version.json|project.build.sourceEncoding)*>
-        <!ELEMENT json.version (#PCDATA)>
-        <!ELEMENT export.pkg.version.json (#PCDATA)>
-        <!ELEMENT project.build.sourceEncoding (#PCDATA)>
-        ]>
+<!--
+ ~ Copyright (c) 2005-2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -116,7 +99,7 @@
                             android.*;version="${export.pkg.version.swagger-codegen}",
                             akka-scala.*;version="${export.pkg.version.swagger-codegen}",
                             Java.*;version="${export.pkg.version.swagger-codegen}",
-                            io.swagger.*;version="${export.pkg.version.swagger-codegen}",
+                            io.swagger.*;version="${export.pkg.version.swagger-codegen}"
                         </Export-Package>
                         <Import-Package>
                             org.apache.commons.io;version="1.4",
