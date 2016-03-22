@@ -37,11 +37,13 @@
             <groupId>io.swagger</groupId>
             <artifactId>swagger-parser</artifactId>
             <version>1.0.17</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>1.4</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
