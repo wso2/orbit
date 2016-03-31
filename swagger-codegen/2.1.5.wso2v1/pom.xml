@@ -123,7 +123,12 @@
                             org.apache.commons.io.filefilter;version="1.4",
                             org.apache.commons.io.input;version="1.4",
                             org.apache.commons.io.output;version="1.4",
-                            org.joda.time.*;version="2.9.2"
+                            org.joda.time.*;version="2.9.2",
+                            io.swagger.models.refs; version="1.5.6",
+                            io.swagger.models.properties; version="1.5.6",
+                            io.swagger.models.parameters; version="1.5.6",
+                            io.swagger.models.auth; version="1.5.6",
+                            io.swagger.models; version="1.5.6"
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
