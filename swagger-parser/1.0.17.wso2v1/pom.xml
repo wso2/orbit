@@ -44,7 +44,7 @@
             <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-    
+
     <dependencies>
         <dependency>
             <groupId>io.swagger</groupId>
