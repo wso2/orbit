@@ -115,7 +115,7 @@
                             android.*;version="${export.pkg.version.swagger-codegen}",
                             akka-scala.*;version="${export.pkg.version.swagger-codegen}",
                             Java.*;version="${export.pkg.version.swagger-codegen}",
-                            io.swagger.*;version="${export.pkg.version.swagger-codegen}"
+                            io.swagger.*;uses:="io.swagger.models.refs,io.swagger.models.properties,io.swagger.models.parameters,io.swagger.models.auth,io.swagger.models";version="${export.pkg.version.swagger-codegen}"
                         </Export-Package>
                         <Import-Package>
                             org.apache.commons.io;version="1.4",
@@ -124,11 +124,11 @@
                             org.apache.commons.io.input;version="1.4",
                             org.apache.commons.io.output;version="1.4",
                             org.joda.time.*;version="2.9.2",
-                            io.swagger.models.refs; version="1.5.6",
-                            io.swagger.models.properties; version="1.5.6",
-                            io.swagger.models.parameters; version="1.5.6",
-                            io.swagger.models.auth; version="1.5.6",
-                            io.swagger.models; version="1.5.6"
+                            io.swagger.models.refs; version="1.5.6.SNAPSHOT",
+                            io.swagger.models.properties; version="1.5.6.SNAPSHOT",
+                            io.swagger.models.parameters; version="1.5.6.SNAPSHOT",
+                            io.swagger.models.auth; version="1.5.6.SNAPSHOT",
+                            io.swagger.models; version="1.5.6.SNAPSHOT"
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
