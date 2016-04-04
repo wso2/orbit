@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
- ~ Copyright (c) 2005-2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2005-2014, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ WSO2 Inc. licenses this file to you under the Apache License,
  ~ Version 2.0 (the "License"); you may not use this file except
@@ -22,13 +22,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.orbit.commons-codec</groupId>
-    <artifactId>commons-codec</artifactId>
-    <version>1.10.wso2v1</version>
+    <groupId>org.wso2.orbit.org.apache.commons</groupId>
+    <artifactId>commons-compress</artifactId>
+    <version>1.9.0.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>commons-codec.wso2</name>
+    <name>commons-compress.wso2</name>
     <description>
-        This bundle exports org.apache.commons.codec
+        This bundle exports org.apache.commons.compress
     </description>
     <url>http://wso2.org</url>
 
@@ -60,11 +60,11 @@
     </distributionManagement>
 
     <dependencies>
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>${commons-codec.version}</version>
-        </dependency>
+       <dependency>
+	<groupId>org.apache.commons</groupId>
+	<artifactId>commons-compress</artifactId>
+	<version>${commons-compress.version}</version>
+     </dependency>
     </dependencies>
 
     <build>
@@ -79,12 +79,12 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.commons.codec.*;version="${project.version}"
+                            org.apache.commons.compress.*;version="${project.version}"
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !org.apache.commons.codec.*,
+                            !org.apache.commons.compress.*,
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
@@ -97,6 +97,6 @@
     </build>
 
     <properties>
-        <commons-codec.version>1.10</commons-codec.version>
+        <commons-compress.version>1.9</commons-compress.version>
     </properties>
 </project>

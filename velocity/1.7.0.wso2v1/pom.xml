@@ -22,13 +22,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.orbit.commons-codec</groupId>
-    <artifactId>commons-codec</artifactId>
-    <version>1.10.wso2v1</version>
+    <groupId>org.wso2.orbit.org.apache.velocity</groupId>
+    <artifactId>velocity</artifactId>
+    <version>1.7.0.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>commons-codec.wso2</name>
+    <name>velocity.wso2</name>
     <description>
-        This bundle exports org.apache.commons.codec
+        This bundle exports org.apache.velocity
     </description>
     <url>http://wso2.org</url>
 
@@ -61,9 +61,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>${commons-codec.version}</version>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>${velocity.version}</version>
         </dependency>
     </dependencies>
 
@@ -76,15 +76,16 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Bundle-Vendor>WSO2, Inc.</Bundle-Vendor>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.commons.codec.*;version="${project.version}"
+                            org.apache.velocity.*;version="${project.version}"
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !org.apache.commons.codec.*,
+                            !org.apache.velocity.*,
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
@@ -97,6 +98,6 @@
     </build>
 
     <properties>
-        <commons-codec.version>1.10</commons-codec.version>
+        <velocity.version>1.7</velocity.version>
     </properties>
 </project>
