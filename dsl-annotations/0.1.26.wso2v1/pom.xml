@@ -64,6 +64,7 @@
             <groupId>io.sundr</groupId>
             <artifactId>dsl-annotations</artifactId>
             <version>${dsl-annotations.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

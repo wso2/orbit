@@ -64,6 +64,7 @@
             <groupId>com.squareup.okhttp</groupId>
             <artifactId>okhttp-ws</artifactId>
             <version>${okhttp-ws.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

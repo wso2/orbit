@@ -64,6 +64,7 @@
             <groupId>io.fabric8</groupId>
             <artifactId>docker-client</artifactId>
             <version>${docker.client.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

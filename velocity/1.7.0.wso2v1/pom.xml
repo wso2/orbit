@@ -64,6 +64,7 @@
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
             <version>${velocity.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

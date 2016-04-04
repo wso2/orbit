@@ -64,11 +64,13 @@
             <groupId>io.fabric8</groupId>
             <artifactId>kubernetes-model</artifactId>
             <version>${kubernetes-model.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>io.fabric8</groupId>
             <artifactId>kubernetes-api</artifactId>
             <version>${kubernetes-api.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

@@ -64,6 +64,7 @@
             <groupId>dnsjava</groupId>
             <artifactId>dnsjava</artifactId>
             <version>${dnsjava.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

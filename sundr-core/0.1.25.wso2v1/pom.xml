@@ -64,6 +64,7 @@
             <groupId>io.sundr</groupId>
             <artifactId>sundr-core</artifactId>
             <version>${sundr-core.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

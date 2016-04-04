@@ -65,6 +65,7 @@
             <groupId>com.squareup.okhttp</groupId>
             <artifactId>logging-interceptor</artifactId>
             <version>${logging-interceptor.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

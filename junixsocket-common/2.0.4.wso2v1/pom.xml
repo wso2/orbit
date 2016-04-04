@@ -65,6 +65,7 @@
             <groupId>com.kohlschutter.junixsocket</groupId>
             <artifactId>junixsocket-common</artifactId>
             <version>${junixsocket-common.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
