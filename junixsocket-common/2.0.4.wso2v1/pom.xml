@@ -61,11 +61,11 @@
 
 
     <dependencies>
-	<dependency>
-	<groupId>com.kohlschutter.junixsocket</groupId>
-	<artifactId>junixsocket-common</artifactId>
-	<version>${junixsocket-common.version}</version>
-	</dependency>
+        <dependency>
+            <groupId>com.kohlschutter.junixsocket</groupId>
+            <artifactId>junixsocket-common</artifactId>
+            <version>${junixsocket-common.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -77,18 +77,18 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-			<Bundle-Vendor>WSO2, Inc.</Bundle-Vendor>
+                        <Bundle-Vendor>WSO2, Inc.</Bundle-Vendor>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                           org.newsclub.net.unix.*;version="${project.version}"
+                            org.newsclub.net.unix.*;version="${project.version}"
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
                             !org.newsclub.net.unix.*,*;resolution:=optional
                         </Import-Package>
-			<Include-Resource>
+                        <Include-Resource>
                             {maven-resources}
                         </Include-Resource>
                     </instructions>

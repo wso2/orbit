@@ -28,7 +28,7 @@
     <packaging>bundle</packaging>
     <name>logging-interceptor.wso2</name>
     <description>
-        This bundle exports com.squareup.okhttp.logging 
+        This bundle exports com.squareup.okhttp.logging
     </description>
     <url>http://wso2.org</url>
 
@@ -61,11 +61,11 @@
 
 
     <dependencies>
-      <dependency>
-	<groupId>com.squareup.okhttp</groupId>
-	<artifactId>logging-interceptor</artifactId>
-	<version>${logging-interceptor.version}</version>
-      </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp</groupId>
+            <artifactId>logging-interceptor</artifactId>
+            <version>${logging-interceptor.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -77,20 +77,20 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-			<Bundle-Vendor>WSO2, Inc.</Bundle-Vendor>
+                        <Bundle-Vendor>WSO2, Inc.</Bundle-Vendor>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                           com.squareup.okhttp.logging.*;version="${project.version}"
+                            com.squareup.okhttp.logging.*;version="${project.version}"
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
                             !com.squareup.okhttp.logging.*,
-			    com.squareup.okhttp.*;version="[2.7.2, 3.0.0)";resolution:=optional,
-			    ,*;resolution:=optional
+                            com.squareup.okhttp.*;version="[2.7.2, 3.0.0)";resolution:=optional,
+                            ,*;resolution:=optional
                         </Import-Package>
-			<Include-Resource>
+                        <Include-Resource>
                             {maven-resources}
                         </Include-Resource>
                     </instructions>
