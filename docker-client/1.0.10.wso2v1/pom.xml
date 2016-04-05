@@ -28,7 +28,7 @@
     <packaging>bundle</packaging>
     <name>docker-client.wso2</name>
     <description>
-        This bundle exports io.fabric8.docker.client
+        This bundle exports io.fabric8.docker
     </description>
     <url>http://wso2.org</url>
 
@@ -63,7 +63,19 @@
         <dependency>
             <groupId>io.fabric8</groupId>
             <artifactId>docker-client</artifactId>
-            <version>${docker.client.version}</version>
+            <version>${docker-client.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>docker-dsl</artifactId>
+            <version>${docker-dsl.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>docker-model</artifactId>
+            <version>${docker-model.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -81,13 +93,37 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            io.fabric8.docker.client.*;version="${project.version}"
+                            io.fabric8.docker.*;version="${project.version}";-split-package:=merge-first
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !io.fabric8.docker.client.*,
-                            *;resolution:=optional
+                            !io.fabric8.docker.*,
+                            com.fasterxml.jackson.annotation;version="[2.7.0,3.0.0)",
+                            com.fasterxml.jackson.databind;version="[2.7.0,3.0.0)",
+                            com.fasterxml.jackson.databind.type;version="[2.7.0,3.0.0)",
+                            com.squareup.okhttp;version="[2.7.2,3.0.0)",
+                            com.squareup.okhttp.logging;version="[2.7.2,3.0.0)",
+                            com.squareup.okhttp.ws;version="[2.7.2,3.0.0)",
+                            io.fabric8.docker.api.builder;version="[1.0.0,2.0.0)",
+                            io.fabric8.docker.api.model;version="[1.0.0,2.0.0)",
+                            io.fabric8.docker.dsl;version="[1.0.0,2.0.0)",
+                            io.fabric8.docker.dsl.container;version="[1.0.0,2.0.0)",
+                            io.fabric8.docker.dsl.image;version="[1.0.0,2.0.0)",
+                            io.fabric8.docker.dsl.misc;version="[1.0.0,2.0.0)",
+                            io.fabric8.docker.dsl.network;version="[1.0.0,2.0.0)",
+                            io.fabric8.docker.dsl.volume;version="[1.0.0,2.0.0)",
+                            javax.net,
+                            javax.net.ssl,
+                            javax.security.auth.x500,
+                            javax.validation;version="[1.1.0,2.0.0)",
+                            okio;version="[1.6.0,1.7.0)",
+                            org.apache.commons.codec.binary;version="[1.10.0,2.0.0)",
+                            org.apache.commons.compress.archivers;version="[1.9.0,2.0.0)",
+                            org.apache.commons.compress.archivers.tar;version="[1.9.0,2.0.0)",
+                            org.apache.commons.compress.compressors.bzip2;version="[1.9.0,2.0.0)",
+                            org.newsclub.net.unix;version="[2.0.0,2.1.0)",
+                            org.slf4j;version="[1.7.0,2.0.0)"
                         </Import-Package>
                         <Include-Resource>
                             {maven-resources}
@@ -99,6 +135,8 @@
     </build>
 
     <properties>
-        <docker.client.version>1.0.10</docker.client.version>
+        <docker-client.version>1.0.10</docker-client.version>
+        <docker-dsl.version>1.0.10</docker-dsl.version>
+        <docker-model.version>1.0.10</docker-model.version>
     </properties>
 </project>
