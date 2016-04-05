@@ -80,7 +80,7 @@
                             org.apache.commons.lang3.builder; version="3.4.0.wso2v1",
                             org.apache.commons.lang3; version="3.4.0.wso2v1",
                             javax.net.ssl; version="0.0.0",
-                            io.swagger.util; version="1.5.8",
+                            io.swagger.util; version="[1.5.7, 1.5.9)",
                             io.swagger.models.refs; version="1.5.8",
                             io.swagger.models.properties; version="1.5.8",
                             io.swagger.models.parameters; version="1.5.8",

@@ -64,6 +64,12 @@
             <version>2.9.2</version>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>1.5.6</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>
@@ -115,20 +121,22 @@
                             android.*;version="${export.pkg.version.swagger-codegen}",
                             akka-scala.*;version="${export.pkg.version.swagger-codegen}",
                             Java.*;version="${export.pkg.version.swagger-codegen}",
-                            io.swagger.*;uses:="io.swagger.models.refs,io.swagger.models.properties,io.swagger.models.parameters,io.swagger.models.auth,io.swagger.models";version="${export.pkg.version.swagger-codegen}"
+                            io.swagger.*;version="${export.pkg.version.swagger-codegen}"
                         </Export-Package>
                         <Import-Package>
+                            !io.swagger.codegen.*,
+                            !io.swagger.parser.*,
                             org.apache.commons.io;version="1.4",
                             org.apache.commons.io.comparator;version="1.4",
                             org.apache.commons.io.filefilter;version="1.4",
                             org.apache.commons.io.input;version="1.4",
                             org.apache.commons.io.output;version="1.4",
                             org.joda.time.*;version="2.9.2",
-                            io.swagger.models.refs; version="1.5.6.SNAPSHOT",
-                            io.swagger.models.properties; version="1.5.6.SNAPSHOT",
-                            io.swagger.models.parameters; version="1.5.6.SNAPSHOT",
-                            io.swagger.models.auth; version="1.5.6.SNAPSHOT",
-                            io.swagger.models; version="1.5.6.SNAPSHOT"
+                            !io.swagger.models.refs.*,
+                            !io.swagger.models.properties.*,
+                            !io.swagger.models.parameters.*,
+                            !io.swagger.models.auth.*,
+                            !io.swagger.models.*
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
@@ -137,7 +145,8 @@
                         </Include-Resource>
                         <Embed-Dependency>
                             joda-time;scope=compile|runtime;inline=false,
-                            commons-io;scope=compile|runtime;inline=false
+                            commons-io;scope=compile|runtime;inline=false,
+                            swagger-models;scope=compile|runtime;inline=false
                         </Embed-Dependency>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
