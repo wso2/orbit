@@ -87,8 +87,7 @@
                         </Private-Package>
                         <Import-Package>
                             !com.squareup.okhttp.*,
-                            okio;version="[1.6.0, 1.7.0)";resolution:=optional,
-                            *;resolution:=optional
+                            okio;version="[1.6.0, 1.7.0)"
                         </Import-Package>
                         <Include-Resource>
                             {maven-resources}

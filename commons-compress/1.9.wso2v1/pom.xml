@@ -85,8 +85,7 @@
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !org.apache.commons.compress.*,
-                            *;resolution:=optional
+                            !org.apache.commons.compress.*
                         </Import-Package>
                         <Include-Resource>
                             {maven-resources}

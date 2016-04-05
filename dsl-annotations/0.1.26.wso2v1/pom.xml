@@ -86,7 +86,7 @@
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !io.sundr.dsl.annotations.*,*;resolution:=optional
+                            !io.sundr.dsl.annotations.*
                         </Import-Package>
                         <Include-Resource>
                             {maven-resources}

@@ -86,7 +86,7 @@
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !org.newsclub.net.unix.*,*;resolution:=optional
+                            !org.newsclub.net.unix.*
                         </Import-Package>
                         <Include-Resource>
                             {maven-resources}

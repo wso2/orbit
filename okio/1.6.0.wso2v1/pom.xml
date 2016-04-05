@@ -86,8 +86,7 @@
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !okio.*,
-                            *;resolution:=optional
+                            !okio.*
                         </Import-Package>
                         <Include-Resource>
                             {maven-resources}

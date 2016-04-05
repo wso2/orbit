@@ -86,8 +86,7 @@
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !dnsjava.*,
-                            *;resolution:=optional
+                            !dnsjava.*
                         </Import-Package>
                         <Include-Resource>
                             {maven-resources}
