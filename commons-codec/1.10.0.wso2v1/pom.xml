@@ -24,7 +24,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.commons-codec</groupId>
     <artifactId>commons-codec</artifactId>
-    <version>1.10.wso2v1</version>
+    <version>1.10.0.wso2v1</version>
     <packaging>bundle</packaging>
     <name>commons-codec.wso2</name>
     <description>

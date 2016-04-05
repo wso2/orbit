@@ -85,8 +85,7 @@
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !org.slf4j.*,
-                            *;resolution:=optional
+                            !org.slf4j.*
                         </Import-Package>
                         <Include-Resource>
                             {maven-resources}
