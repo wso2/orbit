@@ -149,7 +149,7 @@
     </build>
 
     <properties>
-        <export.pkg.version.swagger-codegen>2.1.5.wso2v1</export.pkg.version.swagger-codegen>
+        <export.pkg.version.swagger-codegen>2.1.6.wso2v1</export.pkg.version.swagger-codegen>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
