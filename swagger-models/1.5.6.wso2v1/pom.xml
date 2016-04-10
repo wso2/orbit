@@ -22,12 +22,12 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.io.swagger</groupId>
-    <artifactId>swagger-parser</artifactId>
-    <version>1.0.17.wso2v1</version>
+    <artifactId>swagger-models</artifactId>
+    <version>1.5.6.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>WSO2 Carbon Orbit - swagger-parser (io.swagger)</name>
+    <name>WSO2 Carbon Orbit - swagger-models (io.swagger)</name>
     <description>
-        This bundle will export packages from swagger-parser libraries of io.swagger
+        This bundle will export packages from swagger-models libraries of io.swagger
     </description>
     <url>http://wso2.org</url>
 
@@ -48,15 +48,8 @@
     <dependencies>
         <dependency>
             <groupId>io.swagger</groupId>
-            <artifactId>swagger-parser</artifactId>
-            <version>1.0.17</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>1.4</version>
-            <optional>true</optional>
+            <artifactId>swagger-models</artifactId>
+            <version>1.5.6</version>
         </dependency>
     </dependencies>
 
@@ -72,37 +65,21 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            io.swagger.parser.*;version="${export.pkg.version.swagger-parser}"
+                            io.swagger.models.auth;uses:="com.fasterxml.jackson.annotation";version="1.5.6",
+                            io.swagger.models.parameters;uses:="com.fasterxml.jackson.annotation,io.swagger.models.properties,org.slf4j,io.swagger.models,io.swagger.models.refs";version="1.5.6",
+                            io.swagger.models.properties;uses:="io.swagger.models,com.fasterxml.jackson.annotation,org.slf4j,io.swagger.models.refs";version="1.5.6",
+                            io.swagger.models.refs;version="1.5.6.SNAPSHOT",
+                            io.swagger.models;uses:="com.fasterxml.jackson.annotation,io.swagger.models.properties,javax.xml.bind.annotation,io.swagger.models.parameters,io.swagger.models.refs,io.swagger.models.auth";version="1.5.6"
                         </Export-Package>
                         <Import-Package>
-                            !io.swagger.parser.*,
-                            org.slf4j; version="1.7.12",
-                            org.apache.commons.lang3.builder; version="3.4.0.wso2v1",
-                            org.apache.commons.lang3; version="3.4.0.wso2v1",
-                            javax.net.ssl; version="0.0.0",
-                            io.swagger.util; version="[1.5.7, 1.5.9)",
-                            io.swagger.models.refs; version="1.5.8",
-                            io.swagger.models.properties; version="1.5.8",
-                            io.swagger.models.parameters; version="1.5.8",
-                            io.swagger.models.auth; version="1.5.8",
-                            io.swagger.models; version="1.5.8",
-                            com.fasterxml.jackson.databind.type; version="2.7.2",
-                            com.fasterxml.jackson.databind.node; version="2.7.2",
-                            com.fasterxml.jackson.databind; version="2.7.2",
-                            org.apache.commons.io;version="1.4",
-                            org.apache.commons.io.comparator;version="1.4",
-                            org.apache.commons.io.filefilter;version="1.4",
-                            org.apache.commons.io.input;version="1.4",
-                            org.apache.commons.io.output;version="1.4"
+                            com.fasterxml.jackson.annotation;version="[2.4,3)",
+                            javax.xml.bind.annotation,org.slf4j;version="[1.6,2)"
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
                         <Include-Resource>
                             {maven-resources}
                         </Include-Resource>
-                        <Embed-Dependency>
-                            commons-io;scope=compile|runtime;inline=false
-                        </Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
@@ -110,7 +87,7 @@
     </build>
 
     <properties>
-        <export.pkg.version.swagger-parser>1.0.17.wso2v1</export.pkg.version.swagger-parser>
+        <export.pkg.version.swagger-models>1.5.6</export.pkg.version.swagger-models>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
