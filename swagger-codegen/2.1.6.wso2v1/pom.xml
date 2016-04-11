@@ -53,12 +53,6 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>1.4</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
             <version>2.9.2</version>
@@ -132,8 +126,7 @@
                             {maven-resources}
                         </Include-Resource>
                         <Embed-Dependency>
-                            joda-time;scope=compile|runtime;inline=false,
-                            commons-io;scope=compile|runtime;inline=false
+                            joda-time;scope=compile|runtime;inline=false
                         </Embed-Dependency>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
