@@ -1,0 +1,199 @@
+<!--
+ ~ Copyright (c) 2005-2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.wadl.core</groupId>
+    <artifactId>wadl-core</artifactId>
+    <packaging>bundle</packaging>
+    <name>wsdl-core.wso2</name>
+    <version>${wadl-core.version}.wso2v1</version>
+    <description>
+        wadl-core. This bundle will export packages from wadl-core-1.1.6.jar
+    </description>
+    <url>http://wso2.org</url>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jvnet.ws.wadl</groupId>
+            <artifactId>wadl-core</artifactId>
+            <version>${wadl-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.jsonschema2pojo</groupId>
+            <artifactId>jsonschema2pojo-core</artifactId>
+            <version>${jsonschema2pojo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>jsr311-api</artifactId>
+            <version>${jsr311-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.localizer</groupId>
+            <artifactId>localizer</artifactId>
+            <version>${localizer.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.localizer</groupId>
+            <artifactId>comresrcgen</artifactId>
+            <version>${comresrcgen.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>${activation.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>${jaxb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${jersey-client.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>2.3.7</version>
+                <configuration>
+                    <instructions>
+                        <Bundle-Vendor>WSO2 Inc</Bundle-Vendor>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            org.jvnet.ws.wadl.*; version="${project.version}",
+                            org.jvnet.ws.wadl2java.*; version="${project.version}",
+                            com.sun.*; version="${project.version}";-split-package:=merge-first,
+                        </Export-Package>
+                        <Import-Package>
+                            com.sun.source.tree;resolution:=optional,
+                            com.sun.source.util;resolution:=optional,
+                            javax.annotation.processing;resolution:=optional,
+                            javax.lang.model;resolution:=optional,
+                            javax.lang.model.element;resolution:=optional,
+                            javax.lang.model.type;resolution:=optional,
+                            javax.lang.model.util;resolution:=optional,
+                            javax.tools;resolution:=optional,
+                            org.jsonschema2pojo;resolution:=optional,
+                            org.jsonschema2pojo.rules;resolution:=optional,
+                            com.sun.activation.registries;version="[1.1,2)";resolution:=optional,
+                            com.sun.mirror.apt;resolution:=optional,
+                            com.sun.mirror.declaration;resolution:=optional,
+                            com.sun.mirror.type;resolution:=optional,
+                            com.sun.mirror.util;resolution:=optional,
+                            com.sun.xml.fastinfoset.sax;resolution:=optional,
+                            com.sun.xml.fastinfoset.stax;resolution:=optional,
+                            javax.annotation;resolution:=optional,
+                            javax.imageio;resolution:=optional,
+                            javax.imageio.spi;resolution:=optional,
+                            javax.imageio.stream;resolution:=optional,
+                            javax.mail;resolution:=optional,
+                            javax.mail.internet;resolution:=optional,
+                            javax.mail.util;resolution:=optional,
+                            javax.net.ssl;resolution:=optional,
+                            javax.swing;resolution:=optional,
+                            javax.swing.border;resolution:=optional,
+                            javax.swing.tree;resolution:=optional,
+                            javax.xml.bind;version="0.0.0";resolution:=optional,
+                            javax.xml.bind.annotation;version="0.0.0";resolution:=optional,
+                            javax.xml.bind.annotation.adapters;resolution:=optional,
+                            javax.xml.bind.attachment;resolution:=optional,
+                            javax.xml.bind.helpers;resolution:=optional,
+                            javax.xml.datatype;resolution:=optional,
+                            javax.xml.namespace;version="0.0.0";resolution:=optional,
+                            javax.xml.parsers;resolution:=optional,
+                            javax.xml.stream;resolution:=optional,
+                            javax.xml.stream.events;resolution:=optional,
+                            javax.xml.transform;version="0.0.0";resolution:=optional,
+                            javax.xml.transform.dom;resolution:=optional,
+                            javax.xml.transform.sax;resolution:=optional,
+                            javax.xml.transform.stream;version="0.0.0";resolution:=optional,
+                            javax.xml.validation;resolution:=optional,
+                            javax.xml.xpath;resolution:=optional,
+                            org.apache.tools.ant;resolution:=optional,
+                            org.apache.tools.ant.taskdefs;resolution:=optional,
+                            org.apache.tools.ant.taskdefs.compilers;resolution:=optional,
+                            org.apache.tools.ant.types;resolution:=optional,
+                            org.jvnet.fastinfoset;resolution:=optional,
+                            org.jvnet.staxex;resolution:=optional,
+                            org.kohsuke.rngom.ast.builder;resolution:=optional,
+                            org.kohsuke.rngom.ast.om;resolution:=optional,
+                            org.kohsuke.rngom.ast.util;resolution:=optional,
+                            org.kohsuke.rngom.digested;resolution:=optional,
+                            org.kohsuke.rngom.nc;resolution:=optional,
+                            org.kohsuke.rngom.parse;resolution:=optional,
+                            org.kohsuke.rngom.parse.compact;resolution:=optional,
+                            org.kohsuke.rngom.parse.xml;resolution:=optional,
+                            org.kohsuke.rngom.xml.sax;resolution:=optional,
+                            org.osgi.framework;resolution:=optional,
+                            org.relaxng.datatype;resolution:=optional,
+                            org.w3c.dom;resolution:=optional,
+                            org.w3c.dom.ls;resolution:=optional,
+                            org.xml.sax;version="0.0.0";resolution:=optional,
+                            org.xml.sax.ext;resolution:=optional,
+                            org.xml.sax.helpers;resolution:=optional,
+                            sun.nio.cs;resolution:=optional
+                        </Import-Package>
+                        <Include-Resource>@wadl-core-${wadl-core.version}.jar!/xsd/**</Include-Resource>
+                        <Embed-Dependency>
+                            jsr311-api|localizer|activation|runtime;inline=false;
+                        </Embed-Dependency>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <properties>
+        <wadl-core.version>1.1.6</wadl-core.version>
+        <jsonschema2pojo.version>0.3.4</jsonschema2pojo.version>
+        <jsr311-api.version>1.1.1</jsr311-api.version>
+        <localizer.version>1.0</localizer.version>
+        <comresrcgen.version>1.0</comresrcgen.version>
+        <activation.version>1.1.1</activation.version>
+        <jaxb.version>2.2.6</jaxb.version>
+        <jersey-client.version>1.12</jersey-client.version>
+    </properties>
+</project>
