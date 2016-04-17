@@ -89,6 +89,18 @@
             <artifactId>jersey-client</artifactId>
             <version>${jersey-client.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-xjc</artifactId>
+            <version>${jaxb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>${jersey-client.version}</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -106,80 +118,67 @@
                         <Export-Package>
                             org.jvnet.ws.wadl.*; version="${project.version}",
                             org.jvnet.ws.wadl2java.*; version="${project.version}",
-                            com.sun.*; version="${project.version}";-split-package:=merge-first,
+                            com.sun.jersey.*; version="${project.version}",
                         </Export-Package>
                         <Import-Package>
-                            com.sun.source.tree;resolution:=optional,
-                            com.sun.source.util;resolution:=optional,
-                            javax.annotation.processing;resolution:=optional,
-                            javax.lang.model;resolution:=optional,
-                            javax.lang.model.element;resolution:=optional,
-                            javax.lang.model.type;resolution:=optional,
-                            javax.lang.model.util;resolution:=optional,
-                            javax.tools;resolution:=optional,
-                            org.jsonschema2pojo;resolution:=optional,
-                            org.jsonschema2pojo.rules;resolution:=optional,
-                            com.sun.activation.registries;version="[1.1,2)";resolution:=optional,
-                            com.sun.mirror.apt;resolution:=optional,
-                            com.sun.mirror.declaration;resolution:=optional,
-                            com.sun.mirror.type;resolution:=optional,
-                            com.sun.mirror.util;resolution:=optional,
-                            com.sun.xml.fastinfoset.sax;resolution:=optional,
-                            com.sun.xml.fastinfoset.stax;resolution:=optional,
-                            javax.annotation;resolution:=optional,
-                            javax.imageio;resolution:=optional,
-                            javax.imageio.spi;resolution:=optional,
-                            javax.imageio.stream;resolution:=optional,
-                            javax.mail;resolution:=optional,
-                            javax.mail.internet;resolution:=optional,
-                            javax.mail.util;resolution:=optional,
-                            javax.net.ssl;resolution:=optional,
-                            javax.swing;resolution:=optional,
-                            javax.swing.border;resolution:=optional,
-                            javax.swing.tree;resolution:=optional,
-                            javax.xml.bind;version="0.0.0";resolution:=optional,
-                            javax.xml.bind.annotation;version="0.0.0";resolution:=optional,
-                            javax.xml.bind.annotation.adapters;resolution:=optional,
-                            javax.xml.bind.attachment;resolution:=optional,
-                            javax.xml.bind.helpers;resolution:=optional,
-                            javax.xml.datatype;resolution:=optional,
-                            javax.xml.namespace;version="0.0.0";resolution:=optional,
-                            javax.xml.parsers;resolution:=optional,
-                            javax.xml.stream;resolution:=optional,
-                            javax.xml.stream.events;resolution:=optional,
-                            javax.xml.transform;version="0.0.0";resolution:=optional,
-                            javax.xml.transform.dom;resolution:=optional,
-                            javax.xml.transform.sax;resolution:=optional,
-                            javax.xml.transform.stream;version="0.0.0";resolution:=optional,
-                            javax.xml.validation;resolution:=optional,
-                            javax.xml.xpath;resolution:=optional,
-                            org.apache.tools.ant;resolution:=optional,
-                            org.apache.tools.ant.taskdefs;resolution:=optional,
-                            org.apache.tools.ant.taskdefs.compilers;resolution:=optional,
-                            org.apache.tools.ant.types;resolution:=optional,
-                            org.jvnet.fastinfoset;resolution:=optional,
-                            org.jvnet.staxex;resolution:=optional,
-                            org.kohsuke.rngom.ast.builder;resolution:=optional,
-                            org.kohsuke.rngom.ast.om;resolution:=optional,
-                            org.kohsuke.rngom.ast.util;resolution:=optional,
-                            org.kohsuke.rngom.digested;resolution:=optional,
-                            org.kohsuke.rngom.nc;resolution:=optional,
-                            org.kohsuke.rngom.parse;resolution:=optional,
-                            org.kohsuke.rngom.parse.compact;resolution:=optional,
-                            org.kohsuke.rngom.parse.xml;resolution:=optional,
-                            org.kohsuke.rngom.xml.sax;resolution:=optional,
-                            org.osgi.framework;resolution:=optional,
-                            org.relaxng.datatype;resolution:=optional,
-                            org.w3c.dom;resolution:=optional,
-                            org.w3c.dom.ls;resolution:=optional,
-                            org.xml.sax;version="0.0.0";resolution:=optional,
-                            org.xml.sax.ext;resolution:=optional,
-                            org.xml.sax.helpers;resolution:=optional,
-                            sun.nio.cs;resolution:=optional
+                            org.xml.sax.helpers; version="0.0.0";resolution:=optional,
+                            org.xml.sax.ext; version="0.0.0";resolution:=optional,
+                            org.xml.sax; version="0.0.0";resolution:=optional,
+                            org.w3c.dom.ls; version="0.0.0";resolution:=optional,
+                            org.w3c.dom; version="0.0.0";resolution:=optional,
+                            org.osgi.framework; version="1.7.0";resolution:=optional,
+                            org.apache.tools.ant.types; version="0.0.0";resolution:=optional,
+                            org.apache.tools.ant.taskdefs.compilers; version="0.0.0";resolution:=optional,
+                            org.apache.tools.ant.taskdefs; version="0.0.0";resolution:=optional,
+                            org.apache.tools.ant; version="0.0.0";resolution:=optional,
+                            javax.xml.xpath; version="0.0.0";resolution:=optional,
+                            javax.xml.validation; version="0.0.0";resolution:=optional,
+                            javax.xml.transform.stream; version="0.0.0";resolution:=optional,
+                            javax.xml.transform.sax; version="0.0.0";resolution:=optional,
+                            javax.xml.transform.dom; version="0.0.0";resolution:=optional,
+                            javax.xml.transform; version="0.0.0";resolution:=optional,
+                            javax.xml.stream.events; version="1.0.1";resolution:=optional,
+                            javax.xml.stream; version="1.0.1";resolution:=optional,
+                            javax.xml.parsers; version="0.0.0";resolution:=optional,
+                            javax.xml.namespace; version="0.0.0";resolution:=optional,
+                            javax.xml.datatype; version="0.0.0";resolution:=optional,
+                            javax.swing.tree; version="0.0.0";resolution:=optional,
+                            javax.swing.border; version="0.0.0";resolution:=optional,
+                            javax.swing; version="0.0.0";resolution:=optional,
+                            javax.net.ssl; version="0.0.0";resolution:=optional,
+                            javax.naming; version="0.0.0";resolution:=optional,
+                            javax.mail.util; version="1.4.0";resolution:=optional,
+                            javax.mail.internet; version="1.4.0";resolution:=optional,
+                            javax.mail; version="1.4.0";resolution:=optional,
+                            javax.imageio.stream; version="0.0.0";resolution:=optional,
+                            javax.imageio.spi; version="0.0.0";resolution:=optional,
+                            javax.imageio; version="0.0.0";resolution:=optional,
+                            javax.activation; version="0.0.0";resolution:=optional,
+                            com.sun.mirror.type; version="0.0.0";resolution:=optional,
+                            com.sun.net.httpserver; version="0.0.0";resolution:=optional,
+                            com.sun.research.ws.wadl; version="0.0.0";resolution:=optional,
+                            com.sun.source.tree; version="0.0.0";resolution:=optional,
+                            com.sun.source.util; version="0.0.0";resolution:=optional,
+                            com.sun.xml.fastinfoset.sax; version="0.0.0";resolution:=optional,
+                            com.sun.xml.fastinfoset.stax; version="0.0.0";resolution:=optional,
+                            javax.annotation; version="1.2.0";resolution:=optional,
+                            javax.annotation.processing; version="0.0.0";resolution:=optional,
+                            javax.annotation.security; version="1.2.0";resolution:=optional,
+                            javax.lang.model; version="0.0.0";resolution:=optional,
+                            javax.lang.model.element; version="0.0.0";resolution:=optional,
+                            javax.lang.model.type; version="0.0.0";resolution:=optional,
+                            javax.lang.model.util; version="0.0.0";resolution:=optional,
+                            javax.tools; version="0.0.0";resolution:=optional,
+                            org.jsonschema2pojo; version="0.0.0";resolution:=optional,
+                            org.jsonschema2pojo.rules; version="0.0.0";resolution:=optional,
+                            org.jvnet.fastinfoset; version="0.0.0";resolution:=optional,
+                            org.jvnet.staxex; version="0.0.0";resolution:=optional,
+                            org.objectweb.asm; version="3.3.0";resolution:=optional,
+                            sun.nio.cs; version="0.0.0";resolution:=optional
                         </Import-Package>
                         <Include-Resource>@wadl-core-${wadl-core.version}.jar!/xsd/**</Include-Resource>
                         <Embed-Dependency>
-                            jsr311-api|localizer|activation|runtime;inline=false;
+                            jaxb-impl|jaxb-api|jaxb-xjc|jsr311-api|localizer|jersey-client|runtime;inline=false;
                         </Embed-Dependency>
                     </instructions>
                 </configuration>
