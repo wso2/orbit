@@ -121,60 +121,86 @@
                             com.sun.jersey.*; version="${project.version}",
                         </Export-Package>
                         <Import-Package>
-                            org.xml.sax.helpers; version="0.0.0";resolution:=optional,
-                            org.xml.sax.ext; version="0.0.0";resolution:=optional,
-                            org.xml.sax; version="0.0.0";resolution:=optional,
-                            org.w3c.dom.ls; version="0.0.0";resolution:=optional,
-                            org.w3c.dom; version="0.0.0";resolution:=optional,
+                            org.xml.sax.helpers;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            org.xml.sax.ext; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            org.xml.sax; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            org.w3c.dom.ls; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            org.w3c.dom; version="${provided.bundles.import.version.range}";resolution:=optional,
                             org.osgi.framework; version="1.7.0";resolution:=optional,
-                            org.apache.tools.ant.types; version="0.0.0";resolution:=optional,
-                            org.apache.tools.ant.taskdefs.compilers; version="0.0.0";resolution:=optional,
-                            org.apache.tools.ant.taskdefs; version="0.0.0";resolution:=optional,
-                            org.apache.tools.ant; version="0.0.0";resolution:=optional,
-                            javax.xml.xpath; version="0.0.0";resolution:=optional,
-                            javax.xml.validation; version="0.0.0";resolution:=optional,
-                            javax.xml.transform.stream; version="0.0.0";resolution:=optional,
-                            javax.xml.transform.sax; version="0.0.0";resolution:=optional,
-                            javax.xml.transform.dom; version="0.0.0";resolution:=optional,
-                            javax.xml.transform; version="0.0.0";resolution:=optional,
+                            org.apache.tools.ant.types;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            org.apache.tools.ant.taskdefs.compilers;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            org.apache.tools.ant.taskdefs;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            org.apache.tools.ant;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.xpath; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.validation;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.transform.stream;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.transform.sax;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.transform.dom;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.transform;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
                             javax.xml.stream.events; version="1.0.1";resolution:=optional,
                             javax.xml.stream; version="1.0.1";resolution:=optional,
-                            javax.xml.parsers; version="0.0.0";resolution:=optional,
-                            javax.xml.namespace; version="0.0.0";resolution:=optional,
-                            javax.xml.datatype; version="0.0.0";resolution:=optional,
-                            javax.swing.tree; version="0.0.0";resolution:=optional,
-                            javax.swing.border; version="0.0.0";resolution:=optional,
-                            javax.swing; version="0.0.0";resolution:=optional,
-                            javax.net.ssl; version="0.0.0";resolution:=optional,
-                            javax.naming; version="0.0.0";resolution:=optional,
+                            javax.xml.parsers; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.namespace;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.datatype; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.swing.tree; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.swing.border; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.swing; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.net.ssl; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.naming; version="${provided.bundles.import.version.range}";resolution:=optional,
                             javax.mail.util; version="1.4.0";resolution:=optional,
                             javax.mail.internet; version="1.4.0";resolution:=optional,
                             javax.mail; version="1.4.0";resolution:=optional,
-                            javax.imageio.stream; version="0.0.0";resolution:=optional,
-                            javax.imageio.spi; version="0.0.0";resolution:=optional,
-                            javax.imageio; version="0.0.0";resolution:=optional,
-                            javax.activation; version="0.0.0";resolution:=optional,
-                            com.sun.mirror.type; version="0.0.0";resolution:=optional,
-                            com.sun.net.httpserver; version="0.0.0";resolution:=optional,
-                            com.sun.research.ws.wadl; version="0.0.0";resolution:=optional,
-                            com.sun.source.tree; version="0.0.0";resolution:=optional,
-                            com.sun.source.util; version="0.0.0";resolution:=optional,
-                            com.sun.xml.fastinfoset.sax; version="0.0.0";resolution:=optional,
-                            com.sun.xml.fastinfoset.stax; version="0.0.0";resolution:=optional,
+                            javax.imageio.stream;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.imageio.spi; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.imageio; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.activation; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            com.sun.mirror.type;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            com.sun.net.httpserver;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            com.sun.research.ws.wadl;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            com.sun.source.tree;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            com.sun.source.util;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            com.sun.xml.fastinfoset.sax;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            com.sun.xml.fastinfoset.stax;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
                             javax.annotation; version="1.2.0";resolution:=optional,
-                            javax.annotation.processing; version="0.0.0";resolution:=optional,
+                            javax.annotation.processing;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
                             javax.annotation.security; version="1.2.0";resolution:=optional,
-                            javax.lang.model; version="0.0.0";resolution:=optional,
-                            javax.lang.model.element; version="0.0.0";resolution:=optional,
-                            javax.lang.model.type; version="0.0.0";resolution:=optional,
-                            javax.lang.model.util; version="0.0.0";resolution:=optional,
-                            javax.tools; version="0.0.0";resolution:=optional,
-                            org.jsonschema2pojo; version="0.0.0";resolution:=optional,
-                            org.jsonschema2pojo.rules; version="0.0.0";resolution:=optional,
-                            org.jvnet.fastinfoset; version="0.0.0";resolution:=optional,
-                            org.jvnet.staxex; version="0.0.0";resolution:=optional,
+                            javax.lang.model; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.lang.model.element;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.lang.model.type;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.lang.model.util;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.tools; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            org.jsonschema2pojo;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            org.jsonschema2pojo.rules;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            org.jvnet.fastinfoset;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            org.jvnet.staxex; version="${provided.bundles.import.version.range}";resolution:=optional,
                             org.objectweb.asm; version="3.3.0";resolution:=optional,
-                            sun.nio.cs; version="0.0.0";resolution:=optional
+                            sun.nio.cs; version="${provided.bundles.import.version.range}";resolution:=optional
                         </Import-Package>
                         <Include-Resource>@wadl-core-${wadl-core.version}.jar!/xsd/**</Include-Resource>
                         <Embed-Dependency>
@@ -194,5 +220,6 @@
         <activation.version>1.1.1</activation.version>
         <jaxb.version>2.2.6</jaxb.version>
         <jersey-client.version>1.12</jersey-client.version>
+        <provided.bundles.import.version.range>[0.0.0,1.0.0)</provided.bundles.import.version.range>
     </properties>
 </project>
