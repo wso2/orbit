@@ -70,14 +70,14 @@
             <version>${comresrcgen.version}</version>
         </dependency>
         <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
-            <version>${activation.version}</version>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${jersey-client.version}</version>
         </dependency>
         <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>${jaxb.version}</version>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>${jersey-client.version}</version>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
@@ -85,19 +85,9 @@
             <version>${jaxb.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-client</artifactId>
-            <version>${jersey-client.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-xjc</artifactId>
             <version>${jaxb.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-server</artifactId>
-            <version>${jersey-client.version}</version>
         </dependency>
 
 
@@ -183,7 +173,8 @@
                             javax.annotation; version="${java.annotation.import.version.range}";resolution:=optional,
                             javax.annotation.processing;
                             version="${provided.bundles.import.version.range}";resolution:=optional,
-                            javax.annotation.security; version="${java.annotation.import.version.range}";resolution:=optional,
+                            javax.annotation.security;
+                            version="${java.annotation.import.version.range}";resolution:=optional,
                             javax.lang.model; version="${provided.bundles.import.version.range}";resolution:=optional,
                             javax.lang.model.element;
                             version="${provided.bundles.import.version.range}";resolution:=optional,
@@ -200,11 +191,20 @@
                             version="${provided.bundles.import.version.range}";resolution:=optional,
                             org.jvnet.staxex; version="${provided.bundles.import.version.range}";resolution:=optional,
                             org.objectweb.asm; version="${asm.import.version.range}";resolution:=optional,
-                            sun.nio.cs; version="${provided.bundles.import.version.range}";resolution:=optional
+                            sun.nio.cs; version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.bind;version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.bind.annotation;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.bind.annotation.adapters;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.bind.attachment;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
+                            javax.xml.bind.helpers;
+                            version="${provided.bundles.import.version.range}";resolution:=optional,
                         </Import-Package>
                         <Include-Resource>@wadl-core-${wadl-core.version}.jar!/xsd/**</Include-Resource>
                         <Embed-Dependency>
-                            jaxb-impl|jaxb-api|jaxb-xjc|jsr311-api|localizer|jersey-client|runtime;inline=false;
+                            jaxb-impl|jaxb-xjc|jsr311-api|localizer|jersey-client|runtime;inline=false;
                         </Embed-Dependency>
                     </instructions>
                 </configuration>
@@ -225,6 +225,6 @@
         <stream.import.version.range>[1.0.1,2.0.0)</stream.import.version.range>
         <java.mail.import.version.range>[1.4.0,2.0.0)</java.mail.import.version.range>
         <java.annotation.import.version.range>[1.2.0,2.0.0)</java.annotation.import.version.range>
-        <asm.import.version.range>[3.3.0,4.0.0)</asm.import.version.range>
+        <asm.import.version.range>[4.0.0,5.0.0)</asm.import.version.range>
     </properties>
 </project>
