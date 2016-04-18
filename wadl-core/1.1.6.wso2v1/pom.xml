@@ -117,9 +117,9 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
                             org.jvnet.ws.wadl.*; version="${project.version}",
-                            org.jvnet.ws.wadl2java.*; version="${project.version}",
-                            com.sun.jersey.*; version="${project.version}",
+                            org.jvnet.ws.wadl2java.*; version="${project.version}"
                         </Export-Package>
+                        <Private-Package>com.sun.jersey.*; version="${project.version}"</Private-Package>
                         <Import-Package>
                             org.xml.sax.helpers;
                             version="${provided.bundles.import.version.range}";resolution:=optional,
@@ -127,7 +127,7 @@
                             org.xml.sax; version="${provided.bundles.import.version.range}";resolution:=optional,
                             org.w3c.dom.ls; version="${provided.bundles.import.version.range}";resolution:=optional,
                             org.w3c.dom; version="${provided.bundles.import.version.range}";resolution:=optional,
-                            org.osgi.framework; version="1.7.0";resolution:=optional,
+                            org.osgi.framework; version="${osgi.import.version.range}";resolution:=optional,
                             org.apache.tools.ant.types;
                             version="${provided.bundles.import.version.range}";resolution:=optional,
                             org.apache.tools.ant.taskdefs.compilers;
@@ -147,8 +147,8 @@
                             version="${provided.bundles.import.version.range}";resolution:=optional,
                             javax.xml.transform;
                             version="${provided.bundles.import.version.range}";resolution:=optional,
-                            javax.xml.stream.events; version="1.0.1";resolution:=optional,
-                            javax.xml.stream; version="1.0.1";resolution:=optional,
+                            javax.xml.stream.events; version="${stream.import.version.range}";resolution:=optional,
+                            javax.xml.stream; version="${stream.import.version.range}";resolution:=optional,
                             javax.xml.parsers; version="${provided.bundles.import.version.range}";resolution:=optional,
                             javax.xml.namespace;
                             version="${provided.bundles.import.version.range}";resolution:=optional,
@@ -158,9 +158,9 @@
                             javax.swing; version="${provided.bundles.import.version.range}";resolution:=optional,
                             javax.net.ssl; version="${provided.bundles.import.version.range}";resolution:=optional,
                             javax.naming; version="${provided.bundles.import.version.range}";resolution:=optional,
-                            javax.mail.util; version="1.4.0";resolution:=optional,
-                            javax.mail.internet; version="1.4.0";resolution:=optional,
-                            javax.mail; version="1.4.0";resolution:=optional,
+                            javax.mail.util; version="${java.mail.import.version.range}";resolution:=optional,
+                            javax.mail.internet; version="${java.mail.import.version.range}";resolution:=optional,
+                            javax.mail; version="${java.mail.import.version.range}";resolution:=optional,
                             javax.imageio.stream;
                             version="${provided.bundles.import.version.range}";resolution:=optional,
                             javax.imageio.spi; version="${provided.bundles.import.version.range}";resolution:=optional,
@@ -180,10 +180,10 @@
                             version="${provided.bundles.import.version.range}";resolution:=optional,
                             com.sun.xml.fastinfoset.stax;
                             version="${provided.bundles.import.version.range}";resolution:=optional,
-                            javax.annotation; version="1.2.0";resolution:=optional,
+                            javax.annotation; version="${java.annotation.import.version.range}";resolution:=optional,
                             javax.annotation.processing;
                             version="${provided.bundles.import.version.range}";resolution:=optional,
-                            javax.annotation.security; version="1.2.0";resolution:=optional,
+                            javax.annotation.security; version="${java.annotation.import.version.range}";resolution:=optional,
                             javax.lang.model; version="${provided.bundles.import.version.range}";resolution:=optional,
                             javax.lang.model.element;
                             version="${provided.bundles.import.version.range}";resolution:=optional,
@@ -199,7 +199,7 @@
                             org.jvnet.fastinfoset;
                             version="${provided.bundles.import.version.range}";resolution:=optional,
                             org.jvnet.staxex; version="${provided.bundles.import.version.range}";resolution:=optional,
-                            org.objectweb.asm; version="3.3.0";resolution:=optional,
+                            org.objectweb.asm; version="${asm.import.version.range}";resolution:=optional,
                             sun.nio.cs; version="${provided.bundles.import.version.range}";resolution:=optional
                         </Import-Package>
                         <Include-Resource>@wadl-core-${wadl-core.version}.jar!/xsd/**</Include-Resource>
@@ -221,5 +221,10 @@
         <jaxb.version>2.2.6</jaxb.version>
         <jersey-client.version>1.12</jersey-client.version>
         <provided.bundles.import.version.range>[0.0.0,1.0.0)</provided.bundles.import.version.range>
+        <osgi.import.version.range>[1.7.0,2.0.0)</osgi.import.version.range>
+        <stream.import.version.range>[1.0.1,2.0.0)</stream.import.version.range>
+        <java.mail.import.version.range>[1.4.0,2.0.0)</java.mail.import.version.range>
+        <java.annotation.import.version.range>[1.2.0,2.0.0)</java.annotation.import.version.range>
+        <asm.import.version.range>[3.3.0,4.0.0)</asm.import.version.range>
     </properties>
 </project>
