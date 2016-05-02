@@ -63,7 +63,8 @@
                         </Private-Package>
                         <Include-Resource>
                             @hazelcast-all-${version.hazelcast}.jar!/META-INF/*,
-                            @hazelcast-all-${version.hazelcast}.jar!/hazelcast-runtime.properties
+                            @hazelcast-all-${version.hazelcast}.jar!/hazelcast-runtime.properties,
+                            @hazelcast-all-${version.hazelcast}.jar!/hazelcast-config-*
                         </Include-Resource>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
