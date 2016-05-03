@@ -54,10 +54,10 @@
                             org.apache.commons.net.*; version="3.4",
                         </Export-Package>
                         <Import-Package>
-                            javax.crypto;version="0.0.0",
-                            javax.crypto.spec;version="0.0.0",
-                            javax.net;version="0.0.0",
-                            javax.net.ssl;version="0.0.0"
+                            javax.crypto;version="[0.0.0,1.0.0)",
+                            javax.crypto.spec;version="[0.0.0,1.0.0)",
+                            javax.net;version="[0.0.0,1.0.0)",
+                            javax.net.ssl;version="[0.0.0,1.0.0)"
                         </Import-Package>
                     </instructions>
                 </configuration>
