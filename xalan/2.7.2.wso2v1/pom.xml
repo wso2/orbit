@@ -1,5 +1,5 @@
 <!--
- ~ Copyright (c) 2005-2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ WSO2 Inc. licenses this file to you under the Apache License,
  ~ Version 2.0 (the "License"); you may not use this file except
@@ -30,19 +30,6 @@
     </description>
     <url>http://wso2.org</url>
 
-    <repositories>
-        <repository>
-            <id>wso2-nexus</id>
-            <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </releases>
-        </repository>
-    </repositories>
-
     <distributionManagement>
         <repository>
             <id>wso2.releases</id>
@@ -62,11 +49,13 @@
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
             <version>${version.xml.apis}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>xalan</groupId>
             <artifactId>xalan</artifactId>
             <version>${version.xalan}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -86,9 +75,9 @@
                         </Private-Package>
                         <Export-Package>
                             javax.xml.transform.*;version="${exp.pkg.version.javax.xml.transform}";,
-                            org.apache.xalan.*;version="${project.version}";,
-                            org.apache.xpath.*;version="${project.version}";,
-                            org.apache.xml.*;version="${project.version}";
+                            org.apache.xalan.*;version="${version.xalan}";,
+                            org.apache.xpath.*;version="${version.xalan}";,
+                            org.apache.xml.*;version="${version.xalan}";
                         </Export-Package>
                         <Import-Package>
                             !javax.xml.transform.*;version="${imp.pkg.version.javax.xml.transform}";,

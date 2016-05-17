@@ -1,5 +1,5 @@
 <!--
- ~ Copyright (c) 2005-2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ WSO2 Inc. licenses this file to you under the Apache License,
  ~ Version 2.0 (the "License"); you may not use this file except
@@ -44,19 +44,6 @@
         </snapshotRepository>
     </distributionManagement>
 
-    <repositories>
-        <repository>
-            <id>wso2-nexus</id>
-            <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </releases>
-        </repository>
-    </repositories>
-
     <dependencies>
         <dependency>
             <groupId>org.bouncycastle</groupId>
@@ -81,16 +68,14 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Private-Package>
-                        </Private-Package>
                         <Import-Package>
-                            !org.bouncycastle.*;version="${imp.pkg.version.bcprov}"
+                            !org.bouncycastle.*
                         </Import-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
-                        <Embed-Dependency>bcprov-jdk15on;scope=compile|runtime;inline=false</Embed-Dependency>
-                        <_exportcontents>
+                        <Export-Package>
                             org.bouncycastle.*;version="${exp.pkg.version.bcprov}"
-                        </_exportcontents>
+                        </Export-Package>
+                        <Embed-Dependency>bcprov-jdk15on;scope=compile|runtime;inline=false</Embed-Dependency>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
@@ -98,8 +83,7 @@
     </build>
 
     <properties>
-        <exp.pkg.version.bcprov>1.52.0.wso2v1</exp.pkg.version.bcprov>
-        <imp.pkg.version.bcprov>1.52.0</imp.pkg.version.bcprov>
+        <exp.pkg.version.bcprov>1.52.0</exp.pkg.version.bcprov>
         <version.bcprov>1.52</version.bcprov>
     </properties>
 
