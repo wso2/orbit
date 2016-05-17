@@ -78,15 +78,15 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.http.auth.*; version="${httpclient.orbit.version}",
-                            org.apache.http.client.*; version="${httpclient.orbit.version}",
-                            org.apache.http.conn.*; version="${httpclient.orbit.version}",
-                            org.apache.http.cookie.*; version="${httpclient.orbit.version}",
-                            org.apache.http.impl.auth; version="${httpclient.orbit.version}",
-                            org.apache.http.impl.client; version="${httpclient.orbit.version}",
-                            org.apache.http.impl.conn.*; version="${httpclient.orbit.version}",
-                            org.apache.http.impl.cookie; version="${httpclient.orbit.version}",
-                            org.apache.http.impl.execchain; version="${httpclient.orbit.version}",
+                            org.apache.http.auth.*; version="${httpclient.version}",
+                            org.apache.http.client.*; version="${httpclient.version}",
+                            org.apache.http.conn.*; version="${httpclient.version}",
+                            org.apache.http.cookie.*; version="${httpclient.version}",
+                            org.apache.http.impl.auth; version="${httpclient.version}",
+                            org.apache.http.impl.client; version="${httpclient.version}",
+                            org.apache.http.impl.conn.*; version="${httpclient.version}",
+                            org.apache.http.impl.cookie; version="${httpclient.version}",
+                            org.apache.http.impl.execchain; version="${httpclient.version}",
                         </Export-Package>
                         <Import-Package>
                             javax.crypto; version="${javax.imp.pkg.version.range}",
