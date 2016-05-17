@@ -99,7 +99,7 @@
         <imp.pkg.version.javax.xml.transform>[1.3.04, 1.4.0)</imp.pkg.version.javax.xml.transform>
         <exp.pkg.version.javax.xml.transform>1.3.04</exp.pkg.version.javax.xml.transform>
         <version.xalan>2.7.2</version.xalan>
-        <version.xml.apis>1.3.04</version.xml.apis>
+        <version.xml.apis>2.0.2</version.xml.apis>
     </properties>
 
 </project>
