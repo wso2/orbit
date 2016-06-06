@@ -24,7 +24,7 @@
     <artifactId>json-schema-validator-all</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Json Schema Validator</name>
-    <version>2.2.6</version>
+    <version>2.2.6.wso2v1</version>
     <description>
         This bundle will export packages from json-schema-validator
     </description>
