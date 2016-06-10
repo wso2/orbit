@@ -308,7 +308,7 @@
         <xmltooling.version>1.4.4</xmltooling.version>
         <openws.version>1.5.4</openws.version>
         <esapi.version>2.0.1</esapi.version>
-        <opensaml.orbit.version>2.6.4.wso2v2</opensaml.orbit.version>
+        <opensaml.orbit.version>2.6.4.wso2v3</opensaml.orbit.version>
         <javax.crypto.version>0.0.0</javax.crypto.version>
         <javax.net.version>0.0.0</javax.net.version>
         <javax.security.version>0.0.0</javax.security.version>
