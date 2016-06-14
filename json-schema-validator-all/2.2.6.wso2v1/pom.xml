@@ -41,6 +41,26 @@
             <artifactId>json-schema-core</artifactId>
             <version>${version.json.schema.core}</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>uri-template</artifactId>
+            <version>${version.uri.template}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>msg-simple</artifactId>
+            <version>${version.msg.simple}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>btf</artifactId>
+            <version>${version.btf}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>jackson-coreutils</artifactId>
+            <version>${version.jackson.coreutils}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -48,22 +68,35 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
+                <!--<version>1.4.0</version>-->
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            com.github.fge.*;version="${project.version}",
-                            com.google.i18n.phonenumbers.*;version="${project.version}"
+                            com.github.fge;version="${version.btf}",
+                            com.github.fge.jackson.*;version="${version.jackson.coreutils}",
+                            com.github.fge.jsonschema.core.*;version="${version.json.schema.core}",
+                            com.github.fge.jsonschema.*;version="${version.json.schema.validator}",
+                            com.github.fge.msgsimple.*;version="${version.msg.simple}",
+                            com.github.fge.uritemplate.*;version="${version.uri.template}",
+                            com.google.i18n.phonenumbers.*;version="${version.json.schema.validator}"
                         </Export-Package>
                         <Import-Package>
-                            !sun.misc,
-                            !junit.framework,
-                            !org.junit,
-                            !org.mockito,
-                            org.apache.log4j.*;resolution:=optional,
-                            *;resolution:=optional
+                            !com.github.fge.*,
+                            !com.google.i18n.phonenumbers.*,
+                            com.google.common.base; version="${version.com.google.common}",
+                            com.fasterxml.jackson.core; version="${version.com.fasterxml.jackson.core}",
+                            com.google.common.collect; version="${version.com.google.common}",
+                            com.fasterxml.jackson.databind; version="${version.jackson.databind}",
+                            com.fasterxml.jackson.databind.node; version="${version.jackson.databind}",
+                            com.google.common.io; version="${version.com.google.common}",
+                            org.joda.time.format; version="${version.org.joda.time}",
+                            org.joda.time; version="${version.org.joda.time}",
+                            javax.mail.internet; version="${version.javax.mail.internet}",
+                            com.google.common.cache; version="${version.com.google.common}",
+                            com.google.common.primitives; version="${version.com.google.common}",
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
@@ -71,7 +104,6 @@
                             @json-schema-core-${version.json.schema.core}.jar!/draftv4/*,
                             @json-schema-core-${version.json.schema.core}.jar!/draftv3/*
                         </Include-Resource>
-                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
@@ -81,6 +113,17 @@
     <properties>
         <version.json.schema.validator>2.2.6</version.json.schema.validator>
         <version.json.schema.core>1.2.5</version.json.schema.core>
+        <version.uri.template>0.9</version.uri.template>
+        <version.msg.simple>1.1</version.msg.simple>
+        <version.btf>1.2</version.btf>
+        <version.jackson.coreutils>1.8</version.jackson.coreutils>
+
+        <!--OSGI version range-->
+        <version.com.google.common>[15.0.0,16.0.0)</version.com.google.common>
+        <version.javax.mail.internet>[1.4.0,1.5.0)</version.javax.mail.internet>
+        <version.org.joda.time>[2.6.0, 2.7.0)</version.org.joda.time>
+        <version.jackson.databind>[2.6.0, 2.7.0)</version.jackson.databind>
+        <version.com.fasterxml.jackson.core>[2.6.0, 2.7.0)</version.com.fasterxml.jackson.core>
     </properties>
 
     <distributionManagement>
