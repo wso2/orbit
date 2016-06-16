@@ -80,10 +80,9 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>joda-time</groupId>
+            <groupId>org.wso2.orbit.joda-time</groupId>
             <artifactId>joda-time</artifactId>
             <version>${joda-time.orbit.version}</version>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.opensaml</groupId>
@@ -234,6 +233,25 @@
         </snapshotRepository>
     </distributionManagement>
 
+    <repositories>
+        <!-- Before adding ANYTHING in here, please start a discussion on the dev list.
+	Ideally the Axis2 build should only use Maven central (which is available
+	by default) and nothing else. We had troubles with other repositories in
+	the past. Therefore configuring additional repositories here should be
+	considered very carefully. -->
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+        </repository>
+
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
@@ -252,40 +270,39 @@
                         </Private-Package>
                         <Import-Package>
                             !org.opensaml.*,
-                            org.joda.time.*; version="${joda-time.orbit.version}",
                             javax.crypto.*;version="${javax.crypto.version}",
                             javax.net.*;version="${javax.net.version}",
                             javax.security.*;version="${javax.security.version}",
-                            javax.servlet.jsp.*; version="${javax.servlet.jsp.version}",
+                            javax.servlet.jsp.*;version="${javax.servlet.jsp.version}",
                             javax.servlet.*;version="${javax.servlet.version}",
                             javax.xml.*;version="${javax.xml.version}",
-                            net.jcip.annotations.*;version="${net.jcip.annotations.version}";resolution:=optional,
+                            org.apache.axiom.om.impl.dom.jaxp;version="${axiom.osgi.version.range}",
+                            org.apache.commons.beanutils;version="${org.apache.commons.beanutils.version}";resolution:=optional,
                             org.apache.commons.httpclient.*;version="${org.apache.commons.httpclient.version}";resolution:=optional,
                             org.apache.commons.ssl.*;version="${org.apache.commons.ssl.version}";resolution:=optional,
                             org.apache.commons.codec.binary;version="${org.apache.commons.codec.binary.version}",
-                            org.apache.velocity.*;version="${org.apache.velocity.version}";resolution:=optional,
+                            org.apache.commons.configuration;version="${org.apache.commons.configuration.version}";resolution:=optional,
+                            org.apache.commons.fileupload.*;version="${org.apache.commons.fileupload.version}";resolution:=optional,
+                            org.apache.commons.collections.iterators;version="${org.apache.commons.collections.iterators.version}";
+                            resolution:=optional,
+                            org.apache.log4j.*;version="${apache.log4j.version}";resolution:=optional,
                             org.apache.xml.security.*;version="${org.apache.xml.security.version}";resolution:=optional,
-                            org.bouncycastle.*;version="${org.bouncycastle.version}";resolution:=optional,
+                            org.apache.velocity.*;version="${org.apache.velocity.version}";resolution:=optional,
+                            org.joda.time.*;version="${joda-time.orbit.version.range}",
                             org.joda.convert.*;version="${org.joda.convert.version}";resolution:=optional,
-                            org.owasp.esapi;version="${esapi.version}"resolution:=optional,
+                            org.bouncycastle.*;version="${org.bouncycastle.version}";resolution:=optional,
                             org.slf4j.*;version="${org.slf4j.version}",
                             org.w3c.*;version="${org.w3c.version}";resolution:=optional,
                             org.xml.sax.*;version="${org.xml.sax.version}";resolution:=optional,
+                            net.jcip.annotations.*;version="${net.jcip.annotations.version}";resolution:=optional,
                             junit.framework;version="${junit.framework.version}";resolution:=optional,
-                            junit.textui;version="${junit.framework.version}";resolution:=optional,
-                            org.apache.commons.codec.binary;version="${org.apache.commons.codec.binary.version}";resolution:=optional,
-                            org.apache.log4j;version="${apache.log4j.version}";resolution:=optional,
+                            junit.textui;version="${junit.textui.version}";resolution:=optional,
                             bsh;version="${bsf.version}";resolution:=optional,
                             nu.xom;version="${nu.xom.version}";resolution:=optional,
-                            org.apache.commons.beanutils;version="${org.apache.commons.beanutils.version};"resolution:=optional,
-                            org.apache.commons.collections.iterators;version="${org.apache.commons.collections.iterators.version}";
-                            resolution:=optional,
-                            org.apache.commons.configuration;version="${org.apache.commons.configuration.version}";resolution:=optional,
-                            org.apache.commons.fileupload.*;version="${org.apache.commons.fileupload.version}";resolution:=optional,
-                            org.apache.log4j.*;version="${apache.log4j.version}";resolution:=optional,
+                            org.owasp.esapi;resolution:=optional,
                             org.owasp.validator.html;version="${org.owasp.validator.html.version}";resolution:=optional,
-                            org.apache.axiom.om.impl.dom.jaxp;version="${axiom.osgi.version.range}"
                         </Import-Package>
+                        <!--<DynamicImport-Package>*</DynamicImport-Package>-->
                         <Embed-Dependency>esapi;scope=compile|runtime;inline=false</Embed-Dependency>
                         <Include-Resource>
                             @opensaml-${opensaml.version}.jar!/**.xml,
@@ -307,7 +324,8 @@
     <properties>
         <opensaml.version>2.6.4</opensaml.version>
         <opensaml1.version>1.1</opensaml1.version>
-        <joda-time.orbit.version>[2.8.2,3.0.0)</joda-time.orbit.version>
+        <joda-time.orbit.version>2.8.2.wso2v1</joda-time.orbit.version>
+        <joda-time.orbit.version.range>[2.8.2,3.0.0)</joda-time.orbit.version.range>
         <xmltooling.version>1.4.4</xmltooling.version>
         <openws.version>1.5.4</openws.version>
         <esapi.version>2.0.1</esapi.version>
@@ -318,7 +336,7 @@
         <javax.servlet.jsp.version>[2.2.0,2.3.0)</javax.servlet.jsp.version>
         <javax.servlet.version>[2.6.0,2.7.0)</javax.servlet.version>
         <javax.xml.version>[0.0.0,1.0.0)</javax.xml.version>
-        <net.jcip.annotations.version>[0.0.0,1.0.0)</net.jcip.annotations.version>
+        <net.jcip.annotations.version>[0.0,1.0)</net.jcip.annotations.version>
         <org.apache.commons.httpclient.version>[3.1.0,3.2.0)</org.apache.commons.httpclient.version>
         <org.apache.commons.ssl.version>[3.1.0,3.2.0)</org.apache.commons.ssl.version>
         <org.apache.xml.security.version>[1.4.2,1.5.0)</org.apache.xml.security.version>
@@ -330,13 +348,14 @@
         <axiom.osgi.version.range>[1.2.11, 2.0.0)</axiom.osgi.version.range>
         <org.apache.velocity.version>[2.4.1,3.0.0)</org.apache.velocity.version>
         <apache.log4j.version>[1.2.17,2)</apache.log4j.version>
-        <org.apache.commons.codec.binary.version>[1.4.0,1.4.2)</org.apache.commons.codec.binary.version>
+        <org.apache.commons.codec.binary.version>[1.4.0,2.0.0)</org.apache.commons.codec.binary.version>
         <org.apache.commons.collections.iterators.version>[3.2.2,4.0.0)</org.apache.commons.collections.iterators.version>
         <org.apache.commons.beanutils.version>[1.8.0,2.0.0)</org.apache.commons.beanutils.version>
         <org.apache.commons.configuration.version>[1.6.0,2.0.0)</org.apache.commons.configuration.version>
         <org.apache.commons.fileupload.version>[1.2.2,2.0.0)</org.apache.commons.fileupload.version>
         <bsf.version>[0.0.0,1.0.0)</bsf.version>
         <junit.framework.version>[0.0.0,1.0.0)</junit.framework.version>
+        <junit.textui.version>[0.0.0,1.0.0)</junit.textui.version>
         <nu.xom.version>[0.0.0,1.0.0)</nu.xom.version>
         <org.owasp.validator.html.version>[0.0.0,1.0.0)</org.owasp.validator.html.version>
     </properties>
