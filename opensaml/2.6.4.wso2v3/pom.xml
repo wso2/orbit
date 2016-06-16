@@ -302,7 +302,6 @@
                             org.owasp.esapi;resolution:=optional,
                             org.owasp.validator.html;version="${org.owasp.validator.html.version}";resolution:=optional,
                         </Import-Package>
-                        <!--<DynamicImport-Package>*</DynamicImport-Package>-->
                         <Embed-Dependency>esapi;scope=compile|runtime;inline=false</Embed-Dependency>
                         <Include-Resource>
                             @opensaml-${opensaml.version}.jar!/**.xml,
