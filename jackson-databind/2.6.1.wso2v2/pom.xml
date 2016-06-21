@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~ Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -78,12 +78,12 @@
                             com.fasterxml.jackson.core.util;version="${com.fasterxml.jackson.core.version.range}",
                             com.fasterxml.jackson.core.filter;version="${com.fasterxml.jackson.core.version.range}",
                             com.fasterxml.jackson.core.sym;version="${com.fasterxml.jackson.core.version.range}",
-                            javax.xml.datatypex;version="${provided.bundles.import.version.range}",
-                            javax.xml.namespace;version="${provided.bundles.import.version.range}";resolution:=optional,
-                            javax.xml.parsers;version="${provided.bundles.import.version.range}",
-                            org.w3c.dom;version="${provided.bundles.import.version.range}";resolution:=optional,
-                            org.w3c.dom.bootstrap;version="${provided.bundles.import.version.range}",
-                            org.w3c.dom.ls;version="${provided.bundles.import.version.range}"
+                            javax.xml.datatypex;version="${javax.imp.pkg.version.range}",
+                            javax.xml.namespace;version="${javax.imp.pkg.version.range}";resolution:=optional,
+                            javax.xml.parsers;version="${javax.imp.pkg.version.range}",
+                            org.w3c.dom;version="${org.w3c.dom.imp.pkg.version.range}";resolution:=optional,
+                            org.w3c.dom.bootstrap;version="${org.w3c.dom.imp.pkg.version.range}",
+                            org.w3c.dom.ls;version="${org.w3c.dom.imp.pkg.version.range}"
                         </Import-Package>
                     </instructions>
                 </configuration>
@@ -95,7 +95,8 @@
         <com.fasterxml.jackson.databind.version>2.6.1</com.fasterxml.jackson.databind.version>
         <com.fasterxml.jackson.core.version.range>[2.6.1,2.6.2)</com.fasterxml.jackson.core.version.range>
         <com.fasterxml.jackson.annotation.version.range>[2.6.1,2.6.2)</com.fasterxml.jackson.annotation.version.range>
-        <provided.bundles.import.version.range>[0.0.0,1.0.0)</provided.bundles.import.version.range>
+        <javax.imp.pkg.version.range>[0.0.0,1.0.0)</javax.imp.pkg.version.range>
+        <org.w3c.dom.imp.pkg.version.range>[0.0.0,1.0.0)</org.w3c.dom.imp.pkg.version.range>
     </properties>
 
 </project>
