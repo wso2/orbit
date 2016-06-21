@@ -34,32 +34,32 @@
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>json-schema-validator</artifactId>
-            <version>${version.json.schema.validator}</version>
+            <version>${json.schema.validator.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>json-schema-core</artifactId>
-            <version>${version.json.schema.core}</version>
+            <version>${json.schema.core.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>uri-template</artifactId>
-            <version>${version.uri.template}</version>
+            <version>${uri.template.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>msg-simple</artifactId>
-            <version>${version.msg.simple}</version>
+            <version>${msg.simple.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>btf</artifactId>
-            <version>${version.btf}</version>
+            <version>${btf.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>jackson-coreutils</artifactId>
-            <version>${version.jackson.coreutils}</version>
+            <version>${jackson.coreutils.version}</version>
         </dependency>
     </dependencies>
 
@@ -74,33 +74,33 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            com.github.fge;version="${version.btf}",
-                            com.github.fge.jackson.*;version="${version.jackson.coreutils}",
-                            com.github.fge.jsonschema.core.*;version="${version.json.schema.core}",
-                            com.github.fge.jsonschema.*;version="${version.json.schema.validator}",
-                            com.github.fge.msgsimple.*;version="${version.msg.simple}",
-                            com.github.fge.uritemplate.*;version="${version.uri.template}",
+                            com.github.fge;version="${btf.version}",
+                            com.github.fge.jackson.*;version="${jackson.coreutils.version}",
+                            com.github.fge.jsonschema.core.*;version="${json.schema.core.version}",
+                            com.github.fge.jsonschema.*;version="${json.schema.validator.version}",
+                            com.github.fge.msgsimple.*;version="${msg.simple.version}",
+                            com.github.fge.uritemplate.*;version="${uri.template.version}",
                         </Export-Package>
                         <Import-Package>
                             !com.github.fge.*,
-                            com.google.common.base; version="${version.com.google.common}",
-                            com.fasterxml.jackson.core; version="${version.com.fasterxml.jackson.core}",
-                            com.google.common.collect; version="${version.com.google.common}",
-                            com.fasterxml.jackson.databind; version="${version.jackson.databind}",
-                            com.fasterxml.jackson.databind.node; version="${version.jackson.databind}",
-                            com.google.common.io; version="${version.com.google.common}",
-                            org.joda.time.format; version="${version.org.joda.time}",
-                            org.joda.time; version="${version.org.joda.time}",
-                            javax.mail.internet; version="${version.javax.mail.internet}",
-                            com.google.common.cache; version="${version.com.google.common}",
-                            com.google.common.primitives; version="${version.com.google.common}",
-                            com.google.i18n.phonenumbers; version="${version.com.google.i18n.phonenumber}",
+                            com.google.common.base; version="${com.google.common.imp.pkg.version.range}",
+                            com.fasterxml.jackson.core; version="${com.fasterxml.jackson.core.imp.pkg.version.range}",
+                            com.google.common.collect; version="${com.google.common.imp.pkg.version.range}",
+                            com.fasterxml.jackson.databind; version="${jackson.databind.imp.pkg.version.range}",
+                            com.fasterxml.jackson.databind.node; version="${jackson.databind.imp.pkg.version.range}",
+                            com.google.common.io; version="${com.google.common.imp.pkg.version.range}",
+                            org.joda.time.format; version="${org.joda.time.imp.pkg.version.range}",
+                            org.joda.time; version="${org.joda.time.imp.pkg.version.range}",
+                            javax.mail.internet; version="${javax.mail.internet.imp.pkg.version.range}",
+                            com.google.common.cache; version="${com.google.common.imp.pkg.version.range}",
+                            com.google.common.primitives; version="${com.google.common.imp.pkg.version.range}",
+                            com.google.i18n.phonenumbers; version="${com.google.i18n.phonenumber.imp.pkg.version.range}",
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
                         <Include-Resource>
-                            @json-schema-core-${version.json.schema.core}.jar!/draftv4/*,
-                            @json-schema-core-${version.json.schema.core}.jar!/draftv3/*
+                            @json-schema-core-${json.schema.core.version}.jar!/draftv4/*,
+                            @json-schema-core-${json.schema.core.version}.jar!/draftv3/*
                         </Include-Resource>
                     </instructions>
                 </configuration>
@@ -109,20 +109,20 @@
     </build>
 
     <properties>
-        <version.json.schema.validator>2.2.6</version.json.schema.validator>
-        <version.json.schema.core>1.2.5</version.json.schema.core>
-        <version.uri.template>0.9</version.uri.template>
-        <version.msg.simple>1.1</version.msg.simple>
-        <version.btf>1.2</version.btf>
-        <version.jackson.coreutils>1.8</version.jackson.coreutils>
+        <json.schema.validator.version>2.2.6</json.schema.validator.version>
+        <json.schema.core.version>1.2.5</json.schema.core.version>
+        <uri.template.version>0.9</uri.template.version>
+        <msg.simple.version>1.1</msg.simple.version>
+        <btf.version>1.2</btf.version>
+        <jackson.coreutils.version>1.8</jackson.coreutils.version>
 
         <!--OSGI version range-->
-        <version.com.google.common>[15.0.0,16.0.0)</version.com.google.common>
-        <version.javax.mail.internet>[1.4.0,1.5.0)</version.javax.mail.internet>
-        <version.org.joda.time>[1.6.0, 3.0.0)</version.org.joda.time>
-        <version.jackson.databind>[2.6.0, 3.0.0)</version.jackson.databind>
-        <version.com.fasterxml.jackson.core>[2.6.0, 3.0.0)</version.com.fasterxml.jackson.core>
-        <version.com.google.i18n.phonenumber>[6.0.0, 8.0.0)</version.com.google.i18n.phonenumber>
+        <com.google.common.imp.pkg.version.range>[15.0.0,16.0.0)</com.google.common.imp.pkg.version.range>
+        <javax.mail.internet.imp.pkg.version.range>[1.4.0,1.5.0)</javax.mail.internet.imp.pkg.version.range>
+        <org.joda.time.imp.pkg.version.range>[2.6.0, 3.0.0)</org.joda.time.imp.pkg.version.range>
+        <jackson.databind.imp.pkg.version.range>[2.6.0, 3.0.0)</jackson.databind.imp.pkg.version.range>
+        <com.fasterxml.jackson.core.imp.pkg.version.range>[2.6.0, 3.0.0)</com.fasterxml.jackson.core.imp.pkg.version.range>
+        <com.google.i18n.phonenumber.imp.pkg.version.range>[7.4.0, 7.5.0)</com.google.i18n.phonenumber.imp.pkg.version.range>
     </properties>
 
     <distributionManagement>
