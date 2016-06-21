@@ -21,7 +21,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.com.googlecode.libphonenumber</groupId>
-    <artifactId>com.googlecode.libphonenumber</artifactId>
+    <artifactId>libphonenumber</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - googlei18n-libphonenumber</name>
     <version>7.4.2.wso2v1</version>
@@ -37,6 +37,21 @@
             <version>${version.com.googlecode.libphonenumber}</version>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
@@ -48,7 +63,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            com.google.i18n.phonenumbers.*;version="${project.version}"
+                            com.google.i18n.phonenumbers.*;version="${version.com.googlecode.libphonenumber}"
                         </Export-Package>
                         <Import-Package>
                             !com.google.i18n.phonenumbers.*,
@@ -64,19 +79,5 @@
     <properties>
         <version.com.googlecode.libphonenumber>7.4.2</version.com.googlecode.libphonenumber>
     </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>wso2.releases</id>
-            <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
-        </repository>
-
-        <snapshotRepository>
-            <id>wso2.snapshots</id>
-            <name>Apache Snapshot Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 
 </project>
