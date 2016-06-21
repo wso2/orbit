@@ -34,9 +34,37 @@
         <dependency>
             <groupId>com.googlecode.libphonenumber</groupId>
             <artifactId>libphonenumber</artifactId>
-            <version>${version.com.googlecode.libphonenumber}</version>
+            <version>${com.googlecode.libphonenumber.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.google.i18n.phonenumbers.*;version="${com.googlecode.libphonenumber.version}"
+                        </Export-Package>
+                        <Import-Package>
+                            !com.google.i18n.phonenumbers.*,
+                        </Import-Package>
+                        <Private-Package>
+                        </Private-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <com.googlecode.libphonenumber.version>7.4.2</com.googlecode.libphonenumber.version>
+    </properties>
 
     <distributionManagement>
         <repository>
@@ -51,33 +79,5 @@
             <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Export-Package>
-                            com.google.i18n.phonenumbers.*;version="${version.com.googlecode.libphonenumber}"
-                        </Export-Package>
-                        <Import-Package>
-                            !com.google.i18n.phonenumbers.*,
-                        </Import-Package>
-                        <Private-Package>
-                        </Private-Package>
-                    </instructions>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
-    <properties>
-        <version.com.googlecode.libphonenumber>7.4.2</version.com.googlecode.libphonenumber>
-    </properties>
 
 </project>
