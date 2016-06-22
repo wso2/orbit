@@ -57,6 +57,7 @@
         <jackson.import.version>[2.4,3.0)</jackson.import.version>
         <guava.import.version>[19.0, 20.0)</guava.import.version>
         <scala.import.version>[2.10,3)</scala.import.version>
+        <paranamer.import.version>[2.6.0, 3.0.0)</paranamer.import.version>
     </properties>
 
     <build>
@@ -81,8 +82,8 @@
                             com.fasterxml.jackson.core.*;version="${jackson.import.version}",
                             com.fasterxml.jackson.databind.*;version="${jackson.import.version}",
                             com.google.common.*;version="${guava.import.version}",
-                            scala;version="${scala.import.version}",
-                            com.thoughtworks.paranamer,
+                            scala.*;version="${scala.import.version}",
+                            com.thoughtworks.paranamer.*;version="${paranamer.import.version}"
                         </Import-Package>
                     </instructions>
                 </configuration>
