@@ -78,7 +78,7 @@
                             com.fasterxml.jackson.core.util;version="${com.fasterxml.jackson.core.version.range}",
                             com.fasterxml.jackson.core.filter;version="${com.fasterxml.jackson.core.version.range}",
                             com.fasterxml.jackson.core.sym;version="${com.fasterxml.jackson.core.version.range}",
-                            javax.xml.datatypex;version="${javax.imp.pkg.version.range}",
+                            javax.xml.datatype;version="${javax.imp.pkg.version.range}",
                             javax.xml.namespace;version="${javax.imp.pkg.version.range}";resolution:=optional,
                             javax.xml.parsers;version="${javax.imp.pkg.version.range}",
                             org.w3c.dom;version="${org.w3c.dom.imp.pkg.version.range}";resolution:=optional,
