@@ -64,6 +64,7 @@
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase-shaded-client</artifactId>
             <version>${hbase.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
