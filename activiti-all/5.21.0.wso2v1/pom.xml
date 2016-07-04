@@ -232,12 +232,12 @@
                         <!-- Dynamic imports are needed for BPMN Java service tasks, which loads java classes at run-time -->
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Import-Package>
-                            com.fasterxml.jackson.annotation;version="${com.fasterxml.jackson.import.range}"",
-                            com.fasterxml.jackson.core;version="${com.fasterxml.jackson.import.range}"",
-                            com.fasterxml.jackson.databind;version="${com.fasterxml.jackson.import.range}"",
-                            com.fasterxml.jackson.databind.annotation;version="${com.fasterxml.jackson.import.range}"",
-                            com.fasterxml.jackson.databind.node;version="${com.fasterxml.jackson.import.range}"",
-                            com.fasterxml.jackson.databind.util;version="${com.fasterxml.jackson.import.range}"",
+                            com.fasterxml.jackson.annotation;version="${com.fasterxml.jackson.import.range}",
+                            com.fasterxml.jackson.core;version="${com.fasterxml.jackson.import.range}",
+                            com.fasterxml.jackson.databind;version="${com.fasterxml.jackson.import.range}",
+                            com.fasterxml.jackson.databind.annotation;version="${com.fasterxml.jackson.import.range}",
+                            com.fasterxml.jackson.databind.node;version="${com.fasterxml.jackson.import.range}",
+                            com.fasterxml.jackson.databind.util;version="${com.fasterxml.jackson.import.range}",
                             com.mxgraph.layout;version="${com.mxgraph.import.range}",
                             com.mxgraph.layout.hierarchical;version="${com.mxgraph.import.range}",
                             com.mxgraph.model;version="${com.mxgraph.import.range}",
