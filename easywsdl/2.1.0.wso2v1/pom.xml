@@ -35,21 +35,25 @@
             <groupId>org.ow2.easywsdl</groupId>
             <artifactId>easywsdl-wsdl</artifactId>
             <version>${easywsdl.wsdl.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.ow2.easywsdl</groupId>
             <artifactId>easywsdl-schema</artifactId>
             <version>${easywsdl.schema.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.bind.wso2</groupId>
             <artifactId>jaxb</artifactId>
             <version>${com.sun.xml.bind.wso2.jaxb.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>runtime</artifactId>
             <version>${org.jvnet.jaxb2_commons.runtime.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -64,8 +68,8 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.ow2.easywsdl.wsdl.*;version="${easywsdl.wsdl.version}",
-                            org.ow2.easywsdl.schema.*;version="${easywsdl.schema.version}"
+                            org.ow2.easywsdl.wsdl.*;version="${easywsdl.all.version}",
+                            org.ow2.easywsdl.schema.*;version="${easywsdl.all.version}"
                         </Export-Package>
                         <Import-Package>
                             org.apache.commons.lang.*;version="${commons.lang.wso2.version}"
@@ -89,6 +93,7 @@
     <properties>
         <easywsdl.wsdl.version>2.1</easywsdl.wsdl.version>
         <easywsdl.schema.version>2.1</easywsdl.schema.version>
+        <easywsdl.all.version>2.1.0.wso2v1</easywsdl.all.version>
         <commons.lang.wso2.version>[2.6.0,2.6.1)</commons.lang.wso2.version>
         <com.sun.xml.bind.wso2.jaxb.version>2.2.5.wso2v1</com.sun.xml.bind.wso2.jaxb.version>
         <org.jvnet.jaxb2_commons.runtime.version>0.4.1.5</org.jvnet.jaxb2_commons.runtime.version>
