@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ~ Copyright (c) 2016, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~      http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.ow2.easywsdl</groupId>
+    <artifactId>easywsdl-all</artifactId>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Easywsdl</name>
+    <version>2.1.0.wso2v1</version>
+    <description>
+        This bundle will export packages from Easywsdl
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.ow2.easywsdl</groupId>
+            <artifactId>easywsdl-wsdl</artifactId>
+            <version>${easywsdl.wsdl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.easywsdl</groupId>
+            <artifactId>easywsdl-schema</artifactId>
+            <version>${easywsdl.schema.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind.wso2</groupId>
+            <artifactId>jaxb</artifactId>
+            <version>${com.sun.xml.bind.wso2.jaxb.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>runtime</artifactId>
+            <version>${org.jvnet.jaxb2_commons.runtime.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            org.ow2.easywsdl.wsdl.*;version="${easywsdl.wsdl.version}",
+                            org.ow2.easywsdl.schema.*;version="${easywsdl.schema.version}"
+                        </Export-Package>
+                        <Import-Package>
+                            org.apache.commons.lang.*;version="${commons.lang.wso2.version}"
+                        </Import-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Embed-Dependency>
+                            runtime;scope=compile|runtime;,
+                            jaxb;scope=compile|runtime;
+                        </Embed-Dependency>
+                        <Include-Resource>
+                            @easywsdl-wsdl-2.1.jar!/schema/**,
+                            @easywsdl-schema-2.1.jar!/schema/**
+                        </Include-Resource>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <easywsdl.wsdl.version>2.1</easywsdl.wsdl.version>
+        <easywsdl.schema.version>2.1</easywsdl.schema.version>
+        <commons.lang.wso2.version>[2.6.0,2.6.1)</commons.lang.wso2.version>
+        <com.sun.xml.bind.wso2.jaxb.version>2.2.5.wso2v1</com.sun.xml.bind.wso2.jaxb.version>
+        <org.jvnet.jaxb2_commons.runtime.version>0.4.1.5</org.jvnet.jaxb2_commons.runtime.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
