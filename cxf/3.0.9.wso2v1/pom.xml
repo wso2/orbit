@@ -23,7 +23,7 @@
     <artifactId>cxf-bundle</artifactId>
     <packaging>bundle</packaging>
     <name>Apache CXF Bundle Jar</name>
-    <version>3.0.5.wso2v3</version>
+    <version>3.0.9.wso2v1</version>
     <description>
         This bundle will export packages from CXF
     </description>
@@ -472,7 +472,7 @@
     </build>
 
     <properties>
-        <version.cxf>3.0.5</version.cxf>
-        <exp.pkg.version.cxf>3.0.5.wso2v3</exp.pkg.version.cxf>
+        <version.cxf>3.0.9</version.cxf>
+        <exp.pkg.version.cxf>3.0.9.wso2v1</exp.pkg.version.cxf>
     </properties>
 </project>
