@@ -184,14 +184,14 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.cxf.*;version="${exp.pkg.version.cxf}";-split-package:=merge-first,
-                            '=META-INF.cxf.osgi';version="${exp.pkg.version.cxf}",
-                            '=META-INF.cxf';version="${exp.pkg.version.cxf}"
+                            org.apache.cxf.*;version="${project.version}";-split-package:=merge-first,
+                            '=META-INF.cxf.osgi';version="${project.version}",
+                            '=META-INF.cxf';version="${project.version}"
                         </Export-Package>
                         <Import-Package>
-                            !org.apache.cxf.*;version="${exp.pkg.version.cxf}",
-                            !META-INF.cxf;version="${exp.pkg.version.cxf}",
-                            !META-INF.cxf.osgi;version="${exp.pkg.version.cxf}",
+                            !org.apache.cxf.*;version="${project.version}",
+                            !META-INF.cxf;version="${project.version}",
+                            !META-INF.cxf.osgi;version="${project.version}",
                             bsh;resolution:=optional,
                             com.caucho.*;resolution:=optional,
                             com.fasterxml.jackson.*;resolution:=optional,
@@ -473,7 +473,6 @@
 
     <properties>
         <cxf.version>3.0.9</cxf.version>
-        <exp.pkg.version.cxf>3.0.9.wso2v1</exp.pkg.version.cxf>
         <fastinfoset.version>1.2.13</fastinfoset.version>
         <woodstox.core.asl.version>4.4.1</woodstox.core.asl.version>
         <xmlschema.core.version>2.1.0</xmlschema.core.version>
