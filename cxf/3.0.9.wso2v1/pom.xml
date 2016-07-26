@@ -58,115 +58,115 @@
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-bindings-soap</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-databinding-jaxb</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-simple</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-management</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-security</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http-jetty</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-addr</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-wsdl</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-policy</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-rm</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-ws-security</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxws</artifactId>
-            <version>${version.cxf}</version>
+            <version>${cxf.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.fastinfoset</groupId>
             <artifactId>FastInfoset</artifactId>
-            <version>1.2.13</version>
+            <version>${fastinfoset.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.codehaus.woodstox</groupId>
             <artifactId>woodstox-core-asl</artifactId>
-            <version>4.4.1</version>
+            <version>${woodstox.core.asl.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.ws.xmlschema</groupId>
             <artifactId>xmlschema-core</artifactId>
-            <version>2.1.0</version>
+            <version>${xmlschema.core.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.neethi</groupId>
             <artifactId>neethi</artifactId>
-            <version>3.0.3</version>
+            <version>${neethi.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.ws.wso2</groupId>
             <artifactId>spring.framework</artifactId>
-            <version>3.2.9.wso2v1</version>
+            <version>${spring.framework.wso2.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -462,7 +462,7 @@
                     <dependency>
                         <groupId>org.apache.cxf</groupId>
                         <artifactId>cxf-buildtools</artifactId>
-                        <version>2.2.12</version>
+                        <version>${cxf.buildtools.version}</version>
                         <type>jar</type>
                         <scope>compile</scope>
                     </dependency>
@@ -472,7 +472,13 @@
     </build>
 
     <properties>
-        <version.cxf>3.0.9</version.cxf>
+        <cxf.version>3.0.9</cxf.version>
         <exp.pkg.version.cxf>3.0.9.wso2v1</exp.pkg.version.cxf>
+        <fastinfoset.version>1.2.13</fastinfoset.version>
+        <woodstox.core.asl.version>4.4.1</woodstox.core.asl.version>
+        <xmlschema.core.version>2.1.0</xmlschema.core.version>
+        <neethi.version>3.0.3</neethi.version>
+        <spring.framework.wso2.version>3.2.9.wso2v1</spring.framework.wso2.version>
+        <cxf.buildtools.version>2.2.12</cxf.buildtools.version>
     </properties>
 </project>
