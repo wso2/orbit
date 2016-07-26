@@ -82,12 +82,12 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.spark.ml.*;version="${spark.exp.version}";-split-package:=merge-first,
-                            org.apache.spark.mllib.*;version="${spark.exp.version}";-split-package:=merge-first,
+                            org.apache.spark.ml.*;version="${project.version}";-split-package:=merge-first,
+                            org.apache.spark.mllib.*;version="${project.version}";-split-package:=merge-first,
                         </Export-Package>
                         <Private-Package>
-			    org.dmg.pmml.*;version="${spark.exp.version}";-split-package:=merge-first,
-                            org.jpmml.model.*;version="${spark.exp.version}";-split-package:=merge-first
+			    org.dmg.pmml.*;version="${project.version}";-split-package:=merge-first,
+                            org.jpmml.model.*;version="${project.version}";-split-package:=merge-first
                         </Private-Package>
                         <Import-Package>
                             org.apache.spark.*;version="${spark.import.version}",
@@ -109,7 +109,6 @@
 
     <properties>
         <spark.version>1.4.1</spark.version>
-        <spark.exp.version>1.4.1.wso2v3</spark.exp.version>
         <spark.import.version>[1.4.1, 1.5.0)</spark.import.version>
         <scala.import.version>[2.10.4, 2.11.0)</scala.import.version>
         <breeze.import.version>[0.11.1, 0.12.0)</breeze.import.version>
