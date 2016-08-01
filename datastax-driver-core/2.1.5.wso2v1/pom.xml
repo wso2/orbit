@@ -1,0 +1,101 @@
+<!--
+  ~ Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.com.datastax.cassandra</groupId>
+    <artifactId>cassandra-driver-core</artifactId>
+    <version>2.1.5.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - DataStax Java Driver for Apache Cassandra - Core</name>
+    <description>
+        A driver for Apache Cassandra 1.2+ that works exclusively with the Cassandra Query Language version 3 (CQL3)
+        and Cassandra's binary protocol.
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.datastax.cassandra</groupId>
+            <artifactId>cassandra-driver-core</artifactId>
+            <version>${datastax.version}</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <datastax.version>2.1.5</datastax.version>
+        <guava.import.version>[19.0, 20.0)</guava.import.version>
+        <codehale.import.version>[3.0, 4.0)</codehale.import.version>
+        <jboss.import.version>[3.9,4.0)</jboss.import.version>
+        <slf4j.import.version>[1.7, 2.0)</slf4j.import.version>
+        <snappy.import.version>[1.0,2.0)</snappy.import.version>
+        <default.import.version>[0.0.0,1.0.0)</default.import.version>
+        <lz4.import.version>[1.2.0, 1.3.0)</lz4.import.version>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.datastax.driver.core.*; version=${project.version}
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Import-Package>
+                            !com.datastax.driver.core.*,
+                            com.google.common.*;version="${guava.import.version}",
+                            com.codahale.metrics.*;version="${codehale.import.version}",
+                            org.jboss.netty.*;version="${jboss.import.version}",
+                            org.slf4j;version="${slf4j.import.version}",
+                            javax.naming.*;version="${default.import.version}",
+                            javax.net.ssl.*; version="${default.import.version}",
+                            net.jpountz.lz4.*;version="${lz4.import.version}";resolution:=optional,
+                            org.xerial.snappy.*;version="${snappy.import.version}";resolution:=optional
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
