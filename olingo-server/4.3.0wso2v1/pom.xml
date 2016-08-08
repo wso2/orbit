@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.olingo</groupId>
     <artifactId>odata-server</artifactId>
-    <version>4.2.0.wso2v1</version>
+    <version>4.3.0.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Olingo server library</name>
     <description>
@@ -59,8 +59,8 @@
     </distributionManagement>
 
     <properties>
-        <olingo.server.version>4.2.0</olingo.server.version>
-        <olingo.server.export.version>4.2.0.wso2v1</olingo.server.export.version>
+        <olingo.server.version>4.3.0-beta</olingo.server.version>
+        <olingo.server.export.version>4.3.0.wso2v1</olingo.server.export.version>
     </properties>
 
     <dependencies>
@@ -116,27 +116,28 @@
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            com.fasterxml.aalto.stax;resolution:=optional,
+                            com.fasterxml.aalto.stax;version="[0.9.0,1.0.0)",
                             com.fasterxml.jackson.core;version="[2.4,3)",
                             com.fasterxml.jackson.core.util;version="[2.4,3)",
                             com.fasterxml.jackson.databind;version="[2.4,3)",
                             com.fasterxml.jackson.databind.node;version="[2.4,3)",
-                            javax.servlet,
-                            javax.servlet.http,
-                            javax.xml.namespace,
-                            javax.xml.stream,
-                            javax.xml.stream.events,
-                            org.antlr.v4.runtime;resolution:=optional,
-                            org.antlr.v4.runtime.atn;resolution:=optional,
-                            org.antlr.v4.runtime.dfa;resolution:=optional,
-                            org.antlr.v4.runtime.misc;resolution:=optional,
-                            org.antlr.v4.runtime.tree;resolution:=optional,
+                            javax.servlet;version="[2.5.0,3.2.0)",
+                            javax.servlet.http;version="[2.5.0,3.2.0)",
+                            javax.xml.namespace;version="[0.0.0,2.0.0)";resolution:=optional,
+                            javax.xml.stream;version="[0.0.0,2.0.0)";resolution:=optional,
+                            javax.xml.stream.events;version="[0.0.0,2.0.0)";resolution:=optional,
+                            org.antlr.v4.runtime;version="[4.5.1,5.0.0)";resolution:=optional,
+                            org.antlr.v4.runtime.atn;version="[4.5.1,5.0.0)";resolution:=optional,
+                            org.antlr.v4.runtime.dfa;version="[4.5.1,5.0.0)";resolution:=optional,
+                            org.antlr.v4.runtime.misc;version="[4.5.1,5.0.0)";resolution:=optional,
+                            org.antlr.v4.runtime.tree;version="[4.5.1,5.0.0)";resolution:=optional,
                             org.apache.commons.codec.binary;version="[1.4,1.5)",
                             org.apache.commons.io;version="[2.4,2.5)",
                             org.apache.commons.lang3;version="[3.3,4)",
                             org.apache.commons.lang3.builder;version="[3.3,4)",
                             org.slf4j;version="[1.6,2)"
                         </Import-Package>
+                        <!--<DynamicImport-Package>*</DynamicImport-Package>-->
                         <Include-Resource>
                             {maven-resources}
                         </Include-Resource>
