@@ -111,6 +111,7 @@
 
     <properties>
         <export.pkg.version.swagger-parser>1.0.17.wso2v1</export.pkg.version.swagger-parser>
+        <slf4j.import.version>[1.7.0, 1.8.0)</slf4j.import.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
