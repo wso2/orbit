@@ -85,8 +85,7 @@
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !org.json.*,
-                            *;resolution:=optional
+                            org.json.*;version="${json.version}",
                         </Import-Package>
                         <Include-Resource>
                             {maven-resources}
