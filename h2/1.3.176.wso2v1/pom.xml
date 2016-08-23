@@ -86,7 +86,7 @@
                             org.wso2.carbon.h2.osgi.*;version="${h2.engine.orbit.version}",
                             org.h2.server.web.*;version="${h2.engine.orbit.version}",
                         </Export-Package>
-                        <_exportcontents>org.h2.*;version=1.4.191.wso2v1</_exportcontents>
+                        <_exportcontents>org.h2.*;version=1.3.176.wso2v1</_exportcontents>
                         <Bundle-Activator>org.wso2.carbon.h2.osgi.H2ConsoleServiceActivator</Bundle-Activator>
                         <Import-Package>
                             javax.management,
