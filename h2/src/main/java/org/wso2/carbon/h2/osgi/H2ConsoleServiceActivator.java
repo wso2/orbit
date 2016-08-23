@@ -19,15 +19,10 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.wso2.carbon.h2.osgi.console.H2DatabaseManager;
 
-import java.sql.SQLException;
-
 public class H2ConsoleServiceActivator implements BundleActivator {
 
     public void start(BundleContext arg0) throws Exception {
         H2DatabaseManager.getInstance().initialize();
-    }
-
-    public static void main(String args[]) throws SQLException, InstantiationException, IllegalAccessException {
     }
 
     public void stop(BundleContext arg0) throws Exception {
