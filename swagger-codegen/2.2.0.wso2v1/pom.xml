@@ -60,11 +60,12 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
+                            !io.swagger.models.*,
                             TypeScript-node.*;version="${export.pkg.version.swagger-codegen}",
                             TypeScript-Angular.*;version="${export.pkg.version.swagger-codegen}",
                             tizen.*;version="${export.pkg.version.swagger-codegen}",
                             swift.*;version="${export.pkg.version.swagger-codegen}",
-                            swagger-static.*;version="${export.pkg.version.swagger-codegen}",!io.swagger.models.*,
+                            swagger-static.*;version="${export.pkg.version.swagger-codegen}",
                             swagger.*;version="${export.pkg.version.swagger-codegen}",
                             slim.*;version="${export.pkg.version.swagger-codegen}",
                             sinatra.*;version="${export.pkg.version.swagger-codegen}",
