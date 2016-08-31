@@ -21,8 +21,8 @@
     <groupId>org.wso2.orbit.org.apache.lucene</groupId>
     <artifactId>lucene</artifactId>
     <packaging>bundle</packaging>
-    <name>Lucene 5.2.1.wso2v1 Orbit Bundle</name>
-    <version>5.2.1.wso2v1</version>
+    <name>Lucene ${orbit.version.lucene} Orbit Bundle</name>
+    <version>${orbit.version.lucene}</version>
     <description>This bundle exports packages from the Lucene indexing library</description>
     <url>http://wso2.org</url>
 
@@ -129,6 +129,12 @@
             <version>${version.lucene}</version>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-spatial3d</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -217,7 +223,7 @@
     </build>
 
     <properties>
-        <version.lucene>5.2.1</version.lucene>
+        <version.lucene>6.2.0</version.lucene>
         <orbit.version.lucene>${version.lucene}.wso2v1</orbit.version.lucene>
         <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
     </properties>
