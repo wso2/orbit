@@ -22,7 +22,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.netty.wso2</groupId>
+    <groupId>org.wso2.orbit.io.netty</groupId>
     <artifactId>netty-all</artifactId>
     <version>4.0.29.wso2v1</version>
     <packaging>bundle</packaging>
@@ -51,12 +51,6 @@
             <name>WSO2 internal Repository</name>
             <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
-
-        <snapshotRepository>
-            <id>wso2.snapshots</id>
-            <name>Apache Snapshot Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
 
 
@@ -65,6 +59,7 @@
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>${netty-all.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

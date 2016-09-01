@@ -37,6 +37,7 @@
             <groupId>org.iq80.leveldb</groupId>
             <artifactId>leveldb-api</artifactId>
             <version>${leveldb.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -59,7 +60,6 @@
                         <Import-Package>
                             !org.iq80.leveldb.*
                         </Import-Package>
-                        <!--<DynamicImport-Package>*</DynamicImport-Package>-->
                     </instructions>
                 </configuration>
             </plugin>
@@ -89,11 +89,6 @@
             <name>WSO2 internal Repository</name>
             <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
-        <snapshotRepository>
-            <id>wso2.snapshots</id>
-            <name>Apache Snapshot Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
 
 </project>

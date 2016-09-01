@@ -37,6 +37,7 @@
             <groupId>oro</groupId>
             <artifactId>oro</artifactId>
             <version>${oro.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -59,7 +60,6 @@
                         <Import-Package>
                             !org.apache.oro.*
                         </Import-Package>
-                        <!--<DynamicImport-Package>*</DynamicImport-Package>-->
                     </instructions>
                 </configuration>
             </plugin>
@@ -70,30 +70,12 @@
         <oro.version>2.0.8</oro.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>wso2-nexus</id>
-            <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </releases>
-        </repository>
-    </repositories>
-
     <distributionManagement>
         <repository>
             <id>wso2.releases</id>
             <name>WSO2 internal Repository</name>
             <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
-        <snapshotRepository>
-            <id>wso2.snapshots</id>
-            <name>Apache Snapshot Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
 
 </project>

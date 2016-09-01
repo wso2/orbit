@@ -251,4 +251,11 @@
         <xbean.import.range>[4.4.0, 5.0.0)</xbean.import.range>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
 </project>

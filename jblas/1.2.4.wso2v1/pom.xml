@@ -22,25 +22,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.wso2.orbit.jblas</groupId>
+	<groupId>org.wso2.orbit.org.jblas</groupId>
 	<artifactId>jblas</artifactId>
 	<version>1.2.4.wso2v1</version>
 	<packaging>bundle</packaging>
 	<name>WSO2 Carbon Orbit - jblas</name>
 	<description>This bundle will export packages from jblas v1.2.4</description>
-
-	<repositories>
-		<repository>
-			<id>wso2-nexus</id>
-			<name>WSO2 internal Repository</name>
-			<url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>daily</updatePolicy>
-				<checksumPolicy>fail</checksumPolicy>
-			</releases>
-		</repository>
-	</repositories>
 
 	<distributionManagement>
 		<repository>
@@ -48,11 +35,6 @@
 			<name>WSO2 internal Repository</name>
 			<url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
 		</repository>
-		<snapshotRepository>
-			<id>wso2.snapshots</id>
-			<name>Apache Snapshot Repository</name>
-			<url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
 	</distributionManagement>
 
 	<dependencies>
@@ -81,7 +63,6 @@
 						<Private-Package>
 						</Private-Package>
 						<Import-Package>
-							*;resolution:=optional
 						</Import-Package>
 						<Include-Resource>
 							{maven-resources}
