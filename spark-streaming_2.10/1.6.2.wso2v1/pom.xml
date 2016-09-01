@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <groupId>org.wso2.orbit.org.apache.spark</groupId>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>spark-streaming_2.10</artifactId>
+    <version>1.6.2.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Apache Spark Streaming</name>
+    <description>This bundle will export packages from Apache Spark Streaming v 1.4.2-wso2v1</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.10</artifactId>
+            <version>${spark.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            org.apache.spark.streaming.*;version="${exp.pkg.version.spark}";-split-package:=merge-first
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Import-Package>
+                            akka.actor.*;version="${akka.actor.import.range}",
+                            com.codahale.metrics.*;version="${com.codahale.metrics.import.range}",
+                            org.apache.commons.lang3.*;version="${org.apache.commons.lang3.import.range}",
+                            org.apache.hadoop.*;version="${org.apache.hadoop.import.range}",
+                            org.apache.spark.*;version="${org.apache.spark.import.range}",
+                            org.slf4j.*;version="${org.slf4j.import.range}",
+                            scala.*;version="${scala.import.range}",
+                            com.google.common.base.*;version="${com.google.common.base.import.range}";resolution:=optional,
+                            javax.servlet.http.*;version="${javax.servlet.http.import.range}";resolution:=optional,
+                            py4j.*;version="${py4j.import.range}";resolution:=optional,
+                            *;resolution:=optional
+                        </Import-Package>
+                        <!--Dynamic imports enabled here because spark sql uses scala reflection-->
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <exp.pkg.version.spark>1.6.2.wso2v1</exp.pkg.version.spark>
+        <spark.version>1.6.2</spark.version>
+        <spark.import.version>[1.6.0, 2.0.0)</spark.import.version>
+        <scala.import.version>[2.10.4, 2.11.0)</scala.import.version>
+        <hadoop.import.version>[2.2.0, 2.3.0)</hadoop.import.version>
+        <akka.import.version>[2.3.0,3.0.0)</akka.import.version>
+        <slf4j.import.version>[1.7.0, 1.8.0)</slf4j.import.version>
+
+
+        <akka.actor.import.range>[2.3.0, 2.4.0)</akka.actor.import.range>
+        <akka.import.range>[2.3.0,2.4.0)</akka.import.range>
+        <com.clearspring.analytics.stream.cardinality.import.range>[2.2.0,2.3.0)</com.clearspring.analytics.stream.cardinality.import.range>
+        <com.codahale.metrics.import.range>[3.1.0,3.2.0)</com.codahale.metrics.import.range>
+        <com.esotericsoftware.import.range>[2.24.0,2.25.0)</com.esotericsoftware.import.range>
+        <com.esotericsoftware.kryo.import.range>[2.24.0,2.25.0)</com.esotericsoftware.kryo.import.range>
+        <com.fasterxml.jackson.annotation.import.range>[2.4.0,2.5.0)</com.fasterxml.jackson.annotation.import.range>
+        <com.fasterxml.jackson.core.import.range>[2.4.0,2.5.0)</com.fasterxml.jackson.core.import.range>
+        <com.fasterxml.jackson.databind.import.range>[2.4.0,2.5.0)</com.fasterxml.jackson.databind.import.range>
+        <com.fasterxml.jackson.module.scala.import.range>[2.4.0,2.5.0)</com.fasterxml.jackson.module.scala.import.range>
+        <com.google.common.base.import.range>[19.0.0,20.0.0)</com.google.common.base.import.range>
+        <com.google.common.import.range>[19.0.0,20.0.0)</com.google.common.import.range>
+        <com.ning.compress.lzf.import.range>[1.0.0,1.1.0)</com.ning.compress.lzf.import.range>
+        <com.sun.jersey.spi.container.import.range>[0.0.0, 1.0.0)</com.sun.jersey.spi.container.import.range>
+        <com.twitter.chill.import.range>[0.5.0,0.6.0)</com.twitter.chill.import.range>
+        <com.typesafe.config.import.range>[1.2.0,1.3.0)</com.typesafe.config.import.range>
+        <io.netty.import.range>[4.0.0,4.1.0)</io.netty.import.range>
+        <javax.annotation.concurrent.import.range>[0.0.0, 1.0.0)</javax.annotation.concurrent.import.range>
+        <javax.annotation.import.range>[0.0.0,0.1.0)</javax.annotation.import.range>
+        <javax.imageio.import.range>[0.0.0, 1.0.0)</javax.imageio.import.range>
+        <javax.inject.import.range>[0.0.0, 1.0.0)</javax.inject.import.range>
+        <javax.management.import.range>[0.0.0, 1.0.0)</javax.management.import.range>
+        <javax.naming.import.range>[0.0.0, 1.0.0)</javax.naming.import.range>
+        <javax.net.ssl.import.range>[0.0.0, 1.0.0)</javax.net.ssl.import.range>
+        <javax.security.import.range>[0.0.0, 1.0.0)</javax.security.import.range>
+        <javax.servlet.http.import.range>[3.0.0,4.0.0)</javax.servlet.http.import.range>
+        <javax.servlet.import.range>[3.0.0,4.0.0)</javax.servlet.import.range>
+        <javax.sql.import.range>[0.0.0, 1.0.0)</javax.sql.import.range>
+        <javax.tools.import.range>[0.0.0, 1.0.0)</javax.tools.import.range>
+        <javax.transaction.import.range>[0.0.0, 1.0.0)</javax.transaction.import.range>
+        <javax.ws.rs.import.range>[0.0.0, 1.0.0)</javax.ws.rs.import.range>
+        <javax.xml.parsers.import.range>[0.0.0, 1.0.0)</javax.xml.parsers.import.range>
+        <jodd.datetime.import.range>[3.6.0,4.0.0)</jodd.datetime.import.range>
+        <net.jpountz.lz4.import.range>[0.0.0, 1.0.0)</net.jpountz.lz4.import.range>
+        <net.razorvine.pickle.import.range>[0.0.0,1.0.0)</net.razorvine.pickle.import.range>
+        <org.apache.commons.lang3.import.range>[3.3.0,3.4.0)</org.apache.commons.lang3.import.range>
+        <org.apache.commons.math3.distribution.import.range>[3.4.0,4.0.0)</org.apache.commons.math3.distribution.import.range>
+        <org.apache.curator.import.range>[2.4.0,3.0.0)</org.apache.curator.import.range>
+        <org.apache.hadoop.import.range>[2.7.0,2.8.0)</org.apache.hadoop.import.range>
+        <org.apache.ivy.import.range>[2.0.0,3.0.0)</org.apache.ivy.import.range>
+        <org.apache.log4j.import.range>[1.2.0,1.3.0)</org.apache.log4j.import.range>
+        <org.apache.mesos.import.range>[0.18.0,0.19.0)</org.apache.mesos.import.range>
+        <org.apache.mesos.protobuf.import.range>[0.0.0, 1.0.0)</org.apache.mesos.protobuf.import.range>
+        <org.apache.spark.import.range>[1.6.0,2.0.0)</org.apache.spark.import.range>
+        <org.apache.spark.sql.types.import.range>[1.6.0,2.0.0)</org.apache.spark.sql.types.import.range>
+        <org.apache.zookeeper.import.range>[3.4.0,3.5.0)</org.apache.zookeeper.import.range>
+        <org.ietf.jgss.import.range>[0.0.0, 1.0.0)</org.ietf.jgss.import.range>
+        <org.json4s.import.range>[3.2.0,3.3.0)</org.json4s.import.range>
+        <org.mortbay.import.range>[6.1.0,7.0.0)</org.mortbay.import.range>
+        <org.roaringbitmap.import.range>[0.4.0,0.5.0)</org.roaringbitmap.import.range>
+        <org.slf4j.import.range>[1.7.0,1.8.0)</org.slf4j.import.range>
+        <org.xerial.snappy.import.range>[1.1.0,1.2.0)</org.xerial.snappy.import.range>
+        <parquet.import.range>[0.0.0,1.0.0)</parquet.import.range>
+        <py4j.import.range>[0.0.0,1.0.0)</py4j.import.range>
+        <scala.import.range>[2.10.0,2.11.0)</scala.import.range>
+        <scala.quasiquotes.import.range>[0.0.0,1.0.0)</scala.quasiquotes.import.range>
+        <scala.tools.import.range>[2.10.0,3.0.0)</scala.tools.import.range>
+        <sun.misc.import.range>[0.0.0, 1.0.0)</sun.misc.import.range>
+        <sun.nio.ch.import.range>[0.0.0, 1.0.0)</sun.nio.ch.import.range>
+        <sun.reflect.import.range>[0.0.0, 1.0.0)</sun.reflect.import.range>
+        <sun.security.action.import.range>[0.0.0, 1.0.0)</sun.security.action.import.range>
+        <tachyon.import.range>[0.0.0, 1.0.0)</tachyon.import.range>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+</project>
