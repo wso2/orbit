@@ -162,7 +162,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.lucene.*; version="${orbit.version.lucene}"; -split-package:=merge-first,
+                            org.apache.lucene.; version="${orbit.version.lucene}"; -split-package:=merge-first,
                             org.tartarus.snowball.*; version="${orbit.version.lucene}"
                         </Export-Package>
                         <Import-Package>
