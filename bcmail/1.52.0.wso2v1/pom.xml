@@ -20,7 +20,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.bouncycastle.wso2</groupId>
+    <groupId>org.wso2.orbit.org.bouncycastle</groupId>
     <artifactId>bcmail-jdk15on</artifactId>
     <packaging>bundle</packaging>
     <name>bcmail</name>
@@ -42,7 +42,7 @@
         </repository>
     </repositories>
     <dependencies>
-       <dependency>
+        <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcmail-jdk15on</artifactId>
             <version>1.52</version>
@@ -60,31 +60,30 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-							org.bouncycastle.mail.smime.*,
-							!org.bouncycastle.x509,
-							!org.bouncycastle.util,
-							!org.bouncycastle.pqc,
-							!org.bouncycastle.ocsp,
-							!org.bouncycastle.math,
-							!org.bouncycastle.jce,
-							!org.bouncycastle.jcajce,
-							!org.bouncycastle.i18n,
-							!org.bouncycastle.crypto,
-							!org.bouncycastle.asn1
+                            org.bouncycastle.mail.smime.*,
+                            !org.bouncycastle.x509,
+                            !org.bouncycastle.util,
+                            !org.bouncycastle.pqc,
+                            !org.bouncycastle.ocsp,
+                            !org.bouncycastle.math,
+                            !org.bouncycastle.jce,
+                            !org.bouncycastle.jcajce,
+                            !org.bouncycastle.i18n,
+                            !org.bouncycastle.crypto,
+                            !org.bouncycastle.asn1
                         </Export-Package>
-						<Import-Package>
-							org.bouncycastle.x509.*;version="${bouncycastle.import.version.range}",	
-							org.bouncycastle.util.*;version="${bouncycastle.import.version.range}",	
-							org.bouncycastle.pqc.*;version="${bouncycastle.import.version.range}",	
-							org.bouncycastle.ocsp.*;version="${bouncycastle.import.version.range}",	
-							org.bouncycastle.math.*;version="${bouncycastle.import.version.range}",	
-							org.bouncycastle.jce.*;version="${bouncycastle.import.version.range}",	
-							org.bouncycastle.jcajce.*;version="${bouncycastle.import.version.range}",	
-							org.bouncycastle.i18n.*;version="${bouncycastle.import.version.range}",	
-							org.bouncycastle.crypto.*;version="${bouncycastle.import.version.range}",	
-							org.bouncycastle.asn1.*;version="${bouncycastle.import.version.range}"							
-						</Import-Package>
-						<DynamicImport-Package>*</DynamicImport-Package>
+                        <Import-Package>
+                            org.bouncycastle.x509.*;version="${bouncycastle.import.version.range}",
+                            org.bouncycastle.util.*;version="${bouncycastle.import.version.range}",
+                            org.bouncycastle.pqc.*;version="${bouncycastle.import.version.range}",
+                            org.bouncycastle.ocsp.*;version="${bouncycastle.import.version.range}",
+                            org.bouncycastle.math.*;version="${bouncycastle.import.version.range}",
+                            org.bouncycastle.jce.*;version="${bouncycastle.import.version.range}",
+                            org.bouncycastle.jcajce.*;version="${bouncycastle.import.version.range}",
+                            org.bouncycastle.i18n.*;version="${bouncycastle.import.version.range}",
+                            org.bouncycastle.crypto.*;version="${bouncycastle.import.version.range}",
+                            org.bouncycastle.asn1.*;version="${bouncycastle.import.version.range}"
+                        </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
@@ -95,6 +94,5 @@
     <properties>
         <bouncycastle.import.version.range>[1.52.0, 1.55.0)</bouncycastle.import.version.range>
     </properties>
-
 
 </project>
