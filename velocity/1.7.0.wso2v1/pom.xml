@@ -116,10 +116,10 @@
                             javax.servlet;resolution:=optional,
                             javax.servlet.http;resolution:=optional,
                             javax.sql,
-                            org.apache.commons.collections,
-                            org.apache.commons.collections.map,
-                            org.apache.commons.lang.builder,
-                            org.apache.commons.lang.text,
+                            org.apache.commons.collections; version="${commons.collection.version.range}",
+                            org.apache.commons.collections.map; version="${commons.collection.version.range}",
+                            org.apache.commons.lang.builder; version="${commons.lang.version.range}",
+                            org.apache.commons.lang.text; version="${commons.lang.version.range}",
                             org.apache.commons.logging;resolution:=optional,
                             org.apache.log;resolution:=optional,
                             org.apache.log.format;resolution:=optional,
@@ -131,7 +131,7 @@
                             org.jdom;resolution:=optional,
                             org.jdom.input;resolution:=optional,
                             org.jdom.output;resolution:=optional,
-                            org.xml.sax
+                            org.xml.sax; version="0.0.0",
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
@@ -143,6 +143,8 @@
     <properties>
         <velocity.version>1.7</velocity.version>
         <commons.lang.version>2.6.0.wso2v1</commons.lang.version>
+        <commons.lang.version.range>[2.6.0,3.0.0)</commons.lang.version.range>
+        <commons.collection.version.range>[3.2.0,4.0.0)</commons.collection.version.range>
     </properties>
 
     <distributionManagement>
