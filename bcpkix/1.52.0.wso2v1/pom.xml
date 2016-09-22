@@ -75,6 +75,16 @@
                         <Embed-Dependency>bcpkix-jdk15on;scope=compile|runtime;inline=false
                         </Embed-Dependency>
                         <_exportcontents>
+                            !org.bouncycastle.x509,
+                            !org.bouncycastle.util,
+                            !org.bouncycastle.pqc,
+                            !org.bouncycastle.ocsp,
+                            !org.bouncycastle.math,
+                            !org.bouncycastle.jce,
+                            !org.bouncycastle.jcajce,
+                            !org.bouncycastle.i18n,
+                            !org.bouncycastle.crypto,
+                            !org.bouncycastle.asn1
                             org.bouncycastle.cert;version="${exp.pkg.version.bcpkix}",
                             org.bouncycastle.cert.bc;version="${exp.pkg.version.bcpkix}",
                             org.bouncycastle.cert.cmp;version="${exp.pkg.version.bcpkix}",
@@ -105,16 +115,6 @@
                             org.bouncycastle.tsp;version="${exp.pkg.version.bcpkix}",
                             org.bouncycastle.tsp.cms;version="${exp.pkg.version.bcpkix}",
                             org.bouncycastle.voms;version="${exp.pkg.version.bcpkix}",
-                            !org.bouncycastle.x509,
-                            !org.bouncycastle.util,
-                            !org.bouncycastle.pqc,
-                            !org.bouncycastle.ocsp,
-                            !org.bouncycastle.math,
-                            !org.bouncycastle.jce,
-                            !org.bouncycastle.jcajce,
-                            !org.bouncycastle.i18n,
-                            !org.bouncycastle.crypto,
-                            !org.bouncycastle.asn1
                         </_exportcontents>
                     </instructions>
                 </configuration>
