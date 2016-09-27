@@ -19,7 +19,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
    <name>odata-server 4.0.0.wso2v1 Orbit Bundle</name>
-   <description>This bundle exports packages from the Olingo commons library</description>
+   <description>This bundle exports packages from io reactivex library</description>
    <url>http://wso2.org</url>
 
    <groupId>org.wso2.io.reactivex</groupId>
