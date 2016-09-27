@@ -39,7 +39,7 @@
     </distributionManagement>
 
     <modules>
-        <module>httpcore/4.3.0-wso2v1</module>
+        <!--module>httpcore/4.3.0-wso2v1</module>
         <module>poi-ooxml/3.9.0.wso2v2</module>
         <module>poi-ooxml/3.9.0.wso2v3</module>
         <module>spring-framework/3.2.9.wso2v1</module>
@@ -63,8 +63,8 @@
         <module>scannotation/1.0.3.wso2v1</module>
         <module>compass/4.3.0.wso2v1</module>
         <module>poi/4.3.0.wso2v1</module>
-        <module>poi-scratchpad/4.3.0.wso2v1</module>
-        <module>rxJava/1.2.0.wso2v1</module>
+        <module>poi-scratchpad/4.3.0.wso2v1</module-->
+        <module>rx-java/1.2.0.wso2v1</module>
     </modules>
 
     <build>
