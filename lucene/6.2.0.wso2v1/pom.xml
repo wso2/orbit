@@ -163,9 +163,10 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Bundle-Vendor>WSO2, Inc.</Bundle-Vendor>
                         <Export-Package>
-                            org.apache.lucene.*; version="${project.version}"; -split-package:=merge-first,
+                            org.apache.lucene.*; version="${version.lucene}"; -split-package:=merge-first,
                             org.tartarus.snowball.*; version="${project.version}"
                         </Export-Package>
+                        <Private-Package></Private-Package>
                         <Import-Package>
                             !org.apache.lucene.*,
                             org.xml.sax.helpers; version="0.0.0",
@@ -193,32 +194,6 @@
                         </Import-Package>
                     </instructions>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>2.4</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <shadedGroupFilter>org.apache.lucene</shadedGroupFilter>
-                            <createSourcesJar>false</createSourcesJar>
-                            <shadedArtifactAttached>false</shadedArtifactAttached>
-                            <promoteTransitiveDependencies>false</promoteTransitiveDependencies>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheNoticeResourceTransformer">
-                                    <projectName>Apache Lucene</projectName>
-                                </transformer>
-                            </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
