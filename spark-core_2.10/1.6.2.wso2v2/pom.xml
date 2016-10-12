@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.wso2.orbit.org.apache.spark</groupId>
+    <artifactId>spark-core_2.10</artifactId>
+    <version>1.6.2.wso2v2</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Apache Spark Core</name>
+    <description>
+        This bundle will export packages from Apache Spark core v 1.6.2
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.10</artifactId>
+            <version>${spark.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>servlet-api</artifactId>
+                </exclusion>
+            </exclusions>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-network-common_2.10</artifactId>
+            <version>${spark.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-network-shuffle_2.10</artifactId>
+            <optional>true</optional>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-launcher_2.10</artifactId>
+            <optional>true</optional>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-unsafe_2.10</artifactId>
+            <optional>true</optional>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-yarn_2.10</artifactId>
+            <version>${spark.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.orbit.io.dropwizard.metrics.json</groupId>
+            <artifactId>metrics-json</artifactId>
+            <version>${metrics-json.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            org.apache.spark.*;version="${exp.pkg.version.spark}";-split-package:=merge-first,
+                            org.spark-project.guava.*;-split-package:=merge-first,
+                            org.spark-project.jetty.*;-split-package:=merge-first
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Import-Package>
+                            !scala.tools.*,
+                            akka.*;version="${akka.import.range}",
+                            com.clearspring.analytics.stream.cardinality.*;version="${com.clearspring.analytics.stream.cardinality.import.range}",
+                            !com.codahale.metrics.health.*;version="${com.codahale.metrics.import.range}",
+                            com.codahale.metrics.*;version="${com.codahale.metrics.import.range}",
+                            com.esotericsoftware.*;version="${com.esotericsoftware.import.range}",
+                            com.fasterxml.jackson.annotation.*;version="${com.fasterxml.jackson.annotation.import.range}",
+                            com.fasterxml.jackson.core.*;version="${com.fasterxml.jackson.core.import.range}",
+                            com.fasterxml.jackson.databind.*;version="${com.fasterxml.jackson.databind.import.range}",
+                            com.fasterxml.jackson.module.scala.*;version="${com.fasterxml.jackson.module.scala.import.range}",
+                            com.ning.compress.lzf.*;version="${com.ning.compress.lzf.import.range}",
+                            com.sun.jersey.spi.container.*;version="${com.sun.jersey.spi.container.import.range}",
+                            com.twitter.chill.*;version="${com.twitter.chill.import.range}",
+                            com.typesafe.config.*;version="${com.typesafe.config.import.range}",
+                            io.netty.*;version="${io.netty.import.range}",
+                            javax.annotation.concurrent.*;version="${javax.annotation.concurrent.import.range}",
+                            javax.imageio.*;version="${javax.imageio.import.range}",
+                            javax.management.*;version="${javax.management.import.range}",
+                            javax.naming.*;version="${javax.naming.import.range}",
+                            javax.net.ssl.*;version="${javax.net.ssl.import.range}",
+                            javax.security.*;version="${javax.security.import.range}",
+                            javax.servlet.*;version="${javax.servlet.import.range}",
+                            javax.sql.*;version="${javax.sql.import.range}",
+                            javax.transaction.*;version="${javax.transaction.import.range}",
+                            javax.ws.rs.*;version="${javax.ws.rs.import.range}",
+                            javax.xml.parsers.*;version="${javax.xml.parsers.import.range}",
+                            org.apache.commons.lang3.*;version="${org.apache.commons.lang3.import.range}",
+                            org.apache.hadoop.*;version="${org.apache.hadoop.import.range}",
+                            org.apache.log4j.*;version="${org.apache.log4j.import.range}",
+                            org.apache.spark.sql.types.*;version="${org.apache.spark.sql.types.import.range}",
+                            org.ietf.jgss.*;version="${org.ietf.jgss.import.range}",
+                            org.json4s.*;version="${org.json4s.import.range}",
+                            org.apache.zookeeper.*;version="${org.apache.zookeeper.import.range}",
+                            org.roaringbitmap.*;version="${org.roaringbitmap.import.range}",
+                            org.slf4j.*;version="${org.slf4j.import.range}",
+                            org.xerial.snappy.*;version="${org.xerial.snappy.import.range}",
+                            scala.*;version="${scala.import.range}",
+                            com.google.common.*;version="${com.google.common.import.range}";resolution:=optional,
+                            javax.annotation.*;version="${javax.annotation.import.range}";resolution:=optional,
+                            javax.inject.*;version="${javax.inject.import.range}";resolution:=optional,
+                            javax.servlet.*;version="${javax.servlet.import.range}";resolution:=optional,
+                            javax.tools.*;version="${javax.tools.import.range}";resolution:=optional,
+                            net.jpountz.lz4.*;version="${net.jpountz.lz4.import.range}";resolution:=optional,
+                            net.razorvine.pickle.*;version="${net.razorvine.pickle.import.range}";resolution:=optional,
+                            org.apache.commons.math3.distribution.*;version="${org.apache.commons.math3.distribution.import.range}";resolution:=optional,
+                            org.apache.curator.*;version="${org.apache.curator.import.range}";resolution:=optional,
+                            org.apache.ivy.*;version="${org.apache.ivy.import.range}";resolution:=optional,
+                            org.apache.mesos.*;version="${org.apache.mesos.import.range}";resolution:=optional,
+                            org.apache.mesos.protobuf.*;version="${org.apache.mesos.protobuf.import.range}";resolution:=optional,
+                            org.mortbay.*;version="${org.mortbay.import.range}";resolution:=optional,
+                            py4j.*;version="${py4j.import.range}";resolution:=optional,
+                            sun.misc.*;version="${sun.misc.import.range}";resolution:=optional,
+                            sun.nio.ch.*;version="${sun.nio.ch.import.range}";resolution:=optional,
+                            sun.reflect.*;version="${sun.reflect.import.range}";resolution:=optional,
+                            sun.security.action.*;version="${sun.security.action.import.range}";resolution:=optional,
+                            tachyon.*;version="${tachyon.import.range}",
+
+                            org.codehaus.janino.*;version="${janino.import.range}",
+                            org.fusesource.leveldbjni.*;version="${leveldb.import.range}",
+                            org.apache.oro.*;version="${leveldb.import.range}";resolution:=optional,
+                            org.apache.parquet.*;version="${parquet.import.range}",
+                            org.apache.avro.*;version="${avro.import.range}",
+                            org.codehaus.commons.compiler.*;version="${commons.compiler.import.range}",
+                            org.apache.xbean.asm5.*;version="${xbean.import.range}"
+                        </Import-Package>
+                        <Embed-Dependency>
+                            metrics-json;scope=compile|runtime;inline=false;
+                        </Embed-Dependency>
+                        <Include-Resource>
+                            {maven-resources}
+                        </Include-Resource>
+                        <!--Dynamic imports enabled here because spark core uses scala reflection-->
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <exp.pkg.version.spark>1.6.2.wso2v2</exp.pkg.version.spark>
+        <spark.version>1.6.2</spark.version>
+        <metrics-json.version>3.1.2.wso2v1</metrics-json.version>
+        <spark.import.version>[1.6.0, 2.0.0)</spark.import.version>
+        <scala.version>2.10.5</scala.version>
+        <scala.import.version>[2.10.5, 2.11.0)</scala.import.version>
+
+        <akka.actor.import.range>[2.3.0, 2.4.0)</akka.actor.import.range>
+        <akka.import.range>[2.3.0,2.4.0)</akka.import.range>
+        <com.clearspring.analytics.stream.cardinality.import.range>[2.2.0,2.3.0)
+        </com.clearspring.analytics.stream.cardinality.import.range>
+        <com.codahale.metrics.import.range>[3.1.0,3.2.0)</com.codahale.metrics.import.range>
+        <com.esotericsoftware.import.range>[2.24.0,2.25.0)</com.esotericsoftware.import.range>
+        <com.esotericsoftware.kryo.import.range>[2.24.0,2.25.0)</com.esotericsoftware.kryo.import.range>
+        <com.fasterxml.jackson.annotation.import.range>[2.4.0,2.5.0)</com.fasterxml.jackson.annotation.import.range>
+        <com.fasterxml.jackson.core.import.range>[2.4.0,2.5.0)</com.fasterxml.jackson.core.import.range>
+        <com.fasterxml.jackson.databind.import.range>[2.4.0,2.5.0)</com.fasterxml.jackson.databind.import.range>
+        <com.fasterxml.jackson.module.scala.import.range>[2.4.0,2.5.0)</com.fasterxml.jackson.module.scala.import.range>
+        <com.google.common.base.import.range>[19.0.0,20.0.0)</com.google.common.base.import.range>
+        <com.google.common.import.range>[19.0.0,20.0.0)</com.google.common.import.range>
+        <com.ning.compress.lzf.import.range>[1.0.0,1.1.0)</com.ning.compress.lzf.import.range>
+        <com.sun.jersey.spi.container.import.range>[0.0.0, 1.0.0)</com.sun.jersey.spi.container.import.range>
+        <com.twitter.chill.import.range>[0.5.0,0.6.0)</com.twitter.chill.import.range>
+        <com.typesafe.config.import.range>[1.2.0,1.3.0)</com.typesafe.config.import.range>
+        <io.netty.import.range>[4.0.0,4.1.0)</io.netty.import.range>
+        <javax.annotation.concurrent.import.range>[0.0.0, 1.0.0)</javax.annotation.concurrent.import.range>
+        <javax.annotation.import.range>[0.0.0,0.1.0)</javax.annotation.import.range>
+        <javax.imageio.import.range>[0.0.0, 1.0.0)</javax.imageio.import.range>
+        <javax.inject.import.range>[0.0.0, 1.0.0)</javax.inject.import.range>
+        <javax.management.import.range>[0.0.0, 1.0.0)</javax.management.import.range>
+        <javax.naming.import.range>[0.0.0, 1.0.0)</javax.naming.import.range>
+        <javax.net.ssl.import.range>[0.0.0, 1.0.0)</javax.net.ssl.import.range>
+        <javax.security.import.range>[0.0.0, 1.0.0)</javax.security.import.range>
+        <javax.servlet.http.import.range>[3.0.0,4.0.0)</javax.servlet.http.import.range>
+        <javax.servlet.import.range>[3.0.0,4.0.0)</javax.servlet.import.range>
+        <javax.sql.import.range>[0.0.0, 1.0.0)</javax.sql.import.range>
+        <javax.tools.import.range>[0.0.0, 1.0.0)</javax.tools.import.range>
+        <javax.transaction.import.range>[0.0.0, 1.0.0)</javax.transaction.import.range>
+        <javax.ws.rs.import.range>[0.0.0, 1.0.0)</javax.ws.rs.import.range>
+        <javax.xml.parsers.import.range>[0.0.0, 1.0.0)</javax.xml.parsers.import.range>
+        <jodd.datetime.import.range>[3.6.0,4.0.0)</jodd.datetime.import.range>
+        <net.jpountz.lz4.import.range>[1.3.0, 2.0.0)</net.jpountz.lz4.import.range>
+        <net.razorvine.pickle.import.range>[0.0.0,1.0.0)</net.razorvine.pickle.import.range>
+        <org.apache.commons.lang3.import.range>[3.3.0,3.4.0)</org.apache.commons.lang3.import.range>
+        <org.apache.commons.math3.distribution.import.range>[3.4.0,4.0.0)
+        </org.apache.commons.math3.distribution.import.range>
+        <org.apache.curator.import.range>[2.4.0,3.0.0)</org.apache.curator.import.range>
+        <org.apache.hadoop.import.range>[2.7.0,2.8.0)</org.apache.hadoop.import.range>
+        <org.apache.ivy.import.range>[2.0.0,3.0.0)</org.apache.ivy.import.range>
+        <org.apache.log4j.import.range>[1.2.0,1.3.0)</org.apache.log4j.import.range>
+        <org.apache.mesos.import.range>[0.18.0,1.0.0)</org.apache.mesos.import.range>
+        <org.apache.mesos.protobuf.import.range>[0.0.0, 1.0.0)</org.apache.mesos.protobuf.import.range>
+        <org.apache.spark.import.range>[1.6.0,2.0.0)</org.apache.spark.import.range>
+        <org.apache.spark.sql.types.import.range>[1.6.0,2.0.0)</org.apache.spark.sql.types.import.range>
+        <org.apache.zookeeper.import.range>[3.4.0,3.5.0)</org.apache.zookeeper.import.range>
+        <org.ietf.jgss.import.range>[0.0.0, 1.0.0)</org.ietf.jgss.import.range>
+        <org.json4s.import.range>[3.2.0,3.3.0)</org.json4s.import.range>
+        <org.mortbay.import.range>[6.1.0,7.0.0)</org.mortbay.import.range>
+        <org.roaringbitmap.import.range>[0.5.0,1.0.0)</org.roaringbitmap.import.range>
+        <org.slf4j.import.range>[1.7.0,1.8.0)</org.slf4j.import.range>
+        <org.xerial.snappy.import.range>[1.1.0,1.2.0)</org.xerial.snappy.import.range>
+        <parquet.import.range>[1.7.0,2.0.0)</parquet.import.range>
+        <py4j.import.range>[0.0.0,1.0.0)</py4j.import.range>
+        <scala.import.range>[2.10.0,2.11.0)</scala.import.range>
+        <scala.quasiquotes.import.range>[0.0.0,1.0.0)</scala.quasiquotes.import.range>
+        <scala.tools.import.range>[2.10.0,3.0.0)</scala.tools.import.range>
+        <sun.misc.import.range>[0.0.0, 1.0.0)</sun.misc.import.range>
+        <sun.nio.ch.import.range>[0.0.0, 1.0.0)</sun.nio.ch.import.range>
+        <sun.reflect.import.range>[0.0.0, 1.0.0)</sun.reflect.import.range>
+        <sun.security.action.import.range>[0.0.0, 1.0.0)</sun.security.action.import.range>
+        <tachyon.import.range>[0.0.0, 1.0.0)</tachyon.import.range>
+
+        <janino.import.range>[2.7.8, 2.8.0)</janino.import.range>
+        <commons.compiler.import.range>[2.7.8, 2.8.0)</commons.compiler.import.range>
+        <leveldb.import.range>[1.8.0, 2.0.0)</leveldb.import.range>
+        <oro.import.range>[2.0.0, 3.0.0)</oro.import.range>
+        <avro.import.range>[1.7.0, 2.0.0)</avro.import.range>
+        <xbean.import.range>[4.4.0, 5.0.0)</xbean.import.range>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+</project>
