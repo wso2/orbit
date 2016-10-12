@@ -32,19 +32,14 @@
         This bundle will export packages from Metrics JSON
     </description>
     <url>http://wso2.org</url>
-
-    <repositories>
+  
+    <distributionManagement>
         <repository>
-            <id>wso2-nexus</id>
+            <id>wso2.releases</id>
             <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-                <checksumPolicy>ignore</checksumPolicy>
-            </releases>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
-    </repositories>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
