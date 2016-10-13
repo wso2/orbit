@@ -78,6 +78,7 @@
             <groupId>org.wso2.orbit.io.dropwizard.metrics.json</groupId>
             <artifactId>metrics-json</artifactId>
             <version>${metrics-json.version}</version>
+            <optional>true</optional>
         </dependency>
 
     </dependencies>
