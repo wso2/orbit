@@ -20,13 +20,13 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>net.sf.saxon.wso2</groupId>
+    <groupId>org.wso2.orbit.net.sf.saxon</groupId>
     <artifactId>Saxon-HE</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - XPath Library</name>
     <version>9.7.0.wso2v1</version>
     <description>
-        This bundle will export packages from xpath library
+        This bundle will export packages from Saxon XPath library
     </description>
     <url>http://wso2.org</url>
 
@@ -34,13 +34,13 @@
         <dependency>
             <groupId>net.sf.saxon</groupId>
             <artifactId>Saxon-HE</artifactId>
-            <version>9.7.0-8</version>
+            <version>${saxon.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>xml-resolver</groupId>
             <artifactId>xml-resolver</artifactId>
-            <version>1.2</version>
+            <version>${xml-resolver.version}</version>
         </dependency>
     </dependencies>
 
@@ -50,12 +50,6 @@
             <name>WSO2 internal Repository</name>
             <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
-
-        <snapshotRepository>
-            <id>wso2.snapshots</id>
-            <name>Apache Snapshot Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
 
     <build>
@@ -63,23 +57,15 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.7</version>
+                <version>${maven.bundle.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-                            net.sf.saxon.*;version="9.7.0.wso2v1"
+                            net.sf.saxon.*;version="${saxon.wso2.version}"
                         </Export-Package>
-                        <!--<Import-Package>
-                            org.apache.xml.resolver,
-                            *;resolution:=optional
-                        </Import-Package>-->
-                        <!--<Private-Package>
-                            org.apache.xml.resolver.*
-                            org.apache.xml.resolver.helpers
-                        </Private-Package>-->
                         <Embed-Dependency>
                             xml-resolver;scope=compile|runtime;inline=false;
                         </Embed-Dependency>
@@ -88,5 +74,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <properties>
+        <saxon.version>9.7.0-8</saxon.version>
+        <xml-resolver.version>1.2</xml-resolver.version>
+        <maven.bundle.plugin.version>2.3.7</maven.bundle.plugin.version>
+        <saxon.wso2.version>9.7.0.wso2v1</saxon.wso2.version>
+    </properties>
 
 </project>
