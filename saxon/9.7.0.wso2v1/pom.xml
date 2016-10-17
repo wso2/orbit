@@ -41,6 +41,7 @@
             <groupId>xml-resolver</groupId>
             <artifactId>xml-resolver</artifactId>
             <version>${xml-resolver.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
