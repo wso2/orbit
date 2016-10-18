@@ -70,6 +70,24 @@
                         <Embed-Dependency>
                             xml-resolver;scope=compile|runtime;inline=false;
                         </Embed-Dependency>
+                        <Import-Package>
+                            javax.xml,
+                            javax.xml.datatype;
+                            javax.xml.namespace;
+                            javax.xml.parsers,
+                            javax.xml.stream,
+                            javax.xml.stream.events,
+                            javax.xml.transform,
+                            javax.xml.transform.dom,
+                            javax.xml.transform.sax,
+                            javax.xml.transform.stax,
+                            javax.xml.transform.stream,
+                            javax.xml.xpath,
+                            org.w3c.dom,
+                            org.xml.sax,
+                            org.xml.sax.ext,
+                            org.xml.sax.helpers
+                        </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
