@@ -72,8 +72,7 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-			    com.nimbusds.*; version="2.26.1",
-			    net.minidev.*; version="1.1.1",
+			    com.nimbusds.*; version="2.26.1"
                         </Export-Package>
                         <Import-Package>
 			    !com.nimbusds.*; version="2.26.1",
