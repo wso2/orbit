@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ~ Copyright (c) 2016, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~      http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.com.github.fge</groupId>
+    <artifactId>json-schema-validator-all</artifactId>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - FGE-Json Schema Validator</name>
+    <version>2.2.6.wso2v2</version>
+    <description>
+        This bundle will export packages from fge json-schema-validator
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${json.schema.validator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>json-schema-core</artifactId>
+            <version>${json.schema.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>uri-template</artifactId>
+            <version>${uri.template.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>msg-simple</artifactId>
+            <version>${msg.simple.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>btf</artifactId>
+            <version>${btf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fge</groupId>
+            <artifactId>jackson-coreutils</artifactId>
+            <version>${jackson.coreutils.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.github.fge;version="${btf.version}",
+                            com.github.fge.jackson.*;version="${jackson.coreutils.version}",
+                            com.github.fge.jsonschema.core.*;version="${json.schema.core.version}",
+                            com.github.fge.jsonschema.*;version="${json.schema.validator.version}",
+                            com.github.fge.msgsimple.*;version="${msg.simple.version}",
+                            com.github.fge.uritemplate.*;version="${uri.template.version}",
+                        </Export-Package>
+                        <Import-Package>
+                            !com.github.fge.*,
+                            com.google.common.base; version="${com.google.common.imp.pkg.version.range}",
+                            com.fasterxml.jackson.core; version="${com.fasterxml.jackson.core.imp.pkg.version.range}",
+                            com.google.common.collect; version="${com.google.common.imp.pkg.version.range}",
+                            com.fasterxml.jackson.databind; version="${jackson.databind.imp.pkg.version.range}",
+                            com.fasterxml.jackson.databind.node; version="${jackson.databind.imp.pkg.version.range}",
+                            com.google.common.io; version="${com.google.common.imp.pkg.version.range}",
+                            org.joda.time.format; version="${org.joda.time.imp.pkg.version.range}",
+                            org.joda.time; version="${org.joda.time.imp.pkg.version.range}",
+                            javax.mail.internet; version="${javax.mail.internet.imp.pkg.version.range}",
+                            com.google.common.cache; version="${com.google.common.imp.pkg.version.range}",
+                            com.google.common.primitives; version="${com.google.common.imp.pkg.version.range}",
+                            com.google.i18n.phonenumbers; version="${com.google.i18n.phonenumber.imp.pkg.version.range}",
+                        </Import-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Include-Resource>
+                            @json-schema-core-${json.schema.core.version}.jar!/draftv4/*,
+                            @json-schema-core-${json.schema.core.version}.jar!/draftv3/*
+                        </Include-Resource>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <json.schema.validator.version>2.2.6</json.schema.validator.version>
+        <json.schema.core.version>1.2.5</json.schema.core.version>
+        <uri.template.version>0.9</uri.template.version>
+        <msg.simple.version>1.1</msg.simple.version>
+        <btf.version>1.2</btf.version>
+        <jackson.coreutils.version>1.8</jackson.coreutils.version>
+
+        <!--OSGI version range-->
+        <com.google.common.imp.pkg.version.range>[19.0.0,19.0.0)</com.google.common.imp.pkg.version.range>
+        <javax.mail.internet.imp.pkg.version.range>[1.4.0,1.5.0)</javax.mail.internet.imp.pkg.version.range>
+        <org.joda.time.imp.pkg.version.range>[2.6.0, 3.0.0)</org.joda.time.imp.pkg.version.range>
+        <jackson.databind.imp.pkg.version.range>[2.6.0, 3.0.0)</jackson.databind.imp.pkg.version.range>
+        <com.fasterxml.jackson.core.imp.pkg.version.range>[2.6.0, 3.0.0)</com.fasterxml.jackson.core.imp.pkg.version.range>
+        <com.google.i18n.phonenumber.imp.pkg.version.range>[7.4.0, 7.5.0)</com.google.i18n.phonenumber.imp.pkg.version.range>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
