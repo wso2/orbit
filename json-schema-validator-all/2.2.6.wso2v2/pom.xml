@@ -35,31 +35,37 @@
             <groupId>com.github.fge</groupId>
             <artifactId>json-schema-validator</artifactId>
             <version>${json.schema.validator.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>json-schema-core</artifactId>
             <version>${json.schema.core.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>uri-template</artifactId>
             <version>${uri.template.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>msg-simple</artifactId>
             <version>${msg.simple.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>btf</artifactId>
             <version>${btf.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
             <artifactId>jackson-coreutils</artifactId>
             <version>${jackson.coreutils.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
