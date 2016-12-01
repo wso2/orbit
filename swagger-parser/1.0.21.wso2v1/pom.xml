@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.io.swagger</groupId>
     <artifactId>swagger-parser</artifactId>
-    <version>1.0.21.wso2v1</version>
+    <version>1.0.21.wso2v2</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - swagger-parser (io.swagger)</name>
     <description>
