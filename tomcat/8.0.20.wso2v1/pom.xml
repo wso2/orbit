@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ~ Copyright (c) WSO2 Inc. (http://wso2.com) All Rights Reserved.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~      http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.apache.tomcat</groupId>
+    <artifactId>tomcat</artifactId>
+    <version>8.0.20.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>tomcat orbit bundle</name>
+    <description>Apache Tomcat</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>${version.tomcat}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>${version.tomcat}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-websocket</artifactId>
+            <version>${version.tomcat}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jasper</artifactId>
+            <version>${version.tomcat}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jdt.core.compiler</groupId>
+            <artifactId>ecj</artifactId>
+            <version>${version.ecj}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            !org.apache.tomcat.jdbc.pool.*,
+                            org.apache.jasper.*;version="${version.tomcat}";-split-package:=merge-first,
+                            org.apache.naming.*;version="${version.tomcat}",
+                            org.apache.tomcat.*;version="${version.tomcat}";-split-package:=merge-first,
+                            org.apache.catalina.*;version="${version.tomcat}",
+                            org.apache.coyote.*;version="${version.tomcat}",
+                            org.apache.el.*;version="${version.tomcat}";-split-package:=merge-first,
+                            javax.websocket.*;version="${version.tomcat}";-split-package:=merge-first,
+                        </Export-Package>
+                        <Private-Package>
+                            org.apache.juli.*
+                        </Private-Package>
+                        <Import-Package>
+                            javax.crypto.*,
+                            javax.el;version="${javax.el.range}",
+                            javax.imageio,
+                            javax.mail.*,
+                            javax.management.*,
+                            javax.naming.*,
+                            javax.net.ssl.*,
+                            javax.security.*,
+                            javax.servlet;version="${javax.servlet.range}",
+                            javax.servlet.annotation;version="${javax.servlet.range}",
+                            javax.servlet.descriptor;version="${javax.servlet.range}",
+                            javax.servlet.http;version="${javax.servlet.range}",
+                            javax.servlet.jsp.*;version="${javax.servlet.jsp.range}",
+                            javax.sql,
+                            javax.xml.*,
+                            org.apache.tools.ant.*,
+                            org.eclipse.jdt.*,
+                            org.ietf.jgss.*,
+                            org.w3c.dom,
+                            org.xml.*,
+                            org.apache.tomcat.spdy;resolution:=optional
+                        </Import-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                        <Include-Resource>
+                            {maven-resources},
+                            src/main/resources
+                        </Include-Resource>
+			<DynamicImport-Package>*</DynamicImport-Package>
+                        <Bundle-Classpath>patch.jar,.</Bundle-Classpath>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.3</version>
+                <executions>
+                  <execution>
+                    <phase>package</phase>
+                    <goals>
+                      <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                      <shadedGroupFilter>org.apache</shadedGroupFilter>
+                      <createSourcesJar>false</createSourcesJar>
+                      <shadedArtifactAttached>false</shadedArtifactAttached>
+                      <promoteTransitiveDependencies>false</promoteTransitiveDependencies>
+                      <createDependencyReducedPom>false</createDependencyReducedPom>
+                      <transformers>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                      </transformers>
+                    </configuration>
+                  </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <version.tomcat>8.0.20</version.tomcat>
+        <version.ecj>4.3.1</version.ecj>        
+        <javax.servlet.range>[2.6.0, 3.2.0)</javax.servlet.range>
+        <javax.servlet.jsp.range>[2.2.0, 2.4.0)</javax.servlet.jsp.range>
+        <javax.el.range>[2.2.0, 3.1.0)</javax.el.range>
+    </properties>
+</project>
