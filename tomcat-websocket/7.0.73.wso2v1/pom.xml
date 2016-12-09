@@ -80,8 +80,12 @@
                             {maven-resources},
                             @tomcat-embed-websocket-${version.tomcat}.jar!/META-INF/*,
                         </Include-Resource>
-                        <Require-Capability>osgi.extender; filter:="(osgi.extender=osgi.serviceloader.registrar)"</Require-Capability>
-                        <Provide-Capability>osgi.serviceloader; osgi.serviceloader=javax.servlet.ServletContainerInitializer</Provide-Capability>
+                        <Require-Capability>
+                            osgi.extender; filter:="(osgi.extender=osgi.serviceloader.registrar)"
+                        </Require-Capability>
+                        <Provide-Capability>
+                            osgi.serviceloader;osgi.serviceloader=javax.servlet.ServletContainerInitializer
+                        </Provide-Capability>
                     </instructions>
                 </configuration>
             </plugin>
