@@ -36,6 +36,7 @@
             <groupId>org.apache.tapestry</groupId>
             <artifactId>tapestry-json</artifactId>
             <version>${tapestry.json.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
