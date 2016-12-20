@@ -22,21 +22,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <name>Antlr 4.6.wso2v1 Orbit Bundle</name>
-    <description>This bundle exports packages from the Olingo commons library</description>
+    <description>This bundle exports packages from antlr4-runtime </description>
     <url>http://wso2.org</url>
 
     <groupId>org.wso2.orbit.org.antlr</groupId>
     <artifactId>antlr4-runtime</artifactId>
     <version>4.6.wso2v1</version>
     <packaging>bundle</packaging>
-    
-
-    <repositories>
-    	<repository>
-      	  <id>java.net</id>
-      	  <url>http://repo1.maven.org/maven2/</url>
-    	</repository>
-   </repositories>
 
     <distributionManagement>
         <repository>
@@ -44,12 +36,6 @@
             <name>WSO2 internal Repository</name>
             <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
-
-        <snapshotRepository>
-            <id>wso2.snapshots</id>
-            <name>Apache Snapshot Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
 
     <dependencies>
