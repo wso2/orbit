@@ -21,7 +21,7 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.rabbitmq.wso2</groupId>
+    <groupId>org.wso2.orbit.com.rabbitmq</groupId>
     <artifactId>amqp-client</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Rabbit-MQ AMQP java client</name>
@@ -46,12 +46,6 @@
             <name>WSO2 internal Repository</name>
             <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
-	
-	<snapshotRepository>
-            <id>wso2.snapshots</id>
-            <name>Apache Snapshot Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
 
     <build>
@@ -69,7 +63,6 @@
 			    com.rabbitmq.*; version="3.6.6",
                         </Export-Package>
                         <Import-Package>
-                            *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
                             LICENSE-MPL=LICENSE-MPL,@amqp-client-3.6.6.jar!/version.properties
