@@ -63,6 +63,13 @@
 			    com.rabbitmq.*; version="3.6.6",
                         </Export-Package>
                         <Import-Package>
+			    !com.rabbitmq.*,
+			    javax.naming;version="${default.import.version}",
+			    javax.naming.directory;version="${default.import.version}",
+			    javax.net;version="${default.import.version}",
+			    javax.net.ssl;version="${default.import.version}",
+			    javax.security.auth.callback;version="${default.import.version}",
+			    javax.security.sasl;version="${default.import.version}"
                         </Import-Package>
                         <Include-Resource>
                             LICENSE-MPL=LICENSE-MPL,@amqp-client-3.6.6.jar!/version.properties
@@ -73,4 +80,7 @@
         </plugins>
     </build>
 
+    <properties>
+	<default.import.version>[0.0.0,1.0.0)</default.import.version>
+    </properties>
 </project>
