@@ -270,7 +270,7 @@
                             javax.security.*;version="${javax.security.version}",
                             javax.servlet.jsp.*;version="${javax.servlet.jsp.version}";resolution:=optional,
                             javax.servlet.*;version="${javax.servlet.version}";resolution:=optional,
-                            javax.xml.*;version="${javax.xml.version}",
+                            javax.xml; version="${javax.xml.version}";resolution:=optional,
                             org.apache.axiom.om.impl.dom.jaxp;version="${axiom.osgi.version.range}";resolution:=optional,
                             org.apache.commons.beanutils;version="${org.apache.commons.beanutils.version}";resolution:=optional,
                             org.apache.commons.httpclient.*;version="${org.apache.commons.httpclient.version}";resolution:=optional,
