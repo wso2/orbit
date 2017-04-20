@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.io.swagger</groupId>
     <artifactId>swagger-parser</artifactId>
-    <version>1.0.21.wso2v1</version>
+    <version>1.0.21.wso2v2</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - swagger-parser (io.swagger)</name>
     <description>
@@ -87,7 +87,8 @@
                             org.apache.commons.io.comparator;version="1.4",
                             org.apache.commons.io.filefilter;version="1.4",
                             org.apache.commons.io.input;version="1.4",
-                            org.apache.commons.io.output;version="1.4"
+                            org.apache.commons.io.output;version="1.4",
+                            org.yaml.snakeyaml.*;version="1.16.0.wso2v1"
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
