@@ -24,7 +24,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.com.squareup.okhttp</groupId>
     <artifactId>okhttp-ws</artifactId>
-    <version>3.8.0.wso2v1</version>
+    <version>3.4.2.wso2v1</version>
     <packaging>bundle</packaging>
     <name>okhttp-ws.wso2</name>
     <description>
@@ -42,7 +42,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.squareup.okhttp</groupId>
+            <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp-ws</artifactId>
             <version>${okhttp-ws.version}</version>
             <optional>true</optional>
@@ -62,12 +62,12 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            com.squareup.okhttp.ws*;version="${project.version}"
+                            com.squareup.okhttp3.ws*;version="${project.version}"
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !com.squareup.okhttp.ws.*,
+                            !com.squareup.okhttp3.ws.*,
                             okio;version="[1.6.0, 1.13.0)"
                         </Import-Package>
                         <Include-Resource>
@@ -80,6 +80,6 @@
     </build>
 
     <properties>
-        <okhttp-ws.version>3.8.0</okhttp-ws.version>
+        <okhttp-ws.version>3.4.2</okhttp-ws.version>
     </properties>
 </project>
