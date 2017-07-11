@@ -62,12 +62,12 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            com.squareup.okhttp.*;version="${project.version}"
+                            com.squareup.okhttp3.*;version="${project.version}"
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !com.squareup.okhttp.*,
+                            !com.squareup.okhttp3.*,
                             okio;version="[1.6.0, 1.13.0)"
                         </Import-Package>
                         <Include-Resource>
