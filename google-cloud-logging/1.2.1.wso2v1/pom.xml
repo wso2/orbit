@@ -60,7 +60,6 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Import-Package>
-                            *;resolution:=optional
                         </Import-Package>
                         <Export-Package>
                             com.google.cloud.logging.*;version="${google-cloud-logging.version}",
