@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.mifmif.wso2</groupId>
+    <artifactId>generex</artifactId>
+    <version>1.0.0.wso2v1</version>
+
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Generex</name>
+    <description>
+        This bundle will export packages from Generex
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.mifmif</groupId>
+            <artifactId>generex</artifactId>
+            <version>${generex.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${maven.bundle.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.mifmif.common.regex.*;-split-package:=merge-first,
+                        </Export-Package>
+                        <Private-Package>
+                            *;-split-package:=merge-first
+                        </Private-Package>
+                        <Import-Package>
+                            *;resolution:=optional
+                        </Import-Package>
+                        <Include-Resource>
+                        </Include-Resource>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <generex.version>1.0.0</generex.version>
+        <maven.bundle.plugin.version>2.4.0</maven.bundle.plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+
+</project>
