@@ -37,6 +37,7 @@
             <groupId>com.github.azakordonets</groupId>
             <artifactId>fabricator_2.10</artifactId>
             <version>${fabricator.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -52,13 +53,12 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            fabricator.*;-split-package:=merge-first,
+                            fabricator.*;version=${fabricator.version}
                         </Export-Package>
                         <Private-Package>
                             *;-split-package:=merge-first
                         </Private-Package>
                         <Import-Package>
-                            *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
                         </Include-Resource>

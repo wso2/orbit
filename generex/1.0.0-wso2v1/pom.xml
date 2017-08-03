@@ -38,6 +38,7 @@
             <groupId>com.github.mifmif</groupId>
             <artifactId>generex</artifactId>
             <version>${generex.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -53,13 +54,12 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            com.mifmif.common.regex.*;-split-package:=merge-first,
+                            com.mifmif.common.regex.*;version=${generex.version}
                         </Export-Package>
                         <Private-Package>
                             *;-split-package:=merge-first
                         </Private-Package>
                         <Import-Package>
-                            *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
                         </Include-Resource>
