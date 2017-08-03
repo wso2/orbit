@@ -64,8 +64,6 @@
         <module>compass/4.3.0.wso2v1</module>
         <module>poi/4.3.0.wso2v1</module>
         <module>poi-scratchpad/4.3.0.wso2v1</module>
-        <module>fabricator/2.1.4-wso2v1</module>
-        <module>generex/1.0.0-wso2v1</module>
     </modules>
 
     <build>
