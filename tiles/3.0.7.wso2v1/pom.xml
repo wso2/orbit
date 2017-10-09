@@ -19,13 +19,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.tiles.wso2</groupId>
+    <groupId>org.wso2.orbit.org.apache.tiles</groupId>
     <artifactId>tiles-jsp</artifactId>
     <packaging>bundle</packaging>
     <name>tiles.wso2</name>
     <description>This bundle will represent org.wso2.carbon.tiles</description>
     <version>3.0.7.wso2v1</version>
     <url>http://wso2.org</url>
+
     <distributionManagement>
         <repository>
             <id>wso2.releases</id>
@@ -33,23 +34,28 @@
             <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
     </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>${javax.servlet.api.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-jsp</artifactId>
             <version>${apache.tiles.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>commons-digester</groupId>
             <artifactId>commons-digester</artifactId>
             <version>${commons.digester.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -136,6 +142,7 @@
             </plugin>
         </plugins>
     </build>
+
     <properties>
         <apache.tiles.version>3.0.7</apache.tiles.version>
         <commons.digester.version>2.0</commons.digester.version>

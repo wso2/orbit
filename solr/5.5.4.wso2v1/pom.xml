@@ -28,6 +28,7 @@
     <description>
         This bundle will represent solr and lucene jars
     </description>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.solr</groupId>
@@ -98,6 +99,7 @@
             </exclusions>
         </dependency>
     </dependencies>
+
     <distributionManagement>
         <repository>
             <id>wso2.releases</id>
@@ -105,6 +107,7 @@
             <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
     </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
@@ -134,6 +137,7 @@
             </plugin>
         </plugins>
     </build>
+
     <properties>
         <version.solr>5.5.4</version.solr>
         <version.lucene>[5.2.1,5.3.0)</version.lucene>

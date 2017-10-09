@@ -19,7 +19,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.geronimo.specs.wso2</groupId>
+    <groupId>org.wso2.orbit.org.apache.geronimo.specs</groupId>
     <artifactId>geronimo-jms_1.1_spec</artifactId>
     <packaging>bundle</packaging>
     <name>geronimo.jms.1.1.spec orbit bundle</name>
@@ -28,6 +28,7 @@
         org.wso2.carbon.ant. This bundle will represent Ant
     </description>
     <url>http://wso2.org</url>
+
     <distributionManagement>
         <repository>
             <id>wso2.releases</id>
@@ -35,13 +36,16 @@
             <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
     </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-jms_1.1_spec</artifactId>
             <version>${org.apache.geronimo.specs.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -68,6 +72,7 @@
             </plugin>
         </plugins>
     </build>
+
     <properties>
         <maven.bundle.plugin.version>1.4.0</maven.bundle.plugin.version>
         <org.apache.geronimo.specs.version>1.1.1</org.apache.geronimo.specs.version>
