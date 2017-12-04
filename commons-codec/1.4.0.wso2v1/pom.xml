@@ -22,7 +22,7 @@
     <groupId>commons-codec.wso2</groupId>
     <artifactId>commons-codec</artifactId>
     <packaging>bundle</packaging>
-    <name>commons.codec.wso2</name>
+    <name>commons-codec.wso2</name>
     <version>${orbit.codec.version}</version>
     <description>
         This bundle will export packages from commons-codec.jar
@@ -49,7 +49,7 @@
                         <Export-Package>org.apache.commons.codec.*;version=${export.package.version}</Export-Package>
                         <Import-Package>
                             !org.apache.commons.codec.*,
-                            *;resolution:=optional
+                            *;
                         </Import-Package>
                     </instructions>
                 </configuration>
