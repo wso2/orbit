@@ -49,7 +49,7 @@
                         <Export-Package>org.apache.commons.codec.*;version=${export.package.version}</Export-Package>
                         <Import-Package>
                             !org.apache.commons.codec.*,
-                            *;
+                            *
                         </Import-Package>
                     </instructions>
                 </configuration>
