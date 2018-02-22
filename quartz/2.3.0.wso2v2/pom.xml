@@ -1,0 +1,121 @@
+<!--
+  ~  Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~  WSO2 Inc. licenses this file to you under the Apache License,
+  ~  Version 2.0 (the "License"); you may not use this file except
+  ~  in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing,
+  ~  software distributed under the License is distributed on an
+  ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~  KIND, either express or implied.  See the License for the
+  ~  specific language governing permissions and limitations
+  ~  under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>Quartz 2.3.0.wso2v2 Orbit Bundle</name>
+    <description>This bundle will export packages from quartz.jar</description>
+    <url>http://wso2.org</url>
+
+    <groupId>org.wso2.orbit.org.quartz-scheduler</groupId>
+    <artifactId>quartz</artifactId>
+    <version>2.3.0.wso2v2</version>
+    <packaging>bundle</packaging>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 Internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 Internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.3.0</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>org.quartz.*;version=${project.version}</Export-Package>
+                        <Private-Package></Private-Package>
+                        <Import-Package>
+                            com.mchange.v2.c3p0;resolution:=optional,
+                            com.zaxxer.hikari;version="[2.3,3)";resolution:=optional,
+                            commonj.work;resolution:=optional,
+                            javax.management,
+                            javax.management.openmbean,
+                            javax.naming,
+                            javax.servlet,
+                            javax.servlet.http,
+                            javax.sql,
+                            javax.transaction,
+                            javax.xml.bind,
+                            javax.xml.namespace,
+                            javax.xml.parsers,
+                            javax.xml.xpath,
+                            oracle.sql;resolution:=optional,
+                            org.jboss.logging;resolution:=optional,
+                            org.jboss.naming;resolution:=optional,
+                            org.jboss.system;resolution:=optional,
+                            org.quartz;version="[2.3,3)";resolution:=optional,
+                            org.quartz.impl.matchers;version="[2.3,3)";resolution:=optional,
+                            org.quartz.impl.triggers;version="[2.3,3)";resolution:=optional,
+                            org.quartz.spi;version="[2.3,3)";resolution:=optional,
+                            org.slf4j;version="[1.7,2)";resolution:=optional,
+                            org.terracotta.toolkit;resolution:=optional,
+                            org.terracotta.toolkit.atomic;resolution:=optional,
+                            org.terracotta.toolkit.builder;resolution:=optional,
+                            org.terracotta.toolkit.cluster;resolution:=optional,
+                            org.terracotta.toolkit.collections;resolution:=optional,
+                            org.terracotta.toolkit.concurrent.locks;resolution:=optional,
+                            org.terracotta.toolkit.config;resolution:=optional,
+                            org.terracotta.toolkit.internal;resolution:=optional,
+                            org.terracotta.toolkit.internal.concurrent.locks;resolution:=optional,
+                            org.terracotta.toolkit.rejoin;resolution:=optional,
+                            org.terracotta.toolkit.search;resolution:=optional,
+                            org.terracotta.toolkit.search.attribute;resolution:=optional,
+                            org.terracotta.toolkit.store;resolution:=optional,
+                            org.w3c.dom,
+                            org.xml.sax,
+                            weblogic.jdbc.jts;resolution:=optional,
+                            weblogic.jdbc.vendor.oracle;resolution:=optional;
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
