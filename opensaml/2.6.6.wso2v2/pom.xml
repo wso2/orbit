@@ -1,5 +1,5 @@
 <!--
-~ Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+~ Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
 ~
 ~ WSO2 Inc. licenses this file to you under the Apache License,
 ~ Version 2.0 (the "License"); you may not use this file except
@@ -19,7 +19,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+    
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.opensaml</groupId>
     <artifactId>opensaml</artifactId>
@@ -323,8 +323,8 @@
         <joda-time.orbit.version.range>[2.8.2,3.0.0)</joda-time.orbit.version.range>
         <xmltooling.version>1.4.4</xmltooling.version>
         <openws.version>1.5.4</openws.version>
-        <esapi.version>2.0.1</esapi.version>
-        <opensaml.orbit.version>2.6.6.wso2v1</opensaml.orbit.version>
+        <esapi.version>2.1.0.1</esapi.version>
+        <opensaml.orbit.version>2.6.6.wso2v2</opensaml.orbit.version>
         <javax.crypto.version>[0.0.0,1.0.0)</javax.crypto.version>
         <javax.net.version>[0.0.0,1.0.0)</javax.net.version>
         <javax.security.version>[0.0.0,1.0.0)</javax.security.version>

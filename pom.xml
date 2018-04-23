@@ -64,6 +64,9 @@
         <module>compass/4.3.0.wso2v1</module>
         <module>poi/4.3.0.wso2v1</module>
         <module>poi-scratchpad/4.3.0.wso2v1</module>
+        <module>tranql-connector/1.1.0.wso2v1</module>
+        <module>cxf/2.7.16.wso2v1</module>
+        <module>commons-fileupload/1.3.3.wso2v1</module>
     </modules>
 
     <build>
