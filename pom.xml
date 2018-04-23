@@ -67,6 +67,7 @@
         <module>tranql-connector/1.1.0.wso2v1</module>
         <module>cxf/2.7.16.wso2v1</module>
         <module>commons-fileupload/1.3.3.wso2v1</module>
+        <module>geronimo-kernel/3.0.1.wso2v1</module>
     </modules>
 
     <build>
