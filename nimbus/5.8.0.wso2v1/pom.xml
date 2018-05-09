@@ -36,13 +36,13 @@
         <dependency>
             <groupId>com.nimbusds</groupId>
             <artifactId>nimbus-jose-jwt</artifactId>
-            <version>${com.nimbusds.version}</version>
+            <version>5.8</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>net.minidev</groupId>
             <artifactId>json-smart</artifactId>
-            <version>${net.minidev.version}</version>
+            <version>1.3</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -61,35 +61,27 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>${maven.bundle.plugin.version}</version>
+                <version>1.4.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-                            com.nimbusds.*; version="{$com.nimbusds.version}",
+                            com.nimbusds.*; version="5.8.0",
                         </Export-Package>
                         <Import-Package>
-                            !com.nimbusds.*; version="${com.nimbusds.version}",
-                            net.minidev.*; version="${net.minidev.version}",
+                            !com.nimbusds.*; version="5.8.0",
+                            net.minidev.*; version="1.3.0",
                             <!--Since platform version is 1.49, change the version to 1.49. -->
-                            org.bouncycastle.*; resolution:=optional; version="${org.bouncycastle.version}",
+                            org.bouncycastle.*; resolution:=optional; version="1.49",
                             javax.crypto.*,
-                            net.jcip.annotations.*; resolution:=optional; version="${net.jcip.annotations.version}",
+                            net.jcip.annotations.*; resolution:=optional; version="1.0",
                         </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
-    <properties>
-        <com.nimbusds.version>5.8.0</com.nimbusds.version>
-        <net.minidev.version>1.3.0</net.minidev.version>
-        <org.bouncycastle.version>1.49</org.bouncycastle.version>
-        <net.jcip.annotations.version>1.0</net.jcip.annotations.version>
-        <maven.bundle.plugin.version>1.4.0</maven.bundle.plugin.version>
-    </properties>
 
 </project>
