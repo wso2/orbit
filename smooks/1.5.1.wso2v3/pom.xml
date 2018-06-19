@@ -1,5 +1,5 @@
 <!--
-~ Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+~ Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
 ~
 ~ Licensed under the Apache License, Version 2.0 (the "License");
 ~ you may not use this file except in compliance with the License.
@@ -100,29 +100,12 @@
             </exclusions>
         </dependency>
     </dependencies>
-    <repositories>
-        <repository>
-            <id>wso2-nexus</id>
-            <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-                <checksumPolicy>ignore</checksumPolicy>
-            </releases>
-        </repository>
-    </repositories>
-    <distributionManagement>
+    <distributionManagement>	
         <repository>
             <id>wso2.releases</id>
             <name>WSO2 internal Repository</name>
             <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
-        <snapshotRepository>
-            <id>wso2.snapshots</id>
-            <name>Apache Snapshot Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
     <build>
         <plugins>
@@ -201,13 +184,10 @@
                             org.zeroturnaround.javarebel;resolution:=optional,
                             sun.misc;resolution:=optional
                         </Import-Package>
-                        <Private-Package>
-                        </Private-Package>
                         <Include-Resource>
                             @milyn-smooks-all-${org.milyn.version}.jar!/META-INF/*,
                             @milyn-smooks-all-${org.milyn.version}.jar!/smooks-regex.properties
                         </Include-Resource>
-                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
