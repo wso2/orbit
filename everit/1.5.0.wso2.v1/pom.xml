@@ -42,18 +42,18 @@
             <artifactId>org.everit.json.schema</artifactId>
             <version>${everit.version}</version>
             <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>commons-validator</groupId>
-            <artifactId>commons-validator</artifactId>
-            <version>${validator.version}</version>
-            <optional>true</optional>
             <exclusions>
                 <exclusion>
                     <groupId>org.json</groupId>
                     <artifactId>json</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>${validator.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
