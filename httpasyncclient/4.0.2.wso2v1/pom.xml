@@ -20,10 +20,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.httpcomponents.wso2</groupId>
+    <groupId>org.wso2.orbit.org.apache.httpcomponents</groupId>
     <artifactId>httpasyncclient</artifactId>
     <packaging>bundle</packaging>
-    <name>httpasyncclient.wso2</name>
+    <name>httpasyncclient</name>
     <version>4.0.2.wso2v1</version>
     <description>
         This bundle will export packages from httpasyncclient.jar
@@ -70,7 +70,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>1.4.0</version>
+                <version>${maven.bundle.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -93,6 +93,7 @@
     <properties>
         <orbit.version.httpasyncclient>4.0.2.wso2v1</orbit.version.httpasyncclient>
         <httpasyncclient.version>4.0.2</httpasyncclient.version>
+        <maven.bundle.plugin.version>2.3.7</maven.bundle.plugin.version>
     </properties>
 
 </project>
