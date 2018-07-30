@@ -81,7 +81,37 @@
                             org.apache.http.impl.nio.*;version="${orbit.version.httpasyncclient}",
                         </Export-Package>
                         <Import-Package>
-                            *;resolution:=optional
+                            javax.net.ssl,
+                            org.apache.commons.logging;version="${commons.logging.imp.pkg.version.range}",
+                            org.apache.http; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.auth; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.client; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.client.config; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.client.methods; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.client.params; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.client.protocol; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.client.utils; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.concurrent; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.config; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.conn; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.conn.params; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.conn.routing; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.conn.ssl; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.cookie; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.entity; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.impl; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.impl.auth; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.impl.client; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.impl.conn; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.impl.cookie; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.impl.entity; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.impl.io; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.io; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.message; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.params; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.pool; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.protocol; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.util; version="${httpcore.imp.pkg.version.range}",
                         </Import-Package>
                     </instructions>
                 </configuration>
@@ -94,6 +124,8 @@
         <orbit.version.httpasyncclient>4.0.2.wso2v1</orbit.version.httpasyncclient>
         <httpasyncclient.version>4.0.2</httpasyncclient.version>
         <maven.bundle.plugin.version>2.3.7</maven.bundle.plugin.version>
+        <httpcore.imp.pkg.version.range>[4.3.3,4.4.0)</httpcore.imp.pkg.version.range>
+        <commons.logging.imp.pkg.version.range>[1.2.0,2.0.0)</commons.logging.imp.pkg.version.range>
     </properties>
 
 </project>
