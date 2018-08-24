@@ -73,10 +73,12 @@
                             !org.apache.xml.serialize.*,
                             javax.xml.datatype; version="${javax.xml.import.version.range}";resolution:=optional,
                             javax.xml.namespace; version="${javax.xml.import.version.range}";resolution:=optional,
+                            javax.xml.stream.*; version="${javax.xml.import.version.range}";resolution:=optional,
                             javax.xml.transform; version="${javax.xml.import.version.range}";resolution:=optional,
                             javax.xml.transform.dom; version="${javax.xml.import.version.range}";resolution:=optional,
                             javax.xml.transform.sax; version="${javax.xml.import.version.range}";resolution:=optional,
                             javax.xml.transform.stream; version="${javax.xml.import.version.range}";resolution:=optional,
+                            javax.xml.transform.*; version="${javax.xml.import.version.range}";resolution:=optional,
                             javax.xml.validation; version="${javax.xml.import.version.range}";resolution:=optional,
                             org.apache.xml.resolver.*; version="${org.apache.xml.resolver.version.range}";resolution:=optional,
                             org.w3c.dom; version="${org.w3c.dom.import.version.range}";resolution:=optional,
@@ -85,13 +87,11 @@
                             org.w3c.dom.ls; version="${org.w3c.dom.import.version.range}";resolution:=optional,
                             org.w3c.dom.ranges; version="${org.w3c.dom.import.version.range}";resolution:=optional,
                             org.w3c.dom.traversal; version="0.0.0";resolution:=optional,
+                            org.w3c.dom.views; version="${org.w3c.dom.import.version.range}";resolution:=optional,
                             org.xml.sax; version="${org.xml.sax.import.version.range}";resolution:=optional,
                             org.xml.sax.ext; version="${org.xml.sax.import.version.range}";resolution:=optional,
                             org.xml.sax.helpers; version="${org.xml.sax.import.version.range}";resolution:=optional,
-                            sun.io.*; version="${sun.io.import.version.range}"; resolution:=optional,
-                            javax.xml.stream.*; version="${javax.xml.import.version.range}";resolution:=optional,
-                            javax.xml.transform.*; version="${javax.xml.import.version.range}";resolution:=optional,
-                            org.w3c.dom.views; version="${org.w3c.dom.import.version.range}";resolution:=optional
+                            sun.io.*; version="${sun.io.import.version.range}"; resolution:=optional
                         </Import-Package>
                     </instructions>
                 </configuration>
