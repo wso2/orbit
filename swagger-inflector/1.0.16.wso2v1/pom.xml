@@ -116,7 +116,7 @@
     </build>
 
     <properties>
-        <swagger.inflector.version>1.0.15</swagger.inflector.version>
+        <swagger.inflector.version>1.0.16</swagger.inflector.version>
         <import.pkg.version.swagger>1.5.16</import.pkg.version.swagger>
     </properties>
 
