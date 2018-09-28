@@ -20,7 +20,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.io.swagger</groupId>
     <artifactId>swagger-inflector</artifactId>
-    <version>1.0.15.wso2v1</version>
+    <version>1.0.16.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - swagger-inflector (io.swagger)</name>
     <description>
