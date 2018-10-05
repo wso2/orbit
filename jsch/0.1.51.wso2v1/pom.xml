@@ -81,7 +81,7 @@
     </build>
 
     <properties>
-        <version.jsch>0.1.51</version.jsch>
+        <version.jsch>0.1.54</version.jsch>
     </properties>
 
 </project>
