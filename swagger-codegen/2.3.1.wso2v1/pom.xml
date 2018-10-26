@@ -137,11 +137,11 @@
                         <Import-Package>
                             !io.swagger.codegen.*,
                             !io.swagger.parser.*,
-                            io.swagger.models.auth; version="[1.5.8,1.6)",
-                            io.swagger.models.parameters; version="[1.5.8,1.6)",
-                            io.swagger.models.properties; version="[1.5.8,1.6)",
-                            io.swagger.models.refs; version="[1.5.8,1.6)",
-                            io.swagger.models; version="[1.5.8,1.6)"
+                            io.swagger.models.auth; version="${import.io.swagger.version.range}",
+                            io.swagger.models.parameters; version="${import.io.swagger.version.range}",
+                            io.swagger.models.properties; version="${import.io.swagger.version.range}",
+                            io.swagger.models.refs; version="${import.io.swagger.version.range}",
+                            io.swagger.models; version="${import.io.swagger.version.range}"
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
@@ -162,6 +162,7 @@
 
     <properties>
         <export.pkg.version.swagger-codegen>2.3.1.wso2v1</export.pkg.version.swagger-codegen>
+        <import.io.swagger.version.range>[1.5.8,1.6)</import.io.swagger.version.range>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
