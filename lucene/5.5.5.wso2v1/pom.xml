@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- ~ Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ WSO2 Inc. licenses this file to you under the Apache License,
  ~ Version 2.0 (the "License"); you may not use this file except
@@ -16,7 +16,8 @@
  ~ specific language governing permissions and limitations
  ~ under the License.
  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.lucene</groupId>
     <artifactId>lucene</artifactId>
@@ -164,27 +165,27 @@
                         <Private-Package></Private-Package>
                         <Import-Package>
                             !org.apache.lucene.*,
-                            org.xml.sax.helpers; version="0.0.0",
-                            org.xml.sax; version="0.0.0",
-                            org.w3c.dom; version="0.0.0",
-                            javax.xml.transform.stream; version="0.0.0",
-                            javax.xml.transform.dom; version="0.0.0",
-                            javax.xml.transform; version="0.0.0",
-                            javax.xml.parsers; version="0.0.0",
-                            com.spatial4j.core.context; version="[0.4.0,1.0.0)"; resolution:=optional,
-                            com.spatial4j.core.distance; version="[0.4.0,1.0.0)"; resolution:=optional,
-                            com.spatial4j.core.exception; version="[0.4.0,1.0.0)"; resolution:=optional,
-                            com.spatial4j.core.io; version="[0.4.0,1.0.0)"; resolution:=optional,
-                            com.spatial4j.core.shape; version="[0.4.0,1.0.0)"; resolution:=optional,
-                            com.spatial4j.core.shape.impl; version="[0.4.0,1.0.0)"; resolution:=optional,
-                            org.antlr.runtime; version="0.0.0"; resolution:=optional,
-                            org.antlr.runtime.tree; version="0.0.0"; resolution:=optional,
-                            org.apache.commons.codec; version="[1.10.0,2.0.0)"; resolution:=optional,
-                            org.apache.commons.codec.language; version="[1.10.0,2.0.0)"; resolution:=optional,
-                            org.apache.commons.codec.language.bm; version="[1.10.0,2.0.0)"; resolution:=optional,
-                            org.apache.regexp; version="0.0.0"; resolution:=optional,
-                            org.objectweb.asm; version="[4.1.0,5.0.0)"; resolution:=optional,
-                            org.objectweb.asm.commons; version="[4.1.0,5.0.0)"; resolution:=optional,
+                            org.xml.sax.helpers; version="${sax.import.version}",
+                            org.xml.sax; version="${sax.import.version}",
+                            org.w3c.dom; version="${w3c.dom.import.version}",
+                            javax.xml.transform.stream; version="${javax.xml.import.version}",
+                            javax.xml.transform.dom; version="${javax.xml.import.version}",
+                            javax.xml.transform; version="${javax.xml.import.version}",
+                            javax.xml.parsers; version="${javax.xml.import.version}",
+                            com.spatial4j.core.context; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.distance; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.exception; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.io; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.shape; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.shape.impl; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            org.antlr.runtime; version="${antlr.import.version}"; resolution:=optional,
+                            org.antlr.runtime.tree; version="${antlr.import.version}"; resolution:=optional,
+                            org.apache.commons.codec; version="${commons.codec.import.version.range}"; resolution:=optional,
+                            org.apache.commons.codec.language; version="${commons.codec.import.version.range}"; resolution:=optional,
+                            org.apache.commons.codec.language.bm; version="${commons.codec.import.version.range}"; resolution:=optional,
+                            org.apache.regexp; version="${regexp.import.version}"; resolution:=optional,
+                            org.objectweb.asm; version="${objectweb.import.version.range}"; resolution:=optional,
+                            org.objectweb.asm.commons; version="${objectweb.import.version.range}"; resolution:=optional,
                             *; resolution:=optional
                         </Import-Package>
                     </instructions>
@@ -223,5 +224,13 @@
         <version.lucene>5.5.5</version.lucene>
         <orbit.version.lucene>${version.lucene}.wso2v1</orbit.version.lucene>
         <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
+        <sax.import.version>0.0.0</sax.import.version>
+        <w3c.dom.import.version>0.0.0</w3c.dom.import.version>
+        <javax.xml.import.version>0.0.0</javax.xml.import.version>
+        <spatial4j.import.version.range>[0.4.0,1.0.0)</spatial4j.import.version.range>
+        <antlr.import.version>0.0.0</antlr.import.version>
+        <commons.codec.import.version.range>[1.10.0,2.0.0)</commons.codec.import.version.range>
+        <regexp.import.version>0.0.0</regexp.import.version>
+        <objectweb.import.version.range>[4.1.0,5.0.0)</objectweb.import.version.range>
     </properties>
 </project>
