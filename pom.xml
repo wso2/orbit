@@ -69,7 +69,7 @@
         <module>commons-fileupload/1.3.3.wso2v1</module>
         <module>geronimo-kernel/3.0.1.wso2v1</module>
         <module>smooks/1.5.1.wso2v2</module>
-        <module>commons-text/1.6.0.wso2v1</module>
+        <module>commons-text/1.6.wso2v1</module>
     </modules>
 
     <build>
