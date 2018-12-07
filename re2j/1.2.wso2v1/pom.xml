@@ -25,7 +25,8 @@
     <name>re2j orbit bundle</name>
     <version>1.2.wso2v1</version>
     <description>
-        This bundle will export packages from re2j.jar
+        This bundle will export packages from re2j.jar which is a pure-Java implementation of the popular RE2
+        regular expression library
     </description>
     <url>https://mvnrepository.com/artifact/com.google.re2j/re2j/1.2</url>
     <dependencies>
