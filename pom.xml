@@ -72,6 +72,7 @@
         <module>commons-text/1.6.wso2v1</module>
         <module>jaxb-api/2.3.1.wso2v1</module>
         <module>activation/1.1.1.wso2v1</module>
+        <module>bcprov/1.60.0.wso2v1</module>
     </modules>
 
     <build>
