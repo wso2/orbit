@@ -77,6 +77,7 @@
         <module>bcpkix/1.60.0.wso2v1</module>
         <module>jaxws-ri/2.3.2.wso2v1</module>
         <module>jta/1.1.0.wso2v1</module>
+        <module>apacheds-jdbm/2.0.0-M3.wso2v1</module>
     </modules>
 
     <build>
