@@ -70,6 +70,6 @@
     </dependencies>
 
     <properties>
-        <com.sun.xml.ws.jaxws.verion>2.3.1</com.sun.xml.ws.jaxws.verion>
+        <com.sun.xml.ws.jaxws.verion>2.3.2</com.sun.xml.ws.jaxws.verion>
     </properties>
 </project>
