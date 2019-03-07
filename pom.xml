@@ -83,6 +83,7 @@
         <module>tomcat-jsp-api/7.0.93.wso2v1</module>
         <module>tomcat-servlet-api/7.0.93.wso2v1</module>
         <module>tomcat-websocket/7.0.93.wso2v1</module>
+        <module>jackson-core/2.9.1.wso2v1</module>
     </modules>
 
     <build>
