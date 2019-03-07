@@ -1,5 +1,5 @@
 <!--
- ~ Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ WSO2 Inc. licenses this file to you under the Apache License,
  ~ Version 2.0 (the "License"); you may not use this file except
@@ -328,7 +328,7 @@
         <xmltooling.version>1.4.4</xmltooling.version>
         <openws.version>1.5.4</openws.version>
         <esapi.version>2.0.1</esapi.version>
-        <opensaml.orbit.version>2.6.4.wso2v4</opensaml.orbit.version>
+        <opensaml.orbit.version>2.6.4.wso2v5</opensaml.orbit.version>
         <javax.crypto.version>[0.0.0,1.0.0)</javax.crypto.version>
         <javax.net.version>[0.0.0,1.0.0)</javax.net.version>
         <javax.security.version>[0.0.0,1.0.0)</javax.security.version>
@@ -339,7 +339,7 @@
         <org.apache.commons.httpclient.version>[3.1.0,3.2.0)</org.apache.commons.httpclient.version>
         <org.apache.commons.ssl.version>[3.1.0,3.2.0)</org.apache.commons.ssl.version>
         <org.apache.xml.security.version>[1.4.2,1.5.0)</org.apache.xml.security.version>
-        <org.bouncycastle.version>[1.49.0,1.60.0)</org.bouncycastle.version>
+        <org.bouncycastle.version>[1.49.0,2.0.0)</org.bouncycastle.version>
         <org.joda.convert.version>[2.2,2.3)</org.joda.convert.version>
         <org.slf4j.version>[1.6.0,1.8.0)</org.slf4j.version>
         <org.w3c.version>[0.0.0,1.0.0)</org.w3c.version>
