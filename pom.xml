@@ -44,6 +44,7 @@
         <module>poi-ooxml/3.9.0.wso2v3</module>
         <module>spring-framework/3.2.9.wso2v1</module>
         <module>jdbc-pool/7.0.34.wso2v2</module>
+        <module>jdbc-pool/9.0.16.wso2v1</module>
         <module>tomcat/7.0.52.wso2v1/</module>
         <module>waffle/1.6.wso2v1</module>
         <module>disruptor/2.10.4-wso2v2</module>
@@ -84,6 +85,7 @@
         <module>tomcat-jsp-api/7.0.93.wso2v1</module>
         <module>tomcat-servlet-api/7.0.93.wso2v1</module>
         <module>tomcat-websocket/7.0.93.wso2v1</module>
+        <module>openjpa-all/2.2.2.wso2v2</module>
     </modules>
 
     <build>
