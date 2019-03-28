@@ -112,7 +112,7 @@
                             org.antlr.v4.runtime.dfa;version="[4.5.1,5.0.0)";resolution:=optional,
                             org.antlr.v4.runtime.misc;version="[4.5.1,5.0.0)";resolution:=optional,
                             org.antlr.v4.runtime.tree;version="[4.5.1,5.0.0)";resolution:=optional,
-                            org.apache.commons.codec.binary;version="[1.4,1.11)",
+                            org.apache.commons.codec.binary;version="[1.4,2.0)",
                             org.apache.commons.io;version="[2.4,2.5)",
                             org.apache.commons.lang3;version="[3.3,4)",
                             org.apache.commons.lang3.builder;version="[3.3,4)",
