@@ -86,13 +86,12 @@
                         <Private-Package>
                         </Private-Package>
                         <Export-Package>
-                            com.google.protobuf.*;version="${exp.package.version}";-split-package:=merge-first
+                            com.google.protobuf.*;version="${exp.package.version}"
                         </Export-Package>
                         <Import-Package>
                             *;resolution:=optional
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
-                        <Embed-Directory>services/*</Embed-Directory>
                     </instructions>
                 </configuration>
             </plugin>
