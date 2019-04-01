@@ -85,21 +85,21 @@
                         </Private-Package>
                         <Import-Package>
                             !org.jongo.*,
-                            com.fasterxml.jackson.annotation;resolution:=optional;version="${jongo.import.version.range}",
-                            com.fasterxml.jackson.core;resolution:=optional;version="${jongo.import.version.range}",
-                            com.fasterxml.jackson.core.io;resolution:=optional;version="${jongo.import.version.range}",
-                            com.fasterxml.jackson.databind;resolution:=optional;version="${jongo.import.version.range}",
-                            com.fasterxml.jackson.databind.annotation;resolution:=optional;version="${jongo.import.version.range}",
-                            com.fasterxml.jackson.databind.deser;resolution:=optional;version="${jongo.import.version.range}",
-                            com.fasterxml.jackson.databind.introspect;resolution:=optional;version="${jongo.import.version.range}",
-                            com.fasterxml.jackson.databind.module;resolution:=optional;version="${jongo.import.version.range}",
-                            com.fasterxml.jackson.databind.ser;resolution:=optional;version="${jongo.import.version.range}",
+                            com.fasterxml.jackson.annotation;resolution:=optional;version="${import.version.range}",
+                            com.fasterxml.jackson.core;resolution:=optional;version="${import.version.range}",
+                            com.fasterxml.jackson.core.io;resolution:=optional;version="${import.version.range}",
+                            com.fasterxml.jackson.databind;resolution:=optional;version="${import.version.range}",
+                            com.fasterxml.jackson.databind.annotation;resolution:=optional;version="${import.version.range}",
+                            com.fasterxml.jackson.databind.deser;resolution:=optional;version="${import.version.range}",
+                            com.fasterxml.jackson.databind.introspect;resolution:=optional;version="${import.version.range}",
+                            com.fasterxml.jackson.databind.module;resolution:=optional;version="${import.version.range}",
+                            com.fasterxml.jackson.databind.ser;resolution:=optional;version="${import.version.range}",
                             com.mongodb;resolution:=optional,
                             com.mongodb.gridfs;resolution:=optional,
                             com.mongodb.util;resolution:=optional,
-                            de.undercouch.bson4jackson;resolution:=optional;version="${jongo.import.version.range}",
-                            de.undercouch.bson4jackson.io;resolution:=optional;version="${jongo.import.version.range}",
-                            de.undercouch.bson4jackson.types;resolution:=optional;version="${jongo.import.version.range}",
+                            de.undercouch.bson4jackson;resolution:=optional;version="${import.version.range}",
+                            de.undercouch.bson4jackson.io;resolution:=optional;version="${import.version.range}",
+                            de.undercouch.bson4jackson.types;resolution:=optional;version="${import.version.range}",
                             org.bson;resolution:=optional,
                             org.bson.io;resolution:=optional,
                             org.bson.types;resolution:=optional
@@ -116,6 +116,6 @@
     <properties>
         <jongo.version>1.4.0</jongo.version>
         <jongo.export.version>1.4.0.wso2v1</jongo.export.version>
-        <jongo.import.version.range>[2.9,3)</jongo.import.version.range>
+        <import.version.range>[2.9,3)</import.version.range>
     </properties>
 </project>

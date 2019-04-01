@@ -33,9 +33,9 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>${com.fasterxml.jackson.annotation.version}</version>
+            <version>2.9.8</version>
             <optional>true</optional>
-        </dependency>	
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -76,7 +76,4 @@
         </plugins>
     </build>
 
-    <properties>
-        <com.fasterxml.jackson.annotation.version>2.9.8</com.fasterxml.jackson.annotation.version>
-    </properties>
 </project>

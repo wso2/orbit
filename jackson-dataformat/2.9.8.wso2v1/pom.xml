@@ -151,7 +151,7 @@
             <com.fasterxml.jackson.dataformat.version>2.9.8</com.fasterxml.jackson.dataformat.version>
             <com.fasterxml.jackson.dataformat.version.range>[2.2,3)</com.fasterxml.jackson.dataformat.version.range>
             <org.codehaus.stax2.version.range>[3.1,4)</org.codehaus.stax2.version.range>
-            <org.yaml.snakeyaml.version.range>[1.13,1.14)</org.yaml.snakeyaml.version.range>
+            <org.yaml.snakeyaml.version.range>[1.23.0,2.0.0)</org.yaml.snakeyaml.version.range>
             <javax.xml.version.range>[1.0,2)</javax.xml.version.range>
     </properties>
 </project>
