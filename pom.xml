@@ -79,6 +79,7 @@
         <module>bcpkix/1.60.0.wso2v1</module>
         <module>jaxws-ri/2.3.2.wso2v1</module>
         <module>jta/1.1.0.wso2v1</module>
+        <module>jta/1.1.0.wso2v2</module>
         <module>tomcat/7.0.93.wso2v1</module>
         <module>tomcat-catalina-ha/7.0.93.wso2v1</module>
         <module>tomcat-el-api/7.0.93.wso2v1</module>
