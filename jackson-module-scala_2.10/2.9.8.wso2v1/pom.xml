@@ -1,0 +1,94 @@
+<!--
+  ~ Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.com.fasterxml.jackson.module</groupId>
+    <artifactId>jackson-module-scala_2.10</artifactId>
+    <version>2.9.8.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - jackson-module-scala</name>
+    <description>
+        jackson-module-scala
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-scala_2.10</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <jackson.version>2.9.8</jackson.version>
+        <jackson.import.version>[2.4,3.0)</jackson.import.version>
+        <guava.import.version>[19.0, 20.0)</guava.import.version>
+        <scala.import.version>[2.10,3)</scala.import.version>
+        <paranamer.import.version>[2.6.0, 3.0.0)</paranamer.import.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.fasterxml.jackson.module.scala.*; version=${project.version},
+                        </Export-Package>
+                        <Private-Package>
+                            com.fasterxml.jackson.module.jackson.module.scala.*
+                        </Private-Package>
+                        <Import-Package>
+                            !com.fasterxml.jackson.module.scala,
+                            com.fasterxml.jackson.annotation.*;version="${jackson.import.version}",
+                            com.fasterxml.jackson.core.*;version="${jackson.import.version}",
+                            com.fasterxml.jackson.databind.*;version="${jackson.import.version}",
+                            com.google.common.*;version="${guava.import.version}",
+                            scala.*;version="${scala.import.version}",
+                            com.thoughtworks.paranamer.*;version="${paranamer.import.version}"
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
