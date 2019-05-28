@@ -59,6 +59,7 @@
         <module>disruptor/3.3.2.wso2v2</module>
         <module>disruptor/3.4.2.wso2v1</module>
         <module>cassandra-thrift/1.2.13.wso2v4</module>
+        <module>gogoproto-java/1.0.0.wso2v1</module>
         <module>bsf/3.0.0.wso2v4</module>
         <module>lucene/4.10.3-wso2v1</module>
         <module>rabbit-mq/3.4.4.wso2v1</module>
