@@ -27,7 +27,7 @@
     <packaging>bundle</packaging>
     <name>ApacheDirectory</name>
     <version>2.0.0.AM25.wso2v1</version>
-    <description>A custom wso2 products or solution which wraps Apache DS</description>
+    <description>A custom wso2 OSGi bundle which wraps Apache DS 2.0.0 AM 25 bundles as a single jar</description>
     <url>http://www.wso2.com</url>
 
     <dependencies>
