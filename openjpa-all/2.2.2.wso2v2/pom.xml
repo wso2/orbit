@@ -20,10 +20,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.apache.openjpa.wso2</groupId>
+    <groupId>org.wso2.orbit.org.apache.openjpa</groupId>
     <artifactId>openjpa-all</artifactId>
     <packaging>bundle</packaging>
-    <name>openjpaall.wso2</name>
+    <name>WSO2 Carbon Orbit - OpenJPA-All</name>
     <version>${openjpa.wso2.version}</version>
     <description>
         This bundle will provide the open JPA implementation for HL7 console.
@@ -41,22 +41,28 @@
                 <checksumPolicy>fail</checksumPolicy>
             </releases>
         </repository>
-        <repository>
-            <id>central</id>
-            <name>Maven Repository Switchboard</name>
-            <layout>default</layout>
-            <url>http://repo1.maven.org/maven2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
     </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.openjpa</groupId>
             <artifactId>openjpa-all</artifactId>
             <version>${openjpa.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
