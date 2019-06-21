@@ -19,14 +19,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-
-    <parent>
-        <groupId>org.wso2.carbon</groupId>
-        <artifactId>orbit-parent</artifactId>
-        <version>4.2.0</version>
-	    <relativePath>../../pom.xml</relativePath>
-   </parent>
-
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.openjpa.wso2</groupId>
     <artifactId>openjpa-all</artifactId>
@@ -34,7 +26,7 @@
     <name>openjpaall.wso2</name>
     <version>${openjpa.wso2.version}</version>
     <description>
-        This bundle will provide the open JPA implementation for HL7 console. 
+        This bundle will provide the open JPA implementation for HL7 console.
     </description>
     <url>http://wso2.org</url>
 
@@ -49,24 +41,24 @@
                 <checksumPolicy>fail</checksumPolicy>
             </releases>
         </repository>
-	    <repository>
-	      <id>central</id>
-	      <name>Maven Repository Switchboard</name>
-	      <layout>default</layout>
-	      <url>http://repo1.maven.org/maven2</url>
-	      <snapshots>
-		<enabled>false</enabled>
-	      </snapshots>
-	    </repository>
+        <repository>
+            <id>central</id>
+            <name>Maven Repository Switchboard</name>
+            <layout>default</layout>
+            <url>http://repo1.maven.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
-	<dependencies>
-	    <dependency>
-			<groupId>org.apache.openjpa</groupId>
-			<artifactId>openjpa-all</artifactId>
-			<version>${openjpa.version}</version>
-	    </dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.openjpa</groupId>
+            <artifactId>openjpa-all</artifactId>
+            <version>${openjpa.version}</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -76,37 +68,37 @@
                 <version>1.4.1</version>
                 <extensions>true</extensions>
                 <configuration>
-		        <unpackBundle>true</unpackBundle>
+                    <unpackBundle>true</unpackBundle>
                     <instructions>
-			            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Premain-Class>org.apache.openjpa.enhance.PCEnhancerAgent</Premain-Class>
                         <Bundle-Activator>org.apache.openjpa.persistence.osgi.PersistenceActivator</Bundle-Activator>
                         <Agent-Class>org.apache.openjpa.enhance.InstrumentationFactory</Agent-Class>
-                        <Export-Package>			                
+                        <Export-Package>
                             !javax.jms.*,
                             !javax.validation.*,
                             !javax.xml.*,
                             !org.slf4j.*,
-				            !javax.transaction.*,
-                            *                            
+                            !javax.transaction.*,
+                            *
                         </Export-Package>
                         <Import-Package>
-			   	            !org.apache.openjpa.*,
-				            javax.transaction.*; version="0.0.0",                            
-				            *;resolution:=optional
-			            </Import-Package>
-			            <!--Here DynamicImport is required because openjpa needs some rss package imports-->
-			            <DynamicImport-Package>*</DynamicImport-Package>
-                    </instructions>                
-               </configuration>
+                            !org.apache.openjpa.*,
+                            javax.transaction.*; version="0.0.0",
+                            *;resolution:=optional
+                        </Import-Package>
+                        <!--Here DynamicImport is required because openjpa needs some rss package imports-->
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
             </plugin>
         </plugins>
     </build>
 
     <properties>
-		<openjpa.version>2.2.2</openjpa.version>
-		<openjpa.wso2.version>${openjpa.version}.wso2v2</openjpa.wso2.version>
+        <openjpa.version>2.2.2</openjpa.version>
+        <openjpa.wso2.version>${openjpa.version}.wso2v2</openjpa.wso2.version>
     </properties>
 
 </project>
