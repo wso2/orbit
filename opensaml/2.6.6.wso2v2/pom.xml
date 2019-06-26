@@ -260,7 +260,7 @@
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.opensaml.*; version="${opensaml.orbit.version}",
+                            org.opensaml.*; version="${opensaml.version}",
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
