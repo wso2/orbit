@@ -80,6 +80,7 @@
                         <Export-Package>
                             !io.swagger.models.*,
                             !io.swagger.annotations.*,
+                            !io.swagger.parser.*,
                             akka-scala.*;version="${export.pkg.version.swagger-codegen}",
                             android.*;version="${export.pkg.version.swagger-codegen}",
                             apex.*;version="${export.pkg.version.swagger-codegen}",
