@@ -20,7 +20,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.tomcat</groupId>
+    <groupId>org.wso2.orbit.org.apache.tomcat</groupId>
     <artifactId>tomcat-jsp-api</artifactId>
     <version>9.0.21.wso2v1</version>
     <packaging>bundle</packaging>
@@ -56,12 +56,12 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            javax.servlet.jsp.*;version="2.2.0"
+                            javax.servlet.jsp.*;version="${version.tomcat}"
                         </Export-Package>
                         <Import-Package>
-                            javax.el;version="[2.2.0, 2.3.0)",
-                            javax.servlet;version="[2.6.0, 2.7.0)",
-                            javax.servlet.http;version="[2.6.0, 2.7.0)",
+                            javax.el;version="[9.0.0, 10.0.0)",
+                            javax.servlet;version="[9.0.0, 10.0.0)",
+                            javax.servlet.http;version="[9.0.0, 10.0.0)",
                             *;resolution:=optional
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
