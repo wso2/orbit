@@ -56,7 +56,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            javax.servlet.jsp.*;version="${version.tomcat}"
+                            javax.servlet.jsp.*;version="2.3.0"
                         </Export-Package>
                         <Import-Package>
                             javax.el;version="[3.0.0, 3.1.0)",
