@@ -64,7 +64,7 @@
                         <Export-Package>
                             org.apache.catalina.websocket.*;version="${version.tomcat}",
                             org.apache.tomcat.websocket.*;version="${version.tomcat}";-split-package:=merge-first,
-                            javax.websocket.*;version="${version.tomcat}";-split-package:=merge-first,
+                            javax.websocket.*;version="1.1.0";-split-package:=merge-first,
                         </Export-Package>
                         <Import-Package>
                             *;resolution:=optional

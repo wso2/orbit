@@ -110,8 +110,8 @@
                             org.apache.catalina.*;version="${version.tomcat}",
                             org.apache.coyote.*;version="${version.tomcat}",
                             org.apache.el.*;version="${version.tomcat}";-split-package:=merge-first,
-                            javax.websocket.*;version="${version.tomcat}";-split-package:=merge-first,
-                            javax.security.auth.message.*;version="${version.tomcat}";-split-package:=merge-first,
+                            javax.websocket.*;version="1.1.0";-split-package:=merge-first,
+                            javax.security.auth.message.*;version="6.0.0";-split-package:=merge-first
                         </Export-Package>
                         <Private-Package>
                             org.apache.juli.*
