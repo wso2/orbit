@@ -20,7 +20,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.tomcat</groupId>
+    <groupId>org.wso2.orbit.org.apache.tomcat</groupId>
     <artifactId>tomcat-websocket</artifactId>
     <version>9.0.21.wso2v1</version>
     <packaging>bundle</packaging>
@@ -62,9 +62,9 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.catalina.websocket.*;version="1.7.0",
-                            org.apache.tomcat.websocket.*;version="1.7.0";-split-package:=merge-first,
-                            javax.websocket.*;version="1.7.0";-split-package:=merge-first,
+                            org.apache.catalina.websocket.*;version="${version.tomcat}",
+                            org.apache.tomcat.websocket.*;version="${version.tomcat}";-split-package:=merge-first,
+                            javax.websocket.*;version="${version.tomcat}";-split-package:=merge-first,
                         </Export-Package>
                         <Import-Package>
                             *;resolution:=optional

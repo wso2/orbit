@@ -20,7 +20,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.tomcat</groupId>
+    <groupId>org.wso2.orbit.org.apache.tomcat</groupId>
     <artifactId>tomcat</artifactId>
     <version>9.0.21.wso2v1</version>
     <packaging>bundle</packaging>
@@ -71,15 +71,15 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.eclipse.jdt.core.compiler</groupId>
-            <artifactId>ecj</artifactId>
-            <version>${version.ecj}</version>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jasper-el</artifactId>
+            <version>${version.tomcat}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>tomcat</groupId>
-            <artifactId>naming-resources</artifactId>
-            <version>${version.naming.resource}</version>
+            <groupId>org.eclipse.jdt.core.compiler</groupId>
+            <artifactId>ecj</artifactId>
+            <version>${version.ecj}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -104,14 +104,14 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
                             !org.apache.tomcat.jdbc.pool.*,
-                            org.apache.jasper.*;version="2.2.2";-split-package:=merge-first,
-                            org.apache.naming.*;version="1.7.0",
-                            org.apache.tomcat.*;version="1.7.0";-split-package:=merge-first,
-                            org.apache.catalina.*;version="1.7.0",
-                            org.apache.coyote.*;version="1.7.0",
-                            org.apache.el.*;version="1.7.0";-split-package:=merge-first,
-                            javax.websocket.*;version="1.7.0";-split-package:=merge-first,
-                            javax.security.auth.message.*;version="1.7.0";-split-package:=merge-first,
+                            org.apache.jasper.*;version="${version.tomcat}";-split-package:=merge-first,
+                            org.apache.naming.*;version="${version.tomcat}",
+                            org.apache.tomcat.*;version="${version.tomcat}";-split-package:=merge-first,
+                            org.apache.catalina.*;version="${version.tomcat}",
+                            org.apache.coyote.*;version="${version.tomcat}",
+                            org.apache.el.*;version="${version.tomcat}";-split-package:=merge-first,
+                            javax.websocket.*;version="${version.tomcat}";-split-package:=merge-first,
+                            javax.security.auth.message.*;version="${version.tomcat}";-split-package:=merge-first,
                         </Export-Package>
                         <Private-Package>
                             org.apache.juli.*
@@ -134,7 +134,6 @@
 
     <properties>
         <version.tomcat>9.0.21</version.tomcat>
-        <version.ecj>4.3.1</version.ecj>
-        <version.naming.resource>5.5.23</version.naming.resource>
+        <version.ecj>4.6.1</version.ecj>
     </properties>
 </project>
