@@ -56,7 +56,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            javax.servlet.*;version="4.0.0"
+                            javax.servlet.*;version="2.6.0"
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>

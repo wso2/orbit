@@ -104,7 +104,7 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
                             !org.apache.tomcat.jdbc.pool.*,
-                            org.apache.jasper.*;version="${version.tomcat}";-split-package:=merge-first,
+                            org.apache.jasper.*;version="2.2.2";-split-package:=merge-first,
                             org.apache.naming.*;version="${version.tomcat}",
                             org.apache.tomcat.*;version="${version.tomcat}";-split-package:=merge-first,
                             org.apache.catalina.*;version="${version.tomcat}",
