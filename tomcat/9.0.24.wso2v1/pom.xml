@@ -104,6 +104,7 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
                             !org.apache.tomcat.jdbc.pool.*,
+                            !org.apache.juli.logging,
                             org.apache.jasper.*;version="2.2.2";-split-package:=merge-first,
                             org.apache.naming.*;version="${version.tomcat}",
                             org.apache.tomcat.*;version="${version.tomcat}";-split-package:=merge-first,
@@ -114,7 +115,7 @@
                             javax.security.auth.message.*;version="6.0.0";-split-package:=merge-first
                         </Export-Package>
                         <Private-Package>
-                            org.apache.juli.*
+                            org.apache.juli
                         </Private-Package>
                         <Import-Package>
                             *;resolution:=optional
