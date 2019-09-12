@@ -32,17 +32,7 @@
     <url>http://wso2.org</url>
 
     <dependencies>
-
-        <!--Start of SAML2(Previous) Dependencies-->
-        <dependency>
-            <groupId>org.opensaml</groupId>
-            <artifactId>opensaml1</artifactId>
-            <version>${opensaml1.version}</version>
-            <optional>true</optional>
-        </dependency>
-        <!--End of SAML2(Previous) Dependencies-->
-
-        <!--Start of SAML3 Dependencies-->
+        <!--Start of OpenSAML3 Dependencies-->
         <dependency>
             <groupId>org.opensaml</groupId>
             <artifactId>opensaml-core</artifactId>
@@ -779,7 +769,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!--End of SAML3 Dependencies-->
+        <!--End of OpenSAML3 Dependencies-->
 
         <!--Start of Shibboleth Dependencies-->
         <dependency>
@@ -874,6 +864,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${apache.commons.codec.version}</version>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -916,15 +911,17 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Name>${pom.artifactId}</Bundle-Name>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
                             org.opensaml.*; version="${opensaml.orbit.version}",
+                            net.shibboleth.*; version="${opensaml.orbit.version}",
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
                             !org.opensaml.*,
+                            !net.shibboleth.*,
                             javax.crypto.*;version="${javax.crypto.version}",
                             javax.net.*;version="${javax.net.version}",
                             javax.security.*;version="${javax.security.version}",
@@ -935,7 +932,7 @@
                             org.apache.commons.beanutils;version="${org.apache.commons.beanutils.version}";resolution:=optional,
                             org.apache.commons.httpclient.*;version="${org.apache.commons.httpclient.version}";resolution:=optional,
                             org.apache.commons.ssl.*;version="${org.apache.commons.ssl.version}";resolution:=optional,
-                            org.apache.commons.codec.binary;version="${org.apache.commons.codec.binary.version}",
+                            <!--org.apache.commons.codec.binary;version="${org.apache.commons.codec.binary.version}",-->
                             org.apache.commons.configuration;version="${org.apache.commons.configuration.version}";resolution:=optional,
                             org.apache.commons.fileupload.*;version="${org.apache.commons.fileupload.version}";resolution:=optional,
                             org.apache.commons.collections.iterators;version="${org.apache.commons.collections.iterators.version}";
@@ -957,12 +954,13 @@
                             org.owasp.esapi;resolution:=optional,
                             org.owasp.validator.html;version="${org.owasp.validator.html.version}";resolution:=optional,
                         </Import-Package>
-                        <Embed-Dependency>esapi;scope=compile|runtime;inline=false</Embed-Dependency>
+                        <Embed-Dependency>esapi;scope=compile|runtime;inline=false,commons-codec;inline=true,</Embed-Dependency>
                         <Include-Resource>
                             @opensaml-core-${opensaml.version}.jar!/**.xml,
                             @opensaml-core-${opensaml.version}.jar!/templates/**.vm,
                             @opensaml-core-${opensaml.version}.jar!/schema/**.xsd,
                             @opensaml-core-${opensaml.version}.jar!/conf/**,
+                            @opensaml-core-${opensaml.version}.jar!/META-INF/services/**,
 
                             @opensaml-saml-api-${opensaml.version}.jar!/**.xml,
                             @opensaml-saml-api-${opensaml.version}.jar!/templates/**.vm,
@@ -1043,14 +1041,12 @@
                             @opensaml-xmlsec-impl-${opensaml.version}.jar!/templates/**.vm,
                             @opensaml-xmlsec-impl-${opensaml.version}.jar!/schema/**.xsd,
                             @opensaml-xmlsec-impl-${opensaml.version}.jar!/conf/**,
+                            @opensaml-xmlsec-impl-${opensaml.version}.jar!/META-INF/services/**,
 
                             @java-support-${shibboleth.version}.jar!/**.xml,
                             @java-support-${shibboleth.version}.jar!/templates/**.vm,
                             @java-support-${shibboleth.version}.jar!/schema/**.xsd,
                             @java-support-${shibboleth.version}.jar!/conf/**,
-
-                            @opensaml1-${opensaml1.version}.jar!/schemas/**.xsd,
-                            @opensaml1-${opensaml1.version}.jar!/conf/**,
                         </Include-Resource>
                     </instructions>
                 </configuration>
@@ -1059,20 +1055,19 @@
     </build>
     <properties>
 
-        <!--SAML3 Version-->
-        <opensaml.version>3.2.0</opensaml.version>
-
-        <!--Start of Shibboleth properties-->
+        <!--OpenSAML3 Version-->
+        <opensaml.version>3.3.1</opensaml.version>
+        <!--Shibboleth Version-->
         <shibboleth.version>7.3.0</shibboleth.version>
-        <!--End of Shibboleth properties-->
+        <!--Apache Commons Codec Version-->
+        <apache.commons.codec.version>1.10</apache.commons.codec.version>
 
-        <opensaml1.version>1.1</opensaml1.version>
         <joda-time.orbit.version>2.8.2.wso2v1</joda-time.orbit.version>
         <joda-time.orbit.version.range>[2.8.2,3.0.0)</joda-time.orbit.version.range>
         <esapi.version>2.1.0.1</esapi.version>
 
-        <!--SAML3 Orbit Version-->
-        <opensaml.orbit.version>3.2.0.wso2v1</opensaml.orbit.version>
+        <!--OpenSAML3 Orbit Version-->
+        <opensaml.orbit.version>3.3.1.wso2v1</opensaml.orbit.version>
 
         <javax.crypto.version>[0.0.0,1.0.0)</javax.crypto.version>
         <javax.net.version>[0.0.0,1.0.0)</javax.net.version>

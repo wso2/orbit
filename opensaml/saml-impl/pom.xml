@@ -1,0 +1,182 @@
+<!--
+  ~ Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~  WSO2 Inc. licenses this file to you under the Apache License,
+  ~  Version 2.0 (the "License"); you may not use this file except
+  ~  in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing,
+  ~  software distributed under the License is distributed on an
+  ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~  KIND, either express or implied.  See the License for the
+  ~  specific language governing permissions and limitations
+  ~  under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.opensaml</groupId>
+    <artifactId>opensaml-saml-impl</artifactId>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - OpenSAML J Library</name>
+    <version>${opensaml.saml.impl.version}</version>
+    <description>
+        This bundle will export open-saml-impl packages from OpenSAML J library.
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+
+        <!--Start of OpenSAML3 Dependencies-->
+        <dependency>
+            <groupId>org.opensaml</groupId>
+            <artifactId>opensaml-saml-impl</artifactId>
+            <version>${opensaml.version}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-collections</groupId>
+                    <artifactId>commons-collections</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>jargs</groupId>
+                    <artifactId>jargs</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.xerces</groupId>
+                    <artifactId>resolver</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.xerces</groupId>
+                    <artifactId>xml-apis</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.xerces</groupId>
+                    <artifactId>serializer</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.xalan</groupId>
+                    <artifactId>xalan</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.xerces</groupId>
+                    <artifactId>xercesImpl</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--End of OpenSAML3 Dependencies-->
+
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <!-- Before adding ANYTHING in here, please start a discussion on the dev list.
+	Ideally the Axis2 build should only use Maven central (which is available
+	by default) and nothing else. We had troubles with other repositories in
+	the past. Therefore configuring additional repositories here should be
+	considered very carefully. -->
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+        </repository>
+        <repository>
+            <id>wso2.public.releases</id>
+            <name>WSO2 Public Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            org.opensaml.saml.*; version="${opensaml.saml.impl.version}",
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Import-Package>
+                            !org.opensaml.saml.*,
+                            javax.crypto.*;version="${javax.crypto.version}",
+                            javax.net.*;version="${javax.net.version}",
+                            javax.security.*;version="${javax.security.version}",
+                            javax.servlet.jsp.*;version="${javax.servlet.jsp.version}",
+                            javax.servlet.*;version="${javax.servlet.version}",
+                            javax.xml.*;version="${javax.xml.version}",
+                            org.apache.axiom.om.impl.dom.jaxp;version="${axiom.osgi.version.range}",
+                            org.apache.commons.beanutils;version="${org.apache.commons.beanutils.version}";resolution:=optional,
+                            org.apache.commons.httpclient.*;version="${org.apache.commons.httpclient.version}";resolution:=optional,
+                            org.apache.commons.ssl.*;version="${org.apache.commons.ssl.version}";resolution:=optional,
+                            org.apache.commons.codec.binary;version="${org.apache.commons.codec.binary.version}",
+                            org.apache.commons.configuration;version="${org.apache.commons.configuration.version}";resolution:=optional,
+                            org.apache.commons.fileupload.*;version="${org.apache.commons.fileupload.version}";resolution:=optional,
+                            org.apache.commons.collections.iterators;version="${org.apache.commons.collections.iterators.version}";
+                            resolution:=optional,
+                            org.apache.log4j.*;version="${apache.log4j.version}";resolution:=optional,
+                            org.apache.xml.security.*;version="${org.apache.xml.security.version}";resolution:=optional,
+                            org.apache.velocity.*;version="${org.apache.velocity.version}";resolution:=optional,
+                            org.joda.time.*;version="${joda-time.orbit.version.range}",
+                            org.joda.convert.*;version="${org.joda.convert.version}";resolution:=optional,
+                            org.bouncycastle.*;version="${org.bouncycastle.version}";resolution:=optional,
+                            org.slf4j.*;version="${org.slf4j.version}",
+                            org.w3c.*;version="${org.w3c.version}";resolution:=optional,
+                            org.xml.sax.*;version="${org.xml.sax.version}";resolution:=optional,
+                            net.jcip.annotations.*;version="${net.jcip.annotations.version}";resolution:=optional,
+                            junit.framework;version="${junit.framework.version}";resolution:=optional,
+                            junit.textui;version="${junit.textui.version}";resolution:=optional,
+                            bsh;version="${bsf.version}";resolution:=optional,
+                            nu.xom;version="${nu.xom.version}";resolution:=optional,
+                            org.owasp.esapi;resolution:=optional,
+                            org.owasp.validator.html;version="${org.owasp.validator.html.version}";resolution:=optional,
+                        </Import-Package>
+                        <Embed-Dependency>esapi;scope=compile|runtime;inline=false</Embed-Dependency>
+                        <Include-Resource>
+                            @opensaml-saml-impl-${opensaml.version}.jar!/**.xml,
+                            @opensaml-saml-impl-${opensaml.version}.jar!/templates/**.vm,
+                            @opensaml-saml-impl-${opensaml.version}.jar!/schema/**.xsd,
+                            @opensaml-saml-impl-${opensaml.version}.jar!/conf/**,
+                            @opensaml-saml-impl-${opensaml.version}.jar!/META-INF/services/**,
+                        </Include-Resource>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <properties>
+        <!--OpenSAML3 Version-->
+        <opensaml.version>3.3.1</opensaml.version>
+        <opensaml.saml.impl.version>3.3.1.wso2v1</opensaml.saml.impl.version>
+    </properties>
+
+</project>
+
