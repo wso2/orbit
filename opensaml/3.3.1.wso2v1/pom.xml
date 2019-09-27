@@ -444,6 +444,47 @@
 
         <dependency>
             <groupId>org.opensaml</groupId>
+            <artifactId>opensaml-security-impl</artifactId>
+            <version>${opensaml.version}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-collections</groupId>
+                    <artifactId>commons-collections</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>jargs</groupId>
+                    <artifactId>jargs</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.xerces</groupId>
+                    <artifactId>resolver</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.xerces</groupId>
+                    <artifactId>xml-apis</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.xerces</groupId>
+                    <artifactId>serializer</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.xalan</groupId>
+                    <artifactId>xalan</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.xerces</groupId>
+                    <artifactId>xercesImpl</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.opensaml</groupId>
             <artifactId>opensaml-storage-api</artifactId>
             <version>${opensaml.version}</version>
             <optional>true</optional>
@@ -869,6 +910,12 @@
             <artifactId>commons-codec</artifactId>
             <version>${apache.commons.codec.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.cryptacular</groupId>
+            <artifactId>cryptacular</artifactId>
+            <version>${cryptacular.version}</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -916,12 +963,14 @@
                         <Export-Package>
                             org.opensaml.*; version="${opensaml.orbit.version}",
                             net.shibboleth.*; version="${opensaml.orbit.version}",
+                            org.cryptacular.*; version="${cryptacular.version}",
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
                             !org.opensaml.*,
                             !net.shibboleth.*,
+                            !org.cryptacular.*,
                             javax.crypto.*;version="${javax.crypto.version}",
                             javax.net.*;version="${javax.net.version}",
                             javax.security.*;version="${javax.security.version}",
@@ -1002,6 +1051,12 @@
                             @opensaml-security-api-${opensaml.version}.jar!/schema/**.xsd,
                             @opensaml-security-api-${opensaml.version}.jar!/conf/**,
 
+                            @opensaml-security-impl-${opensaml.version}.jar!/**.xml,
+                            @opensaml-security-impl-${opensaml.version}.jar!/templates/**.vm,
+                            @opensaml-security-impl-${opensaml.version}.jar!/schema/**.xsd,
+                            @opensaml-security-impl-${opensaml.version}.jar!/conf/**,
+                            @opensaml-security-impl-${opensaml.version}.jar!/**.properties,
+
                             @opensaml-storage-api-${opensaml.version}.jar!/**.xml,
                             @opensaml-storage-api-${opensaml.version}.jar!/templates/**.vm,
                             @opensaml-storage-api-${opensaml.version}.jar!/schema/**.xsd,
@@ -1036,6 +1091,7 @@
                             @opensaml-xmlsec-api-${opensaml.version}.jar!/templates/**.vm,
                             @opensaml-xmlsec-api-${opensaml.version}.jar!/schema/**.xsd,
                             @opensaml-xmlsec-api-${opensaml.version}.jar!/conf/**,
+                            @opensaml-xmlsec-api-${opensaml.version}.jar!/META-INF/services/**,
 
                             @opensaml-xmlsec-impl-${opensaml.version}.jar!/**.xml,
                             @opensaml-xmlsec-impl-${opensaml.version}.jar!/templates/**.vm,
@@ -1097,6 +1153,7 @@
         <junit.textui.version>[0.0.0,1.0.0)</junit.textui.version>
         <nu.xom.version>[0.0.0,1.0.0)</nu.xom.version>
         <org.owasp.validator.html.version>[0.0.0,1.0.0)</org.owasp.validator.html.version>
+        <cryptacular.version>1.1.3</cryptacular.version>
     </properties>
 
 </project>
