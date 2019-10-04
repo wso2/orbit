@@ -979,9 +979,6 @@
                             javax.xml.*;version="${javax.xml.version}",
                             org.apache.axiom.om.impl.dom.jaxp;version="${axiom.osgi.version.range}",
                             org.apache.commons.beanutils;version="${org.apache.commons.beanutils.version}";resolution:=optional,
-                            <!--org.apache.commons.httpclient.*;version="${org.apache.commons.httpclient.version}";resolution:=optional,-->
-                            <!--org.apache.commons.ssl.*;version="${org.apache.commons.ssl.version}";resolution:=optional,-->
-                            <!--org.apache.commons.codec.binary;version="${org.apache.commons.codec.binary.version}",-->
                             org.apache.commons.configuration;version="${org.apache.commons.configuration.version}";resolution:=optional,
                             org.apache.commons.fileupload.*;version="${org.apache.commons.fileupload.version}";resolution:=optional,
                             org.apache.commons.collections.iterators;version="${org.apache.commons.collections.iterators.version}";
@@ -990,12 +987,10 @@
                             org.apache.xml.security.*;version="${org.apache.xml.security.version}";resolution:=optional,
                             org.apache.velocity.*;version="${org.apache.velocity.version}";resolution:=optional,
                             org.joda.time.*;version="${joda-time.orbit.version.range}",
-                            <!--org.joda.convert.*;version="${org.joda.convert.version}";resolution:=optional,-->
                             org.bouncycastle.*;version="${org.bouncycastle.version}";resolution:=optional,
                             org.slf4j.*;version="${org.slf4j.version}",
                             org.w3c.*;version="${org.w3c.version}";resolution:=optional,
                             org.xml.sax.*;version="${org.xml.sax.version}";resolution:=optional,
-                            <!--net.jcip.annotations.*;version="${net.jcip.annotations.version}";resolution:=optional,-->
                             junit.framework;version="${junit.framework.version}";resolution:=optional,
                             junit.textui;version="${junit.textui.version}";resolution:=optional,
                             bsh;version="${bsf.version}";resolution:=optional,
