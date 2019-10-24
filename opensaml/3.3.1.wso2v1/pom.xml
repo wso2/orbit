@@ -991,10 +991,6 @@
                             org.slf4j.*;version="${org.slf4j.version}",
                             org.w3c.*;version="${org.w3c.version}";resolution:=optional,
                             org.xml.sax.*;version="${org.xml.sax.version}";resolution:=optional,
-                            junit.framework;version="${junit.framework.version}";resolution:=optional,
-                            junit.textui;version="${junit.textui.version}";resolution:=optional,
-                            bsh;version="${bsf.version}";resolution:=optional,
-                            nu.xom;version="${nu.xom.version}";resolution:=optional,
                             org.owasp.esapi;resolution:=optional,
                             org.owasp.validator.html;version="${org.owasp.validator.html.version}";resolution:=optional,
                         </Import-Package>
@@ -1113,8 +1109,8 @@
         <!--Apache Commons Codec Version-->
         <apache.commons.codec.version>1.10</apache.commons.codec.version>
 
-        <joda-time.orbit.version>2.8.2.wso2v1</joda-time.orbit.version>
-        <joda-time.orbit.version.range>[2.8.2,3.0.0)</joda-time.orbit.version.range>
+        <joda-time.orbit.version>2.9.4.wso2v1</joda-time.orbit.version>
+        <joda-time.orbit.version.range>[2.9.4,3.0.0)</joda-time.orbit.version.range>
         <esapi.version>2.1.0.1</esapi.version>
 
         <!--OpenSAML3 Orbit Version-->
