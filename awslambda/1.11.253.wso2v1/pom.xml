@@ -113,7 +113,7 @@
     <properties>
         <httpclient.version>4.5.2</httpclient.version>
         <com.amazonaws.version>1.11.253</com.amazonaws.version>
-        <awslambda.orbit.version>1.11.253</awslambda.orbit.version>
+        <awslambda.orbit.version>1.11.253.wso2v1</awslambda.orbit.version>
     </properties>
     
 </project>
