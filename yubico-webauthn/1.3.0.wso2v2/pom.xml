@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~  WSO2 Inc. licenses this file to you under the Apache License,
+  ~  Version 2.0 (the "License"); you may not use this file except
+  ~  in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing,
+  ~  software distributed under the License is distributed on an
+  ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~  KIND, either express or implied.  See the License for the
+  ~  specific language governing permissions and limitations
+  ~  under the License.
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.yubico.webauthn</groupId>
+    <artifactId>yubico-webauthn</artifactId>
+    <packaging>bundle</packaging>
+    <version>1.3.0.wso2v2</version>
+    <name>WSO2 Carbon Orbit - Yubico Webauthn</name>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.yubico</groupId>
+            <artifactId>webauthn-server-core</artifactId>
+            <version>${com.yubico.webauthn.version}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-codec</groupId>
+                    <artifactId>commons-codec</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-codec</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-annotations</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.dataformat</groupId>
+                    <artifactId>jackson-dataformat-cbor</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.datatype</groupId>
+                    <artifactId>jackson-datatype-jdk8</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.httpcomponents</groupId>
+                    <artifactId>httpclient</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcprov-jdk15</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcpkix-jdk15on</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.3.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Private-Package>
+                            com.upokecenter,
+                            COSE
+                        </Private-Package>
+                        <Import-Package>
+                            !com.yubico.webauthn.*,
+                            !com.yubico.internal.*,
+                            com.fasterxml.jackson.core.*; version="${fasterxml.jackson.version.range}",
+                            com.fasterxml.jackson.databind.*; version="${fasterxml.jackson.version.range}",
+                            com.fasterxml.jackson.annotation.*; version="${fasterxml.jackson.version.range}",
+                            com.fasterxml.jackson.datatype.jdk8.*; version="${fasterxml.jackson.version.range}",
+                            com.fasterxml.jackson.dataformat.cbor.*; version="${fasterxml.jackson.version.range}",
+                            org.apache.commons.logging.*; version="${apache.commons.logging.version.range}",
+                            org.slf4j.*; version="${slf4j.version.range}",
+                            com.google.common.base.*; version="${guava.osgi.version.range}",
+                            com.google.common.collect.*; version="${guava.osgi.version.range}",
+                            com.google.common.base.*;version="${guava.osgi.version.range}",
+                            com.google.common.util.concurrent.*;version="${guava.osgi.version.range}",
+                            com.google.common.collect.*;version="${guava.osgi.version.range}",
+                            com.google.common.primitives.*;version="${guava.osgi.version.range}",
+                            com.google.common.cache.*;version="${guava.osgi.version.range}",
+                            com.google.common.io.*;version="${guava.osgi.version.range}",
+                            org.apache.commons.codec.*;version="${apache.commons.codec.version.range}",
+                            org.apache.commons.logging.*;version="${apache.commons.logging.version.range}",
+                            org.apache.http.*;version="${apache.http.client.version.range}",
+                            org.bouncycastle.*; version="${bouncycastle.version.range}"
+                        </Import-Package>
+                        <Export-Package>
+                            com.yubico.webauthn.*; version=${com.yubico.webauthn.version},
+                            com.yubico.webauthn.data.*; version=${com.yubico.webauthn.version},
+                            com.yubico.webauthn.exception.*; version=${com.yubico.webauthn.version},
+                            com.yubico.internal.util.*; version=${com.yubico.webauthn.version}
+                        </Export-Package>
+                        <Embed-Dependency>*;scope=compile|runtime;inline=false;</Embed-Dependency>
+                        <Embed-Transitive>true</Embed-Transitive>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <com.yubico.webauthn.version>1.3.0</com.yubico.webauthn.version>
+        <guava.osgi.version.range>[18.0.0,30.0.0)</guava.osgi.version.range>
+        <apache.commons.codec.version.range>[1.1.0, 2.0.0)</apache.commons.codec.version.range>
+        <apache.commons.logging.version.range>[1.1.0, 2.0.0)</apache.commons.logging.version.range>
+        <apache.http.client.version.range>[4.1.0, 5.0.0)</apache.http.client.version.range>
+        <bouncycastle.version.range>[1.50.0, 2.0.0)</bouncycastle.version.range>
+        <fasterxml.jackson.version.range>[2.9.5, 3.0.0)</fasterxml.jackson.version.range>
+        <slf4j.version.range>[1.6.1, 2.0.0)</slf4j.version.range>
+    </properties>
+
+</project>
