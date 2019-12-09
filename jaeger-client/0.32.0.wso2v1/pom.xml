@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~  WSO2 Inc. licenses this file to you under the Apache License,
+  ~  Version 2.0 (the "License"); you may not use this file except
+  ~  in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.io.jaeger</groupId>
+    <artifactId>jaeger-client</artifactId>
+    <version>${jaeger-client.orbit.version}</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Jaeger Client</name>
+    <description>
+        This bundle represents Jaeger Client.
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <!-- Jaeger Dependencies -->
+        <dependency>
+            <groupId>io.jaegertracing</groupId>
+            <artifactId>jaeger-client</artifactId>
+            <version>${jaeger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jaegertracing</groupId>
+            <artifactId>jaeger-core</artifactId>
+            <version>${jaeger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jaegertracing</groupId>
+            <artifactId>jaeger-thrift</artifactId>
+            <version>${jaeger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jaegertracing</groupId>
+            <artifactId>jaeger-tracerresolver</artifactId>
+            <version>${jaeger.version}</version>
+        </dependency>
+
+        <!-- OpenTracing Dependencies -->
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-tracerresolver</artifactId>
+            <version>${opentracing.tracerresolver.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.opentracing</groupId>
+            <artifactId>opentracing-api</artifactId>
+            <version>${opentracing.api.version}</version>
+        </dependency>
+
+        <!-- Other Dependencies -->
+        <dependency>
+            <groupId>org.apache.thrift</groupId>
+            <artifactId>libthrift</artifactId>
+            <version>${libthrift.version}</version>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${felix.bundle.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            io.jaegertracing.*; version="${jaeger-client.orbit.version}",
+                            io.opentracing.*; version="${jaeger-client.orbit.version}",
+                        </Export-Package>
+                        <Import-Package>
+                            com.google.gson; version="${com.google.gson.version.range}",
+                            com.google.gson.reflect; version="${com.google.gson.version.range}",
+                            javax.annotation; version="${default.import.version}",
+                            javax.net; version="${default.import.version}",
+                            javax.net.ssl; version="${default.import.version}",
+                            javax.security.auth.callback; version="${default.import.version}",
+                            javax.security.sasl; version="${default.import.version}",
+                            javax.servlet; version="${javax.servlet.version.range}",
+                            javax.servlet.http; version="${javax.servlet.version.range}",
+                            org.apache.http; version="${org.apache.http.version.range}",
+                            org.apache.http.client; version="${org.apache.http.client.version.range}",
+                            org.apache.http.client.methods; version="${org.apache.http.client.version.range}",
+                            org.apache.http.entity; version="${org.apache.http.version.range}",
+                            org.apache.http.params; version="${org.apache.http.version.range}",
+                            org.slf4j; version="${org.slf4j.version.range}",
+                            *;resolution:=optional
+                        </Import-Package>
+                        <Embed-Dependency>*;scope=compile|runtime;inline=true;</Embed-Dependency>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <jaeger-client.orbit.version>0.32.0.wso2v1</jaeger-client.orbit.version>
+        <jaeger.version>0.32.0</jaeger.version>
+        <opentracing.tracerresolver.version>0.1.5</opentracing.tracerresolver.version>
+        <opentracing.api.version>0.31.0</opentracing.api.version>
+        <libthrift.version>0.11.0</libthrift.version>
+        <felix.bundle.plugin.version>2.3.7</felix.bundle.plugin.version>
+
+        <!-- Import Versions -->
+        <com.google.gson.version.range>[2.8.0,2.9.0)</com.google.gson.version.range>
+        <default.import.version>[0.0.0,1.0.0)</default.import.version>
+        <javax.servlet.version.range>[2.6.0,2.7.0)</javax.servlet.version.range>
+        <org.apache.http.version.range>[4.3.3,5.0.0)</org.apache.http.version.range>
+        <org.apache.http.client.version.range>[4.3.6,5.0.0)</org.apache.http.client.version.range>
+        <org.slf4j.version.range>[1.7.0,1.8.0)</org.slf4j.version.range>
+    </properties>
+</project>
