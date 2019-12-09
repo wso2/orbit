@@ -105,6 +105,21 @@
                             io.opentracing.*; version="${jaeger-client.orbit.version}",
                         </Export-Package>
                         <Import-Package>
+                            com.google.gson; version="${com.google.gson.version.range}",
+                            com.google.gson.reflect; version="${com.google.gson.version.range}",
+                            javax.annotation; version="${default.import.version}",
+                            javax.net; version="${default.import.version}",
+                            javax.net.ssl; version="${default.import.version}",
+                            javax.security.auth.callback; version="${default.import.version}",
+                            javax.security.sasl; version="${default.import.version}",
+                            javax.servlet; version="${javax.servlet.version.range}",
+                            javax.servlet.http; version="${javax.servlet.version.range}",
+                            org.apache.http; version="${org.apache.http.version.range}",
+                            org.apache.http.client; version="${org.apache.http.client.version.range}",
+                            org.apache.http.client.methods; version="${org.apache.http.client.version.range}",
+                            org.apache.http.entity; version="${org.apache.http.version.range}",
+                            org.apache.http.params; version="${org.apache.http.version.range}",
+                            org.slf4j; version="${org.slf4j.version.range}",
                             *;resolution:=optional
                         </Import-Package>
                         <Embed-Dependency>*;scope=compile|runtime;inline=true;</Embed-Dependency>
@@ -121,5 +136,13 @@
         <opentracing.api.version>0.31.0</opentracing.api.version>
         <libthrift.version>0.11.0</libthrift.version>
         <felix.bundle.plugin.version>2.3.7</felix.bundle.plugin.version>
+
+        <!-- Import Versions -->
+        <com.google.gson.version.range>[2.8.0,2.9.0)</com.google.gson.version.range>
+        <default.import.version>[0.0.0,1.0.0)</default.import.version>
+        <javax.servlet.version.range>[2.6.0,2.7.0)</javax.servlet.version.range>
+        <org.apache.http.version.range>[4.3.3,5.0.0)</org.apache.http.version.range>
+        <org.apache.http.client.version.range>[4.3.6,5.0.0)</org.apache.http.client.version.range>
+        <org.slf4j.version.range>[1.7.0,1.8.0)</org.slf4j.version.range>
     </properties>
 </project>
