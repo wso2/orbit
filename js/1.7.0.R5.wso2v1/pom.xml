@@ -30,6 +30,7 @@
         org.wso2.carbon.js. This bundle will export packages from js.jar
     </description>
     <url>http://wso2.org</url>
+
     <dependencies>
         <dependency>
             <groupId>org.mozilla</groupId>
@@ -37,6 +38,20 @@
             <version>1.7R5</version>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
