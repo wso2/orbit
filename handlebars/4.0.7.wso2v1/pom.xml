@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ~ Copyright (c) 2020, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~      http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.com.github.jknack</groupId>
+    <artifactId>handlebars</artifactId>
+    <packaging>bundle</packaging>
+    <name>com.github.jknack.handlebars.wso2</name>
+    <version>4.0.7.wso2v1</version>
+    <description>
+        This bundle exports packages from com.github.jknack.handlebars library
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.jknack</groupId>
+            <artifactId>handlebars</artifactId>
+            <version>${version.com.github.jknack.handlebars}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${org.apache.commons.commons-lang3.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- ANTLRv4 -->
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-runtime</artifactId>
+            <version>${antlr-version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.abego.treelayout</groupId>
+                    <artifactId>org.abego.treelayout.core</artifactId>
+                </exclusion>
+            </exclusions>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Rhino -->
+        <dependency>
+            <groupId>org.mozilla</groupId>
+            <artifactId>rhino</artifactId>
+            <version>${org.mozilla.rhino.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Logging System -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${org.slf4j.slf4j-api.verison}</version>
+            <optional>true</optional>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.github.jknack.handlebars.*;version="${version.com.github.jknack.handlebars}",
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <!-- Removed javax.servlet to support MSF4J -->
+                        <!-- Removed org.mozilla.javascript.[tools] since JVM8 provides Nashorn -->
+                        <Import-Package>
+                            !javax.servlet,
+                            !org.mozilla.javascript,
+                            !org.mozilla.javascript.tools,
+                            !com.github.jknack.handlebars.*,
+                            com.github.jknack.handlebars.io,org.antlr.v4.runtime;version="[4.7,5)",
+                            org.antlr.v4.runtime.atn;version="[4.7,5)",
+                            org.antlr.v4.runtime.dfa;version="[4.7,5)",
+                            org.antlr.v4.runtime.misc;version="[4.7,5)",
+                            org.antlr.v4.runtime.tree;version="[4.7,5)",
+                            org.apache.commons.lang3;version="[3.1,4)",
+                            org.apache.commons.lang3.builder;version="[3.1,4)",
+                            org.apache.commons.lang3.math;version="[3.1,4)",
+                            org.apache.commons.lang3.text;version="[3.1,4)",
+                            org.apache.commons.lang3.tuple;version="[3.1,4)",
+                            org.slf4j;version="[1.6,2)"
+                        </Import-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <version.com.github.jknack.handlebars>4.0.7</version.com.github.jknack.handlebars>
+        <antlr-version>4.7.1</antlr-version>
+        <org.slf4j.slf4j-api.verison>1.6.4</org.slf4j.slf4j-api.verison>
+        <org.mozilla.rhino.version>1.7.7</org.mozilla.rhino.version>
+        <org.apache.commons.commons-lang3.version>3.1</org.apache.commons.commons-lang3.version>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
