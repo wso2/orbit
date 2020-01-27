@@ -7,7 +7,7 @@
     <artifactId>spring.framework</artifactId>
     <packaging>bundle</packaging>
     <name>spring.framework.wso2</name>
-    <version>3.2.9.wso2v1</version>
+    <version>3.2.9.wso2v2</version>
     <description>
         This bundle will export packages from spring framework
     </description>
