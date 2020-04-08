@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.openapitools.swagger.parser</groupId>
     <artifactId>swagger-parser</artifactId>
-    <version>2.0.13.OpenAPITools.wso2v1</version>
+    <version>2.0.14.OpenAPITools.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - swagger-parser (io.swagger)</name>
     <description>
@@ -43,17 +43,17 @@
         <dependency>
             <groupId>org.openapitools.swagger.parser</groupId>
             <artifactId>swagger-parser</artifactId>
-            <version>2.0.13-OpenAPITools.org-1</version>
+            <version>2.0.14-OpenAPITools.org-1</version>
         </dependency>
         <dependency>
             <groupId>org.openapitools.swagger.parser</groupId>
             <artifactId>swagger-parser-v2-converter</artifactId>
-            <version>2.0.13-OpenAPITools.org-1</version>
+            <version>2.0.14-OpenAPITools.org-1</version>
         </dependency>
         <dependency>
             <groupId>org.openapitools.swagger.parser</groupId>
             <artifactId>swagger-parser-v3</artifactId>
-            <version>2.0.13-OpenAPITools.org-1</version>
+            <version>2.0.14-OpenAPITools.org-1</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -64,12 +64,12 @@
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-core</artifactId>
-            <version>1.5.22</version>
+            <version>1.5.24</version>
         </dependency>
         <dependency>    
             <groupId>io.swagger</groupId>
             <artifactId>swagger-models</artifactId>
-            <version>1.5.22</version>
+            <version>1.5.24</version>
         </dependency>
     </dependencies>
 
@@ -129,7 +129,7 @@
     </build>
 
     <properties>
-        <export.pkg.version.swagger-parser>2.0.13.OpenAPITools.wso2v1</export.pkg.version.swagger-parser>
+        <export.pkg.version.swagger-parser>2.0.14.OpenAPITools.wso2v1</export.pkg.version.swagger-parser>
         <slf4j.import.version>[1.7.0, 1.8.0)</slf4j.import.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
