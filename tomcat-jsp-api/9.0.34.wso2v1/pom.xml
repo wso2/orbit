@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.tomcat</groupId>
     <artifactId>tomcat-jsp-api</artifactId>
-    <version>9.0.31.wso2v1</version>
+    <version>9.0.34.wso2v1</version>
     <packaging>bundle</packaging>
     <name>tomcat jsp api orbit bundle - 9.0.31.wso2v1</name>
     <description>Apache Tomcat JSP API</description>
