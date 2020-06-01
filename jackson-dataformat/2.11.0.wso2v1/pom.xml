@@ -1,0 +1,157 @@
+<!--
+ ~ Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.com.fasterxml.jackson.dataformat</groupId>
+    <artifactId>jackson-dataformat</artifactId>
+    <version>2.11.0.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Jackson Data Format</name>
+    <description>
+        This bundle exports packages from Jackson dataformat: csv, xml, yaml and smile.
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-csv</artifactId>
+            <version>${com.fasterxml.jackson.dataformat.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>${com.fasterxml.jackson.dataformat.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>${com.fasterxml.jackson.dataformat.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-smile</artifactId>
+            <version>${com.fasterxml.jackson.dataformat.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.fasterxml.jackson.dataformat.*; version=${project.version},
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Import-Package>
+                            com.fasterxml.jackson.annotation;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.core;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.core.base;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.core.format;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.core.io;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.core.json;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.core.sym;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.core.type;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.core.util;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind.cfg;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind.deser;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind.deser.std;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind.introspect;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind.jsontype;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind.jsontype.impl;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind.module;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind.ser;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind.ser.impl;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind.ser.std;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind.type;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.databind.util;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            com.fasterxml.jackson.module.jaxb;version="${com.fasterxml.jackson.dataformat.version.range}",
+                            javax.xml.bind.annotation,
+                            javax.xml.namespace,
+                            javax.xml.stream;version="${javax.xml.version.range}",
+                            javax.xml.transform,
+                            org.codehaus.stax2;version="${org.codehaus.stax2.version.range}",
+                            org.codehaus.stax2.io;version="${org.codehaus.stax2.version.range}",
+                            org.codehaus.stax2.ri;version="${org.codehaus.stax2.version.range}",
+                            org.yaml.snakeyaml;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.composer;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.constructor;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.emitter;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.error;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.events;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.extensions.compactnotation;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.introspector;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.nodes;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.parser;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.reader;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.representer;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.resolver;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.scanner;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.serializer;version="${org.yaml.snakeyaml.version.range}",
+                            org.yaml.snakeyaml.tokens;version="${org.yaml.snakeyaml.version.range}"
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>Alfresco Maven Repository</id>
+            <url>https://maven.alfresco.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <properties>
+        <com.fasterxml.jackson.dataformat.version>2.11.0</com.fasterxml.jackson.dataformat.version>
+        <com.fasterxml.jackson.dataformat.version.range>[2.2,3)</com.fasterxml.jackson.dataformat.version.range>
+        <org.codehaus.stax2.version.range>[3.1,4)</org.codehaus.stax2.version.range>
+        <org.yaml.snakeyaml.version.range>[1.23.0,2.0.0)</org.yaml.snakeyaml.version.range>
+        <javax.xml.version.range>[1.0,2)</javax.xml.version.range>
+    </properties>
+</project>
