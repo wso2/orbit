@@ -1,0 +1,102 @@
+<!--
+  ~ Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.11.0.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Jackson Data Bind</name>
+    <description>
+        This bundle exports packages from Jackson Data Bind library.
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${com.fasterxml.jackson.databind.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.fasterxml.jackson.databind.*; version=${com.fasterxml.jackson.databind.version},
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Import-Package>
+                            !com.fasterxml.jackson.databind.*,
+                            com.fasterxml.jackson.annotation;version="${com.fasterxml.jackson.annotation.version.range}",
+                            com.fasterxml.jackson.core;version="${com.fasterxml.jackson.core.version.range}",
+                            com.fasterxml.jackson.core.base;version="${com.fasterxml.jackson.core.version.range}",
+                            com.fasterxml.jackson.core.format;version="${com.fasterxml.jackson.core.version.range}",
+                            com.fasterxml.jackson.core.io;version="${com.fasterxml.jackson.core.version.range}",
+                            com.fasterxml.jackson.core.json;version="${com.fasterxml.jackson.core.version.range}",
+                            com.fasterxml.jackson.core.type;version="${com.fasterxml.jackson.core.version.range}",
+                            com.fasterxml.jackson.core.util;version="${com.fasterxml.jackson.core.version.range}",
+                            com.fasterxml.jackson.core.filter;version="${com.fasterxml.jackson.core.version.range}",
+                            com.fasterxml.jackson.core.sym;version="${com.fasterxml.jackson.core.version.range}",
+                            javax.xml.datatype;version="${javax.imp.pkg.version.range}",
+                            javax.xml.namespace;version="${javax.imp.pkg.version.range}";resolution:=optional,
+                            javax.xml.parsers;version="${javax.imp.pkg.version.range}",
+                            org.w3c.dom;version="${org.w3c.dom.imp.pkg.version.range}";resolution:=optional,
+                            org.w3c.dom.bootstrap;version="${org.w3c.dom.imp.pkg.version.range}",
+                            org.w3c.dom.ls;version="${org.w3c.dom.imp.pkg.version.range}"
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <com.fasterxml.jackson.databind.version>2.11.0</com.fasterxml.jackson.databind.version>
+        <com.fasterxml.jackson.core.version.range>[2.9.8,3.0.0)</com.fasterxml.jackson.core.version.range>
+        <com.fasterxml.jackson.annotation.version.range>[2.9.8,3.0.0)</com.fasterxml.jackson.annotation.version.range>
+        <javax.imp.pkg.version.range>[0.0.0,1.0.0)</javax.imp.pkg.version.range>
+        <org.w3c.dom.imp.pkg.version.range>[0.0.0,1.0.0)</org.w3c.dom.imp.pkg.version.range>
+    </properties>
+
+</project>
