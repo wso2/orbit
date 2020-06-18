@@ -72,15 +72,7 @@
             <groupId>io.fabric8</groupId>
             <artifactId>kubernetes-server-mock</artifactId>
             <version>${kubernetes-server-mock.version}</version>
-            <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>io.fabric8</groupId>
-            <artifactId>mockwebserver</artifactId>
-            <version>${mockwebserver.version}</version>
-            <optional>true</optional>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -120,7 +112,6 @@
                             org.yaml.snakeyaml;version="[1.16.0,2.0.0)",
                             *;resolution:=optional
                             io.fabric8.kubernetes.client.server.mock.KubernetesServer*;version="4.6.4",
-                            io.fabric8.mockwebserver;version="0.1.7",
                         </Import-Package>
                         <Include-Resource>
                             @kubernetes-client-${kubernetes-client.version}.jar!/META-INF/*,
@@ -139,6 +130,5 @@
         <openshift-client.version>4.5.2</openshift-client.version>
         <okhttp.version>4.2.0</okhttp.version>
         <kubernetes-server-mock.version>4.6.4</kubernetes-server-mock.version>
-        <mockwebserver.version>0.1.7</mockwebserver.version>
     </properties>
 </project>
