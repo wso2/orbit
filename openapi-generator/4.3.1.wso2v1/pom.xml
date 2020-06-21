@@ -205,7 +205,8 @@
                             io.swagger.parser.*;version="${import.openapitools.parser.version.range}",
                             com.fasterxml.jackson.datatype.guava; version="${jackson.version.range}",
                             com.google.common.*; version="${google.version.range}",
-                            org.slf4j.ext
+                            org.slf4j.ext,
+                            *.;resolution=optional
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
@@ -230,9 +231,7 @@
                             org.slf4j.ext
                         </_exportcontents>
                         <Embed-Dependency>
-                            slf4j-api;scope=compile|runtime;inline=false,
                             slf4j-ext;scope=compile|runtime;inline=false,
-                            slf4j-simple;scope=compile|runtime;inline=false,
                             commons-io;scope=compile|runtime;inline=false,
                         </Embed-Dependency>
                         <DynamicImport-Package>*</DynamicImport-Package>

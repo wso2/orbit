@@ -150,6 +150,7 @@
                             io.swagger.models.parameters; version="${io.swagger.version.range}",
                             io.swagger.models.auth; version="${io.swagger.version.range}",
                             io.swagger.models; version="${io.swagger.version.range}",
+                            io.swagger.v3.oas.models; version="${io.swagger.v3.version.range}",
                             com.fasterxml.jackson.*; version="${jackson.version.range}",
                             org.apache.commons.io;version="${commons.io.version.range}",
                             org.apache.commons.io.comparator;version="${commons.io.version.range}",
