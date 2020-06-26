@@ -82,7 +82,7 @@
                         <Export-Package>
                             io.fabric8.kubernetes.*;version="${project.version}";-split-package:=merge-first,
                             io.fabric8.openshift.*;version="${project.version}",
-                            io.fabric8.zjsonpatch.*;version="${project.version}"
+                            io.fabric8.zjsonpatch.*;version="${project.version}",
                         </Export-Package>
                         <Private-Package>
                             io.fabric8.kubernetes.client.internal.*
