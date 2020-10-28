@@ -1,0 +1,241 @@
+<!--
+  ~ /*
+  ~  *Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~  *
+  ~  *WSO2 Inc. licenses this file to you under the Apache License,
+  ~  *Version 2.0 (the "License"); you may not use this file except
+  ~  *in compliance with the License.
+  ~  *You may obtain a copy of the License at
+  ~  *
+  ~  *http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  *Unless required by applicable law or agreed to in writing,
+  ~  *software distributed under the License is distributed on an
+  ~  *"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~  *KIND, either express or implied.  See the License for the
+  ~  *specific language governing permissions and limitations
+  ~  *under the License.
+  ~  */
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.milyn</groupId>
+    <artifactId>smooks</artifactId>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Smooks Bundle</name>
+    <version>1.5.1.wso2v3</version>
+    <description>
+        This bundle will export packages from milyn-smooks-edi.jar
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.milyn</groupId>
+            <artifactId>milyn-smooks-all</artifactId>
+            <version>${org.milyn.version}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.thoughtworks.xstream</groupId>
+                    <artifactId>xstream</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>antlr</groupId>
+                    <artifactId>antlr</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>antlr</groupId>
+                    <artifactId>stringtemplate</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>jaxen</groupId>
+                    <artifactId>jaxen</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>dtdparser</groupId>
+                    <artifactId>dtdparser</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.transaction</groupId>
+                    <artifactId>jta</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.groovy</groupId>
+                    <artifactId>groovy-all</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.ibatis</groupId>
+                    <artifactId>ibatis-sqlmap</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.jackson</groupId>
+                    <artifactId>jackson-core-lgpl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.persistence</groupId>
+                    <artifactId>persistence-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>net.sf.opencsv</groupId>
+                    <artifactId>opencsv</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ognl</groupId>
+                    <artifactId>ognl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.freemarker</groupId>
+                    <artifactId>freemarker</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>${freemarker.version}</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>1.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            org.thoughtworks.xstream.*;version="${org.thoughtworks.xstream.version}",
+                            org.mvel.*;version="${org.mvel.version}",
+                            org.milyn.*;version="${org.milyn.version}",
+                            freemarker.*;version="${freemarker.version}",
+                            org.yaml.*;version="${org.yaml.version}",
+                            org.mvel2.*;version="${org.mvel2.version}",
+                        </Export-Package>
+                        <Import-Package>
+                            au.com.bytecode.opencsv;resolution:=optional,
+                            com.ibatis.sqlmap.client;resolution:=optional,
+                            com.sun.org.apache.xml.internal.utils;resolution:=optional,
+                            com.sun.org.apache.xpath.internal;resolution:=optional,
+                            com.sun.org.apache.xpath.internal.objects;resolution:=optional,
+                            com.thoughtworks.xstream;resolution:=optional;version="${thoughtworks.xstream.imp.pkg.version.range}",
+                            com.thoughtworks.xstream.io.xml;resolution:=optional;version="${thoughtworks.xstream.imp.pkg.version.range}",
+                            com.wutka.dtd;resolution:=optional,
+                            groovy.lang;resolution:=optional,
+                            javassist;resolution:=optional,
+                            javax.el;resolution:=optional,
+                            javax.jms;resolution:=optional,
+                            javax.naming;resolution:=optional,
+                            javax.persistence;resolution:=optional,
+                            javax.servlet;resolution:=optional,
+                            javax.servlet.*;resolution:=optional,
+                            javax.sql;resolution:=optional,
+                            javax.swing;resolution:=optional,
+                            javax.swing.tree;resolution:=optional,
+                            javax.transaction;resolution:=optional,
+                            javax.xml.*;resolution:=optional,
+                            ognl;resolution:=optional,
+                            org.antlr.stringtemplate;resolution:=optional,
+                            org.apache.camel.*;resolution:=optional,
+                            org.apache.commons.*;resolution:=optional,
+                            org.apache.log;resolution:=optional,
+                            org.apache.log4j;resolution:=optional,
+                            org.apache.tools.ant;resolution:=optional,
+                            org.apache.tools.ant.*;resolution:=optional,
+                            org.apache.xalan.extensions;resolution:=optional,
+                            org.apache.xalan.templates;resolution:=optional,
+                            org.apache.xml.utils;resolution:=optional,
+                            org.apache.xpath;resolution:=optional,
+                            org.apache.xpath.objects;resolution:=optional,
+                            org.codehaus.groovy.control;resolution:=optional,
+                            org.codehaus.jackson;resolution:=optional,
+                            org.dom4j;resolution:=optional,
+                            org.dom4j.tree;resolution:=optional,
+                            org.hibernate;resolution:=optional,
+                            org.hsqldb;resolution:=optional,
+                            org.jaxen.*;resolution:=optional,
+                            org.jdom.*;resolution:=optional,
+                            org.milyn.*;resolution:=optional;version="${milyn.imp.pkg.version.range}",
+                            org.mozilla.javascript;resolution:=optional,
+                            org.mvel2.*;resolution:=optional;version="${mvel2.imp.pkg.version.range}",
+                            org.osgi.framework;resolution:=optional,
+                            org.python.core;resolution:=optional,
+                            org.python.util;resolution:=optional,
+                            org.w3c.dom.*;resolution:=optional,
+                            org.xml.sax.*;resolution:=optional,
+                            org.yaml.snakeyaml.*;resolution:=optional,
+                            org.zeroturnaround.javarebel;resolution:=optional,
+                            sun.misc;resolution:=optional,
+                            org.slf4j.spi;resolution:=optional,
+                            org.slf4j;resolution:=optional
+                        </Import-Package>
+                        <Include-Resource>
+                            META-INF=META-INF,
+                            smooks-regex.properties=smooks-regex.properties
+                        </Include-Resource>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <properties>
+        <org.thoughtworks.xstream.version>1.4.4</org.thoughtworks.xstream.version>
+        <org.mvel.version>2.0.17</org.mvel.version>
+        <org.milyn.version>1.5.1</org.milyn.version>
+        <freemarker.version>2.3.30</freemarker.version>
+        <org.yaml.version>1.5.1</org.yaml.version>
+        <org.mvel2.version>1.5.1</org.mvel2.version>
+        <milyn.imp.pkg.version.range>[1.5,1.6)</milyn.imp.pkg.version.range>
+        <mvel2.imp.pkg.version.range>[1.5,1.6)</mvel2.imp.pkg.version.range>
+        <thoughtworks.xstream.imp.pkg.version.range>[1.4,1.5)</thoughtworks.xstream.imp.pkg.version.range>
+    </properties>
+</project>
