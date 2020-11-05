@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~ Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.openapitools</groupId>
+    <artifactId>openapi-generator</artifactId>
+    <version>4.3.1.wso2v2</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - openapi-generator (org.openapitools)</name>
+    <description>
+        This bundle will export packages from openapi-generator libraries of org.openapitools
+    </description>
+    <url>http://wso2.org</url>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openapitools</groupId>
+            <artifactId>openapi-generator</artifactId>
+            <version>4.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-ext</artifactId>
+            <version>${slf4j.api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io-version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.3.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            !io.swagger.models.*,
+                            !io.swagger.annotations.*,
+                            !io.swagger.v3.*,
+                            !com.google.common.base,
+                            !com.google.common.collect,
+                            Ada;version="${export.pkg.version.swagger-codegen}",
+                            C-libcurl;version="${export.pkg.version.swagger-codegen}",
+                            Eiffel.*;version="${export.pkg.version.swagger-codegen}",
+                            Groovy;version="${export.pkg.version.swagger-codegen}",
+                            Java.*;version="${export.pkg.version.swagger-codegen}",
+                            JavaInflector;version="${export.pkg.version.swagger-codegen}",
+                            JavaJaxRS.*;version="${export.pkg.version.swagger-codegen}",
+                            JavaPlayFramework;version="${export.pkg.version.swagger-codegen}",
+                            JavaSpring.*;version="${export.pkg.version.swagger-codegen}",
+                            JavaVertXServer;version="${export.pkg.version.swagger-codegen}",
+                            Javascript;version="${export.pkg.version.swagger-codegen}",
+                            Javascript-Closure-Angular.*;version="${export.pkg.version.swagger-codegen}",
+                            Javascript-Flowtyped;version="${export.pkg.version.swagger-codegen}",
+                            Javascript.es6;version="${export.pkg.version.swagger-codegen}",
+                            _common;version="${export.pkg.version.swagger-codegen}",
+                            android.*;version="${export.pkg.version.swagger-codegen}",
+                            apache2;version="${export.pkg.version.swagger-codegen}",
+                            apex;version="${export.pkg.version.swagger-codegen}",
+                            aspnetcore.*;version="${export.pkg.version.swagger-codegen}",
+                            bash;version="${export.pkg.version.swagger-codegen}",
+                            clojure;version="${export.pkg.version.swagger-codegen}",
+                            codegen;version="${export.pkg.version.swagger-codegen}",
+                            config;version="${export.pkg.version.swagger-codegen}",
+                            confluenceWikiDocs;version="${export.pkg.version.swagger-codegen}",
+                            cpp-pistache-server;version="${export.pkg.version.swagger-codegen}",
+                            cpp-qt5-client;version="${export.pkg.version.swagger-codegen}",
+                            cpp-qt5-qhttpengine-server;version="${export.pkg.version.swagger-codegen}",
+                            cpp-rest-sdk-client;version="${export.pkg.version.swagger-codegen}",
+                            cpp-restbed-server;version="${export.pkg.version.swagger-codegen}",
+                            cpp-tizen-client;version="${export.pkg.version.swagger-codegen}",
+                            csharp;version="${export.pkg.version.swagger-codegen}",
+                            csharp-dotnet2;version="${export.pkg.version.swagger-codegen}",
+                            csharp-nancyfx;version="${export.pkg.version.swagger-codegen}",
+                            csharp-netcore;version="${export.pkg.version.swagger-codegen}",
+                            dart;version="${export.pkg.version.swagger-codegen}",
+                            dart-jaguar;version="${export.pkg.version.swagger-codegen}",
+                            dart-jaguar.auth;version="${export.pkg.version.swagger-codegen}",
+                            dart.auth;version="${export.pkg.version.swagger-codegen}",
+                            dart2;version="${export.pkg.version.swagger-codegen}",
+                            dart2.auth;version="${export.pkg.version.swagger-codegen}",
+                            elixir;version="${export.pkg.version.swagger-codegen}",
+                            elm;version="${export.pkg.version.swagger-codegen}",
+                            erlang-client;version="${export.pkg.version.swagger-codegen}",
+                            erlang-proper;version="${export.pkg.version.swagger-codegen}",
+                            erlang-server;version="${export.pkg.version.swagger-codegen}",
+                            flash;version="${export.pkg.version.swagger-codegen}",
+                            fsharp-giraffe-server;version="${export.pkg.version.swagger-codegen}",
+                            go;version="${export.pkg.version.swagger-codegen}",
+                            go-gin-server;version="${export.pkg.version.swagger-codegen}",
+                            go-server;version="${export.pkg.version.swagger-codegen}",
+                            graphql-nodejs-express-server;version="${export.pkg.version.swagger-codegen}",
+                            graphql-schema;version="${export.pkg.version.swagger-codegen}",
+                            haskell-http-client.*;version="${export.pkg.version.swagger-codegen}",
+                            haskell-servant;version="${export.pkg.version.swagger-codegen}",
+                            htmlDocs;version="${export.pkg.version.swagger-codegen}",
+                            htmlDocs2;version="${export.pkg.version.swagger-codegen}",
+                            java-msf4j-server;version="${export.pkg.version.swagger-codegen}",
+                            java-pkmst.*;version="${export.pkg.version.swagger-codegen}",
+                            java-undertow-server;version="${export.pkg.version.swagger-codegen}",
+                            jmeter-client;version="${export.pkg.version.swagger-codegen}",
+                            kotlin-client.*;version="${export.pkg.version.swagger-codegen}",
+                            kotlin-server.*;version="${export.pkg.version.swagger-codegen}",
+                            kotlin-spring.*;version="${export.pkg.version.swagger-codegen}",
+                            lua;version="${export.pkg.version.swagger-codegen}",
+                            mysql-schema;version="${export.pkg.version.swagger-codegen}",
+                            nodejs;version="${export.pkg.version.swagger-codegen}",
+                            objc;version="${export.pkg.version.swagger-codegen}",
+                            openapi;version="${export.pkg.version.swagger-codegen}",
+                            openapi-static;version="${export.pkg.version.swagger-codegen}",
+                            openapi-static.assets.css;version="${export.pkg.version.swagger-codegen}",
+                            openapi-static.assets.images;version="${export.pkg.version.swagger-codegen}",
+                            openapi-static.assets.js;version="${export.pkg.version.swagger-codegen}",
+                            openapi-yaml;version="${export.pkg.version.swagger-codegen}",
+                            perl;version="${export.pkg.version.swagger-codegen}",
+                            php;version="${export.pkg.version.swagger-codegen}",
+                            php-laravel.*;version="${export.pkg.version.swagger-codegen}",
+                            php-lumen;version="${export.pkg.version.swagger-codegen}",
+                            php-silex;version="${export.pkg.version.swagger-codegen}",
+                            php-slim-server;version="${export.pkg.version.swagger-codegen}",
+                            php-symfony.*;version="${export.pkg.version.swagger-codegen}",
+                            php-ze-ph;version="${export.pkg.version.swagger-codegen}",
+                            powershell;version="${export.pkg.version.swagger-codegen}",
+                            python.*;version="${export.pkg.version.swagger-codegen}",
+                            python-aiohttp;version="${export.pkg.version.swagger-codegen}",
+                            python-blueplanet.*;version="${export.pkg.version.swagger-codegen}",
+                            python-flask;version="${export.pkg.version.swagger-codegen}",
+                            r;version="${export.pkg.version.swagger-codegen}",
+                            ruby-client;version="${export.pkg.version.swagger-codegen}",
+                            ruby-on-rails-server;version="${export.pkg.version.swagger-codegen}",
+                            ruby-sinatra-server;version="${export.pkg.version.swagger-codegen}",
+                            rust.*;version="${export.pkg.version.swagger-codegen}",
+                            rust-server;version="${export.pkg.version.swagger-codegen}",
+                            scala-akka-client;version="${export.pkg.version.swagger-codegen}",
+                            scala-finch.*;version="${export.pkg.version.swagger-codegen}",
+                            scala-gatling;version="${export.pkg.version.swagger-codegen}",
+                            scala-httpclient;version="${export.pkg.version.swagger-codegen}",
+                            scala-lagom-server;version="${export.pkg.version.swagger-codegen}",
+                            scala-play-server.*;version="${export.pkg.version.swagger-codegen}",
+                            scalatra.*;version="${export.pkg.version.swagger-codegen}",
+                            scalaz;version="${export.pkg.version.swagger-codegen}",
+                            swift;version="${export.pkg.version.swagger-codegen}",
+                            swift3;version="${export.pkg.version.swagger-codegen}",
+                            swift4;version="${export.pkg.version.swagger-codegen}",
+                            typescript-angular;version="${export.pkg.version.swagger-codegen}",
+                            typescript-angularjs;version="${export.pkg.version.swagger-codegen}",
+                            typescript-aurelia;version="${export.pkg.version.swagger-codegen}",
+                            typescript-axios;version="${export.pkg.version.swagger-codegen}",
+                            typescript-fetch;version="${export.pkg.version.swagger-codegen}",
+                            typescript-inversify;version="${export.pkg.version.swagger-codegen}",
+                            typescript-jquery;version="${export.pkg.version.swagger-codegen}",
+                            typescript-node;version="${export.pkg.version.swagger-codegen}",
+                            typescript-rxjs;version="${export.pkg.version.swagger-codegen}",
+                            validator;version="${export.pkg.version.swagger-codegen}",
+                            org.openapitools.codegen.*;version="${export.pkg.version.swagger-codegen}";-split-package:=merge-first,,
+                            org.openapitools.codegen.templating.*;version="${export.pkg.version.swagger-codegen}"
+                        </Export-Package>
+                        <Import-Package>
+                            io.swagger.v3.*;version="${import.openapitools.parser.version.range}",
+                            io.swagger.parser.*;version="${import.openapitools.parser.version.range}",
+                            com.fasterxml.jackson.datatype.guava; version="${jackson.version.range}",
+                            com.google.common.*; version="${google.version.range}",
+                            org.slf4j.ext,
+                            *.;resolution=optional
+                        </Import-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Include-Resource>
+                            {maven-resources},
+                            @openapi-generator-4.3.1.jar!/META-INF/services/*
+                        </Include-Resource>
+                        <_exportcontents>
+                            com.github.jknack.handlebars,
+                            com.gicommons-iothub.jknack.handlebars.context,
+                            com.github.jknack.handlebars.helper,
+                            com.github.jknack.handlebars.io,
+                            com.google.common.base,
+                            com.google.common.collect,
+                            com.google.common.io,
+                            com.mifmif.common.regex,
+                            org.apache.commons.io,
+                            org.commonmark.node,
+                            org.commonmark.parser,
+                            org.commonmark.renderer.html,
+                            org.slf4j.ext
+                        </_exportcontents>
+                        <Embed-Dependency>
+                            slf4j-ext;scope=compile|runtime;inline=false,
+                            commons-io;scope=compile|runtime;inline=false,
+                        </Embed-Dependency>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <export.pkg.version.swagger-codegen>4.3.1.wso2v2</export.pkg.version.swagger-codegen>
+        <import.pkg.version.swagger-codegen>4.3.1</import.pkg.version.swagger-codegen>
+        <jmustache-version>1.14</jmustache-version>
+        <handlebars.java-version>4.1.2</handlebars.java-version>
+        <slf4j.api.version>1.7.12</slf4j.api.version>
+        <commons-io-version>2.4</commons-io-version>
+        <jackson.version.range>[2.7.0,3.0.0)</jackson.version.range>
+        <google.version.range>[27.0.0,28.0.0)</google.version.range>
+        <slf4j.version.range>[1.7.0,1.8.0)</slf4j.version.range>
+        <import.openapitools.parser.version.range>[2.0, 3.0)</import.openapitools.parser.version.range>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+</project>
