@@ -147,24 +147,19 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>4.1.0</version>
+                <version>1.4.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Private-Package>
+                        <Export-Package>
                             org.thoughtworks.xstream.*;version="${org.thoughtworks.xstream.version}",
                             org.mvel.*;version="${org.mvel.version}",
+                            org.milyn.*;version="${org.milyn.version}",
                             freemarker.*;version="${freemarker.version}",
                             org.yaml.*;version="${org.yaml.version}",
-                            org.mvel2.*;version="${org.mvel2.version}"
-                        </Private-Package>
-                        <Export-Package>
-                            META-INF.xsd.smooks,
-                            META-INF.xsd.smooks.*;-split-package:=merge-first,
-                            org.milyn.*;version="${org.milyn.version}",
-                            freemarker.*;version="${freemarker.version}"
+                            org.mvel2.*;version="${org.mvel2.version}",
                         </Export-Package>
                         <Import-Package>
                             au.com.bytecode.opencsv;resolution:=optional,
@@ -224,8 +219,8 @@
                             org.slf4j;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
-                            @milyn-smooks-all-${org.milyn.version}.jar!/META-INF/*,
-                            @milyn-smooks-all-${org.milyn.version}.jar!/smooks-regex.properties
+                            META-INF=META-INF,
+                            smooks-regex.properties=smooks-regex.properties
                         </Include-Resource>
                     </instructions>
                 </configuration>
