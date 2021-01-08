@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ /*
+  ~  *Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~  *
+  ~  *WSO2 Inc. licenses this file to you under the Apache License,
+  ~  *Version 2.0 (the "License"); you may not use this file except
+  ~  *in compliance with the License.
+  ~  *You may obtain a copy of the License at
+  ~  *
+  ~  *http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  *Unless required by applicable law or agreed to in writing,
+  ~  *software distributed under the License is distributed on an
+  ~  *"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~  *KIND, either express or implied.  See the License for the
+  ~  *specific language governing permissions and limitations
+  ~  *under the License.
+  ~  */
+  -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:smooks="http://www.milyn.org/xsd/smooks-1.1.xsd"
+           xmlns:smooks-dmb="http://www.milyn.org/xsd/smooks/dmb-1.4.xsd"
+           targetNamespace="http://www.milyn.org/xsd/smooks/dmb-1.4.xsd"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="http://www.milyn.org/xsd/smooks-1.1.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation xml:lang="en">Smooks Dynamic Model Builder (DMB) serialization.</xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="writer" substitutionGroup="smooks:abstract-resource-config" type="smooks-dmb:writer">
+    	<xs:annotation>
+			<xs:documentation xml:lang="en">Writer config.</xs:documentation>
+		</xs:annotation>
+    </xs:element>
+
+	<xs:complexType name="writer">
+   		<xs:complexContent>
+   			<xs:extension base="smooks:element-visitor">
+   				<xs:sequence>
+                    <xs:element ref="smooks:param" minOccurs="0" maxOccurs="unbounded" />
+   				</xs:sequence>
+   				<xs:attribute name="beanId" type="xs:string" use="optional">
+   					<xs:annotation>
+   						<xs:documentation xml:lang="en">The beanId of the bean with which this writer is associated.</xs:documentation>
+   					</xs:annotation>
+   				</xs:attribute>
+                   <xs:attribute name="beanClass" type="xs:string" use="optional">
+                       <xs:annotation>
+                           <xs:documentation xml:lang="en">The bean class with which this writer is associated.</xs:documentation>
+                       </xs:annotation>
+                   </xs:attribute>
+   				<xs:attribute name="class" type="xs:string" use="required">
+   					<xs:annotation>
+                        <xs:documentation xml:lang="en">The BeanWriter class name.</xs:documentation>
+   					</xs:annotation>
+                </xs:attribute>
+   			</xs:extension>
+   		</xs:complexContent>
+   	</xs:complexType>
+
+</xs:schema>

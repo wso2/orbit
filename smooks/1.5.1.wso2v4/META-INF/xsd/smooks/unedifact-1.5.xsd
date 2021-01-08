@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ /*
+  ~  *Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~  *
+  ~  *WSO2 Inc. licenses this file to you under the Apache License,
+  ~  *Version 2.0 (the "License"); you may not use this file except
+  ~  *in compliance with the License.
+  ~  *You may obtain a copy of the License at
+  ~  *
+  ~  *http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  *Unless required by applicable law or agreed to in writing,
+  ~  *software distributed under the License is distributed on an
+  ~  *"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~  *KIND, either express or implied.  See the License for the
+  ~  *specific language governing permissions and limitations
+  ~  *under the License.
+  ~  */
+  -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:smooks="http://www.milyn.org/xsd/smooks-1.1.xsd" xmlns:smooks-edi="http://www.milyn.org/xsd/smooks/unedifact-1.5.xsd" targetNamespace="http://www.milyn.org/xsd/smooks/unedifact-1.5.xsd" elementFormDefault="qualified">
+	<xs:import namespace="http://www.milyn.org/xsd/smooks-1.1.xsd"/>
+	<xs:annotation>
+		<xs:documentation xml:lang="en">Smooks UN/EDIFACT Reader Configuration</xs:documentation>
+	</xs:annotation>
+	<xs:element name="reader" type="smooks-edi:reader" substitutionGroup="smooks:abstract-reader">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+    		 	UN/EDIFACT Reader Configuration.
+    		 	<p/>
+    		 	Handles reading of a UN/EDIFACT message exchange, including the UN/EDIFACT control segments (UNA, UNB etc).
+    		 </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="reader">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">UN/EDIFACT Reader</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="smooks:abstract-reader">
+				<xs:attribute name="mappingModel" type="xs:string" use="optional" default="">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">
+			    		 	Comma separated list of URIs of the EDI mapping model files.
+			    		 	<p/>
+			    		 	Also supports specification of a ZIP/Jar file containing a collection
+			    		 	of mapping model files. 
+			    		 </xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="ignoreNewLines" type="xs:boolean" use="optional" default="false">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">
+						    Ignore new line characters. Default "false".
+						    <p/>
+						    EDI messages are sometimes formatted with new line characters for human readability.
+						    In that case, these characters are not part of the message and should be ignored.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+                <xs:attribute name="ignoreEmptyNodes" type="xs:boolean" use="optional" default="true">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                            Ignore empty EDIFACT data nodes (fields, components etc). Default "true".
+                            <p/>
+                            Ignoring empty nodes means empty XML elements (events) will not be generated.
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+				<xs:attribute name="validate" type="xs:boolean" use="optional" default="false">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">Specifies whether to perform validation or not when parsing a value-node with a specific type. Default is false.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
