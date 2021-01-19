@@ -76,6 +76,7 @@
         <module>smooks/1.5.1.wso2v4</module>
         <module>commons-text/1.6.wso2v1</module>
         <module>jaxb-api/2.3.1.wso2v1</module>
+        <module>jaxb-api/2.3.1.wso2v2</module>
         <module>jaxb/2.3.2.wso2v1</module>
         <module>activation/1.1.1.wso2v1</module>
         <module>activation/1.1.1.wso2v2</module>
@@ -98,6 +99,8 @@
         <module>smbj/0.10.0.wso2v1</module>
         <module>mbassador/1.3.2.wso2v1</module>
         <module>batik/1.9.1.wso2v1</module>
+        <module>commons-lang/3.11.0.wso2v1</module>
+        <module>commons-lang/3.4.0.wso2v1</module>
     </modules>
 
     <build>
