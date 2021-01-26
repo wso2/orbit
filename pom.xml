@@ -101,6 +101,7 @@
         <module>batik/1.9.1.wso2v1</module>
         <module>commons-lang/3.11.0.wso2v1</module>
         <module>commons-lang/3.4.0.wso2v1</module>
+        <module>swagger-parser-v3/2.0.24.wso2v1</module>
     </modules>
 
     <build>
