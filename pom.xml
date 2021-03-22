@@ -103,6 +103,7 @@
         <module>commons-lang/3.4.0.wso2v1</module>
         <module>swagger-parser-v3/2.0.24.wso2v1</module>
         <module>swagger-request-validator/2.12.1.wso2v1</module>
+        <module>swagger-request-validator/2.12.1.wso2v2</module>
     </modules>
 
     <build>

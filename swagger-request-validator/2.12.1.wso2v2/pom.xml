@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~ Copyright (c) 2021, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.com.atlassian.oai</groupId>
+    <artifactId>swagger-request-validator-core</artifactId>
+    <version>2.12.1.wso2v2</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - swagger-request-validator-core (swagger-request-validator)</name>
+    <description>
+        This bundle will export packages from swagger-request-validator-core libraries of swagger-request-validator
+    </description>
+    <url>http://wso2.org</url>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.atlassian.oai</groupId>
+            <artifactId>swagger-request-validator-core</artifactId>
+            <version>${swagger-request-validator.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.github.java-json-tools</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${json-schema-validator-version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${apache-felix-plugin-version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.atlassian.oai.validator;version="${swagger-request-validator.version}";
+                            com.atlassian.oai.validator.interaction;version="${swagger-request-validator.version}";,
+                            com.atlassian.oai.validator.interaction.request;
+                            version="${swagger-request-validator.version}";,
+                            com.atlassian.oai.validator.interaction.response;
+                            version="${swagger-request-validator.version}";,
+                            com.atlassian.oai.validator.model;version="${swagger-request-validator.version}";,
+                            com.atlassian.oai.validator.report;version="${swagger-request-validator.version}";,
+                            com.atlassian.oai.validator.schema;version="${swagger-request-validator.version}";,
+                            com.atlassian.oai.validator.schema.format;version="${swagger-request-validator.version}";,
+                            com.atlassian.oai.validator.schema.keyword;version="${swagger-request-validator.version}";,
+                            com.atlassian.oai.validator.schema.transform;version="${swagger-request-validator.version}";,
+                            com.atlassian.oai.validator.util;version="${swagger-request-validator.version}";,
+                            com.atlassian.oai.validator.whitelist;version="${swagger-request-validator.version}";,
+                            com.atlassian.oai.validator.whitelist.rule;version="${swagger-request-validator.version}";,
+                            com.atlassian.oai.validator.model.Request;version="${swagger-request-validator.version}";
+                            swagger.validation;version="${swagger-request-validator.version}"
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Import-Package>
+                            com.fasterxml.jackson.core; version="${jackson-version-range}",
+                            com.fasterxml.jackson.databind; version="${jackson-version-range}",
+                            com.fasterxml.jackson.databind.node; version="${jackson-version-range}",
+                            com.github.fge; version="${fge-base-version}",
+                            com.github.fge.jackson; version="${fge-jackson-version}",
+                            com.github.fge.jackson.jsonpointer; version="${fge-jackson-version}",
+                            com.github.fge.jsonschema; version="${fge-jsonschema-version}",
+                            com.github.fge.jsonschema.core.exceptions; version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.keyword.syntax; version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.keyword.syntax.checkers;
+                            version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.keyword.syntax.dictionaries;
+                            version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.load; version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.load.configuration;
+                            version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.load.download; version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.load.uri; version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.messages; version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.processing; version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.ref; version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.report; version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.tree; version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.tree.key; version="${fge-jsonschema-version-range}",
+                            com.github.fge.jsonschema.core.util; version="${fge-jsonschema-version-range}",
+                            com.github.fge.msgsimple.bundle; version="${msg.simple.version}",
+                            com.github.fge.msgsimple.load; version="${msg.simple.version}",
+                            com.github.fge.uritemplate; version="${uri-template-version}",
+                            com.google.common.base; version="${com.google.common.imp.pkg.version}",
+                            com.google.common.cache; version="${com.google.common.imp.pkg.version}",
+                            com.google.common.collect; version="${com.google.common.imp.pkg.version}",
+                            com.google.common.net; version="${com.google.common.imp.pkg.version}",
+                            com.google.i18n.phonenumbers; version="${com.google.i18n.phonenumbers.version}",
+                            io.swagger.parser; version="${io.swagger.v3.oas.models.version}",
+                            io.swagger.util; version="${io-swagger-version}",
+                            io.swagger.v3.oas.models; version="${io.swagger.v3.oas.models.version}",
+                            io.swagger.v3.oas.models.media; version="${io.swagger.v3.oas.models.version}",
+                            io.swagger.v3.oas.models.parameters; version="${io.swagger.v3.oas.models.version}",
+                            io.swagger.v3.oas.models.responses; version="${io.swagger.v3.oas.models.version}",
+                            io.swagger.v3.oas.models.security; version="${io.swagger.v3.oas.models.version}",
+                            io.swagger.v3.oas.models.servers; version="${io.swagger.v3.oas.models.version}",
+                            io.swagger.v3.oas.models.headers; version="${io.swagger.v3.oas.models.version}",
+                            io.swagger.v3.parser.core.models; version="${io.swagger.v3.oas.models.version}",
+                            javax.mail.internet; version="${javax.mail.internet.imp.pkg.version.range}",
+                            org.apache.commons.io; version="${commons-io-version-range}",
+                            org.apache.commons.lang3; version="${commons-lang3.import.version}",
+                            org.apache.commons.lang3.tuple; version="${commons-lang3.import.version}",
+                            org.joda.time; version="${org.joda.time.imp.pkg.version.range}",
+                            org.joda.time.format; version="${org.joda.time.imp.pkg.version.range}",
+                            org.slf4j; version="${slf4j-version-range}"
+                        </Import-Package>
+                        <Embed-Dependency>
+                            json-schema-validator;version=${json-schema-validator-version};scope=compile|runtime;inline=false
+                        </Embed-Dependency>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <swagger-request-validator.version>2.12.1</swagger-request-validator.version>
+        <json-schema-validator-version>2.2.11</json-schema-validator-version>
+        <io-swagger-version>1.6.1</io-swagger-version>
+        <apache-felix-plugin-version>3.3.0</apache-felix-plugin-version>
+        <msg.simple.version>1.1.0</msg.simple.version>
+        <com.google.common.imp.pkg.version>27.0.0</com.google.common.imp.pkg.version>
+        <com.google.i18n.phonenumbers.version>7.4.2</com.google.i18n.phonenumbers.version>
+        <jackson-version-range>[2.10, 3)</jackson-version-range>
+        <javax.mail.internet.imp.pkg.version.range>[1.6.2,2)</javax.mail.internet.imp.pkg.version.range>
+        <org.joda.time.imp.pkg.version.range>[2.9.4, 3.0.0)</org.joda.time.imp.pkg.version.range>
+        <commons-lang3.import.version>[3.10.0, 3.11.0)</commons-lang3.import.version>
+        <io.swagger.v3.oas.models.version>2.0.20.wso2v1</io.swagger.v3.oas.models.version>
+        <uri-template-version>0.9.0</uri-template-version>
+        <fge-base-version>1.2.0</fge-base-version>
+        <fge-jsonschema-version-range>[1.2.8, 1.3.0)</fge-jsonschema-version-range>
+        <fge-jsonschema-version>2.2.6</fge-jsonschema-version>
+        <fge-jackson-version>1.8.0</fge-jackson-version>
+        <slf4j-version-range>[1.7.29,2)</slf4j-version-range>
+        <commons-io-version-range>[1.4.9999,1.5.0)</commons-io-version-range>
+    </properties>
+</project>
