@@ -128,6 +128,7 @@
                             io.swagger.v3.oas.models.responses; version="${io.swagger.v3.oas.models.version}",
                             io.swagger.v3.oas.models.security; version="${io.swagger.v3.oas.models.version}",
                             io.swagger.v3.oas.models.servers; version="${io.swagger.v3.oas.models.version}",
+                            io.swagger.v3.oas.models.headers; version="${io.swagger.v3.oas.models.version}",
                             io.swagger.v3.parser.core.models; version="${io.swagger.v3.oas.models.version}",
                             javax.mail.internet; version="${javax.mail.internet.imp.pkg.version.range}",
                             org.apache.commons.io; version="${commons-io-version-range}",
