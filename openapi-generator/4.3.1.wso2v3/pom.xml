@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- ~ Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2021, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ WSO2 Inc. licenses this file to you under the Apache License,
  ~ Version 2.0 (the "License"); you may not use this file except
@@ -64,6 +64,11 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${commons-io-version}</version>
+        </dependency>
+        <dependency>
+           <groupId>com.atlassian.commonmark</groupId>
+           <artifactId>commonmark</artifactId>
+           <version>0.11.0</version>
         </dependency>
     </dependencies>
 
@@ -187,6 +192,7 @@
                             swift;version="${export.pkg.version.swagger-codegen}",
                             swift3;version="${export.pkg.version.swagger-codegen}",
                             swift4;version="${export.pkg.version.swagger-codegen}",
+                            swift5;version="${export.pkg.version.swagger-codegen}",
                             typescript-angular;version="${export.pkg.version.swagger-codegen}",
                             typescript-angularjs;version="${export.pkg.version.swagger-codegen}",
                             typescript-aurelia;version="${export.pkg.version.swagger-codegen}",
@@ -232,6 +238,7 @@
                         <Embed-Dependency>
                             slf4j-ext;scope=compile|runtime;inline=false,
                             commons-io;scope=compile|runtime;inline=false,
+                            commonmark;scope=compile|runtime;inline=false
                         </Embed-Dependency>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
