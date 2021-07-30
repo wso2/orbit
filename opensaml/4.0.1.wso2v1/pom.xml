@@ -1106,7 +1106,7 @@
         <!--OpenSAML4 Version-->
         <opensaml.version>4.0.1</opensaml.version>
         <!--Shibboleth Version-->
-        <shibboleth.version>7.3.0</shibboleth.version>
+        <shibboleth.version>8.0.0</shibboleth.version>
         <!--Apache Commons Codec Version-->
         <apache.commons.codec.version>1.10</apache.commons.codec.version>
 
