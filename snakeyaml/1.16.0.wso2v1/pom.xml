@@ -76,7 +76,7 @@
     </build>
 
     <properties>
-        <version.snake.yaml>1.16</version.snake.yaml>
+        <version.snake.yaml>1.29</version.snake.yaml>
         <maven.bundleplugin.version>2.5.4</maven.bundleplugin.version>
     </properties>
 

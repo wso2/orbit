@@ -106,6 +106,8 @@
                             org.apache.http.entity; version="${httpcore.imp.pkg.version.range}",
                             org.apache.http.config; version="${httpcore.imp.pkg.version.range}",
                             org.apache.http.concurrent; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.impl.entity; version="${httpcore.imp.pkg.version.range}",
+                            org.apache.http.ssl; version="${httpcore.imp.pkg.version.range}",
                             org.apache.commons.logging; version="${commons.logging.imp.pkg.version.range}",
                             org.apache.commons.codec.binary; version="${commons.codec.imp.pkg.version.range}",
                         </Import-Package>
@@ -116,10 +118,10 @@
     </build>
 
     <properties>
-        <httpclient.version>4.3.6</httpclient.version>
-        <httpclient.orbit.version>${httpclient.version}.wso2v2</httpclient.orbit.version>
+        <httpclient.version>4.5.13</httpclient.version>
+        <httpclient.orbit.version>4.3.6.wso2v2</httpclient.orbit.version>
         <commons.logging.imp.pkg.version.range>[1.2.0,1.3.0)</commons.logging.imp.pkg.version.range>
-        <commons.codec.imp.pkg.version.range>[1.4.0,2.0.0)</commons.codec.imp.pkg.version.range>
-        <httpcore.imp.pkg.version.range>[4.3,4.4)</httpcore.imp.pkg.version.range>
+        <commons.codec.imp.pkg.version.range>[1.6.0,2.0.0)</commons.codec.imp.pkg.version.range>
+        <httpcore.imp.pkg.version.range>[4.4,4.5)</httpcore.imp.pkg.version.range>
     </properties>
 </project>
