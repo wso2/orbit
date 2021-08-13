@@ -84,7 +84,7 @@
 
     <properties>
         <exp.pkg.version.bcprov>1.52.0</exp.pkg.version.bcprov>
-        <version.bcprov>1.52</version.bcprov>
+        <version.bcprov>1.67</version.bcprov>
     </properties>
 
 </project>
