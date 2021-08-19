@@ -22,7 +22,7 @@
     <groupId>org.wso2.orbit.yubico.webauthn</groupId>
     <artifactId>yubico-webauthn</artifactId>
     <packaging>bundle</packaging>
-    <version>1.10.0.wso2v1</version>
+    <version>1.10.1.wso2v1</version>
     <name>WSO2 Carbon Orbit - Yubico Webauthn</name>
     <url>http://wso2.org</url>
 
@@ -80,6 +80,14 @@
                 <exclusion>
                     <groupId>org.bouncycastle</groupId>
                     <artifactId>bcprov-jdk15on</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.httpcomponents</groupId>
+                    <artifactId>httpclient</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -150,7 +158,7 @@
     </distributionManagement>
 
     <properties>
-        <com.yubico.webauthn.version>1.10.0</com.yubico.webauthn.version>
+        <com.yubico.webauthn.version>1.10.1</com.yubico.webauthn.version>
         <guava.osgi.version.range>[18.0.0,30.0.0)</guava.osgi.version.range>
         <apache.commons.codec.version.range>[1.1.0, 2.0.0)</apache.commons.codec.version.range>
         <apache.commons.logging.version.range>[1.1.0, 2.0.0)</apache.commons.logging.version.range>
