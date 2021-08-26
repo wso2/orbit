@@ -60,7 +60,8 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
                             com.azure.messaging.servicebus.*;version="${com.azure.messaging.servicebus.version}",
-                            com.azure.core.amqp.*;version="${com.azure.core.amqp.version}"
+                            com.azure.core.amqp.*;version="${com.azure.core.amqp.version}",
+                            com.azure.core.exception.*;version="${com.azure.core.exception.version}"
                         </Export-Package>
                         <Import-Package/>
                         <Private-Package>
@@ -80,5 +81,6 @@
     <properties>
         <com.azure.messaging.servicebus.version>7.3.0</com.azure.messaging.servicebus.version>
         <com.azure.core.amqp.version>2.3.0</com.azure.core.amqp.version>
+        <com.azure.core.exception.version>1.18.0</com.azure.core.exception.version>
     </properties>
 </project>
