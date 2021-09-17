@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2021, WSO2 Inc. (http://www.wso2.com). All Rights Reserved.
+  ~
+  ~ This software is the property of WSO2 Inc. and its suppliers, if any.
+  ~ Dissemination of any information or reproduction of any material contained
+  ~ herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+  ~ You may not alter or remove any copyright or other notice from copies of this content.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.bouncycastle</groupId>
+    <artifactId>bcpkix-jdk15on</artifactId>
+    <packaging>bundle</packaging>
+    <name>bcpkix</name>
+    <version>1.68.0.wso2v1</version>
+    <description>
+        This bundle will represent bouncycastle PKIX 1.68
+    </description>
+    <url>http://wso2.org</url>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>1.68</version>
+            <!-- By setting optional false, dependent projects of this orbit bundle will be able to see
+             bcprov-jdk15on library as a transitive dependency. This is required because we are embedding
+             bcprov-jdk15on library inside this orbit bundle without extracting the content, because
+             bcprov-jdk15on library is signed. If you embed a dependency and set optional to true, then
+             dependent projects will not be able to compile their source with this orbit bundle.
+            -->
+            <optional>false</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.5.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Import-Package>
+                            org.bouncycastle.x509.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.util.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.math.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.jce.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.jcajce.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.crypto.*;version="${imp.pkg.version.range.bcprov}",
+                            org.bouncycastle.asn1.*;version="${imp.pkg.version.range.bcprov}",
+                            *;resolution:=optional
+                        </Import-Package>
+                        <Embed-Dependency>bcpkix-jdk15on;scope=compile|runtime;inline=false
+                        </Embed-Dependency>
+                        <_exportcontents>
+                            org.bouncycastle.cert;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.cert.bc;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.cert.cmp;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.cert.crmf;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.cert.crmf.jcajce;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.cert.jcajce;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.cert.ocsp;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.cert.ocsp.jcajce;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.cert.selector;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.cert.selector.jcajce;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.cms;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.cms.bc;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.cms.jcajce;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.dvcs;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.eac;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.eac.jcajce;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.eac.operator;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.eac.operator.jcajce;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.mozilla;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.openssl;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.openssl.jcajce;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.operator;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.operator.bc;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.operator.jcajce;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.pkcs;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.pkcs.bc;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.pkcs.jcajce;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.tsp;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.tsp.cms;version="${exp.pkg.version.bcpkix}",
+                            org.bouncycastle.voms;version="${exp.pkg.version.bcpkix}",
+                            !org.bouncycastle.x509,
+                            !org.bouncycastle.util,
+                            !org.bouncycastle.pqc,
+                            !org.bouncycastle.ocsp,
+                            !org.bouncycastle.math,
+                            !org.bouncycastle.jce,
+                            !org.bouncycastle.jcajce,
+                            !org.bouncycastle.i18n,
+                            !org.bouncycastle.crypto,
+                            !org.bouncycastle.asn1
+                        </_exportcontents>
+                        <Private-Package>
+                        </Private-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <exp.pkg.version.bcpkix>1.68.0.wso2v1</exp.pkg.version.bcpkix>
+        <imp.pkg.version.range.bcprov>[1.52.0, 2.0.0)</imp.pkg.version.range.bcprov>
+    </properties>
+
+</project>
