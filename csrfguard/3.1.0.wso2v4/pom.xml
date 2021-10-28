@@ -59,7 +59,7 @@
                             org.owasp.csrfguard.*;version="${project.version}"
                         </Export-Package>
                         <Import-Package>
-			                !org.owasp.csrfguardorg.*,
+			    !org.owasp.csrfguardorg.*,
                             javax.servlet.jsp.*; version="${javax.servlet.jsp.version}",
                             javax.servlet.*;version="${javax.servlet.version}"
                         </Import-Package>
