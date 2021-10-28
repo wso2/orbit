@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- ~ Copyright (c) 2018, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+ ~ Copyright (c) 2021, WSO2 Inc. (http://wso2.com) All Rights Reserved.
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@
                             org.owasp.csrfguard.*;version="${project.version}"
                         </Export-Package>
                         <Import-Package>
-			    !org.owasp.csrfguardorg.*,
+			                !org.owasp.csrfguardorg.*,
                             javax.servlet.jsp.*; version="${javax.servlet.jsp.version}",
                             javax.servlet.*;version="${javax.servlet.version}"
                         </Import-Package>
@@ -84,7 +84,7 @@
         <repository>
             <id>wso2.releases</id>
             <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
     </distributionManagement>
 
