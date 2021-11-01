@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.io.fabric8</groupId>
     <artifactId>kubernetes-client</artifactId>
-    <version>5.8.0.wso2v1</version>
+    <version>5.9.0.wso2v1</version>
     <packaging>bundle</packaging>
     <name>kubernetes-client.wso2</name>
     <description>
@@ -59,11 +59,6 @@
         </dependency>
         <dependency>
             <groupId>io.fabric8</groupId>
-            <artifactId>openshift-client</artifactId>
-            <version>${openshift-client.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.fabric8</groupId>
             <artifactId>zjsonpatch</artifactId>
             <version>${zjsonpatch.version}</version>
             <optional>true</optional>
@@ -74,7 +69,6 @@
             <version>${kubernetes-client.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -92,14 +86,17 @@
                         <Export-Package>
                             io.fabric8.kubernetes.*;version="${project.version}";-split-package:=merge-first,
                             io.fabric8.openshift.*;version="${project.version}",
-                            io.fabric8.zjsonpatch.*;version="${project.version}"
+                            io.fabric8.zjsonpatch.*;version="${project.version}",
+                            com.fasterxml.jackson.datatype.jsr310.*;version="2.13.0",
+                            com.fasterxml.jackson.databind.*;version="2.13.0",
+                            com.fasterxml.jackson.dataformat.*;version="2.13.0.wso2v1",
+                            com.fasterxml.jackson.annotation.*;version="2.13.0.wso2v1",
                             com.mifmif.common.regex.*;version="5.8.0"
                         </Export-Package>
                         <Private-Package>
                             io.fabric8.kubernetes.client.internal.*
                         </Private-Package>
                         <Import-Package>
-                            !io.fabric8.kubernetes.client.*,
                             com.fasterxml.jackson.annotation;version="[2.9.0,3.0.0)",
                             com.fasterxml.jackson.core;version="[2.9.0,3.0.0)",
                             com.fasterxml.jackson.core.type;version="[2.9.0,3.0.0)",
@@ -107,13 +104,6 @@
                             com.fasterxml.jackson.databind.annotation;version="[2.9.0,3.0.0)",
                             com.fasterxml.jackson.databind.node;version="[2.9.0,3.0.0)",
                             com.fasterxml.jackson.dataformat.yaml;version="[2.9.0,3.0.0)",
-                            okhttp3.*;version="[4.2.0,6.0.0)",
-                            javax.validation;version="[1.1,2)",
-                            javax.validation.constraints;version="[1.1,2)",
-                            okio.*;version="[1.15.0,3.0.0)",
-                            org.slf4j;version="[1.7.20,2.0.0)",
-                            org.yaml.snakeyaml;version="[1.16.0,2.0.0)",
-                            *;resolution:=optional
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Include-Resource>
@@ -126,11 +116,11 @@
     </build>
 
     <properties>
-        <kubernetes-client.version>5.8.0</kubernetes-client.version>
-        <kubernetes-model.version>5.8.0</kubernetes-model.version>
+        <kubernetes-client.version>5.9.0</kubernetes-client.version>
+        <kubernetes-model.version>5.9.0</kubernetes-model.version>
         <kubernetes-api.version>3.0.12</kubernetes-api.version>
         <zjsonpatch.version>0.3.0</zjsonpatch.version>
-        <openshift-client.version>5.8.0</openshift-client.version>
         <okhttp.version>4.2.0</okhttp.version>
+        <com.fasterxml.jackson.datatype.jsr310.version>2.13.0</com.fasterxml.jackson.datatype.jsr310.version>
     </properties>
 </project>
