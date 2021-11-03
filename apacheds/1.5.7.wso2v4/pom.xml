@@ -518,7 +518,7 @@
         <commons.io.osgi.version>[2.4.0, 2.5.0]</commons.io.osgi.version>
         <commons.lang.version>2.6.0.wso2v1</commons.lang.version>
         <commons.lang.osgi.version>2.6</commons.lang.osgi.version>
-        <org.apache.mina.version>2.0.0-RC1</org.apache.mina.version>
+        <org.apache.mina.version>2.1.5</org.apache.mina.version>
         <bouncycastle.version>138</bouncycastle.version>
         <exp.pkg.version.apacheds>1.5.7.wso2v4</exp.pkg.version.apacheds>
     </properties>
