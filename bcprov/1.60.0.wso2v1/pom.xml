@@ -26,7 +26,7 @@
     <name>bcprov</name>
     <version>1.60.0.wso2v1</version>
     <description>
-        This bundle will represent bouncycastle 1.60
+        This bundle will represent bouncycastle 1.68
     </description>
     <url>http://wso2.org</url>
 
@@ -62,7 +62,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.4.0</version>
+                <version>3.5.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -84,7 +84,7 @@
 
     <properties>
         <exp.pkg.version.bcprov>1.60.0</exp.pkg.version.bcprov>
-        <version.bcprov>1.60</version.bcprov>
+        <version.bcprov>1.68</version.bcprov>
     </properties>
 
 </project>
