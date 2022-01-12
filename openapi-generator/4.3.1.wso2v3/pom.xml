@@ -43,7 +43,7 @@
         <dependency>
             <groupId>org.openapitools</groupId>
             <artifactId>openapi-generator</artifactId>
-            <version>4.3.1</version>
+            <version>5.3.0</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -127,7 +127,7 @@
                             dart-jaguar;version="${export.pkg.version.swagger-codegen}",
                             dart-jaguar.auth;version="${export.pkg.version.swagger-codegen}",
                             dart.auth;version="${export.pkg.version.swagger-codegen}",
-                            dart2;version="${export.pkg.version.swagger-codegen}",
+                            dart2.*;version="${export.pkg.version.swagger-codegen}",
                             dart2.auth;version="${export.pkg.version.swagger-codegen}",
                             elixir;version="${export.pkg.version.swagger-codegen}",
                             elm;version="${export.pkg.version.swagger-codegen}",
@@ -192,7 +192,7 @@
                             swift;version="${export.pkg.version.swagger-codegen}",
                             swift3;version="${export.pkg.version.swagger-codegen}",
                             swift4;version="${export.pkg.version.swagger-codegen}",
-                            swift5;version="${export.pkg.version.swagger-codegen}",
+                            swift5.*;version="${export.pkg.version.swagger-codegen}",
                             typescript-angular;version="${export.pkg.version.swagger-codegen}",
                             typescript-angularjs;version="${export.pkg.version.swagger-codegen}",
                             typescript-aurelia;version="${export.pkg.version.swagger-codegen}",
@@ -218,7 +218,7 @@
                         </Private-Package>
                         <Include-Resource>
                             {maven-resources},
-                            @openapi-generator-4.3.1.jar!/META-INF/services/*
+                            @openapi-generator-5.3.0.jar!/META-INF/services/*
                         </Include-Resource>
                         <_exportcontents>
                             com.github.jknack.handlebars,
@@ -249,7 +249,7 @@
 
     <properties>
         <export.pkg.version.swagger-codegen>4.3.1.wso2v3</export.pkg.version.swagger-codegen>
-        <import.pkg.version.swagger-codegen>4.3.1</import.pkg.version.swagger-codegen>
+        <import.pkg.version.swagger-codegen>5.3.0</import.pkg.version.swagger-codegen>
         <jmustache-version>1.14</jmustache-version>
         <handlebars.java-version>4.1.2</handlebars.java-version>
         <slf4j.api.version>1.7.12</slf4j.api.version>
