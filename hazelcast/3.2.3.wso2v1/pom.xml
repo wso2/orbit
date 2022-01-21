@@ -73,7 +73,7 @@
     </build>
 
     <properties>
-        <version.hazelcast>3.2.3</version.hazelcast>
+        <version.hazelcast>4.0.5</version.hazelcast>
     </properties>
 
     <distributionManagement>
