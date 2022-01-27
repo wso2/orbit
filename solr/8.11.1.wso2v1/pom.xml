@@ -178,6 +178,7 @@
                         </Export-Package>
                         <Import-Package>
                             !org.apache.solr.*,
+                            !org.eclipse.jetty.*,
                             org.apache.lucene.*; version="${version.lucene}",
                             org.apache.commons.io.*;version="${version.commons.io}",
                             org.apache.zookeeper.*;version="${version.zookeeper}",
