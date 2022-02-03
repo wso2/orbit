@@ -24,7 +24,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.velocity</groupId>
     <artifactId>velocity</artifactId>
-    <version>1.7.0.wso2v1</version>
+    <version>2.3.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Velocity</name>
     <description>
