@@ -15,6 +15,8 @@
 */
 package org.wso2.carbon.h2.osgi.utils;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -29,21 +31,30 @@ import java.util.regex.Pattern;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+/**
+ * Utility class for Carbon functions.
+ */
 public class CarbonUtils {
+
+    private static Log log = LogFactory.getLog(CarbonUtils.class);
+
     public static String getCarbonXmlFilePath() {
+
         String carbonXmlPath =
                 System.getProperty(CarbonConstants.CARBON_HOME) + File.separator + "repository" + File.separator +
-                CarbonConstants.CONF_FOLDER + File.separator + CarbonConstants.CARBON_XML_FILE;
+                        CarbonConstants.CONF_FOLDER + File.separator + CarbonConstants.CARBON_XML_FILE;
         try {
             new File(carbonXmlPath);
             return carbonXmlPath;
         } catch (Exception e) {
             //the property is invalid does not exist keep using the default file path
+            log.error("Error while retrieving carbon XML file path from carbon context", e);
         }
         return null;
     }
 
     public static Map getH2Parameters() {
+
         Map h2Properties = new HashMap();
         H2Utils.resetToDefaultParameters(h2Properties);
         String carbonXmlFile = getCarbonXmlFilePath();
@@ -85,13 +96,13 @@ public class CarbonUtils {
                 if (H2Constants.getParameterList().contains(paraName)) {
                     if (value != null)
                         value = value.replaceAll(Pattern.quote(CarbonConstants.CARBON_HOME_PARAMETER),
-                                                 CarbonUtils.getCarbonHome());
+                                CarbonUtils.getCarbonHome());
                     h2PropertiesConfigured.put(paraName, value);
                 }
             }
             if (h2PropertiesConfigured.containsKey(H2Constants.PARA_WEB) ||
-                h2PropertiesConfigured.containsKey(H2Constants.PARA_TCP) ||
-                h2PropertiesConfigured.containsKey(H2Constants.PARA_PG)) {
+                    h2PropertiesConfigured.containsKey(H2Constants.PARA_TCP) ||
+                    h2PropertiesConfigured.containsKey(H2Constants.PARA_PG)) {
                 h2Properties = h2PropertiesConfigured;
             } else {
                 for (Iterator iterator = h2PropertiesConfigured.keySet().iterator(); iterator.hasNext(); ) {
@@ -100,12 +111,13 @@ public class CarbonUtils {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Error while retrieving H2 properties from carbon context", e);
         }
         return h2Properties;
     }
 
     public static String getCarbonHome() {
+
         String carbonHome = System.getProperty(CarbonConstants.CARBON_HOME);
         if (carbonHome == null) {
             carbonHome = System.getenv(CarbonConstants.CARBON_HOME_ENV);

@@ -33,7 +33,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * H2 Database Manager.
+ */
 public class H2DatabaseManager {
+
     private static H2DatabaseManager instance;
     private static final Log log = LogFactory.getLog(H2DatabaseManager.class);
 
@@ -43,22 +47,26 @@ public class H2DatabaseManager {
     }
 
     public synchronized static H2DatabaseManager getInstance() {
+
         if (instance == null)
             instance = new H2DatabaseManager();
         return instance;
     }
 
     public void initialize() throws SQLException {
+
         Driver.load();
         startH2Server();
     }
 
     public void terminate() {
+
         stopH2Server();
         closeAllOpenDatabases();
     }
 
     private void closeAllOpenDatabases() {
+
         Field f[] = Engine.class.getDeclaredFields();
 
         for (Field var : f) {
@@ -70,7 +78,7 @@ public class H2DatabaseManager {
                     if (fieldValue.getClass() == HashMap.class) {
                         HashMap DATABASES = (HashMap) fieldValue;
 
-                        ArrayList<Database> openDatabases = new ArrayList<Database>();
+                        List<Database> openDatabases = new ArrayList<Database>();
                         for (Iterator iterator = DATABASES.values().iterator(); iterator.hasNext(); ) {
                             Database database = (Database) iterator.next();
                             openDatabases.add(database);
@@ -81,27 +89,27 @@ public class H2DatabaseManager {
                             Method declaredMethod = null;
                             try {
                                 declaredMethod = database.getClass().getDeclaredMethod(H2Constants.ENGINE_METHOD_CLOSE,
-                                                                                       new Class[] { boolean.class });
+                                        new Class[]{boolean.class});
                                 if (declaredMethod != null) {
                                     declaredMethod.setAccessible(true);
-                                    declaredMethod.invoke(database, new Object[] { true });
+                                    declaredMethod.invoke(database, new Object[]{true});
                                 } else {
                                     log.error("Database close method not found in class " +
-                                              database.getClass().getName());
+                                            database.getClass().getName());
                                 }
                             } catch (SecurityException e) {
-                                log.error("H2", e);
+                                log.error("Error when closing H2 database", e);
                             } catch (NoSuchMethodException e) {
-                                log.error("H2", e);
+                                log.error("Error when closing H2 database", e);
                             } catch (InvocationTargetException e) {
-                                log.error("H2", e);
+                                log.error("Error when closing H2 database", e);
                             }
                         }
                     }
                 } catch (IllegalArgumentException e) {
-                    log.error("H2", e);
+                    log.error("Error when closing H2 database", e);
                 } catch (IllegalAccessException e) {
-                    log.error("H2", e);
+                    log.error("Error when closing H2 database", e);
                 }
             }
         }
@@ -109,6 +117,7 @@ public class H2DatabaseManager {
     }
 
     public void startH2Server() throws SQLException {
+
         if (console == null) {
             console = new ConsoleService();
         } else if (console.isServerRunning())
@@ -117,11 +126,13 @@ public class H2DatabaseManager {
     }
 
     public void stopH2Server() {
+
         if ((console != null) && (console.isServerRunning()))
             console.shutdown();
     }
 
     private String[] getH2Parameters() {
+
         List parameterList = new ArrayList();
         Map parameters = CarbonUtils.getH2Parameters();
         for (Iterator iterator = parameters.keySet().iterator(); iterator.hasNext(); ) {
@@ -132,6 +143,6 @@ public class H2DatabaseManager {
                 parameterList.add(value);
             }
         }
-        return (String[]) parameterList.toArray(new String[] {});
+        return (String[]) parameterList.toArray(new String[]{});
     }
 }

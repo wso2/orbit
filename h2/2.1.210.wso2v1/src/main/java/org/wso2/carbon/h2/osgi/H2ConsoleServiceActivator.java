@@ -19,13 +19,18 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.wso2.carbon.h2.osgi.console.H2DatabaseManager;
 
+/**
+ * This class is used to activate and deactivate the H2 console service.
+ */
 public class H2ConsoleServiceActivator implements BundleActivator {
 
     public void start(BundleContext arg0) throws Exception {
+
         H2DatabaseManager.getInstance().initialize();
     }
 
-    public void stop(BundleContext arg0) throws Exception {
+    public void stop(BundleContext arg0) {
+
         H2DatabaseManager.getInstance().terminate();
     }
 }

@@ -24,7 +24,11 @@ import org.h2.util.Tool;
 
 import java.sql.SQLException;
 
+/**
+ * Holds functions related to the H2 console service.
+ */
 public class ConsoleService extends Tool implements ShutdownHandler {
+
     private static final Log log = LogFactory.getLog(ConsoleService.class);
 
     private Server web, tcp, pg;
@@ -55,6 +59,7 @@ public class ConsoleService extends Tool implements ShutdownHandler {
      * @h2.resource
      */
     public static void main(String[] args) throws SQLException {
+
         new Console().runTool(args);
     }
 
@@ -66,6 +71,7 @@ public class ConsoleService extends Tool implements ShutdownHandler {
      * @param args the command line arguments
      */
     public void runTool(String[] args) throws SQLException {
+
         isWindows = System.getProperty("os.name").startsWith("Windows");
         boolean tcpStart = false, pgStart = false, webStart = false;
         boolean browserStart = false;
@@ -143,10 +149,9 @@ public class ConsoleService extends Tool implements ShutdownHandler {
     }
 
     private void printProblem(SQLException e, Server server) {
-        log.error("H2 Error", e);
-        if (server == null) {
-            e.printStackTrace();
-        } else {
+
+        log.error("Error when starting H2 servers", e);
+        if (server != null) {
             out.println(server.getStatus());
             out.println("Root cause: " + e.getMessage());
         }
@@ -156,6 +161,7 @@ public class ConsoleService extends Tool implements ShutdownHandler {
      * INTERNAL
      */
     public void shutdown() {
+
         stopAll();
     }
 
@@ -163,6 +169,7 @@ public class ConsoleService extends Tool implements ShutdownHandler {
      * Stop all servers that were started using the console.
      */
     void stopAll() {
+
         if (web != null && web.isRunning(false)) {
             web.stop();
             web = null;
@@ -181,6 +188,7 @@ public class ConsoleService extends Tool implements ShutdownHandler {
     }
 
     public boolean isServerRunning() {
+
         return ((web != null && web.isRunning(false)) || (tcp != null && tcp.isRunning(false)) ||
                 (pg != null && pg.isRunning(false)));
     }
