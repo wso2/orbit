@@ -101,7 +101,7 @@
         <module>commons-codec/1.12.0.wso2v1</module>
         <module>openjpa-all/2.2.2.wso2v2</module>
         <module>apacheds/2.0.0.AM25.wso2v1</module>
-        <module>yubico-webauthn/1.3.0.wso2v1</module>
+        <module>yubico-webauthn/1.12.1.wso2v1</module>
         <module>asn-one/0.4.0.wso2v1</module>
         <module>smbj/0.10.0.wso2v1</module>
         <module>mbassador/1.3.2.wso2v1</module>
