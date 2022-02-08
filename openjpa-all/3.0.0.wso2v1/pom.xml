@@ -1,0 +1,110 @@
+<!--
+ ~ Copyright (c) 2022, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.apache.openjpa</groupId>
+    <artifactId>openjpa-all</artifactId>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - OpenJPA-All</name>
+    <version>${openjpa.wso2.version}</version>
+    <description>
+        This bundle will provide the open JPA implementation for HL7 console.
+    </description>
+    <url>http://wso2.org</url>
+
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.openjpa</groupId>
+            <artifactId>openjpa-all</artifactId>
+            <version>${openjpa.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>1.4.1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <unpackBundle>true</unpackBundle>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Premain-Class>org.apache.openjpa.enhance.PCEnhancerAgent</Premain-Class>
+                        <Bundle-Activator>org.apache.openjpa.persistence.osgi.PersistenceActivator</Bundle-Activator>
+                        <Agent-Class>org.apache.openjpa.enhance.InstrumentationFactory</Agent-Class>
+                        <Export-Package>
+                            !javax.jms.*,
+                            !javax.validation.*,
+                            !javax.xml.*,
+                            !org.slf4j.*,
+                            !javax.transaction.*,
+                            *
+                        </Export-Package>
+                        <Import-Package>
+                            !org.apache.openjpa.*,
+                            javax.transaction.*; version="0.0.0",
+                            *;resolution:=optional
+                        </Import-Package>
+                        <!--Here DynamicImport is required because openjpa needs some rss package imports-->
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <openjpa.version>3.0.0</openjpa.version>
+        <openjpa.wso2.version>${openjpa.version}.wso2v1</openjpa.wso2.version>
+    </properties>
+
+</project>
