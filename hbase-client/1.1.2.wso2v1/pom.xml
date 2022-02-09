@@ -194,7 +194,7 @@
     </build>
     <properties>
         <hbase.version>1.1.2</hbase.version>
-        <hadoop.version>2.6.0</hadoop.version>
+        <hadoop.version>2.10.1</hadoop.version>
         <commons.codec.version>1.4</commons.codec.version>
         <guava.version>14.0.1</guava.version>
         <protobuf.version>2.5.0</protobuf.version>
