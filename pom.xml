@@ -132,6 +132,7 @@
         <module>membrane-soa-model/1.6.4.wso2v1</module>
         <module>h2/2.1.210.wso2v1</module>
         <module>xerces/2.12.2.wso2v1</module>
+        <module>hazelcast/4.2.4.wso2v1</module>
     </modules>
 
     <build>
