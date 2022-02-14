@@ -40,6 +40,7 @@
 
     <modules>
         <module>httpcore/4.3.0-wso2v1</module>
+        <module>httpcore/4.4.15-wso2v1</module>
         <module>poi-ooxml/3.9.0.wso2v2</module>
         <module>poi-ooxml/3.9.0.wso2v3</module>
         <module>spring-framework/3.2.9.wso2v1</module>
@@ -130,6 +131,7 @@
         <module>tomcat-websocket/9.0.58.wso2v1</module>
         <module>membrane-soa-model/1.6.4.wso2v1</module>
         <module>h2/2.1.210.wso2v1</module>
+        <module>xerces/2.12.2.wso2v1</module>
     </modules>
 
     <build>
