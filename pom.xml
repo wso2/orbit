@@ -102,6 +102,7 @@
         <module>tomcat-servlet-api/9.0.54.wso2v1</module>
         <module>tomcat-websocket/9.0.54.wso2v1</module>
         <module>commons-codec/1.12.0.wso2v1</module>
+        <module>commons-codec/1.15.0.wso2v1</module>
         <module>openjpa-all/2.2.2.wso2v2</module>
         <module>openjpa-all/3.0.0.wso2v1</module>
         <module>apacheds/2.0.0.AM25.wso2v1</module>
@@ -127,6 +128,7 @@
         <module>tomcat-jsp-api/9.0.58.wso2v1</module>
         <module>tomcat-servlet-api/9.0.58.wso2v1</module>
         <module>tomcat-websocket/9.0.58.wso2v1</module>
+        <module>membrane-soa-model/1.6.4.wso2v1</module>
     </modules>
 
     <build>
