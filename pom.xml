@@ -127,6 +127,7 @@
         <module>tomcat-jsp-api/9.0.58.wso2v1</module>
         <module>tomcat-servlet-api/9.0.58.wso2v1</module>
         <module>tomcat-websocket/9.0.58.wso2v1</module>
+        <module>velocity/2.3.0.wso2v1</module>
     </modules>
 
     <build>
