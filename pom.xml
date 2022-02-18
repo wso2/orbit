@@ -119,7 +119,6 @@
         <module>ua-parser/1.5.2.wso2v1</module>
         <module>jsr105/1.0.1.wso2v1</module>
         <module>commons-io/2.11.0.wso2v1</module>
-        <module>tiles/2.0.5.wso2v2</module>
     </modules>
 
     <build>
