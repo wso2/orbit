@@ -134,6 +134,7 @@
         <module>xerces/2.12.2.wso2v1</module>
         <module>hazelcast/4.2.4.wso2v1</module>
         <module>velocity/2.3.0.wso2v1</module>
+        <module>tiles/2.0.5.wso2v2</module>
     </modules>
 
     <build>
