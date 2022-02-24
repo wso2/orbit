@@ -20,11 +20,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <groupId>org.wso2.orbit.com.h2database</groupId>
-    <artifactId>h2</artifactId>
-    <version>2.1.210.wso2v2</version>
+    <artifactId>h2-engine</artifactId>
+    <version>2.1.210.wso2v1</version>
     <packaging>bundle</packaging>
     <modelVersion>4.0.0</modelVersion>
-    <name>WSO2 Carbon Orbit - H2 OSGi Console Service</name>
+    <name>WSO2 Carbon Orbit - H2 OSGi Database Service</name>
 
     <distributionManagement>
         <repository>
@@ -56,7 +56,7 @@
     </dependencies>
 
     <properties>
-        <h2.engine.orbit.version>2.1.210.wso2v2</h2.engine.orbit.version>
+        <h2.engine.orbit.version>2.1.210.wso2v1</h2.engine.orbit.version>
     </properties>
 
     <repositories>
@@ -84,21 +84,10 @@
                         <Private-Package>org.h2.*</Private-Package>
                         <Export-Package>
                             org.wso2.carbon.h2.osgi.*;version="${h2.engine.orbit.version}",
-                            org.h2.server.web.*;version="${h2.engine.orbit.version}",
                         </Export-Package>
-                        <_exportcontents>org.h2.*;version=2.1.210.wso2v2</_exportcontents>
-                        <Bundle-Activator>org.wso2.carbon.h2.osgi.H2ConsoleServiceActivator</Bundle-Activator>
+                        <_exportcontents>org.h2.*;version=2.1.210.wso2v1</_exportcontents>
+                        <Bundle-Activator>org.wso2.carbon.h2.osgi.H2DatabaseServiceActivator</Bundle-Activator>
                         <Import-Package>
-                            javax.management,
-                            javax.naming;resolution:=optional,
-                            javax.naming.spi;resolution:=optional,
-                            javax.net,
-                            javax.net.ssl,
-                            javax.servlet;resolution:=optional,
-                            javax.servlet.http;resolution:=optional,
-                            javax.sql,
-                            javax.tools;resolution:=optional,
-                            javax.transaction.xa;resolution:=optional,
                             org.apache.lucene.analysis;version="[3.6.2,4.0.0)";resolution:=optional,
                             org.apache.lucene.analysis.standard;version="[3.6.2,4.0.0)";resolution:=optional,
                             org.apache.lucene.document;version="[3.6.2,4.0.0)";resolution:=optional,
@@ -122,8 +111,15 @@
                         <Embed-Dependency>
                             h2;scope=compile|runtime;inline=false;
                         </Embed-Dependency>
-                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>

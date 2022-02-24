@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.wso2.carbon.h2.osgi.console;
+package org.wso2.carbon.h2.osgi.database;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -29,13 +29,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * H2 Database Manager.
  */
 public class H2DatabaseManager {
 
-    private static H2DatabaseManager instance;
+    private static final H2DatabaseManager instance = new H2DatabaseManager();
     private static final Log log = LogFactory.getLog(H2DatabaseManager.class);
 
     private H2DatabaseManager() {
@@ -43,8 +44,6 @@ public class H2DatabaseManager {
 
     public synchronized static H2DatabaseManager getInstance() {
 
-        if (instance == null)
-            instance = new H2DatabaseManager();
         return instance;
     }
 
@@ -60,22 +59,19 @@ public class H2DatabaseManager {
 
     private void closeAllOpenDatabases() {
 
-        Field f[] = Engine.class.getDeclaredFields();
+        Field fields[] = Engine.class.getDeclaredFields();
 
-        for (Field var : f) {
+        for (Field var : fields) {
             if ((var.getType() == HashMap.class) && (var.getName().equals(H2Constants.ENGINE_VAR_DATABASES))) {
                 var.setAccessible(true);
                 Object pass = new Object();
                 try {
                     Object fieldValue = var.get(pass);
-                    if (fieldValue.getClass() == HashMap.class) {
-                        HashMap DATABASES = (HashMap) fieldValue;
+                    if (fieldValue instanceof HashMap) {
+                        Map<String, Database> databases = (HashMap<String, Database>) fieldValue;
 
                         List<Database> openDatabases = new ArrayList<Database>();
-                        for (Iterator iterator = DATABASES.values().iterator(); iterator.hasNext(); ) {
-                            Database database = (Database) iterator.next();
-                            openDatabases.add(database);
-                        }
+                        openDatabases.addAll(databases.values());
 
                         for (Iterator iterator = openDatabases.iterator(); iterator.hasNext(); ) {
                             Database database = (Database) iterator.next();
@@ -90,22 +86,15 @@ public class H2DatabaseManager {
                                     log.error("Database close method not found in class " +
                                             database.getClass().getName());
                                 }
-                            } catch (SecurityException e) {
-                                log.error("Error when closing H2 database", e);
-                            } catch (NoSuchMethodException e) {
-                                log.error("Error when closing H2 database", e);
-                            } catch (InvocationTargetException e) {
+                            } catch (InvocationTargetException | NoSuchMethodException | SecurityException e) {
                                 log.error("Error when closing H2 database", e);
                             }
                         }
                     }
-                } catch (IllegalArgumentException e) {
-                    log.error("Error when closing H2 database", e);
-                } catch (IllegalAccessException e) {
+                } catch (IllegalAccessException | IllegalArgumentException e) {
                     log.error("Error when closing H2 database", e);
                 }
             }
         }
-
     }
 }

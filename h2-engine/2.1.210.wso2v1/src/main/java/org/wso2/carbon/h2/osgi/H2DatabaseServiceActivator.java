@@ -17,12 +17,12 @@ package org.wso2.carbon.h2.osgi;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.wso2.carbon.h2.osgi.console.H2DatabaseManager;
+import org.wso2.carbon.h2.osgi.database.H2DatabaseManager;
 
 /**
- * This class is used to activate and deactivate the H2 console service.
+ * This class is used to activate and deactivate the H2 database service.
  */
-public class H2ConsoleServiceActivator implements BundleActivator {
+public class H2DatabaseServiceActivator implements BundleActivator {
 
     public void start(BundleContext arg0) {
 
