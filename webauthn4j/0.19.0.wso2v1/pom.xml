@@ -18,8 +18,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.wso2.orbit.org.webauthn4j</groupId>
-    <artifactId>webauthn4j-core</artifactId>
-    <version>0.18.2.wso2v1</version>
+    <artifactId>webauthn4j</artifactId>
+    <version>0.19.0.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WebAuthn4J</name>
     <description>WebAuthn4J orbit bundle</description>
@@ -28,6 +28,11 @@
         <dependency>
             <groupId>com.webauthn4j</groupId>
             <artifactId>webauthn4j-core</artifactId>
+            <version>${version.webauthn4j}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.webauthn4j</groupId>
+            <artifactId>webauthn4j-metadata</artifactId>
             <version>${version.webauthn4j}</version>
         </dependency>
     </dependencies>
@@ -73,7 +78,7 @@
     </build>
 
     <properties>
-        <version.webauthn4j>0.18.2.RELEASE</version.webauthn4j>
+        <version.webauthn4j>0.19.0.RELEASE</version.webauthn4j>
         <maven.bundleplugin.version>2.5.4</maven.bundleplugin.version>
     </properties>
 
