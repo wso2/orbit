@@ -135,6 +135,7 @@
         <module>hazelcast/4.2.4.wso2v1</module>
         <module>velocity/2.3.0.wso2v1</module>
         <module>tiles/2.0.5.wso2v2</module>
+        <module>groovy/2.4.8.wso2v1</module>
     </modules>
 
     <build>
