@@ -226,7 +226,7 @@
     <properties>
         <version.solr>8.11.1</version.solr>
         <version.lucene>[8.11.0,9.0.0)</version.lucene>
-        <orbit.version.solr>${version.solr}.wso2v2</orbit.version.solr>
+        <orbit.version.solr>${version.solr}.wso2v3</orbit.version.solr>
         <version.noggit>[0.6,0.7)</version.noggit>
         <version.commons.io>[2.4.0,2.12.0)</version.commons.io>
         <version.zookeeper>3.8.0</version.zookeeper>
