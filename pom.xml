@@ -137,6 +137,7 @@
         <module>velocity/2.3.0.wso2v1</module>
         <module>tiles/2.0.5.wso2v2</module>
         <module>groovy/2.4.8.wso2v1</module>
+        <module>groovy/2.4.8.wso2v2</module>
         <module>spring-framework/5.3.18.wso2v1</module>
         <module>solr/8.11.1.wso2v3</module>
     </modules>
