@@ -162,7 +162,7 @@
         </plugins>
     </build>
     <properties>
-        <hadoop.version>2.6.0</hadoop.version>
+        <hadoop.version>3.2.3</hadoop.version>
         <htrace.version>3.0.4</htrace.version>
         <commons-io.version>2.4</commons-io.version>
         <htrace.import.version>[3.0.4, 3.1.0)</htrace.import.version>
