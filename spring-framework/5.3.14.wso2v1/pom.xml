@@ -16,8 +16,8 @@
   ~ under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
@@ -31,7 +31,7 @@
     </description>
     <url>https://wso2.org</url>
 
-   <distributionManagement>
+    <distributionManagement>
         <repository>
             <id>wso2.releases</id>
             <name>WSO2 internal Repository</name>
@@ -43,26 +43,26 @@
             <name>WSO2 Snapshot Repository</name>
             <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
-   </distributionManagement>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-			<version>${version.spring}</version>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
+            <version>${version.spring}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-			<version>${version.spring}</version>
-			<optional>true</optional>
-        </dependency> 
+            <version>${version.spring}</version>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
-			<version>${version.spring}</version>
-			<optional>true</optional>
+            <version>${version.spring}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -84,9 +84,9 @@
                             org.springframework.*
                         </Private-Package>
                         <Import-Package>
-							!org.springframework.*;,
-							javax.xml.stream.*; version="[0.0.0, 1.0.0)",
-							javax.xml.soap; version="[0.0.0, 1.0.0)",
+                            !org.springframework.*;,
+                            javax.xml.stream.*; version="[0.0.0, 1.0.0)",
+                            javax.xml.soap; version="[0.0.0, 1.0.0)",
                             *;resolution:=optional
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
