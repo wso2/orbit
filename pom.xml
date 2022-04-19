@@ -135,7 +135,7 @@
         <module>hazelcast/4.2.4.wso2v1</module>
         <module>velocity/2.3.0.wso2v1</module>
         <module>tiles/2.0.5.wso2v2</module>
-        <module>webauthn4j/0.19.0.wso2v1</module>
+        <module>webauthn4j/0.19.1.wso2v1</module>
     </modules>
 
     <build>
