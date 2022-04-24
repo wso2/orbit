@@ -120,6 +120,7 @@
         <module>swagger-request-validator/2.12.1.wso2v2</module>
         <module>olingo-server/4.5.0wso2v1</module>
         <module>opensaml/3.3.1.wso2v3</module>
+        <module>opensaml/3.3.1.wso2v5</module>
         <module>ua-parser/1.5.2.wso2v1</module>
         <module>jsr105/1.0.1.wso2v1</module>
         <module>commons-io/2.11.0.wso2v1</module>
@@ -142,6 +143,7 @@
         <module>spring-framework/5.3.18.wso2v1</module>
         <module>solr/8.11.1.wso2v3</module>
         <module>webauthn4j/0.19.1.wso2v2</module>
+        <module>libthrift/0.16.0.wso2v1</module>
     </modules>
 
     <build>
