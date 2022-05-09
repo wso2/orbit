@@ -20,14 +20,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.quartz-scheduler.wso2</groupId>
+    <groupId>org.wso2.orbit.org.quartz-scheduler</groupId>
     <artifactId>quartz</artifactId>
     <packaging>bundle</packaging>
-    <name>quartz.wso2</name>
+    <name>Quartz 2.3.2.wso2v1 Orbit Bundle</name>
     <version>2.3.2.wso2v1</version>
-    <description>
-        org.quartz. This bundle will export packages from quartz.jar
-    </description>
+    <description>This bundle will export packages from quartz.jar</description>
     <url>http://wso2.org</url>
 
     <distributionManagement>
