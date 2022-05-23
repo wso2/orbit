@@ -100,7 +100,7 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>net.sourceforge.nekohtml</groupId>
+            <groupId>org.nokogiri</groupId>
             <artifactId>nekohtml</artifactId>
             <version>${nekohtml.version}</version>
             <optional>true</optional>
@@ -186,7 +186,7 @@
         <org.xml.sax.version>0.0.0</org.xml.sax.version>
         <openxri-syntax.version>1.2.0</openxri-syntax.version>
         <openxri-client.version>1.2.0</openxri-client.version>
-        <nekohtml.version>1.9.10</nekohtml.version>
+        <nekohtml.version>1.9.22.noko2</nekohtml.version>
     </properties>
 
 </project>
