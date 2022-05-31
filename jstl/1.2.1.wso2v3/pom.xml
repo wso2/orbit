@@ -25,6 +25,21 @@
     <packaging>bundle</packaging>
     <name>WSO2 Carbon - Javax servlet bundle</name>
     <description>Javax Servlet API</description>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.glassfish.web</groupId>
