@@ -198,10 +198,10 @@
         <com.google.common.io.version.range>[31.0.0, 32.0.0)</com.google.common.io.version.range>
         <com.fasterxml.jackson.core.version.range>[2.13.0, 2.14.0)</com.fasterxml.jackson.core.version.range>
         <io.netty.handler.ss.version.range>[4.1.0, 4.2.0)</io.netty.handler.ss.version.range>
-        <javax.annotation.version.range>[0.0.0, 1.0.0)</javax.annotation.version.range>
+        <javax.annotation.version.range>[0.0.0, 2.0.0)</javax.annotation.version.range>
         <javax.net.ssl.version.range>[0.0.0, 1.0.0)</javax.net.ssl.version.range>
         <zipkin.reporter.range>[2.16.0, 2.17.0)</zipkin.reporter.range>
-        <okhttp3.version.range>[4.2.0, 4.3.0)</okhttp3.version.range>
-        <okio.version.range>[2.4.0, 2.5.0)</okio.version.range>
+        <okhttp3.version.range>[4.2.0, 5.0.0)</okhttp3.version.range>
+        <okio.version.range>[2.4.0, 2.9.0)</okio.version.range>
     </properties>
 </project>
