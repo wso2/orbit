@@ -117,7 +117,7 @@
     </build>
 
     <properties>
-        <google-oauth-client.version>1.33.1</google-oauth-client.version>
+        <google-oauth-client.version>1.33.3</google-oauth-client.version>
         <google-http-client.orbit.imp.pkg.version>[1.41,2)</google-http-client.orbit.imp.pkg.version>
         <google-guava.imp.pkg.version>[31.0,32)</google-guava.imp.pkg.version>
         <javax.servlet.imp.pkg.version>[2.6, 3)</javax.servlet.imp.pkg.version>
