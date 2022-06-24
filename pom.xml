@@ -39,7 +39,6 @@
     </distributionManagement>
 
     <modules>
-        <module>openjdk-nashorn/15.3.wso2v1</module>
         <module>httpcore/4.3.0-wso2v1</module>
         <module>httpcore/4.4.15-wso2v1</module>
         <module>poi-ooxml/3.9.0.wso2v2</module>
