@@ -148,6 +148,7 @@
         <module>spring-framework/5.3.19.wso2v2</module>
         <module>spring-framework/5.3.21.wso2v1</module>
         <module>solr/8.11.1.wso2v3</module>
+        <module>solr/8.11.1.wso2v4</module>
         <module>webauthn4j/0.19.1.wso2v2</module>
         <module>libthrift/0.16.0.wso2v1</module>
     </modules>
