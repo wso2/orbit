@@ -473,7 +473,7 @@
     </build>
 
     <properties>
-        <version.cxf>3.0.5</version.cxf>
+        <version.cxf>3.0.13</version.cxf>
         <exp.pkg.version.cxf>3.0.5.wso2v2</exp.pkg.version.cxf>
     </properties>
 </project>
