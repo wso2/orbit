@@ -138,7 +138,7 @@
         </plugins>
     </build>
     <properties>
-        <hadoop.version>2.2.0</hadoop.version>
+        <hadoop.version>2.7.0</hadoop.version>
         <servlet-api.import.version>[2.5, 3.0)</servlet-api.import.version>
         <servlet-jsp.import.version>[2.2.1, 2.3.0)</servlet-jsp.import.version>
     </properties>
