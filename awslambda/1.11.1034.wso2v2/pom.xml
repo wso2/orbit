@@ -31,12 +31,6 @@
     <url>http://www.wso2.com</url>
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>${httpclient.version}</version>
-            <scope>provided</scope>
-        </dependency>
 	    <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-java-sdk-core</artifactId>
@@ -87,40 +81,10 @@
                     </instructions>
                 </configuration>
             </plugin>
-            <plugin>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>2.4.3</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <artifactSet>
-                        <includes>
-                            <include>org.apache.httpcomponents:*</include>
-                        </includes>
-                    </artifactSet>
-                    <relocations>
-                        <relocation>
-                            <pattern>org.apache.http</pattern>
-                            <shadedPattern>com.amazonaws.thirdparty.apache.http</shadedPattern>
-                        </relocation>
-                    </relocations>
-                    <shadedArtifactAttached>false</shadedArtifactAttached>
-                    <createDependencyReducedPom>true</createDependencyReducedPom>
-                    <dependencyReducedPomLocation>${project.build.directory}/dependency-reduced-pom.xml</dependencyReducedPomLocation>
-                    <promoteTransitiveDependencies>true</promoteTransitiveDependencies>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
     <properties>
-        <httpclient.version>4.5.13</httpclient.version>
         <com.amazonaws.version>1.11.1034</com.amazonaws.version>
         <awslambda.orbit.version>1.11.1034.wso2v2</awslambda.orbit.version>
     </properties>
