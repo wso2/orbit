@@ -353,7 +353,7 @@
         <compress.lzf.import.version>[1.0.0, 1.0.1)</compress.lzf.import.version>
         <codahale.metrics.version>3.0.0</codahale.metrics.version>
         <codahale.metrics.import.version>[3.0.0, 3.0.1)</codahale.metrics.import.version>
-        <jackson.version>2.3.1</jackson.version>
+        <jackson.version>2.12.6.1</jackson.version>
         <jackson.import.version>[2.3.1, 2.3.2)</jackson.import.version>
         <snappy.version>1.0.5.3</snappy.version>
         <snappy.import.version>[1.0.5.3, 1.0.5.4)</snappy.import.version>
