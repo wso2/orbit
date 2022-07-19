@@ -137,6 +137,7 @@
         <module>h2/2.1.210.wso2v1</module>
         <module>xerces/2.12.2.wso2v1</module>
         <module>hazelcast/3.12.2.wso2v2</module>
+        <module>hazelcast/3.12.12.wso2v1</module>
         <module>hazelcast/4.2.4.wso2v1</module>
         <module>hazelcast/4.2.5.wso2v1</module>
         <module>velocity/2.3.0.wso2v1</module>
