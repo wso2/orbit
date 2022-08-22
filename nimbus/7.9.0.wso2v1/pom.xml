@@ -27,7 +27,7 @@
     <name>WSO2 Carbon Orbit - Nimbus JWT Library</name>
     <version>7.9.0.wso2v1</version>
     <description>
-        This bundle will export packages from nimbus-jose-jwt-7.9jar
+        This bundle will export packages from nimbus-jose-jwt-7.9 jar
     </description>
     <url>http://wso2.org</url>
 
