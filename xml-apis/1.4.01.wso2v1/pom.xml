@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Copyright (c) 2022, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~ Copyright (c) 2022, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
   ~
   ~  WSO2 Inc. licenses this file to you under the Apache License,
   ~  Version 2.0 (the "License"); you may not use this file except
@@ -22,7 +22,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.wso2.orbit.xml.apis</groupId>
+    <groupId>org.wso2.orbit.xml-apis</groupId>
     <artifactId>xml-apis</artifactId>
     <version>1.4.01.wso2v1</version>
     <packaging>bundle</packaging>
@@ -66,16 +66,16 @@
         <dependency>
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
-            <version>${xml.apis.version}</version>
+            <version>${xml-apis.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
 
     <properties>
         <bundle.plugin.version>2.3.7</bundle.plugin.version>
-        <javax.xml.version>1.4.01</javax.xml.version>
+        <javax.xml.version>1.0.1</javax.xml.version>
         <org.w3c.version>1.0</org.w3c.version>
         <org.xml.sax.version>2.0.2</org.xml.sax.version>
-        <xml.apis.version>1.4.01</xml.apis.version>
+        <xml-apis.version>1.4.01</xml-apis.version>
     </properties>
 </project>
