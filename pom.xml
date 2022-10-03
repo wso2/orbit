@@ -78,6 +78,7 @@
         <module>smooks/1.5.1.wso2v2</module>
         <module>smooks/1.5.1.wso2v3</module>
         <module>smooks/1.5.1.wso2v4</module>
+        <module>smooks/1.5.1.wso2v5</module>
         <module>commons-text/1.6.wso2v1</module>
         <module>jaxb-api/2.3.1.wso2v1</module>
         <module>jaxb-api/2.3.1.wso2v2</module>
