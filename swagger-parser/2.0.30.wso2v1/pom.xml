@@ -185,7 +185,7 @@
         <commons.io.version.range>[2.6,3.0)</commons.io.version.range>
         <commons.lang.version.range>[3.2.1,4)</commons.lang.version.range>
         <snakeyaml.version.range>[1.30,1.40)</snakeyaml.version.range>
-        <jackson-version>2.13.1</jackson-version>
+        <jackson-version>2.13.2.1</jackson-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
