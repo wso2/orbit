@@ -51,10 +51,10 @@
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Fragment-Host>poi</Fragment-Host>
                         <Export-Package>
+                            !org.apache.commons.codec.*,
                             org.apache.poi.*
                         </Export-Package>
                         <Import-Package>
-                            !org.apache.poi.*,
                             *;resolution:=optional
                         </Import-Package>
                         <Private-Package>
