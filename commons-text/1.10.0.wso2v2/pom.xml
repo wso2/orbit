@@ -102,7 +102,7 @@
     </repositories>
 
     <properties>
-        <commons.lang.version>3.11.0.wso2v1</commons.lang.version>
+        <commons.lang.version>3.12.0.wso2v1</commons.lang.version>
         <commons.text.version>1.10.0</commons.text.version>
     </properties>
 </project>
