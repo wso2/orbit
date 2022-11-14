@@ -100,7 +100,7 @@
     </build>
 
     <properties>
-        <version.spring>3.2.4.RELEASE</version.spring>
+        <version.spring>3.2.18.RELEASE</version.spring>
         <exp.pkg.version.spring>3.1.0.wso2v1</exp.pkg.version.spring>
     </properties>
 </project>
