@@ -42,13 +42,13 @@
         <repository>
             <id>wso2.releases</id>
             <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
 
         <snapshotRepository>
             <id>wso2.snapshots</id>
             <name>Apache Snapshot Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+            <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -68,7 +68,7 @@
                             org.reflections.*;version="${reflections.version}"
                         </Export-Package>
                         <Import-Package>
-                            com.google.common.*;version="[20.0.0,21.0.0)",
+                            com.google.common.*;version="[20.0.0,32.0.0)",
                             com.google.gson;version="[2.2.0,2.3.0)",
                             javassist.*;version="[3.19.0,3.20.0)",
                             javax.annotation;version="[0.0.0, 1.0.0)",

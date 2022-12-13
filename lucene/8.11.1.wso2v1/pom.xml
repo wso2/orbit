@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~ Copyright (c) 2022, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.apache.lucene</groupId>
+    <artifactId>lucene</artifactId>
+    <packaging>bundle</packaging>
+    <name>Lucene ${orbit.version.lucene} Orbit Bundle</name>
+    <version>${orbit.version.lucene}</version>
+    <description>This bundle exports packages from the Lucene indexing library</description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-join</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-misc</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-codecs</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-memory</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queries</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-suggest</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-grouping</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-expressions</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-highlighter</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queryparser</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-backward-codecs</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-common</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-kuromoji</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers-phonetic</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-facet</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-spatial3d</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-spatial-extras</artifactId>
+            <version>${version.lucene}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.locationtech.spatial4j</groupId>
+            <artifactId>spatial4j</artifactId>
+            <version>${version.locationtech.spatial4j}</version>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Bundle-Vendor>WSO2, Inc.</Bundle-Vendor>
+                        <Export-Package>
+                            org.apache.lucene.*; version="${version.lucene}"; -split-package:=merge-first,
+                            org.tartarus.snowball.*; version="${project.version}",
+                            org.locationtech.spatial4j.*; version="${version.locationtech.spatial4j}",
+                        </Export-Package>
+                        <Private-Package></Private-Package>
+                        <Import-Package>
+                            !org.apache.lucene.*,
+                            org.xml.sax.helpers; version="${sax.import.version}",
+                            org.xml.sax; version="${sax.import.version}",
+                            org.w3c.dom; version="${w3c.dom.import.version}",
+                            javax.xml.transform.stream; version="${javax.xml.import.version}",
+                            javax.xml.transform.dom; version="${javax.xml.import.version}",
+                            javax.xml.transform; version="${javax.xml.import.version}",
+                            javax.xml.parsers; version="${javax.xml.import.version}",
+                            com.spatial4j.core.context; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.distance; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.exception; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.io; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.shape; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.shape.impl; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            org.antlr.runtime; version="${antlr.import.version}"; resolution:=optional,
+                            org.antlr.runtime.tree; version="${antlr.import.version}"; resolution:=optional,
+                            org.apache.commons.codec; version="${commons.codec.import.version.range}"; resolution:=optional,
+                            org.apache.commons.codec.language; version="${commons.codec.import.version.range}"; resolution:=optional,
+                            org.apache.commons.codec.language.bm; version="${commons.codec.import.version.range}"; resolution:=optional,
+                            org.apache.regexp; version="${regexp.import.version}"; resolution:=optional,
+                            org.objectweb.asm; version="${objectweb.import.version.range}"; resolution:=optional,
+                            org.objectweb.asm.commons; version="${objectweb.import.version.range}"; resolution:=optional,
+                            *; resolution:=optional
+                        </Import-Package>
+                        <Embed-Dependency>
+                            spatial4j;scope=compile|runtime;inline=false,
+                        </Embed-Dependency>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <shadedGroupFilter>org.apache.lucene</shadedGroupFilter>
+                            <createSourcesJar>false</createSourcesJar>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <promoteTransitiveDependencies>false</promoteTransitiveDependencies>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheNoticeResourceTransformer">
+                                    <projectName>Apache Lucene</projectName>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <version.lucene>8.11.1</version.lucene>
+        <orbit.version.lucene>${version.lucene}.wso2v1</orbit.version.lucene>
+        <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
+        <sax.import.version>0.0.0</sax.import.version>
+        <w3c.dom.import.version>0.0.0</w3c.dom.import.version>
+        <javax.xml.import.version>0.0.0</javax.xml.import.version>
+        <spatial4j.import.version.range>[0.4.0,1.0.0)</spatial4j.import.version.range>
+        <antlr.import.version>0.0.0</antlr.import.version>
+        <commons.codec.import.version.range>[1.10.0,2.0.0)</commons.codec.import.version.range>
+        <regexp.import.version>0.0.0</regexp.import.version>
+        <objectweb.import.version.range>[4.1.0,5.0.0)</objectweb.import.version.range>
+        <version.locationtech.spatial4j>0.8</version.locationtech.spatial4j>
+    </properties>
+</project>

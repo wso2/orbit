@@ -1,0 +1,100 @@
+<!--
+  ~ Copyright (c) 2022, WSO2 Inc. (http://www.wso2.com).
+  ~
+  ~ WSO2 Inc. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.commons-scxml</groupId>
+    <artifactId>commons-scxml</artifactId>
+    <packaging>bundle</packaging>
+    <name>commons-scxml.wso2</name>
+    <version>0.9.0.wso2v2</version>
+    <description>
+        This bundle will represent commons-digester.
+    </description>
+    <url>https://wso2.org</url>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>commons-scxml</groupId>
+            <artifactId>commons-scxml</artifactId>
+            <version>${commons.scxml.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+            <version>${commons.digester.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.myfaces.core</groupId>
+            <artifactId>myfaces-api</artifactId>
+            <version>${apache.myface.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>1.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Embed-Dependency>
+                            commons-scxml;scope=compile|runtime;inline=false;
+                        </Embed-Dependency>
+                        <Export-Package>
+                            org.apache.commons.scxml.*; version=1.0.0,
+                            javax.faces.context.*,
+                            org.apache.commons.digester.*; version="${commons.digester.version}",
+                        </Export-Package>
+                        <Import-Package>
+                            !javax.el.*; version="0.0.0",
+                            javax.el.*; version="1.0.0",
+                            !org.apache.commons.digester.*; version="0.0.0",
+                            org.apache.commons.digester.*; version="${commons.digester.version}",
+                        </Import-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <commons.scxml.version>0.9</commons.scxml.version>
+        <commons.digester.version>1.8.1</commons.digester.version>
+        <commons.beanutils.version>1.9.4</commons.beanutils.version>
+        <apache.myface.version>1.2.7</apache.myface.version>
+    </properties>
+</project>
