@@ -472,7 +472,7 @@
     </build>
 
     <properties>
-        <cxf.version>3.0.9</cxf.version>
+        <cxf.version>3.5.2-jbossorg-3</cxf.version>
         <fastinfoset.version>1.2.13</fastinfoset.version>
         <woodstox.core.asl.version>4.4.1</woodstox.core.asl.version>
         <xmlschema.core.version>2.1.0</xmlschema.core.version>
