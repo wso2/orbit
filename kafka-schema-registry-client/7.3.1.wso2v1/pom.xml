@@ -22,7 +22,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.orbit.io.confluent</groupId>
+    <groupId>io.confluent.wso2</groupId>
     <artifactId>kafka-schema-registry-client</artifactId>
     <version>7.3.1.wso2v1</version>
     <packaging>bundle</packaging>
