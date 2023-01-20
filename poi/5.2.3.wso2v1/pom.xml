@@ -49,15 +49,17 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-                            !org.apache.commons.codec.*,
-                            org.apache.poi.*;version="${project.version}"
+                            org.apache.poi.*;version="${project.version}",
                         </Export-Package>
                         <Import-Package>
-                            *;resolution:=optional
+                            org.apache.commons.io.*,
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
+                        <Include-Resource>
+                            {maven-resources},
+                            @poi-${version.poi}.jar!/META-INF/services/**,
+                        </Include-Resource>
                     </instructions>
                 </configuration>
             </plugin>
@@ -81,5 +83,4 @@
             <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-
 </project>
