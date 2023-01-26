@@ -21,7 +21,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.googlecode.json-simple.wso2</groupId>
+    <groupId>org.wso2.orbit.com.googlecode.json-simple</groupId>
     <artifactId>json-simple</artifactId>
     <packaging>bundle</packaging>
     <name>json-simple.wso2</name>
