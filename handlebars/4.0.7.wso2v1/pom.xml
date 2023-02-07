@@ -122,7 +122,7 @@
 
     <properties>
         <version.com.github.jknack.handlebars>4.0.7</version.com.github.jknack.handlebars>
-        <antlr-version>4.11.1</antlr-version>
+        <antlr-version>4.0.7</antlr-version>
         <org.slf4j.slf4j-api.verison>1.6.4</org.slf4j.slf4j-api.verison>
         <org.mozilla.rhino.version>1.7.7</org.mozilla.rhino.version>
         <org.apache.commons.commons-lang3.version>3.1</org.apache.commons.commons-lang3.version>
