@@ -64,7 +64,6 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
                             com.fasterxml.jackson.databind.*; version=${com.fasterxml.jackson.databind.version},
-                            com.fasterxml.jackson.core.*; version=${com.fasterxml.jackson.databind.version}
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
