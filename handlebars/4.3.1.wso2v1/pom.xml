@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- ~ Copyright (c) 2020, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+ ~ Copyright (c) 2023, WSO2 Inc. (http://wso2.com) All Rights Reserved.
  ~
  ~ Licensed under the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@
     <artifactId>handlebars</artifactId>
     <packaging>bundle</packaging>
     <name>com.github.jknack.handlebars.wso2</name>
-    <version>4.0.7.wso2v1</version>
+    <version>4.3.1.wso2v1</version>
     <description>
         This bundle exports packages from com.github.jknack.handlebars library
     </description>
@@ -113,6 +113,9 @@
                             org.apache.commons.lang3.tuple;version="[3.1,4)",
                             org.slf4j;version="[1.6,2)"
                         </Import-Package>
+                        <Include-Resource>
+                            @handlebars-4.3.1.jar!/*
+                        </Include-Resource>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
@@ -121,9 +124,9 @@
     </build>
 
     <properties>
-        <version.com.github.jknack.handlebars>4.0.7</version.com.github.jknack.handlebars>
+        <version.com.github.jknack.handlebars>4.3.1</version.com.github.jknack.handlebars>
         <antlr-version>4.11.1</antlr-version>
-        <org.slf4j.slf4j-api.verison>1.6.4</org.slf4j.slf4j-api.verison>
+        <org.slf4j.slf4j-api.verison>2.0.6</org.slf4j.slf4j-api.verison>
         <org.mozilla.rhino.version>1.7.7</org.mozilla.rhino.version>
         <org.apache.commons.commons-lang3.version>3.1</org.apache.commons.commons-lang3.version>
     </properties>
