@@ -1,0 +1,106 @@
+<!--
+  ~ Copyright (c) 2023, WSO2 LLC. (http://www.wso2.com). All Rights Reserved.
+  ~
+  ~ This software is the property of WSO2 LLC. and its suppliers, if any.
+  ~ Dissemination of any information or reproduction of any material contained
+  ~ herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+  ~ You may not alter or remove any copyright or other notice from copies of this content.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.springframework.ws</groupId>
+    <artifactId>spring.framework</artifactId>
+    <packaging>bundle</packaging>
+    <name>spring.framework.wso2</name>
+    <version>5.3.25.wso2v1</version>
+    <description>
+        This bundle will export packages from spring framework
+    </description>
+    <url>https://wso2.org</url>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>WSO2 Snapshot Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${version.spring}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${version.spring}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${version.spring}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${version.spring}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${version.spring}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>5.1.4</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            org.springframework.*; version=${exp.pkg.version.spring},
+                        </Export-Package>
+                        <Private-Package>
+                            org.springframework.*
+                        </Private-Package>
+                        <Import-Package>
+                            !org.springframework.*;,
+                            javax.xml.stream.*; version="[0.0.0, 1.0.0)",
+                            javax.xml.soap; version="[0.0.0, 2.0.0)",
+                            *;resolution:=optional
+                        </Import-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <version.spring>5.3.25</version.spring>
+        <exp.pkg.version.spring>5.3.25.wso2v1</exp.pkg.version.spring>
+    </properties>
+</project>
