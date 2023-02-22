@@ -117,6 +117,7 @@
         <module>batik/1.9.1.wso2v1</module>
         <module>commons-lang/3.11.0.wso2v1</module>
         <module>commons-lang/3.4.0.wso2v1</module>
+        <module>jsch/0.1.55.wso2v4</module>
         <module>swagger-parser-v3/2.0.24.wso2v1</module>
         <module>swagger-request-validator/2.12.1.wso2v1</module>
         <module>swagger-request-validator/2.12.1.wso2v2</module>
@@ -151,6 +152,7 @@
         <module>spring-framework/5.3.19.wso2v2</module>
         <module>spring-framework/5.3.21.wso2v1</module>
         <module>spring-framework/5.3.22.wso2v1</module>
+        <module>spring-framework/5.3.25.wso2v1</module>
         <module>solr/8.11.1.wso2v3</module>
         <module>solr/8.11.1.wso2v4</module>
         <module>solr/8.11.1.wso2v5</module>
@@ -158,6 +160,7 @@
         <module>solr/8.11.1.wso2v7</module>
         <module>webauthn4j/0.19.1.wso2v2</module>
         <module>libthrift/0.16.0.wso2v1</module>
+        <module>commons-net/3.9.0.wso2v1</module>
     </modules>
 
     <build>
