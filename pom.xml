@@ -159,7 +159,7 @@
         <module>solr/8.11.1.wso2v5</module>
         <module>solr/8.11.1.wso2v6</module>
         <module>solr/8.11.1.wso2v7</module>
-        <module>webauthn4j/0.19.1.wso2v2</module>
+        <module>webauthn4j/0.21.0.wso2v1</module>
         <module>libthrift/0.16.0.wso2v1</module>
         <module>commons-net/3.9.0.wso2v1</module>
     </modules>
