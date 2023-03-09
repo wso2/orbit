@@ -367,7 +367,7 @@
         <commons-net.version>2.2</commons-net.version>
         <netty-all.version>4.0.23.wso2v1</netty-all.version>
         <netty-all.import.version>[4.0.23.wso2v1, 4.0.24.Final)</netty-all.import.version>
-        <jetty.version>8.1.14.v20131031</jetty.version>
+        <jetty.version>9.4.25.v20191220</jetty.version>
         <org.jboss.netty.version>3.6.6.Final</org.jboss.netty.version>
         <org.jboss.netty.import.version>[3.6.6.Final, 3.6.7.Final)</org.jboss.netty.import.version>
         <com.github.fommil.netlib.version>1.1.2</com.github.fommil.netlib.version>
