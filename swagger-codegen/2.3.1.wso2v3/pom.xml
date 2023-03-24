@@ -43,25 +43,25 @@
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-codegen</artifactId>
-            <version>2.3.1</version>
+            <version>${swagger.codegen.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>com.samskivert</groupId>
             <artifactId>jmustache</artifactId>
-            <version>1.13</version>
+            <version>${jmustache.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
-            <version>2.9.9</version>
+            <version>${joda.time.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.codehaus.plexus</groupId>
             <artifactId>plexus-utils</artifactId>
-            <version>3.3.1</version>
+            <version>${plexus.utils.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -165,5 +165,9 @@
         <export.pkg.version.swagger-codegen>2.3.1.wso2v3</export.pkg.version.swagger-codegen>
         <import.io.swagger.version.range>[1.5.8,1.6)</import.io.swagger.version.range>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <swagger.codegen.version>2.3.1</swagger.codegen.version>
+        <jmustache.version>1.13</jmustache.version>
+        <joda.time.version>2.9.9</joda.time.version>
+        <plexus.utils.version>3.3.1</plexus.utils.version>
     </properties>
 </project>
