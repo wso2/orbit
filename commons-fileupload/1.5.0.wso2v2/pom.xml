@@ -73,8 +73,8 @@ http://www.apache.org/licenses/LICENSE-2.0
                             !org.apache.commons.fileupload.*,
                             javax.servlet; version="${imp.pkg.version.javax.servlet}",
                             javax.servlet.http;version="${imp.pkg.version.javax.servlet}",
-                            org.apache.commons.io;version="2.2",
-                            org.apache.commons.io.output;version="2.2"
+                            org.apache.commons.io;version="${org.apache.commons.io.version}",
+                            org.apache.commons.io.output;version="${org.apache.commons.io.version}"
                         </Import-Package>
                         <DynamicImport-Package>
                             javax.portlet
@@ -86,6 +86,7 @@ http://www.apache.org/licenses/LICENSE-2.0
     </build>
 
     <properties>
+        <org.apache.commons.io.version>2.2</org.apache.commons.io.version>
         <imp.pkg.version.javax.servlet>[2.6.0, 3.0.0)</imp.pkg.version.javax.servlet>
         <version.commons.fileupload>1.5</version.commons.fileupload>
     </properties>
