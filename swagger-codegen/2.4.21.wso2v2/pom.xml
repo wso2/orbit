@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~ Copyright (c) 2023, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.io.swagger</groupId>
+    <artifactId>swagger-codegen</artifactId>
+    <version>2.4.21.wso2v2</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - swagger-codegen (io.swagger)</name>
+    <description>
+        This bundle will export packages from swagger-codegen libraries of io.swagger
+    </description>
+    <url>http://wso2.org</url>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-codegen</artifactId>
+            <version>${swagger.codegen.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.samskivert</groupId>
+            <artifactId>jmustache</artifactId>
+            <version>${jmustache.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda.time.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>${plexus.utils.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>${swagger.models.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.3.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            !io.swagger.models.*,
+                            !io.swagger.annotations.*,
+                            !io.swagger.parser.*,
+                            akka-scala.*;version="${export.pkg.version.swagger-codegen}",
+                            android.*;version="${export.pkg.version.swagger-codegen}",
+                            apex.*;version="${export.pkg.version.swagger-codegen}",
+                            async-scala.*;version="${export.pkg.version.swagger-codegen}",
+                            bash.*;version="${export.pkg.version.swagger-codegen}",
+                            clojure.*;version="${export.pkg.version.swagger-codegen}",
+                            codegen.*;version="${export.pkg.version.swagger-codegen}",
+                            _common.*;version="${export.pkg.version.swagger-codegen}",
+                            config.*;version="${export.pkg.version.swagger-codegen}",
+                            cpprest.*;version="${export.pkg.version.swagger-codegen}",
+                            csharp.*;version="${export.pkg.version.swagger-codegen}",
+                            CsharpDotNet2.*;version="${export.pkg.version.swagger-codegen}",
+                            dart.*;version="${export.pkg.version.swagger-codegen}",
+                            Eiffel.*;version="${export.pkg.version.swagger-codegen}",
+                            elixir.*;version="${export.pkg.version.swagger-codegen}",
+                            flash.*;version="${export.pkg.version.swagger-codegen}",
+                            flaskConnexion.*;version="${export.pkg.version.swagger-codegen}",
+                            go.*;version="${export.pkg.version.swagger-codegen}",
+                            Groovy.*;version="${export.pkg.version.swagger-codegen}",
+                            htmlDocs.*;version="${export.pkg.version.swagger-codegen}",
+                            htmlDocs2.*;version="${export.pkg.version.swagger-codegen}",
+                            Java.*;version="${export.pkg.version.swagger-codegen}",
+                            JavaInflector.*;version="${export.pkg.version.swagger-codegen}",
+                            JavaJaxRS.*;version="${export.pkg.version.swagger-codegen}",
+                            Javascript.*;version="${export.pkg.version.swagger-codegen}",
+                            Javascript-Closure-Angular.*;version="${export.pkg.version.swagger-codegen}",
+                            Jmeter.*;version="${export.pkg.version.swagger-codegen}",
+                            kotlin-client.*;version="${export.pkg.version.swagger-codegen}",
+                            nodejs.*;version="${export.pkg.version.swagger-codegen}",
+                            objc.*;version="${export.pkg.version.swagger-codegen}",
+                            perl.*;version="${export.pkg.version.swagger-codegen}",
+                            php.*;version="${export.pkg.version.swagger-codegen}",
+                            powershell.*;version="${export.pkg.version.swagger-codegen}",
+                            python.*;version="${export.pkg.version.swagger-codegen}",
+                            qt5cpp.*;version="${export.pkg.version.swagger-codegen}",
+                            rails5.*;version="${export.pkg.version.swagger-codegen}",
+                            ruby.*;version="${export.pkg.version.swagger-codegen}",
+                            scala.*;version="${export.pkg.version.swagger-codegen}",
+                            scalatra.*;version="${export.pkg.version.swagger-codegen}",
+                            silex.*;version="${export.pkg.version.swagger-codegen}",
+                            sinatra.*;version="${export.pkg.version.swagger-codegen}",
+                            slim.*;version="${export.pkg.version.swagger-codegen}",
+                            swagger.*;version="${export.pkg.version.swagger-codegen}",
+                            swift.*;version="${export.pkg.version.swagger-codegen}",
+                            swift3.*;version="${export.pkg.version.swagger-codegen}",
+                            swift4.*;version="${export.pkg.version.swagger-codegen}",
+                            tizen.*;version="${export.pkg.version.swagger-codegen}",
+                            typescript-angular.*;version="${export.pkg.version.swagger-codegen}",
+                            typescript-angular2.*;version="${export.pkg.version.swagger-codegen}",
+                            TypeScript-Fetch.*;version="${export.pkg.version.swagger-codegen}",
+                            typescript-jquery.*;version="${export.pkg.version.swagger-codegen}",
+                            typescript-node.*;version="${export.pkg.version.swagger-codegen}",
+                            io.swagger.*;version="${export.pkg.version.swagger-codegen}"
+                        </Export-Package>
+                        <Import-Package>
+                            !io.swagger.codegen.*,
+                            !io.swagger.parser.*,
+                            io.swagger.models.auth; version="${import.io.swagger.version.range}",
+                            io.swagger.models.parameters; version="${import.io.swagger.version.range}",
+                            io.swagger.models.properties; version="${import.io.swagger.version.range}",
+                            io.swagger.models.refs; version="${import.io.swagger.version.range}",
+                            io.swagger.models; version="${import.io.swagger.version.range}"
+                        </Import-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Include-Resource>
+                            {maven-resources}
+                        </Include-Resource>
+                        <Embed-Dependency>
+                            jmustache;scope=compile|runtime;inline=false,
+                            joda-time;scope=compile|runtime;inline=false,
+                            plexus-utils;scope=compile|runtime;inline=false
+                        </Embed-Dependency>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <export.pkg.version.swagger-codegen>2.4.21.wso2v2</export.pkg.version.swagger-codegen>
+        <import.io.swagger.version.range>[1.6.1,2.2.9)</import.io.swagger.version.range>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <swagger.codegen.version>2.4.21</swagger.codegen.version>
+        <jmustache.version>1.13</jmustache.version>
+        <joda.time.version>2.9.9</joda.time.version>
+        <plexus.utils.version>3.3.1</plexus.utils.version>
+        <swagger.models.version>1.6.1</swagger.models.version>
+    </properties>
+</project>
