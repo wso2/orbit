@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~  Copyright (c) 2023, WSO2 LLC (http://www.wso2.com) All Rights Reserved.
+  ~ Copyright (c) 2023, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
   ~
-  ~  WSO2 LLC licenses this file to you under the Apache License,
+  ~  WSO2 LLC. licenses this file to you under the Apache License,
   ~  Version 2.0 (the "License"); you may not use this file except
   ~  in compliance with the License.
   ~  You may obtain a copy of the License at
   ~
-  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~      http://www.apache.org/licenses/LICENSE-2.0
   ~
-  ~  Unless required by applicable law or agreed to in writing, software
-  ~  distributed under the License is distributed on an "AS IS" BASIS,
-  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~  See the License for the specific language governing permissions and
-  ~  limitations under the License.
+  ~  Unless required by applicable law or agreed to in writing,
+  ~  software distributed under the License is distributed on an
+  ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~  KIND, either express or implied.  See the License for the
+  ~  specific language governing permissions and limitations
+  ~  under the License.
   -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>org.wso2.orbit.org.yaml</groupId>
-    <artifactId>snakeyaml</artifactId>
-    <version>2.0.0.wso2v1</version>
+    <groupId>org.wso2.orbit.org.apache.tomcat</groupId>
+    <artifactId>tomcat-jsp-api</artifactId>
+    <version>9.0.73.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>SnakeYAML</name>
-    <description>SnakeYAML orbit bundle</description>
+    <name>tomcat jsp api orbit bundle - 9.0.73.wso2v1</name>
+    <description>Apache Tomcat JSP API</description>
 
     <dependencies>
         <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-            <version>${version.snake.yaml}</version>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jsp-api</artifactId>
+            <version>${version.tomcat}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -42,12 +42,6 @@
             <name>WSO2 internal Repository</name>
             <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
-
-        <snapshotRepository>
-            <id>wso2.snapshots</id>
-            <name>Apache Snapshot Repository</name>
-            <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
 
     <build>
@@ -55,19 +49,20 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>${maven.bundleplugin.version}</version>
+                <version>2.3.6</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.yaml.snakeyaml.*;version="${version.snake.yaml}"
+                            javax.servlet.jsp.*;version="2.2.0"
                         </Export-Package>
-                        <Private-Package>
-                        </Private-Package>
                         <Import-Package>
-                            !org.yaml.snakeyaml.*;resolution:=optional;version="[2.0,2)"
+                            javax.el;version="[3.0.0, 3.1.0)",
+                            javax.servlet;version="[2.6.0, 2.7.0)",
+                            javax.servlet.http;version="[2.6.0, 2.7.0)",
+                            *;resolution:=optional
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
@@ -77,8 +72,7 @@
     </build>
 
     <properties>
-        <version.snake.yaml>2.0</version.snake.yaml>
-        <maven.bundleplugin.version>2.5.4</maven.bundleplugin.version>
+        <version.tomcat>9.0.73</version.tomcat>
     </properties>
 
 </project>
