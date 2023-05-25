@@ -94,7 +94,7 @@
 
     <properties>
         <ua-parser.version>1.5.2</ua-parser.version>
-        <snake-yaml.version>2.0</snake-yaml.version>
+        <snake-yaml.version>1.33</snake-yaml.version>
     </properties>
 
 </project>
