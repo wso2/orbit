@@ -84,7 +84,7 @@
     </build>
     <properties>
         <jayway.jsonpath.version>2.6.0</jayway.jsonpath.version>
-        <net.mindev.jsonsmart.version>2.4.7</net.mindev.jsonsmart.version>
+        <net.mindev.jsonsmart.version>2.4.11</net.mindev.jsonsmart.version>
         <net.mindev.asm.version>1.0.2</net.mindev.asm.version>
         <commons.lang.version>2.6</commons.lang.version>
     </properties>
