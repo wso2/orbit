@@ -49,6 +49,7 @@
         <module>jdbc-pool/9.0.16.wso2v1</module>
         <module>jdbc-pool/9.0.56.wso2v1</module>
         <module>jdbc-pool/9.0.65.wso2v1</module>
+        <module>jdbc-pool/9.0.76.wso2v1</module>
         <module>tomcat/7.0.52.wso2v1/</module>
         <module>waffle/1.6.wso2v1</module>
         <module>disruptor/2.10.4-wso2v2</module>
