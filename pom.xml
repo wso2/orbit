@@ -139,6 +139,8 @@
         <module>tomcat-websocket/9.0.58.wso2v1</module>
         <module>membrane-soa-model/1.6.4.wso2v1</module>
         <module>h2/2.1.210.wso2v1</module>
+        <module>h2-engine/2.1.210.wso2v1</module>
+        <module>h2-engine/2.2.220.wso2v1</module>
         <module>xerces/2.12.2.wso2v1</module>
         <module>hazelcast/3.12.2.wso2v2</module>
         <module>hazelcast/4.2.4.wso2v1</module>
