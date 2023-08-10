@@ -20,11 +20,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.orbit.cdc-mi</groupId>
-    <artifactId>cdc-mi</artifactId>
+    <groupId>org.wso2.orbit.debezium</groupId>
+    <artifactId>debezium</artifactId>
     <packaging>bundle</packaging>
-    <name>cdc.mi.wso2</name>
-    <version>1.0.0.wso2v1</version>
+    <name>debezium.wso2</name>
+    <version>2.1.4.Final.wso2v1</version>
     <description>
         This bundle contains the Debezium and Kafka dependencies for CDC Inbound Endpoint in WSO2 Micro Integrator
     </description>
