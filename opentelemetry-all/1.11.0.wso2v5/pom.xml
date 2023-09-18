@@ -204,7 +204,7 @@
         <!-- Import Versions -->
         <com.google.common.util.concurrent.version.range>[31.0.0, 33.0.0)</com.google.common.util.concurrent.version.range>
         <com.google.common.io.version.range>[31.0.0, 33.0.0)</com.google.common.io.version.range>
-        <com.fasterxml.jackson.core.version.range>[2.13.0, 2.14.0)</com.fasterxml.jackson.core.version.range>
+        <com.fasterxml.jackson.core.version.range>[2.13.0, 3.0.0)</com.fasterxml.jackson.core.version.range>
         <io.netty.handler.ss.version.range>[4.1.0, 4.2.0)</io.netty.handler.ss.version.range>
         <javax.annotation.version.range>[0.0.0, 2.0.0)</javax.annotation.version.range>
         <javax.net.ssl.version.range>[0.0.0, 1.0.0)</javax.net.ssl.version.range>
