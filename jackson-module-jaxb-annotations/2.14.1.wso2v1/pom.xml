@@ -1,0 +1,108 @@
+<!--
+ ~ Copyright (c) 2023, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.com.fasterxml.jackson.module</groupId>
+    <artifactId>jackson-module-jaxb-annotations</artifactId>
+    <version>2.14.1.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - Jackson Data Module JAXB Annotations</name>
+    <description>
+        This bundle exports packages from Jackson Data Module JAXB Annotations.
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jaxb-annotations</artifactId>
+            <version>${com.fasterxml.jackson.module.version}</version>
+            <optional>true</optional>
+        </dependency>	
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.fasterxml.jackson.module.jaxb.*; version=${project.version},
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Import-Package>
+                            com.fasterxml.jackson.annotation;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.core;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.core.util;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.databind;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.databind.cfg;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.databind.deser.std;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.databind.introspect;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.databind.jsontype;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.databind.jsontype.impl;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.databind.module;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.databind.node;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.databind.ser.std;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.databind.type;version="${com.fasterxml.jackson.module.version.range}",
+                            com.fasterxml.jackson.databind.util;version="${com.fasterxml.jackson.module.version.range}",
+                            javax.activation,
+                            javax.xml.bind,
+                            javax.xml.bind.annotation,
+                            javax.xml.parsers
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>Alfresco Maven Repository</id>
+            <url>https://maven.alfresco.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <properties>
+            <com.fasterxml.jackson.module.version>2.14.1</com.fasterxml.jackson.module.version>
+            <com.fasterxml.jackson.module.version.range>[2.2,3)</com.fasterxml.jackson.module.version.range>
+    </properties>
+</project>

@@ -70,10 +70,6 @@
                     <artifactId>guava</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>org.apache.httpcomponents</groupId>
-                    <artifactId>httpclient</artifactId>
-                </exclusion>
-                <exclusion>
                     <groupId>org.bouncycastle</groupId>
                     <artifactId>bcprov-jdk15</artifactId>
                 </exclusion>
@@ -143,13 +139,13 @@
         <repository>
             <id>wso2.releases</id>
             <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/releases/</url>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
         </repository>
 
         <snapshotRepository>
             <id>wso2.snapshots</id>
             <name>Apache Snapshot Repository</name>
-            <url>http://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+            <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -159,7 +155,7 @@
         <guava.osgi.version.range>[18.0.0,30.0.0)</guava.osgi.version.range>
         <apache.commons.codec.version.range>[1.1.0, 2.0.0)</apache.commons.codec.version.range>
         <apache.commons.logging.version.range>[1.1.0, 2.0.0)</apache.commons.logging.version.range>
-        <apache.http.client.version.range>[4.1.0, 5.0.0)</apache.http.client.version.range>
+        <apache.http.client.version.range>[4.5.0, 5.0.0)</apache.http.client.version.range>
         <bouncycastle.version.range>[1.50.0, 2.0.0)</bouncycastle.version.range>
         <fasterxml.jackson.version.range>[2.9.5, 3.0.0)</fasterxml.jackson.version.range>
         <slf4j.version.range>[1.6.1, 2.0.0)</slf4j.version.range>
