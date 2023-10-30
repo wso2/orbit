@@ -90,7 +90,7 @@
     </build>
 
     <properties>
-        <guava.version>32.1.3-android</guava.version>
+        <guava.version>32.1.3-jre</guava.version>
         <export.pkg.version.guava>32.1.3.wso2v1</export.pkg.version.guava>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
