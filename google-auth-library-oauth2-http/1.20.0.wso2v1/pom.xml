@@ -71,8 +71,6 @@
                         </Private-Package>
                         <Import-Package>
                             !com.google.auth.*,
-<!--                            com.google.api.client.auth.oauth2;version="${google-oauth-client.orbit.imp.pkg.version}",-->
-<!--                            com.google.api.client.auth.openidconnect;version="${google-oauth-client.orbit.imp.pkg.version}",-->
                             com.google.api.client.http;version="${google-http-client.orbit.imp.pkg.version}",
                             com.google.api.client.http.apache.v2;version="${google-http-client.orbit.imp.pkg.version}",
                             com.google.api.client.http.javanet;version="${google-http-client.orbit.imp.pkg.version}",
