@@ -21,13 +21,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.orbit.io.opencensus</groupId>
-    <artifactId>opencensus</artifactId>
-    <version>0.31.1.wso2v1</version>
+    <groupId>org.wso2.orbit.io.grpc</groupId>
+    <artifactId>grpc-context</artifactId>
+    <version>1.59.0.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>WSO2 Carbon Orbit - OpenCensus</name>
+    <name>WSO2 Carbon Orbit - GRPC Context</name>
     <description>
-        This bundle will represent OpenCensus 0.31.1
+        This bundle will represent GRPC Context 1.59.0
     </description>
     <url>http://wso2.org</url>
 
@@ -59,14 +59,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.opencensus</groupId>
-            <artifactId>opencensus-api</artifactId>
-            <version>${opencensus.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.opencensus</groupId>
-            <artifactId>opencensus-contrib-http-util</artifactId>
-            <version>${opencensus.version}</version>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-context</artifactId>
+            <version>${grpc-context.version}</version>
         </dependency>
     </dependencies>
 
@@ -82,18 +77,12 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            io.opencensus.*; version=${opencensus.version},
-                            io.opencensus.contrib.http.util.*; version=${opencensus.version},
+                            io.grpc.*; version=${grpc-context.version},
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            !io.opencensus.*,
-                            com.google.common.base;version="${google.guava.orbit.imp.pkg.version}",
-                            com.google.common.annotations;version="${google.guava.orbit.imp.pkg.version}"
-                            com.google.common.collect;version="${google.guava.orbit.imp.pkg.version}"
-                            com.google.common.primitives;version="${google.guava.orbit.imp.pkg.version}",
-                            io.grpc.*;version="${io.grpc.orbit.imp.pkg.version}",
+                            !io.grpc.*
                         </Import-Package>
                     </instructions>
                 </configuration>
@@ -102,8 +91,6 @@
     </build>
 
     <properties>
-        <opencensus.version>0.31.1</opencensus.version>
-        <google.guava.orbit.imp.pkg.version>[31.0,32)</google.guava.orbit.imp.pkg.version>
-        <io.grpc.orbit.imp.pkg.version>[1.59.0,2)</io.grpc.orbit.imp.pkg.version>
+        <grpc-context.version>1.59.0</grpc-context.version>
     </properties>
 </project>
