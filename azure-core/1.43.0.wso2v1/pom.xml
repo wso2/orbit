@@ -43,7 +43,7 @@
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-core</artifactId>
-            <version>1.43.0</version>
+            <version>${azure-core.export.pkg.version}</version>
         </dependency>
     </dependencies>
 
