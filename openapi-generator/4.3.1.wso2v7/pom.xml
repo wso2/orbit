@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- ~ Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2023, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
  ~
- ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ WSO2 LLC. licenses this file to you under the Apache License,
  ~ Version 2.0 (the "License"); you may not use this file except
  ~ in compliance with the License.
  ~ You may obtain a copy of the License at
@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.openapitools</groupId>
     <artifactId>openapi-generator</artifactId>
-    <version>4.3.1.wso2v2</version>
+    <version>4.3.1.wso2v7</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - openapi-generator (org.openapitools)</name>
     <description>
@@ -250,11 +250,11 @@
     </build>
 
     <properties>
-        <export.pkg.version.swagger-codegen>4.3.1.wso2v2</export.pkg.version.swagger-codegen>
+        <export.pkg.version.swagger-codegen>4.3.1.wso2v7</export.pkg.version.swagger-codegen>
         <import.pkg.version.swagger-codegen>6.6.0</import.pkg.version.swagger-codegen>
         <jmustache-version>1.14</jmustache-version>
         <handlebars.java-version>4.1.2</handlebars.java-version>
-        <slf4j.api.version>1.7.12</slf4j.api.version>
+        <slf4j.api.version>1.7.36</slf4j.api.version>
         <commons-io-version>2.11.0</commons-io-version>
         <jackson.version.range>[2.7.0,3.0.0)</jackson.version.range>
         <google.version.range>[27.0.0,33.0.0)</google.version.range>
