@@ -104,7 +104,6 @@
                             Javascript-Closure-Angular.*;version="${export.pkg.version.swagger-codegen}",
                             Javascript-Flowtyped;version="${export.pkg.version.swagger-codegen}",
                             Javascript.es6;version="${export.pkg.version.swagger-codegen}",
-                            Javascript.libraries.javascript;version="${export.pkg.version.swagger-codegen}",
                             _common;version="${export.pkg.version.swagger-codegen}",
                             android.*;version="${export.pkg.version.swagger-codegen}",
                             apache2;version="${export.pkg.version.swagger-codegen}",
@@ -177,7 +176,6 @@
                             python-aiohttp;version="${export.pkg.version.swagger-codegen}",
                             python-blueplanet.*;version="${export.pkg.version.swagger-codegen}",
                             python-flask;version="${export.pkg.version.swagger-codegen}",
-                            python-prior.*;version="${export.pkg.version.swagger-codegen}",
                             r;version="${export.pkg.version.swagger-codegen}",
                             ruby-client;version="${export.pkg.version.swagger-codegen}",
                             ruby-on-rails-server;version="${export.pkg.version.swagger-codegen}",
@@ -225,14 +223,13 @@
                         </Include-Resource>
                         <_exportcontents>
                             com.github.jknack.handlebars,
-                            com.github.jknack.handlebars.context,
+                            com.gicommons-iothub.jknack.handlebars.context,
                             com.github.jknack.handlebars.helper,
                             com.github.jknack.handlebars.io,
                             com.google.common.base,
                             com.google.common.collect,
                             com.google.common.io,
                             com.mifmif.common.regex,
-                            javax.annotation,
                             org.commonmark.node,
                             org.commonmark.parser,
                             org.commonmark.renderer.html,
@@ -257,7 +254,7 @@
         <slf4j.api.version>1.7.36</slf4j.api.version>
         <commons-io-version>2.11.0</commons-io-version>
         <jackson.version.range>[2.7.0,3.0.0)</jackson.version.range>
-        <google.version.range>[27.0.0,33.0.0)</google.version.range>
+        <google.version.range>[31.0.0,33.0.0)</google.version.range>
         <slf4j.version.range>[1.7.0,1.8.0)</slf4j.version.range>
         <import.openapitools.parser.version.range>[2.0, 3.0)</import.openapitools.parser.version.range>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
