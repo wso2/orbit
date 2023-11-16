@@ -104,6 +104,7 @@
                             Javascript-Closure-Angular.*;version="${export.pkg.version.swagger-codegen}",
                             Javascript-Flowtyped;version="${export.pkg.version.swagger-codegen}",
                             Javascript.es6;version="${export.pkg.version.swagger-codegen}",
+                            Javascript.libraries.javascript;version="${export.pkg.version.swagger-codegen}",
                             _common;version="${export.pkg.version.swagger-codegen}",
                             android.*;version="${export.pkg.version.swagger-codegen}",
                             apache2;version="${export.pkg.version.swagger-codegen}",
@@ -176,6 +177,7 @@
                             python-aiohttp;version="${export.pkg.version.swagger-codegen}",
                             python-blueplanet.*;version="${export.pkg.version.swagger-codegen}",
                             python-flask;version="${export.pkg.version.swagger-codegen}",
+                            python-prior.*;version="${export.pkg.version.swagger-codegen}",
                             r;version="${export.pkg.version.swagger-codegen}",
                             ruby-client;version="${export.pkg.version.swagger-codegen}",
                             ruby-on-rails-server;version="${export.pkg.version.swagger-codegen}",
@@ -223,7 +225,7 @@
                         </Include-Resource>
                         <_exportcontents>
                             com.github.jknack.handlebars,
-                            com.gicommons-iothub.jknack.handlebars.context,
+                            com.github.jknack.handlebars.context,
                             com.github.jknack.handlebars.helper,
                             com.github.jknack.handlebars.io,
                             com.google.common.base,
