@@ -24,7 +24,7 @@
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - swagger-jaxrs (io.swagger)</name>
     <description>
-        This bundle will export packages from swagger-core libraries of io.swagger
+        This bundle will export packages from swagger-jaxrs library of io.swagger
     </description>
     <url>http://wso2.org</url>
 
