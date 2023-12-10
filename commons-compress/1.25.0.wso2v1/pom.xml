@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <!--
  ~ Copyright (c) 2023, WSO2 LLC. (http://www.wso2.org).
  ~
@@ -19,17 +21,29 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.orbit.org.apache.xmlbeans</groupId>
-    <artifactId>xmlbeans</artifactId>
+    <groupId>org.wso2.orbit.org.apache.commons</groupId>
+    <artifactId>commons-compress</artifactId>
+    <version>1.25.0.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>xmlbeans.wso2</name>
-    <version>5.1.1.wso2v1</version>
+    <name>commons-compress.wso2</name>
     <description>
-        This bundle will represent org.apache.xmlbeans
+        This bundle exports org.apache.commons.compress
     </description>
     <url>http://wso2.org</url>
+
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
 
     <distributionManagement>
         <repository>
@@ -47,9 +61,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.xmlbeans</groupId>
-            <artifactId>xmlbeans</artifactId>
-            <version>5.1.1</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>${commons-compress.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -58,31 +73,30 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>3.3.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Name>${pom.artifactId}</Bundle-Name>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.apache.xmlbeans.*;version="${project.version}"
+                            org.apache.commons.compress.*;version="${project.version}"
                         </Export-Package>
-                        <Import-Package>
-                            !org.apache.xmlbeans.*,
-                            javax.xml.stream.*; version="1.0.1",
-                            *;resolution:=optional
-                        </Import-Package>
                         <Private-Package>
-                            org.apache.xmlbeans.*
                         </Private-Package>
+                        <Import-Package>
+                            !org.apache.commons.compress.*
+                        </Import-Package>
                         <Include-Resource>
-                            @xmlbeans-5.1.1.jar!/schemaorg_apache_xmlbeans/**,
-                            @xmlbeans-5.1.1.jar!/repackage/**,
+                            {maven-resources}
                         </Include-Resource>
-                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <properties>
+        <commons-compress.version>1.25.0</commons-compress.version>
+    </properties>
 </project>

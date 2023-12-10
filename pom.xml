@@ -39,6 +39,10 @@
     </distributionManagement>
 
     <modules>
+        <module>azure-core/1.43.0.wso2v1</module>
+        <module>azure-core-amqp/2.8.9.wso2v1</module>
+        <module>azure-messaging-eventhubs/5.16.0.wso2v1</module>
+        <module>reactor-core/3.4.31.wso2v1</module>
         <module>httpcore/4.3.0-wso2v1</module>
         <module>httpcore/4.4.15-wso2v1</module>
         <module>poi-ooxml/3.9.0.wso2v2</module>
@@ -167,11 +171,13 @@
         <module>solr/8.11.1.wso2v7</module>
         <module>solr/8.11.1.wso2v8</module>
         <module>solr/8.11.1.wso2v9</module>
+        <module>solr/8.11.1.wso2v10</module>
         <module>webauthn4j/0.21.0.wso2v1</module>
         <module>libthrift/0.16.0.wso2v1</module>
         <module>commons-net/3.9.0.wso2v1</module>
         <module>httpcore5/5.2.1.wso2v1</module>
         <module>httpclient5/5.2.1.wso2v1</module>
+        <module>guava/32.1.3.wso2v1</module>
         <module>twilio/9.14.0.wso2v1</module>
         <module>vonage/7.10.0.wso2v1</module>
     </modules>
