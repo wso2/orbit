@@ -1114,7 +1114,7 @@
         <esapi.version>2.5.3.1</esapi.version>
 
         <!--OpenSAML3 Orbit Version-->
-        <opensaml.orbit.version>3.3.1.wso2v10</opensaml.orbit.version>
+        <opensaml.orbit.version>3.3.1.wso2v11</opensaml.orbit.version>
 
         <javax.crypto.version>[0.0.0,1.0.0)</javax.crypto.version>
         <javax.net.version>[0.0.0,1.0.0)</javax.net.version>
