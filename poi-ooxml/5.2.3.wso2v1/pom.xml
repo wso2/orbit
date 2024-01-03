@@ -49,13 +49,21 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>${version.poi-ooxml}</version>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml-schemas</artifactId>
-            <version>${version.poi-ooxml-schemas}</version>
-            <optional>true</optional>
+            <artifactId>poi-ooxml-full</artifactId>
+            <version>${version.poi-ooxml}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>${version.commons-compress}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xmlbeans</groupId>
+            <artifactId>xmlbeans</artifactId>
+            <version>${version.xmlbeans}</version>
         </dependency>
     </dependencies>
 
@@ -72,36 +80,21 @@
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Fragment-Host>poi</Fragment-Host>
                         <Export-Package>
-                            !org.apache.commons.codec.*,
                             org.apache.poi.*;version="${project.version}";-split-package:=merge-last,
-                            org.openxmlformats.schemas.*;version="${project.version}",
-                            schemaorg_apache_xmlbeans.*;version="${project.version}",
-                            schemasMicrosoftComOfficeExcel.*;version="${project.version}",
-                            schemasMicrosoftComOfficeOffice.*;version="${project.version}",
-                            schemasMicrosoftComVml.*;version="${project.version}"
                         </Export-Package>
                         <Import-Package>
-                            !javax.crypto.*,
-                            !javax.imageio.*,
-                            !javax.swing.*,
-                            !javax.xml.*,
-                            !junit.*,
-                            !org.apache.commons.*,
-                            !org.apache.poi.*,
                             !org.apache.xmlbeans.*,
-                            !org.dom4j.*,
-                            !org.openxmlformats.schemas.*,
-                            !org.w3c.dom.*,
-                            !org.xml.sax.*,
-                            !schemaorg_apache_xmlbeans.*,
-                            !schemasMicrosoftComOfficeExcel.*,
-                            !schemasMicrosoftComOfficeOffice.*,
-                            !schemasMicrosoftComOfficePowerpoint.*,
-                            !schemasMicrosoftComOfficeWord.*,
-                            !schemasMicrosoftComVml.*,
+                            org.apache.commons.collections4.*,
                         </Import-Package>
                         <Private-Package>
+                            org.apache.commons.compress.*,
+                            org.apache.xmlbeans.*;version="${version.xmlbeans}",
+                            org.openxmlformats.*,
                         </Private-Package>
+                        <Include-Resource>
+                            {maven-resources},
+                            @poi-ooxml-${version.poi-ooxml}.jar!/META-INF/services/**,
+                        </Include-Resource>
                     </instructions>
                 </configuration>
             </plugin>
@@ -110,6 +103,7 @@
 
     <properties>
         <version.poi-ooxml>5.2.3</version.poi-ooxml>
-        <version.poi-ooxml-schemas>4.1.2</version.poi-ooxml-schemas>
+        <version.commons-compress>1.22</version.commons-compress>
+        <version.xmlbeans>5.1.1</version.xmlbeans>
     </properties>
 </project>
