@@ -40,7 +40,7 @@
         <dependency>
             <groupId>org.apache.directory.server</groupId>
             <artifactId>apacheds-protocol-kerberos</artifactId>
-            <version>${apacheds.core.version}</version>
+            <version>${apacheds.protocol.kerberos.version}</version>
             <optional>false</optional>
         </dependency>
         <dependency>
@@ -440,6 +440,7 @@
     <properties>
         <exp.pkg.version.apacheds>2.0.0.AM27.wso2v1</exp.pkg.version.apacheds>
         <apacheds.core.version>2.0.0.AM27</apacheds.core.version>
+        <apacheds.protocol.kerberos.version>2.0.0.AM26</apacheds.protocol.kerberos.version>
         <apacheds.api.version>2.0.0</apacheds.api.version>
 	<apacheds.jdbm.version>2.0.0-M1</apacheds.jdbm.version>
 	<caffeine.version>2.9.2</caffeine.version>
