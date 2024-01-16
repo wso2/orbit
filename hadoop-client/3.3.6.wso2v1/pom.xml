@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Copyright (c) 2023, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+  ~ Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
   ~
   ~ WSO2 Inc. licenses this file to you under the Apache License,
   ~ Version 2.0 (the "License"); you may not use this file except
@@ -206,7 +206,7 @@
     </build>
     <properties>
         <hadoop.version>3.3.6</hadoop.version>
-        <commons-io.version>2.10</commons-io.version>
+        <commons-io.version>2.10.0</commons-io.version>
         <servlet-api.import.version>[2.5, 3.0)</servlet-api.import.version>
         <servlet-jsp.import.version>[2.2.1, 2.3.0)</servlet-jsp.import.version>
         <slf4j.import.version>[1.6.0, 3.0.0)</slf4j.import.version>
