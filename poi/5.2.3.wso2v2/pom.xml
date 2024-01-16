@@ -1,5 +1,5 @@
 <!--
- ~ Copyright (c) 2023, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ WSO2 Inc. licenses this file to you under the Apache License,
  ~ Version 2.0 (the "License"); you may not use this file except
@@ -24,7 +24,7 @@
     <artifactId>poi</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - POI</name>
-    <version>5.2.3.wso2v1</version>
+    <version>5.2.3.wso2v2</version>
     <description>
         This bundle will export packages from apache poi
     </description>
@@ -49,15 +49,17 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
-                            !org.apache.commons.codec.*,
-                            org.apache.poi.*;version="${project.version}"
+                            org.apache.poi.*;version="${project.version}",
                         </Export-Package>
                         <Import-Package>
-                            *;resolution:=optional
+                            org.apache.commons.io.*,
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
+                        <Include-Resource>
+                            {maven-resources},
+                            @poi-${version.poi}.jar!/META-INF/services/**,
+                        </Include-Resource>
                     </instructions>
                 </configuration>
             </plugin>
@@ -81,5 +83,4 @@
             <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-
 </project>
