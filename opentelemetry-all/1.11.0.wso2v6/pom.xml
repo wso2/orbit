@@ -185,7 +185,7 @@
     </build>
 
     <properties>
-        <opentelemetry-all.orbit.version>1.11.0.wso2v5</opentelemetry-all.orbit.version>
+        <opentelemetry-all.orbit.version>1.11.0.wso2v6</opentelemetry-all.orbit.version>
         <opentelemetry.api.version>1.11.0</opentelemetry.api.version>
         <opentelemetry.sdk.version>1.11.0</opentelemetry.sdk.version>
         <opentelemetry.context.version>1.11.0</opentelemetry.context.version>
