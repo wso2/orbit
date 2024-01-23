@@ -52,6 +52,12 @@
             <artifactId>uap-java</artifactId>
             <version>${ua-parser.version}</version>
             <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.yaml</groupId>
+                    <artifactId>snakeyaml</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
@@ -70,11 +76,10 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Export-Package>
                             ua_parser.*;version="${project.version}",
-                            org.yaml.snakeyaml.*;version="${snake-yaml.version}"
                         </Export-Package>
                         <Import-Package>
-                            org.apache.commons.collections4.map;version="[4.0.0,4.5.0)"
-                            org.yaml.snakeyaml;version="[2.0,3.0)"
+                            org.apache.commons.collections4.map;version="${commons-collection.version.range}",
+                            org.yaml.snakeyaml.*;version="${snake-yaml.version.range}"
                         </Import-Package>
                     </instructions>
                 </configuration>
@@ -84,7 +89,8 @@
 
     <properties>
         <ua-parser.version>1.6.1</ua-parser.version>
-        <snake-yaml.version>2.2</snake-yaml.version>
+        <snake-yaml.version.range>[2.0,3.0)</snake-yaml.version.range>
+        <commons-collection.version.range>[4.4.0,5.0.0)</commons-collection.version.range>
     </properties>
 
 </project>
