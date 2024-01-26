@@ -68,10 +68,6 @@
                             org.slf4j.*;version="[2.0.0,3)",
                             *;resolution:=optional
                         </Import-Package>
-                        <Embed-Dependency>
-                            json-smart;scope=compile|runtime;inline=false,
-                            asm;scope=compile|runtime;inline=false,
-                        </Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
