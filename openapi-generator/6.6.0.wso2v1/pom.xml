@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- ~ Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~ Copyright (c) 2023, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
  ~
  ~ WSO2 LLC. licenses this file to you under the Apache License,
  ~ Version 2.0 (the "License"); you may not use this file except
@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.openapitools</groupId>
     <artifactId>openapi-generator</artifactId>
-    <version>7.2.0.wso2v1</version>
+    <version>6.6.0.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - openapi-generator (org.openapitools)</name>
     <description>
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>org.openapitools</groupId>
             <artifactId>openapi-generator</artifactId>
-            <version>7.2.0</version>
+            <version>6.6.0</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -78,7 +78,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.3.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -221,7 +221,7 @@
                         </Private-Package>
                         <Include-Resource>
                             {maven-resources},
-                            @openapi-generator-${import.pkg.version.swagger-codegen}.jar!/META-INF/services/*
+                            @openapi-generator-6.6.0.jar!/META-INF/services/*
                         </Include-Resource>
                         <_exportcontents>
                             com.github.jknack.handlebars,
@@ -242,7 +242,6 @@
                             commonmark;scope=compile|runtime;inline=false
                         </Embed-Dependency>
                         <DynamicImport-Package>*</DynamicImport-Package>
-                        <_noee>true</_noee>
                     </instructions>
                 </configuration>
             </plugin>
@@ -250,15 +249,15 @@
     </build>
 
     <properties>
-        <export.pkg.version.swagger-codegen>7.2.0.wso2v1</export.pkg.version.swagger-codegen>
-        <import.pkg.version.swagger-codegen>7.2.0</import.pkg.version.swagger-codegen>
-        <jmustache-version>1.15</jmustache-version>
-        <handlebars.java-version>4.3.1</handlebars.java-version>
+        <export.pkg.version.swagger-codegen>4.3.1.wso2v7</export.pkg.version.swagger-codegen>
+        <import.pkg.version.swagger-codegen>6.6.0</import.pkg.version.swagger-codegen>
+        <jmustache-version>1.14</jmustache-version>
+        <handlebars.java-version>4.1.2</handlebars.java-version>
         <slf4j.api.version>1.7.36</slf4j.api.version>
         <commons-io-version>2.11.0</commons-io-version>
-        <jackson.version.range>[2.16.0,3.0.0)</jackson.version.range>
-        <google.version.range>[31.0.0,50.0.0)</google.version.range>
-        <slf4j.version.range>[1.7.0,3.0.0)</slf4j.version.range>
+        <jackson.version.range>[2.7.0,3.0.0)</jackson.version.range>
+        <google.version.range>[31.0.0,33.0.0)</google.version.range>
+        <slf4j.version.range>[1.7.0,1.8.0)</slf4j.version.range>
         <import.openapitools.parser.version.range>[2.0, 3.0)</import.openapitools.parser.version.range>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
