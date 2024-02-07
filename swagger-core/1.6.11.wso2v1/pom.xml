@@ -20,7 +20,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.io.swagger.core</groupId>
     <artifactId>swagger-core</artifactId>
-    <version>1.6.9.wso2v4</version>
+    <version>1.6.11.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - swagger-core (io.swagger)</name>
     <description>
@@ -76,8 +76,8 @@
     </build>
 
     <properties>
-        <swagger.version>1.6.9</swagger.version>
-        <google.guava.version.range>[32.0.0,34.0.0)</google.guava.version.range>
+        <swagger.version>1.6.11</swagger.version>
+        <google.guava.version.range>[32.0.0,40.0.0)</google.guava.version.range>
         <fasterxml.jackson.version>2.16.1</fasterxml.jackson.version>
     </properties>
 </project>
