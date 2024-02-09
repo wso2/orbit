@@ -103,7 +103,7 @@
 
     <properties>
         <opencensus.version>0.31.1</opencensus.version>
-        <google.guava.orbit.imp.pkg.version>[32.0,34)</google.guava.orbit.imp.pkg.version>
+        <google.guava.orbit.imp.pkg.version>[33.0,35)</google.guava.orbit.imp.pkg.version>
         <io.grpc.orbit.imp.pkg.version>[1.59.0,2)</io.grpc.orbit.imp.pkg.version>
     </properties>
 </project>
