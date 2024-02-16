@@ -1,25 +1,25 @@
 <!--
-  ~ Copyright (c) 2022, WSO2 Inc. (http://www.wso2.com).
+  ~ Copyright (c) 2020, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
   ~
-  ~ WSO2 Inc. licenses this file to you under the Apache License,
-  ~ Version 2.0 (the "License"); you may not use this file except
-  ~ in compliance with the License.
-  ~ You may obtain a copy of the License at
+  ~  WSO2 Inc. licenses this file to you under the Apache License,
+  ~  Version 2.0 (the "License"); you may not use this file except
+  ~  in compliance with the License.
+  ~  You may obtain a copy of the License at
   ~
-  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~      http://www.apache.org/licenses/LICENSE-2.0
   ~
-  ~ Unless required by applicable law or agreed to in writing,
-  ~ software distributed under the License is distributed on an
-  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-  ~ KIND, either express or implied.  See the License for the
-  ~ specific language governing permissions and limitations
-  ~ under the License.
+  ~  Unless required by applicable law or agreed to in writing,
+  ~  software distributed under the License is distributed on an
+  ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~  KIND, either express or implied.  See the License for the
+  ~  specific language governing permissions and limitations
+  ~  under the License.
   -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+    
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.opensaml</groupId>
     <artifactId>opensaml</artifactId>
@@ -215,11 +215,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>ch.qos.reload4j</groupId>
-            <artifactId>reload4j</artifactId>
-            <version>1.2.20</version>
-        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -286,6 +281,7 @@
                             org.apache.commons.fileupload.*;version="${org.apache.commons.fileupload.version}";resolution:=optional,
                             org.apache.commons.collections.iterators;version="${org.apache.commons.collections.iterators.version}";
                             resolution:=optional,
+                            org.apache.log4j.*;version="${apache.log4j.version}";resolution:=optional,
                             org.apache.xml.security.*;version="${org.apache.xml.security.version}";resolution:=optional,
                             org.apache.velocity.*;version="${org.apache.velocity.version}";resolution:=optional,
                             org.joda.time.*;version="${joda-time.orbit.version.range}",
@@ -302,10 +298,7 @@
                             org.owasp.esapi;resolution:=optional,
                             org.owasp.validator.html;version="${org.owasp.validator.html.version}";resolution:=optional,
                         </Import-Package>
-                        <Embed-Dependency>
-                            esapi;scope=compile|runtime;inline=false,
-                            reload4j;scope=compile|runtime;inline=false,
-                        </Embed-Dependency>
+                        <Embed-Dependency>esapi;scope=compile|runtime;inline=false</Embed-Dependency>
                         <Include-Resource>
                             @opensaml-${opensaml.version}.jar!/**.xml,
                             @opensaml-${opensaml.version}.jar!/templates/**.vm,
@@ -341,7 +334,7 @@
         <net.jcip.annotations.version>[0.0,1.0)</net.jcip.annotations.version>
         <org.apache.commons.httpclient.version>[3.1.0,3.2.0)</org.apache.commons.httpclient.version>
         <org.apache.commons.ssl.version>[3.1.0,3.2.0)</org.apache.commons.ssl.version>
-        <org.apache.xml.security.version>[2.1.7, 2.4.0)</org.apache.xml.security.version>
+        <org.apache.xml.security.version>[1.4.2,1.6.0)</org.apache.xml.security.version>
         <org.bouncycastle.version>[1.60.0,2.00.0)</org.bouncycastle.version>
         <org.joda.convert.version>[2.2,2.3)</org.joda.convert.version>
         <org.slf4j.version>[1.6.0,1.8.0)</org.slf4j.version>
@@ -349,6 +342,7 @@
         <org.xml.sax.version>[0.0.0,1.0.0)</org.xml.sax.version>
         <axiom.osgi.version.range>[1.2.11, 2.0.0)</axiom.osgi.version.range>
         <org.apache.velocity.version>[2.4.1,3.0.0)</org.apache.velocity.version>
+        <apache.log4j.version>[1.2.17,2)</apache.log4j.version>
         <org.apache.commons.codec.binary.version>[1.4.0,2.0.0)</org.apache.commons.codec.binary.version>
         <org.apache.commons.collections.iterators.version>[3.2.2,4.0.0)</org.apache.commons.collections.iterators.version>
         <org.apache.commons.beanutils.version>[1.8.0,2.0.0)</org.apache.commons.beanutils.version>
