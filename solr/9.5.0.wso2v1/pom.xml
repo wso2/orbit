@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ ~ Copyright (c) 2024, WSO2 LLC. (http://www.wso2.com)
+ ~
+ ~ WSO2 LLC. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>bundle</packaging>
+    <groupId>org.wso2.orbit.org.apache.solr</groupId>
+    <artifactId>solr</artifactId>
+    <version>${orbit.version.solr}</version>
+    <name>solr.wso2</name>
+    <description>
+        This bundle will represent solr and lucene jars
+    </description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-core</artifactId>
+            <version>${version.solr}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-httpclient</groupId>
+                    <artifactId>commons-httpclient</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-codec</groupId>
+                    <artifactId>commons-codec</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-fileupload</groupId>
+                    <artifactId>commons-fileupload</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.geronimo.specs</groupId>
+                    <artifactId>geronimo-stax-api_1.0_spec</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>woodstox</groupId>
+                    <artifactId>wstx-asl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.hadoop</groupId>
+                    <artifactId>hadoop-common</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>${version.solr}</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-httpclient</groupId>
+                    <artifactId>commons-httpclient</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-codec</groupId>
+                    <artifactId>commons-codec</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.woodstox</groupId>
+                    <artifactId>wstx-asl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>commons-fileupload</groupId>
+                    <artifactId>commons-fileupload</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.geronimo.specs</groupId>
+                    <artifactId>geronimo-stax-api_1.0_spec</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-scripting</artifactId>
+            <version>${version.solr}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.rrd4j</groupId>
+            <artifactId>rrd4j</artifactId>
+            <version>${rrd4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-client</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-http</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-util</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-io</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty.http2</groupId>
+            <artifactId>http2-client</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty.http2</groupId>
+            <artifactId>http2-http-client-transport</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty.http2</groupId>
+            <artifactId>http2-common</artifactId>
+            <version>${jetty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.calcite</groupId>
+            <artifactId>calcite-core</artifactId>
+            <version>${calcite.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.calcite</groupId>
+            <artifactId>calcite-linq4j</artifactId>
+            <version>${calcite.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.calcite.avatica</groupId>
+            <artifactId>avatica-core</artifactId>
+            <version>${version.avatica.core}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.orbit.org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons.collection.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>${caffeine.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>${version.zookeeper}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-core</artifactId>
+            <version>${version.metrics}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>${version.hadoop}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-common</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.hk2</groupId>
+            <artifactId>hk2-api</artifactId>
+            <version>${hk2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.hk2</groupId>
+            <artifactId>hk2-utils</artifactId>
+            <version>${hk2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.hk2</groupId>
+            <artifactId>hk2-locator</artifactId>
+            <version>${hk2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <version>${jakarta.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.inject</groupId>
+            <artifactId>jakarta.inject-api</artifactId>
+            <version>${jakarta.inject-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>${jakarta.annotation-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <version>${jakarta.validation-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-join</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-misc</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-codecs</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-memory</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queries</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-suggest</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-grouping</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-expressions</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-highlighter</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-queryparser</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-backward-codecs</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analysis-common</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analysis-phonetic</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-facet</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-spatial3d</artifactId>
+            <version>${version.lucene}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-spatial-extras</artifactId>
+            <version>${version.lucene}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.locationtech.spatial4j</groupId>
+            <artifactId>spatial4j</artifactId>
+            <version>${version.locationtech.spatial4j}</version>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <version>${maven.bundle.plugin.version}</version>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            org.apache.solr.*;version="${version.solr}",
+                            org.apache.lucene.*; version="${version.lucene}"; -split-package:=merge-first,
+                            org.tartarus.snowball.*; version="${project.version}",
+                            org.locationtech.spatial4j.*; version="${version.locationtech.spatial4j}",
+                        </Export-Package>
+                        <Import-Package>
+                            !org.apache.solr.*,
+                            !org.eclipse.jetty.*,
+                            !org.apache.lucene.*,
+                            !org.tartarus.snowball.*,
+                            !org.locationtech.spatial4j.*,
+                            org.xml.sax.helpers; version="${sax.import.version}",
+                            org.xml.sax; version="${sax.import.version}",
+                            org.w3c.dom; version="${w3c.dom.import.version}",
+                            javax.xml.transform.stream; version="${javax.xml.import.version}",
+                            javax.xml.transform.dom; version="${javax.xml.import.version}",
+                            javax.xml.transform; version="${javax.xml.import.version}",
+                            javax.xml.parsers; version="${javax.xml.import.version}",
+                            com.spatial4j.core.context; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.distance; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.exception; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.io; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.shape; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            com.spatial4j.core.shape.impl; version="${spatial4j.import.version.range}"; resolution:=optional,
+                            org.antlr.runtime; version="${antlr.import.version}"; resolution:=optional,
+                            org.antlr.runtime.tree; version="${antlr.import.version}"; resolution:=optional,
+                            org.apache.commons.io.*;version="${version.commons.io}",
+                            org.apache.commons.codec; version="${commons.codec.import.version.range}"; resolution:=optional,
+                            org.apache.commons.codec.language; version="${commons.codec.import.version.range}"; resolution:=optional,
+                            org.apache.commons.codec.language.bm; version="${commons.codec.import.version.range}"; resolution:=optional,
+                            org.apache.regexp; version="${regexp.import.version}"; resolution:=optional,
+                            org.objectweb.asm; version="${objectweb.import.version.range}"; resolution:=optional,
+                            org.objectweb.asm.commons; version="${objectweb.import.version.range}"; resolution:=optional,
+                            org.noggit.*;version="${version.noggit}",
+                            org.restlet.*;version="${version.restlet}",
+                        </Import-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Embed-Dependency>
+                            solr-solrj;scope=compile|runtime;inline=true,
+                            rrd4j;scope=compile|runtime;inline=false,
+                            jetty-util;scope=compile|runtime;inline=false,
+                            jetty-io;scope=compile|runtime;inline=false,
+                            jetty-http;scope=compile|runtime;inline=false,
+                            jetty-client;scope=compile|runtime;inline=false,
+                            http2-http-client-transport;scope=compile|runtime;inline=false,
+                            http2-common;scope=compile|runtime;inline=false,
+                            http2-client;scope=compile|runtime;inline=false,
+                            calcite-linq4j;scope=compile|runtime;inline=false,
+                            calcite-core;scope=compile|runtime;inline=false,
+                            avatica-core;scope=compile|runtime;inline=false,
+                            commons-collections4;scope=compile|runtime;inline=false,
+                            caffeine;scope=compile|runtime;inline=false,
+                            zookeeper;scope=compile|runtime;inline=false,
+                            metrics-core;scope=compile|runtime;inline=false,
+                            jakarta.ws.rs-api;scope=compile|runtime;inline=false,
+                            jersey-server;scope=compile|runtime;inline=false,
+                            jersey-common;scope=compile|runtime;inline=false,
+                            jersey-client;scope=compile|runtime;inline=false,
+                            jakarta.inject-api;scope=compile|runtime;inline=false,
+                            jakarta.annotation-api;scope=compile|runtime;inline=false,
+                            jakarta.validation-api;scope=compile|runtime;inline=false,
+                            jersey-media-json-jackson;scope=compile|runtime;inline=false,
+                            jersey-hk2;scope=compile|runtime;inline=false,
+                            hk2-api;scope=compile|runtime;inline=false,
+                            hk2-utils;scope=compile|runtime;inline=false,
+                            hk2-locator;scope=compile|runtime;inline=false,
+                            spatial4j;scope=compile|runtime;inline=false,
+                        </Embed-Dependency>
+                        <Include-Resource>@solr-core-${version.solr}.jar!/*</Include-Resource>
+                        <!--Dynamic imports enabled here because solr uses dynamic class loading to import lucene -->
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <shadedGroupFilter>org.apache.lucene</shadedGroupFilter>
+                            <createSourcesJar>false</createSourcesJar>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <promoteTransitiveDependencies>false</promoteTransitiveDependencies>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheNoticeResourceTransformer">
+                                    <projectName>Apache Lucene</projectName>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <version.solr>9.5.0</version.solr>
+        <orbit.version.solr>${version.solr}.wso2v1</orbit.version.solr>
+        <version.noggit>[0.6,0.7)</version.noggit>
+        <version.commons.io>[2.4.0,2.12.0)</version.commons.io>
+        <version.zookeeper>3.9.1</version.zookeeper>
+        <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
+        <version.restlet>[2.3.0,2.4.0)</version.restlet>
+        <maven.bundle.plugin.version>5.1.9</maven.bundle.plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <http.version>[4.3.0,4.4.0)</http.version>
+        <jetty.version>10.0.20</jetty.version>
+        <rrd4j.version>3.8.1</rrd4j.version>
+        <calcite.version>1.32.0</calcite.version>
+        <version.avatica.core>1.22.0</version.avatica.core>
+        <version.locationtech.spatial4j>0.8</version.locationtech.spatial4j>
+        <commons.collection.version>4.4.wso2v1</commons.collection.version>
+        <caffeine.version>3.1.8</caffeine.version>
+        <version.hadoop>3.2.4</version.hadoop>
+        <version.metrics>4.2.9</version.metrics>
+
+        <jakarta.version>3.1.0</jakarta.version>
+        <jersey.version>3.1.5</jersey.version>
+        <hk2.version>3.0.6</hk2.version>
+        <jakarta.inject-api.version>2.0.1</jakarta.inject-api.version>
+        <jakarta.annotation-api.version>2.1.1</jakarta.annotation-api.version>
+        <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
+
+        <version.lucene>9.9.2</version.lucene>
+        <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
+        <sax.import.version>0.0.0</sax.import.version>
+        <w3c.dom.import.version>0.0.0</w3c.dom.import.version>
+        <javax.xml.import.version>0.0.0</javax.xml.import.version>
+        <spatial4j.import.version.range>[0.4.0,1.0.0)</spatial4j.import.version.range>
+        <antlr.import.version>0.0.0</antlr.import.version>
+        <commons.codec.import.version.range>[1.10.0,2.0.0)</commons.codec.import.version.range>
+        <regexp.import.version>0.0.0</regexp.import.version>
+        <objectweb.import.version.range>[4.1.0,5.0.0)</objectweb.import.version.range>
+        <version.locationtech.spatial4j>0.8</version.locationtech.spatial4j>
+
+    </properties>
+</project>
