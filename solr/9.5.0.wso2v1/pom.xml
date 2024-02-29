@@ -496,7 +496,7 @@
         <maven.bundle.plugin.version>5.1.9</maven.bundle.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <http.version>[4.3.0,4.4.0)</http.version>
-        <jetty.version>10.0.19</jetty.version>
+        <jetty.version>10.0.20</jetty.version>
         <rrd4j.version>3.8.1</rrd4j.version>
         <calcite.version>1.32.0</calcite.version>
         <version.avatica.core>1.22.0</version.avatica.core>
