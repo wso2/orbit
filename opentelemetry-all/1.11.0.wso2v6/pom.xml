@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~  WSO2 LLC. licenses this file to you under the Apache License,
+  ~  Version 2.0 (the "License"); you may not use this file except
+  ~  in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.io.opentelemetry</groupId>
+    <artifactId>opentelemetry-all</artifactId>
+    <version>${opentelemetry-all.orbit.version}</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - OpenTelemetry All</name>
+    <description>
+        This bundle represents OpenTelemetry All.
+    </description>
+    <url>http://wso2.org</url>
+
+    <dependencies>
+        <!-- OpenTelemetry Dependencies -->
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-api</artifactId>
+            <version>${opentelemetry.api.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-sdk</artifactId>
+            <version>${opentelemetry.sdk.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-sdk-trace</artifactId>
+            <version>${opentelemetry.sdk.trace.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-sdk-metrics</artifactId>
+            <version>${opentelemetry.sdk.metrics.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-sdk-logs</artifactId>
+            <version>${opentelemetry.sdk.logs.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-sdk-common</artifactId>
+            <version>${opentelemetry.sdk.common.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-context</artifactId>
+            <version>${opentelemetry.context.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-semconv</artifactId>
+            <version>${opentelemetry.semconv.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-extension-trace-propagators</artifactId>
+            <version>${opentelemetry.extension.trace.propagators.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-exporter-otlp-common</artifactId>
+            <version>${opentelemetry.exporter.otlp.common.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-exporter-jaeger</artifactId>
+            <version>${opentelemetry.exporter.jaeger.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-exporter-zipkin</artifactId>
+            <version>${opentelemetry.exporter.zipkin.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-exporter-otlp-trace</artifactId>
+            <version>${opentelemetry.exporter.otlp.trace.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>${felix.bundle.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <_fixupmessages>"Classes found in the wrong directory";is:=warning</_fixupmessages>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            io.opentelemetry.api.*; version="${opentelemetry-all.orbit.version}",
+                            io.opentelemetry.sdk.trace.*; version="${opentelemetry-all.orbit.version}",
+                            io.opentelemetry.sdk.metrics.*; version="${opentelemetry-all.orbit.version}",
+                            io.opentelemetry.sdk.logs.*; version="${opentelemetry-all.orbit.version}",
+                            io.opentelemetry.sdk.common.*; version="${opentelemetry-all.orbit.version}",
+                            io.opentelemetry.sdk.*; version="${opentelemetry-all.orbit.version}",
+                            io.opentelemetry.context.*; version="${opentelemetry-all.orbit.version}",
+                            io.opentelemetry.exporter.otlp.*; version="${opentelemetry-all.orbit.version}",
+                            io.opentelemetry.exporter.jaeger.*; version="${opentelemetry-all.orbit.version}",
+                            io.opentelemetry.extension.trace.propagation.*; version="${opentelemetry-all.orbit.version}",
+                            io.opentelemetry.semconv.*; version="${opentelemetry-all.orbit.version}",
+                            io.opentelemetry.exporter.zipkin.*; version="${opentelemetry-all.orbit.version}"
+                        </Export-Package>
+                        <Import-Package>
+                            com.google.common.util.concurrent; version="${com.google.common.util.concurrent.version.range}",
+                            javax.annotation; version="${javax.annotation.version.range}",
+                            com.fasterxml.jackson.core; version="${com.fasterxml.jackson.core.version.range}",
+                            com.google.common.io; version="${com.google.common.io.version.range}",
+                            io.netty.handler.ssl; version="${io.netty.handler.ss.version.range}",
+                            javax.net.ssl; version="${javax.net.ssl.version.range}",
+                            okhttp3; version="${okhttp3.version.range}",
+                            okio; version="${okio.version.range}",
+                            *;resolution:=optional
+                        </Import-Package>
+                        <Embed-Dependency>*;scope=compile|runtime;inline=true;</Embed-Dependency>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <opentelemetry-all.orbit.version>1.11.0.wso2v6</opentelemetry-all.orbit.version>
+        <opentelemetry.api.version>1.11.0</opentelemetry.api.version>
+        <opentelemetry.sdk.version>1.11.0</opentelemetry.sdk.version>
+        <opentelemetry.context.version>1.11.0</opentelemetry.context.version>
+        <opentelemetry.sdk.common.version>1.11.0</opentelemetry.sdk.common.version>
+        <opentelemetry.sdk.trace.version>1.11.0</opentelemetry.sdk.trace.version>
+        <opentelemetry.sdk.metrics.version>1.11.0-alpha</opentelemetry.sdk.metrics.version>
+        <opentelemetry.sdk.logs.version>1.11.0-alpha</opentelemetry.sdk.logs.version>
+        <opentelemetry.exporter.otlp.common.version>1.11.0</opentelemetry.exporter.otlp.common.version>
+        <opentelemetry.exporter.jaeger.version>1.11.0</opentelemetry.exporter.jaeger.version>
+        <opentelemetry.extension.trace.propagators.version>1.10.1</opentelemetry.extension.trace.propagators.version>
+        <opentelemetry.semconv.version>1.11.0-alpha</opentelemetry.semconv.version>
+        <opentelemetry.exporter.zipkin.version>1.11.0</opentelemetry.exporter.zipkin.version>
+        <opentelemetry.exporter.otlp.trace.version>1.11.0</opentelemetry.exporter.otlp.trace.version>
+        <felix.bundle.plugin.version>3.3.0</felix.bundle.plugin.version>
+
+        <!-- Import Versions -->
+        <com.google.common.util.concurrent.version.range>[31.0.0, 50.0.0)</com.google.common.util.concurrent.version.range>
+        <com.google.common.io.version.range>[31.0.0, 50.0.0)</com.google.common.io.version.range>
+        <com.fasterxml.jackson.core.version.range>[2.13.0, 3.0.0)</com.fasterxml.jackson.core.version.range>
+        <io.netty.handler.ss.version.range>[4.1.0, 4.2.0)</io.netty.handler.ss.version.range>
+        <javax.annotation.version.range>[0.0.0, 2.0.0)</javax.annotation.version.range>
+        <javax.net.ssl.version.range>[0.0.0, 1.0.0)</javax.net.ssl.version.range>
+        <zipkin.reporter.range>[2.16.0, 2.17.0)</zipkin.reporter.range>
+        <okhttp3.version.range>[4.2.0, 5.0.0)</okhttp3.version.range>
+        <okio.version.range>[2.4.0, 4)</okio.version.range>
+    </properties>
+</project>
