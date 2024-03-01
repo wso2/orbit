@@ -47,6 +47,13 @@
             <artifactId>zipkin-sender-okhttp3</artifactId>
             <version>${zipkin-reporter.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.zipkin.reporter2/zipkin-reporter -->
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-reporter</artifactId>
+            <version>${zipkin-reporter.version}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
@@ -60,6 +67,8 @@
                         <Bundle-Vendor>WSO2, Inc.</Bundle-Vendor>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Private-Package>
+                        </Private-Package>
                         <Export-Package>
                             zipkin2.reporter.okhttp3;uses:="okhttp3,zipkin2.reporter
                             ,zipkin2.reporter.internal";version="${zipkin-reporter.version}",
