@@ -188,6 +188,7 @@
         <module>vonage/7.10.0.wso2v1</module>
         <module>google-errorprone/2.4.0.wso2v1</module>
         <module>nimbus/9.37.3.wso2v1</module>
+        <module>jms-api/2.0.1.wso2v1</module>
     </modules>
 
     <build>
