@@ -169,6 +169,7 @@
         <module>spring-framework/5.3.25.wso2v1</module>
         <module>spring-framework/5.3.25.wso2v2</module>
         <module>spring-framework/5.3.27.wso2v1</module>
+        <module>spring-framework/5.3.32.wso2v1</module>
         <module>solr/8.11.1.wso2v3</module>
         <module>solr/8.11.1.wso2v4</module>
         <module>solr/8.11.1.wso2v5</module>
