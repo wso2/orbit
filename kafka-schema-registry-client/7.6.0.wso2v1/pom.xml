@@ -101,6 +101,7 @@
                             io.confluent.kafka.schemaregistry.client.security.basicauth;version="${export.pkg.version.kafka-schema-registry-client}",
                             io.confluent.kafka.schemaregistry.client.security;version="${export.pkg.version.kafka-schema-registry-client}",
                             io.confluent.kafka.schemaregistry.client.security.bearerauth;version="${export.pkg.version.kafka-schema-registry-client}",
+                            io.confluent.kafka.schemaregistry.rules;version="${export.pkg.version.kafka-schema-registry-client}",
                             io.confluent.kafka.schemaregistry.utils;version="${export.pkg.version.kafka-schema-registry-client}",
                             io.confluent.kafka.schemaregistry.testutil;version="${export.pkg.version.kafka-schema-registry-client}"
                         </Export-Package>
