@@ -27,7 +27,7 @@
     <artifactId>okio</artifactId>
     <version>3.9.0.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>okio.wso2</name>
+    <name>WSO2 Carbon Orbit - Okio</name>
     <description>
         This bundle exports okio
     </description>
