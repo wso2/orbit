@@ -29,8 +29,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
+            <groupId>ch.qos.reload4j</groupId>
+            <artifactId>reload4j</artifactId>
             <version>${version.log4j}</version>
         </dependency>
     </dependencies>
@@ -73,8 +73,7 @@
         </plugins>
     </build>
     <properties>
-        <version.log4j>1.2.17</version.log4j>
-        <orbit.version.log4j>${version.log4j}.wso2v1</orbit.version.log4j>
+        <version.log4j>1.2.19</version.log4j>
+        <orbit.version.log4j>1.2.17.wso2v1</orbit.version.log4j>
     </properties>
 </project>
-
