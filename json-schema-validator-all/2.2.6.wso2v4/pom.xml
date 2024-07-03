@@ -125,7 +125,7 @@
 
         <!--OSGI version range-->
         <com.google.common.imp.pkg.version.range>[19.0.0,20.0.0]</com.google.common.imp.pkg.version.range>
-        <javax.mail.internet.imp.pkg.version.range>[1.4.0,1.5.0)</javax.mail.internet.imp.pkg.version.range>
+        <javax.mail.internet.imp.pkg.version.range>[1.6.0,1.7.0)</javax.mail.internet.imp.pkg.version.range>
         <org.joda.time.imp.pkg.version.range>[2.6.0, 3.0.0)</org.joda.time.imp.pkg.version.range>
         <jackson.databind.imp.pkg.version.range>[2.6.0, 3.0.0)</jackson.databind.imp.pkg.version.range>
         <com.fasterxml.jackson.core.imp.pkg.version.range>[2.6.0, 3.0.0)</com.fasterxml.jackson.core.imp.pkg.version.range>
