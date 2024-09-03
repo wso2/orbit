@@ -61,7 +61,49 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-protobuf</artifactId>
-            <version>${grpc-protobuf.version}</version>
+            <version>${grpc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-api</artifactId>
+            <version>${grpc.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf-lite</artifactId>
+            <version>${grpc.version}</version>
+            <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-javalite</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf.java.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.api.grpc</groupId>
+            <artifactId>proto-google-common-protos</artifactId>
+            <version>${com.google.api.grpc.version}</version>
+            <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.api</groupId>
+                    <artifactId>api-common</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${com.google.guava.version}</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
@@ -77,13 +119,14 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            io.grpc.protobuf; version=${grpc-protobuf.export.version},
+                            io.grpc.protobuf; version=${grpc.export.version},
+                            io.grpc.protobuf.lite; version=${grpc.export.version},
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
-                            io.grpc.protobuf
                         </Import-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
@@ -92,7 +135,10 @@
 
     <properties>
         <maven.bundleplugin.version>2.5.4</maven.bundleplugin.version>
-        <grpc-protobuf.version>1.66.0</grpc-protobuf.version>
-        <grpc-protobuf.export.version>1.66.0.wso2v1</grpc-protobuf.export.version>
+        <grpc.version>1.66.0</grpc.version>
+        <protobuf.java.version>3.25.3</protobuf.java.version>
+        <com.google.api.grpc.version>2.41.0</com.google.api.grpc.version>
+        <com.google.guava.version>33.2.1-android</com.google.guava.version>
+        <grpc.export.version>1.66.0.wso2v1</grpc.export.version>
     </properties>
 </project>

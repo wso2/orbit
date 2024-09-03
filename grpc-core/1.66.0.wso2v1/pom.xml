@@ -22,12 +22,12 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.io.grpc</groupId>
-    <artifactId>grpc-netty-shaded</artifactId>
+    <artifactId>grpc-core</artifactId>
     <version>1.66.0.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>WSO2 Carbon Orbit - GRPC Netty Shaded</name>
+    <name>WSO2 Carbon Orbit - GRPC Core</name>
     <description>
-        This bundle will represent GRPC Netty Shaded 1.66.0
+        This bundle will represent GRPC Core 1.66.0
     </description>
     <url>http://wso2.org</url>
 
@@ -60,37 +60,37 @@
     <dependencies>
         <dependency>
             <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty-shaded</artifactId>
+            <artifactId>grpc-core</artifactId>
             <version>${grpc.version}</version>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-api</artifactId>
             <version>${grpc.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-util</artifactId>
-            <version>${grpc.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-core</artifactId>
-            <version>${grpc.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${com.google.guava.version}</version>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${google.code.gson.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>annotations</artifactId>
+            <version>${com.google.android.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>com.google.errorprone</groupId>
             <artifactId>error_prone_annotations</artifactId>
             <version>${com.google.errorprone.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${com.google.guava.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -113,7 +113,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            io.grpc.netty.shaded.*; version=${grpc.export.version},
+                            io.grpc.internal; version=${grpc.export.version},
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
@@ -129,6 +129,8 @@
     <properties>
         <maven.bundleplugin.version>2.5.4</maven.bundleplugin.version>
         <grpc.version>1.66.0</grpc.version>
+        <google.code.gson.version>2.11.0</google.code.gson.version>
+        <com.google.android.version>4.1.1.4</com.google.android.version>
         <com.google.guava.version>33.2.1-android</com.google.guava.version>
         <com.google.errorprone.version>2.28.0</com.google.errorprone.version>
         <io.perfmark.version>0.27.0</io.perfmark.version>
