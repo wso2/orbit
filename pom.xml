@@ -39,7 +39,7 @@
     </distributionManagement>
 
     <modules>
-        <module>azure-core/1.43.0.wso2v1</module>
+        <!-- <module>azure-core/1.43.0.wso2v1</module>
         <module>azure-core-amqp/2.8.9.wso2v1</module>
         <module>azure-messaging-eventhubs/5.16.0.wso2v1</module>
         <module>reactor-core/3.4.31.wso2v1</module>
@@ -193,7 +193,12 @@
         <module>vonage/7.10.0.wso2v1</module>
         <module>google-errorprone/2.4.0.wso2v1</module>
         <module>nimbus/9.37.3.wso2v1</module>
-        <module>jms-api/2.0.1.wso2v1</module>
+        <module>jms-api/2.0.1.wso2v1</module> -->
+        <module>grpc-api/1.66.0.wso2v1</module>
+        <module>grpc-netty-shaded/1.66.0.wso2v1</module>
+        <module>grpc-protobuf/1.66.0.wso2v1</module>
+        <module>grpc-stub/1.66.0.wso2v1</module>
+        <module>protobuf-java/4.27.4.wso2v1</module>
     </modules>
 
     <build>
