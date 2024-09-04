@@ -16,18 +16,17 @@
   ~ specific language governing permissions and limitations
   ~ under the License.
   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.io.grpc</groupId>
-    <artifactId>grpc-util</artifactId>
+    <artifactId>grpc-all</artifactId>
     <version>1.66.0.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>WSO2 Carbon Orbit - GRPC Utilities</name>
+    <name>WSO2 Carbon Orbit - GRPC All</name>
     <description>
-        This bundle will represent GRPC Util 1.66.0
+        This bundle will represent GRPC All 1.66.0
     </description>
     <url>http://wso2.org</url>
 
@@ -60,25 +59,41 @@
     <dependencies>
         <dependency>
             <groupId>io.grpc</groupId>
-            <artifactId>grpc-util</artifactId>
+            <artifactId>grpc-all</artifactId>
             <version>${grpc.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-api</artifactId>
-            <version>${grpc.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-core</artifactId>
-            <version>${grpc.version}</version>
-            <scope>runtime</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-gcp-csm-observability</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-opentelemetry</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-servlet</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-servlet-jakarta</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-testing</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${com.google.guava.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.perfmark</groupId>
+            <artifactId>perfmark-api</artifactId>
+            <version>${io.perfmark.version}</version>
             <scope>runtime</scope>
         </dependency>
     </dependencies>
@@ -95,13 +110,17 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            io.grpc.util; version=${grpc.export.version},
+                            io.grpc.*; version=${grpc.export.version},
+                            io.perfmark.*; version=${io.perfmark.export.version},
                         </Export-Package>
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
+                        <Include-Resource>
+                            META-INF/services=${basedir}/META-INF/services
+                        </Include-Resource>
                     </instructions>
                 </configuration>
             </plugin>
@@ -111,7 +130,9 @@
     <properties>
         <maven.bundleplugin.version>2.5.4</maven.bundleplugin.version>
         <grpc.version>1.66.0</grpc.version>
-        <com.google.guava.version>33.2.1-android</com.google.guava.version>
+        <com.google.guava.version>33.2.1-jre</com.google.guava.version>
+        <io.perfmark.version>0.25.0</io.perfmark.version>
         <grpc.export.version>1.66.0.wso2v1</grpc.export.version>
+        <io.perfmark.export.version>1.66.0.wso2v1</io.perfmark.export.version>
     </properties>
 </project>
