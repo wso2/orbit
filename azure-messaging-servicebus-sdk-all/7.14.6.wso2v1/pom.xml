@@ -63,9 +63,19 @@
                             com.azure.core.amqp.*;version="${com.azure.core.amqp.version}",
                             com.azure.core.exception.*;version="${com.azure.core.version}",
                             com.azure.core.util.serializer.*;version="${com.azure.core.version}",
-                            com.azure.core.util;version="${com.azure.core.util.version}"
+                            com.azure.core.util;version="${com.azure.core.util.version}",
+                            com.azure.core.http.netty.*;version="${com.azure.core.http.netty.version}",
+                            reactor.netty.*; version="${reactor.netty.version}",
+                            io.netty.resolver.dns.*; version="${io.netty.version}",
+                            io.netty.codec.http2.*; version="${io.netty.version}",
+                            io.netty.handler.codec.http2.*; version="${io.netty.version}",
+                            io.netty.channel.unix.*; version="${io.netty.version}",
                         </Export-Package>
-                        <Import-Package/>
+                        <Import-Package>
+                            !com.azure.messaging.servicebus.*,
+                            *;resolution:=optional
+                        </Import-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                         <Private-Package>
                             com.azure.*,
                             com.fasterxml.*,
@@ -85,5 +95,8 @@
         <com.azure.core.amqp.version>2.8.13</com.azure.core.amqp.version>
         <com.azure.core.version>1.45.0</com.azure.core.version>
         <com.azure.core.util.version>1.45.0</com.azure.core.util.version>
+        <com.azure.core.http.netty.version>1.13.10</com.azure.core.http.netty.version>
+        <reactor.netty.version>1.0.38</reactor.netty.version>
+        <io.netty.version>4.1.100.Final</io.netty.version>
     </properties>
 </project>
