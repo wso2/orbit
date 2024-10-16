@@ -75,7 +75,6 @@
                             !com.azure.messaging.servicebus.*,
                             *;resolution:=optional
                         </Import-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
                         <Private-Package>
                             com.azure.*,
                             com.fasterxml.*,
