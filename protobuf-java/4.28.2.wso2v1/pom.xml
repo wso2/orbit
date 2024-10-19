@@ -23,7 +23,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.com.google.protobuf</groupId>
     <artifactId>protobuf-java</artifactId>
-    <version>4.27.4.wso2v1</version>
+    <version>4.28.2.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Google Protobuf Bundle</name>
     <description>This bundle will export the com.google.protobuf package</description>
@@ -89,7 +89,7 @@
         </plugins>
     </build>
     <properties>
-        <protobuf.version>4.27.4</protobuf.version>
-        <protobuf.export.version>4.27.4.wso2v1</protobuf.export.version>
+        <protobuf.version>4.28.2</protobuf.version>
+        <protobuf.export.version>4.28.2.wso2v1</protobuf.export.version>
     </properties>
 </project>

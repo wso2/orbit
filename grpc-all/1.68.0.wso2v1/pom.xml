@@ -22,11 +22,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.io.grpc</groupId>
     <artifactId>grpc-all</artifactId>
-    <version>1.66.0.wso2v1</version>
+    <version>1.68.0.wso2v1</version>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - GRPC All</name>
     <description>
-        This bundle will represent GRPC All 1.66.0
+        This bundle will represent GRPC All 1.68.0
     </description>
     <url>http://wso2.org</url>
 
@@ -129,10 +129,10 @@
 
     <properties>
         <maven.bundleplugin.version>2.5.4</maven.bundleplugin.version>
-        <grpc.version>1.66.0</grpc.version>
+        <grpc.version>1.68.0</grpc.version>
         <com.google.guava.version>33.2.1-jre</com.google.guava.version>
-        <io.perfmark.version>0.25.0</io.perfmark.version>
-        <grpc.export.version>1.66.0.wso2v1</grpc.export.version>
-        <io.perfmark.export.version>1.66.0.wso2v1</io.perfmark.export.version>
+        <io.perfmark.version>0.27.0</io.perfmark.version>
+        <grpc.export.version>1.68.0.wso2v1</grpc.export.version>
+        <io.perfmark.export.version>1.68.0.wso2v1</io.perfmark.export.version>
     </properties>
 </project>
