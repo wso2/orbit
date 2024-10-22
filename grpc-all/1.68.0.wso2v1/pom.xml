@@ -26,7 +26,7 @@
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - GRPC All</name>
     <description>
-        This bundle will represent GRPC All 1.68.0
+        This bundle will represent GRPC All 1.68.0 with minimal dependencies.
     </description>
     <url>http://wso2.org</url>
 
@@ -61,6 +61,7 @@
             <groupId>io.grpc</groupId>
             <artifactId>grpc-all</artifactId>
             <version>${grpc.version}</version>
+            <!-- Exclude unnecessary dependencies -->
             <exclusions>
                 <exclusion>
                     <groupId>io.grpc</groupId>
@@ -82,7 +83,40 @@
                     <groupId>io.grpc</groupId>
                     <artifactId>grpc-testing</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-xds</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-auth</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-grpclb</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-inprocess</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-netty</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-okhttp</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.grpc</groupId>
+                    <artifactId>grpc-rls</artifactId>
+                </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty-shaded</artifactId>
+            <version>${grpc.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -116,8 +150,15 @@
                         <Private-Package>
                         </Private-Package>
                         <Import-Package>
+                            com.google.common.base; version="${com.google.guava.version.range}",
+                            com.google.common.collect; version="${com.google.guava.version.range}",
+                            com.google.common.io; version="${com.google.guava.version.range}",
+                            com.google.common.util.concurrent; version="${com.google.guava.version.range}",
+                            com.google.protobuf; version="${com.google.protobuf.version.range}",
+                            org.slf4j; version="${org.slf4j.version.range}",
+                            org.slf4j.helpers; version="${org.slf4j.version.range}",
+                            org.slf4j.spi; version="${org.slf4j.version.range}",
                         </Import-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
                         <Include-Resource>
                             META-INF/services=${basedir}/META-INF/services
                         </Include-Resource>
@@ -131,8 +172,11 @@
         <maven.bundleplugin.version>2.5.4</maven.bundleplugin.version>
         <grpc.version>1.68.0</grpc.version>
         <com.google.guava.version>33.2.1-jre</com.google.guava.version>
+        <com.google.guava.version.range>[33.0.0, 34.0.0)</com.google.guava.version.range>
         <io.perfmark.version>0.27.0</io.perfmark.version>
         <grpc.export.version>1.68.0.wso2v1</grpc.export.version>
         <io.perfmark.export.version>1.68.0.wso2v1</io.perfmark.export.version>
+        <com.google.protobuf.version.range>[4.0.0, 5.0.0)</com.google.protobuf.version.range>
+        <org.slf4j.version.range>[1.7.0, 2.0.0)</org.slf4j.version.range>
     </properties>
 </project>
