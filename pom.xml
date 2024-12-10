@@ -197,6 +197,8 @@
         <module>jms-api/2.0.1.wso2v1</module>
         <module>protobuf-java/4.28.2.wso2v1</module>
         <module>grpc-all/1.68.0.wso2v1</module>
+        <module>hapi/2.1.0.wso2v1</module>
+        <module>hapi/2.4.0.wso2v1</module>
     </modules>
 
     <build>
