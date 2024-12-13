@@ -199,6 +199,7 @@
         <module>grpc-all/1.68.0.wso2v1</module>
         <module>hapi/2.1.0.wso2v1</module>
         <module>hapi/2.4.0.wso2v1</module>
+        <module>hapi/2.4.0.wso2v2</module>
     </modules>
 
     <build>
