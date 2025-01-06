@@ -25,9 +25,9 @@
     <artifactId>firebase-admin</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Firebase Admin for Java </name>
-    <version>9.4.1.wso2v1</version>
+    <version>9.4.2.wso2v1</version>
     <description>
-        This bundle will represent firebase-admin 9.4.1
+        This bundle will represent firebase-admin 9.4.2
     </description>
     <url>http://wso2.org</url>
 
@@ -107,8 +107,8 @@
     </build>
 
     <properties>
-        <firebase-admin.version>9.4.1</firebase-admin.version>
-        <api-common.version>2.40.0</api-common.version>
+        <firebase-admin.version>9.4.2</firebase-admin.version>
+        <api-common.version>2.42.0</api-common.version>
         <guava.version>1.0.2</guava.version>
     </properties>
 
