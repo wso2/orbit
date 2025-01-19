@@ -21,7 +21,7 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.orbit2.graalvm.sdk</groupId>
+    <groupId>org.wso2.orbit.graalvm.sdk</groupId>
     <artifactId>graal-sdk</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - graal-sdk</name>
@@ -61,6 +61,7 @@
 
     <properties>
         <graalvm.version>22.3.4</graalvm.version>
+        <graalvm.export.version>22.3.4.wso2v1</graalvm.export.version>
         <!-- ICU version must be reflecting graalvm version -->
         <icu.version>71.1</icu.version>
     </properties>
@@ -77,7 +78,7 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.graalvm.polyglot.*; version=${graalvm.version},
+                            org.graalvm.polyglot.*;version="${graalvm.export.version}"
                         </Export-Package>
                         <Embed-Dependency>
                             graal-sdk|js|truffle-api|regex|icu4j;
