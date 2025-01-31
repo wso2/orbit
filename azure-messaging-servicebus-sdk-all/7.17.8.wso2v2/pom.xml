@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~ Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.com.azure</groupId>
+    <artifactId>azure-messaging-servicebus-sdk-all</artifactId>
+    <version>7.17.8.wso2v2</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - azure-messaging-servicebus-sdk-all</name>
+    <description>
+        This bundle will export packages from azure-messaging-servicebus libraries of com.azure
+    </description>
+    <url>http://wso2.org</url>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-messaging-servicebus</artifactId>
+            <version>${com.azure.messaging.servicebus.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.3.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.azure.messaging.servicebus.*;version="${com.azure.messaging.servicebus.version}",
+                            com.azure.core.amqp.*;version="${com.azure.core.amqp.version}",
+                            com.azure.core.exception.*;version="${com.azure.core.version}",
+                            com.azure.core.util.serializer.*;version="${com.azure.core.version}",
+                            com.azure.xml.*;version="${com.azure.xml.version}",
+                            com.azure.core.util;version="${com.azure.core.util.version}",
+                            com.azure.core.http.netty.*;version="${com.azure.core.http.netty.version}",
+                            reactor.netty.*; version="${reactor.netty.version}"
+                        </Export-Package>
+                        <Import-Package>
+                            !com.azure.messaging.servicebus.*,
+                            !io.netty.*,
+                            *;resolution:=optional
+                        </Import-Package>
+                        <Private-Package>
+                            com.azure.*,
+                            com.fasterxml.*,
+                            org.apache.*,
+                            org.reactivestreams.*,
+                            reactor.core.*,
+                            reactor.util.*,
+                            io.netty.*
+                        </Private-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <com.azure.messaging.servicebus.version>7.17.8</com.azure.messaging.servicebus.version>
+        <com.azure.core.amqp.version>2.9.12</com.azure.core.amqp.version>
+        <com.azure.core.version>1.54.1</com.azure.core.version>
+        <com.azure.core.util.version>1.54.1</com.azure.core.util.version>
+        <com.azure.core.http.netty.version>1.15.7</com.azure.core.http.netty.version>
+        <com.azure.xml.version>1.1.0</com.azure.xml.version>
+        <reactor.netty.version>1.0.48</reactor.netty.version>
+        <io.netty.version>4.1.115.Final</io.netty.version>
+    </properties>
+</project>
