@@ -1,2 +1,2 @@
-io.grpc.internal.PickFirstLoadBalancerProvider
-io.grpc.util.SecretRoundRobinLoadBalancerProvider$Provider
+org.wso2.shaded.grpc.internal.PickFirstLoadBalancerProvider
+org.wso2.shaded.grpc.util.SecretRoundRobinLoadBalancerProvider$Provider

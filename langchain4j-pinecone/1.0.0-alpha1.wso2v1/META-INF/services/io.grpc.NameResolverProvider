@@ -1,1 +1,1 @@
-io.grpc.internal.DnsNameResolverProvider
+org.wso2.shaded.grpc.internal.DnsNameResolverProvider

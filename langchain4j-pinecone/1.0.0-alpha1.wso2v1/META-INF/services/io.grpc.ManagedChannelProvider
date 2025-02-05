@@ -1,1 +1,1 @@
-io.grpc.netty.shaded.io.grpc.netty.NettyChannelProvider
+org.wso2.shaded.grpc.netty.shaded.io.grpc.netty.NettyChannelProvider
