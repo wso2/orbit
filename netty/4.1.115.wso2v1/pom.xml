@@ -42,6 +42,19 @@
             <artifactId>netty-all</artifactId>
             <version>${io.netty.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-resolver-dns-native-macos</artifactId>
+            <version>${io.netty.version}</version>
+            <classifier>osx-aarch_64</classifier>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-resolver-dns-native-macos</artifactId>
+            <version>${io.netty.version}</version>
+            <classifier>osx-x86_64</classifier>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -65,6 +78,8 @@
                             *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
+                            @netty-resolver-dns-native-macos-${io.netty.version}-osx-aarch_64.jar!/META-INF/**,
+                            @netty-resolver-dns-native-macos-${io.netty.version}-osx-x86_64.jar!/META-INF/**,
                             {maven-resources}
                         </Include-Resource>
                     </instructions>
