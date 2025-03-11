@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- ~ Copyright (c) 2024, WSO2 LLC. (https://www.wso2.com).
+ ~ Copyright (c) 2025, WSO2 LLC. (https://www.wso2.com).
  ~
  ~ WSO2 LLC. licenses this file to you under the Apache License,
  ~ Version 2.0 (the "License"); you may not use this file except
@@ -22,9 +22,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.com.atlassian.oai</groupId>
     <artifactId>swagger-request-validator-core</artifactId>
-    <version>2.12.1.wso2v4</version>
+    <version>2.44.1.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>WSO2 Carbon Orbit - swagger-request-validator-core (swagger-request-validator)</name>
+    <name>WSO2 Carbon Orbit - swagger-request-validator-core (swagger-request-validator-v3)</name>
     <description>
         This bundle will export packages from swagger-request-validator-core libraries of swagger-request-validator
     </description>
@@ -120,7 +120,7 @@
                             com.google.common.net; version="${com.google.common.imp.pkg.version}",
                             com.google.i18n.phonenumbers; version="${com.google.i18n.phonenumbers.version}",
                             io.swagger.parser; version="${io.swagger.v3.oas.models.version}",
-                            io.swagger.util; version="${io-swagger-version}",
+                            io.swagger.v3.core.util; version="${io.swagger.v3.oas.models.version}",
                             io.swagger.v3.oas.models; version="${io.swagger.v3.oas.models.version}",
                             io.swagger.v3.oas.models.media; version="${io.swagger.v3.oas.models.version}",
                             io.swagger.v3.oas.models.parameters; version="${io.swagger.v3.oas.models.version}",
@@ -147,9 +147,8 @@
     </build>
 
     <properties>
-        <swagger-request-validator.version>2.12.1</swagger-request-validator.version>
-        <json-schema-validator-version>2.2.11</json-schema-validator-version>
-        <io-swagger-version>1.6.1</io-swagger-version>
+        <swagger-request-validator.version>2.44.1</swagger-request-validator.version>
+        <json-schema-validator-version>2.2.14</json-schema-validator-version>
         <apache-felix-plugin-version>3.3.0</apache-felix-plugin-version>
         <msg.simple.version>1.1.0</msg.simple.version>
         <com.google.common.imp.pkg.version>32.0.0</com.google.common.imp.pkg.version>
