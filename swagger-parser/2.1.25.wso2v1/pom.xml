@@ -29,9 +29,6 @@
     </description>
     <url>http://wso2.org</url>
 
-
-
-
     <distributionManagement>
         <repository>
             <id>wso2.releases</id>
