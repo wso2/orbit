@@ -102,6 +102,7 @@
         <module>bcprov/1.74.0.wso2v1</module>
         <module>bcprov/1.77.0.wso2v1</module>
         <module>bcprov/1.80.0.wso2v1</module>
+        <module>bctls/1.80.0.wso2v1</module>
         <module>bcutil/1.80.0.wso2v1</module>
         <module>jaxws-ri/2.3.2.wso2v1</module>
         <module>jta/1.1.0.wso2v1</module>
