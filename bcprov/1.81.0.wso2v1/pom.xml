@@ -86,7 +86,7 @@
     </build>
 
     <properties>
-        <exp.pkg.version.bcprov>1.81.0.wso2v1</exp.pkg.version.bcprov>
+        <exp.pkg.version.bcprov>1.81.0</exp.pkg.version.bcprov>
         <version.bcprov>1.81</version.bcprov>
     </properties>
 </project>

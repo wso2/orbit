@@ -58,6 +58,17 @@
             this orbit bundle.-->
             <optional>false</optional>
         </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcutil-jdk18on</artifactId>
+            <version>${version.bc}</version>
+            <!-- By setting optional false, dependent projects of this orbit bundle will be able to see bcutil-jdk18on
+             library as a transitive dependency. This is required because we are embedding bcutil-jdk18on library inside
+             this orbit bundle without extracting the content, because bcutil-jdk18on library is signed. If you embed a
+             dependency and set optional to true, then dependent projects will not be able to compile their source
+             with this orbit bundle.-->
+            <optional>false</optional>
+        </dependency>
     </dependencies>
 
     <build>
@@ -72,48 +83,14 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Import-Package>
-                            org.bouncycastle.asn1;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.bsi;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.cms;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.eac;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.edec;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.nist;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.ocsp;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.oiw;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.pkcs;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.rosstandart;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.x500;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.x500.style;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.x509;version="${imp.pkg.version.range}",
-                            org.bouncycastle.asn1.x9;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.agreement;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.agreement.srp;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.digests;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.ec;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.encodings;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.engines;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.generators;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.io;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.macs;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.modes;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.params;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.prng;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.signers;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.tls;version="${imp.pkg.version.range}",
-                            org.bouncycastle.crypto.util;version="${imp.pkg.version.range}",
-                            org.bouncycastle.jcajce.interfaces;version="${imp.pkg.version.range}",
-                            org.bouncycastle.jcajce.io;version="${imp.pkg.version.range}",
-                            org.bouncycastle.jcajce.spec;version="${imp.pkg.version.range}",
-                            org.bouncycastle.jcajce.util;version="${imp.pkg.version.range}",
-                            org.bouncycastle.jce.interfaces;version="${imp.pkg.version.range}",
-                            org.bouncycastle.jce.provider;version="${imp.pkg.version.range}",
-                            org.bouncycastle.math.ec;version="${imp.pkg.version.range}",
-                            org.bouncycastle.math.ec.rfc7748;version="${imp.pkg.version.range}",
-                            org.bouncycastle.pqc.crypto.mlkem;version="${imp.pkg.version.range}",
-                            org.bouncycastle.util;version="${imp.pkg.version.range}",
-                            org.bouncycastle.util.encoders;version="${imp.pkg.version.range}",
-                            org.bouncycastle.util.io;version="${imp.pkg.version.range}"
+                            org.bouncycastle.util*;version="${imp.pkg.version.range}",
+                            org.bouncycastle.pqc.*;version="${imp.pkg.version.range}",
+                            org.bouncycastle.math.*;version="${imp.pkg.version.range}",
+                            org.bouncycastle.jce.*;version="${imp.pkg.version.range}",
+                            org.bouncycastle.jcajce.*;version="${imp.pkg.version.range}",
+                            org.bouncycastle.asn1.*;version="${imp.pkg.version.range}",
+                            org.bouncycastle.crypto.*;version="${imp.pkg.version.range}",
+                            *;resolution:=optional
                         </Import-Package>
                         <Export-Package>
                             org.bouncycastle.jsse;version="${exp.pkg.version.bctls}",
@@ -125,7 +102,14 @@
                             org.bouncycastle.tls.crypto.impl;version="${exp.pkg.version.bctls}",
                             org.bouncycastle.tls.crypto.impl.bc;version="${exp.pkg.version.bctls}",
                             org.bouncycastle.tls.crypto.impl.jcajce;version="${exp.pkg.version.bctls}",
-                            org.bouncycastle.tls.crypto.impl.jcajce.srp;version="${exp.pkg.version.bctls}"
+                            org.bouncycastle.tls.crypto.impl.jcajce.srp;version="${exp.pkg.version.bctls}",
+                            !org.bouncycastle.util,
+                            !org.bouncycastle.pqc,
+                            !org.bouncycastle.math,
+                            !org.bouncycastle.jce,
+                            !org.bouncycastle.jcajce,
+                            !org.bouncycastle.crypto,
+                            !org.bouncycastle.asn1
                         </Export-Package>
                         <Embed-Dependency>
                             bctls-jdk18on;scope=compile|runtime;inline=false,
@@ -138,8 +122,8 @@
     </build>
 
     <properties>
-        <exp.pkg.version.bctls>1.81.0.wso2v1</exp.pkg.version.bctls>
-        <imp.pkg.version.range>[1.80.0, 2.0.0)</imp.pkg.version.range>
-        <version.bc>1.80</version.bc>
+        <exp.pkg.version.bctls>1.81.0</exp.pkg.version.bctls>
+        <imp.pkg.version.range>[1.81.0, 2.0.0)</imp.pkg.version.range>
+        <version.bc>1.81</version.bc>
     </properties>
 </project>

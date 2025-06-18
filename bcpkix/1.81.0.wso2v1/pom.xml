@@ -156,7 +156,7 @@
     </build>
 
     <properties>
-        <exp.pkg.version.bcpkix>1.81.0.wso2v1</exp.pkg.version.bcpkix>
+        <exp.pkg.version.bcpkix>1.81.0</exp.pkg.version.bcpkix>
         <imp.pkg.version.range.bcprov>[1.81.0, 2.0.0)</imp.pkg.version.range.bcprov>
         <version.bc>1.81</version.bc>
     </properties>
