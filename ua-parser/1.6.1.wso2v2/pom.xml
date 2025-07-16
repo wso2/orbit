@@ -26,7 +26,7 @@
     <name>ua-parser-wso2</name>
     <version>1.6.1.wso2v1</version>
     <description>
-        This bundle represents ua-parser 1.6.1 and the default snakeyaml version 2.2.0
+        This bundle represents ua-parser 1.6.1 and the default snakeyaml version 2.0.
     </description>
     <url>http://wso2.org</url>
 
@@ -94,7 +94,7 @@
 
     <properties>
         <ua-parser.version>1.6.1</ua-parser.version>
-        <snake-yaml.version>2.2</snake-yaml.version>
+        <snake-yaml.version>2.0</snake-yaml.version>
     </properties>
 
 </project>
