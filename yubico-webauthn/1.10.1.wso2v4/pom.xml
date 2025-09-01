@@ -94,7 +94,7 @@
         <dependency>
             <groupId>org.wso2.crypto.eddsa</groupId>
             <artifactId>wso2-eddsa</artifactId>
-            <version>0.3.0.wso2v1</version>
+            <version>${org.wso2.crypto.eddsa.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -163,6 +163,19 @@
         </snapshotRepository>
     </distributionManagement>
 
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 Internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
     <properties>
         <com.yubico.webauthn.version>1.10.1</com.yubico.webauthn.version>
         <guava.osgi.version.range>[18.0.0,34.0.0)</guava.osgi.version.range>
@@ -172,5 +185,6 @@
         <bouncycastle.version.range>[1.50.0, 2.0.0)</bouncycastle.version.range>
         <fasterxml.jackson.version.range>[2.9.5, 3.0.0)</fasterxml.jackson.version.range>
         <slf4j.version.range>[1.6.1, 2.0.0)</slf4j.version.range>
+        <org.wso2.crypto.eddsa.version>0.3.0-wso2v1</org.wso2.crypto.eddsa.version>
     </properties>
 </project>
