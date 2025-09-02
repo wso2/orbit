@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2025, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
+  ~
+  ~  WSO2 LLC. licenses this file to you under the Apache License,
+  ~  Version 2.0 (the "License"); you may not use this file except
+  ~  in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.com.azure.resourcemanager</groupId>
+    <artifactId>azure-resourcemanager-apimanagement</artifactId>
+    <packaging>bundle</packaging>
+    <name>Azure-Resource-Manager-API-Management</name>
+    <version>${azure.api.management.orbit.version}</version>
+    <description>A custom bundle that wraps azure api management sdk and other related dependencies</description>
+    <url>http://www.wso2.com</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.azure.resourcemanager</groupId>
+            <artifactId>azure-resourcemanager-apimanagement</artifactId>
+            <version>${com.azure.resourcemanager.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-identity</artifactId>
+            <version>${com.azure.identity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-storage-blob</artifactId>
+            <version>${com.azure.storage.blob.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-xml</artifactId>
+            <version>${com.azure.xml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor.netty</groupId>
+            <artifactId>reactor-netty-http</artifactId>
+            <version>${io.projectreactor.netty.http.version}</version>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.5.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.azure.resourcemanager.apimanagement.*; version="${com.azure.resourcemanager.version}",
+                            com.azure.core.credential.*; version="${com.azure.core.version}",
+                            com.azure.core.management.*; version="${com.azure.core.management.version}",
+                            com.azure.identity.*; version="${com.azure.identity.version}",
+                            com.azure.core.http.netty.*; version="${com.azure.core.http.netty.version}",
+                            com.azure.core.http.*; version="${com.azure.core.version}",
+                            com.azure.core.util.*; version="${com.azure.core.version}",
+                            com.azure.core.implementation.*; version="${com.azure.core.version}",
+                            com.azure.core.models.*; version="${com.azure.core.version}",
+                            com.azure.core.annotation.*; version="${com.azure.core.version}",
+                            com.azure.json.*; version="${com.azure.json.version}",
+                            com.azure.core.client.traits.*; version="${com.azure.core.version}",
+                            com.azure.core.exception.*; version="${com.azure.core.version}",
+                            com.azure.storage.blob.*; version="${com.azure.storage.blob.version}",
+                            com.azure.storage.common.*; version="${com.azure.storage.blob.version}",
+                            com.azure.xml.*; version="${com.azure.xml.version}",
+                        </Export-Package>
+                        <Embed-Dependency>
+
+                        </Embed-Dependency>
+                        <Import-Package>
+                            *;resolution:=optional
+                        </Import-Package>
+                        <Private-Package>
+                            reactor.netty.http.client.*; version="${io.projectreactor.netty.http.version}",
+                            reactor.netty.*; version="${io.projectreactor.netty.core.version}",
+                            reactor.netty.transport.*; version="${io.projectreactor.netty.core.version}",
+                            reactor.netty.resources.*; version="${io.projectreactor.netty.core.version}",
+                            io.netty.resolver.dns.*; version="${io.netty.resolver.dns.version}",
+                            com.microsoft.aad.msal4j.*; version="${com.microsoft.azure.msal4j.version}",
+                            com.nimbusds.oauth2.sdk.*; version="${com.nimbusds.oauth2.oidc.sdk.version}",
+                            com.nimbusds.common.contenttype.*; version="${com.nimbusds.content.type.version}",
+                            com.nimbusds.openid.connect.sdk.*; version="${com.nimbusds.oauth2.oidc.sdk.version}",
+                        </Private-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <azure.api.management.orbit.version>2.0.0.wso2v2</azure.api.management.orbit.version>
+        <com.azure.resourcemanager.version>2.0.0</com.azure.resourcemanager.version>
+        <com.azure.core.version>1.55.3</com.azure.core.version>
+        <com.azure.core.management.version>1.17.0</com.azure.core.management.version>
+        <com.azure.identity.version>1.16.3</com.azure.identity.version>
+        <com.azure.core.http.netty.version>1.15.12</com.azure.core.http.netty.version>
+        <com.azure.storage.blob.version>12.31.2</com.azure.storage.blob.version>
+        <io.projectreactor.netty.http.version>1.2.8</io.projectreactor.netty.http.version>
+        <io.projectreactor.netty.core.version>1.0.48</io.projectreactor.netty.core.version>
+        <io.netty.resolver.dns.version>4.1.112.Final</io.netty.resolver.dns.version>
+        <com.microsoft.azure.msal4j.version>1.21.0</com.microsoft.azure.msal4j.version>
+        <com.azure.json.version>1.5.0</com.azure.json.version>
+        <com.nimbusds.oauth2.oidc.sdk.version>11.23</com.nimbusds.oauth2.oidc.sdk.version>
+        <com.nimbusds.content.type.version>2.3</com.nimbusds.content.type.version>
+        <com.azure.xml.version>1.2.0</com.azure.xml.version>
+    </properties>
+
+</project>
