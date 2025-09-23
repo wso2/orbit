@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-  ~ Copyright (c) 2022, WSO2 LLC. (http://www.wso2.com). All Rights Reserved.
-  ~
-  ~ This software is the property of WSO2 Inc. and its suppliers, if any.
-  ~ Dissemination of any information or reproduction of any material contained
-  ~ herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
-  ~ You may not alter or remove any copyright or other notice from copies of this content.
-  -->
+ ~ Copyright (c) 2025, WSO2 LLC. (http://www.wso2.com)
+ ~
+ ~ WSO2 LLC. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -52,6 +61,10 @@
                 <exclusion>
                     <groupId>woodstox</groupId>
                     <artifactId>wstx-asl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.hadoop</groupId>
+                    <artifactId>hadoop-common</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -167,6 +180,11 @@
             <artifactId>metrics-core</artifactId>
             <version>${version.metrics}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>${version.hadoop}</version>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -232,22 +250,23 @@
     <properties>
         <version.solr>8.11.1</version.solr>
         <version.lucene>[8.11.0,9.0.0)</version.lucene>
-        <orbit.version.solr>${version.solr}.wso2v7</orbit.version.solr>
+        <orbit.version.solr>${version.solr}.wso2v17</orbit.version.solr>
         <version.noggit>[0.6,0.7)</version.noggit>
-        <version.commons.io>[2.4.0,2.12.0)</version.commons.io>
-        <version.zookeeper>3.8.0</version.zookeeper>
+        <version.commons.io>[2.4.0,3.0.0)</version.commons.io>
+        <version.zookeeper>3.9.3</version.zookeeper>
         <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
         <version.restlet>[2.3.0,2.4.0)</version.restlet>
         <maven.bundle.plugin.version>3.3.0</maven.bundle.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <http.version>[4.3.0,4.4.0)</http.version>
-        <jetty.version>9.4.58.v20250814</jetty.version>
+        <jetty.version>9.4.57.v20241219</jetty.version>
         <rrd4j.version>3.8.1</rrd4j.version>
         <calcite.version>1.32.0</calcite.version>
         <version.avatica.core>1.22.0</version.avatica.core>
         <version.locationtech.spatial4j>0.8</version.locationtech.spatial4j>
         <commons.collection.version>4.4.wso2v1</commons.collection.version>
         <caffeine.version>2.9.2</caffeine.version>
+        <version.hadoop>3.2.4</version.hadoop>
         <version.metrics>4.2.9</version.metrics>
     </properties>
 </project>

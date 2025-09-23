@@ -214,6 +214,7 @@
         <module>hapi/2.4.0.wso2v1</module>
         <module>hapi/2.4.0.wso2v2</module>
         <module>commons-compress/1.27.1.wso2v1</module>
+        <module>solr/8.11.1.wso2v17</module>
     </modules>
 
     <build>
