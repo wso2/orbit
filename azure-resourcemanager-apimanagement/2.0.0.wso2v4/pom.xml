@@ -111,11 +111,6 @@
                             reactor.netty.*; version="${io.projectreactor.netty.core.version}",
                             reactor.netty.transport.*; version="${io.projectreactor.netty.core.version}",
                             reactor.netty.resources.*; version="${io.projectreactor.netty.core.version}",
-                            io.netty.resolver.dns.*; version="${io.netty.resolver.dns.version}",
-                            io.netty.handler.codec.http.*; version="${io.netty.codec.http.version}",
-                            io.netty.handler.codec.http.cookie.*; version="${io.netty.codec.http.version}",
-                            io.netty.handler.codec.http2.*; version="${io.netty.codec.http2.version}",
-                            io.netty.handler.proxy.*; version="${io.netty.handler.proxy.version}",
                             com.microsoft.aad.msal4j.*; version="${com.microsoft.azure.msal4j.version}",
                             com.nimbusds.oauth2.sdk.*; version="${com.nimbusds.oauth2.oidc.sdk.version}",
                             com.nimbusds.common.contenttype.*; version="${com.nimbusds.content.type.version}",
@@ -129,7 +124,7 @@
     </build>
 
     <properties>
-        <azure.api.management.orbit.version>2.0.0.wso2v3</azure.api.management.orbit.version>
+        <azure.api.management.orbit.version>2.0.0.wso2v4</azure.api.management.orbit.version>
         <com.azure.resourcemanager.version>2.0.0</com.azure.resourcemanager.version>
         <com.azure.core.version>1.55.3</com.azure.core.version>
         <com.azure.core.management.version>1.17.0</com.azure.core.management.version>
@@ -138,10 +133,6 @@
         <com.azure.storage.blob.version>12.31.2</com.azure.storage.blob.version>
         <io.projectreactor.netty.http.version>1.2.8</io.projectreactor.netty.http.version>
         <io.projectreactor.netty.core.version>1.0.48</io.projectreactor.netty.core.version>
-        <io.netty.resolver.dns.version>4.1.112.Final</io.netty.resolver.dns.version>
-        <io.netty.codec.http.version>4.1.122.Final</io.netty.codec.http.version>
-        <io.netty.codec.http2.version>4.1.122.Final</io.netty.codec.http2.version>
-        <io.netty.handler.proxy.version>4.1.118.Final</io.netty.handler.proxy.version>
         <com.microsoft.azure.msal4j.version>1.21.0</com.microsoft.azure.msal4j.version>
         <com.azure.json.version>1.5.0</com.azure.json.version>
         <com.nimbusds.oauth2.oidc.sdk.version>11.23</com.nimbusds.oauth2.oidc.sdk.version>
