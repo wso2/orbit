@@ -176,6 +176,11 @@
             <artifactId>eventstream</artifactId>
             <version>${software.amazon.eventstream.version}</version>
         </dependency>
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>aws-query-protocol</artifactId>
+            <version>${software.amazon.awssdk.version}</version>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -260,7 +265,7 @@
         <software.amazon.awssdk.version>2.30.22</software.amazon.awssdk.version>
         <software.amazon.awssdk.crt.version>0.29.22</software.amazon.awssdk.crt.version>
         <software.amazon.eventstream.version>1.0.1</software.amazon.eventstream.version>
-        <awscore.orbit.version>2.30.22.wso2v1</awscore.orbit.version>
+        <awscore.orbit.version>2.30.22.wso2v2</awscore.orbit.version>
     </properties>
 
 </project>
