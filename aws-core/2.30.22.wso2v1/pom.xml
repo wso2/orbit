@@ -215,16 +215,13 @@
                             software.amazon.awssdk.auth.credentials.*; version="${awscore.orbit.version}",
                             software.amazon.awssdk.http.*; version="${awscore.orbit.version}",
                             software.amazon.awssdk.regions.*; version="${awscore.orbit.version}",
-                            software.amazon.awssdk.utils.*; version="${awscore.orbit.version}",
                             software.amazon.awssdk.services.lambda.*; version="${awscore.orbit.version}",
                             software.amazon.awssdk.services.sts.*; version="${awscore.orbit.version}",
                             software.amazon.awssdk.crt.*; version="${software.amazon.awssdk.crt.version}",
-                            software.amazon.eventstream.*; version="${software.amazon.eventstream.version}",
-                            software.amazon.awssdk.protocols.query.*; version="${awscore.orbit.version}",
+                            software.amazon.eventstream.*; version="${software.amazon.eventstream.version}"
                         </Export-Package>
                         <Embed-Dependency>
-                            aws-core;scope=compile|runtime;inline=false,
-                            utils;scope=compile|runtime;inline=false,
+                            aws-core;utils,scope=compile|runtime;inline=false,
                             regions;scope=compile|runtime;inline=false,
                             apache-client;scope=compile|runtime;inline=false,
                             apigateway;scope=compile|runtime;inline=false,
@@ -250,8 +247,7 @@
                             sdk-core;scope=compile|runtime;inline=false,
                             sts;scope=compile|runtime;inline=false,
                             aws-crt;scope=compile|runtime;inline=false,
-                            eventstream;scope=compile|runtime;inline=false,
-                            aws-query-protocol;scope=compile|runtime;inline=false
+                            eventstream;scope=compile|runtime;inline=false
                         </Embed-Dependency>
                         <Import-Package>
                             *;resolution:=optional
