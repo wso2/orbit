@@ -92,7 +92,7 @@
         </plugins>
     </build>
     <properties>
-        <mesos.version>0.18.1</mesos.version>
+        <mesos.version>1.4.3</mesos.version>
         <protobuf.import.version>[2.5.0, 2.6.0)</protobuf.import.version>
     </properties>
 
