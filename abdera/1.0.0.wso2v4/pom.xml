@@ -75,7 +75,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                
+                <version>${maven.bundle.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -88,8 +88,9 @@
                         </Export-Package>
                         <Import-Package>
                             !org.apache.abdera.*,
-                            javax.xml.stream.*;version="1.0.1",
-                            javax.activation.*;version="[0.0.0, 2.0.0)"
+                            javax.xml.stream.*; version="1.0.1",
+                            javax.activation.*; version="[0.0.0,2.0.0)",
+                            *;resolution:=optional
                         </Import-Package>
                         <Include-Resource>
                             META-INF/services/org.apache.abdera.factory.ExtensionFactory=META-INF/services/org.apache.abdera.factory.ExtensionFactory,
@@ -98,6 +99,9 @@
                             @abdera-parser-${version.abdera}.jar!/META-INF/services/org.apache.abdera.writer.NamedWriter
                         </Include-Resource>
                         <DynamicImport-Package>*</DynamicImport-Package>
+                        <Embed-Dependency>
+                            abdera-client|abdera-core|abdera-parser|abdera-server|abdera-i18n;scope=compile|runtime;inline=true
+                        </Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>
@@ -105,6 +109,7 @@
     </build>
     <properties>
         <version.abdera>1.0-wso2v2</version.abdera>
+        <maven.bundle.plugin.version>5.1.9</maven.bundle.plugin.version>
     </properties>
 
     <repositories>

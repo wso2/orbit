@@ -24,7 +24,7 @@
     <packaging>bundle</packaging>
     <name>tiles.wso2</name>
     <description>This bundle will represent org.wso2.carbon.tiles</description>
-    <version>3.0.7.wso2v1</version>
+    <version>3.0.7.wso2v2</version>
     <url>http://wso2.org</url>
 
     <distributionManagement>
@@ -37,12 +37,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>${javax.servlet.api.version}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-jsp</artifactId>
             <version>${apache.tiles.version}</version>
@@ -54,6 +48,91 @@
             <version>${commons.digester.version}</version>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-servlet</artifactId>
+            <version>3.0.7</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-extras</artifactId>
+            <version>3.0.7</version>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.tiles</groupId>
+                    <artifactId>tiles-request-mustache</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.tiles</groupId>
+                    <artifactId>tiles-freemarker</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.tiles</groupId>
+                    <artifactId>tiles-velocity</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.tiles</groupId>
+                    <artifactId>tiles-el</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.tiles</groupId>
+                    <artifactId>tiles-mvel</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.tiles</groupId>
+                    <artifactId>tiles-ognl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.tiles</groupId>
+                    <artifactId>tiles-compat</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.code.findbugs</groupId>
+                    <artifactId>jsr305</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-beans</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-aop</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-context</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-expression</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-web</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-core</artifactId>
+            <version>3.0.7</version>
+            <optional>true</optional>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -69,7 +148,7 @@
                         <Bundle-Name>${pom.artifactId}</Bundle-Name>
                         <Export-Package>
                             org.wso2.carbon.tiles; version=1.0.0,
-                            org.apache.tiles; version=${apache.tiles.version};-split-package:=merge-first,
+                            org.apache.tiles; version=${apache.tiles.version},
                             org.apache.tiles.jsp.taglib; version=${apache.tiles.version},
                             org.apache.tiles.jsp.taglib.definition; version=${apache.tiles.version},
                             org.apache.tiles.jsp.context; version=${apache.tiles.version},
@@ -88,17 +167,32 @@
                             org.apache.tiles.locale.impl; version=${apache.tiles.version},
                             org.apache.tiles.portlet.context; version=${apache.tiles.version},
                             org.apache.tiles.preparer; version=${apache.tiles.version},
+                            org.apache.tiles.preparer.factory; version=${apache.tiles.version},
                             org.apache.tiles.resources; version=${apache.tiles.version},
                             org.apache.tiles.servlet.context; version=${apache.tiles.version},
                             org.apache.tiles.util; version=${apache.tiles.version},
                             org.apache.tiles.web.startup; version=${apache.tiles.version},
+                            org.apache.tiles.web.startup.simple; version=${apache.tiles.version},
                             org.apache.tiles.web.util; version=${apache.tiles.version},
+                            org.apache.tiles.request.*; version=${apache.tiles.version},
+                            org.apache.tiles.extras.complete; version=${apache.tiles.version},
+                            org.apache.tiles.startup; version=${apache.tiles.version},
+                            org.apache.tiles.evaluator; version=${apache.tiles.version},
+                            org.apache.tiles.evaluator.impl; version=${apache.tiles.version},
+                            org.apache.tiles.definition.pattern; version=${apache.tiles.version},
+                            org.apache.tiles.definition.pattern.regexp; version=${apache.tiles.version},
+                            org.apache.tiles.definition.pattern.wildcard; version=${apache.tiles.version},
+                            org.apache.tiles.definition.dao; version=${apache.tiles.version},
+                            org.apache.tiles.renderer; version=${apache.tiles.version},
+                            org.apache.tiles.freemarker; version=${apache.tiles.version},
+                            org.apache.tiles.autotag.core.runtime; version=${apache.tiles.version},
+                            org.apache.tiles.autotag.core.runtime.util; version=${apache.tiles.version},
+                            org.apache.tiles.template; version=${apache.tiles.version},
                         </Export-Package>
                         <Import-Package>
                             javax.servlet;version=${javax.servlet.api.version},
                             javax.servlet.http;version=${javax.servlet.api.version},
-                            javax.servlet.jsp;version="2.0.0",
-                            javax.servlet.jsp.tagext;version="2.0.0",
+                            javax.servlet.jsp;version="2.3.0",
                             org.apache.commons.digester;version=${commons.digester.version},
                             !org.wso2.carbon.tiles,
                             !org.apache.tiles; version=${apache.tiles.version},
