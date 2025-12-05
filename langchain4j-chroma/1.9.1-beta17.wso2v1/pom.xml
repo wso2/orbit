@@ -23,13 +23,13 @@
 
     <groupId>dev.langchain4j.wso2</groupId>
     <artifactId>langchain4j-chroma</artifactId>
-    <version>1.9.1.wso2v1</version>
+    <version>1.9.1-beta17.wso2v1</version>
     <packaging>jar</packaging>
 
     <!-- Define dependency versions as properties -->
     <properties>
-        <langchain4j-chroma.version>1.9.1</langchain4j-chroma.version>
-        <maven-shade-plugin.version>3.4.1</maven-shade-plugin.version>
+        <langchain4j-chroma.version>1.9.1-beta17</langchain4j-chroma.version>
+        <maven-shade-plugin.version>3.6.1</maven-shade-plugin.version>
     </properties>
 
     <dependencies>
