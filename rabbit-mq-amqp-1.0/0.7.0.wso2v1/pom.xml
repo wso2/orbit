@@ -1,0 +1,164 @@
+<!--
+ ~ Copyright (c) 2025, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ ~
+ ~ WSO2 Inc. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~    http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied.  See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.rabbitmq</groupId>
+    <artifactId>amqp-1.0-client</artifactId>
+    <packaging>jar</packaging>
+    <name>WSO2 Carbon Orbit - Rabbit-MQ AMQP 1.0 java client</name>
+    <version>0.7.0.wso2v1</version>
+    <description>
+        This JAR will bundle the packages from amqp-client-0.7.0.jar together with the necessary io.netty dependencies
+    </description>
+    <url>http://wso2.org</url>
+    <properties>
+        <rabbitmq.client.version>0.7.0</rabbitmq.client.version>
+        <io.netty.version>4.2.3.Final</io.netty.version>
+        <maven-shade-plugin.version>3.5.0</maven-shade-plugin.version>
+        <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
+    </properties>
+
+    <dependencies>
+        <!-- RabbitMQ Java AMQP Client -->
+        <dependency>
+            <groupId>com.rabbitmq.client</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>${rabbitmq.client.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-buffer</artifactId>
+            <version>${io.netty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport</artifactId>
+            <version>${io.netty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-resolver</artifactId>
+            <version>${io.netty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-handler</artifactId>
+            <version>${io.netty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-common</artifactId>
+            <version>${io.netty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-codec-base</artifactId>
+            <version>${io.netty.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-native-unix-common</artifactId>
+            <version>${io.netty.version}</version>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven-shade-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <outputFile>${project.build.directory}/${project.build.finalName}.jar</outputFile>
+                            <artifactSet>
+                                <includes>
+                                    <include>com.rabbitmq.client:amqp-client</include>
+                                    <include>io.netty:netty-common</include>
+                                    <include>io.netty:netty-buffer</include>
+                                    <include>io.netty:netty-transport</include>
+                                    <include>io.netty:netty-resolver</include>
+                                    <include>io.netty:netty-handler</include>
+                                    <include>io.netty:netty-codec-base</include>
+                                    <include>io.netty:netty-transport-native-unix-common</include>
+                                </includes>
+                            </artifactSet>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                            </transformers>
+                            <relocations>
+                                <relocation>
+                                    <pattern>io.netty</pattern>
+                                    <shadedPattern>io.netty.wso2.orbit.shaded</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
