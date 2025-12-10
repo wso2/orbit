@@ -69,12 +69,12 @@
         <dependency>
             <groupId>com.atlassian.commonmark</groupId>
             <artifactId>commonmark</artifactId>
-            <version>0.11.0</version>
+            <version>${commonmark-version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.curious-odd-man</groupId>
             <artifactId>rgxgen</artifactId>
-            <version>1.4</version>
+            <version>${rgxgen-version}</version>
         </dependency>
     </dependencies>
 
@@ -236,7 +236,7 @@
                             io.swagger.parser.*;version="${import.openapitools.parser.version.range}",
                             com.fasterxml.jackson.datatype.guava; version="${jackson.version.range}",
                             com.google.common.*; version="${google.version.range}",
-                            org.slf4j.ext.*; version="${slf4j.version.range},
+                            org.slf4j.ext.*; version="${slf4j.version.range}",
                             *.;resolution=optional
                         </Import-Package>
                         <Private-Package>
@@ -277,6 +277,8 @@
         <openapi.generator.version>7.17.0</openapi.generator.version>
         <jmustache-version>1.15</jmustache-version>
         <handlebars.java-version>4.4.0</handlebars.java-version>
+        <commonmark-version>0.11.0</commonmark-version>
+        <rgxgen-version>1.4</rgxgen-version>
         <slf4j.api.version>2.0.16</slf4j.api.version>
         <commons-io-version>2.18.0</commons-io-version>
         <jackson.version.range>[2.15.0,3.0.0)</jackson.version.range>
