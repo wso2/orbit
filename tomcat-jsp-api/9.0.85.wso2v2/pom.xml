@@ -60,8 +60,8 @@
                         </Export-Package>
                         <Import-Package>
                             javax.el;version="[3.0.0, 3.1.0)",
-                            javax.servlet;version="[2.6.0, 2.7.0)",
-                            javax.servlet.http;version="[2.6.0, 2.7.0)",
+                            javax.servlet;version="[3.1.0, 4.0.0)",
+                            javax.servlet.http;version="[3.1.0, 4.0.0)",
                             *;resolution:=optional
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
