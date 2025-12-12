@@ -108,7 +108,7 @@
     </build>
 
     <properties>
-        <version.spring>5.3.19</version.spring>
+        <version.spring>6.0.0</version.spring>
         <exp.pkg.version.spring>5.3.19.wso2v2</exp.pkg.version.spring>
     </properties>
 </project>
