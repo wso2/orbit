@@ -70,7 +70,7 @@
     </build>
 
     <properties>
-        <version.pdfbox>1.8.10</version.pdfbox>
+        <version.pdfbox>1.8.16</version.pdfbox>
     </properties>    
 
     <distributionManagement>
