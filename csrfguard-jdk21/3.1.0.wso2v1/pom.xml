@@ -22,9 +22,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
-      <groupId>org.wso2</groupId>
-      <artifactId>wso2</artifactId>
-      <version>1</version>
+        <groupId>org.wso2</groupId>
+        <artifactId>wso2</artifactId>
+        <version>1</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -52,6 +52,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.2.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -61,9 +62,10 @@
                             org.owasp.csrfguard.*;version="${project.version}"
                         </Export-Package>
                         <Import-Package>
-                            !org.owasp.csrfguardorg.*,
+                            !org.owasp.csrfguard.*,
                             javax.servlet.jsp.*; version="${javax.servlet.jsp.version}",
-                            javax.servlet.*;version="${javax.servlet.version}"
+                            javax.servlet.*;version="${javax.servlet.version}",
+                            javax.xml.stream.*;version="${javax.xml.stream.version}"
                         </Import-Package>
                         <Private-Package>
                         </Private-Package>
@@ -80,6 +82,7 @@
         <version.csrfguard>3.1.0-wso2v2</version.csrfguard>
         <javax.servlet.version>[3.0.0,4.0.0)</javax.servlet.version>
         <javax.servlet.jsp.version>[2.3.0,2.4.0)</javax.servlet.jsp.version>
+        <javax.xml.stream.version>[1.0.0,2.0.0)</javax.xml.stream.version>
     </properties>
 
     <distributionManagement>
