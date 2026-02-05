@@ -27,10 +27,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.owasp</groupId>
-    <artifactId>csrfguard</artifactId>
+    <artifactId>csrfguard-jdk21</artifactId>
     <packaging>bundle</packaging>
     <name>org.owasp.csrfguard</name>
-    <version>3.1.0.wso2v5</version>
+    <version>3.1.0.wso2v1</version>
     <description>
         This bundle will export packages from owasp csrfguard
     </description>

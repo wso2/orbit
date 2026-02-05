@@ -20,11 +20,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.tiles</groupId>
-    <artifactId>tiles-jsp</artifactId>
+    <artifactId>tiles-jsp-jdk21</artifactId>
     <packaging>bundle</packaging>
     <name>tiles.wso2</name>
     <description>This bundle will represent org.wso2.carbon.tiles</description>
-    <version>3.0.7.wso2v2</version>
+    <version>3.0.7.wso2v1</version>
     <url>http://wso2.org</url>
 
     <distributionManagement>

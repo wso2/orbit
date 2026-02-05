@@ -23,7 +23,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.owasp.encoder</groupId>
-    <artifactId>encoder</artifactId>
+    <artifactId>encoder-jdk21</artifactId>
     <packaging>bundle</packaging>
     <name>OWASP Java Encoder</name>
     <version>${encoder.orbit.version}</version>
@@ -80,7 +80,7 @@
 
     <properties>
         <encoder.version>1.2</encoder.version>
-        <encoder.orbit.version>1.2.0.wso2v3</encoder.orbit.version>
+        <encoder.orbit.version>1.2.0.wso2v1</encoder.orbit.version>
         <jsp-api.imp.pkg.version.range>[2.3.0, 2.4.0)</jsp-api.imp.pkg.version.range>
     </properties>
 </project>

@@ -22,10 +22,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.com.github.dblock.waffle</groupId>
-    <artifactId>waffle-jna</artifactId>
+    <artifactId>waffle-jna-jdk21</artifactId>
     <packaging>bundle</packaging>
     <name>waffle.wso2</name>
-    <version>1.6.wso2v8</version>
+    <version>1.6.wso2v1</version>
     <description>
         This bundle will represent waffle-jna 1.6
     </description>

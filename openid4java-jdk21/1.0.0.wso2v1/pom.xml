@@ -15,10 +15,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.openid4java</groupId>
-    <artifactId>openid4java</artifactId>
+    <artifactId>openid4java-jdk21</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - OpenID4Java Library</name>
-    <version>1.0.0.wso2v7</version>
+    <version>1.0.0.wso2v1</version>
     <description>
         This bundle will export packages from OpenID4Java library.
     </description>

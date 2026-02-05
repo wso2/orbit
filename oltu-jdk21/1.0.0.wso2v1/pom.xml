@@ -22,10 +22,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.oltu.oauth2</groupId>
-    <artifactId>oltu</artifactId>
+    <artifactId>oltu-jdk21</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Apache OLTU Library</name>
-    <version>1.0.0.wso2v4</version>
+    <version>1.0.0.wso2v1</version>
     <description>
         This bundle will export packages from Apache OLTU library.
     </description>
