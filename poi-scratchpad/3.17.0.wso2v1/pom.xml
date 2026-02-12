@@ -67,7 +67,7 @@
     </build>
 
     <properties>
-        <version.poi-scratchpad>3.17</version.poi-scratchpad>
+        <version.poi-scratchpad>5.2.1</version.poi-scratchpad>
     </properties>
 
     <distributionManagement>
