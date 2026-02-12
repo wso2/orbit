@@ -92,7 +92,7 @@
     </build>
 
     <properties>
-        <com.fasterxml.jackson.databind.version>2.6.1</com.fasterxml.jackson.databind.version>
+        <com.fasterxml.jackson.databind.version>2.12.7.1</com.fasterxml.jackson.databind.version>
         <com.fasterxml.jackson.core.version.range>[2.6.1,2.6.2)</com.fasterxml.jackson.core.version.range>
         <com.fasterxml.jackson.annotation.version.range>[2.6.1,2.6.2)</com.fasterxml.jackson.annotation.version.range>
         <javax.imp.pkg.version.range>[0.0.0,1.0.0)</javax.imp.pkg.version.range>
