@@ -245,7 +245,7 @@
         <apache.tiles.version>3.0.7</apache.tiles.version>
         <commons.digester.version>2.0</commons.digester.version>
         <javax.servlet.api.version>2.5</javax.servlet.api.version>
-        <maven.bundle.plugin.version>3.3.0</maven.bundle.plugin.version>
+        <maven.bundle.plugin.version>5.1.9</maven.bundle.plugin.version>
         <commons.beanutils.version>1.11.0</commons.beanutils.version>
     </properties>
 </project>
