@@ -41,6 +41,7 @@
             <groupId>org.graalvm.js</groupId>
             <artifactId>js</artifactId>
             <version>${graalvm.version}</version>
+            <type>pom</type>
         </dependency>
         <dependency>
             <groupId>org.graalvm.truffle</groupId>
@@ -53,17 +54,15 @@
             <version>${graalvm.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.ibm.icu</groupId>
+            <groupId>org.graalvm.shadowed</groupId>
             <artifactId>icu4j</artifactId>
-            <version>${icu.version}</version>
+            <version>${graalvm.version}</version>
         </dependency>
     </dependencies>
 
     <properties>
-        <graalvm.version>22.3.4</graalvm.version>
-        <graalvm.export.version>22.3.4.wso2v1</graalvm.export.version>
-        <!-- ICU version must be reflecting graalvm version -->
-        <icu.version>71.1</icu.version>
+        <graalvm.version>25.0.2</graalvm.version>
+        <graalvm.export.version>25.0.2.wso2v1</graalvm.export.version>
     </properties>
 
     <build>
