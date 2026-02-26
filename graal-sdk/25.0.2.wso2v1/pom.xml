@@ -80,7 +80,7 @@
                             org.graalvm.polyglot.*;version="${graalvm.export.version}"
                         </Export-Package>
                         <Embed-Dependency>
-                            graal-sdk|js|truffle-api|regex|icu4j;
+                            graal-sdk|truffle-api|regex|icu4j;
                         </Embed-Dependency>
                         <Import-Package>
                             *;resolution:=optional
