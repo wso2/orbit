@@ -38,15 +38,29 @@
             <version>${graalvm.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.graalvm.sdk</groupId>
+            <artifactId>collections</artifactId>
+            <version>${graalvm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.graalvm.sdk</groupId>
+            <artifactId>nativeimage</artifactId>
+            <version>${graalvm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.graalvm.sdk</groupId>
+            <artifactId>word</artifactId>
+            <version>${graalvm.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.graalvm.polyglot</groupId>
             <artifactId>polyglot</artifactId>
             <version>${graalvm.version}</version>
         </dependency>
         <dependency>
             <groupId>org.graalvm.js</groupId>
-            <artifactId>js</artifactId>
+            <artifactId>js-language</artifactId>
             <version>${graalvm.version}</version>
-            <type>pom</type>
         </dependency>
         <dependency>
             <groupId>org.graalvm.truffle</groupId>
@@ -82,12 +96,14 @@
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Export-Package>
-                            org.graalvm.polyglot.*;version="${graalvm.export.version}"
+                            org.graalvm.polyglot.*;version="${graalvm.export.version}",
+                            org.graalvm.*;version="${graalvm.export.version}",
                         </Export-Package>
                         <Embed-Dependency>
-                            graal-sdk|truffle-api|regex|icu4j|polyglot;
+                            graal-sdk|truffle-api|regex|icu4j|polyglot|js-language|collections|nativeimage|word;
                         </Embed-Dependency>
                         <Import-Package>
+                            !org.graalvm.*
                             *;resolution:=optional
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
