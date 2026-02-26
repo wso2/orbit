@@ -38,6 +38,11 @@
             <version>${graalvm.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.graalvm.polyglot</groupId>
+            <artifactId>polyglot</artifactId>
+            <version>${graalvm.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.graalvm.js</groupId>
             <artifactId>js</artifactId>
             <version>${graalvm.version}</version>
@@ -80,7 +85,7 @@
                             org.graalvm.polyglot.*;version="${graalvm.export.version}"
                         </Export-Package>
                         <Embed-Dependency>
-                            graal-sdk|truffle-api|regex|icu4j;
+                            graal-sdk|truffle-api|regex|icu4j|polyglot;
                         </Embed-Dependency>
                         <Import-Package>
                             *;resolution:=optional
