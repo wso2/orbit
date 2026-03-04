@@ -328,7 +328,7 @@
     <properties>
         <exp.pkg.version.spark>1.1.0.wso2v1</exp.pkg.version.spark>
         <spark.version>1.1.0</spark.version>
-        <hadoop.client.version>1.0.4</hadoop.client.version>
+        <hadoop.client.version>2.7.0</hadoop.client.version>
         <arpack_combined_all.version>0.1</arpack_combined_all.version>
         <scalanlp.version>0.9</scalanlp.version>
         <org.spire.math.version>0.7.4</org.spire.math.version>
