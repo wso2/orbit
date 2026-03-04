@@ -104,7 +104,7 @@
 
     <properties>
         <okhttp.version>4.9.3</okhttp.version>
-        <kotlin.version>1.4.10</kotlin.version>
+        <kotlin.version>1.6.0</kotlin.version>
         <mockwebserver.version>4.9.3</mockwebserver.version>
     </properties>
 </project>
