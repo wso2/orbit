@@ -110,7 +110,6 @@
                             org.slf4j.*;version="[1.7,3)",
                             *;resolution:=optional
                         </Import-Package>
-                        <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
