@@ -25,8 +25,8 @@
     <artifactId>vertx-json-schema</artifactId>
     <packaging>bundle</packaging>
     <name>WSO2 Carbon Orbit - Vert.x JSON Schema for Java</name>
-    <version>4.5.24.wso2v1</version>
-    <description>This bundle will represent vertx-json-schema 4.5.24</description>
+    <version>4.5.25.wso2v1</version>
+    <description>This bundle will represent vertx-json-schema 4.5.25</description>
     <url>http://wso2.org</url>
 
     <distributionManagement>
@@ -86,8 +86,8 @@
     </build>
 
     <properties>
-        <vertx.json.schema.version>4.5.24</vertx.json.schema.version>
-        <vertx.json.schema.wso2.osgi.version>4.5.24.wso2v1</vertx.json.schema.wso2.osgi.version>
+        <vertx.json.schema.version>4.5.25</vertx.json.schema.version>
+        <vertx.json.schema.wso2.osgi.version>4.5.25.wso2v1</vertx.json.schema.wso2.osgi.version>
         <io.netty.version.wso2.osgi.version.range>[4.1.115, 5.0.0)</io.netty.version.wso2.osgi.version.range>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
