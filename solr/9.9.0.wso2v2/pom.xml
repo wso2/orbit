@@ -524,7 +524,7 @@
         <orbit.version.solr>${version.solr}.wso2v2</orbit.version.solr>
         <version.noggit>[0.6,0.7)</version.noggit>
         <version.commons.io>[2.4.0,3.0.0)</version.commons.io>
-        <version.zookeeper>3.9.4</version.zookeeper>
+        <version.zookeeper>3.9.5</version.zookeeper>
         <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
         <version.restlet>[2.3.0,2.4.0)</version.restlet>
         <maven.bundle.plugin.version>5.1.9</maven.bundle.plugin.version>
