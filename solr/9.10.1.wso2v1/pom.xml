@@ -382,9 +382,39 @@
         <dependency>
             <groupId>com.carrotsearch</groupId>
             <artifactId>hppc</artifactId>
-            <version>0.10.0</version>
+            <version>${hppc.version}</version>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro</artifactId>
+                <version>1.11.4</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>3.25.5</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <distributionManagement>
         <repository>
@@ -524,7 +554,7 @@
         <orbit.version.solr>${version.solr}.wso2v1</orbit.version.solr>
         <version.noggit>[0.6,0.7)</version.noggit>
         <version.commons.io>[2.4.0,3.0.0)</version.commons.io>
-        <version.zookeeper>3.9.4</version.zookeeper>
+        <version.zookeeper>3.9.5</version.zookeeper>
         <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
         <version.restlet>[2.3.0,2.4.0)</version.restlet>
         <maven.bundle.plugin.version>5.1.9</maven.bundle.plugin.version>
@@ -539,7 +569,7 @@
         <caffeine.version>3.1.8</caffeine.version>
         <version.hadoop>3.4.1</version.hadoop>
         <version.metrics>4.2.26</version.metrics>
-
+        <jackson.version>2.18.2</jackson.version>
         <jakarta.version>3.1.0</jakarta.version>
         <jersey.version>3.1.11</jersey.version>
         <hk2.version>3.1.1</hk2.version>
@@ -558,5 +588,6 @@
         <objectweb.import.version.range>[4.1.0,5.0.0)</objectweb.import.version.range>
         <io.opentracing.version>0.33.0</io.opentracing.version>
         <javassist.version>3.30.2-GA</javassist.version>
+        <hppc.version>0.10.0</hppc.version>
     </properties>
 </project>
