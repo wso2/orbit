@@ -240,7 +240,7 @@
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-jetty-http</artifactId>
-            <version>${jersey.container.jetty.version}</version>
+            <version>${jersey.version}</version>
         </dependency>
 
         <!-- HK2 -->
@@ -731,13 +731,12 @@
         <version.lucene>10.3.2</version.lucene>
 
         <jetty.version>12.0.27</jetty.version>
-        <version.zookeeper>3.9.4</version.zookeeper>
+        <version.zookeeper>3.9.5</version.zookeeper>
         <curator.version>5.9.0</curator.version>
         <caffeine.version>3.2.2</caffeine.version>
         <version.metrics>4.2.26</version.metrics>
 
         <jersey.version>3.1.11</jersey.version>
-        <jersey.container.jetty.version>2.39.1</jersey.container.jetty.version>
         <hk2.version>3.1.1</hk2.version>
 
         <jakarta.version>3.1.0</jakarta.version>
@@ -760,7 +759,7 @@
         <commons.cli.version>1.10.0</commons.cli.version>
         <commons.exec.version>1.5.0</commons.exec.version>
 
-        <json.path.version>2.9.0</json.path.version>
+        <json.path.version>2.10.0</json.path.version>
         <t.digest.version>3.3</t.digest.version>
         <swagger.version>2.2.22</swagger.version>
         <semver4j.version>6.0.0</semver4j.version>
