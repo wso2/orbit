@@ -730,7 +730,7 @@
         <orbit.version.solr>${version.solr}.wso2v1</orbit.version.solr>
         <version.lucene>10.3.2</version.lucene>
 
-        <jetty.version>12.0.27</jetty.version>
+        <jetty.version>12.0.34</jetty.version>
         <version.zookeeper>3.9.5</version.zookeeper>
         <curator.version>5.9.0</curator.version>
         <caffeine.version>3.2.2</caffeine.version>
