@@ -23,7 +23,7 @@
     <groupId>org.wso2.orbit.wadl.core</groupId>
     <artifactId>wadl-core</artifactId>
     <packaging>bundle</packaging>
-    <name>wsdl-core.wso2</name>
+    <name>wadl-core.wso2</name>
     <version>${wadl-core.version}.wso2v2</version>
     <description>
         wadl-core. This bundle will export packages from wadl-core-1.1.6.jar
@@ -109,7 +109,10 @@
                             org.jvnet.ws.wadl.*; version="${project.version}",
                             org.jvnet.ws.wadl2java.*; version="${project.version}"
                         </Export-Package>
-                        <Private-Package>com.sun.jersey.*; jersey.repackaged.*; version="${project.version}"</Private-Package>
+                        <Private-Package>
+                            com.sun.jersey.*; version="${project.version}",
+                            jersey.repackaged.*; version="${project.version}"
+                        </Private-Package>
                         <Import-Package>
                             org.xml.sax.helpers;
                             version="${provided.bundles.import.version.range}";resolution:=optional,
@@ -204,7 +207,7 @@
                         </Import-Package>
                         <Include-Resource>@wadl-core-${wadl-core.version}.jar!/xsd/**</Include-Resource>
                         <Embed-Dependency>
-                            jaxb-impl|jaxb-xjc|jsr311-api|localizer|jersey-client|runtime;inline=false;
+                            jaxb-impl|jaxb-xjc|jsr311-api|localizer|jersey-client;scope=compile|runtime;inline=false;
                         </Embed-Dependency>
                     </instructions>
                 </configuration>
