@@ -61,7 +61,7 @@
         <antlr.runtime.version>4.9.3</antlr.runtime.version>
         <reactivestreams.version>1.0.3</reactivestreams.version>
         <dataloader.version>3.1.2</dataloader.version>
-        <com.graphql.version>18.2</com.graphql.version>
+        <com.graphql.version>18.3</com.graphql.version>
         <orbit.graphql.version>18.2.wso2v1</orbit.graphql.version>
     </properties>
 
