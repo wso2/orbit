@@ -24,7 +24,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>libthrift.wso2</groupId>
     <artifactId>libthrift</artifactId>
-    <version>0.16.0.wso2v2</version>
+    <version>0.16.0.wso2v3</version>
     <packaging>bundle</packaging>
     <name>libthrift.wso2</name>
     <description>
@@ -94,7 +94,7 @@
     </build>
 
     <properties>
-        <thrift.osgi.version>0.16.0.wso2v2</thrift.osgi.version>
-        <thrift.version>0.16.0-wso2v2</thrift.version>
+        <thrift.osgi.version>0.16.0.wso2v3</thrift.osgi.version>
+        <thrift.version>0.16.0-wso2v3</thrift.version>
     </properties>
 </project>

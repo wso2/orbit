@@ -161,7 +161,7 @@
         <jaeger.version>1.8.0</jaeger.version>
         <opentracing.tracerresolver.version>0.1.8</opentracing.tracerresolver.version>
         <opentracing.api.version>0.32.0</opentracing.api.version>
-        <libthrift.version>0.16.0-wso2v2</libthrift.version>
+        <libthrift.version>0.16.0-wso2v3</libthrift.version>
         <felix.bundle.plugin.version>2.3.7</felix.bundle.plugin.version>
 
         <!-- Import Versions -->
