@@ -29,7 +29,7 @@
     <packaging>bundle</packaging>
     <name>okhttp.wso2</name>
     <description>
-        This bundle exports com.squareup.okhttp
+        This bundle exports okhttp3 packages
     </description>
     <url>http://wso2.org</url>
 
