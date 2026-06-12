@@ -65,7 +65,7 @@
     </build>
 
     <properties>
-        <version.poi>3.14</version.poi>
+        <version.poi>4.1.1</version.poi>
     </properties>
 
     <distributionManagement>
