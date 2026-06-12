@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2026, WSO2 LLC. (http://www.wso2.com).
+  ~
+  ~ WSO2 LLC. licenses this file to you under the Apache License,
+  ~ Version 2.0 (the "License"); you may not use this file except
+  ~ in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an
+  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ KIND, either express or implied.  See the License for the
+  ~ specific language governing permissions and limitations
+  ~ under the License.
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.apache.commons.ssl</groupId>
+    <artifactId>not-yet-commons-ssl</artifactId>
+    <version>0.3.9.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>not-yet-commons-ssl.wso2</name>
+    <description>
+        This bundle exports org.apache.commons.ssl required by xmltooling (transitively via opensaml 2.6.6).
+        The upstream library (not-yet-commons-ssl 0.3.9) has a known CVE. The vulnerable code path has been
+        manually verified as not invoked by existing code. Export is intentionally restricted via x-friends
+        to xmltooling only. Do not add Import-Package: org.apache.commons.ssl to any new bundle without a
+        security review.
+    </description>
+    <url>http://wso2.org</url>
+
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>wso2.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons.ssl</groupId>
+            <artifactId>not-yet-commons-ssl</artifactId>
+            <version>${not-yet-commons-ssl.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <!-- Export version is 3.1.0, not the upstream jar version (0.3.9).
+                             Originally this package was exported from commons-httpclient orbit bundle at 3.1.0
+                             alongside commons-httpclient. When that export was removed, opensaml's Import-Package
+                             range [3.1.0,3.2.0) was left unsatisfied. This bundle restores that export. -->
+                        <Export-Package>
+                            org.apache.commons.ssl.*;version="3.1.0";x-friends:="xmltooling"
+                        </Export-Package>
+                        <Private-Package>
+                        </Private-Package>
+                        <Import-Package>
+                            !org.apache.commons.ssl.*
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <not-yet-commons-ssl.version>0.3.9</not-yet-commons-ssl.version>
+    </properties>
+
+</project>
