@@ -72,8 +72,8 @@
     <dependency>
       <groupId>org.apache.thrift</groupId>
       <artifactId>libthrift</artifactId>
-      <!-- Leave at 0.7.0 for Cassandra compatibility -->
-      <version>0.7.0</version>
+      <!-- Leave at 0.14.0 for Cassandra compatibility -->
+      <version>0.14.0</version>
       <exclusions>
         <exclusion>
           <groupId>org.slf4j</groupId>
