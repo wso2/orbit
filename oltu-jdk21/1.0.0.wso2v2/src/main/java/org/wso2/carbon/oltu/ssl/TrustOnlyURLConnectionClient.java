@@ -57,13 +57,29 @@ public final class TrustOnlyURLConnectionClient implements HttpClient {
     private final int connectTimeoutMillis;
     private final int readTimeoutMillis;
 
+    /**
+     * Creates a client with default connect/read timeouts of {@value #DEFAULT_CONNECT_TIMEOUT_MILLIS}ms.
+     */
     public TrustOnlyURLConnectionClient() {
 
         this(DEFAULT_CONNECT_TIMEOUT_MILLIS, DEFAULT_READ_TIMEOUT_MILLIS);
     }
 
+    /**
+     * Creates a client with the given connect/read timeouts.
+     *
+     * @param connectTimeoutMillis connect timeout in milliseconds; {@code 0} means no timeout
+     * @param readTimeoutMillis    read timeout in milliseconds; {@code 0} means no timeout
+     * @throws IllegalArgumentException if either timeout is negative
+     */
     public TrustOnlyURLConnectionClient(int connectTimeoutMillis, int readTimeoutMillis) {
 
+        if (connectTimeoutMillis < 0) {
+            throw new IllegalArgumentException("connectTimeoutMillis must not be negative: " + connectTimeoutMillis);
+        }
+        if (readTimeoutMillis < 0) {
+            throw new IllegalArgumentException("readTimeoutMillis must not be negative: " + readTimeoutMillis);
+        }
         this.connectTimeoutMillis = connectTimeoutMillis;
         this.readTimeoutMillis = readTimeoutMillis;
     }
