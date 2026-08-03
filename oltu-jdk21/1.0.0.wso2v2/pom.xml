@@ -81,7 +81,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>1.4.0</version>
+                <version>5.1.2</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -108,6 +108,7 @@
     </build>
 
     <properties>
+        <maven.compiler.release>21</maven.compiler.release>
         <oltu.version>1.0.0</oltu.version>
         <javax.servlet.version.range>[3.1.0, 4.0.0)</javax.servlet.version.range>
         <org.apache.commons.codec.version.range>[1.4.0,2.0.0)</org.apache.commons.codec.version.range>

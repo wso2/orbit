@@ -29,10 +29,12 @@ import org.apache.oltu.oauth2.common.utils.OAuthUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 /**
@@ -49,6 +51,22 @@ public final class TrustOnlyURLConnectionClient implements HttpClient {
 
     private static final int SC_BAD_REQUEST = 400;
     private static final int SC_UNAUTHORIZED = 401;
+    private static final int DEFAULT_CONNECT_TIMEOUT_MILLIS = 10000;
+    private static final int DEFAULT_READ_TIMEOUT_MILLIS = 10000;
+
+    private final int connectTimeoutMillis;
+    private final int readTimeoutMillis;
+
+    public TrustOnlyURLConnectionClient() {
+
+        this(DEFAULT_CONNECT_TIMEOUT_MILLIS, DEFAULT_READ_TIMEOUT_MILLIS);
+    }
+
+    public TrustOnlyURLConnectionClient(int connectTimeoutMillis, int readTimeoutMillis) {
+
+        this.connectTimeoutMillis = connectTimeoutMillis;
+        this.readTimeoutMillis = readTimeoutMillis;
+    }
 
     @Override
     public <T extends OAuthClientResponse> T execute(OAuthClientRequest request, Map<String, String> headers,
@@ -67,6 +85,8 @@ public final class TrustOnlyURLConnectionClient implements HttpClient {
 
             if (connection instanceof HttpURLConnection) {
                 HttpURLConnection httpURLConnection = (HttpURLConnection) connection;
+                httpURLConnection.setConnectTimeout(connectTimeoutMillis);
+                httpURLConnection.setReadTimeout(readTimeoutMillis);
                 TrustOnlySslUtils.applyTrustOnlySslIfHttps(httpURLConnection);
 
                 if (headers != null && !headers.isEmpty()) {
@@ -93,11 +113,12 @@ public final class TrustOnlyURLConnectionClient implements HttpClient {
                 responseCode = httpURLConnection.getResponseCode();
                 InputStream inputStream;
                 if (responseCode == SC_BAD_REQUEST || responseCode == SC_UNAUTHORIZED) {
+                    // getErrorStream() may legitimately return null if the server sent no error body.
                     inputStream = httpURLConnection.getErrorStream();
                 } else {
                     inputStream = httpURLConnection.getInputStream();
                 }
-                responseBody = OAuthUtils.saveStreamAsString(inputStream);
+                responseBody = (inputStream != null) ? OAuthUtils.saveStreamAsString(inputStream) : "";
             }
         } catch (IOException e) {
             throw new OAuthSystemException(e);
@@ -117,11 +138,11 @@ public final class TrustOnlyURLConnectionClient implements HttpClient {
 
         if (OAuth.HttpMethod.POST.equals(requestMethod) || OAuth.HttpMethod.PUT.equals(requestMethod)) {
             httpURLConnection.setDoOutput(true);
-            OutputStream outputStream = httpURLConnection.getOutputStream();
-            PrintWriter printWriter = new PrintWriter(outputStream);
-            printWriter.print(requestBody);
-            printWriter.flush();
-            printWriter.close();
+            try (OutputStream outputStream = httpURLConnection.getOutputStream();
+                 Writer writer = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8)) {
+                writer.write(requestBody);
+                writer.flush();
+            }
         }
     }
 
