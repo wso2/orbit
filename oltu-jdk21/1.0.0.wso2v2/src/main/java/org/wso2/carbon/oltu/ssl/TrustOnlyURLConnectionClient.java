@@ -51,14 +51,18 @@ public final class TrustOnlyURLConnectionClient implements HttpClient {
 
     private static final int SC_BAD_REQUEST = 400;
     private static final int SC_UNAUTHORIZED = 401;
-    private static final int DEFAULT_CONNECT_TIMEOUT_MILLIS = 10000;
-    private static final int DEFAULT_READ_TIMEOUT_MILLIS = 10000;
+    // 0 = no timeout, matching URLConnection's own default and upstream URLConnectionClient's behavior
+    // (which never calls setConnectTimeout/setReadTimeout). Callers that want bounded timeouts can use
+    // the other constructor - this class must not silently change default behavior for existing callers.
+    private static final int DEFAULT_CONNECT_TIMEOUT_MILLIS = 0;
+    private static final int DEFAULT_READ_TIMEOUT_MILLIS = 0;
 
     private final int connectTimeoutMillis;
     private final int readTimeoutMillis;
 
     /**
-     * Creates a client with default connect/read timeouts of {@value #DEFAULT_CONNECT_TIMEOUT_MILLIS}ms.
+     * Creates a client with no connect/read timeout, matching {@code URLConnectionClient}'s default
+     * behavior. Use {@link #TrustOnlyURLConnectionClient(int, int)} to opt into bounded timeouts.
      */
     public TrustOnlyURLConnectionClient() {
 
