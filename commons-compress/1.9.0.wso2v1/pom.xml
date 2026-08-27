@@ -97,6 +97,6 @@
     </build>
 
     <properties>
-        <commons-compress.version>1.9</commons-compress.version>
+        <commons-compress.version>1.21</commons-compress.version>
     </properties>
 </project>
