@@ -362,7 +362,7 @@
         <commons-lang3.import.version>[3.3.2, 3.3.3)</commons-lang3.import.version>
         <curator.version>2.4.0</curator.version>
         <curator.import.version>[2.4.0, 2.4.1)</curator.import.version>
-        <derby.version>10.4.2.0</derby.version>
+        <derby.version>10.14.2.0</derby.version>
         <derby.import.version>[10.4.2.0, 10.5.1.1)</derby.import.version>
         <commons-net.version>2.2</commons-net.version>
         <netty-all.version>4.0.23.wso2v1</netty-all.version>
