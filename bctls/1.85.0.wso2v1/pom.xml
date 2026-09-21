@@ -51,9 +51,9 @@
             <groupId>org.bouncycastle</groupId>
             <artifactId>bctls-jdk18on</artifactId>
             <version>${version.bc}</version>
-            <!-- By setting optional false, dependent projects of this orbit bundle will be able to see bcutil-jdk18on
-            library as a transitive dependency. This is required because we are embedding bcutil-jdk18on library inside
-            this orbit bundle without extracting the content, because bcutil-jdk18on library is signed. If you embed a
+            <!-- By setting optional false, dependent projects of this orbit bundle will be able to see bctls-jdk18on
+            library as a transitive dependency. This is required because we are embedding bctls-jdk18on library inside
+            this orbit bundle without extracting the content, because bctls-jdk18on library is signed. If you embed a
             dependency and set optional to true, then dependent projects will not be able to compile their source with
             this orbit bundle.-->
             <optional>false</optional>
