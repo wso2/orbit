@@ -111,6 +111,11 @@
                         <Import-Package>
                             !org.openjdk.nashorn.*,
                             !org.objectweb.asm.*,
+                            jdk.dynalink,
+                            jdk.dynalink.beans,
+                            jdk.dynalink.linker,
+                            jdk.dynalink.linker.support,
+                            jdk.dynalink.support,
                             *;resolution:=optional
                         </Import-Package>
                         <Embed-Dependency>
