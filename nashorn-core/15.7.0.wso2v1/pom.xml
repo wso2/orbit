@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~ Copyright (c) 2026, WSO2 LLC. (http://www.wso2.org).
+ ~
+ ~ WSO2 LLC. licenses this file to you under the Apache License,
+ ~ Version 2.0 (the "License"); you may not use this file except
+ ~ in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~ http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing,
+ ~ software distributed under the License is distributed on an
+ ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ ~ KIND, either express or implied. See the License for the
+ ~ specific language governing permissions and limitations
+ ~ under the License.
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.org.openjdk.nashorn</groupId>
+    <artifactId>nashorn-core</artifactId>
+    <version>15.7.0.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>OpenJDK Nashorn Core</name>
+    <description>OpenJDK Nashorn Core with private ASM dependencies</description>
+    <url>https://github.com/openjdk/nashorn</url>
+
+    <licenses>
+        <license>
+            <name>GNU General Public License v2.0 with Classpath Exception</name>
+            <url>https://github.com/openjdk/nashorn/blob/main/LICENSE</url>
+        </license>
+        <license>
+            <name>BSD 3-Clause License</name>
+            <url>https://asm.ow2.io/license.html</url>
+        </license>
+    </licenses>
+
+    <repositories>
+        <repository>
+            <id>wso2-nexus</id>
+            <name>WSO2 Public Repository</name>
+            <url>https://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 Release Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openjdk.nashorn</groupId>
+            <artifactId>nashorn-core</artifactId>
+            <version>${nashorn.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>${asm.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-commons</artifactId>
+            <version>${asm.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-tree</artifactId>
+            <version>${asm.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-analysis</artifactId>
+            <version>${asm.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-util</artifactId>
+            <version>${asm.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>5.1.9</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>org.openjdk.nashorn.core</Bundle-SymbolicName>
+                        <Bundle-Name>OpenJDK Nashorn Core</Bundle-Name>
+                        <Export-Package>org.openjdk.nashorn.*;version="${nashorn.version}"</Export-Package>
+                        <Private-Package>org.objectweb.asm.*</Private-Package>
+                        <Import-Package>
+                            !org.openjdk.nashorn.*,
+                            !org.objectweb.asm.*,
+                            *;resolution:=optional
+                        </Import-Package>
+                        <Embed-Dependency>
+                            nashorn-core;inline=true,
+                            asm;inline=true,
+                            asm-commons;inline=true,
+                            asm-tree;inline=true,
+                            asm-analysis;inline=true,
+                            asm-util;inline=true
+                        </Embed-Dependency>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <nashorn.version>15.7</nashorn.version>
+        <asm.version>7.3.1</asm.version>
+    </properties>
+</project>
