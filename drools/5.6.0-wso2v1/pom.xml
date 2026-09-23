@@ -99,7 +99,7 @@
     </dependencies>
 
     <properties>
-        <drool.version>5.6.0.Final</drool.version>
+        <drool.version>7.60.0.Final</drool.version>
     </properties>
 
     <build>
