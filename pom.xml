@@ -130,6 +130,7 @@
         <module>yubico-webauthn/1.10.1.wso2v4</module>
         <module>yubico-webauthn/1.12.1.wso2v1</module>
         <module>yubico-webauthn/2.4.0.wso2v2</module>
+        <module>yubico-webauthn/2.4.0.wso2v3</module>
         <module>yubico-webauthn/2.5.1.wso2v2</module>
         <module>yubico-webauthn/2.5.1.wso2v3</module>
         <module>asn-one/0.4.0.wso2v1</module>
