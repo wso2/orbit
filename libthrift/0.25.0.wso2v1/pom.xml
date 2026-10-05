@@ -63,6 +63,17 @@
             <groupId>org.apache.thrift</groupId>
             <artifactId>libthrift</artifactId>
             <version>${thrift.version}</version>
+            <!-- Only THttpClient uses HttpComponents; the bundle imports org.apache.hc.* as optional. -->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.httpcomponents.client5</groupId>
+                    <artifactId>httpclient5</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.httpcomponents.core5</groupId>
+                    <artifactId>httpcore5</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
