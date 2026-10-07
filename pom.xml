@@ -244,6 +244,7 @@
         <module>commons-compress/1.27.1.wso2v1</module>
         <module>solr/8.11.1.wso2v17</module>
         <module>nashorn-core/15.7.0.wso2v1</module>
+        <module>jinjava/2.7.6.wso2v1</module>
     </modules>
 
     <build>
