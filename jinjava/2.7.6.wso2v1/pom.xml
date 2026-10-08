@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.wso2.orbit.com.hubspot.jinjava</groupId>
+    <artifactId>jinjava</artifactId>
+    <version>2.7.6.wso2v1</version>
+    <packaging>jar</packaging>
+
+    <name>jinjava (WSO2 orbit)</name>
+    <description>
+        Jinjava 2.7.6 repackaged with the shaded jsoup upgraded from 1.15.3 to a
+        non-vulnerable version (CVE-2026-75140, CVE-2026-71497). jsoup is re-shaded
+        to the same jinjava.org.jsoup package that Jinjava relocates it to.
+    </description>
+
+    <properties>
+        <jinjava.version>2.7.6</jinjava.version>
+        <jsoup.version>1.23.2</jsoup.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.hubspot.jinjava</groupId>
+            <artifactId>jinjava</artifactId>
+            <version>${jinjava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${jsoup.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>jinjava-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <artifactSet>
+                                <includes>
+                                    <include>com.hubspot.jinjava:jinjava</include>
+                                    <include>org.jsoup:jsoup</include>
+                                </includes>
+                            </artifactSet>
+                            <filters>
+                                <filter>
+                                    <artifact>com.hubspot.jinjava:jinjava</artifact>
+                                    <excludes>
+                                        <exclude>jinjava/org/jsoup/**</exclude>
+                                        <exclude>META-INF/maven/org.jsoup/**</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <relocations>
+                                <relocation>
+                                    <pattern>org.jsoup</pattern>
+                                    <shadedPattern>jinjava.org.jsoup</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
