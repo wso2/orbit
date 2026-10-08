@@ -11,9 +11,7 @@
 
     <name>jinjava (WSO2 orbit)</name>
     <description>
-        Jinjava 2.7.6 repackaged with the shaded jsoup upgraded from 1.15.3 to a
-        non-vulnerable version (CVE-2026-75140, CVE-2026-71497). jsoup is re-shaded
-        to the same jinjava.org.jsoup package that Jinjava relocates it to.
+        Jinjava 2.7.6 is repackaged with the shaded jsoup upgraded from 1.15.3 to 1.23.2
     </description>
 
     <properties>
