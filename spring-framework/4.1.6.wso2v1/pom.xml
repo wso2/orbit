@@ -80,7 +80,7 @@
     </build>
 
     <properties>
-        <version.spring>4.1.6.RELEASE</version.spring>
+        <version.spring>5.3.18</version.spring>
         <exp.pkg.version.spring>4.1.6.wso2v1</exp.pkg.version.spring>
     </properties>
 </project>
