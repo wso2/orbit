@@ -26,7 +26,7 @@
         <cxf.version.wss4j>1.6.6</cxf.version.wss4j>
         <jaxb.version>2.2.5</jaxb.version>
         <neethi.cxf.version>3.0.3</neethi.cxf.version>
-        <xmlsec.cxf.version>1.5.6</xmlsec.cxf.version>
+        <xmlsec.cxf.version>2.1.7</xmlsec.cxf.version>
         <ehcache.cxf.version>2.5.1</ehcache.cxf.version>
         <xmlschema.cxf.version>2.1.0</xmlschema.cxf.version>
         <xml.resolver.cxf.version>1.2</xml.resolver.cxf.version>
