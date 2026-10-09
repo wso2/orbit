@@ -186,7 +186,7 @@
         <yammer.version>2.2.0</yammer.version>
         <snappy.version>1.0.4.1.wso2v1</snappy.version>
         <snaptree.version>0.1.wso2v1</snaptree.version>
-        <thrift.version>0.7.0</thrift.version>
+        <thrift.version>0.14.0</thrift.version>
     </properties>
 
     <licenses>
