@@ -323,7 +323,7 @@
         <joda-time.orbit.version.range>[2.8.2,3.0.0)</joda-time.orbit.version.range>
         <xmltooling.version>1.4.4</xmltooling.version>
         <openws.version>1.5.4</openws.version>
-        <esapi.version>2.0.1</esapi.version>
+        <esapi.version>2.3.0.0</esapi.version>
         <opensaml.orbit.version>2.6.6.wso2v1</opensaml.orbit.version>
         <javax.crypto.version>[0.0.0,1.0.0)</javax.crypto.version>
         <javax.net.version>[0.0.0,1.0.0)</javax.net.version>
