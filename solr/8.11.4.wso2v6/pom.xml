@@ -261,7 +261,7 @@
     </build>
 
     <properties>
-        <version.solr>8.11.4-wso2v6</version.solr>
+        <version.solr>8.11.4-wso2v5</version.solr>
         <version.lucene>[8.11.0,9.0.0)</version.lucene>
         <orbit.version.solr>8.11.4.wso2v6</orbit.version.solr>
         <version.noggit>[0.6,0.7)</version.noggit>
