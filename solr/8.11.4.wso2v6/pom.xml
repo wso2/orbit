@@ -266,7 +266,7 @@
         <orbit.version.solr>8.11.4.wso2v6</orbit.version.solr>
         <version.noggit>[0.6,0.7)</version.noggit>
         <version.commons.io>[2.4.0,3.0.0)</version.commons.io>
-        <version.zookeeper>3.9.5</version.zookeeper>
+        <version.zookeeper>3.9.6</version.zookeeper>
         <version.spatial4j>[0.4.1,0.5)</version.spatial4j>
         <version.restlet>[2.3.0,2.4.0)</version.restlet>
         <maven.bundle.plugin.version>3.3.0</maven.bundle.plugin.version>
@@ -275,7 +275,7 @@
         <jetty.version>9.4.58.v20250814</jetty.version>
         <rrd4j.version>3.8.1</rrd4j.version>
         <calcite.version>1.42.0</calcite.version>
-        <version.avatica.core>1.28.0</version.avatica.core>
+        <version.avatica.core>1.29.0</version.avatica.core>
         <version.locationtech.spatial4j>0.8</version.locationtech.spatial4j>
         <commons.collection.version>4.4.wso2v1</commons.collection.version>
         <caffeine.version>2.9.2</caffeine.version>
