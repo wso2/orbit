@@ -243,7 +243,7 @@
         <http.version>[4.3.0,4.4.0)</http.version>
         <jetty.version>9.4.44.v20210927</jetty.version>
         <rrd4j.version>3.8.1</rrd4j.version>
-        <calcite.version>1.26.0</calcite.version>
+        <calcite.version>1.32.0</calcite.version>
         <version.locationtech.spatial4j>0.8</version.locationtech.spatial4j>
         <commons.collection.version>4.4.wso2v1</commons.collection.version>
         <caffeine.version>2.9.2</caffeine.version>
