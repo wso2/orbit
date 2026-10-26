@@ -23,7 +23,7 @@
 
         <!-- START CXF specific version properties -->
         <cxf.version>2.6.16</cxf.version>
-        <cxf.version.wss4j>1.6.15</cxf.version.wss4j>
+        <cxf.version.wss4j>1.6.17</cxf.version.wss4j>
         <jaxb.version>2.2.7</jaxb.version>
         <neethi.cxf.version>3.0.3</neethi.cxf.version>
         <xmlsec.cxf.version>1.5.6</xmlsec.cxf.version>
