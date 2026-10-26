@@ -103,7 +103,7 @@
     <properties>
         <maxmind.geoip2.version>2.7.0</maxmind.geoip2.version>
         <jackson.core.version>2.7.3</jackson.core.version>
-        <jackson.databind.version>2.7.3</jackson.databind.version>
+        <jackson.databind.version>2.12.7.1</jackson.databind.version>
         <jackson.annotations.version>2.7.0</jackson.annotations.version>
         <maxmind.db.version>1.2.1</maxmind.db.version>
     </properties>
