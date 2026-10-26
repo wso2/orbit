@@ -88,7 +88,7 @@
     </build>
 
     <properties>
-        <poi.jar.version>3.13</poi.jar.version>
+        <poi.jar.version>4.1.1</poi.jar.version>
     </properties>
 
 </project>
