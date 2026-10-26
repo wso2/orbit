@@ -144,7 +144,7 @@
     </build>
 
     <properties>
-        <version.solr>5.0.0</version.solr>
+        <version.solr>8.8.2</version.solr>
         <version.lucene>[5.0.0,5.1.0)</version.lucene>
         <orbit.version.solr>${version.solr}.wso2v1</orbit.version.solr>
         <version.noggit>[0.6,0.7)</version.noggit>
