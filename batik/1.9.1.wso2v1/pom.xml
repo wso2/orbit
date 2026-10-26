@@ -183,7 +183,7 @@
         <batik.version>1.9.1</batik.version>
         <batik.js.version>1.8</batik.js.version>
         <fop.version>0.94</fop.version>
-        <xmlgraphics.commons.version>2.2</xmlgraphics.commons.version>
+        <xmlgraphics.commons.version>2.6</xmlgraphics.commons.version>
         <xerces.wso2.version>2.8.1.wso2v1</xerces.wso2.version>
         <rhino.wso2.version>1.7.0.R1-wso2v2</rhino.wso2.version>
         <xalan.wso2.version>2.7.0.wso2v1</xalan.wso2.version>
