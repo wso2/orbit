@@ -125,6 +125,6 @@
 
     <properties>
         <exp.pkg.version.jetty>8.1.17.v20150415.wso2v1</exp.pkg.version.jetty>
-        <version.jetty>8.1.17.v20150415</version.jetty>
+        <version.jetty>9.4.41.v20210516</version.jetty>
     </properties>
 </project>
