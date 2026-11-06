@@ -424,6 +424,6 @@
         <commons.lang3.import.version.range>[3.0.0,4.0.0)</commons.lang3.import.version.range>
         <commons.collections4.import.version.range>[4.0.0,5.0.0)</commons.collections4.import.version.range>
         <zookeeper.import.version.range>[3.9.0,4.0.0)</zookeeper.import.version.range>
-        <slf4j.import.version.range>[1.7.0,3.0.0)</slf4j.import.version.range>
+        <slf4j.import.version.range>[2.0.0,3.0.0)</slf4j.import.version.range>
     </properties>
 </project>
