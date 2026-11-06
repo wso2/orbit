@@ -342,6 +342,7 @@
                             caffeine;scope=compile|runtime;inline=false,
                             spatial4j;scope=compile|runtime;inline=false,
                             hppc;scope=compile|runtime;inline=false,
+                            semver4j;scope=compile|runtime;inline=false,
                             jakarta.ws.rs-api;scope=compile|runtime;inline=false,
                             jakarta.servlet-api;scope=compile|runtime;inline=false,
                             jakarta.inject-api;scope=compile|runtime;inline=false,
