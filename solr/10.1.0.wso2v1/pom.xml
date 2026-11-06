@@ -29,6 +29,123 @@
         This bundle will represent solr and lucene jars for Solr 10.
     </description>
 
+    <!--
+        Only the Solr artifacts are declared directly. Everything else is resolved transitively from Solr and
+        embedded through Embed-Transitive. Pin a transitive dependency here only when the version Solr brings
+        is outdated.
+    -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- Jetty: newer than the version Solr brings -->
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-client</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-http</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-util</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-io</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-alpn-client</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty.http2</groupId>
+                <artifactId>jetty-http2-client</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty.http2</groupId>
+                <artifactId>jetty-http2-client-transport</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty.http2</groupId>
+                <artifactId>jetty-http2-common</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty.http2</groupId>
+                <artifactId>jetty-http2-hpack</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+
+            <!-- OpenTelemetry: newer than the version Solr brings -->
+            <dependency>
+                <groupId>io.opentelemetry</groupId>
+                <artifactId>opentelemetry-api</artifactId>
+                <version>${opentelemetry.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.opentelemetry</groupId>
+                <artifactId>opentelemetry-context</artifactId>
+                <version>${opentelemetry.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.opentelemetry</groupId>
+                <artifactId>opentelemetry-sdk</artifactId>
+                <version>${opentelemetry.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.opentelemetry</groupId>
+                <artifactId>opentelemetry-sdk-metrics</artifactId>
+                <version>${opentelemetry.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.opentelemetry</groupId>
+                <artifactId>opentelemetry-sdk-trace</artifactId>
+                <version>${opentelemetry.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.opentelemetry</groupId>
+                <artifactId>opentelemetry-exporter-prometheus</artifactId>
+                <version>${opentelemetry.exporter.prometheus.version}</version>
+            </dependency>
+
+            <!-- ZooKeeper: newer than the version Solr brings -->
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${version.zookeeper}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-classic</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-core</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper-jute</artifactId>
+                <version>${version.zookeeper}</version>
+            </dependency>
+
+            <!-- HK2 locator: Jersey brings a milestone (4.0.0-M3) -->
+            <dependency>
+                <groupId>org.glassfish.hk2</groupId>
+                <artifactId>hk2-locator</artifactId>
+                <version>${hk2.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <!-- Solr Core -->
         <dependency>
@@ -93,362 +210,13 @@
             <version>${version.solr}</version>
             <optional>true</optional>
         </dependency>
-        
-        <!-- Jetty HTTP Client (required by Solr 10 CoreContainer) -->
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-client</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-http</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-util</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-io</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-alpn-client</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty.http2</groupId>
-            <artifactId>jetty-http2-client</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty.http2</groupId>
-            <artifactId>jetty-http2-client-transport</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty.http2</groupId>
-            <artifactId>jetty-http2-common</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty.http2</groupId>
-            <artifactId>jetty-http2-hpack</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-
-        <!-- Lucene -->
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-core</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-analysis-common</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-queryparser</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-queries</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-highlighter</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-join</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-misc</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-codecs</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-memory</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-suggest</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-grouping</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-facet</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-backward-codecs</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-sandbox</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-spatial-extras</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-spatial3d</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-analysis-phonetic</artifactId>
-            <version>${version.lucene}</version>
-            <optional>true</optional>
-        </dependency>
-
-        <!-- OpenTelemetry (required compile-time dependency in Solr 10) -->
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-api</artifactId>
-            <version>${opentelemetry.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-sdk</artifactId>
-            <version>${opentelemetry.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-sdk-metrics</artifactId>
-            <version>${opentelemetry.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-sdk-trace</artifactId>
-            <version>${opentelemetry.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-context</artifactId>
-            <version>${opentelemetry.version}</version>
-        </dependency>
-        
-        <!-- OpenTelemetry Instrumentation for Runtime Metrics -->
-        <dependency>
-            <groupId>io.opentelemetry.instrumentation</groupId>
-            <artifactId>opentelemetry-runtime-telemetry</artifactId>
-            <version>${opentelemetry.instrumentation.version}</version>
-        </dependency>
-
-        <!-- OpenTelemetry Prometheus Exporter -->
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-exporter-prometheus</artifactId>
-            <version>${opentelemetry.exporter.prometheus.version}</version>
-        </dependency>
-
-        <!-- Prometheus Client (required by OTel Prometheus exporter) -->
-        <dependency>
-            <groupId>io.prometheus</groupId>
-            <artifactId>prometheus-metrics-model</artifactId>
-            <version>${prometheus.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.prometheus</groupId>
-            <artifactId>prometheus-metrics-config</artifactId>
-            <version>${prometheus.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.prometheus</groupId>
-            <artifactId>prometheus-metrics-exposition-textformats</artifactId>
-            <version>${prometheus.version}</version>
-        </dependency>
-
-        <!-- Metrics -->
-        <dependency>
-            <groupId>io.dropwizard.metrics</groupId>
-            <artifactId>metrics-core</artifactId>
-            <version>${version.metrics}</version>
-        </dependency>
-
-        <!-- ZooKeeper -->
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>${version.zookeeper}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-classic</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-core</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper-jute</artifactId>
-            <version>${version.zookeeper}</version>
-        </dependency>
-
-        <!-- Apache Curator (ZooKeeper client) -->
-        <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-framework</artifactId>
-            <version>${curator.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-client</artifactId>
-            <version>${curator.version}</version>
-        </dependency>
-
-        <!-- Caffeine Cache -->
-        <dependency>
-            <groupId>com.github.ben-manes.caffeine</groupId>
-            <artifactId>caffeine</artifactId>
-            <version>${caffeine.version}</version>
-        </dependency>
-
-        <!-- Spatial4j -->
-        <dependency>
-            <groupId>org.locationtech.spatial4j</groupId>
-            <artifactId>spatial4j</artifactId>
-            <version>${spatial4j.version}</version>
-        </dependency>
-
-        <!-- HPPC -->
-        <dependency>
-            <groupId>com.carrotsearch</groupId>
-            <artifactId>hppc</artifactId>
-            <version>${hppc.version}</version>
-        </dependency>
-
-        <!-- Jakarta WS RS API (required by Solr 10) -->
-        <dependency>
-            <groupId>jakarta.ws.rs</groupId>
-            <artifactId>jakarta.ws.rs-api</artifactId>
-            <version>${jakarta.ws.rs.version}</version>
-        </dependency>
-
-        <!-- Jakarta Inject API -->
-        <dependency>
-            <groupId>jakarta.inject</groupId>
-            <artifactId>jakarta.inject-api</artifactId>
-            <version>${jakarta.inject.version}</version>
-        </dependency>
-
-        <!-- Jakarta Annotation API -->
-        <dependency>
-            <groupId>jakarta.annotation</groupId>
-            <artifactId>jakarta.annotation-api</artifactId>
-            <version>${jakarta.annotation.version}</version>
-        </dependency>
-
-        <!-- Jakarta Servlet API -->
-        <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <version>${jakarta.servlet-api.version}</version>
-        </dependency>
 
         <!-- Solr Scripting (XSLTResponseWriter referenced by registry-indexing solrconfig.xml) -->
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-scripting</artifactId>
             <version>${version.solr}</version>
-        </dependency>
-
-        <!-- Javassist (proxy library required by HK2) -->
-        <dependency>
-            <groupId>org.javassist</groupId>
-            <artifactId>javassist</artifactId>
-            <version>${javassist.version}</version>
-        </dependency>
-
-        <!-- Jersey (JAX-RS implementation required by Solr 10) -->
-        <dependency>
-            <groupId>org.glassfish.jersey.core</groupId>
-            <artifactId>jersey-server</artifactId>
-            <version>${jersey.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.core</groupId>
-            <artifactId>jersey-common</artifactId>
-            <version>${jersey.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.inject</groupId>
-            <artifactId>jersey-hk2</artifactId>
-            <version>${jersey.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jersey.media</groupId>
-            <artifactId>jersey-media-json-jackson</artifactId>
-            <version>${jersey.version}</version>
-        </dependency>
-
-        <!-- HK2 (dependency injection for Jersey) -->
-        <dependency>
-            <groupId>org.glassfish.hk2</groupId>
-            <artifactId>hk2-api</artifactId>
-            <version>${hk2.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.hk2</groupId>
-            <artifactId>hk2-locator</artifactId>
-            <version>${hk2.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.hk2</groupId>
-            <artifactId>hk2-utils</artifactId>
-            <version>${hk2.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.hk2</groupId>
-            <artifactId>osgi-resource-locator</artifactId>
-            <version>${osgi.resource.locator.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -504,7 +272,7 @@
                             javax.xml.transform.dom;version="${javax.xml.import.version}",
                             javax.xml.transform;version="${javax.xml.import.version}",
                             javax.xml.parsers;version="${javax.xml.import.version}",
-                            org.apache.commons.io.*;version="${commons.io.import.version.range}",
+                            org.apache.commons.io.*;version="${commons.io.import.version.range}";resolution:=mandatory,
                             org.apache.commons.codec.*;version="${commons.codec.import.version.range}";resolution:=optional,
                             org.apache.commons.lang3.*;version="${commons.lang3.import.version.range}";resolution:=optional,
                             org.apache.commons.collections4.*;version="${commons.collections4.import.version.range}";resolution:=optional,
@@ -530,30 +298,54 @@
                             solr-solrj-zookeeper;scope=compile|runtime;inline=false,
                             solr-solrj-streaming;scope=compile|runtime;inline=false,
                             solr-scripting;scope=compile|runtime;inline=false,
-                            lucene-*;scope=compile|runtime;inline=false,
+                            lucene-core;scope=compile|runtime;inline=false,
+                            lucene-analysis-common;scope=compile|runtime;inline=false,
+                            lucene-queryparser;scope=compile|runtime;inline=false,
+                            lucene-queries;scope=compile|runtime;inline=false,
+                            lucene-highlighter;scope=compile|runtime;inline=false,
+                            lucene-join;scope=compile|runtime;inline=false,
+                            lucene-misc;scope=compile|runtime;inline=false,
+                            lucene-codecs;scope=compile|runtime;inline=false,
+                            lucene-memory;scope=compile|runtime;inline=false,
+                            lucene-suggest;scope=compile|runtime;inline=false,
+                            lucene-grouping;scope=compile|runtime;inline=false,
+                            lucene-facet;scope=compile|runtime;inline=false,
+                            lucene-backward-codecs;scope=compile|runtime;inline=false,
+                            lucene-sandbox;scope=compile|runtime;inline=false,
+                            lucene-spatial-extras;scope=compile|runtime;inline=false,
+                            lucene-spatial3d;scope=compile|runtime;inline=false,
+                            lucene-analysis-phonetic;scope=compile|runtime;inline=false,
                             jetty-client;scope=compile|runtime;inline=false,
                             jetty-http;scope=compile|runtime;inline=false,
                             jetty-util;scope=compile|runtime;inline=false,
                             jetty-io;scope=compile|runtime;inline=false,
                             jetty-alpn-client;scope=compile|runtime;inline=false,
-                            jetty-http2-*;scope=compile|runtime;inline=false,
-                            opentelemetry-*;scope=compile|runtime;inline=false,
+                            jetty-http2-client;scope=compile|runtime;inline=false,
+                            jetty-http2-client-transport;scope=compile|runtime;inline=false,
+                            jetty-http2-common;scope=compile|runtime;inline=false,
+                            jetty-http2-hpack;scope=compile|runtime;inline=false,
+                            opentelemetry-api;scope=compile|runtime;inline=false,
+                            opentelemetry-context;scope=compile|runtime;inline=false,
+                            opentelemetry-sdk;scope=compile|runtime;inline=false,
+                            opentelemetry-sdk-metrics;scope=compile|runtime;inline=false,
+                            opentelemetry-sdk-trace;scope=compile|runtime;inline=false,
                             opentelemetry-runtime-telemetry;scope=compile|runtime;inline=false,
-                            prometheus-*;scope=compile|runtime;inline=false,
-                            jackson-*;scope=compile|runtime;inline=false,
+                            opentelemetry-exporter-prometheus;scope=compile|runtime;inline=false,
+                            prometheus-metrics-model;scope=compile|runtime;inline=false,
+                            prometheus-metrics-config;scope=compile|runtime;inline=false,
+                            prometheus-metrics-exposition-textformats;scope=compile|runtime;inline=false,
                             metrics-core;scope=compile|runtime;inline=false,
                             zookeeper;scope=compile|runtime;inline=false,
                             zookeeper-jute;scope=compile|runtime;inline=false,
-                            curator-*;scope=compile|runtime;inline=false,
+                            curator-framework;scope=compile|runtime;inline=false,
+                            curator-client;scope=compile|runtime;inline=false,
                             caffeine;scope=compile|runtime;inline=false,
-                            commons-collections4;scope=compile|runtime;inline=false,
                             spatial4j;scope=compile|runtime;inline=false,
                             hppc;scope=compile|runtime;inline=false,
                             jakarta.ws.rs-api;scope=compile|runtime;inline=false,
                             jakarta.servlet-api;scope=compile|runtime;inline=false,
                             jakarta.inject-api;scope=compile|runtime;inline=false,
                             jakarta.annotation-api;scope=compile|runtime;inline=false,
-                            jakarta.validation-api;scope=compile|runtime;inline=false,
                             jersey-server;scope=compile|runtime;inline=false,
                             jersey-common;scope=compile|runtime;inline=false,
                             jersey-hk2;scope=compile|runtime;inline=false,
@@ -564,6 +356,7 @@
                             javassist;scope=compile|runtime;inline=false,
                             osgi-resource-locator;scope=compile|runtime;inline=false,
                         </Embed-Dependency>
+                        <Embed-Transitive>true</Embed-Transitive>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
@@ -601,7 +394,10 @@
         <version.solr>10.1.0</version.solr>
         <orbit.version.solr>${version.solr}.wso2v1</orbit.version.solr>
 
+        <!-- Versions Solr brings; used only for the exported package versions -->
         <version.lucene>10.4.0</version.lucene>
+        <spatial4j.version>0.8</spatial4j.version>
+
         <maven.bundle.plugin.version>5.1.9</maven.bundle.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -610,29 +406,13 @@
 
         <!-- OpenTelemetry (required compile-time dependency) -->
         <opentelemetry.version>1.67.0</opentelemetry.version>
-        <opentelemetry.instrumentation.version>2.31.1-alpha</opentelemetry.instrumentation.version>
-        <prometheus.version>1.8.0</prometheus.version>
         <opentelemetry.exporter.prometheus.version>1.67.0-alpha</opentelemetry.exporter.prometheus.version>
 
-        <!-- Other dependencies -->
+        <!-- ZooKeeper -->
         <version.zookeeper>3.9.6</version.zookeeper>
-        <curator.version>5.9.0</curator.version>
-        <version.metrics>4.2.39</version.metrics>
-        <caffeine.version>3.2.4</caffeine.version>
-        <spatial4j.version>0.8</spatial4j.version>
-        <hppc.version>0.11.1</hppc.version>
 
-        <!-- Jakarta dependencies -->
-        <jakarta.ws.rs.version>4.0.0</jakarta.ws.rs.version>
-        <jakarta.inject.version>2.0.1</jakarta.inject.version>
-        <jakarta.servlet-api.version>6.1.0</jakarta.servlet-api.version>
-        <javassist.version>3.30.2-GA</javassist.version>
-        <jakarta.annotation.version>3.0.0</jakarta.annotation.version>
-
-        <!-- Jersey and HK2 -->
-        <jersey.version>4.0.2</jersey.version>
+        <!-- HK2 -->
         <hk2.version>4.0.1</hk2.version>
-        <osgi.resource.locator.version>3.0.0</osgi.resource.locator.version>
 
         <!-- Import version ranges -->
         <sax.import.version>0.0.0</sax.import.version>
