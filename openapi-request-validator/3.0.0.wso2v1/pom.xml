@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ~ Copyright (c) 2026, WSO2 LLC. (http://wso2.com) All Rights Reserved.
+ ~
+ ~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~ you may not use this file except in compliance with the License.
+ ~ You may obtain a copy of the License at
+ ~
+ ~      http://www.apache.org/licenses/LICENSE-2.0
+ ~
+ ~ Unless required by applicable law or agreed to in writing, software
+ ~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~ See the License for the specific language governing permissions and
+ ~ limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.wso2.orbit.com.atlassian.oai</groupId>
+    <artifactId>openapi-request-validator-core</artifactId>
+    <version>3.0.0.wso2v1</version>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon Orbit - openapi-request-validator-core (com.atlassian.oai)</name>
+    <description>
+        OSGi bundle of com.atlassian.oai:openapi-request-validator-core (OpenAPI 3.1 aware request/response
+        validator). Upstream publishes the binary for Java 21 only, so this bundle compiles the published
+        upstream sources for Java 11. The networknt JSON schema engine, itu and caffeine 3.x are embedded.
+    </description>
+    <url>http://wso2.org</url>
+
+    <distributionManagement>
+        <repository>
+            <id>wso2.releases</id>
+            <name>WSO2 internal Repository</name>
+            <url>https://maven.wso2.org/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <!-- Embedded -->
+        <dependency>
+            <groupId>com.networknt</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${networknt.json-schema-validator.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.ethlo.time</groupId>
+            <artifactId>itu</artifactId>
+            <version>${itu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>${caffeine.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Imported from other bundles at runtime. Same dependencies as the upstream 3.0.0 pom;
+             commons-lang3 and commons-io come transitively from swagger-parser, as upstream. -->
+        <dependency>
+            <groupId>io.swagger.parser.v3</groupId>
+            <artifactId>swagger-parser</artifactId>
+            <version>${swagger-parser.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>${jsr305.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jdk8</artifactId>
+            <version>${jackson.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!-- Compile the unpacked upstream sources and keep their resource files
+             (swagger/validation/*.properties: validator messages and default levels) -->
+        <sourceDirectory>${upstream.src.dir}</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>${upstream.src.dir}</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- Unpack the published upstream sources of the pinned release -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.6.1</version>
+                <executions>
+                    <execution>
+                        <id>unpack-upstream-sources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.atlassian.oai</groupId>
+                                    <artifactId>openapi-request-validator-core</artifactId>
+                                    <version>${openapi-request-validator.version}</version>
+                                    <classifier>sources</classifier>
+                                    <type>jar</type>
+                                    <outputDirectory>${upstream.src.dir}</outputDirectory>
+                                    <excludes>META-INF/maven/**</excludes>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <release>${java.release}</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>5.1.9</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Export-Package>
+                            com.atlassian.oai.validator.*;version="${openapi-request-validator.version}"
+                        </Export-Package>
+                        <Import-Package>
+                            com.fasterxml.jackson.*;version="${jackson.version.range}",
+                            io.swagger.parser;version="${swagger-parser.version.range}",
+                            io.swagger.v3.*;version="${swagger-parser.version.range}",
+                            org.apache.commons.lang3.*;version="${commons-lang3.version.range}",
+                            org.apache.commons.io.*;version="${commons-io.version.range}",
+                            org.slf4j;version="${slf4j.version.range}",
+                            *;resolution:=optional
+                        </Import-Package>
+                        <Embed-Dependency>
+                            json-schema-validator;groupId=com.networknt;inline=false,
+                            itu;inline=false,
+                            caffeine;inline=false
+                        </Embed-Dependency>
+                        <Embed-Transitive>false</Embed-Transitive>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <openapi-request-validator.version>3.0.0</openapi-request-validator.version>
+        <java.release>11</java.release>
+        <upstream.src.dir>${project.build.directory}/upstream-src</upstream.src.dir>
+
+        <networknt.json-schema-validator.version>2.0.1</networknt.json-schema-validator.version>
+        <itu.version>1.14.0</itu.version>
+        <caffeine.version>3.2.4</caffeine.version>
+
+        <!-- Versions as in the upstream openapi-request-validator 3.0.0 parent pom -->
+        <swagger-parser.version>2.1.41</swagger-parser.version>
+        <jackson.version>2.21.3</jackson.version>
+        <slf4j.version>2.0.17</slf4j.version>
+        <jsr305.version>3.0.2</jsr305.version>
+
+        <!-- ParseOptions.setExplicitObjectSchema(), used by the validator, exists from swagger-parser 2.1.30 -->
+        <swagger-parser.version.range>[2.1.30,3)</swagger-parser.version.range>
+        <!-- networknt json-schema-validator 2.0.1 requires Jackson 2.18+ -->
+        <jackson.version.range>[2.18,3)</jackson.version.range>
+        <commons-lang3.version.range>[3.10,4)</commons-lang3.version.range>
+        <commons-io.version.range>[2.6,3)</commons-io.version.range>
+        <slf4j.version.range>[1.7,3)</slf4j.version.range>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+</project>
