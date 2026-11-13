@@ -22,9 +22,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.orbit.org.apache.tomcat</groupId>
     <artifactId>tomcat-servlet-api-jdk21</artifactId>
-    <version>9.0.122.wso2v1</version>
+    <version>9.0.123.wso2v1</version>
     <packaging>bundle</packaging>
-    <name>tomcat servlet api orbit bundle for JDK 21+ - 9.0.122.wso2v1</name>
+    <name>tomcat servlet api orbit bundle for JDK 21+ - 9.0.123.wso2v1</name>
     <description>Apache Tomcat Servlet API</description>
 
     <dependencies>
@@ -74,6 +74,6 @@
     </build>
 
     <properties>
-        <version.tomcat>9.0.122</version.tomcat>
+        <version.tomcat>9.0.123</version.tomcat>
     </properties>
 </project>
