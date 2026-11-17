@@ -124,6 +124,7 @@
         <module>commons-codec/1.12.0.wso2v1</module>
         <module>commons-codec/1.15.0.wso2v1</module>
         <module>commons-codec/1.22.0.wso2v1</module>
+        <module>commons-codec/1.23.0.wso2v1</module>
         <module>openjpa-all/2.2.2.wso2v2</module>
         <module>openjpa-all/3.0.0.wso2v1</module>
         <module>apacheds/2.0.0.AM25.wso2v1</module>
@@ -151,6 +152,7 @@
         <module>opensaml/3.3.1.wso2v3</module>
         <module>opensaml/3.3.1.wso2v5</module>
         <module>opensaml/3.3.1.wso2v16</module>
+        <module>opensaml/3.3.1.wso2v17</module>
         <module>ua-parser/1.5.2.wso2v1</module>
         <module>jsr105/1.0.1.wso2v1</module>
         <module>commons-io/2.11.0.wso2v1</module>
@@ -223,7 +225,9 @@
         <module>solr/10.0.0.wso2v4</module>
         <module>solr/10.0.0.wso2v6</module>
         <module>solr/10.0.0.wso2v7</module>
+        <module>solr/9.11.0.wso2v1</module>
         <module>solr/10.1.0.wso2v1</module>
+        <module>solr/10.1.0.wso2v2</module>
         <module>webauthn4j/0.21.0.wso2v1</module>
         <module>libthrift/0.16.0.wso2v1</module>
         <module>libthrift/0.23.0.wso2v1</module>
