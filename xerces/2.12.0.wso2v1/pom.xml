@@ -108,7 +108,7 @@
         <xerces.wso2.version>2.12.0.wso2v1</xerces.wso2.version>
 
         <xml.apis.version>1.4.01</xml.apis.version>
-        <xerces.version>2.12.0</xerces.version>
+        <xerces.version>2.12.2</xerces.version>
     </properties>
 </project>
 
