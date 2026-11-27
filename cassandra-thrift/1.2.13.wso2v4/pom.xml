@@ -81,7 +81,7 @@
 
     <properties>
         <thrift.osgi.version.range>[0.7.wso2v1,0.8)</thrift.osgi.version.range>
-        <thrift.version>0.7.0</thrift.version>
+        <thrift.version>0.14.0</thrift.version>
         <cassandra.thrift.version>1.2.13</cassandra.thrift.version>
         <sl4j.api.version>1.7.2</sl4j.api.version>
     </properties>
