@@ -98,7 +98,7 @@
     </build>
 
     <properties>
-        <netty-all.version>4.0.23.Final</netty-all.version>
+        <netty-all.version>4.1.42.Final</netty-all.version>
         <export.pkg.version.netty>4.0.23.wso2v1</export.pkg.version.netty>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
